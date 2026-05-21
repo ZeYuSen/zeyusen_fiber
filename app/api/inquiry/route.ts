@@ -1,5 +1,6 @@
 import { NextRequest, NextResponse } from "next/server";
 import { primaryEmail } from "@/lib/contact";
+import nodemailer from "nodemailer";
 
 // --- Simple in-memory rate limiter ---
 const WINDOW_MS = 60 * 1000; // 1 minute
@@ -97,11 +98,19 @@ export async function POST(request: NextRequest) {
       }
     }
 
-    // If Resend is configured, send notification email
-    const resendKey = process.env.RESEND_API_KEY;
+    // Send notification email via nodemailer (163 enterprise)
+    const emailUser = process.env.EMAIL_USER;
+    const emailPass = process.env.EMAIL_PASS;
     const notifyEmail = process.env.NOTIFY_EMAIL || primaryEmail;
 
-    if (resendKey) {
+    if (emailUser && emailPass) {
+      const transporter = nodemailer.createTransport({
+        host: "smtp.qiye.163.com",
+        port: 465,
+        secure: true,
+        auth: { user: emailUser, pass: emailPass },
+      });
+
       const safeName = escapeHtml(String(name));
       const safeEmail = escapeHtml(String(email));
       const safeCompany = escapeHtml(String(company || "N/A"));
@@ -112,31 +121,25 @@ export async function POST(request: NextRequest) {
       const safeSourcePage = escapeHtml(String(source_page || "N/A"));
       const safeMessage = escapeHtml(String(message));
 
-      await fetch("https://api.resend.com/emails", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-          Authorization: `Bearer ${resendKey}`,
-        },
-        body: JSON.stringify({
-          from: `ZeYuSen Fiber <${primaryEmail}>`,
-          to: [notifyEmail],
-          subject: `New Inquiry from ${safeName} - ${safeDivision}`,
-          html: `
-            <h2>New Inquiry Received</h2>
-            <p><strong>Name:</strong> ${safeName}</p>
-            <p><strong>Email:</strong> ${safeEmail}</p>
-            <p><strong>Company:</strong> ${safeCompany}</p>
-            <p><strong>Country:</strong> ${safeCountry}</p>
-            <p><strong>Phone:</strong> ${safePhone}</p>
-            <p><strong>Division:</strong> ${safeDivision}</p>
-            <p><strong>Product Interest:</strong> ${safeProductInterest}</p>
-            <p><strong>Source Page:</strong> ${safeSourcePage}</p>
-            <hr />
-            <p><strong>Message:</strong></p>
-            <p>${safeMessage}</p>
-          `,
-        }),
+      await transporter.sendMail({
+        from: `ZeYuSen Fiber <${emailUser}>`,
+        to: notifyEmail,
+        replyTo: String(email),
+        subject: `New Inquiry from ${safeName} - ${safeDivision}`,
+        html: `
+          <h2>New Inquiry Received</h2>
+          <p><strong>Name:</strong> ${safeName}</p>
+          <p><strong>Email:</strong> ${safeEmail}</p>
+          <p><strong>Company:</strong> ${safeCompany}</p>
+          <p><strong>Country:</strong> ${safeCountry}</p>
+          <p><strong>Phone:</strong> ${safePhone}</p>
+          <p><strong>Division:</strong> ${safeDivision}</p>
+          <p><strong>Product Interest:</strong> ${safeProductInterest}</p>
+          <p><strong>Source Page:</strong> ${safeSourcePage}</p>
+          <hr />
+          <p><strong>Message:</strong></p>
+          <p>${safeMessage}</p>
+        `,
       });
     }
 
