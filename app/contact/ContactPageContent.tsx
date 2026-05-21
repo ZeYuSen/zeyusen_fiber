@@ -1,9 +1,10 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useRef } from "react";
 import { motion } from "framer-motion";
 import { Send, MessageCircle, Mail, MapPin } from "lucide-react";
 import { contactInfo, whatsappPhone } from "@/lib/contact";
+import { Turnstile, type TurnstileInstance } from "@marsidev/react-turnstile";
 
 export default function ContactPageContent() {
   const [formData, setFormData] = useState({
@@ -17,6 +18,8 @@ export default function ContactPageContent() {
     message: "",
   });
   const [status, setStatus] = useState<"idle" | "sending" | "success" | "error">("idle");
+  const [turnstileToken, setTurnstileToken] = useState<string | null>(null);
+  const turnstileRef = useRef<TurnstileInstance>(null);
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -28,6 +31,7 @@ export default function ContactPageContent() {
         body: JSON.stringify({
           ...formData,
           source_page: window.location.pathname,
+          turnstileToken,
         }),
       });
       if (res.ok) {
@@ -42,6 +46,8 @@ export default function ContactPageContent() {
           product_interest: "",
           message: "",
         });
+        setTurnstileToken(null);
+        turnstileRef.current?.reset();
       } else {
         setStatus("error");
       }
@@ -225,9 +231,19 @@ export default function ContactPageContent() {
                     placeholder="Tell us about your requirements, quantities, and application..."
                   />
                 </div>
+                {process.env.NEXT_PUBLIC_TURNSTILE_SITE_KEY && (
+                  <div className="mt-4">
+                    <Turnstile
+                      ref={turnstileRef}
+                      siteKey={process.env.NEXT_PUBLIC_TURNSTILE_SITE_KEY}
+                      onSuccess={setTurnstileToken}
+                      onExpire={() => setTurnstileToken(null)}
+                    />
+                  </div>
+                )}
                 <button
                   type="submit"
-                  disabled={status === "sending"}
+                  disabled={status === "sending" || (!!process.env.NEXT_PUBLIC_TURNSTILE_SITE_KEY && !turnstileToken)}
                   className="mt-6 inline-flex items-center gap-2 px-7 py-3 bg-accent-500 hover:bg-accent-600 disabled:opacity-50 text-white text-sm font-semibold rounded-full transition-colors cursor-pointer"
                 >
                   <Send className="w-4 h-4" />

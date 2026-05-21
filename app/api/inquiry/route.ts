@@ -59,13 +59,42 @@ export async function POST(request: NextRequest) {
     }
 
     const body = await request.json();
-    const { name, email, company, country, phone, division, product_interest, message, source_page } = body;
+    const { name, email, company, country, phone, division, product_interest, message, source_page, turnstileToken } = body;
 
     if (!name || !email || !message) {
       return NextResponse.json(
         { error: "Name, email, and message are required" },
         { status: 400 }
       );
+    }
+
+    // Verify Turnstile token
+    const turnstileSecret = process.env.TURNSTILE_SECRET_KEY;
+    if (turnstileSecret) {
+      if (!turnstileToken) {
+        return NextResponse.json(
+          { error: "Please complete the verification" },
+          { status: 400 }
+        );
+      }
+
+      const verifyRes = await fetch("https://challenges.cloudflare.com/turnstile/v0/siteverify", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          secret: turnstileSecret,
+          response: turnstileToken,
+          remoteip: ip,
+        }),
+      });
+
+      const verifyData = await verifyRes.json();
+      if (!verifyData.success) {
+        return NextResponse.json(
+          { error: "Verification failed. Please try again." },
+          { status: 403 }
+        );
+      }
     }
 
     // If Resend is configured, send notification email

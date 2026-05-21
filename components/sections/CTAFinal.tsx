@@ -3,12 +3,15 @@
 import { useEffect, useRef, useState } from "react";
 import { ArrowRight } from "lucide-react";
 import { gsap, ScrollTrigger } from "@/lib/gsap";
+import { Turnstile, type TurnstileInstance } from "@marsidev/react-turnstile";
 
 export function CTAFinal() {
   const sectionRef = useRef<HTMLElement>(null);
   const [email, setEmail] = useState("");
   const [message, setMessage] = useState("");
   const [status, setStatus] = useState<"idle" | "sending" | "sent" | "error">("idle");
+  const [turnstileToken, setTurnstileToken] = useState<string | null>(null);
+  const turnstileRef = useRef<TurnstileInstance>(null);
 
   useEffect(() => {
     const section = sectionRef.current;
@@ -51,12 +54,15 @@ export function CTAFinal() {
           email,
           message,
           division: "general",
+          turnstileToken,
         }),
       });
       if (res.ok) {
         setStatus("sent");
         setEmail("");
         setMessage("");
+        setTurnstileToken(null);
+        turnstileRef.current?.reset();
       } else {
         setStatus("error");
       }
@@ -122,9 +128,19 @@ export function CTAFinal() {
               />
             </div>
             <div data-cta-reveal className="opacity-0">
+              {process.env.NEXT_PUBLIC_TURNSTILE_SITE_KEY && (
+                <div className="flex justify-center mb-4">
+                  <Turnstile
+                    ref={turnstileRef}
+                    siteKey={process.env.NEXT_PUBLIC_TURNSTILE_SITE_KEY}
+                    onSuccess={setTurnstileToken}
+                    onExpire={() => setTurnstileToken(null)}
+                  />
+                </div>
+              )}
               <button
                 type="submit"
-                disabled={status === "sending"}
+                disabled={status === "sending" || (!!process.env.NEXT_PUBLIC_TURNSTILE_SITE_KEY && !turnstileToken)}
                 className="inline-flex items-center gap-2 px-8 py-4 bg-orange-500 hover:bg-orange-600 text-white font-semibold rounded-full transition-colors disabled:opacity-50"
               >
                 {status === "sending" ? "Sending..." : "Send Inquiry"}
