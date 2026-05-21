@@ -98,6 +98,9 @@ export async function POST(request: NextRequest) {
       }
     }
 
+    // Geo lookup via Cloudflare headers
+    const cfCountry = request.headers.get("cf-ipcountry") || "Unknown";
+
     // Send notification email via nodemailer (163 enterprise)
     const emailUser = process.env.EMAIL_USER;
     const emailPass = process.env.EMAIL_PASS;
@@ -139,6 +142,9 @@ export async function POST(request: NextRequest) {
           <hr />
           <p><strong>Message:</strong></p>
           <p>${safeMessage}</p>
+          <hr />
+          <p style="color:#888;font-size:12px"><strong>Source Country:</strong> ${escapeHtml(cfCountry)}</p>
+          <p style="color:#888;font-size:12px"><strong>IP:</strong> ${escapeHtml(ip)}</p>
         `,
       });
     }
