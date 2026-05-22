@@ -19,24 +19,39 @@ export function faqJsonLd(items: { question: string; answer: string }[]) {
 export function organizationJsonLd() {
   return {
     "@context": "https://schema.org",
-    "@type": "Organization",
+    "@type": ["Organization", "Manufacturer"],
     name: "ZeYuSen Fiber",
     legalName: contactInfo.company,
     url: absoluteUrl("/"),
     logo: absoluteUrl("/logo.png"),
     description:
       "Carbon fiber and glass fiber composite materials manufacturer for aerospace, wind energy, construction, transportation, and advanced manufacturing.",
+    foundingDate: contactInfo.foundingDate,
     address: {
       "@type": "PostalAddress",
-      streetAddress: contactInfo.address,
-      addressCountry: "CN",
+      streetAddress: contactInfo.structuredAddress.streetAddress,
+      addressLocality: contactInfo.structuredAddress.addressLocality,
+      addressRegion: contactInfo.structuredAddress.addressRegion,
+      postalCode: contactInfo.structuredAddress.postalCode,
+      addressCountry: contactInfo.structuredAddress.addressCountry,
+    },
+    geo: {
+      "@type": "GeoCoordinates",
+      latitude: contactInfo.geo.latitude,
+      longitude: contactInfo.geo.longitude,
+    },
+    areaServed: {
+      "@type": "GeoShape",
+      name: "Worldwide",
     },
     contactPoint: {
       "@type": "ContactPoint",
       telephone: contactInfo.phones[0],
       email: contactInfo.emails[0],
       contactType: "sales",
+      availableLanguage: ["English", "Chinese"],
     },
+    sameAs: contactInfo.sameAs,
   };
 }
 

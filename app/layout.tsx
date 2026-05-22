@@ -39,6 +39,10 @@ export const metadata: Metadata = {
   ],
   alternates: {
     canonical: absoluteUrl("/"),
+    languages: {
+      "x-default": absoluteUrl("/"),
+      en: absoluteUrl("/"),
+    },
   },
   openGraph: {
     title: siteConfig.title,
