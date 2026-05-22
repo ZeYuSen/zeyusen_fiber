@@ -47,8 +47,8 @@ export function createPageMetadata({
         {
           url: imageUrl,
           width: 1200,
-          height: 1200,
-          alt: `${siteConfig.name} logo`,
+          height: 630,
+          alt: `${siteConfig.name} - ${title}`,
         },
       ],
     },

@@ -7,6 +7,7 @@ export type BlogPost = {
   title: string;
   excerpt: string;
   date: string;
+  dateModified?: string;
   tags: string[];
   image: string;
   content: string;
@@ -24,6 +25,7 @@ function readBlogPost(fileName: string): BlogPost {
     title: String(data.title ?? "Untitled Article"),
     excerpt: String(data.description ?? ""),
     date: String(data.date ?? ""),
+    dateModified: data.dateModified ? String(data.dateModified) : undefined,
     tags: Array.isArray(data.tags) ? data.tags.map(String) : [],
     image: String(data.image ?? "/logo.png"),
     content,

@@ -1,6 +1,21 @@
 import { absoluteUrl } from "./seo";
 import { contactInfo } from "./contact";
 
+export function faqJsonLd(items: { question: string; answer: string }[]) {
+  return {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: items.map((item) => ({
+      "@type": "Question",
+      name: item.question,
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: item.answer,
+      },
+    })),
+  };
+}
+
 export function organizationJsonLd() {
   return {
     "@context": "https://schema.org",
@@ -74,12 +89,14 @@ export function articleJsonLd({
   description,
   image,
   datePublished,
+  dateModified,
   path,
 }: {
   title: string;
   description: string;
   image: string;
   datePublished: string;
+  dateModified?: string;
   path: string;
 }) {
   return {
@@ -89,6 +106,7 @@ export function articleJsonLd({
     description,
     image: absoluteUrl(image),
     datePublished,
+    dateModified: dateModified ?? datePublished,
     author: {
       "@type": "Organization",
       name: "ZeYuSen Fiber",

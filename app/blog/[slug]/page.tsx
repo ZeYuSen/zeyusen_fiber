@@ -205,7 +205,7 @@ function renderMarkdown(content: string) {
       flushList();
       elements.push(
         <figure key={`img-${elements.length}`} className="my-8 overflow-hidden rounded-2xl border border-neutral-100 bg-neutral-50">
-          <Image src={image[2]} alt={image[1]} width={1200} height={720} className="h-auto w-full object-cover" />
+          <Image src={image[2]} alt={image[1]} width={1200} height={720} sizes="(max-width: 768px) 100vw, 720px" className="h-auto w-full object-cover" />
           {image[1] && <figcaption className="px-4 py-3 text-xs text-neutral-400">{image[1]}</figcaption>}
         </figure>,
       );
@@ -273,6 +273,7 @@ export default async function BlogArticlePage({ params }: Props) {
             description: post.excerpt,
             image: post.image,
             datePublished: post.date,
+            dateModified: post.dateModified,
             path: `/blog/${post.slug}`,
           })),
         }}

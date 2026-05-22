@@ -51,8 +51,8 @@ export const metadata: Metadata = {
       {
         url: absoluteUrl(siteConfig.ogImage),
         width: 1200,
-        height: 1200,
-        alt: "ZeYuSen Fiber logo",
+        height: 630,
+        alt: "ZeYuSen Fiber - Engineered Fiber Solutions",
       },
     ],
   },

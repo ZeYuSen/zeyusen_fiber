@@ -48,6 +48,7 @@ export function ProductGallery({ images, name }: { images: string[]; name: strin
                 src={images[activeIndex]}
                 alt={`${name} - Image ${activeIndex + 1}`}
                 fill
+                sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 600px"
                 className="object-cover"
                 priority={activeIndex === 0}
               />
@@ -112,6 +113,7 @@ export function ProductGallery({ images, name }: { images: string[]; name: strin
                 src={img}
                 alt={`${name} thumbnail ${i + 1}`}
                 fill
+                sizes="64px"
                 className="object-cover"
               />
             </button>
