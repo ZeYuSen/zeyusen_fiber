@@ -6,6 +6,7 @@ import { ProductGallery } from "@/components/products/ProductGallery";
 import { SpecTable } from "@/components/products/SpecTable";
 import { whatsappPhone } from "@/lib/contact";
 import { createPageMetadata } from "@/lib/seo";
+import { productJsonLd, breadcrumbJsonLd } from "@/lib/jsonld";
 
 type Props = { params: Promise<{ category: string; product: string }> };
 
@@ -41,6 +42,29 @@ export default async function GlassProductPage({ params }: Props) {
 
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(productJsonLd({
+            name: product.name,
+            description: product.description,
+            image: product.images[0],
+            category: category.name,
+            path: `/glass-fiber/products/${category.slug}/${product.slug}`,
+          })),
+        }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(breadcrumbJsonLd([
+            { name: "Home", href: "/" },
+            { name: "Glass Fiber", href: "/glass-fiber" },
+            { name: category.name, href: `/glass-fiber/products/${category.slug}` },
+            { name: product.name, href: `/glass-fiber/products/${category.slug}/${product.slug}` },
+          ])),
+        }}
+      />
       <section className="pt-36 pb-4">
         <div className="container-wide">
           <nav className="flex items-center gap-2 text-sm text-neutral-400">

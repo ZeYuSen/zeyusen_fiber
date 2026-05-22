@@ -4,6 +4,7 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import { blogPosts, getBlogPost } from "@/data/blog";
 import { createPageMetadata } from "@/lib/seo";
+import { articleJsonLd, breadcrumbJsonLd } from "@/lib/jsonld";
 
 type Props = { params: Promise<{ slug: string }> };
 
@@ -62,7 +63,12 @@ function renderMarkdown(content: string) {
   const elements: React.ReactNode[] = [];
   let paragraph: string[] = [];
   let list: string[] = [];
+  let listOrdered = false;
   let table: string[] = [];
+  let blockquote: string[] = [];
+  let codeBlock: string[] = [];
+  let inCodeBlock = false;
+  let codeLang = "";
 
   const flushParagraph = () => {
     if (!paragraph.length) return;
@@ -76,14 +82,40 @@ function renderMarkdown(content: string) {
 
   const flushList = () => {
     if (!list.length) return;
+    const Tag = listOrdered ? "ol" : "ul";
+    const listClass = listOrdered ? "list-decimal" : "list-disc";
     elements.push(
-      <ul key={`ul-${elements.length}`} className="list-disc space-y-2 pl-5 text-neutral-600">
-        {list.map((item) => (
-          <li key={item}>{renderInline(item)}</li>
+      <Tag key={`list-${elements.length}`} className={`${listClass} space-y-2 pl-5 text-neutral-600`}>
+        {list.map((item, i) => (
+          <li key={i}>{renderInline(item)}</li>
         ))}
-      </ul>,
+      </Tag>,
     );
     list = [];
+    listOrdered = false;
+  };
+
+  const flushBlockquote = () => {
+    if (!blockquote.length) return;
+    elements.push(
+      <blockquote key={`bq-${elements.length}`} className="border-l-4 border-neutral-200 pl-4 italic text-neutral-500">
+        {blockquote.map((line, i) => (
+          <p key={i} className="leading-relaxed">{renderInline(line)}</p>
+        ))}
+      </blockquote>,
+    );
+    blockquote = [];
+  };
+
+  const flushCodeBlock = () => {
+    if (!codeBlock.length) return;
+    elements.push(
+      <pre key={`code-${elements.length}`} className="overflow-x-auto rounded-xl bg-neutral-900 p-4 text-sm text-neutral-100">
+        <code>{codeBlock.join("\n")}</code>
+      </pre>,
+    );
+    codeBlock = [];
+    codeLang = "";
   };
 
   const flushTable = () => {
@@ -101,7 +133,7 @@ function renderMarkdown(content: string) {
       <div key={`table-${elements.length}`} className="overflow-x-auto rounded-xl border border-neutral-100">
         <table className="w-full text-left text-sm">
           <thead className="bg-neutral-50 text-neutral-900">
-            <tr>{head.map((cell) => <th key={cell} className="px-4 py-3 font-medium">{renderInline(cell)}</th>)}</tr>
+            <tr>{head.map((cell, i) => <th key={i} className="px-4 py-3 font-medium">{renderInline(cell)}</th>)}</tr>
           </thead>
           <tbody className="divide-y divide-neutral-100">
             {body.map((row, rowIndex) => (
@@ -119,11 +151,29 @@ function renderMarkdown(content: string) {
   const flushAll = () => {
     flushParagraph();
     flushList();
+    flushBlockquote();
     flushTable();
   };
 
   lines.forEach((line) => {
     const trimmed = line.trim();
+
+    if (trimmed.startsWith("```")) {
+      if (inCodeBlock) {
+        flushCodeBlock();
+        inCodeBlock = false;
+      } else {
+        flushAll();
+        inCodeBlock = true;
+        codeLang = trimmed.slice(3).trim();
+      }
+      return;
+    }
+
+    if (inCodeBlock) {
+      codeBlock.push(line);
+      return;
+    }
 
     if (!trimmed) {
       flushAll();
@@ -133,11 +183,21 @@ function renderMarkdown(content: string) {
     if (trimmed.startsWith("|")) {
       flushParagraph();
       flushList();
+      flushBlockquote();
       table.push(trimmed);
       return;
     }
 
     flushTable();
+
+    if (trimmed.startsWith("> ")) {
+      flushParagraph();
+      flushList();
+      blockquote.push(trimmed.slice(2));
+      return;
+    }
+
+    flushBlockquote();
 
     const image = trimmed.match(/^!\[([^\]]*)\]\(([^)]+)\)$/);
     if (image) {
@@ -168,14 +228,24 @@ function renderMarkdown(content: string) {
       return;
     }
 
-    if (trimmed.startsWith("- ")) {
+    if (trimmed.startsWith("#### ")) {
       flushParagraph();
+      flushList();
+      elements.push(<h4 key={`h4-${elements.length}`} className="mt-5 text-base font-semibold text-neutral-900">{renderInline(trimmed.slice(5))}</h4>);
+      return;
+    }
+
+    if (trimmed.startsWith("- ") || trimmed.startsWith("* ")) {
+      flushParagraph();
+      if (listOrdered) flushList();
       list.push(trimmed.slice(2));
       return;
     }
 
     if (/^\d+\.\s/.test(trimmed)) {
       flushParagraph();
+      if (!listOrdered && list.length) flushList();
+      listOrdered = true;
       list.push(trimmed.replace(/^\d+\.\s/, ""));
       return;
     }
@@ -184,6 +254,7 @@ function renderMarkdown(content: string) {
   });
 
   flushAll();
+  if (inCodeBlock) flushCodeBlock();
   return elements;
 }
 
@@ -194,6 +265,28 @@ export default async function BlogArticlePage({ params }: Props) {
 
   return (
     <article className="pt-36 pb-24">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(articleJsonLd({
+            title: post.title,
+            description: post.excerpt,
+            image: post.image,
+            datePublished: post.date,
+            path: `/blog/${post.slug}`,
+          })),
+        }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(breadcrumbJsonLd([
+            { name: "Home", href: "/" },
+            { name: "Blog", href: "/blog" },
+            { name: post.title, href: `/blog/${post.slug}` },
+          ])),
+        }}
+      />
       <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
         <nav className="flex items-center gap-2 text-sm text-neutral-400 mb-8">
           <Link href="/" className="hover:text-neutral-700 transition-colors">Home</Link>

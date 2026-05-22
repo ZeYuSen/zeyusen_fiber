@@ -41,6 +41,7 @@ export function FiberCanvas() {
 
     let mouseX = width / 2;
     let mouseY = height / 2;
+    let isVisible = true;
 
     const handleMouse = (e: MouseEvent) => {
       const rect = canvas.getBoundingClientRect();
@@ -49,7 +50,23 @@ export function FiberCanvas() {
     };
     canvas.addEventListener("mousemove", handleMouse);
 
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        isVisible = entry.isIntersecting;
+        if (isVisible && !animationRef.current) {
+          animationRef.current = requestAnimationFrame(draw);
+        }
+      },
+      { threshold: 0 }
+    );
+    observer.observe(canvas);
+
     function draw() {
+      if (!isVisible) {
+        animationRef.current = 0;
+        return;
+      }
+
       ctx!.clearRect(0, 0, width, height);
 
       fibers.forEach((fiber) => {
@@ -106,6 +123,7 @@ export function FiberCanvas() {
       cancelAnimationFrame(animationRef.current);
       canvas.removeEventListener("mousemove", handleMouse);
       window.removeEventListener("resize", handleResize);
+      observer.disconnect();
     };
   }, []);
 

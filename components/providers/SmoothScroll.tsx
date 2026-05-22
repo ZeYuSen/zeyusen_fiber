@@ -3,10 +3,7 @@
 import { useEffect, useRef } from "react";
 import Lenis from "lenis";
 import { usePathname } from "next/navigation";
-import gsap from "gsap";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
-
-gsap.registerPlugin(ScrollTrigger);
+import { gsap, ScrollTrigger } from "@/lib/gsap";
 
 export function SmoothScrollProvider({
   children,

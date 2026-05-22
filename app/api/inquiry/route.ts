@@ -2,10 +2,13 @@ import { NextRequest, NextResponse } from "next/server";
 import { primaryEmail } from "@/lib/contact";
 import nodemailer from "nodemailer";
 
-// --- Simple in-memory rate limiter ---
-const WINDOW_MS = 60 * 1000; // 1 minute
-const MAX_REQUESTS = 5; // max 5 requests per IP per minute
-const MAX_ENTRIES = 10000; // prevent unbounded growth
+// Best-effort in-memory rate limiter. On serverless (Vercel), each instance
+// has its own Map that resets on cold start — Turnstile is the primary
+// abuse protection. For higher-traffic sites, replace with Upstash Redis
+// or Vercel KV for distributed rate limiting.
+const WINDOW_MS = 60 * 1000;
+const MAX_REQUESTS = 5;
+const MAX_ENTRIES = 10000;
 const ipRequests = new Map<string, { count: number; resetAt: number }>();
 
 function cleanupExpiredEntries() {

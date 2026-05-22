@@ -8,6 +8,7 @@ import { WhatsAppButton } from "@/components/layout/WhatsAppButton";
 import { NewTabLinkBehavior } from "@/components/layout/NewTabLinkBehavior";
 import { SmoothScrollProvider } from "@/components/providers/SmoothScroll";
 import { absoluteUrl, siteConfig } from "@/lib/seo";
+import { organizationJsonLd } from "@/lib/jsonld";
 
 const inter = Inter({
   variable: "--font-inter",
@@ -91,6 +92,10 @@ export default function RootLayout({
         )}
       </head>
       <body className="min-h-screen flex flex-col antialiased">
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationJsonLd()) }}
+        />
         <SmoothScrollProvider>
           <Header />
           <NewTabLinkBehavior />

@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
+import Image from "next/image";
 import { gsap, ScrollTrigger } from "@/lib/gsap";
 
 export function HeroImmersive() {
@@ -248,17 +249,31 @@ export function HeroImmersive() {
             className="relative aspect-square w-full max-w-[75%] mx-auto lg:max-w-none lg:mx-0 opacity-0"
           >
             {/* Carbon fiber layer (always visible) */}
-            <div
-              className="absolute inset-0 bg-center bg-no-repeat bg-contain"
-              style={{ backgroundImage: "url(/images/hero/carbon_hero.png)" }}
-            />
+            <div className="absolute inset-0">
+              <Image
+                src="/images/hero/carbon_hero.png"
+                alt="Carbon fiber composite material"
+                fill
+                priority
+                className="object-contain object-center"
+                sizes="(max-width: 1024px) 75vw, 60vw"
+              />
+            </div>
 
             {/* Glass fiber layer (revealed by mask) */}
             <div
               ref={glassLayerRef}
-              className="absolute inset-0 bg-center bg-no-repeat bg-contain opacity-0 transition-opacity duration-300"
-              style={{ backgroundImage: "url(/images/hero/glass_hero.png)" }}
-            />
+              className="absolute inset-0 opacity-0 transition-opacity duration-300"
+            >
+              <Image
+                src="/images/hero/glass_hero.png"
+                alt="Glass fiber composite material"
+                fill
+                priority
+                className="object-contain object-center"
+                sizes="(max-width: 1024px) 75vw, 60vw"
+              />
+            </div>
 
             {/* Hint text */}
             <div className="absolute bottom-4 left-1/2 -translate-x-1/2 hidden lg:block">
