@@ -3,6 +3,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { blogPosts } from "@/data/blog";
 import { createPageMetadata } from "@/lib/seo";
+import { breadcrumbJsonLd } from "@/lib/jsonld";
 
 export const metadata: Metadata = createPageMetadata({
   title: "Fiber Materials Blog",
@@ -17,7 +18,20 @@ export default function BlogPage() {
       {/* Page Header */}
       <section className="pt-36 pb-16">
         <div className="container-wide">
-          <p className="type-caption text-neutral-400">Blog</p>
+          <script
+            type="application/ld+json"
+            dangerouslySetInnerHTML={{
+              __html: JSON.stringify(breadcrumbJsonLd([
+                { name: "Home", href: "/" },
+                { name: "Blog", href: "/blog" },
+              ])),
+            }}
+          />
+          <nav className="flex items-center gap-2 text-sm text-neutral-400 mb-4">
+            <Link href="/" className="hover:text-neutral-700 transition-colors">Home</Link>
+            <span>/</span>
+            <span className="text-neutral-600">Blog</span>
+          </nav>
           <h1 className="text-3xl sm:text-4xl font-semibold text-neutral-900 mt-3">
             Insights & Guides
           </h1>
