@@ -4,7 +4,12 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import { blogPosts, getBlogPost } from "@/data/blog";
 import { createPageMetadata } from "@/lib/seo";
-import { articleJsonLd, breadcrumbJsonLd } from "@/lib/jsonld";
+import { articleJsonLd, breadcrumbJsonLd, faqJsonLd } from "@/lib/jsonld";
+import { TableOfContents } from "@/components/blog/TableOfContents";
+import { FAQAccordion } from "@/components/blog/FAQAccordion";
+import { AuthorSignature } from "@/components/blog/AuthorSignature";
+import { PrintButton } from "@/components/blog/PrintButton";
+import { VideoEmbed } from "@/components/blog/VideoEmbed";
 
 type Props = { params: Promise<{ slug: string }> };
 
@@ -33,14 +38,38 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   });
 }
 
+function slugify(text: string): string {
+  return text
+    .toLowerCase()
+    .replace(/[*_`~]/g, "")
+    .replace(/\[([^\]]+)\]\([^)]+\)/g, "$1")
+    .replace(/[^a-z0-9]+/g, "-")
+    .replace(/(^-|-$)/g, "");
+}
+
 function renderInline(text: string) {
   const parts = text.split(/(\[[^\]]+\]\([^)]+\)|`[^`]+`|\*\*[^*]+\*\*)/g);
 
   return parts.map((part, index) => {
     const link = part.match(/^\[([^\]]+)\]\(([^)]+)\)$/);
     if (link) {
+      const href = link[2];
+      const isExternal = /^https?:\/\//.test(href);
+      if (isExternal) {
+        return (
+          <a
+            key={index}
+            href={href}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-carbon-accent hover:text-neutral-900 transition-colors"
+          >
+            {link[1]}
+          </a>
+        );
+      }
       return (
-        <Link key={index} href={link[2]} className="text-carbon-accent hover:text-neutral-900 transition-colors">
+        <Link key={index} href={href} className="text-carbon-accent hover:text-neutral-900 transition-colors">
           {link[1]}
         </Link>
       );
@@ -199,6 +228,18 @@ function renderMarkdown(content: string) {
 
     flushBlockquote();
 
+    // Video embed: ::video[https://youtube.com/...]
+    const videoMatch = trimmed.match(/^::video\[([^\]]+)\]$/);
+    if (videoMatch) {
+      flushParagraph();
+      flushList();
+      const src = videoMatch[1];
+      const nextCaption = lines[lines.indexOf(line) + 1]?.trim();
+      const title = nextCaption && !nextCaption.startsWith("#") && !nextCaption.startsWith("|") ? nextCaption : undefined;
+      elements.push(<VideoEmbed key={`video-${elements.length}`} src={src} title={title} />);
+      return;
+    }
+
     const image = trimmed.match(/^!\[([^\]]*)\]\(([^)]+)\)$/);
     if (image) {
       flushParagraph();
@@ -217,21 +258,36 @@ function renderMarkdown(content: string) {
     if (trimmed.startsWith("## ")) {
       flushParagraph();
       flushList();
-      elements.push(<h2 key={`h2-${elements.length}`} className="mt-10 text-2xl font-semibold text-neutral-900">{renderInline(trimmed.slice(3))}</h2>);
+      const text = trimmed.slice(3);
+      elements.push(
+        <h2 key={`h2-${elements.length}`} id={slugify(text)} className="mt-10 scroll-mt-28 text-2xl font-semibold text-neutral-900">
+          {renderInline(text)}
+        </h2>,
+      );
       return;
     }
 
     if (trimmed.startsWith("### ")) {
       flushParagraph();
       flushList();
-      elements.push(<h3 key={`h3-${elements.length}`} className="mt-7 text-lg font-semibold text-neutral-900">{renderInline(trimmed.slice(4))}</h3>);
+      const text = trimmed.slice(4);
+      elements.push(
+        <h3 key={`h3-${elements.length}`} id={slugify(text)} className="mt-7 scroll-mt-28 text-lg font-semibold text-neutral-900">
+          {renderInline(text)}
+        </h3>,
+      );
       return;
     }
 
     if (trimmed.startsWith("#### ")) {
       flushParagraph();
       flushList();
-      elements.push(<h4 key={`h4-${elements.length}`} className="mt-5 text-base font-semibold text-neutral-900">{renderInline(trimmed.slice(5))}</h4>);
+      const text = trimmed.slice(5);
+      elements.push(
+        <h4 key={`h4-${elements.length}`} id={slugify(text)} className="mt-5 scroll-mt-28 text-base font-semibold text-neutral-900">
+          {renderInline(text)}
+        </h4>,
+      );
       return;
     }
 
@@ -263,8 +319,11 @@ export default async function BlogArticlePage({ params }: Props) {
   const post = getBlogPost(slug);
   if (!post) notFound();
 
+  const hasFAQ = post.faq.length > 0;
+
   return (
     <article className="pt-36 pb-24">
+      {/* Article Schema */}
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{
@@ -278,6 +337,7 @@ export default async function BlogArticlePage({ params }: Props) {
           })),
         }}
       />
+      {/* Breadcrumb Schema */}
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{
@@ -288,41 +348,106 @@ export default async function BlogArticlePage({ params }: Props) {
           ])),
         }}
       />
-      <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
-        <nav className="flex items-center gap-2 text-sm text-neutral-400 mb-8">
-          <Link href="/" className="hover:text-neutral-700 transition-colors">Home</Link>
-          <span>/</span>
-          <Link href="/blog" className="hover:text-neutral-700 transition-colors">Blog</Link>
-          <span>/</span>
-          <span className="text-neutral-600">{post.title}</span>
-        </nav>
+      {/* FAQPage Schema */}
+      {hasFAQ && (
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify(faqJsonLd(post.faq)),
+          }}
+        />
+      )}
 
-        <div className="flex flex-wrap gap-1.5 mb-5">
-          {post.tags.map((tag) => (
-            <span key={tag} className="text-xs px-2 py-0.5 bg-neutral-50 text-neutral-500 border border-neutral-200 rounded-full">
-              {tag}
-            </span>
-          ))}
-        </div>
+      <div className="max-w-[1280px] mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="flex gap-12 lg:gap-16">
+          {/* TOC Sidebar */}
+          <aside className="hidden lg:block w-56 flex-shrink-0">
+            <div className="sticky top-28 pt-4">
+              <TableOfContents headings={post.headings} />
+              <div className="mt-6 pt-4 border-t border-neutral-100">
+                <PrintButton />
+              </div>
+            </div>
+          </aside>
 
-        <h1 className="text-3xl sm:text-4xl font-semibold text-neutral-900 leading-tight">
-          {post.title}
-        </h1>
-        <p className="mt-4 font-mono text-xs text-neutral-400">{post.date}</p>
-        <p className="mt-6 text-lg leading-relaxed text-neutral-500">{post.excerpt}</p>
+          {/* Main Content */}
+          <div className="min-w-0 flex-1 max-w-3xl">
+            {/* Mobile: Print button + TOC inline */}
+            <div className="flex items-center justify-between lg:hidden mb-6">
+              <PrintButton />
+            </div>
 
-        <div className="mt-10 space-y-5 text-sm">
-          {renderMarkdown(post.content)}
-        </div>
+            {/* Breadcrumb */}
+            <nav className="flex items-center gap-2 text-sm text-neutral-400 mb-8">
+              <Link href="/" className="hover:text-neutral-700 transition-colors">Home</Link>
+              <span>/</span>
+              <Link href="/blog" className="hover:text-neutral-700 transition-colors">Blog</Link>
+              <span>/</span>
+              <span className="text-neutral-600">{post.title}</span>
+            </nav>
 
-        <div className="mt-12 rounded-2xl border border-neutral-100 bg-neutral-50 p-6">
-          <h2 className="text-lg font-semibold text-neutral-900">Need help choosing a material?</h2>
-          <p className="mt-3 text-sm leading-relaxed text-neutral-600">
-            Send your target application, process, and required specifications. ZeYuSen Fiber can help compare carbon fiber and glass fiber material options for your project.
-          </p>
-          <Link href="/contact" className="inline-flex mt-5 rounded-full bg-accent-500 px-5 py-2.5 text-sm font-semibold text-white hover:bg-accent-600 transition-colors">
-            Contact ZeYuSen Fiber
-          </Link>
+            {/* Tags */}
+            <div className="flex flex-wrap gap-1.5 mb-5">
+              {post.tags.map((tag) => (
+                <span key={tag} className="text-xs px-2 py-0.5 bg-neutral-50 text-neutral-500 border border-neutral-200 rounded-full">
+                  {tag}
+                </span>
+              ))}
+            </div>
+
+            {/* Title */}
+            <h1 className="text-3xl sm:text-4xl font-semibold text-neutral-900 leading-tight">
+              {post.title}
+            </h1>
+            <p className="mt-4 font-mono text-xs text-neutral-400">
+              {post.date}
+              {post.dateModified && post.dateModified !== post.date && ` (Updated: ${post.dateModified})`}
+            </p>
+            <p className="mt-6 text-lg leading-relaxed text-neutral-500">{post.excerpt}</p>
+
+            {/* Article Body */}
+            <div className="mt-10 space-y-5 text-sm">
+              {renderMarkdown(post.content)}
+            </div>
+
+            {/* FAQ Accordion */}
+            <FAQAccordion items={post.faq} />
+
+            {/* Author Signature */}
+            <AuthorSignature />
+
+            {/* CTA */}
+            <div className="mt-12 rounded-2xl border border-neutral-100 bg-neutral-50 p-6">
+              <h2 className="text-lg font-semibold text-neutral-900">Need help choosing a material?</h2>
+              <p className="mt-3 text-sm leading-relaxed text-neutral-600">
+                Send your target application, process, and required specifications. ZeYuSen Fiber can help compare carbon fiber and glass fiber material options for your project.
+              </p>
+              <Link href="/contact" className="inline-flex mt-5 rounded-full bg-accent-500 px-5 py-2.5 text-sm font-semibold text-white hover:bg-accent-600 transition-colors">
+                Contact ZeYuSen Fiber
+              </Link>
+            </div>
+
+            {/* Mobile TOC (collapsible at bottom) */}
+            {post.headings.length > 0 && (
+              <details className="mt-8 lg:hidden rounded-xl border border-neutral-100 bg-neutral-50 p-4">
+                <summary className="text-sm font-medium text-neutral-700 cursor-pointer">On this page</summary>
+                <div className="mt-3">
+                  <ul className="space-y-1.5">
+                    {post.headings.map((h) => (
+                      <li key={h.id}>
+                        <a
+                          href={`#${h.id}`}
+                          className={`block text-xs text-neutral-500 hover:text-neutral-900 transition-colors ${h.level === 3 ? "pl-4" : ""}`}
+                        >
+                          {h.text}
+                        </a>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              </details>
+            )}
+          </div>
         </div>
       </div>
     </article>
