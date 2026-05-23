@@ -29,6 +29,11 @@ export const metadata: Metadata = {
     template: "%s | ZeYuSen Fiber",
   },
   description: siteConfig.description,
+  icons: {
+    icon: "/logo.png",
+    shortcut: "/logo.png",
+    apple: "/logo.png",
+  },
   keywords: [
     "carbon fiber",
     "glass fiber",
