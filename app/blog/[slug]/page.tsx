@@ -245,8 +245,10 @@ function renderMarkdown(content: string) {
       flushParagraph();
       flushList();
       elements.push(
-        <figure key={`img-${elements.length}`} className="my-8 overflow-hidden rounded-2xl border border-neutral-100 bg-neutral-50">
-          <Image src={image[2]} alt={image[1]} width={1200} height={720} sizes="(max-width: 768px) 100vw, 720px" className="h-auto w-full object-cover" />
+        <figure key={`img-${elements.length}`} className="my-8 overflow-hidden rounded-2xl border border-neutral-100 bg-neutral-50 max-w-2xl mx-auto">
+          <div className="relative aspect-[16/10]">
+            <Image src={image[2]} alt={image[1]} fill sizes="(max-width: 768px) 100vw, 672px" className="object-contain" />
+          </div>
           {image[1] && <figcaption className="px-4 py-3 text-xs text-neutral-400">{image[1]}</figcaption>}
         </figure>,
       );
