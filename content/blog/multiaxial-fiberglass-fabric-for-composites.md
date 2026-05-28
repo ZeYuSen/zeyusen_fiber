@@ -4,10 +4,10 @@ description: "Select multiaxial fiberglass fabric and biaxial stitched mat (300g
 slug: "multiaxial-fiberglass-fabric-for-composites"
 date: "2026-05-28"
 tags: ["fiberglass", "multiaxial fabric", "non-crimp fabric", "biaxial stitched mat", "wind energy", "structural reinforcement"]
-image: "/images/glass-fiber/03-fiberglass-composite-mat/03-stitched-composite-1200-multiaxial/1200g-multiaxial-composite-01.jpg"
+image: "/images/blog/multiaxial-fiberglass-cover.jpg"
 ---
 
-![Multiaxial fiberglass composite mat](/images/glass-fiber/03-fiberglass-composite-mat/03-stitched-composite-1200-multiaxial/1200g-multiaxial-composite-01.jpg)
+![Multiaxial fiberglass fabric for wind energy composites](/images/blog/multiaxial-fiberglass-cover.jpg)
 
 # Multiaxial Fiberglass Fabric: Non-Crimp Reinforcement for Wind Energy and Structural Composites
 

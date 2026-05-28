@@ -4,10 +4,10 @@ description: "Compare carbon glass hybrid woven cloth (200-240g) and hybrid mat 
 slug: "carbon-glass-hybrid-fabric-benefits"
 date: "2026-05-28"
 tags: ["carbon fiber", "glass fiber", "hybrid fabric", "carbon glass hybrid cloth", "hybrid composite mat", "wind energy"]
-image: "/images/carbon-fiber/06-carbon-fiber-cloth/01-carbon-glass-hybrid-cloth/carbon-glass-hybrid-cloth-01.jpg"
+image: "/images/blog/carbon-glass-hybrid-cover.jpg"
 ---
 
-![Carbon glass hybrid fabric](/images/carbon-fiber/06-carbon-fiber-cloth/01-carbon-glass-hybrid-cloth/carbon-glass-hybrid-cloth-01.jpg)
+![Carbon glass hybrid fabric for composite design](/images/blog/carbon-glass-hybrid-cover.jpg)
 
 # Carbon Glass Hybrid Fabric: Cost-Effective Alternative to Full Carbon Fiber Reinforcement
 

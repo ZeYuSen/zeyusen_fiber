@@ -1,19 +1,19 @@
 ---
-title: “Carbon Fiber Surface Mat & Veil Selection Guide (10g–350g) | Composite Manufacturers”
-description: “Compare carbon fiber surface mat options from 10g veil to 350g needled mat. Covers EMI shielding, fuel cell GDL, wind energy molds, and process matching for composite production.”
-slug: “carbon-fiber-surface-mat-selection-guide”
-date: “2026-05-28”
-tags: [“carbon fiber”, “surface mat”, “carbon veil”, “EMI shielding”, “composite manufacturing”, “carbon fiber mat”]
-image: “/images/carbon-fiber/05-carbon-fiber-mat/01-carbon-surface-mat-10g/10g-carbon-surface-mat-01.jpg”
+title: "Carbon Fiber Surface Mat & Veil Selection Guide (10g–350g) | Composite Manufacturers"
+description: "Compare carbon fiber surface mat options from 10g veil to 350g needled mat. Covers EMI shielding, fuel cell GDL, wind energy molds, and process matching for composite production."
+slug: "carbon-fiber-surface-mat-selection-guide"
+date: "2026-05-28"
+tags: ["carbon fiber", "surface mat", "carbon veil", "EMI shielding", "composite manufacturing", "carbon fiber mat"]
+image: "/images/blog/carbon-fiber-surface-mat-cover.jpg"
 ---
 
-![Carbon fiber surface mat roll](/images/carbon-fiber/05-carbon-fiber-mat/01-carbon-surface-mat-10g/10g-carbon-surface-mat-01.jpg)
+![Carbon fiber surface mat for composite manufacturing](/images/blog/carbon-fiber-surface-mat-cover.jpg)
 
 # Carbon Fiber Surface Mat & Veil Selection Guide for Composite Manufacturers
 
 Carbon fiber surface mat — also known as carbon veil, carbon tissue, or carbon fiber non-woven — is a family of thin-to-medium weight carbon fiber reinforcements used across military, new energy, wind power, and industrial composite applications. From ultra-thin 10g/m² surface veils to 350g/m² needled mats, the right product depends on your application, process, and performance targets.
 
-For manufacturers, the key question is not simply “which carbon mat is strongest?” but “which mat weight, structure, and process fit the part I need to make?” Based on our 15+ years of production experience supplying carbon fiber mat to 50+ countries, this guide covers the full range of options available.
+For manufacturers, the key question is not simply "which carbon mat is strongest?" but "which mat weight, structure, and process fit the part I need to make?" Based on our 15+ years of production experience supplying carbon fiber mat to 50+ countries, this guide covers the full range of options available.
 
 ## What Carbon Fiber Surface Mat Does
 

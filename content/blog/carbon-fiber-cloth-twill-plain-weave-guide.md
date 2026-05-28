@@ -4,10 +4,10 @@ description: "Compare 200g carbon fiber twill cloth vs plain weave fabric for au
 slug: "carbon-fiber-cloth-twill-plain-weave-guide"
 date: "2026-05-28"
 tags: ["carbon fiber cloth", "carbon fiber fabric", "twill weave", "plain weave", "3K carbon fiber", "woven carbon fiber"]
-image: "/images/carbon-fiber/06-carbon-fiber-cloth/02-carbon-fiber-twill-cloth/carbon-fiber-twill-cloth-01.jpg"
+image: "/images/blog/carbon-fiber-cloth-cover.jpg"
 ---
 
-![Carbon fiber twill cloth](/images/carbon-fiber/06-carbon-fiber-cloth/02-carbon-fiber-twill-cloth/carbon-fiber-twill-cloth-01.jpg)
+![Carbon fiber cloth weave pattern](/images/blog/carbon-fiber-cloth-cover.jpg)
 
 # Carbon Fiber Cloth: 200g Twill vs Plain Weave Selection Guide
 
@@ -70,6 +70,8 @@ Best for: Flat panels, tubes, simple geometries, structural applications where s
 | Price | Same | Same |
 
 **Rule of thumb**: Choose twill when the part has complex geometry or the carbon weave will be visible. Choose plain when fabric stability during layup is critical or the part is flat/tubular.
+
+![Carbon fiber woven cloth product](/images/carbon-fiber/06-carbon-fiber-cloth/01-carbon-glass-hybrid-cloth/carbon-glass-hybrid-cloth-03.jpg)
 
 ## Applications by Industry
 

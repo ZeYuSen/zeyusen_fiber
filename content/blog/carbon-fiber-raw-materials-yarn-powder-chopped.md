@@ -4,10 +4,10 @@ description: "Source carbon fiber yarn (T300 3K/6K, T700 12K), short cut carbon 
 slug: "carbon-fiber-raw-materials-yarn-powder-chopped"
 date: "2026-05-28"
 tags: ["carbon fiber yarn", "chopped carbon fiber", "carbon fiber powder", "T300", "T700", "carbon fiber raw materials"]
-image: "/images/carbon-fiber/07-carbon-fiber-raw-materials/carbon-fiber-yarn-01.jpg"
+image: "/images/blog/carbon-fiber-raw-materials-cover.jpg"
 ---
 
-![Carbon fiber yarn](/images/carbon-fiber/07-carbon-fiber-raw-materials/carbon-fiber-yarn-01.jpg)
+![Carbon fiber raw materials](/images/blog/carbon-fiber-raw-materials-cover.jpg)
 
 # Carbon Fiber Raw Materials: Yarn, Chopped Fiber & Powder Selection Guide
 
@@ -66,6 +66,8 @@ Carbon fiber yarn is supplied with a surface sizing (typically epoxy-compatible)
 - **Epoxy sizing**: Standard, compatible with epoxy and vinyl ester resins
 - **Polyamide sizing**: For thermoplastic matrix composites (PA6, PA66)
 - **Unsized**: For specialty applications requiring custom surface treatment
+
+![Carbon fiber composite mat product](/images/carbon-fiber/05-carbon-fiber-mat/05-carbon-composite-mat/carbon-composite-mat-01.jpg)
 
 ## Short Cut Carbon Fiber (Chopped Strands)
 
