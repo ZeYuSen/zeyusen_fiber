@@ -4,10 +4,10 @@ import { useEffect, useRef } from "react";
 import { gsap, ScrollTrigger } from "@/lib/gsap";
 
 const stats = [
-  { value: 15, suffix: "+", label: "Years Experience" },
+  { value: 10, suffix: "+", label: "Years Experience" },
   { value: 50, suffix: "+", label: "Countries Exported" },
-  { value: 100, suffix: "%", label: "Custom Support" },
-  { value: 7, suffix: "", label: "Product Lines" },
+  { value: 80, suffix: "M", label: "Sqm Annual Output" },
+  { value: 13, suffix: "+", label: "Patents Granted" },
 ];
 
 export function StatsBar() {

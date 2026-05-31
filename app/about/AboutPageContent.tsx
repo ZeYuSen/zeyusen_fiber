@@ -1,45 +1,49 @@
 "use client";
 
+import { useState } from "react";
+import Image from "next/image";
 import { motion } from "framer-motion";
 import { Award, Factory, Globe, Users } from "lucide-react";
 import { contactInfo } from "@/lib/contact";
 
 const milestones = [
-  { year: "2008", event: "Company founded in Nantong, Jiangsu" },
-  { year: "2012", event: "Expanded into carbon fiber product line" },
-  { year: "2015", event: "Achieved ISO 9001 certification" },
-  { year: "2018", event: "Began exporting to 30+ countries" },
-  { year: "2021", event: "New production facility commissioned" },
+  { year: "2015", event: "Company founded in Nantong, Jiangsu Province" },
+  { year: "2016", event: "First production line operational, fiberglass tissue mat" },
+  { year: "2018", event: "Expanded into carbon fiber product line" },
+  { year: "2019", event: "Achieved ISO 9001 / ISO 14001 / ISO 45001 certification" },
+  { year: "2020", event: "Second production base established in Taizhou" },
+  { year: "2022", event: "13 utility model patents granted" },
+  { year: "2023", event: "Annual output: carbon fiber 10M sqm, fiberglass 80M sqm" },
   { year: "2024", event: "Reached 50+ export destinations worldwide" },
 ];
 
 const values = [
   {
     icon: Factory,
-    title: "Manufacturing Excellence",
+    title: "R&D & Customization",
     description:
-      "State-of-the-art production lines with strict quality control at every stage.",
+      "Two R&D centers with 10% technical staff. 7+ years of composite material development experience with 13 utility model patents.",
     iconColor: "text-carbon-accent",
-  },
-  {
-    icon: Globe,
-    title: "Global Reach",
-    description:
-      "Serving customers in 50+ countries across 6 continents with reliable logistics.",
-    iconColor: "text-glass-accent",
   },
   {
     icon: Award,
     title: "Quality Certified",
     description:
-      "ISO 9001 certified with SGS testing reports for all product lines.",
+      "ISO 9001, ISO 14001, ISO 45001 certified. Intellectual Property Management System certified. SGS testing reports available.",
     iconColor: "text-accent-500",
   },
   {
-    icon: Users,
-    title: "Customer First",
+    icon: Globe,
+    title: "Reliable & Diversified",
     description:
-      "Dedicated technical support team providing custom solutions for every project.",
+      "Multiple production processes (wet-laid, dry-laid, weaving) across dual production bases for stable, scalable output.",
+    iconColor: "text-glass-accent",
+  },
+  {
+    icon: Users,
+    title: "Fast Delivery & Support",
+    description:
+      "240 km to Shanghai Port. Dedicated technical engineers for process consulting. FOB, CIF, DDP trade terms supported.",
     iconColor: "text-carbon-accent",
   },
 ];
@@ -52,6 +56,124 @@ const fadeUp = {
     transition: { duration: 0.5, delay: i * 0.08 },
   }),
 };
+
+const factoryGallery = {
+  production: [
+    { src: "/images/factory/production/0_0006_productionprocesses5-1.jpg", alt: "Production line - fiber laying" },
+    { src: "/images/factory/production/0_0007_productionprocesses4-1.jpg", alt: "Production line - mat forming" },
+    { src: "/images/factory/production/0_0008_productionprocesses3-1.jpg", alt: "Production line - rolling" },
+    { src: "/images/factory/production/0_0009_productionprocesses2-1.jpg", alt: "Production line - cutting" },
+    { src: "/images/factory/production/0_0010_productionprocesses-1.jpg", alt: "Production line - packaging" },
+  ],
+  inspection: [
+    { src: "/images/factory/inspection/0_0012_inspectionequipment8-1.jpg", alt: "Testing equipment - tensile strength" },
+    { src: "/images/factory/inspection/0_0013_inspectionequipment6-1.jpg", alt: "Testing equipment - thickness gauge" },
+    { src: "/images/factory/inspection/0_0014_inspectionequipment5-1.jpg", alt: "Testing equipment - weight measurement" },
+    { src: "/images/factory/inspection/0_0015_inspectionequipment3-1.jpg", alt: "Testing equipment - microscope" },
+    { src: "/images/factory/inspection/0_0016_inspectionequipment2-1.jpg", alt: "Testing equipment - lab overview" },
+  ],
+  testing: [
+    { src: "/images/factory/testing/0_0018_processtesting4-1.jpg", alt: "Process testing - sample preparation" },
+    { src: "/images/factory/testing/0_0019_processtesting3-1.jpg", alt: "Process testing - quality check" },
+    { src: "/images/factory/testing/0_0020_processtesting2-1.jpg", alt: "Process testing - material analysis" },
+  ],
+  exhibition: [
+    { src: "/images/factory/exhibition/0_0001_2023exhibitions.jpg", alt: "2023 International Exhibition" },
+    { src: "/images/factory/exhibition/0_0002_2019exhibitions-1.jpg", alt: "2019 Trade Show" },
+    { src: "/images/factory/exhibition/0_0003_2018exhibitions-1.jpg", alt: "2018 Industry Exhibition" },
+  ],
+};
+
+const factoryTabs = [
+  { key: "production" as const, label: "Production Lines" },
+  { key: "inspection" as const, label: "Inspection Equipment" },
+  { key: "testing" as const, label: "Process Testing" },
+  { key: "exhibition" as const, label: "Exhibitions" },
+];
+
+function FactorySection() {
+  const [activeTab, setActiveTab] = useState<keyof typeof factoryGallery>("production");
+  const images = factoryGallery[activeTab];
+
+  return (
+    <section className="py-24">
+      <div className="container-wide">
+        <motion.div
+          initial={{ opacity: 0, y: 16 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.5 }}
+        >
+          <p className="type-caption text-neutral-400">Factory Tour</p>
+          <h2 className="text-2xl sm:text-3xl font-semibold text-neutral-900 mt-3">
+            Our Manufacturing Facility
+          </h2>
+          <p className="text-neutral-500 mt-4 max-w-2xl leading-relaxed">
+            80,000 m² standardized factory across two production bases in Nantong and Taizhou,
+            equipped with automated production lines, advanced testing equipment, and dedicated R&D centers.
+          </p>
+        </motion.div>
+
+        {/* Tabs */}
+        <div className="flex flex-wrap gap-2 mt-10 mb-8">
+          {factoryTabs.map((tab) => (
+            <button
+              key={tab.key}
+              onClick={() => setActiveTab(tab.key)}
+              className={`px-4 py-2 text-sm rounded-full border transition-colors ${
+                activeTab === tab.key
+                  ? "bg-neutral-900 text-white border-neutral-900"
+                  : "bg-white text-neutral-600 border-neutral-200 hover:border-neutral-400"
+              }`}
+            >
+              {tab.label}
+            </button>
+          ))}
+        </div>
+
+        {/* Gallery Grid */}
+        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-3">
+          {images.map((img, i) => (
+            <motion.div
+              key={`${activeTab}-${i}`}
+              initial={{ opacity: 0, scale: 0.95 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 0.3, delay: i * 0.05 }}
+              className="relative aspect-[4/3] overflow-hidden rounded-lg bg-neutral-100 group"
+            >
+              <Image
+                src={img.src}
+                alt={img.alt}
+                fill
+                sizes="(max-width: 768px) 50vw, (max-width: 1024px) 33vw, 20vw"
+                className="object-cover group-hover:scale-105 transition-transform duration-500"
+              />
+              <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-colors duration-300" />
+            </motion.div>
+          ))}
+        </div>
+
+        {/* Factory Stats */}
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mt-12">
+          {[
+            { num: "80,000", unit: "m²", label: "Factory Area" },
+            { num: "13,000", unit: "m²", label: "Land Area" },
+            { num: "240", unit: "km", label: "To Shanghai Port" },
+            { num: "2", unit: "", label: "Production Bases" },
+          ].map((stat) => (
+            <div key={stat.label} className="p-5 bg-neutral-50 border border-neutral-100 rounded-lg text-center">
+              <span className="text-2xl font-light text-neutral-900">
+                {stat.num}
+                {stat.unit && <span className="text-sm text-neutral-400 ml-1">{stat.unit}</span>}
+              </span>
+              <p className="text-xs uppercase tracking-wider text-neutral-400 mt-2">{stat.label}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}
 
 export default function AboutPageContent() {
   return (
@@ -66,12 +188,12 @@ export default function AboutPageContent() {
           >
             <p className="type-caption text-neutral-400">About Us</p>
             <h1 className="text-3xl sm:text-4xl font-semibold text-neutral-900 mt-3">
-              Composite Materials Expert Since 2008
+              Composite Materials Expert Since 2015
             </h1>
 	            <p className="text-neutral-500 mt-4 max-w-2xl leading-relaxed">
-	              {contactInfo.company} is a professional manufacturer of fiberglass
-	              and carbon fiber composite materials based in Nantong, Jiangsu
-	              Province, China, serving global industries for over 15 years.
+	              {contactInfo.company} is a comprehensive enterprise integrating R&D,
+	              production, and sales of high-performance carbon fiber and fiberglass
+	              composite materials, based in Nantong, Jiangsu Province, China.
 	            </p>
           </motion.div>
         </div>
@@ -88,16 +210,23 @@ export default function AboutPageContent() {
               transition={{ duration: 0.5 }}
             >
               <p className="text-lg text-neutral-700 leading-relaxed">
-                ZeYuSen Fiber serves customers across wind energy, aerospace,
-                construction, automotive, military, and new energy sectors
-                worldwide.
+                Founded in September 2015, ZeYuSen Fiber operates from dual production
+                bases in Nantong and Taizhou, Jiangsu Province, with technical partnerships
+                with the Chinese Academy of Sciences, China Southern Glass Institute,
+                and multiple universities.
               </p>
               <p className="text-neutral-500 leading-relaxed mt-5">
                 Our product portfolio spans from ultra-thin 10g/m² carbon fiber
                 surface mats to heavy-duty 1200g/m² multiaxial composite
-                reinforcements. We offer full customization of weight, width,
-                binder type, and fiber orientation to match your specific
-                manufacturing process.
+                reinforcements. We serve customers across wind energy, aerospace,
+                construction, automotive, military, hydrogen fuel cells, and new energy
+                sectors worldwide. Full customization of weight, width, binder type,
+                and fiber orientation is available.
+              </p>
+              <p className="text-neutral-500 leading-relaxed mt-5">
+                With 10% of our staff dedicated to R&D and two research centers,
+                we combine wet-laid, dry-laid, and weaving processes to deliver
+                diversified solutions for complex composite applications.
               </p>
             </motion.div>
             <motion.div
@@ -129,6 +258,11 @@ export default function AboutPageContent() {
           </div>
         </div>
       </section>
+
+      <div className="container-wide"><div className="h-px bg-neutral-100" /></div>
+
+      {/* Factory Tour */}
+      <FactorySection />
 
       <div className="container-wide"><div className="h-px bg-neutral-100" /></div>
 
