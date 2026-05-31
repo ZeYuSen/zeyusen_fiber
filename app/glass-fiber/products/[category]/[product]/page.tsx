@@ -4,6 +4,7 @@ import Link from "next/link";
 import { allGlassFiberCategories } from "@/data/glass-fiber";
 import { ProductGallery } from "@/components/products/ProductGallery";
 import { SpecTable } from "@/components/products/SpecTable";
+import { RelatedProducts } from "@/components/products/RelatedProducts";
 import { whatsappPhone } from "@/lib/contact";
 import { createPageMetadata } from "@/lib/seo";
 import { productJsonLd, breadcrumbJsonLd } from "@/lib/jsonld";
@@ -158,6 +159,14 @@ export default async function GlassProductPage({ params }: Props) {
           </div>
         </div>
       </section>
+
+      <div className="container-wide"><div className="h-px bg-neutral-100" /></div>
+
+      <RelatedProducts
+        products={category.products}
+        basePath={`/glass-fiber/products/${category.slug}`}
+        currentSlug={product.slug}
+      />
     </>
   );
 }
