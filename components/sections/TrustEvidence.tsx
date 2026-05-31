@@ -1,10 +1,13 @@
 "use client";
 
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useRef, useState, useCallback } from "react";
+import { createPortal } from "react-dom";
 import Image from "next/image";
 import {
   Award,
   BadgeCheck,
+  ChevronLeft,
+  ChevronRight,
   FileCheck2,
   Handshake,
   MapPin,
@@ -41,30 +44,26 @@ const trustMetrics = [
 ];
 
 const certificates = [
-  {
-    src: "/images/placeholders/certificate-iso-9001.svg",
-    alt: "ISO 9001 Quality Management System certificate",
-    label: "ISO 9001",
-    sublabel: "Quality Management",
-  },
-  {
-    src: "/images/placeholders/certificate-iso-14001.svg",
-    alt: "ISO 14001 Environmental Management System certificate",
-    label: "ISO 14001",
-    sublabel: "Environmental",
-  },
-  {
-    src: "/images/placeholders/certificate-iso-45001.svg",
-    alt: "ISO 45001 Occupational Health & Safety certificate",
-    label: "ISO 45001",
-    sublabel: "Health & Safety",
-  },
-  {
-    src: "/images/placeholders/certificate-ip.svg",
-    alt: "Intellectual Property Management System certificate",
-    label: "IP Management",
-    sublabel: "Innovation",
-  },
+  { src: "/images/certificates/cert_14.jpg", alt: "ISO 9001 Quality Management System", label: "ISO 9001" },
+  { src: "/images/certificates/cert_15.jpg", alt: "ISO 9001 Quality Management System (EN)", label: "ISO 9001 EN" },
+  { src: "/images/certificates/cert_16.jpg", alt: "ISO 14001 Environmental Management System", label: "ISO 14001" },
+  { src: "/images/certificates/cert_17.jpg", alt: "ISO 14001 Environmental Management System (EN)", label: "ISO 14001 EN" },
+  { src: "/images/certificates/cert_18.jpg", alt: "ISO 45001 Occupational Health & Safety", label: "ISO 45001" },
+  { src: "/images/certificates/cert_19.jpg", alt: "ISO 45001 Occupational Health & Safety (EN)", label: "ISO 45001 EN" },
+  { src: "/images/certificates/cert_20.jpg", alt: "Intellectual Property Management System", label: "IP System" },
+  { src: "/images/certificates/cert_01.jpg", alt: "Patent Certificate 1", label: "Patent" },
+  { src: "/images/certificates/cert_02.jpg", alt: "Patent Certificate 2", label: "Patent" },
+  { src: "/images/certificates/cert_03.jpg", alt: "Utility Model Patent - Wear-resistant fiberglass surface mat", label: "Patent" },
+  { src: "/images/certificates/cert_04.jpg", alt: "Utility Model Patent - Embedded bonding carbon fiber surface mat", label: "Patent" },
+  { src: "/images/certificates/cert_05.jpg", alt: "Utility Model Patent - Composite fiberglass flame retardant felt", label: "Patent" },
+  { src: "/images/certificates/cert_06.jpg", alt: "Utility Model Patent - Wear-resistant fiberglass surface mat", label: "Patent" },
+  { src: "/images/certificates/cert_07.jpg", alt: "Utility Model Patent - Polyester nonwoven fiberglass composite felt", label: "Patent" },
+  { src: "/images/certificates/cert_08.jpg", alt: "Utility Model Patent - High-strength fiberglass surface mat", label: "Patent" },
+  { src: "/images/certificates/cert_09.jpg", alt: "Utility Model Patent - High tensile PET skeleton cloth", label: "Patent" },
+  { src: "/images/certificates/cert_10.jpg", alt: "Utility Model Patent - PVA carbon fiber mat prepreg device", label: "Patent" },
+  { src: "/images/certificates/cert_11.jpg", alt: "Utility Model Patent - Fiberglass surface mat cutting equipment", label: "Patent" },
+  { src: "/images/certificates/cert_12.jpg", alt: "Utility Model Patent - Carbon fiber surface mat oven", label: "Patent" },
+  { src: "/images/certificates/cert_13.jpg", alt: "Utility Model Patent - High tear strength fiberglass roofing mat", label: "Patent" },
 ];
 
 const logistics = [
@@ -86,6 +85,171 @@ const logistics = [
 ];
 
 const supportSteps = ["Inquiry", "Production", "Inspection", "Shipment"];
+
+function CertificateCarousel() {
+  const [currentIndex, setCurrentIndex] = useState(0);
+  const [lightboxImg, setLightboxImg] = useState<string | null>(null);
+  const [scale, setScale] = useState(1);
+  const [position, setPosition] = useState({ x: 0, y: 0 });
+  const [dragging, setDragging] = useState(false);
+  const dragStart = useRef({ x: 0, y: 0 });
+  const posStart = useRef({ x: 0, y: 0 });
+  const visibleCount = 3;
+  const maxIndex = certificates.length - visibleCount;
+
+  const prev = useCallback(() => {
+    setCurrentIndex((i) => Math.max(0, i - 1));
+  }, []);
+
+  const next = useCallback(() => {
+    setCurrentIndex((i) => Math.min(maxIndex, i + 1));
+  }, [maxIndex]);
+
+  const openLightbox = (src: string) => {
+    setLightboxImg(src);
+    setScale(1);
+    setPosition({ x: 0, y: 0 });
+  };
+
+  const closeLightbox = () => {
+    setLightboxImg(null);
+    setScale(1);
+    setPosition({ x: 0, y: 0 });
+  };
+
+  const zoomIn = () => setScale((s) => Math.min(s + 0.5, 4));
+  const zoomOut = () => {
+    setScale((s) => {
+      const next = Math.max(s - 0.5, 0.5);
+      if (next <= 1) setPosition({ x: 0, y: 0 });
+      return next;
+    });
+  };
+
+  const handlePointerDown = (e: React.PointerEvent) => {
+    if (scale <= 1) return;
+    setDragging(true);
+    dragStart.current = { x: e.clientX, y: e.clientY };
+    posStart.current = { ...position };
+    (e.target as HTMLElement).setPointerCapture(e.pointerId);
+  };
+
+  const handlePointerMove = (e: React.PointerEvent) => {
+    if (!dragging) return;
+    setPosition({
+      x: posStart.current.x + (e.clientX - dragStart.current.x),
+      y: posStart.current.y + (e.clientY - dragStart.current.y),
+    });
+  };
+
+  const handlePointerUp = () => {
+    setDragging(false);
+  };
+
+  return (
+    <>
+      <div className="relative">
+        <div className="overflow-hidden">
+          <div
+            className="flex gap-3 transition-transform duration-500 ease-out"
+            style={{ transform: `translateX(-${currentIndex * (100 / visibleCount)}%)` }}
+          >
+            {certificates.map((cert, i) => (
+              <div
+                key={i}
+                className="flex-shrink-0 cursor-pointer group/cert"
+                style={{ width: `calc(${100 / visibleCount}% - ${(visibleCount - 1) * 12 / visibleCount}px)` }}
+                onClick={() => openLightbox(cert.src)}
+              >
+                <div className="relative aspect-[3/4] overflow-hidden rounded-md bg-neutral-50 border border-neutral-100">
+                  <Image
+                    src={cert.src}
+                    alt={cert.alt}
+                    fill
+                    sizes="(max-width: 640px) 50vw, 33vw"
+                    className="object-contain p-1 group-hover/cert:scale-[1.03] transition-transform duration-500"
+                  />
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+        {currentIndex > 0 && (
+          <button
+            onClick={prev}
+            aria-label="Previous certificates"
+            className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-3 w-8 h-8 rounded-full bg-white border border-neutral-200 shadow-sm flex items-center justify-center hover:bg-neutral-50 transition-colors"
+          >
+            <ChevronLeft className="w-4 h-4 text-neutral-600" />
+          </button>
+        )}
+        {currentIndex < maxIndex && (
+          <button
+            onClick={next}
+            aria-label="Next certificates"
+            className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-3 w-8 h-8 rounded-full bg-white border border-neutral-200 shadow-sm flex items-center justify-center hover:bg-neutral-50 transition-colors"
+          >
+            <ChevronRight className="w-4 h-4 text-neutral-600" />
+          </button>
+        )}
+      </div>
+
+      {/* Lightbox - rendered via portal to body */}
+      {lightboxImg && createPortal(
+        <div
+          className="fixed inset-0 z-[9999] bg-black/95 flex items-center justify-center"
+          onClick={closeLightbox}
+        >
+          <div
+            className="relative w-full h-full flex items-center justify-center p-8"
+            onClick={(e) => e.stopPropagation()}
+          >
+            <img
+              src={lightboxImg}
+              alt="Certificate"
+              className={`max-h-[85vh] max-w-[90vw] object-contain transition-transform ${dragging ? "duration-0 cursor-grabbing" : "duration-200 cursor-grab"}`}
+              style={{ transform: `scale(${scale}) translate(${position.x / scale}px, ${position.y / scale}px)` }}
+              draggable={false}
+              onPointerDown={handlePointerDown}
+              onPointerMove={handlePointerMove}
+              onPointerUp={handlePointerUp}
+              onPointerCancel={handlePointerUp}
+            />
+          </div>
+
+          {/* Controls */}
+          <div className="absolute bottom-8 left-1/2 -translate-x-1/2 flex items-center gap-3 bg-black/70 backdrop-blur-md rounded-full px-4 py-2">
+            <button
+              onClick={(e) => { e.stopPropagation(); zoomOut(); }}
+              className="w-8 h-8 rounded-full bg-white/20 text-white flex items-center justify-center hover:bg-white/30 transition-colors text-lg font-bold"
+              aria-label="Zoom out"
+            >
+              −
+            </button>
+            <span className="text-white text-sm min-w-[4rem] text-center">{Math.round(scale * 100)}%</span>
+            <button
+              onClick={(e) => { e.stopPropagation(); zoomIn(); }}
+              className="w-8 h-8 rounded-full bg-white/20 text-white flex items-center justify-center hover:bg-white/30 transition-colors text-lg font-bold"
+              aria-label="Zoom in"
+            >
+              +
+            </button>
+          </div>
+
+          {/* Close button */}
+          <button
+            onClick={closeLightbox}
+            className="absolute top-6 right-6 w-10 h-10 rounded-full bg-white/10 backdrop-blur-sm flex items-center justify-center hover:bg-white/20 transition-colors"
+            aria-label="Close"
+          >
+            <span className="text-white text-xl">✕</span>
+          </button>
+        </div>,
+        document.body
+      )}
+    </>
+  );
+}
 
 function AnimatedMetric({ metric, suffix }: { metric: string; suffix: string }) {
   const ref = useRef<HTMLSpanElement>(null);
@@ -251,7 +415,7 @@ export function TrustEvidence() {
           data-trust-panels
           className="grid grid-cols-1 lg:grid-cols-2 gap-px bg-neutral-200"
         >
-          {/* Certificates */}
+          {/* Certificates Carousel */}
           <div
             data-trust-panel
             className="bg-white p-8 sm:p-10 opacity-0"
@@ -263,39 +427,18 @@ export function TrustEvidence() {
                 </span>
                 <h3 className="text-lg font-medium text-neutral-900 flex items-center gap-2">
                   <Award className="w-4 h-4 text-neutral-400" />
-                  Certified Quality
+                  Certified Quality & Patents
                 </h3>
               </div>
               <span className="type-caption text-neutral-400">
-                ISO 9001 / 14001 / 45001
+                {certificates.length} Certificates
               </span>
             </div>
 
-            <div className="grid grid-cols-2 sm:grid-cols-4 gap-3">
-              {certificates.map((cert) => (
-                <div key={cert.label} className="group/cert">
-                  <div className="relative aspect-[3/4] overflow-hidden rounded-md bg-neutral-50 border border-neutral-100 mb-3">
-                    <Image
-                      src={cert.src}
-                      alt={cert.alt}
-                      fill
-                      sizes="(max-width: 640px) 50vw, 25vw"
-                      className="object-cover group-hover/cert:scale-[1.03] transition-transform duration-500"
-                    />
-                  </div>
-                  <p className="text-xs font-medium text-neutral-900 flex items-center gap-1">
-                    <BadgeCheck className="w-3 h-3 text-neutral-400" />
-                    {cert.label}
-                  </p>
-                  <p className="text-[11px] text-neutral-400 mt-0.5">
-                    {cert.sublabel}
-                  </p>
-                </div>
-              ))}
-            </div>
+            <CertificateCarousel />
 
             <p className="text-xs text-neutral-400 mt-6 leading-relaxed">
-              Scanned certificate copies available upon request.
+              ISO 9001 / ISO 14001 / ISO 45001 certified. 13+ utility model patents.
             </p>
           </div>
 
