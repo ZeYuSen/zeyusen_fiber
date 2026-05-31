@@ -4,28 +4,28 @@ import { useEffect, useRef } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
-import { gsap, ScrollTrigger } from "@/lib/gsap";
+import { gsap } from "@/lib/gsap";
 
 const divisions = [
   {
     id: "carbon",
-    label: "Carbon Fiber Division",
-    headline: "High Performance,\nLightweight Solutions",
+    label: "Carbon Fiber",
+    headline: "High Performance, Lightweight Solutions",
     description:
       "Ultra-lightweight carbon fiber composites for aerospace, motorsport, and advanced manufacturing. From 10g/m² surface mats to complex hybrid structures.",
     image: "/images/carbon-fiber/carbon_bg.webp",
     href: "/carbon-fiber",
-    accent: "text-cyan-600",
+    accentColor: "cyan",
   },
   {
     id: "glass",
-    label: "Glass Fiber Division",
-    headline: "Reliable, Cost-Effective\nReinforcements",
+    label: "Glass Fiber",
+    headline: "Reliable, Cost-Effective Reinforcements",
     description:
-      "Insulation, corrosion-resistant materials for wind energy, construction, and industrial filtration. Tissue mats, woven cloth, and composite reinforcements.",
+      "Corrosion-resistant materials for wind energy, construction, and industrial filtration. Tissue mats, woven cloth, and composite reinforcements.",
     image: "/images/glass-fiber/glass_bg.webp",
     href: "/glass-fiber",
-    accent: "text-emerald-600",
+    accentColor: "emerald",
   },
 ];
 
@@ -37,62 +37,25 @@ export function DivisionsSplit() {
     if (!section) return;
 
     const ctx = gsap.context(() => {
-      const blocks = section.querySelectorAll("[data-division]");
+      const cards = section.querySelectorAll("[data-division-card]");
 
-      blocks.forEach((block) => {
-        const img = block.querySelector("[data-division-img]");
-        const parallax = block.querySelector("[data-division-parallax]");
-        const content = block.querySelector("[data-division-content]");
-        const contentChildren = content?.children;
-
-        if (img) {
-          gsap.fromTo(
-            img,
-            { clipPath: "circle(0% at 50% 50%)" },
-            {
-              clipPath: "circle(75% at 50% 50%)",
-              ease: "none",
-              scrollTrigger: {
-                trigger: block,
-                start: "top 70%",
-                end: "center center",
-                scrub: 0.8,
-              },
-            }
-          );
-        }
-
-        if (parallax) {
-          gsap.to(parallax, {
-            yPercent: -15,
-            ease: "none",
+      cards.forEach((card, i) => {
+        gsap.fromTo(
+          card,
+          { opacity: 0, y: 60 },
+          {
+            opacity: 1,
+            y: 0,
+            duration: 1,
+            delay: i * 0.2,
+            ease: "power3.out",
             scrollTrigger: {
-              trigger: block,
-              start: "top bottom",
-              end: "bottom top",
-              scrub: 0.9,
+              trigger: section,
+              start: "top 75%",
+              once: true,
             },
-          });
-        }
-
-        if (contentChildren) {
-          gsap.fromTo(
-            Array.from(contentChildren),
-            { opacity: 0, y: 40 },
-            {
-              opacity: 1,
-              y: 0,
-              duration: 0.8,
-              stagger: 0.12,
-              ease: "power3.out",
-              scrollTrigger: {
-                trigger: block,
-                start: "40% 70%",
-                once: true,
-              },
-            }
-          );
-        }
+          }
+        );
       });
     }, section);
 
@@ -100,47 +63,49 @@ export function DivisionsSplit() {
   }, []);
 
   return (
-    <section ref={sectionRef} className="bg-white section-padding">
-      <div className="container-wide space-y-32 sm:space-y-48">
-        {divisions.map((div, i) => (
-          <div
-            key={div.id}
-            data-division
-            className={`grid grid-cols-1 lg:grid-cols-5 gap-8 lg:gap-16 items-center ${
-              i % 2 === 1 ? "lg:direction-rtl" : ""
-            }`}
-            style={i % 2 === 1 ? { direction: "rtl" } : undefined}
-          >
-            {/* Image */}
-            <div className="lg:col-span-3 relative aspect-[4/3] overflow-hidden rounded-xl" style={{ direction: "ltr" }}>
-              <div data-division-img className="absolute inset-0 clip-hidden-circle">
-                <div data-division-parallax className="absolute inset-x-0 -top-[15%] -bottom-[15%]">
-                  <Image
-                    src={div.image}
-                    alt={div.label}
-                    fill
-                    className="object-cover"
-                    sizes="(max-width: 1024px) 100vw, 60vw"
-                  />
-                  <div className="absolute inset-0 bg-black/10" />
-                </div>
-              </div>
-            </div>
+    <section ref={sectionRef} className="section-padding bg-white">
+      <div className="container-wide">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
+          {divisions.map((div) => (
+            <Link
+              key={div.id}
+              href={div.href}
+              data-division-card
+              className="group relative overflow-hidden rounded-2xl aspect-[4/3] opacity-0 block"
+            >
+              {/* Background image */}
+              <Image
+                src={div.image}
+                alt={div.label}
+                fill
+                className="object-cover transition-transform duration-700 group-hover:scale-105"
+                sizes="(max-width: 1024px) 100vw, 50vw"
+              />
+              {/* Gradient overlay */}
+              <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent" />
 
-            {/* Content */}
-            <div data-division-content className="lg:col-span-2 space-y-6" style={{ direction: "ltr" }}>
-              <p className={`type-caption ${div.accent} opacity-0`}>{div.label}</p>
-              <h2 className="text-2xl sm:text-3xl font-semibold text-neutral-900 whitespace-pre-line opacity-0">{div.headline}</h2>
-              <p className="text-neutral-500 leading-relaxed opacity-0">{div.description}</p>
-              <Link
-                href={div.href}
-                className={`inline-flex items-center gap-2 text-sm font-medium ${div.accent} hover:gap-3 transition-all duration-300 opacity-0`}
-              >
-                Explore Products <ArrowRight className="w-4 h-4" />
-              </Link>
-            </div>
-          </div>
-        ))}
+              {/* Content */}
+              <div className="absolute inset-0 flex flex-col justify-end p-8 sm:p-10">
+                <p className={`text-xs font-medium uppercase tracking-wider ${
+                  div.accentColor === "cyan" ? "text-cyan-400" : "text-emerald-400"
+                } mb-3`}>
+                  {div.label}
+                </p>
+                <h3 className="text-xl sm:text-2xl font-semibold text-white mb-3">
+                  {div.headline}
+                </h3>
+                <p className="text-sm text-white/70 leading-relaxed max-w-md mb-5">
+                  {div.description}
+                </p>
+                <span className={`inline-flex items-center gap-2 text-sm font-medium ${
+                  div.accentColor === "cyan" ? "text-cyan-400" : "text-emerald-400"
+                } group-hover:gap-3 transition-all duration-300`}>
+                  Explore Products <ArrowRight className="w-4 h-4" />
+                </span>
+              </div>
+            </Link>
+          ))}
+        </div>
       </div>
     </section>
   );
