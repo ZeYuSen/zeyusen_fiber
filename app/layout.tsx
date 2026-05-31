@@ -6,7 +6,7 @@ import { SpeedInsights } from "@vercel/speed-insights/next";
 import "./globals.css";
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
-import { WhatsAppButton } from "@/components/layout/WhatsAppButton";
+import { AIChatWidget } from "@/components/layout/AIChatWidget";
 import { NewTabLinkBehavior } from "@/components/layout/NewTabLinkBehavior";
 import { SmoothScrollProvider } from "@/components/providers/SmoothScroll";
 import { absoluteUrl, siteConfig } from "@/lib/seo";
@@ -112,7 +112,7 @@ export default function RootLayout({
           <NewTabLinkBehavior />
           <main className="flex-1">{children}</main>
           <Footer />
-          <WhatsAppButton />
+          <AIChatWidget />
         </SmoothScrollProvider>
         <Analytics />
         <SpeedInsights />
