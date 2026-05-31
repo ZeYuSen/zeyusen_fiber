@@ -116,6 +116,98 @@ export const glassFiberCategories: ProductCategory[] = [
         ],
         category: "tissue-mat",
       },
+      {
+        slug: "roofing-tissue",
+        name: "Fiberglass Roofing Tissue Mat",
+        description:
+          "Fiberglass roofing tissue mat used as reinforcement material in waterproofing membranes and roofing systems. Compatible with bitumen and asphalt applications.",
+        features: [
+          "Good tensile strength",
+          "Uniform fiber distribution",
+          "Compatible with bitumen/asphalt",
+          "Lightweight reinforcement",
+        ],
+        specs: [
+          { label: "Weight Range", value: "30g - 100g/m²" },
+          { label: "Process", value: "Wet-laid" },
+          { label: "Binder", value: "PVA / Polyester" },
+          { label: "Application", value: "Waterproofing & Roofing" },
+        ],
+        applications: ["Waterproofing Membranes", "Roofing Shingles", "Bitumen-based Systems"],
+        images: [
+          "/images/glass-fiber/01-fiberglass-tissue-mat/01-surface-tissue/50g-blue-surface-tissue-01.jpg",
+        ],
+        category: "tissue-mat",
+      },
+      {
+        slug: "wall-covering",
+        name: "Fiberglass Wall Covering Mat",
+        description:
+          "Fiberglass tissue mat designed for wall covering applications, providing smooth surface finish and dimensional stability for interior wall decoration.",
+        features: [
+          "Smooth surface",
+          "Dimensional stability",
+          "Good adhesion with coatings",
+          "Crack resistance",
+        ],
+        specs: [
+          { label: "Weight Range", value: "50g - 75g/m²" },
+          { label: "Process", value: "Wet-laid" },
+          { label: "Function", value: "Wall Reinforcement" },
+          { label: "Application", value: "Interior Decoration" },
+        ],
+        applications: ["Interior Wall Covering", "Wall Decoration", "Crack Prevention"],
+        images: [
+          "/images/glass-fiber/01-fiberglass-tissue-mat/01-surface-tissue/300g-white-surface-tissue-01.jpg",
+        ],
+        category: "tissue-mat",
+      },
+      {
+        slug: "pipe-wrapping",
+        name: "Glass Fiber Mat for Pipe Wrapping",
+        description:
+          "Glass fiber mat specifically designed for pipe wrapping applications, providing insulation and protection for pipelines in industrial environments.",
+        features: [
+          "Good wrapping conformability",
+          "Thermal insulation properties",
+          "Corrosion resistance",
+          "Lightweight",
+        ],
+        specs: [
+          { label: "Material", value: "E-glass Fiber" },
+          { label: "Process", value: "Wet-laid" },
+          { label: "Function", value: "Insulation & Protection" },
+          { label: "Application", value: "Pipeline Wrapping" },
+        ],
+        applications: ["Pipe Wrapping", "Pipe Insulation", "Pipeline Protection"],
+        images: [
+          "/images/glass-fiber/01-fiberglass-tissue-mat/01-surface-tissue/50g-blue-surface-tissue-02.jpg",
+        ],
+        category: "tissue-mat",
+      },
+      {
+        slug: "battery-separator",
+        name: "Glass Fiber Battery Separator",
+        description:
+          "Glass fiber separator used in AGM/lead-acid batteries as separator material between positive and negative plates, providing electrolyte absorption and ion conductivity.",
+        features: [
+          "High porosity for electrolyte absorption",
+          "Chemical resistance to acid environments",
+          "Good mechanical strength",
+          "Uniform fiber distribution",
+        ],
+        specs: [
+          { label: "Material", value: "E-glass Fiber" },
+          { label: "Process", value: "Wet-laid" },
+          { label: "Function", value: "Ion Conductivity" },
+          { label: "Application", value: "AGM / Lead-acid Batteries" },
+        ],
+        applications: ["AGM Batteries", "Lead-acid Batteries", "Energy Storage"],
+        images: [
+          "/images/glass-fiber/01-fiberglass-tissue-mat/01-surface-tissue/300g-white-surface-tissue-02.jpg",
+        ],
+        category: "tissue-mat",
+      },
     ],
   },
   {

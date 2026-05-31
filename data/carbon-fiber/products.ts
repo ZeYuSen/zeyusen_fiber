@@ -170,6 +170,64 @@ export const carbonFiberCategories: ProductCategory[] = [
         ],
         category: "carbon-fiber-mat",
       },
+      {
+        slug: "surface-mat-30g",
+        name: "Carbon Fiber Surface Mat 30g",
+        description:
+          "30g carbon fiber surface felt with excellent electrical conductivity. Uses fine carbon fiber as raw material, lightweight while maintaining strength, flexible and adaptable to different surface shapes.",
+        features: [
+          "Excellent electrical conductivity",
+          "Low density, high strength",
+          "Lightweight (30g/m²)",
+          "Flexible, adaptable to different shapes",
+          "High recycling value and durability",
+        ],
+        specs: [
+          { label: "Weight", value: "30g/m²" },
+          { label: "Material", value: "Carbon Fiber" },
+          { label: "Function", value: "Conductive, EMI Shielding" },
+          { label: "Application", value: "Electronics, Moulds, Anode Tubes" },
+        ],
+        applications: [
+          "Electrostatic Discharge",
+          "EMI Shielding",
+          "Electronic Equipment Grounding",
+          "Moulds & Anode Tubes",
+        ],
+        images: [
+          "/images/carbon-fiber/05-carbon-fiber-mat/01-carbon-surface-mat-10g/10g-carbon-surface-mat-03.jpg",
+        ],
+        category: "carbon-fiber-mat",
+      },
+      {
+        slug: "fuel-cell-gdl",
+        name: "Carbon Fiber Mat for Hydrogen Fuel Cell GDL",
+        description:
+          "High-performance carbon fiber felt designed specifically for hydrogen fuel cell Gas Diffusion Layer (GDL) applications. Features uniform pore structure, high surface area for fuel diffusion, low resistance and high electrical conductivity.",
+        features: [
+          "Uniform pore shape and high surface area",
+          "Excellent fuel diffusion channels",
+          "Low resistance, high electrical conductivity",
+          "High stress resistance",
+          "Corrosion resistance in acid-base environments",
+          "Long-term stability under high pressure",
+        ],
+        specs: [
+          { label: "Weight", value: "20g / 30g (Grade A)" },
+          { label: "Material", value: "Carbon Fiber" },
+          { label: "Function", value: "Conductive, Gas Diffusion" },
+          { label: "Application", value: "PEMFC Fuel Cells" },
+        ],
+        applications: [
+          "Hydrogen Fuel Cell GDL",
+          "Proton Exchange Membrane Fuel Cells (PEMFC)",
+          "Electrochemical Devices",
+        ],
+        images: [
+          "/images/carbon-fiber/05-carbon-fiber-mat/01-carbon-surface-mat-10g/10g-carbon-surface-mat-04.jpg",
+        ],
+        category: "carbon-fiber-mat",
+      },
     ],
   },
   {
