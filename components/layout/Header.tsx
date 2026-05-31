@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useEffect, useCallback } from "react";
+import { usePathname } from "next/navigation";
 import Link from "next/link";
 import Image from "next/image";
 import { Menu, X, ChevronDown } from "lucide-react";
@@ -23,6 +24,8 @@ export function Header() {
   const [scrolled, setScrolled] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
   const [activeDropdown, setActiveDropdown] = useState<string | null>(null);
+  const pathname = usePathname();
+  const isHome = pathname === "/";
 
   useEffect(() => {
     const handleScroll = () => setScrolled(window.scrollY > 20);
@@ -32,14 +35,20 @@ export function Header() {
 
   const closeMobile = useCallback(() => setMobileOpen(false), []);
 
-  const showSolidBg = scrolled;
+  const showSolidBg = scrolled || !isHome || mobileOpen;
+  const useWhiteText = isHome && !scrolled && !mobileOpen;
+  const textColor = useWhiteText ? "text-white/80" : "text-text-secondary";
+  const textHover = useWhiteText ? "hover:text-white" : "hover:text-text-primary";
+  const logoText = useWhiteText ? "text-white" : "text-text-primary";
 
   return (
     <header
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 border-b ${
-        showSolidBg
-          ? "bg-white/80 backdrop-blur-xl border-black/[0.06] py-3 shadow-sm"
-          : "bg-transparent border-transparent py-5"
+        mobileOpen
+          ? "bg-white border-black/[0.06] py-3 shadow-sm"
+          : showSolidBg
+            ? "bg-white/80 backdrop-blur-xl border-black/[0.06] py-3 shadow-sm"
+            : "bg-transparent border-transparent py-5"
       }`}
     >
       <div className="container-wide">
@@ -54,14 +63,14 @@ export function Header() {
               priority
               className="block h-8 w-8 object-contain"
             />
-            <span className="text-xl font-bold text-text-primary">
+            <span className={`text-xl font-bold ${logoText} transition-colors duration-500`}>
               ZeYuSen
             </span>
           </Link>
 
           {/* Desktop Navigation */}
           <nav className="hidden lg:flex items-center gap-8">
-            <NavLink href="/">Home</NavLink>
+            <NavLink href="/" textColor={textColor} textHover={textHover}>Home</NavLink>
 
             {/* Carbon Fiber Dropdown */}
             <div
@@ -69,7 +78,7 @@ export function Header() {
               onMouseEnter={() => setActiveDropdown("carbon")}
               onMouseLeave={() => setActiveDropdown(null)}
             >
-              <NavLink href="/carbon-fiber" hasDropdown>
+              <NavLink href="/carbon-fiber" hasDropdown textColor={textColor} textHover={textHover}>
                 Carbon Fiber
               </NavLink>
               <div
@@ -110,7 +119,7 @@ export function Header() {
               onMouseEnter={() => setActiveDropdown("glass")}
               onMouseLeave={() => setActiveDropdown(null)}
             >
-              <NavLink href="/glass-fiber" hasDropdown>
+              <NavLink href="/glass-fiber" hasDropdown textColor={textColor} textHover={textHover}>
                 Glass Fiber
               </NavLink>
               <div
@@ -145,10 +154,10 @@ export function Header() {
               </div>
             </div>
 
-            <NavLink href="/applications">Applications</NavLink>
-            <NavLink href="/services">Services</NavLink>
-            <NavLink href="/blog">Blog</NavLink>
-            <NavLink href="/about">About</NavLink>
+            <NavLink href="/applications" textColor={textColor} textHover={textHover}>Applications</NavLink>
+            <NavLink href="/services" textColor={textColor} textHover={textHover}>Services</NavLink>
+            <NavLink href="/blog" textColor={textColor} textHover={textHover}>Blog</NavLink>
+            <NavLink href="/about" textColor={textColor} textHover={textHover}>About</NavLink>
           </nav>
 
           {/* CTA + Mobile Toggle */}
@@ -161,7 +170,7 @@ export function Header() {
             </Link>
             <button
               onClick={() => setMobileOpen(!mobileOpen)}
-              className="lg:hidden p-2 text-text-primary"
+              className={`lg:hidden p-2 ${useWhiteText ? "text-white" : "text-text-primary"} transition-colors duration-500`}
               aria-label="Toggle menu"
             >
               {mobileOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
@@ -172,12 +181,13 @@ export function Header() {
 
       {/* Mobile Menu */}
       <div
-        className={`lg:hidden bg-white overflow-hidden transition-all duration-300 ${
+        className={`lg:hidden bg-white overflow-y-auto transition-all duration-300 ${
           mobileOpen ? "max-h-[80vh] opacity-100" : "max-h-0 opacity-0"
         }`}
       >
         <div className="container-wide">
           <div className="mt-4 border-t border-black/[0.06] py-6 space-y-4">
+            <Link href="/" onClick={closeMobile} className="block text-sm font-medium text-text-primary hover:text-accent-500">Home</Link>
             <div>
               <p className="type-caption text-carbon-accent mb-2">
                 Carbon Fiber
@@ -232,15 +242,19 @@ function NavLink({
   href,
   children,
   hasDropdown = false,
+  textColor = "text-text-secondary",
+  textHover = "hover:text-text-primary",
 }: {
   href: string;
   children: React.ReactNode;
   hasDropdown?: boolean;
+  textColor?: string;
+  textHover?: string;
 }) {
   return (
     <Link
       href={href}
-      className="flex items-center gap-1 text-sm font-medium text-text-secondary hover:text-text-primary transition-colors duration-200"
+      className={`flex items-center gap-1 text-sm font-medium ${textColor} ${textHover} transition-colors duration-500`}
     >
       {children}
       {hasDropdown && <ChevronDown className="w-3.5 h-3.5" />}
