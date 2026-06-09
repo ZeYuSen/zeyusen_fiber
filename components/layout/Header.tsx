@@ -106,7 +106,7 @@ export function Header() {
                     href="/carbon-fiber/products"
                     className="text-sm font-medium text-carbon-accent hover:text-text-primary transition-colors"
                   >
-                    View All →
+                    All Carbon Fiber Products
                   </Link>
                 </div>
                 </div>
@@ -147,7 +147,7 @@ export function Header() {
                     href="/glass-fiber/products"
                     className="text-sm font-medium text-glass-accent hover:text-text-primary transition-colors"
                   >
-                    View All →
+                    All Fiberglass Products
                   </Link>
                 </div>
                 </div>

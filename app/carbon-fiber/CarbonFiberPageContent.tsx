@@ -75,7 +75,7 @@ export default function CarbonFiberPageContent() {
                         {category.description}
                       </p>
                       <span className="inline-flex items-center gap-1 mt-4 text-xs font-medium text-carbon-accent">
-                        View Products{" "}
+                        Browse {category.name}{" "}
                         <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-0.5 transition-transform" />
                       </span>
                     </div>
@@ -88,6 +88,23 @@ export default function CarbonFiberPageContent() {
       </section>
 
       <div className="container-wide"><div className="h-px bg-neutral-100" /></div>
+
+      <section className="py-20">
+        <div className="container-wide max-w-3xl">
+          <h2 className="text-2xl sm:text-3xl font-semibold text-neutral-900">
+            How to Choose the Right Carbon Fiber Format
+          </h2>
+          <p className="mt-4 text-neutral-500 leading-relaxed">
+            Buyers usually narrow carbon fiber selection by process first, then by performance target. Surface mats and veils support conductivity, finish quality, or thin functional layers, while woven cloth and heavier mats are more relevant when structural load, drape, and laminate buildup matter.
+          </p>
+          <p className="mt-4 text-neutral-500 leading-relaxed">
+            If you are sourcing for fuel cells, EMI shielding, pultrusion, or lightweight structural parts, the fastest path is to match the target process, required GSM, and resin compatibility before comparing sample rolls.
+          </p>
+          <p className="mt-4 text-neutral-500 leading-relaxed">
+            Teams evaluating multiple formats typically shortlist a functional surface layer, a structural reinforcement option, and a fallback commercial alternative so sampling can answer both technical fit and supply feasibility.
+          </p>
+        </div>
+      </section>
 
       {/* CTA */}
       <section className="py-24">

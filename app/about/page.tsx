@@ -3,9 +3,9 @@ import AboutPageContent from "./AboutPageContent";
 import { createPageMetadata } from "@/lib/seo";
 
 export const metadata: Metadata = createPageMetadata({
-  title: "About ZeYuSen Fiber",
+  title: "About Our Composite Manufacturing",
   description:
-    "Learn about ZeYuSen Fiber's composite material manufacturing capabilities, carbon fiber and glass fiber product focus, and global service approach.",
+    "Learn about ZeYuSen Fiber's manufacturing footprint, composite material capabilities, quality systems, and global supply support.",
   path: "/about",
 });
 

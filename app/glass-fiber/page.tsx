@@ -4,9 +4,9 @@ import { createPageMetadata } from "@/lib/seo";
 import { faqJsonLd } from "@/lib/jsonld";
 
 export const metadata: Metadata = createPageMetadata({
-  title: "Glass Fiber Materials",
+  title: "Fiberglass Materials Supplier",
   description:
-    "Browse fiberglass tissue mats, woven cloth, composite mats, stitched reinforcements, and specialty glass fiber materials for industrial use.",
+    "Source fiberglass tissue mats, woven fabrics, stitched reinforcements, and specialty glass fiber materials for wind energy, construction, and industrial use.",
   path: "/glass-fiber",
 });
 

@@ -91,9 +91,9 @@ export function DivisionsSplit() {
                 } mb-3`}>
                   {div.label}
                 </p>
-                <h3 className="text-xl sm:text-2xl font-semibold text-white mb-3">
+                <h2 className="text-xl sm:text-2xl font-semibold text-white mb-3">
                   {div.headline}
-                </h3>
+                </h2>
                 <p className="text-sm text-white/70 leading-relaxed max-w-md mb-5">
                   {div.description}
                 </p>

@@ -4,9 +4,9 @@ import { createPageMetadata } from "@/lib/seo";
 import { faqJsonLd } from "@/lib/jsonld";
 
 export const metadata: Metadata = createPageMetadata({
-  title: "Carbon Fiber Materials",
+  title: "Carbon Fiber Materials Supplier",
   description:
-    "Browse carbon fiber mats, woven cloth, hybrid cloth, and raw fiber materials for aerospace, motorsport, defense, and energy applications.",
+    "Source carbon fiber mats, woven cloth, hybrid reinforcements, and raw fiber materials for aerospace, energy, defense, and industrial composite applications.",
   path: "/carbon-fiber",
 });
 

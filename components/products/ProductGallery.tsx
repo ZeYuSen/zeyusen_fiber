@@ -13,6 +13,15 @@ export function ProductGallery({ images, name }: { images: string[]; name: strin
 
   const zoomFactor = 3;
   const lensSize = 50;
+  const lensPercent = lensSize / zoomFactor;
+  const lensLeft = Math.min(
+    Math.max(zoomPosition.x - lensPercent / 2, 0),
+    100 - lensPercent,
+  );
+  const lensTop = Math.min(
+    Math.max(zoomPosition.y - lensPercent / 2, 0),
+    100 - lensPercent,
+  );
 
   const handleMouseMove = (e: React.MouseEvent<HTMLDivElement>) => {
     if (!zoomEnabled || !containerRef.current) return;
@@ -48,6 +57,7 @@ export function ProductGallery({ images, name }: { images: string[]; name: strin
                 src={images[activeIndex]}
                 alt={`${name} - Image ${activeIndex + 1}`}
                 fill
+                quality={68}
                 sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 600px"
                 className="object-cover"
                 priority={activeIndex === 0}
@@ -59,11 +69,10 @@ export function ProductGallery({ images, name }: { images: string[]; name: strin
             <div
               className="absolute border-2 border-carbon-accent/70 bg-carbon-accent/10 pointer-events-none will-change-transform"
               style={{
-                width: `${lensSize / zoomFactor}%`,
-                height: `${lensSize / zoomFactor}%`,
-                left: 0,
-                top: 0,
-                transform: `translate(${Math.min(Math.max((zoomPosition.x / 100) * (containerRef.current?.clientWidth ?? 0) - (containerRef.current?.clientWidth ?? 0) * (lensSize / zoomFactor / 100) / 2, 0), (containerRef.current?.clientWidth ?? 0) * (1 - lensSize / zoomFactor / 100))}px, ${Math.min(Math.max((zoomPosition.y / 100) * (containerRef.current?.clientHeight ?? 0) - (containerRef.current?.clientHeight ?? 0) * (lensSize / zoomFactor / 100) / 2, 0), (containerRef.current?.clientHeight ?? 0) * (1 - lensSize / zoomFactor / 100))}px)`,
+                width: `${lensPercent}%`,
+                height: `${lensPercent}%`,
+                left: `${lensLeft}%`,
+                top: `${lensTop}%`,
               }}
             />
           )}

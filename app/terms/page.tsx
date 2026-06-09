@@ -3,9 +3,9 @@ import { createPageMetadata } from "@/lib/seo";
 import { primaryEmail } from "@/lib/contact";
 
 export const metadata: Metadata = createPageMetadata({
-  title: "Terms of Service",
+  title: "Website Terms of Service",
   description:
-    "Review the terms for using the ZeYuSen Fiber website, requesting product information, and communicating with our team.",
+    "Review the website terms covering product information, quotation requests, business communication, and acceptable use of ZeYuSen Fiber content.",
   path: "/terms",
 });
 
@@ -35,6 +35,18 @@ export default function TermsPage() {
             Submitting an inquiry does not create a binding order. Quotations,
             lead times, samples, and supply terms are confirmed separately through
             direct business communication.
+          </p>
+          <h2 className="text-lg font-semibold text-neutral-900">Intellectual Property</h2>
+          <p>
+            Website text, product photography, diagrams, and downloadable materials
+            are provided for business evaluation and reference. Reuse, republication,
+            or redistribution should be agreed in advance unless otherwise stated.
+          </p>
+          <h2 className="text-lg font-semibold text-neutral-900">Commercial Confirmation</h2>
+          <p>
+            Final pricing, shipping terms, lead times, technical tolerances, and
+            inspection standards are confirmed in quotation documents, samples, or
+            commercial agreements rather than inferred from website summaries alone.
           </p>
           <h2 className="text-lg font-semibold text-neutral-900">Contact</h2>
           <p>

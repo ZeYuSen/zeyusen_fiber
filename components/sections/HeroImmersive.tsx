@@ -28,7 +28,7 @@ export function HeroImmersive() {
   const [current, setCurrent] = useState(0);
   const [isTransitioning, setIsTransitioning] = useState(false);
   const intervalRef = useRef<ReturnType<typeof setInterval> | null>(null);
-  const contentRefs = useRef<(HTMLDivElement | null)[]>([]);
+  const contentRef = useRef<HTMLDivElement>(null);
 
   const goTo = useCallback((index: number) => {
     if (isTransitioning || index === current) return;
@@ -49,7 +49,7 @@ export function HeroImmersive() {
   }, [next]);
 
   useEffect(() => {
-    const el = contentRefs.current[current];
+    const el = contentRef.current;
     if (!el) return;
     const ctx = gsap.context(() => {
       gsap.fromTo(
@@ -60,6 +60,8 @@ export function HeroImmersive() {
     }, el);
     return () => ctx.revert();
   }, [current]);
+
+  const currentSlide = slides[current];
 
   return (
     <section
@@ -78,6 +80,7 @@ export function HeroImmersive() {
             alt={slide.title}
             fill
             priority={i === 0}
+            quality={65}
             className="object-cover"
             sizes="100vw"
           />
@@ -88,35 +91,28 @@ export function HeroImmersive() {
       {/* Content overlay */}
       <div className="relative z-10 h-full flex items-center">
         <div className="w-full px-6 sm:px-10 lg:px-16">
-          {slides.map((slide, i) => (
-            <div
-              key={i}
-              ref={(el) => { contentRefs.current[i] = el; }}
-              className="max-w-2xl"
-              style={{ display: i === current ? "block" : "none" }}
-            >
-              <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white leading-tight">
-                {slide.title}
-              </h1>
-              <p className="text-lg md:text-xl text-white/80 mt-6 max-w-xl">
-                {slide.subtitle}
-              </p>
-              <div className="flex gap-4 mt-10">
-                <Link
-                  href="/contact"
-                  className="px-8 py-3 bg-white text-black font-medium rounded-sm hover:bg-white/90 transition-colors"
-                >
-                  Get a Quote
-                </Link>
-                <Link
-                  href="/about"
-                  className="px-8 py-3 border border-white/60 text-white font-medium rounded-sm hover:bg-white/10 transition-colors"
-                >
-                  Learn More
-                </Link>
-              </div>
+          <div ref={contentRef} className="max-w-2xl">
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white leading-tight">
+              {currentSlide.title}
+            </h1>
+            <p className="text-lg md:text-xl text-white/80 mt-6 max-w-xl">
+              {currentSlide.subtitle}
+            </p>
+            <div className="flex gap-4 mt-10">
+              <Link
+                href="/contact"
+                className="px-8 py-3 bg-white text-black font-medium rounded-sm hover:bg-white/90 transition-colors"
+              >
+                Get a Quote
+              </Link>
+              <Link
+                href="/about"
+                className="px-8 py-3 border border-white/60 text-white font-medium rounded-sm hover:bg-white/10 transition-colors"
+              >
+                About Our Manufacturing
+              </Link>
             </div>
-          ))}
+          </div>
         </div>
       </div>
 

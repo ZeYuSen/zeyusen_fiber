@@ -1,6 +1,6 @@
 ---
-title: "Carbon Fiber Raw Materials: Yarn, Chopped Fiber & Powder for Industrial Applications"
-description: "Source carbon fiber yarn (T300 3K/6K, T700 12K), short cut carbon fiber, and carbon fiber powder for modified plastics, composite reinforcement, and wear-resistant materials. Includes grade comparison and application matching."
+title: "Carbon Fiber Yarn, Chopped Fiber & Powder Guide"
+description: "Compare carbon fiber yarn, chopped fiber, and powder for weaving, molding compounds, wear-resistant materials, and industrial composite applications."
 slug: "carbon-fiber-raw-materials-yarn-powder-chopped"
 date: "2026-05-28"
 tags: ["carbon fiber yarn", "chopped carbon fiber", "carbon fiber powder", "T300", "T700", "carbon fiber raw materials"]
@@ -19,9 +19,9 @@ We manufacture and supply all three carbon fiber raw material formats, enabling 
 
 | Product | Format | Grades Available | Primary Applications |
 |---|---|---|---|
-| [Carbon Fiber Yarn](/carbon-fiber/products) | Continuous tow on bobbin | T300 3K, T300 6K, T700 12K | Weaving, filament winding, pultrusion, braiding |
-| [Short Cut Carbon Fiber](/carbon-fiber/products) | Chopped strands (3–12mm) | Standard modulus | Modified plastics, EMI shielding compounds, BMC/SMC |
-| [Carbon Fiber Powder](/carbon-fiber/products) | Milled fiber (50–200μm) | Standard modulus | Composite filler, friction materials, wear resistance |
+| [Carbon Fiber Yarn](/carbon-fiber/products/carbon-fiber-raw/carbon-yarn) | Continuous tow on bobbin | T300 3K, T300 6K, T700 12K | Weaving, filament winding, pultrusion, braiding |
+| [Short Cut Carbon Fiber](/carbon-fiber/products/carbon-fiber-raw/short-cut-fiber) | Chopped strands (3–12mm) | Standard modulus | Modified plastics, EMI shielding compounds, BMC/SMC |
+| [Carbon Fiber Powder](/carbon-fiber/products/carbon-fiber-raw/carbon-powder) | Milled fiber (50–200μm) | Standard modulus | Composite filler, friction materials, wear resistance |
 
 All products are manufactured from PAN-based (polyacrylonitrile) carbon fiber precursor, ensuring consistent quality and mechanical properties.
 
@@ -230,4 +230,4 @@ Yes. Our T700 12K yarn is specifically suited for filament winding applications 
 
 ## Next Step
 
-Whether you need T300 3K yarn for weaving, T700 12K for filament winding, chopped fiber for injection molding compounds, or milled powder for friction materials — we supply the full range of carbon fiber raw materials. Review the complete [carbon fiber product catalog](/carbon-fiber/products), explore [carbon fiber applications](/applications/carbon), or send your material requirements through the [contact page](/contact). Sample quantities (1–5 kg) available for evaluation within 5–7 business days.
+Whether you need T300 3K yarn for weaving, T700 12K for filament winding, chopped fiber for injection molding compounds, or milled powder for friction materials — we supply the full range of carbon fiber raw materials. Review the complete [carbon fiber product catalog](/carbon-fiber/products), explore [carbon fiber applications](/applications), or send your material requirements through the [contact page](/contact). Sample quantities (1–5 kg) available for evaluation within 5–7 business days.

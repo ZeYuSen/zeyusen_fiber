@@ -33,6 +33,7 @@ export function RelatedProducts({
                     src={product.images[0]}
                     alt={product.name}
                     fill
+                    quality={68}
                     sizes="(max-width: 768px) 50vw, 25vw"
                     className="object-cover group-hover:scale-105 transition-transform duration-500"
                   />

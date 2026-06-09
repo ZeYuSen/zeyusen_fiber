@@ -1,6 +1,6 @@
 ---
-title: "Carbon Fiber Surface Mat & Veil Selection Guide (10g–350g) | Composite Manufacturers"
-description: "Compare carbon fiber surface mat options from 10g veil to 350g needled mat. Covers EMI shielding, fuel cell GDL, wind energy molds, and process matching for composite production."
+title: "Carbon Fiber Surface Mat Selection Guide (10g-350g)"
+description: "Compare 10g to 350g carbon fiber surface mats for EMI shielding, fuel cell GDL, wind energy molds, and structural composite processes."
 slug: "carbon-fiber-surface-mat-selection-guide"
 date: "2026-05-28"
 tags: ["carbon fiber", "surface mat", "carbon veil", "EMI shielding", "composite manufacturing", "carbon fiber mat"]
@@ -37,12 +37,12 @@ We manufacture carbon fiber mat across a wide weight range, each targeting speci
 
 | Product | GSM | Key Features | Primary Applications |
 |---|---|---|---|
-| [Carbon Fiber Surface Mat 10g](/carbon-fiber/products) | 10 g/m² | Ultra-thin, high conformability | Military composites, fuel cell GDL, precision surface layers |
-| [Carbon Fiber Surface Mat 20g](/carbon-fiber/products) | 20 g/m² | Balanced handling and coverage | Electric heating panels, wind turbine mold surfaces |
-| [Nickel-Plated Carbon Fiber Mat](/carbon-fiber/products) | 30 g/m² | Metal-coated for conductivity | EMI shielding, military/defense electronics, aerospace |
-| [Carbon-Glass Hybrid Mat](/carbon-fiber/products) | 30 g/m² | Cost-effective conductivity | Wind energy components, cost-sensitive EMI applications |
-| [Carbon Fiber Composite Mat](/carbon-fiber/products) | 300–320 g/m² | Continuous process compatible | Pultrusion profiles, structural reinforcement |
-| [Carbon Fiber Needled Mat](/carbon-fiber/products) | 350 g/m² | Needle-punched, high strength | High-performance structural parts, thick laminates |
+| [Carbon Fiber Surface Mat 10g](/carbon-fiber/products/carbon-fiber-mat/surface-mat-10g) | 10 g/m² | Ultra-thin, high conformability | Military composites, fuel cell GDL, precision surface layers |
+| [Carbon Fiber Surface Mat 20g](/carbon-fiber/products/carbon-fiber-mat/surface-mat-20g) | 20 g/m² | Balanced handling and coverage | Electric heating panels, wind turbine mold surfaces |
+| [Nickel-Plated Carbon Fiber Mat](/carbon-fiber/products/carbon-fiber-mat/nickel-plated-mat) | 30 g/m² | Metal-coated for conductivity | EMI shielding, military/defense electronics, aerospace |
+| [Carbon-Glass Hybrid Mat](/carbon-fiber/products/carbon-fiber-mat/carbon-glass-hybrid) | 30 g/m² | Cost-effective conductivity | Wind energy components, cost-sensitive EMI applications |
+| [Carbon Fiber Composite Mat](/carbon-fiber/products/carbon-fiber-mat/composite-mat) | 300–320 g/m² | Continuous process compatible | Pultrusion profiles, structural reinforcement |
+| [Carbon Fiber Needled Mat](/carbon-fiber/products/carbon-fiber-mat/needled-mat) | 350 g/m² | Needle-punched, high strength | High-performance structural parts, thick laminates |
 
 This range allows engineers to select from ultra-thin surface veils (10–30g) for functional layers to heavy needled mats (300–350g) for structural reinforcement — all from a single qualified supplier.
 
@@ -93,9 +93,9 @@ If your team is still comparing reinforcement types, the [applications hub](/app
 
 Carbon fiber surface mat is evaluated across our core industries:
 
-- **Military and defense**: EMI shielding enclosures, radar-absorbing structures, conductive composite housings for electronics. Our [nickel-plated carbon mat](/carbon-fiber/products) is specifically developed for military-grade shielding requirements.
+- **Military and defense**: EMI shielding enclosures, radar-absorbing structures, conductive composite housings for electronics. Our [nickel-plated carbon mat](/carbon-fiber/products/carbon-fiber-mat/nickel-plated-mat) is specifically developed for military-grade shielding requirements.
 - **New energy and fuel cells**: Gas diffusion layer (GDL) substrates, bipolar plate reinforcement, and electrode backing materials. The 10g ultra-thin mat provides the porosity and conductivity fuel cells demand.
-- **Wind energy**: Mold surface protection, blade root reinforcement layers, and conductive bonding surfaces. Our [carbon-glass hybrid mat](/carbon-fiber/products) offers cost-effective conductivity for wind turbine components.
+- **Wind energy**: Mold surface protection, blade root reinforcement layers, and conductive bonding surfaces. Our [carbon-glass hybrid mat](/carbon-fiber/products/carbon-fiber-mat/carbon-glass-hybrid) offers cost-effective conductivity for wind turbine components.
 - **Electric heating**: Carbon fiber mat serves as the heating element in composite heating panels — the 20g mat provides uniform resistance heating across large surface areas.
 - **Aerospace and UAV**: Secondary structures, interior panels, and lightning strike protection layers requiring minimal weight addition.
 - **Automotive and motorsports**: Class A surface finish layers, body panel reinforcement, and EMI shielding for EV battery enclosures.
@@ -141,7 +141,7 @@ Buyers sometimes confuse carbon surface mat with other carbon fiber formats. Her
 | Thin woven carbon cloth | 60–200 g/m² | Directional strength, less conformable |
 | Carbon non-crimp fabric | 80–150 g/m² | Stitched, structural, thicker |
 
-If your application needs directional load-bearing capacity, surface mat alone is not sufficient — combine it with structural reinforcement layers such as [carbon fiber twill cloth](/carbon-fiber/products) or [multiaxial fiberglass fabric](/blog/multiaxial-fiberglass-fabric-for-composites).
+If your application needs directional load-bearing capacity, surface mat alone is not sufficient — combine it with structural reinforcement layers such as [carbon fiber twill cloth](/carbon-fiber/products/carbon-fiber-cloth/twill-cloth) or [multiaxial fiberglass fabric](/blog/multiaxial-fiberglass-fabric-for-composites).
 
 ## Questions to Ask Before Requesting a Quote
 
@@ -162,7 +162,7 @@ Clear requirements reduce back-and-forth and help the supplier recommend a reali
 
 ### Is carbon fiber surface mat structural?
 
-At 10–30 g/m², standard surface mat adds minimal mechanical strength — it is primarily a functional layer for surface quality, conductivity, or conformability. However, our heavier carbon fiber mats (300–350g) do provide meaningful structural reinforcement. The [carbon fiber composite mat (300g)](/carbon-fiber/products) is designed specifically for pultrusion structural profiles, and the [needled mat (350g)](/carbon-fiber/products) delivers high interlaminar strength for demanding applications.
+At 10–30 g/m², standard surface mat adds minimal mechanical strength — it is primarily a functional layer for surface quality, conductivity, or conformability. However, our heavier carbon fiber mats (300–350g) do provide meaningful structural reinforcement. The [carbon fiber composite mat (300g)](/carbon-fiber/products/carbon-fiber-mat/composite-mat) is designed specifically for pultrusion structural profiles, and the [needled mat (350g)](/carbon-fiber/products/carbon-fiber-mat/needled-mat) delivers high interlaminar strength for demanding applications.
 
 ### Can surface mat replace woven carbon cloth?
 
@@ -190,4 +190,4 @@ Start with the target area weight, process method, and application. Then contact
 
 ## Next Step
 
-Whether you need ultra-thin 10g carbon veil for fuel cell GDL, nickel-plated mat for military EMI shielding, or 350g needled mat for structural pultrusion — we manufacture the full range. Compare the available [carbon fiber products](/carbon-fiber/products), explore [carbon fiber applications](/applications/carbon), or send your process requirements through the [contact page](/contact). Our technical team can help match mat specifications to your laminate design and manufacturing process. Sample rolls ship within 3–5 business days.
+Whether you need ultra-thin 10g carbon veil for fuel cell GDL, nickel-plated mat for military EMI shielding, or 350g needled mat for structural pultrusion — we manufacture the full range. Compare the available [carbon fiber products](/carbon-fiber/products), explore [carbon fiber applications](/applications), or send your process requirements through the [contact page](/contact). Our technical team can help match mat specifications to your laminate design and manufacturing process. Sample rolls ship within 3–5 business days.

@@ -4,9 +4,9 @@ import { permanentRedirect } from "next/navigation";
 import { ApplicationsPageContent } from "@/components/applications/ApplicationsPageContent";
 
 export const metadata: Metadata = createPageMetadata({
-  title: "Carbon Fiber Applications",
+  title: "Carbon Fiber Application Guide",
   description:
-    "Explore carbon fiber application areas including aerospace, defense, new energy, motorsport, and advanced manufacturing.",
+    "Explore carbon fiber use cases across aerospace, defense, new energy, motorsport, and advanced manufacturing with recommended material paths.",
   path: "/applications",
 });
 

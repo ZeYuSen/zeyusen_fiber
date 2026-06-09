@@ -77,6 +77,9 @@ export default function ContactPageContent() {
               Tell us about your project requirements and our team will respond
               within 24 hours with a tailored solution.
             </p>
+            <p className="text-neutral-500 mt-4 max-w-2xl leading-relaxed">
+              The fastest inquiries include the target material family, application, trial quantity, and any specification constraints such as GSM, width, resin system, or export destination.
+            </p>
           </motion.div>
         </div>
       </section>
@@ -358,6 +361,24 @@ export default function ContactPageContent() {
                     </p>
                   </div>
                 </div>
+              </div>
+
+              <div className="p-6 bg-white border border-neutral-100 rounded-xl shadow-sm">
+                <h2 className="text-sm font-medium text-neutral-900 mb-4">
+                  For Faster Quoting
+                </h2>
+                <p className="text-sm text-neutral-500 leading-relaxed">
+                  Include the product format, target GSM, resin system, width, estimated order volume, and application. That gives the team enough context to recommend the right sample or prepare a faster commercial reply.
+                </p>
+                <ul className="mt-4 space-y-2 text-sm text-neutral-600">
+                  <li>Product family or exact material name</li>
+                  <li>Application or end-use industry</li>
+                  <li>Target weight, width, or construction</li>
+                  <li>Sample need, MOQ expectation, and timeline</li>
+                </ul>
+                <p className="mt-4 text-sm text-neutral-500 leading-relaxed">
+                  If you already have a drawing, laminate schedule, or supplier benchmark, mention it in the message field. That usually leads to a more precise first reply and reduces follow-up rounds.
+                </p>
               </div>
             </motion.div>
           </div>

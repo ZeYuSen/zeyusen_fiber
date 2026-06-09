@@ -1,6 +1,6 @@
 ---
-title: "Multiaxial Fiberglass Fabric (300–1200gsm) | Non-Crimp Reinforcement for Wind Energy & Composites"
-description: "Select multiaxial fiberglass fabric and biaxial stitched mat (300g–1200g) for wind turbine blades, nacelle covers, and structural composites. Includes orientation guide, NCF vs woven comparison, and specification data."
+title: "Multiaxial Fiberglass Fabric Guide (300-1200gsm)"
+description: "Select multiaxial fiberglass fabric and biaxial stitched mats for wind turbine blades, nacelle covers, and structural composites with orientation guidance."
 slug: "multiaxial-fiberglass-fabric-for-composites"
 date: "2026-05-28"
 tags: ["fiberglass", "multiaxial fabric", "non-crimp fabric", "biaxial stitched mat", "wind energy", "structural reinforcement"]
@@ -37,12 +37,12 @@ We manufacture a complete range of stitched fiberglass reinforcements optimized 
 
 | Product | GSM | Orientation | Primary Applications |
 |---|---|---|---|
-| [Multiaxial Fiberglass Fabric](/glass-fiber/products) | 300 g/m² | ±45° biaxial | Wind turbine nacelle covers, lightweight structural shells |
-| [Unidirectional Stitched Mat](/glass-fiber/products) | 450 g/m² | 0° (UD) | Wind energy pultrusion profiles, spar caps |
-| [Biaxial Stitched Mat ±45°](/glass-fiber/products) | 900 g/m² | ±45° | Wind turbine nacelle, torsion-loaded structures |
-| [Biaxial Stitched Mat 0/90°](/glass-fiber/products) | 900 g/m² | 0°/90° | Wind energy panels, balanced in-plane loading |
-| [Grid Stitched Composite Mat](/glass-fiber/products) | 1050 g/m² | Grid pattern | Nacelle covers, large structural panels |
-| [Multiaxial Stitched Mat](/glass-fiber/products) | 1200 g/m² | Quadraxial | Wind turbine blades, high-load structural shells |
+| [Multiaxial Fiberglass Fabric](/glass-fiber/products/fiberglass-cloth/multiaxial) | 300 g/m² | ±45° biaxial | Wind turbine nacelle covers, lightweight structural shells |
+| [Unidirectional Stitched Mat](/glass-fiber/products/composite-mat/unidirectional-450) | 450 g/m² | 0° (UD) | Wind energy pultrusion profiles, spar caps |
+| [Biaxial Stitched Mat ±45°](/glass-fiber/products/composite-mat/biaxial-45) | 900 g/m² | ±45° | Wind turbine nacelle, torsion-loaded structures |
+| [Biaxial Stitched Mat 0/90°](/glass-fiber/products/composite-mat/biaxial-0-90) | 900 g/m² | 0°/90° | Wind energy panels, balanced in-plane loading |
+| [Grid Stitched Composite Mat](/glass-fiber/products/composite-mat/grid-stitched) | 1050 g/m² | Grid pattern | Nacelle covers, large structural panels |
+| [Multiaxial Stitched Mat](/glass-fiber/products/composite-mat/multiaxial-1200) | 1200 g/m² | Quadraxial | Wind turbine blades, high-load structural shells |
 
 All products use E-glass fiber with polyester stitching thread. Custom GSM, width (up to 2500mm), and orientation combinations are available for orders above 500m².
 
@@ -86,10 +86,10 @@ For wind energy application details, visit [glass fiber wind energy applications
 Beyond wind energy, multiaxial fiberglass fabric is used in:
 
 - **Marine**: Hulls, decks, bulkheads, and structural stringers — ±45° for torsion resistance, 0°/90° for panel stiffness.
-- **Transportation**: Truck body panels, rail car components (our [PP Core Sandwich Mat](/glass-fiber/products) is used in high-speed rail), and bus structures.
+- **Transportation**: Truck body panels, rail car components (our [PP Core Sandwich Mat](/glass-fiber/products/composite-mat/pp-core) is used in high-speed rail), and bus structures.
 - **Infrastructure**: Bridge decks, cooling tower panels, and structural profiles.
 - **Industrial**: Pressure vessels, tanks, pipes, and large enclosures.
-- **Pultrusion**: Continuous profiles requiring specific fiber orientation — our [450g UD stitched mat](/glass-fiber/products) is designed specifically for pultrusion processes.
+- **Pultrusion**: Continuous profiles requiring specific fiber orientation — our [450g UD stitched mat](/glass-fiber/products/composite-mat/unidirectional-450) is designed specifically for pultrusion processes.
 - **Building materials**: Cladding panels and structural insulated panels.
 
 For application ideas, visit [glass fiber applications](/applications/glass).

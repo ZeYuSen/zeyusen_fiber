@@ -36,6 +36,20 @@ export default function PrivacyPage() {
             technical communication, and order-related follow-up. We do not sell
             personal information to third parties.
           </p>
+          <h2 className="text-lg font-semibold text-neutral-900">Retention and Protection</h2>
+          <p>
+            Inquiry records are retained only as long as needed for ongoing business
+            communication, quotation follow-up, sample coordination, or compliance
+            with ordinary commercial record-keeping. We use reasonable administrative
+            and technical measures to protect submitted data.
+          </p>
+          <h2 className="text-lg font-semibold text-neutral-900">Cookies and Analytics</h2>
+          <p>
+            The website may use standard analytics and performance tools to understand
+            page usage, inquiry flow, and technical reliability. These tools are used
+            to improve website performance and business communication rather than to
+            build unrelated consumer advertising profiles.
+          </p>
           <h2 className="text-lg font-semibold text-neutral-900">Contact</h2>
           <p>
             For privacy questions or data requests, contact us at

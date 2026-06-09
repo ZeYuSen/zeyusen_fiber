@@ -26,7 +26,7 @@ Surface tissue can help with:
 - Surface uniformity on molded parts.
 - Protective layers in pipes, tanks, panels, and industrial products.
 
-Browse related [glass fiber product categories](/glass-fiber/products) for more reinforcement formats.
+Browse related [surface tissue materials](/glass-fiber/products/tissue-mat/surface-tissue) and [glass fiber product categories](/glass-fiber/products) for more reinforcement formats.
 
 ![White fiberglass tissue for composite surface layers](/images/glass-fiber/01-fiberglass-tissue-mat/01-surface-tissue/300g-white-surface-tissue-01.jpg)
 

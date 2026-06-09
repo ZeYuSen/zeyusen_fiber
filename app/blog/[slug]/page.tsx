@@ -97,7 +97,6 @@ function renderMarkdown(content: string) {
   let blockquote: string[] = [];
   let codeBlock: string[] = [];
   let inCodeBlock = false;
-  let codeLang = "";
 
   const flushParagraph = () => {
     if (!paragraph.length) return;
@@ -144,7 +143,6 @@ function renderMarkdown(content: string) {
       </pre>,
     );
     codeBlock = [];
-    codeLang = "";
   };
 
   const flushTable = () => {
@@ -160,7 +158,10 @@ function renderMarkdown(content: string) {
 
     elements.push(
       <div key={`table-${elements.length}`} className="overflow-x-auto rounded-xl border border-neutral-100">
-        <table className="w-full text-left text-sm">
+        <table
+          className="w-full text-left text-sm"
+          aria-label={`Data table: ${head.join(", ")}`}
+        >
           <thead className="bg-neutral-50 text-neutral-900">
             <tr>{head.map((cell, i) => <th key={i} className="px-4 py-3 font-medium">{renderInline(cell)}</th>)}</tr>
           </thead>
@@ -184,7 +185,7 @@ function renderMarkdown(content: string) {
     flushTable();
   };
 
-  lines.forEach((line) => {
+  lines.forEach((line, lineIndex) => {
     const trimmed = line.trim();
 
     if (trimmed.startsWith("```")) {
@@ -194,7 +195,6 @@ function renderMarkdown(content: string) {
       } else {
         flushAll();
         inCodeBlock = true;
-        codeLang = trimmed.slice(3).trim();
       }
       return;
     }
@@ -234,7 +234,7 @@ function renderMarkdown(content: string) {
       flushParagraph();
       flushList();
       const src = videoMatch[1];
-      const nextCaption = lines[lines.indexOf(line) + 1]?.trim();
+      const nextCaption = lines[lineIndex + 1]?.trim();
       const title = nextCaption && !nextCaption.startsWith("#") && !nextCaption.startsWith("|") ? nextCaption : undefined;
       elements.push(<VideoEmbed key={`video-${elements.length}`} src={src} title={title} />);
       return;
@@ -322,6 +322,15 @@ export default async function BlogArticlePage({ params }: Props) {
   if (!post) notFound();
 
   const hasFAQ = post.faq.length > 0;
+  const relatedPosts = blogPosts
+    .filter((candidate) => candidate.slug !== post.slug)
+    .map((candidate) => ({
+      post: candidate,
+      score: candidate.tags.filter((tag) => post.tags.includes(tag)).length,
+    }))
+    .sort((a, b) => b.score - a.score || b.post.date.localeCompare(a.post.date))
+    .slice(0, 3)
+    .map(({ post: candidate }) => candidate);
 
   return (
     <article className="pt-36 pb-24">
@@ -401,16 +410,41 @@ export default async function BlogArticlePage({ params }: Props) {
             <h1 className="text-3xl sm:text-4xl font-semibold text-neutral-900 leading-tight">
               {post.title}
             </h1>
-            <p className="mt-4 font-mono text-xs text-neutral-400">
-              {post.date}
-              {post.dateModified && post.dateModified !== post.date && ` (Updated: ${post.dateModified})`}
-            </p>
+            <div className="mt-4 flex flex-wrap items-center gap-x-4 gap-y-1 text-xs text-neutral-400">
+              <span>By ZeYuSen Fiber Technical Team</span>
+              <time dateTime={post.date}>Published {post.date}</time>
+              {post.dateModified && post.dateModified !== post.date && (
+                <time dateTime={post.dateModified}>Updated {post.dateModified}</time>
+              )}
+            </div>
             <p className="mt-6 text-lg leading-relaxed text-neutral-500">{post.excerpt}</p>
 
             {/* Article Body */}
             <div className="mt-10 space-y-5 text-sm">
               {renderMarkdown(post.content)}
             </div>
+
+            {relatedPosts.length > 0 && (
+              <section className="mt-12 rounded-2xl border border-neutral-100 bg-white p-6">
+                <h2 className="text-lg font-semibold text-neutral-900">Related Guides</h2>
+                <div className="mt-4 grid gap-3 sm:grid-cols-3">
+                  {relatedPosts.map((relatedPost) => (
+                    <Link
+                      key={relatedPost.slug}
+                      href={`/blog/${relatedPost.slug}`}
+                      className="rounded-xl border border-neutral-100 bg-neutral-50 p-4 transition-colors hover:border-neutral-200"
+                    >
+                      <p className="text-xs uppercase tracking-[0.12em] text-neutral-400">
+                        {relatedPost.tags[0] ?? "Guide"}
+                      </p>
+                      <h3 className="mt-2 text-sm font-medium leading-snug text-neutral-900">
+                        {relatedPost.title}
+                      </h3>
+                    </Link>
+                  ))}
+                </div>
+              </section>
+            )}
 
             {/* FAQ Accordion */}
             <FAQAccordion items={post.faq} />

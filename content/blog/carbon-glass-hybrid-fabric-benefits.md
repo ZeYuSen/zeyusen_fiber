@@ -1,6 +1,6 @@
 ---
-title: "Carbon Glass Hybrid Fabric (30g–240gsm) | Cost-Effective Carbon Fiber Alternative"
-description: "Compare carbon glass hybrid woven cloth (200-240g) and hybrid mat (30g) for wind energy, automotive, and industrial composites. Covers carbon/glass ratio selection, cost savings vs full carbon, and specification guide."
+title: "Carbon-Glass Hybrid Fabric Guide (30g-240gsm)"
+description: "Compare carbon-glass hybrid cloth and hybrid mat for wind energy, automotive, and industrial composites, including ratio selection and cost tradeoffs."
 slug: "carbon-glass-hybrid-fabric-benefits"
 date: "2026-05-28"
 tags: ["carbon fiber", "glass fiber", "hybrid fabric", "carbon glass hybrid cloth", "hybrid composite mat", "wind energy"]

@@ -13,6 +13,9 @@ export function AuthorSignature() {
         />
       </div>
       <div>
+        <p className="text-[11px] font-medium uppercase tracking-[0.14em] text-neutral-400">
+          Author
+        </p>
         <p className="text-sm font-semibold text-neutral-900">
           ZeYuSen Fiber Technical Team
         </p>

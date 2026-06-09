@@ -5,7 +5,6 @@ import { createPortal } from "react-dom";
 import Image from "next/image";
 import {
   Award,
-  BadgeCheck,
   ChevronLeft,
   ChevronRight,
   FileCheck2,
@@ -167,6 +166,7 @@ function CertificateCarousel() {
                     alt={cert.alt}
                     fill
                     sizes="(max-width: 640px) 50vw, 33vw"
+                    quality={55}
                     className="object-contain p-1 group-hover/cert:scale-[1.03] transition-transform duration-500"
                   />
                 </div>
@@ -204,9 +204,13 @@ function CertificateCarousel() {
             className="relative w-full h-full flex items-center justify-center p-8"
             onClick={(e) => e.stopPropagation()}
           >
-            <img
+            <Image
               src={lightboxImg}
               alt="Certificate"
+              width={1200}
+              height={1600}
+              sizes="90vw"
+              unoptimized
               className={`max-h-[85vh] max-w-[90vw] object-contain transition-transform ${dragging ? "duration-0 cursor-grabbing" : "duration-200 cursor-grab"}`}
               style={{ transform: `scale(${scale}) translate(${position.x / scale}px, ${position.y / scale}px)` }}
               draggable={false}

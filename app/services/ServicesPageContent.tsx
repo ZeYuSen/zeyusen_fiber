@@ -128,6 +128,9 @@ export default function ServicesPageContent() {
               From custom R&D to fast global delivery — a complete service
               ecosystem built around your success.
             </p>
+            <p className="text-neutral-500 mt-4 max-w-2xl leading-relaxed">
+              Whether you are validating a sample, qualifying a new supplier, or scaling a repeat order, the service workflow is built to reduce technical uncertainty and speed up procurement decisions.
+            </p>
           </motion.div>
         </div>
       </section>

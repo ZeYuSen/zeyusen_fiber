@@ -230,14 +230,14 @@ export const glassFiberCategories2: ProductCategory[] = [
     slug: "chopped-strand-mat",
     name: "Chopped Strand Mat",
     description:
-      "Glass fiber chopped strand mat with randomly distributed fibers for hand lay-up and mechanical molding processes. Widely used in automotive, marine, and construction.",
+      "Glass fiber chopped strand mat with random fiber distribution for hand lay-up, open molding, automotive, marine, and construction laminates.",
     image: "/images/glass-fiber/04-chopped-strand-mat/300g-chopped-strand-mat-01.jpg",
     products: [
       {
         slug: "chopped-strand-mat",
         name: "Chopped Strand Mat",
         description:
-          "Standard chopped strand mat made from continuous glass fiber precursor chopped to 5cm length, uniformly distributed without direction. Compatible with hand lay-up and mechanical molding.",
+          "Standard chopped strand mat with random fiber distribution for hand lay-up, open molding, and general fiberglass laminate production.",
         features: [
           "Random fiber distribution",
           "5cm chopped length",
@@ -266,7 +266,7 @@ export const glassFiberCategories2: ProductCategory[] = [
     slug: "other-materials",
     name: "Other Fiber Materials",
     description:
-      "Specialty fiber materials including basalt fiber, polyester mat, pre-oxidized fiber, high silica, and E-glass needled mats for specialized industrial applications.",
+      "Specialty fiber materials including basalt mats, pre-oxidized fiber, high-silica options, and needled mats for demanding industrial applications.",
     image: "/images/glass-fiber/07-other-fiber/01-basalt-mat/30g-basalt-mat-01.jpg",
     products: [
       {

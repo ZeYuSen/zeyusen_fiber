@@ -75,7 +75,7 @@ export default function GlassFiberPageContent() {
                         {category.description}
                       </p>
                       <span className="inline-flex items-center gap-1 mt-4 text-xs font-medium text-glass-accent">
-                        View Products{" "}
+                        Browse {category.name}{" "}
                         <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-0.5 transition-transform" />
                       </span>
                     </div>
@@ -88,6 +88,20 @@ export default function GlassFiberPageContent() {
       </section>
 
       <div className="container-wide"><div className="h-px bg-neutral-100" /></div>
+
+      <section className="py-20">
+        <div className="container-wide max-w-3xl">
+          <h2 className="text-2xl sm:text-3xl font-semibold text-neutral-900">
+            How to Choose the Right Fiberglass Material
+          </h2>
+          <p className="mt-4 text-neutral-500 leading-relaxed">
+            Fiberglass selection is usually driven by laminate process, surface requirement, and target load path. Tissue mats are useful for finish and barrier layers, woven cloth supports balanced reinforcement, and stitched composite mats are better suited to structural shells, wind energy parts, and transportation panels.
+          </p>
+          <p className="mt-4 text-neutral-500 leading-relaxed">
+            When requesting a quote, include the target GSM, resin system, width, and end-use environment. That narrows the material family quickly and reduces back-and-forth during sampling.
+          </p>
+        </div>
+      </section>
 
       {/* CTA */}
       <section className="py-24">

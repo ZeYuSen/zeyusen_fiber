@@ -5,9 +5,9 @@ import Image from "next/image";
 import { allGlassFiberCategories } from "@/data/glass-fiber";
 
 export const metadata: Metadata = createPageMetadata({
-  title: "Glass Fiber Product Catalog",
+  title: "Fiberglass Catalog",
   description:
-    "Browse fiberglass tissue mats, woven fabrics, stitched mats, chopped strand mats, and specialty glass fiber products.",
+    "Browse fiberglass tissue mats, woven fabrics, stitched reinforcements, chopped strand mats, and specialty materials with technical data.",
   path: "/glass-fiber/products",
 });
 
@@ -42,7 +42,7 @@ export default function GlassProductsPage() {
                   href={`/glass-fiber/products/${category.slug}`}
                   className="text-xs font-medium text-glass-accent hover:text-neutral-900 transition-colors"
                 >
-                  View All →
+                  View all {category.name}
                 </Link>
               </div>
               <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4">

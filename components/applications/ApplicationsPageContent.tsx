@@ -161,6 +161,20 @@ export function ApplicationsPageContent({
           </div>
         </div>
       </section>
+
+      <section className="pb-24">
+        <div className="container-wide max-w-3xl">
+          <h2 className="text-2xl sm:text-3xl font-semibold text-neutral-900">
+            Use This Hub to Match Material, Process, and End Use
+          </h2>
+          <p className="mt-4 text-neutral-500 leading-relaxed">
+            These application pages are designed for procurement teams, engineers, and composite manufacturers comparing material families before requesting samples. Start with the use case, then move into the matching product category so your quote request is grounded in a real process requirement rather than a generic material name.
+          </p>
+          <p className="mt-4 text-neutral-500 leading-relaxed">
+            If your project spans multiple processes or you are deciding between carbon fiber and fiberglass, open the product catalog from the selected material family and compare weights, constructions, and likely application fit before contacting the team.
+          </p>
+        </div>
+      </section>
     </>
   );
 }

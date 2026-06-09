@@ -16,7 +16,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const category = allGlassFiberCategories.find((c) => c.slug === slug);
   if (!category) return {};
   return createPageMetadata({
-    title: `${category.name} Products`,
+    title: `${category.name} Supplier`,
     description: category.description,
     path: `/glass-fiber/products/${category.slug}`,
     image: category.image,

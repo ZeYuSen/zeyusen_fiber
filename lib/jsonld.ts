@@ -91,11 +91,26 @@ export function productJsonLd({
     image: absoluteUrl(image),
     category,
     url: absoluteUrl(path),
+    brand: {
+      "@type": "Brand",
+      name: "ZeYuSen Fiber",
+    },
     manufacturer: {
       "@type": "Organization",
       name: "ZeYuSen Fiber",
       url: absoluteUrl("/"),
     },
+    audience: {
+      "@type": "BusinessAudience",
+      audienceType: "B2B buyers, distributors, and composite manufacturers",
+    },
+    additionalProperty: [
+      {
+        "@type": "PropertyValue",
+        name: "Sales model",
+        value: "Request a quote",
+      },
+    ],
   };
 }
 

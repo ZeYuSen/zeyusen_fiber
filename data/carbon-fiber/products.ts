@@ -5,7 +5,7 @@ export const carbonFiberCategories: ProductCategory[] = [
     slug: "carbon-fiber-mat",
     name: "Carbon Fiber Mat",
     description:
-      "High-performance carbon fiber mats with excellent conductivity, thermal resistance, and corrosion resistance. Carbon content exceeds 90%, suitable for military, fuel cell, and industrial applications.",
+      "High-performance carbon fiber mats for conductivity, thermal resistance, and corrosion-sensitive composite applications in fuel cells, defense, and industry.",
     image: "/images/carbon-fiber/05-carbon-fiber-mat/01-carbon-surface-mat-10g/10g-carbon-surface-mat-01.jpg",
     products: [
       {
@@ -91,7 +91,7 @@ export const carbonFiberCategories: ProductCategory[] = [
         slug: "carbon-glass-hybrid",
         name: "Carbon-Glass Hybrid Mat",
         description:
-          "30g/m² carbon-glass hybrid mat combining the conductivity of carbon fiber with the cost-effectiveness of glass fiber. Ideal for electric heating and wind energy applications.",
+          "30g/m² carbon-glass hybrid mat balancing conductivity, cost, and process flexibility for electric heating and wind energy applications.",
         features: [
           "Carbon-glass hybrid structure",
           "Cost-effective conductivity",
@@ -369,7 +369,7 @@ export const carbonFiberCategories: ProductCategory[] = [
         slug: "carbon-yarn",
         name: "Carbon Fiber Yarn",
         description:
-          "Carbon fiber yarn spun from short carbon fibers, available in T300 3K/6K and T700 12K specifications. Used for structural reinforcement, textile, and conductive applications.",
+          "Carbon fiber yarn in T300 3K/6K and T700 12K formats for structural reinforcement, weaving, filament winding, and conductive applications.",
         features: [
           "T300 and T700 grades available",
           "3K, 6K, 12K specifications",

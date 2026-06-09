@@ -5,9 +5,9 @@ import { DivisionsSplit } from "@/components/sections/DivisionsSplit";
 import { createPageMetadata } from "@/lib/seo";
 
 export const metadata: Metadata = createPageMetadata({
-  title: "ZeYuSen Fiber | Carbon Fiber & Glass Fiber Composite Materials Manufacturer",
+  title: "ZeYuSen Fiber | Carbon Fiber & Glass Fiber Manufacturer",
   description:
-    "Leading manufacturer of carbon fiber mats, glass fiber fabrics, and composite reinforcements for aerospace, wind energy, construction, and advanced manufacturing. Custom solutions from 10g/m² to 600g/m².",
+    "Carbon fiber mats, fiberglass fabrics, composite reinforcements, and custom material solutions for aerospace, wind energy, construction, and manufacturing.",
   path: "/",
 });
 

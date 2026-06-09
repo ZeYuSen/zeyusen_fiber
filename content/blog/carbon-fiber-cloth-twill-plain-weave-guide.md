@@ -1,6 +1,6 @@
 ---
-title: "Carbon Fiber Cloth (200g Twill & Plain Weave) | 3K Woven Fabric Selection Guide"
-description: "Compare 200g carbon fiber twill cloth vs plain weave fabric for automotive, aerospace, and industrial composites. Covers T300 3K specifications, drape characteristics, resin compatibility, and sourcing tips."
+title: "200g Carbon Fiber Cloth: Twill vs Plain Weave Guide"
+description: "Compare 200g carbon fiber twill and plain weave cloth for automotive, aerospace, and industrial composites, including drape, T300 3K specs, and resin fit."
 slug: "carbon-fiber-cloth-twill-plain-weave-guide"
 date: "2026-05-28"
 tags: ["carbon fiber cloth", "carbon fiber fabric", "twill weave", "plain weave", "3K carbon fiber", "woven carbon fiber"]
@@ -21,8 +21,8 @@ We manufacture carbon fiber woven cloth in two standard constructions, both usin
 
 | Product | GSM | Weave | Tow Size | Key Characteristics |
 |---|---|---|---|---|
-| [Carbon Fiber Twill Cloth](/carbon-fiber/products) | 200 g/m² | 2×2 Twill | 3K T300 | Superior drape, diagonal pattern, premium appearance |
-| [Carbon Fiber Plain Cloth](/carbon-fiber/products) | 200 g/m² | Plain (1×1) | 3K T300 | Maximum stability, balanced strength, flat surface |
+| [Carbon Fiber Twill Cloth](/carbon-fiber/products/carbon-fiber-cloth/twill-cloth) | 200 g/m² | 2×2 Twill | 3K T300 | Superior drape, diagonal pattern, premium appearance |
+| [Carbon Fiber Plain Cloth](/carbon-fiber/products/carbon-fiber-cloth/plain-cloth) | 200 g/m² | Plain (1×1) | 3K T300 | Maximum stability, balanced strength, flat surface |
 
 Both products use Toray T300-grade carbon fiber (tensile modulus 230 GPa, tensile strength 3530 MPa) — the industry standard for structural composite reinforcement. Standard roll widths are 1000mm and 1270mm.
 
@@ -99,7 +99,7 @@ Best for: Flat panels, tubes, simple geometries, structural applications where s
 - Racing yacht components
 - Hydrofoil structures
 
-For application-specific guidance, visit [carbon fiber applications](/applications/carbon).
+For application-specific guidance, visit [carbon fiber applications](/applications).
 
 ## Processing Guide
 
@@ -157,7 +157,7 @@ Yes. At 200g/m² with T300 fiber, each ply provides meaningful structural reinfo
 
 ### What is the difference between T300 and T700 carbon fiber?
 
-T300 (tensile modulus 230 GPa, strength 3530 MPa) is the standard-modulus grade used in most composite applications. T700 (tensile modulus 230 GPa, strength 4900 MPa) offers ~40% higher tensile strength at higher cost. Our woven cloth uses T300 — suitable for the vast majority of structural and decorative applications. For T700 requirements, we offer [carbon fiber yarn](/carbon-fiber/products) in 12K format.
+T300 (tensile modulus 230 GPa, strength 3530 MPa) is the standard-modulus grade used in most composite applications. T700 (tensile modulus 230 GPa, strength 4900 MPa) offers ~40% higher tensile strength at higher cost. Our woven cloth uses T300 — suitable for the vast majority of structural and decorative applications. For T700 requirements, we offer [carbon fiber yarn](/carbon-fiber/products/carbon-fiber-raw/carbon-yarn) in 12K format.
 
 ### How much does carbon fiber cloth cost compared to fiberglass?
 
@@ -173,4 +173,4 @@ Dry (non-prepreg) carbon fiber cloth stored in sealed polyethylene packaging at 
 
 ## Next Step
 
-Whether you need 200g twill cloth for visible automotive panels or plain weave for structural flat laminates — we manufacture both in T300 3K format with standard stock availability. Compare the full [carbon fiber product range](/carbon-fiber/products), explore [carbon fiber applications](/applications/carbon), or send your specifications through the [contact page](/contact). Sample rolls (10–50m) ship within 3–5 business days to most countries.
+Whether you need 200g twill cloth for visible automotive panels or plain weave for structural flat laminates — we manufacture both in T300 3K format with standard stock availability. Compare the full [carbon fiber product range](/carbon-fiber/products), explore [carbon fiber applications](/applications), or send your specifications through the [contact page](/contact). Sample rolls (10–50m) ship within 3–5 business days to most countries.

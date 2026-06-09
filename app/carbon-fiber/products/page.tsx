@@ -5,9 +5,9 @@ import Image from "next/image";
 import { allCarbonFiberCategories } from "@/data/carbon-fiber";
 
 export const metadata: Metadata = createPageMetadata({
-  title: "Carbon Fiber Product Catalog",
+  title: "Carbon Fiber Catalog",
   description:
-    "Browse carbon fiber mats, cloth, hybrid reinforcements, yarns, and raw fiber products for composite manufacturing applications.",
+    "Browse carbon fiber mats, cloth, hybrid reinforcements, yarns, and raw material formats with technical data for composite manufacturing.",
   path: "/carbon-fiber/products",
 });
 
@@ -29,6 +29,9 @@ export default function CarbonProductsPage() {
           <p className="text-neutral-500 mt-3 max-w-2xl leading-relaxed">
             High-performance carbon fiber materials for aerospace, motorsport, military, and advanced manufacturing.
           </p>
+          <p className="text-neutral-500 mt-4 max-w-3xl leading-relaxed">
+            Use this catalog to compare carbon fiber mats, woven cloth, and raw material formats by product family before moving into individual product pages for specifications, applications, and inquiry flow.
+          </p>
         </div>
       </section>
 
@@ -42,7 +45,7 @@ export default function CarbonProductsPage() {
                   href={`/carbon-fiber/products/${category.slug}`}
                   className="text-xs font-medium text-carbon-accent hover:text-neutral-900 transition-colors"
                 >
-                  View All →
+                  View all {category.name}
                 </Link>
               </div>
               <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
@@ -73,6 +76,20 @@ export default function CarbonProductsPage() {
               </div>
             </div>
           ))}
+        </div>
+      </section>
+
+      <section className="pb-24">
+        <div className="container-wide max-w-3xl">
+          <h2 className="text-2xl font-semibold text-neutral-900">
+            Use This Catalog to Shortlist the Right Carbon Fiber Format
+          </h2>
+          <p className="mt-4 text-neutral-500 leading-relaxed">
+            Start with the product family that matches your manufacturing process, then open the detailed product page for target GSM, application fit, and inquiry context. Surface mats are usually evaluated for conductivity and finish layers, woven cloth for directional reinforcement, and raw materials for weaving, winding, and compounding workflows.
+          </p>
+          <p className="mt-4 text-neutral-500 leading-relaxed">
+            If you are still comparing options, review the [carbon fiber surface mat guide](/blog/carbon-fiber-surface-mat-selection-guide) and the [carbon fiber cloth selection guide](/blog/carbon-fiber-cloth-twill-plain-weave-guide) before requesting samples.
+          </p>
         </div>
       </section>
     </>
