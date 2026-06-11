@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import Image from "next/image";
-import { motion } from "framer-motion";
+import Link from "next/link";
 import { Award, Factory, Globe, Users } from "lucide-react";
 import { contactInfo } from "@/lib/contact";
 
@@ -48,15 +48,6 @@ const values = [
   },
 ];
 
-const fadeUp = {
-  hidden: { opacity: 0, y: 20 },
-  visible: (i: number) => ({
-    opacity: 1,
-    y: 0,
-    transition: { duration: 0.5, delay: i * 0.08 },
-  }),
-};
-
 const factoryGallery = {
   production: [
     { src: "/images/factory/production/0_0006_productionprocesses5-1.jpg", alt: "Production line - fiber laying" },
@@ -98,12 +89,7 @@ function FactorySection() {
   return (
     <section className="py-24">
       <div className="container-wide">
-        <motion.div
-          initial={{ opacity: 0, y: 16 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.5 }}
-        >
+        <div>
           <p className="type-caption text-neutral-400">Factory Tour</p>
           <h2 className="text-2xl sm:text-3xl font-semibold text-neutral-900 mt-3">
             Our Manufacturing Facility
@@ -112,7 +98,7 @@ function FactorySection() {
             80,000 m² standardized factory across two production bases in Nantong and Taizhou,
             equipped with automated production lines, advanced testing equipment, and dedicated R&D centers.
           </p>
-        </motion.div>
+        </div>
 
         {/* Tabs */}
         <div className="flex flex-wrap gap-2 mt-10 mb-8">
@@ -134,11 +120,8 @@ function FactorySection() {
         {/* Gallery Grid */}
         <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-3">
           {images.map((img, i) => (
-            <motion.div
+            <div
               key={`${activeTab}-${i}`}
-              initial={{ opacity: 0, scale: 0.95 }}
-              animate={{ opacity: 1, scale: 1 }}
-              transition={{ duration: 0.3, delay: i * 0.05 }}
               className="relative aspect-[4/3] overflow-hidden rounded-lg bg-neutral-100 group"
             >
               <Image
@@ -149,7 +132,7 @@ function FactorySection() {
                 className="object-cover group-hover:scale-105 transition-transform duration-500"
               />
               <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-colors duration-300" />
-            </motion.div>
+            </div>
           ))}
         </div>
 
@@ -181,11 +164,7 @@ export default function AboutPageContent() {
       {/* Page Header */}
       <section className="pt-36 pb-16">
         <div className="container-wide">
-          <motion.div
-            initial={{ opacity: 0, y: 16 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5 }}
-          >
+          <div>
             <p className="type-caption text-neutral-400">About Us</p>
             <h1 className="text-3xl sm:text-4xl font-semibold text-neutral-900 mt-3">
               Composite Materials Expert Since 2015
@@ -195,7 +174,7 @@ export default function AboutPageContent() {
 	              production, and sales of high-performance carbon fiber and fiberglass
 	              composite materials, based in Nantong, Jiangsu Province, China.
 	            </p>
-          </motion.div>
+          </div>
         </div>
       </section>
 
@@ -203,12 +182,7 @@ export default function AboutPageContent() {
       <section className="pb-24">
         <div className="container-wide">
           <div className="grid lg:grid-cols-2 gap-12 lg:gap-20">
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5 }}
-            >
+            <div>
               <p className="text-lg text-neutral-700 leading-relaxed">
                 Founded in September 2015, ZeYuSen Fiber operates from dual production
                 bases in Nantong and Taizhou, Jiangsu Province, with technical partnerships
@@ -216,24 +190,38 @@ export default function AboutPageContent() {
                 and multiple universities.
               </p>
               <p className="text-neutral-500 leading-relaxed mt-5">
-                Our product portfolio spans from ultra-thin 10g/m² carbon fiber
-                surface mats to heavy-duty 1200g/m² multiaxial composite
-                reinforcements. We serve customers across wind energy, aerospace,
+                Our product portfolio spans from ultra-thin 10g/m²{" "}
+                <Link
+                  href="/carbon-fiber"
+                  className="text-carbon-accent hover:text-neutral-900 underline underline-offset-2 transition-colors"
+                >
+                  carbon fiber surface mats
+                </Link>{" "}
+                to heavy-duty 1200g/m²{" "}
+                <Link
+                  href="/glass-fiber"
+                  className="text-glass-accent hover:text-neutral-900 underline underline-offset-2 transition-colors"
+                >
+                  multiaxial composite reinforcements
+                </Link>
+                . We serve customers across wind energy, aerospace,
                 construction, automotive, military, hydrogen fuel cells, and new energy
                 sectors worldwide. Full customization of weight, width, binder type,
                 and fiber orientation is available.
               </p>
               <p className="text-neutral-500 leading-relaxed mt-5">
                 With 10% of our staff dedicated to R&D and two research centers,
-                we combine wet-laid, dry-laid, and weaving processes to deliver
-                diversified solutions for complex composite applications.
+                we combine wet-laid, dry-laid, and weaving processes to deliver{" "}
+                <Link
+                  href="/services"
+                  className="text-neutral-700 hover:text-neutral-900 underline underline-offset-2 transition-colors"
+                >
+                  diversified solutions and customization services
+                </Link>{" "}
+                for complex composite applications.
               </p>
-            </motion.div>
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: 0.1 }}
+            </div>
+            <div
               className="grid grid-cols-2 gap-4"
             >
               {[
@@ -254,7 +242,7 @@ export default function AboutPageContent() {
                   </p>
                 </div>
               ))}
-            </motion.div>
+            </div>
           </div>
         </div>
       </section>
@@ -269,27 +257,17 @@ export default function AboutPageContent() {
       {/* Values */}
       <section className="py-24">
         <div className="container-wide">
-          <motion.div
-            initial={{ opacity: 0, y: 16 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.5 }}
-          >
+          <div>
             <p className="type-caption text-neutral-400">Why Choose Us</p>
             <h2 className="text-2xl sm:text-3xl font-semibold text-neutral-900 mt-3">
               Built on Trust & Precision
             </h2>
-          </motion.div>
+          </div>
 
           <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-5 mt-12">
-            {values.map((item, i) => (
-              <motion.div
+            {values.map((item) => (
+              <div
                 key={item.title}
-                custom={i}
-                initial="hidden"
-                whileInView="visible"
-                viewport={{ once: true }}
-                variants={fadeUp}
                 className="p-6 bg-neutral-50 border border-neutral-100 rounded-lg hover:border-neutral-200 transition-colors"
               >
                 <item.icon className={`w-5 h-5 ${item.iconColor}`} />
@@ -299,7 +277,7 @@ export default function AboutPageContent() {
                 <p className="text-neutral-500 mt-2 text-sm leading-relaxed">
                   {item.description}
                 </p>
-              </motion.div>
+              </div>
             ))}
           </div>
         </div>
@@ -310,26 +288,17 @@ export default function AboutPageContent() {
       {/* Timeline */}
       <section className="py-24">
         <div className="container-wide">
-          <motion.div
-            initial={{ opacity: 0, y: 16 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.5 }}
-          >
+          <div>
             <p className="type-caption text-neutral-400">Our Journey</p>
             <h2 className="text-2xl sm:text-3xl font-semibold text-neutral-900 mt-3">
               Milestones
             </h2>
-          </motion.div>
+          </div>
 
           <div className="mt-12 max-w-xl">
             {milestones.map((item, i) => (
-              <motion.div
+              <div
                 key={item.year}
-                initial={{ opacity: 0, x: -16 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.4, delay: i * 0.08 }}
                 className="flex items-start gap-6 pb-8 last:pb-0 relative"
               >
                 {i < milestones.length - 1 && (
@@ -342,7 +311,7 @@ export default function AboutPageContent() {
                   <div className="w-2 h-2 rounded-full bg-gradient-to-br from-carbon-accent to-glass-accent" />
                 </div>
                 <p className="text-neutral-600 text-sm pt-0.5">{item.event}</p>
-              </motion.div>
+              </div>
             ))}
           </div>
         </div>

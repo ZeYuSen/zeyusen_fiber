@@ -1,10 +1,8 @@
 "use client";
 
-import { useEffect, useRef } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
-import { gsap } from "@/lib/gsap";
 
 const divisions = [
   {
@@ -30,48 +28,15 @@ const divisions = [
 ];
 
 export function DivisionsSplit() {
-  const sectionRef = useRef<HTMLElement>(null);
-
-  useEffect(() => {
-    const section = sectionRef.current;
-    if (!section) return;
-
-    const ctx = gsap.context(() => {
-      const cards = section.querySelectorAll("[data-division-card]");
-
-      cards.forEach((card, i) => {
-        gsap.fromTo(
-          card,
-          { opacity: 0, y: 60 },
-          {
-            opacity: 1,
-            y: 0,
-            duration: 1,
-            delay: i * 0.2,
-            ease: "power3.out",
-            scrollTrigger: {
-              trigger: section,
-              start: "top 75%",
-              once: true,
-            },
-          }
-        );
-      });
-    }, section);
-
-    return () => ctx.revert();
-  }, []);
-
   return (
-    <section ref={sectionRef} className="section-padding bg-white">
+    <section className="section-padding bg-white">
       <div className="container-wide">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
           {divisions.map((div) => (
             <Link
               key={div.id}
               href={div.href}
-              data-division-card
-              className="group relative overflow-hidden rounded-2xl aspect-[4/3] opacity-0 block"
+              className="group relative overflow-hidden rounded-2xl aspect-[4/3] block"
             >
               {/* Background image */}
               <Image

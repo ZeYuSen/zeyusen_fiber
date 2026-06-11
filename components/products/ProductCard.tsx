@@ -1,8 +1,5 @@
-"use client";
-
 import Image from "next/image";
 import Link from "next/link";
-import { motion } from "framer-motion";
 import { ArrowRight } from "lucide-react";
 import { Product } from "@/types/product";
 
@@ -16,12 +13,7 @@ export function ProductCard({
   accentColor?: string;
 }) {
   return (
-    <motion.div
-      initial={{ opacity: 0, y: 20 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true }}
-      transition={{ duration: 0.5 }}
-    >
+    <div>
       <Link
         href={`${basePath}/${product.slug}`}
         className="group block h-full"
@@ -60,6 +52,6 @@ export function ProductCard({
           </div>
         </div>
       </Link>
-    </motion.div>
+    </div>
   );
 }

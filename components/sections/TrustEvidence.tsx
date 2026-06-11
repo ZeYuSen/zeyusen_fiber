@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useRef, useState, useCallback } from "react";
+import { useRef, useState, useCallback } from "react";
 import { createPortal } from "react-dom";
 import Image from "next/image";
 import {
@@ -13,7 +13,6 @@ import {
   Ship,
   Truck,
 } from "lucide-react";
-import { gsap } from "@/lib/gsap";
 
 const trustMetrics = [
   {
@@ -256,127 +255,29 @@ function CertificateCarousel() {
 }
 
 function AnimatedMetric({ metric, suffix }: { metric: string; suffix: string }) {
-  const ref = useRef<HTMLSpanElement>(null);
-  const [value, setValue] = useState(0);
-  const target = parseInt(metric, 10);
-
-  useEffect(() => {
-    const el = ref.current;
-    if (!el) return;
-
-    const obj = { val: 0 };
-    const ctx = gsap.context(() => {
-      gsap.to(obj, {
-        val: target,
-        duration: 2,
-        ease: "power2.out",
-        scrollTrigger: { trigger: el, start: "top 85%", once: true },
-        onUpdate: () => setValue(Math.round(obj.val)),
-      });
-    }, el);
-
-    return () => ctx.revert();
-  }, [target]);
-
   return (
-    <span ref={ref} className="tabular-nums">
-      {value}
+    <span className="tabular-nums">
+      {metric}
       {suffix}
     </span>
   );
 }
 
 export function TrustEvidence() {
-  const sectionRef = useRef<HTMLElement>(null);
-
-  useEffect(() => {
-    const section = sectionRef.current;
-    if (!section) return;
-
-    const ctx = gsap.context(() => {
-      const heading = section.querySelector("[data-trust-heading]");
-      if (heading) {
-        gsap.fromTo(
-          heading,
-          { clipPath: "inset(0 100% 0 0)" },
-          {
-            clipPath: "inset(0 0% 0 0)",
-            duration: 1.2,
-            ease: "power3.out",
-            scrollTrigger: { trigger: heading, start: "top 85%", once: true },
-          }
-        );
-      }
-
-      const support = section.querySelector("[data-trust-support]");
-      if (support) {
-        gsap.fromTo(
-          support,
-          { opacity: 0, y: 30 },
-          {
-            opacity: 1,
-            y: 0,
-            duration: 0.8,
-            ease: "power3.out",
-            scrollTrigger: { trigger: support, start: "top 85%", once: true },
-          }
-        );
-      }
-
-      gsap.fromTo(
-        section.querySelectorAll("[data-trust-metric]"),
-        { opacity: 0, y: 50 },
-        {
-          opacity: 1,
-          y: 0,
-          duration: 0.8,
-          stagger: 0.15,
-          ease: "power3.out",
-          scrollTrigger: {
-            trigger: section.querySelector("[data-trust-metrics]"),
-            start: "top 80%",
-            once: true,
-          },
-        }
-      );
-
-      gsap.fromTo(
-        section.querySelectorAll("[data-trust-panel]"),
-        { opacity: 0, y: 30 },
-        {
-          opacity: 1,
-          y: 0,
-          duration: 0.8,
-          stagger: 0.12,
-          ease: "power3.out",
-          scrollTrigger: {
-            trigger: section.querySelector("[data-trust-panels]"),
-            start: "top 80%",
-            once: true,
-          },
-        }
-      );
-    }, section);
-
-    return () => ctx.revert();
-  }, []);
-
   return (
-    <section ref={sectionRef} className="bg-white section-padding">
+    <section className="bg-white section-padding">
       <div className="container-wide">
         {/* Header */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16 mb-24">
           <h2
-            data-trust-heading
-            className="text-2xl sm:text-3xl font-semibold text-neutral-900 clip-hidden-left"
+            className="text-2xl sm:text-3xl font-semibold text-neutral-900"
           >
             Every claim,
             <br />
             verifiable.
           </h2>
           <p
-            data-trust-support
-            className="text-neutral-500 leading-relaxed self-end opacity-0"
+            className="text-neutral-500 leading-relaxed self-end"
           >
             Certifications, R&D capability, logistics infrastructure, and order
             support — documented and ready for your review before you place a
@@ -386,14 +287,12 @@ export function TrustEvidence() {
 
         {/* Metrics row */}
         <div
-          data-trust-metrics
           className="grid grid-cols-1 md:grid-cols-3 gap-px bg-neutral-200 mb-px"
         >
           {trustMetrics.map((item) => (
             <div
               key={item.number}
-              data-trust-metric
-              className="bg-white p-8 sm:p-10 opacity-0"
+              className="bg-white p-8 sm:p-10"
             >
               <span className="font-mono text-xs text-neutral-400 block mb-6">
                 {item.number}
@@ -416,13 +315,11 @@ export function TrustEvidence() {
 
         {/* Detail panels */}
         <div
-          data-trust-panels
           className="grid grid-cols-1 lg:grid-cols-2 gap-px bg-neutral-200"
         >
           {/* Certificates Carousel */}
           <div
-            data-trust-panel
-            className="bg-white p-8 sm:p-10 opacity-0"
+            className="bg-white p-8 sm:p-10"
           >
             <div className="flex items-baseline justify-between mb-8">
               <div>
@@ -448,8 +345,7 @@ export function TrustEvidence() {
 
           {/* Logistics + Support */}
           <div
-            data-trust-panel
-            className="bg-white p-8 sm:p-10 opacity-0"
+            className="bg-white p-8 sm:p-10"
           >
             <div className="flex items-baseline justify-between mb-8">
               <div>

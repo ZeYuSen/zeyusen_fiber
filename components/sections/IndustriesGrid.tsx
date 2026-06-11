@@ -1,9 +1,7 @@
 "use client";
 
-import { useEffect, useRef } from "react";
 import { ArrowRight } from "lucide-react";
 import Link from "next/link";
-import { gsap } from "@/lib/gsap";
 
 const industries = [
   {
@@ -39,57 +37,10 @@ const industries = [
 ];
 
 export function IndustriesGrid() {
-  const sectionRef = useRef<HTMLElement>(null);
-
-  useEffect(() => {
-    const section = sectionRef.current;
-    if (!section) return;
-
-    const ctx = gsap.context(() => {
-      const heading = section.querySelector("[data-heading]");
-      if (heading) {
-        gsap.fromTo(
-          heading,
-          { clipPath: "inset(0 100% 0 0)" },
-          {
-            clipPath: "inset(0 0% 0 0)",
-            duration: 1.2,
-            ease: "power3.out",
-            scrollTrigger: {
-              trigger: heading,
-              start: "top 85%",
-              once: true,
-            },
-          }
-        );
-      }
-
-      const rows = section.querySelectorAll("[data-industry-row]");
-      gsap.fromTo(
-        rows,
-        { opacity: 0, x: 40 },
-        {
-          opacity: 1,
-          x: 0,
-          duration: 0.7,
-          stagger: 0.08,
-          ease: "power3.out",
-          scrollTrigger: {
-            trigger: section.querySelector("[data-industry-list]"),
-            start: "top 80%",
-            once: true,
-          },
-        }
-      );
-    }, section);
-
-    return () => ctx.revert();
-  }, []);
-
   return (
-    <section ref={sectionRef} className="bg-white section-padding">
+    <section className="bg-white section-padding">
       <div className="container-wide">
-        <h2 data-heading className="text-2xl sm:text-3xl font-semibold text-neutral-900 mb-20 clip-hidden-left">
+        <h2 className="text-2xl sm:text-3xl font-semibold text-neutral-900 mb-20">
           Industries We Serve
         </h2>
 
@@ -98,8 +49,7 @@ export function IndustriesGrid() {
             <Link
               key={industry.title}
               href={industry.href}
-              data-industry-row
-              className="group block border-t border-neutral-100 py-6 sm:py-8 opacity-0"
+              className="group block border-t border-neutral-100 py-6 sm:py-8"
             >
               <div className="flex items-center justify-between gap-4">
                 <div className="flex items-baseline gap-6 sm:gap-10">

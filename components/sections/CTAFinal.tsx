@@ -1,44 +1,15 @@
 "use client";
 
-import { useEffect, useRef, useState } from "react";
+import { useRef, useState } from "react";
 import { ArrowRight } from "lucide-react";
-import { gsap } from "@/lib/gsap";
 import { Turnstile, type TurnstileInstance } from "@marsidev/react-turnstile";
 
 export function CTAFinal() {
-  const sectionRef = useRef<HTMLElement>(null);
   const [email, setEmail] = useState("");
   const [message, setMessage] = useState("");
   const [status, setStatus] = useState<"idle" | "sending" | "sent" | "error">("idle");
   const [turnstileToken, setTurnstileToken] = useState<string | null>(null);
   const turnstileRef = useRef<TurnstileInstance>(null);
-
-  useEffect(() => {
-    const section = sectionRef.current;
-    if (!section) return;
-
-    const ctx = gsap.context(() => {
-      const elements = section.querySelectorAll("[data-cta-reveal]");
-      gsap.fromTo(
-        elements,
-        { opacity: 0, y: 40 },
-        {
-          opacity: 1,
-          y: 0,
-          duration: 0.8,
-          stagger: 0.12,
-          ease: "power3.out",
-          scrollTrigger: {
-            trigger: section,
-            start: "top 70%",
-            once: true,
-          },
-        }
-      );
-    }, section);
-
-    return () => ctx.revert();
-  }, []);
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -72,32 +43,32 @@ export function CTAFinal() {
   };
 
   return (
-    <section ref={sectionRef} className="relative bg-neutral-50 section-padding overflow-hidden">
+    <section className="relative bg-neutral-50 section-padding overflow-hidden">
       {/* Subtle gradient accent */}
       <div className="absolute inset-0 opacity-10">
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] rounded-full bg-gradient-to-br from-cyan-500/20 via-transparent to-emerald-500/20 animate-[gradient-rotate_20s_linear_infinite]" />
       </div>
 
       <div className="relative z-10 container-wide max-w-[800px] text-center">
-        <h2 data-cta-reveal className="text-2xl sm:text-3xl font-semibold text-neutral-900 opacity-0">
+        <h2 className="text-2xl sm:text-3xl font-semibold text-neutral-900">
           Let&apos;s Build Something
           <br />
           Together
         </h2>
-        <p data-cta-reveal className="text-neutral-500 mt-6 leading-relaxed opacity-0">
+        <p className="text-neutral-500 mt-6 leading-relaxed">
           Tell us your requirements. Our engineers will provide a tailored
           recommendation within 24 hours.
         </p>
 
         {status === "sent" ? (
-          <div data-cta-reveal className="mt-12 p-6 border border-emerald-500/30 rounded-lg opacity-0">
+          <div className="mt-12 p-6 border border-emerald-500/30 rounded-lg">
             <p className="text-emerald-600 font-medium">
               Thank you! We&apos;ll be in touch within 24 hours.
             </p>
           </div>
         ) : (
           <form onSubmit={handleSubmit} className="mt-12 space-y-4">
-            <div data-cta-reveal className="opacity-0">
+            <div>
               <label htmlFor="quick-inquiry-email" className="sr-only">
                 Email address
               </label>
@@ -112,7 +83,7 @@ export function CTAFinal() {
                 className="w-full px-5 py-4 bg-white border border-neutral-200 rounded-lg text-neutral-900 placeholder:text-neutral-400 focus:outline-none focus:border-neutral-400 transition-colors"
               />
             </div>
-            <div data-cta-reveal className="opacity-0">
+            <div>
               <label htmlFor="quick-inquiry-message" className="sr-only">
                 Project requirements
               </label>
@@ -127,7 +98,7 @@ export function CTAFinal() {
                 className="w-full px-5 py-4 bg-white border border-neutral-200 rounded-lg text-neutral-900 placeholder:text-neutral-400 focus:outline-none focus:border-neutral-400 transition-colors resize-none"
               />
             </div>
-            <div data-cta-reveal className="opacity-0">
+            <div>
               {process.env.NEXT_PUBLIC_TURNSTILE_SITE_KEY && (
                 <div className="flex justify-center mb-4">
                   <Turnstile

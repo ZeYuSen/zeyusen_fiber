@@ -1,6 +1,5 @@
 "use client";
 
-import { motion } from "framer-motion";
 import Link from "next/link";
 import {
   ArrowRight,
@@ -100,26 +99,13 @@ const steps = [
   { step: "04", title: "Delivery", desc: "Fast global shipping from our export-ready facilities." },
 ];
 
-const fadeUp = {
-  hidden: { opacity: 0, y: 20 },
-  visible: (i: number) => ({
-    opacity: 1,
-    y: 0,
-    transition: { duration: 0.5, delay: i * 0.08 },
-  }),
-};
-
 export default function ServicesPageContent() {
   return (
     <>
       {/* Page Header */}
       <section className="pt-36 pb-16">
         <div className="container-wide">
-          <motion.div
-            initial={{ opacity: 0, y: 16 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5 }}
-          >
+          <div>
             <p className="type-caption text-neutral-400">Services</p>
             <h1 className="text-3xl sm:text-4xl font-semibold text-neutral-900 mt-3">
               Our Services
@@ -129,9 +115,23 @@ export default function ServicesPageContent() {
               ecosystem built around your success.
             </p>
             <p className="text-neutral-500 mt-4 max-w-2xl leading-relaxed">
-              Whether you are validating a sample, qualifying a new supplier, or scaling a repeat order, the service workflow is built to reduce technical uncertainty and speed up procurement decisions.
+              Whether you are validating a sample, qualifying a new supplier, or scaling a repeat order, the service workflow is built to reduce technical uncertainty and speed up procurement decisions across our{" "}
+              <Link
+                href="/carbon-fiber"
+                className="text-carbon-accent hover:text-neutral-900 underline underline-offset-2 transition-colors"
+              >
+                carbon fiber
+              </Link>{" "}
+              and{" "}
+              <Link
+                href="/glass-fiber"
+                className="text-glass-accent hover:text-neutral-900 underline underline-offset-2 transition-colors"
+              >
+                glass fiber
+              </Link>{" "}
+              product lines.
             </p>
-          </motion.div>
+          </div>
         </div>
       </section>
 
@@ -140,14 +140,9 @@ export default function ServicesPageContent() {
         <div className="container-wide">
           <h2 className="sr-only">Service Capabilities</h2>
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-5">
-            {services.map((service, i) => (
-              <motion.div
+            {services.map((service) => (
+              <div
                 key={service.title}
-                custom={i}
-                initial="hidden"
-                whileInView="visible"
-                viewport={{ once: true }}
-                variants={fadeUp}
                 className="p-6 bg-neutral-50 border border-neutral-100 rounded-lg hover:border-neutral-200 transition-colors"
               >
                 <service.icon className={`w-5 h-5 ${service.iconColor}`} />
@@ -168,7 +163,7 @@ export default function ServicesPageContent() {
                     </li>
                   ))}
                 </ul>
-              </motion.div>
+              </div>
             ))}
           </div>
         </div>
@@ -179,27 +174,17 @@ export default function ServicesPageContent() {
       {/* Process */}
       <section className="py-24">
         <div className="container-wide">
-          <motion.div
-            initial={{ opacity: 0, y: 16 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.5 }}
-          >
+          <div>
             <p className="type-caption text-neutral-400">Process</p>
             <h2 className="text-2xl sm:text-3xl font-semibold text-neutral-900 mt-3">
               How We Work With You
             </h2>
-          </motion.div>
+          </div>
 
           <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-5 mt-12">
-            {steps.map((item, i) => (
-              <motion.div
+            {steps.map((item) => (
+              <div
                 key={item.step}
-                custom={i}
-                initial="hidden"
-                whileInView="visible"
-                viewport={{ once: true }}
-                variants={fadeUp}
                 className="p-6 bg-neutral-50 border border-neutral-100 rounded-lg"
               >
                 <span className="text-3xl font-light text-neutral-200">
@@ -209,7 +194,7 @@ export default function ServicesPageContent() {
                   {item.title}
                 </h3>
                 <p className="text-neutral-500 text-sm mt-2">{item.desc}</p>
-              </motion.div>
+              </div>
             ))}
           </div>
         </div>

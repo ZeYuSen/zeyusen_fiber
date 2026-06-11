@@ -1,19 +1,9 @@
 "use client";
 
-import { motion } from "framer-motion";
 import Link from "next/link";
 import Image from "next/image";
 import { ArrowRight } from "lucide-react";
 import { allCarbonFiberCategories } from "@/data/carbon-fiber";
-
-const fadeUp = {
-  hidden: { opacity: 0, y: 20 },
-  visible: (i: number) => ({
-    opacity: 1,
-    y: 0,
-    transition: { duration: 0.5, delay: i * 0.08 },
-  }),
-};
 
 export default function CarbonFiberPageContent() {
   return (
@@ -21,11 +11,7 @@ export default function CarbonFiberPageContent() {
       {/* Page Header */}
       <section className="pt-36 pb-16">
         <div className="container-wide">
-          <motion.div
-            initial={{ opacity: 0, y: 16 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5 }}
-          >
+          <div>
             <p className="type-caption text-carbon-accent">
               Carbon Fiber Division
             </p>
@@ -36,7 +22,7 @@ export default function CarbonFiberPageContent() {
               Lightweight, ultra-strong carbon fiber solutions for aerospace,
               motorsport, military defense, and advanced manufacturing industries.
             </p>
-          </motion.div>
+          </div>
         </div>
       </section>
 
@@ -45,15 +31,8 @@ export default function CarbonFiberPageContent() {
         <div className="container-wide">
           <h2 className="type-caption text-neutral-400 mb-8">Product Categories</h2>
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
-            {allCarbonFiberCategories.map((category, i) => (
-              <motion.div
-                key={category.slug}
-                custom={i}
-                initial="hidden"
-                whileInView="visible"
-                viewport={{ once: true }}
-                variants={fadeUp}
-              >
+            {allCarbonFiberCategories.map((category) => (
+              <div key={category.slug}>
                 <Link
                   href={`/carbon-fiber/products/${category.slug}`}
                   className="group block h-full"
@@ -81,7 +60,7 @@ export default function CarbonFiberPageContent() {
                     </div>
                   </div>
                 </Link>
-              </motion.div>
+              </div>
             ))}
           </div>
         </div>

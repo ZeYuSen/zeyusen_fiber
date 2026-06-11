@@ -1,8 +1,3 @@
-"use client";
-
-import { useEffect, useRef } from "react";
-import { gsap } from "@/lib/gsap";
-
 const capabilities = [
   {
     number: "01",
@@ -22,83 +17,17 @@ const capabilities = [
 ];
 
 export function WhyPartnerNew() {
-  const sectionRef = useRef<HTMLElement>(null);
-
-  useEffect(() => {
-    const section = sectionRef.current;
-    if (!section) return;
-
-    const ctx = gsap.context(() => {
-      const headline = section.querySelector("[data-why-headline]");
-      if (headline) {
-        gsap.fromTo(
-          headline,
-          { clipPath: "inset(0 100% 0 0)" },
-          {
-            clipPath: "inset(0 0% 0 0)",
-            duration: 1.4,
-            ease: "power3.out",
-            scrollTrigger: {
-              trigger: headline,
-              start: "top 80%",
-              once: true,
-            },
-          }
-        );
-      }
-
-      const support = section.querySelector("[data-why-support]");
-      if (support) {
-        gsap.fromTo(
-          support,
-          { opacity: 0, y: 30 },
-          {
-            opacity: 1,
-            y: 0,
-            duration: 0.8,
-            ease: "power3.out",
-            scrollTrigger: {
-              trigger: support,
-              start: "top 85%",
-              once: true,
-            },
-          }
-        );
-      }
-
-      const blocks = section.querySelectorAll("[data-capability]");
-      gsap.fromTo(
-        blocks,
-        { opacity: 0, y: 50 },
-        {
-          opacity: 1,
-          y: 0,
-          duration: 0.8,
-          stagger: 0.15,
-          ease: "power3.out",
-          scrollTrigger: {
-            trigger: section.querySelector("[data-capabilities]"),
-            start: "top 80%",
-            once: true,
-          },
-        }
-      );
-    }, section);
-
-    return () => ctx.revert();
-  }, []);
-
   return (
-    <section ref={sectionRef} className="bg-neutral-50 section-padding">
+    <section className="bg-neutral-50 section-padding">
       <div className="container-wide">
         {/* Header */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16 mb-24">
-          <h2 data-why-headline className="text-2xl sm:text-3xl font-semibold text-neutral-900 clip-hidden-left">
+          <h2 className="text-2xl sm:text-3xl font-semibold text-neutral-900">
             Precision at
             <br />
             every scale.
           </h2>
-          <p data-why-support className="text-neutral-500 leading-relaxed self-end opacity-0">
+          <p className="text-neutral-500 leading-relaxed self-end">
             With 15+ years of manufacturing expertise and partnerships with
             leading research institutions, we deliver composite materials that
             meet the most demanding specifications — on time, every time.
@@ -106,12 +35,11 @@ export function WhyPartnerNew() {
         </div>
 
         {/* Capabilities */}
-        <div data-capabilities className="grid grid-cols-1 md:grid-cols-3 gap-px bg-neutral-200">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-px bg-neutral-200">
           {capabilities.map((cap) => (
             <div
               key={cap.number}
-              data-capability
-              className="bg-neutral-50 p-8 sm:p-10 opacity-0"
+              className="bg-neutral-50 p-8 sm:p-10"
             >
               <span className="font-mono text-xs text-neutral-400 block mb-4">
                 {cap.number}

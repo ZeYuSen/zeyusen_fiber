@@ -1,7 +1,6 @@
 "use client";
 
 import { useState, useRef } from "react";
-import { motion } from "framer-motion";
 import { Send, MessageCircle, Mail, MapPin } from "lucide-react";
 import { contactInfo, whatsappPhone } from "@/lib/contact";
 import { Turnstile, type TurnstileInstance } from "@marsidev/react-turnstile";
@@ -62,42 +61,30 @@ export default function ContactPageContent() {
   return (
     <>
       {/* Page Header */}
-      <section className="pt-36 pb-16">
+      <section className="pt-28 pb-6">
         <div className="container-wide">
-          <motion.div
-            initial={{ opacity: 0, y: 16 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5 }}
-          >
+          <div>
             <p className="type-caption text-neutral-400">Contact</p>
-            <h1 className="text-3xl sm:text-4xl font-semibold text-neutral-900 mt-3">
+            <h1 className="text-2xl sm:text-3xl font-semibold text-neutral-900 mt-2">
               Get in Touch
             </h1>
-            <p className="text-neutral-500 mt-4 max-w-xl leading-relaxed">
+            <p className="text-sm text-neutral-500 mt-2 max-w-xl leading-relaxed">
               Tell us about your project requirements and our team will respond
               within 24 hours with a tailored solution.
             </p>
-            <p className="text-neutral-500 mt-4 max-w-2xl leading-relaxed">
-              The fastest inquiries include the target material family, application, trial quantity, and any specification constraints such as GSM, width, resin system, or export destination.
-            </p>
-          </motion.div>
+          </div>
         </div>
       </section>
 
       {/* Form + Sidebar */}
-      <section className="pb-24">
+      <section className="pb-16">
         <div className="container-wide">
-          <div className="grid lg:grid-cols-3 gap-10">
+          <div className="grid lg:grid-cols-3 gap-8">
             {/* Form */}
-            <motion.div
-              className="lg:col-span-2"
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: 0.1 }}
-            >
+            <div className="lg:col-span-2">
               <form
                 onSubmit={handleSubmit}
-                className="p-8 bg-white border border-neutral-100 rounded-xl shadow-sm"
+                className="p-6 bg-white border border-neutral-100 rounded-xl shadow-sm"
               >
                 <div className="grid sm:grid-cols-2 gap-4">
                   <div>
@@ -201,7 +188,7 @@ export default function ContactPageContent() {
                     </select>
                   </div>
                 </div>
-                <div className="mt-4">
+                <div className="mt-3">
                   <label htmlFor="product_interest" className="block text-xs font-medium text-neutral-600 mb-1.5">
                     Product of Interest
                   </label>
@@ -217,7 +204,7 @@ export default function ContactPageContent() {
                     placeholder="e.g., Carbon Fiber Surface Mat 10g"
                   />
                 </div>
-                <div className="mt-4">
+                <div className="mt-3">
                   <label htmlFor="message" className="block text-xs font-medium text-neutral-600 mb-1.5">
                     Message *
                   </label>
@@ -225,7 +212,7 @@ export default function ContactPageContent() {
                     id="message"
                     name="message"
                     required
-                    rows={5}
+                    rows={4}
                     value={formData.message}
                     onChange={(e) =>
                       setFormData({ ...formData, message: e.target.value })
@@ -235,7 +222,7 @@ export default function ContactPageContent() {
                   />
                 </div>
                 {process.env.NEXT_PUBLIC_TURNSTILE_SITE_KEY && (
-                  <div className="mt-4">
+                  <div className="mt-3">
                     <Turnstile
                       ref={turnstileRef}
                       siteKey={process.env.NEXT_PUBLIC_TURNSTILE_SITE_KEY}
@@ -247,7 +234,7 @@ export default function ContactPageContent() {
                 <button
                   type="submit"
                   disabled={status === "sending" || (!!process.env.NEXT_PUBLIC_TURNSTILE_SITE_KEY && !turnstileToken)}
-                  className="mt-6 inline-flex items-center gap-2 px-7 py-3 bg-accent-500 hover:bg-accent-600 disabled:opacity-50 text-white text-sm font-semibold rounded-full transition-colors cursor-pointer"
+                  className="mt-5 inline-flex items-center gap-2 px-7 py-3 bg-accent-500 hover:bg-accent-600 disabled:opacity-50 text-white text-sm font-semibold rounded-full transition-colors cursor-pointer"
                 >
                   <Send className="w-4 h-4" />
                   {status === "sending" ? "Sending..." : "Send Inquiry"}
@@ -264,15 +251,10 @@ export default function ContactPageContent() {
                   </p>
                 )}
               </form>
-            </motion.div>
+            </div>
 
             {/* Sidebar */}
-            <motion.div
-              className="space-y-5"
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: 0.2 }}
-            >
+            <div className="space-y-5">
               <div className="p-6 bg-white border border-neutral-100 rounded-xl shadow-sm">
                 <h2 className="text-sm font-medium text-neutral-900 mb-4">
                   Contact Info
@@ -323,9 +305,14 @@ export default function ContactPageContent() {
                     <MapPin className="w-4 h-4 text-glass-accent mt-0.5" />
                     <div>
                       <p className="text-xs uppercase tracking-wider text-neutral-400">Address</p>
-                      <p className="text-sm text-neutral-700">
+                      <a
+                        href={`https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(contactInfo.address)}&hl=en`}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="block text-sm text-neutral-700 hover:text-neutral-900 transition-colors"
+                      >
                         {contactInfo.address}
-                      </p>
+                      </a>
                     </div>
                   </div>
                 </div>
@@ -380,7 +367,7 @@ export default function ContactPageContent() {
                   If you already have a drawing, laminate schedule, or supplier benchmark, mention it in the message field. That usually leads to a more precise first reply and reduces follow-up rounds.
                 </p>
               </div>
-            </motion.div>
+            </div>
           </div>
         </div>
       </section>

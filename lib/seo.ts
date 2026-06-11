@@ -8,7 +8,9 @@ export const siteConfig = {
   title: "ZeYuSen Fiber | Engineered Fiber Solutions",
   description:
     "Carbon fiber and glass fiber composite materials for aerospace, wind energy, construction, transportation, and advanced manufacturing applications.",
-  ogImage: "/logo.png",
+  ogImage: "/images/hero/banner4.jpg",
+  ogImageWidth: 1740,
+  ogImageHeight: 650,
 };
 
 export function absoluteUrl(path = "/") {
@@ -30,6 +32,17 @@ export function createPageMetadata({
 }): Metadata {
   const url = absoluteUrl(path);
   const imageUrl = absoluteUrl(image);
+  // Only declare dimensions for the default OG image; product/article images
+  // vary in size, so let platforms read their actual dimensions.
+  const isDefaultImage = image === siteConfig.ogImage;
+  const ogImage = isDefaultImage
+    ? {
+        url: imageUrl,
+        width: siteConfig.ogImageWidth,
+        height: siteConfig.ogImageHeight,
+        alt: `${siteConfig.name} - ${title}`,
+      }
+    : { url: imageUrl, alt: `${siteConfig.name} - ${title}` };
 
   return {
     title,
@@ -43,14 +56,7 @@ export function createPageMetadata({
       url,
       type,
       siteName: siteConfig.name,
-      images: [
-        {
-          url: imageUrl,
-          width: 1200,
-          height: 630,
-          alt: `${siteConfig.name} - ${title}`,
-        },
-      ],
+      images: [ogImage],
     },
     twitter: {
       card: "summary_large_image",
