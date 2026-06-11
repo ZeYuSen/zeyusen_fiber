@@ -4,6 +4,7 @@ const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "http://localhost:3000";
 
 export const siteConfig = {
   name: "ZeYuSen Fiber",
+  legalName: "Jiangsu Zeyusen Carbon Fiber Technology Co., Ltd.",
   url: siteUrl,
   title: "ZeYuSen Fiber | Engineered Fiber Solutions",
   description:
@@ -55,7 +56,7 @@ export function createPageMetadata({
       description,
       url,
       type,
-      siteName: siteConfig.name,
+      siteName: siteConfig.legalName,
       images: [ogImage],
     },
     twitter: {

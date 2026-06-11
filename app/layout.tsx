@@ -10,7 +10,7 @@ import { AIChatWidget } from "@/components/layout/AIChatWidget";
 import { NewTabLinkBehavior } from "@/components/layout/NewTabLinkBehavior";
 import { SmoothScrollProvider } from "@/components/providers/SmoothScroll";
 import { absoluteUrl, siteConfig } from "@/lib/seo";
-import { organizationJsonLd } from "@/lib/jsonld";
+import { organizationJsonLd, websiteJsonLd } from "@/lib/jsonld";
 
 const inter = Inter({
   variable: "--font-inter",
@@ -60,7 +60,7 @@ export const metadata: Metadata = {
     url: absoluteUrl("/"),
     type: "website",
     locale: "en_US",
-    siteName: "ZeYuSen Fiber",
+    siteName: siteConfig.legalName,
     images: [
       {
         url: absoluteUrl(siteConfig.ogImage),
@@ -109,6 +109,10 @@ export default function RootLayout({
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationJsonLd()) }}
+        />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(websiteJsonLd()) }}
         />
         <SmoothScrollProvider>
           <Header />

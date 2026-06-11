@@ -7,7 +7,7 @@ import { createPageMetadata } from "@/lib/seo";
 export const metadata: Metadata = createPageMetadata({
   title: "ZeYuSen Fiber | Carbon Fiber & Glass Fiber Manufacturer",
   description:
-    "Carbon fiber mats, fiberglass fabrics, composite reinforcements, and custom material solutions for aerospace, wind energy, construction, and manufacturing.",
+    "Jiangsu Zeyusen Carbon Fiber Technology Co., Ltd. manufactures carbon fiber mats, fiberglass fabrics, composite reinforcements, and custom material solutions for aerospace, wind energy, construction, and manufacturing.",
   path: "/",
 });
 

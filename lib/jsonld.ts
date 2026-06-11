@@ -1,5 +1,15 @@
-import { absoluteUrl } from "./seo";
+import { absoluteUrl, siteConfig } from "./seo";
 import { contactInfo } from "./contact";
+
+export function websiteJsonLd() {
+  return {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    name: siteConfig.legalName,
+    alternateName: siteConfig.name,
+    url: absoluteUrl("/"),
+  };
+}
 
 export function faqJsonLd(items: { question: string; answer: string }[]) {
   return {
@@ -20,7 +30,8 @@ export function organizationJsonLd() {
   return {
     "@context": "https://schema.org",
     "@type": ["Organization", "Manufacturer"],
-    name: "ZeYuSen Fiber",
+    name: siteConfig.legalName,
+    alternateName: siteConfig.name,
     legalName: contactInfo.company,
     url: absoluteUrl("/"),
     logo: absoluteUrl("/logo.png"),
