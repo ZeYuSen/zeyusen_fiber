@@ -7,7 +7,8 @@ import { SpecTable } from "@/components/products/SpecTable";
 import { RelatedProducts } from "@/components/products/RelatedProducts";
 import { whatsappPhone } from "@/lib/contact";
 import { createPageMetadata } from "@/lib/seo";
-import { productJsonLd, breadcrumbJsonLd } from "@/lib/jsonld";
+import { productJsonLd, breadcrumbJsonLd, faqJsonLd } from "@/lib/jsonld";
+import { getProductContent } from "@/data/product-content";
 
 type Props = { params: Promise<{ category: string; product: string }> };
 
@@ -41,6 +42,8 @@ export default async function GlassProductPage({ params }: Props) {
   const product = category.products.find((p) => p.slug === prodSlug);
   if (!product) notFound();
 
+  const content = getProductContent("glass", category.slug, product.slug);
+
   return (
     <>
       <script
@@ -55,6 +58,21 @@ export default async function GlassProductPage({ params }: Props) {
           })),
         }}
       />
+      {content?.faqs?.length ? (
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify(
+              faqJsonLd(
+                content.faqs.map((f) => ({
+                  question: f.question,
+                  answer: f.answer,
+                })),
+              ),
+            ),
+          }}
+        />
+      ) : null}
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{
@@ -129,6 +147,26 @@ export default async function GlassProductPage({ params }: Props) {
 
       <div className="container-wide"><div className="h-px bg-neutral-100" /></div>
 
+      {content?.overview?.length ? (
+        <>
+          <section className="py-12">
+            <div className="container-wide">
+              <h2 className="text-xs font-medium text-neutral-400 uppercase tracking-wider mb-6">
+                Overview
+              </h2>
+              <div className="max-w-3xl space-y-4">
+                {content.overview.map((paragraph, i) => (
+                  <p key={i} className="text-neutral-600 leading-relaxed text-sm">
+                    {paragraph}
+                  </p>
+                ))}
+              </div>
+            </div>
+          </section>
+          <div className="container-wide"><div className="h-px bg-neutral-100" /></div>
+        </>
+      ) : null}
+
       <section className="py-12">
         <div className="container-wide">
           <h2 className="text-xs font-medium text-neutral-400 uppercase tracking-wider mb-6">
@@ -159,6 +197,31 @@ export default async function GlassProductPage({ params }: Props) {
           </div>
         </div>
       </section>
+
+      {content?.faqs?.length ? (
+        <>
+          <div className="container-wide"><div className="h-px bg-neutral-100" /></div>
+          <section className="py-12">
+            <div className="container-wide">
+              <h2 className="text-xs font-medium text-neutral-400 uppercase tracking-wider mb-6">
+                Frequently Asked Questions
+              </h2>
+              <div className="max-w-3xl space-y-6">
+                {content.faqs.map((faq) => (
+                  <div key={faq.question}>
+                    <h3 className="text-sm font-semibold text-neutral-900 mb-2">
+                      {faq.question}
+                    </h3>
+                    <p className="text-neutral-600 leading-relaxed text-sm">
+                      {faq.answer}
+                    </p>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </section>
+        </>
+      ) : null}
 
       <div className="container-wide"><div className="h-px bg-neutral-100" /></div>
 
