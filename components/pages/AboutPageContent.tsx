@@ -7,48 +7,12 @@ import { Award, Factory, Globe, Users } from "lucide-react";
 import { contactInfo } from "@/lib/contact";
 import { useLocale } from "@/lib/i18n/use-locale";
 import { localizedHref } from "@/lib/i18n/routes";
+import { getPagesContent } from "@/lib/i18n/pages-content";
 
-const milestones = [
-  { year: "2015", event: "Company founded in Nantong, Jiangsu Province" },
-  { year: "2016", event: "First production line operational, fiberglass tissue mat" },
-  { year: "2018", event: "Expanded into carbon fiber product line" },
-  { year: "2019", event: "Achieved ISO 9001 / ISO 14001 / ISO 45001 certification" },
-  { year: "2020", event: "Second production base established in Taizhou" },
-  { year: "2022", event: "13 utility model patents granted" },
-  { year: "2023", event: "Annual output: carbon fiber 10M sqm, fiberglass 80M sqm" },
-  { year: "2024", event: "Reached 50+ export destinations worldwide" },
-];
+const valueIcons = [Factory, Award, Globe, Users];
+const valueIconColors = ["text-carbon-accent", "text-accent-500", "text-glass-accent", "text-carbon-accent"];
 
-const values = [
-  {
-    icon: Factory,
-    title: "R&D & Customization",
-    description:
-      "Two R&D centers with 10% technical staff. 7+ years of composite material development experience with 13 utility model patents.",
-    iconColor: "text-carbon-accent",
-  },
-  {
-    icon: Award,
-    title: "Quality Certified",
-    description:
-      "ISO 9001, ISO 14001, ISO 45001 certified. Intellectual Property Management System certified. SGS testing reports available.",
-    iconColor: "text-accent-500",
-  },
-  {
-    icon: Globe,
-    title: "Reliable & Diversified",
-    description:
-      "Multiple production processes (wet-laid, dry-laid, weaving) across dual production bases for stable, scalable output.",
-    iconColor: "text-glass-accent",
-  },
-  {
-    icon: Users,
-    title: "Fast Delivery & Support",
-    description:
-      "240 km to Shanghai Port. Dedicated technical engineers for process consulting. FOB, CIF, DDP trade terms supported.",
-    iconColor: "text-carbon-accent",
-  },
-];
+
 
 const factoryGallery = {
   production: [
@@ -77,28 +41,24 @@ const factoryGallery = {
   ],
 };
 
-const factoryTabs = [
-  { key: "production" as const, label: "Production Lines" },
-  { key: "inspection" as const, label: "Inspection Equipment" },
-  { key: "testing" as const, label: "Process Testing" },
-  { key: "exhibition" as const, label: "Exhibitions" },
-];
+const factoryTabKeys = ["production", "inspection", "testing", "exhibition"] as const;
 
 function FactorySection() {
   const [activeTab, setActiveTab] = useState<keyof typeof factoryGallery>("production");
   const images = factoryGallery[activeTab];
+  const f = getPagesContent(useLocale()).about.factory;
+  const factoryTabs = factoryTabKeys.map((key) => ({ key, label: f.tabs[key] }));
 
   return (
     <section className="py-24">
       <div className="container-wide">
         <div>
-          <p className="type-caption text-neutral-400">Factory Tour</p>
+          <p className="type-caption text-neutral-400">{f.eyebrow}</p>
           <h2 className="text-2xl sm:text-3xl font-semibold text-neutral-900 mt-3">
-            Our Manufacturing Facility
+            {f.title}
           </h2>
           <p className="text-neutral-500 mt-4 max-w-2xl leading-relaxed">
-            80,000 m² standardized factory across two production bases in Nantong and Taizhou,
-            equipped with automated production lines, advanced testing equipment, and dedicated R&D centers.
+            {f.intro}
           </p>
         </div>
 
@@ -140,12 +100,7 @@ function FactorySection() {
 
         {/* Factory Stats */}
         <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mt-12">
-          {[
-            { num: "80,000", unit: "m²", label: "Factory Area" },
-            { num: "13,000", unit: "m²", label: "Land Area" },
-            { num: "240", unit: "km", label: "To Shanghai Port" },
-            { num: "2", unit: "", label: "Production Bases" },
-          ].map((stat) => (
+          {f.stats.map((stat) => (
             <div key={stat.label} className="p-5 bg-neutral-50 border border-neutral-100 rounded-lg text-center">
               <span className="text-2xl font-light text-neutral-900">
                 {stat.num}
@@ -162,20 +117,21 @@ function FactorySection() {
 
 export default function AboutPageContent() {
   const locale = useLocale();
+  const c = getPagesContent(locale).about;
+  const values = c.values.map((v, i) => ({ ...v, icon: valueIcons[i], iconColor: valueIconColors[i] }));
+  const milestones = c.milestones;
   return (
     <>
       {/* Page Header */}
       <section className="pt-36 pb-16">
         <div className="container-wide">
           <div>
-            <p className="type-caption text-neutral-400">About Us</p>
+            <p className="type-caption text-neutral-400">{c.eyebrow}</p>
             <h1 className="text-3xl sm:text-4xl font-semibold text-neutral-900 mt-3">
-              Composite Materials Expert Since 2015
+              {c.title}
             </h1>
 	            <p className="text-neutral-500 mt-4 max-w-2xl leading-relaxed">
-	              {contactInfo.company} is a comprehensive enterprise integrating R&D,
-	              production, and sales of high-performance carbon fiber and fiberglass
-	              composite materials, based in Nantong, Jiangsu Province, China.
+	              {contactInfo.company} {c.lead}
 	            </p>
           </div>
         </div>
@@ -187,52 +143,40 @@ export default function AboutPageContent() {
           <div className="grid lg:grid-cols-2 gap-12 lg:gap-20">
             <div>
               <p className="text-lg text-neutral-700 leading-relaxed">
-                Founded in September 2015, ZeYuSen Fiber operates from dual production
-                bases in Nantong and Taizhou, Jiangsu Province, with technical partnerships
-                with the Chinese Academy of Sciences, China Southern Glass Institute,
-                and multiple universities.
+                {c.story1}
               </p>
               <p className="text-neutral-500 leading-relaxed mt-5">
-                Our product portfolio spans from ultra-thin 10g/m²{" "}
+                {c.story2.pre}
                 <Link
                   href={localizedHref("carbon-fiber", locale)}
                   className="text-carbon-accent hover:text-neutral-900 underline underline-offset-2 transition-colors"
                 >
-                  carbon fiber surface mats
-                </Link>{" "}
-                to heavy-duty 1200g/m²{" "}
+                  {c.story2.carbonLink}
+                </Link>
+                {c.story2.mid}
                 <Link
                   href={localizedHref("glass-fiber", locale)}
                   className="text-glass-accent hover:text-neutral-900 underline underline-offset-2 transition-colors"
                 >
-                  multiaxial composite reinforcements
+                  {c.story2.glassLink}
                 </Link>
-                . We serve customers across wind energy, aerospace,
-                construction, automotive, military, hydrogen fuel cells, and new energy
-                sectors worldwide. Full customization of weight, width, binder type,
-                and fiber orientation is available.
+                {c.story2.post}
               </p>
               <p className="text-neutral-500 leading-relaxed mt-5">
-                With 10% of our staff dedicated to R&D and two research centers,
-                we combine wet-laid, dry-laid, and weaving processes to deliver{" "}
+                {c.story3.pre}
                 <Link
                   href={localizedHref("services", locale)}
                   className="text-neutral-700 hover:text-neutral-900 underline underline-offset-2 transition-colors"
                 >
-                  diversified solutions and customization services
-                </Link>{" "}
-                for complex composite applications.
+                  {c.story3.servicesLink}
+                </Link>
+                {c.story3.post}
               </p>
             </div>
             <div
               className="grid grid-cols-2 gap-4"
             >
-              {[
-                { num: "15+", label: "Years Experience" },
-                { num: "50+", label: "Export Countries" },
-                { num: "7", label: "Product Lines" },
-                { num: "100%", label: "Custom Support" },
-              ].map((stat) => (
+              {c.quickStats.map((stat) => (
                 <div
                   key={stat.label}
                   className="p-5 bg-neutral-50 border border-neutral-100 rounded-lg"
@@ -261,9 +205,9 @@ export default function AboutPageContent() {
       <section className="py-24">
         <div className="container-wide">
           <div>
-            <p className="type-caption text-neutral-400">Why Choose Us</p>
+            <p className="type-caption text-neutral-400">{c.whyEyebrow}</p>
             <h2 className="text-2xl sm:text-3xl font-semibold text-neutral-900 mt-3">
-              Built on Trust & Precision
+              {c.whyTitle}
             </h2>
           </div>
 
@@ -292,9 +236,9 @@ export default function AboutPageContent() {
       <section className="py-24">
         <div className="container-wide">
           <div>
-            <p className="type-caption text-neutral-400">Our Journey</p>
+            <p className="type-caption text-neutral-400">{c.journeyEyebrow}</p>
             <h2 className="text-2xl sm:text-3xl font-semibold text-neutral-900 mt-3">
-              Milestones
+              {c.journeyTitle}
             </h2>
           </div>
 

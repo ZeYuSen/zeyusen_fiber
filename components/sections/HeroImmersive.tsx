@@ -32,7 +32,7 @@ export function HeroImmersive() {
   }, [current, isTransitioning]);
 
   const next = useCallback(() => {
-    goTo((current + 1) % slides.length);
+    goTo((current + 1) % slideImages.length);
   }, [current, goTo]);
 
   useEffect(() => {

@@ -211,21 +211,37 @@ export function localizedHref(
   return suffix ? `/${locale}/${suffix}` : `/${locale}`;
 }
 
+// Normalize a path segment for comparison: percent-decode if needed, then
+// apply Unicode NFC so non-ASCII slugs (e.g. Korean 회사소개) match regardless
+// of the normalization form the runtime delivers.
+function normalizeSegment(value: string): string {
+  let decoded = value;
+  if (/%[0-9a-fA-F]{2}/.test(value)) {
+    try {
+      decoded = decodeURIComponent(value);
+    } catch {
+      decoded = value;
+    }
+  }
+  return decoded.normalize("NFC");
+}
+
 // Reverse: locale + catch-all slug array -> { pageKey, params } or null.
 export function resolveRoute(
   locale: Locale,
   slug: string[],
 ): { pageKey: PageKey; params: RouteParams } | null {
+  const normalizedSlug = slug.map(normalizeSegment);
   for (const route of ROUTES) {
-    if (route.segments.length !== slug.length) continue;
+    if (route.segments.length !== normalizedSlug.length) continue;
     const params: RouteParams = {};
     let matched = true;
     for (let i = 0; i < route.segments.length; i++) {
       const spec = route.segments[i];
-      const incoming = slug[i];
+      const incoming = normalizedSlug[i];
       if (spec.t === "param") {
         params[spec.name] = incoming;
-      } else if (segmentValue(spec, locale, {}) !== incoming) {
+      } else if (segmentValue(spec, locale, {}).normalize("NFC") !== incoming) {
         matched = false;
         break;
       }

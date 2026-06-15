@@ -4,16 +4,11 @@ import { useState, useRef } from "react";
 import { Send, MessageCircle, Mail, MapPin } from "lucide-react";
 import { contactInfo, whatsappPhone } from "@/lib/contact";
 import { Turnstile, type TurnstileInstance } from "@marsidev/react-turnstile";
-import type { Locale } from "@/lib/i18n/config";
-import type { Dictionary } from "@/lib/i18n/dictionaries";
+import { useLocale } from "@/lib/i18n/use-locale";
+import { getPagesContent } from "@/lib/i18n/pages-content";
 
-export default function ContactPageContent({
-  locale: _locale = "en",
-  dict: _dict,
-}: {
-  locale?: Locale;
-  dict?: Dictionary;
-} = {}) {
+export default function ContactPageContent() {
+  const c = getPagesContent(useLocale()).contact;
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -72,13 +67,12 @@ export default function ContactPageContent({
       <section className="pt-28 pb-6">
         <div className="container-wide">
           <div>
-            <p className="type-caption text-neutral-400">Contact</p>
+            <p className="type-caption text-neutral-400">{c.eyebrow}</p>
             <h1 className="text-2xl sm:text-3xl font-semibold text-neutral-900 mt-2">
-              Get in Touch
+              {c.title}
             </h1>
             <p className="text-sm text-neutral-500 mt-2 max-w-xl leading-relaxed">
-              Tell us about your project requirements and our team will respond
-              within 24 hours with a tailored solution.
+              {c.lead}
             </p>
           </div>
         </div>
@@ -97,7 +91,7 @@ export default function ContactPageContent({
                 <div className="grid sm:grid-cols-2 gap-4">
                   <div>
                     <label htmlFor="name" className="block text-xs font-medium text-neutral-600 mb-1.5">
-                      Name *
+                      {c.labels.name}
                     </label>
                     <input
                       id="name"
@@ -109,12 +103,12 @@ export default function ContactPageContent({
                         setFormData({ ...formData, name: e.target.value })
                       }
                       className={inputClass}
-                      placeholder="Your name"
+                      placeholder={c.placeholders.name}
                     />
                   </div>
                   <div>
                     <label htmlFor="email" className="block text-xs font-medium text-neutral-600 mb-1.5">
-                      Email *
+                      {c.labels.email}
                     </label>
                     <input
                       id="email"
@@ -126,12 +120,12 @@ export default function ContactPageContent({
                         setFormData({ ...formData, email: e.target.value })
                       }
                       className={inputClass}
-                      placeholder="your@email.com"
+                      placeholder={c.placeholders.email}
                     />
                   </div>
                   <div>
                     <label htmlFor="company" className="block text-xs font-medium text-neutral-600 mb-1.5">
-                      Company
+                      {c.labels.company}
                     </label>
                     <input
                       id="company"
@@ -142,12 +136,12 @@ export default function ContactPageContent({
                         setFormData({ ...formData, company: e.target.value })
                       }
                       className={inputClass}
-                      placeholder="Company name"
+                      placeholder={c.placeholders.company}
                     />
                   </div>
                   <div>
                     <label htmlFor="country" className="block text-xs font-medium text-neutral-600 mb-1.5">
-                      Country
+                      {c.labels.country}
                     </label>
                     <input
                       id="country"
@@ -158,12 +152,12 @@ export default function ContactPageContent({
                         setFormData({ ...formData, country: e.target.value })
                       }
                       className={inputClass}
-                      placeholder="Your country"
+                      placeholder={c.placeholders.country}
                     />
                   </div>
                   <div>
                     <label htmlFor="phone" className="block text-xs font-medium text-neutral-600 mb-1.5">
-                      Phone
+                      {c.labels.phone}
                     </label>
                     <input
                       id="phone"
@@ -179,7 +173,7 @@ export default function ContactPageContent({
                   </div>
                   <div>
                     <label htmlFor="division" className="block text-xs font-medium text-neutral-600 mb-1.5">
-                      Interested In
+                      {c.labels.interestedIn}
                     </label>
                     <select
                       id="division"
@@ -190,15 +184,15 @@ export default function ContactPageContent({
                       }
                       className={inputClass}
                     >
-                      <option value="general">General Inquiry</option>
-                      <option value="carbon">Carbon Fiber Products</option>
-                      <option value="glass">Glass Fiber Products</option>
+                      <option value="general">{c.divisionOptions.general}</option>
+                      <option value="carbon">{c.divisionOptions.carbon}</option>
+                      <option value="glass">{c.divisionOptions.glass}</option>
                     </select>
                   </div>
                 </div>
                 <div className="mt-3">
                   <label htmlFor="product_interest" className="block text-xs font-medium text-neutral-600 mb-1.5">
-                    Product of Interest
+                    {c.labels.productInterest}
                   </label>
                   <input
                     id="product_interest"
@@ -209,12 +203,12 @@ export default function ContactPageContent({
                       setFormData({ ...formData, product_interest: e.target.value })
                     }
                     className={inputClass}
-                    placeholder="e.g., Carbon Fiber Surface Mat 10g"
+                    placeholder={c.placeholders.productInterest}
                   />
                 </div>
                 <div className="mt-3">
                   <label htmlFor="message" className="block text-xs font-medium text-neutral-600 mb-1.5">
-                    Message *
+                    {c.labels.message}
                   </label>
                   <textarea
                     id="message"
@@ -226,7 +220,7 @@ export default function ContactPageContent({
                       setFormData({ ...formData, message: e.target.value })
                     }
                     className={`${inputClass} resize-none`}
-                    placeholder="Tell us about your requirements, quantities, and application..."
+                    placeholder={c.placeholders.message}
                   />
                 </div>
                 {process.env.NEXT_PUBLIC_TURNSTILE_SITE_KEY && (
@@ -245,17 +239,16 @@ export default function ContactPageContent({
                   className="mt-5 inline-flex items-center gap-2 px-7 py-3 bg-accent-500 hover:bg-accent-600 disabled:opacity-50 text-white text-sm font-semibold rounded-full transition-colors cursor-pointer"
                 >
                   <Send className="w-4 h-4" />
-                  {status === "sending" ? "Sending..." : "Send Inquiry"}
+                  {status === "sending" ? c.sending : c.submit}
                 </button>
                 {status === "success" && (
                   <p className="mt-4 text-sm text-green-600">
-                    Thank you! We&apos;ll respond within 24 hours.
+                    {c.success}
                   </p>
                 )}
                 {status === "error" && (
                   <p className="mt-4 text-sm text-red-600">
-                    Something went wrong. Please try again or contact us via
-                    WhatsApp.
+                    {c.error}
                   </p>
                 )}
               </form>
@@ -265,11 +258,11 @@ export default function ContactPageContent({
             <div className="space-y-5">
               <div className="p-6 bg-white border border-neutral-100 rounded-xl shadow-sm">
                 <h2 className="text-sm font-medium text-neutral-900 mb-4">
-                  Contact Info
+                  {c.contactInfoHeading}
                 </h2>
                 <div className="space-y-4">
                   <div>
-                    <p className="text-xs uppercase tracking-wider text-neutral-400">Company</p>
+                    <p className="text-xs uppercase tracking-wider text-neutral-400">{c.companyLabel}</p>
                     <p className="text-sm text-neutral-700 mt-1">
                       {contactInfo.company}
                     </p>
@@ -277,7 +270,7 @@ export default function ContactPageContent({
                   <div className="flex items-start gap-3">
                     <Mail className="w-4 h-4 text-carbon-accent mt-0.5" />
                     <div>
-                      <p className="text-xs uppercase tracking-wider text-neutral-400">Email</p>
+                      <p className="text-xs uppercase tracking-wider text-neutral-400">{c.emailLabel}</p>
                       <div className="space-y-1">
                         {contactInfo.emails.map((email) => (
                           <a
@@ -294,7 +287,7 @@ export default function ContactPageContent({
                   <div className="flex items-start gap-3">
                     <MessageCircle className="w-4 h-4 text-[#25D366] mt-0.5" />
                     <div>
-                      <p className="text-xs uppercase tracking-wider text-neutral-400">Phone</p>
+                      <p className="text-xs uppercase tracking-wider text-neutral-400">{c.phoneLabel}</p>
                       <a
                         href={`https://wa.me/${whatsappPhone}`}
                         className="text-sm text-neutral-700 hover:text-neutral-900 transition-colors"
@@ -312,7 +305,7 @@ export default function ContactPageContent({
                   <div className="flex items-start gap-3">
                     <MapPin className="w-4 h-4 text-glass-accent mt-0.5" />
                     <div>
-                      <p className="text-xs uppercase tracking-wider text-neutral-400">Address</p>
+                      <p className="text-xs uppercase tracking-wider text-neutral-400">{c.addressLabel}</p>
                       <a
                         href={`https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(contactInfo.address)}&hl=en`}
                         target="_blank"
@@ -328,51 +321,32 @@ export default function ContactPageContent({
 
               <div className="p-6 bg-white border border-neutral-100 rounded-xl shadow-sm">
                 <h2 className="text-sm font-medium text-neutral-900 mb-4">
-                  FAQ
+                  {c.faqHeading}
                 </h2>
                 <div className="space-y-4">
-                  <div>
-                    <p className="text-sm text-neutral-800">
-                      What is the MOQ?
-                    </p>
-                    <p className="text-sm text-neutral-500 mt-1">
-                      MOQ varies by product. Generally 100-500 sqm for standard
-                      items.
-                    </p>
-                  </div>
-                  <div>
-                    <p className="text-sm text-neutral-800">
-                      Can I get samples?
-                    </p>
-                    <p className="text-sm text-neutral-500 mt-1">
-                      Yes, we provide free samples for evaluation. Shipping cost
-                      may apply.
-                    </p>
-                  </div>
-                  <div>
-                    <p className="text-sm text-neutral-800">Lead time?</p>
-                    <p className="text-sm text-neutral-500 mt-1">
-                      Standard products: 7-15 days. Custom orders: 15-30 days.
-                    </p>
-                  </div>
+                  {c.faqs.map((faq) => (
+                    <div key={faq.q}>
+                      <p className="text-sm text-neutral-800">{faq.q}</p>
+                      <p className="text-sm text-neutral-500 mt-1">{faq.a}</p>
+                    </div>
+                  ))}
                 </div>
               </div>
 
               <div className="p-6 bg-white border border-neutral-100 rounded-xl shadow-sm">
                 <h2 className="text-sm font-medium text-neutral-900 mb-4">
-                  For Faster Quoting
+                  {c.fasterHeading}
                 </h2>
                 <p className="text-sm text-neutral-500 leading-relaxed">
-                  Include the product format, target GSM, resin system, width, estimated order volume, and application. That gives the team enough context to recommend the right sample or prepare a faster commercial reply.
+                  {c.fasterIntro}
                 </p>
                 <ul className="mt-4 space-y-2 text-sm text-neutral-600">
-                  <li>Product family or exact material name</li>
-                  <li>Application or end-use industry</li>
-                  <li>Target weight, width, or construction</li>
-                  <li>Sample need, MOQ expectation, and timeline</li>
+                  {c.fasterList.map((item) => (
+                    <li key={item}>{item}</li>
+                  ))}
                 </ul>
                 <p className="mt-4 text-sm text-neutral-500 leading-relaxed">
-                  If you already have a drawing, laminate schedule, or supplier benchmark, mention it in the message field. That usually leads to a more precise first reply and reduces follow-up rounds.
+                  {c.fasterOutro}
                 </p>
               </div>
             </div>

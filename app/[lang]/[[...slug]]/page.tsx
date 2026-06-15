@@ -142,7 +142,7 @@ export async function generateMetadata({ params }: PageProps<"/[lang]/[[...slug]
 
   // Resolve title/description + alternates + image per page type.
   let seo = content.seo[pageKey] ?? content.seo.home;
-  let alternates = allLocaleHrefs(pageKey, routeParams);
+  const alternates = allLocaleHrefs(pageKey, routeParams);
   let image: string | undefined;
   let type: "website" | "article" = "website";
 
@@ -220,7 +220,7 @@ export default async function LocalizedPage({ params }: PageProps<"/[lang]/[[...
     case "services":
       return <ServicesPageContent />;
     case "contact":
-      return <ContactPageContent locale={locale} dict={dict} />;
+      return <ContactPageContent />;
 
     case "privacy":
       return <LegalPage {...content.legal.privacy} />;
