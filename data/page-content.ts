@@ -294,8 +294,12 @@ const en: PageContent = {
   },
 };
 
-// Per-locale overrides registered in Stage 4. English is the base/fallback.
-const overrides: Partial<Record<Locale, PageContent>> = {};
+// Per-locale overrides. English is the base/fallback.
+import { ko } from "./page-content.ko";
+import { es } from "./page-content.es";
+import { pt } from "./page-content.pt";
+
+const overrides: Partial<Record<Locale, PageContent>> = { ko, es, pt };
 
 export function getPageContent(locale: Locale): PageContent {
   if (locale === defaultLocale) return en;

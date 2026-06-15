@@ -4,58 +4,29 @@ import { ArrowRight } from "lucide-react";
 import Link from "next/link";
 import { useLocale } from "@/lib/i18n/use-locale";
 import { localizedHref, type PageKey } from "@/lib/i18n/routes";
+import { getHomeContent } from "@/lib/i18n/home-content";
 
-const industries: Array<{
-  title: string;
-  description: string;
+const industryMeta: Array<{
   pageKey: PageKey;
   slug: string;
   division: string;
 }> = [
-  {
-    title: "Aerospace & Aviation",
-    description: "Structural components, interior panels, and lightweight composites",
-    pageKey: "carbon-application",
-    slug: "aerospace",
-    division: "carbon",
-  },
-  {
-    title: "Wind Energy",
-    description: "Turbine blades, nacelle covers, and structural reinforcements",
-    pageKey: "glass-application",
-    slug: "wind-energy",
-    division: "glass",
-  },
-  {
-    title: "Construction",
-    description: "Insulation, waterproofing, and structural reinforcement materials",
-    pageKey: "glass-application",
-    slug: "construction",
-    division: "glass",
-  },
-  {
-    title: "Military & Defense",
-    description: "Ballistic protection, stealth applications, and armored composites",
-    pageKey: "carbon-application",
-    slug: "military-defense",
-    division: "carbon",
-  },
-  {
-    title: "New Energy",
-    description: "Fuel cells, battery separators, and energy storage systems",
-    pageKey: "carbon-application",
-    slug: "new-energy",
-    division: "carbon",
-  },
+  { pageKey: "carbon-application", slug: "aerospace", division: "carbon" },
+  { pageKey: "glass-application", slug: "wind-energy", division: "glass" },
+  { pageKey: "glass-application", slug: "construction", division: "glass" },
+  { pageKey: "carbon-application", slug: "military-defense", division: "carbon" },
+  { pageKey: "carbon-application", slug: "new-energy", division: "carbon" },
 ];
 
 export function IndustriesGrid() {
   const locale = useLocale();
+  const home = getHomeContent(locale);
+  const industries = industryMeta.map((m, i) => ({ ...m, ...home.industries.items[i] }));
   return (
     <section className="bg-white section-padding">
       <div className="container-wide">
         <h2 className="text-2xl sm:text-3xl font-semibold text-neutral-900 mb-20">
-          Industries We Serve
+          {home.industries.heading}
         </h2>
 
         <div data-industry-list>
@@ -85,7 +56,7 @@ export function IndustriesGrid() {
                       industry.division === "carbon" ? "text-cyan-600" : "text-emerald-600"
                     }`}
                   >
-                    {industry.division === "carbon" ? "Carbon" : "Glass"}
+                    {industry.division === "carbon" ? home.divisions.carbon.label : home.divisions.glass.label}
                   </span>
                   <ArrowRight className="w-4 h-4 text-neutral-400 group-hover:text-neutral-900 group-hover:translate-x-1 transition-all duration-300" />
                 </div>

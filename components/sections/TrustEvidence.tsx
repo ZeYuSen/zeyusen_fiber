@@ -13,33 +13,10 @@ import {
   Ship,
   Truck,
 } from "lucide-react";
+import { useLocale } from "@/lib/i18n/use-locale";
+import { getHomeContent } from "@/lib/i18n/home-content";
 
-const trustMetrics = [
-  {
-    number: "01",
-    metric: "15",
-    suffix: "+",
-    unit: "Years",
-    title: "Composite Experience",
-    text: "Focused exclusively on fiberglass and carbon fiber since 2008, serving demanding industrial applications worldwide.",
-  },
-  {
-    number: "02",
-    metric: "2",
-    suffix: "",
-    unit: "R&D Centers",
-    title: "Engineering Backbone",
-    text: "Dedicated R&D staff guide you from material selection through production — engineers who understand your process.",
-  },
-  {
-    number: "03",
-    metric: "50",
-    suffix: "+",
-    unit: "Countries",
-    title: "Export Footprint",
-    text: "Stable global delivery from dual production bases, 240 km to Shanghai Port. FOB, CIF, DDP — coordinated to your terms.",
-  },
-];
+const logisticsIcons = [MapPin, Ship, Truck];
 
 const certificates = [
   { src: "/images/certificates/cert_14.jpg", alt: "ISO 9001 Quality Management System", label: "ISO 9001" },
@@ -63,26 +40,6 @@ const certificates = [
   { src: "/images/certificates/cert_12.jpg", alt: "Utility Model Patent - Carbon fiber surface mat oven", label: "Patent" },
   { src: "/images/certificates/cert_13.jpg", alt: "Utility Model Patent - High tear strength fiberglass roofing mat", label: "Patent" },
 ];
-
-const logistics = [
-  {
-    icon: MapPin,
-    label: "Dual Production Base",
-    text: "Manufacturing in Nantong and Taizhou — stable, scalable output.",
-  },
-  {
-    icon: Ship,
-    label: "240 km to Shanghai Port",
-    text: "Export-ready logistics hub with efficient sea freight worldwide.",
-  },
-  {
-    icon: Truck,
-    label: "Flexible Trade Terms",
-    text: "FOB, CIF, DDP — sample shipments to bulk orders.",
-  },
-];
-
-const supportSteps = ["Inquiry", "Production", "Inspection", "Shipment"];
 
 function CertificateCarousel() {
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -264,6 +221,10 @@ function AnimatedMetric({ metric, suffix }: { metric: string; suffix: string }) 
 }
 
 export function TrustEvidence() {
+  const { trust } = getHomeContent(useLocale());
+  const trustMetrics = trust.metrics;
+  const logistics = trust.logistics.map((item, i) => ({ ...item, icon: logisticsIcons[i] }));
+  const supportSteps = trust.steps;
   return (
     <section className="bg-white section-padding">
       <div className="container-wide">
@@ -272,16 +233,12 @@ export function TrustEvidence() {
           <h2
             className="text-2xl sm:text-3xl font-semibold text-neutral-900"
           >
-            Every claim,
-            <br />
-            verifiable.
+            {trust.title}
           </h2>
           <p
             className="text-neutral-500 leading-relaxed self-end"
           >
-            Certifications, R&D capability, logistics infrastructure, and order
-            support — documented and ready for your review before you place a
-            single order.
+            {trust.intro}
           </p>
         </div>
 
@@ -328,18 +285,18 @@ export function TrustEvidence() {
                 </span>
                 <h3 className="text-lg font-medium text-neutral-900 flex items-center gap-2">
                   <Award className="w-4 h-4 text-neutral-400" />
-                  Certified Quality & Patents
+                  {trust.certHeading}
                 </h3>
               </div>
               <span className="type-caption text-neutral-400">
-                {certificates.length} Certificates
+                {certificates.length} {trust.certCount}
               </span>
             </div>
 
             <CertificateCarousel />
 
             <p className="text-xs text-neutral-400 mt-6 leading-relaxed">
-              ISO 9001 / ISO 14001 / ISO 45001 certified. 13+ utility model patents.
+              {trust.certNote}
             </p>
           </div>
 
@@ -354,11 +311,11 @@ export function TrustEvidence() {
                 </span>
                 <h3 className="text-lg font-medium text-neutral-900 flex items-center gap-2">
                   <FileCheck2 className="w-4 h-4 text-neutral-400" />
-                  Delivery & Support
+                  {trust.deliveryHeading}
                 </h3>
               </div>
               <span className="type-caption text-neutral-400">
-                Inquiry → Shipment
+                {trust.deliveryFlow}
               </span>
             </div>
 
@@ -384,7 +341,7 @@ export function TrustEvidence() {
               <div className="flex items-center gap-2 mb-4">
                 <Handshake className="w-4 h-4 text-neutral-400" />
                 <span className="type-caption text-neutral-500">
-                  End-to-end follow-up
+                  {trust.followUp}
                 </span>
               </div>
               <div className="flex flex-wrap items-center gap-2">

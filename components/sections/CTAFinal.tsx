@@ -3,8 +3,11 @@
 import { useRef, useState } from "react";
 import { ArrowRight } from "lucide-react";
 import { Turnstile, type TurnstileInstance } from "@marsidev/react-turnstile";
+import { useLocale } from "@/lib/i18n/use-locale";
+import { getHomeContent } from "@/lib/i18n/home-content";
 
 export function CTAFinal() {
+  const cta = getHomeContent(useLocale()).cta;
   const [email, setEmail] = useState("");
   const [message, setMessage] = useState("");
   const [status, setStatus] = useState<"idle" | "sending" | "sent" | "error">("idle");
@@ -51,19 +54,16 @@ export function CTAFinal() {
 
       <div className="relative z-10 container-wide max-w-[800px] text-center">
         <h2 className="text-2xl sm:text-3xl font-semibold text-neutral-900">
-          Let&apos;s Build Something
-          <br />
-          Together
+          {cta.title}
         </h2>
         <p className="text-neutral-500 mt-6 leading-relaxed">
-          Tell us your requirements. Our engineers will provide a tailored
-          recommendation within 24 hours.
+          {cta.intro}
         </p>
 
         {status === "sent" ? (
           <div className="mt-12 p-6 border border-emerald-500/30 rounded-lg">
             <p className="text-emerald-600 font-medium">
-              Thank you! We&apos;ll be in touch within 24 hours.
+              {cta.successInline}
             </p>
           </div>
         ) : (
@@ -78,7 +78,7 @@ export function CTAFinal() {
                 type="email"
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
-                placeholder="Your email"
+                placeholder={cta.emailPlaceholder}
                 required
                 className="w-full px-5 py-4 bg-white border border-neutral-200 rounded-lg text-neutral-900 placeholder:text-neutral-400 focus:outline-none focus:border-neutral-400 transition-colors"
               />
@@ -92,7 +92,7 @@ export function CTAFinal() {
                 name="message"
                 value={message}
                 onChange={(e) => setMessage(e.target.value)}
-                placeholder="What are you looking for?"
+                placeholder={cta.messagePlaceholder}
                 required
                 rows={3}
                 className="w-full px-5 py-4 bg-white border border-neutral-200 rounded-lg text-neutral-900 placeholder:text-neutral-400 focus:outline-none focus:border-neutral-400 transition-colors resize-none"
@@ -114,12 +114,12 @@ export function CTAFinal() {
                 disabled={status === "sending" || (!!process.env.NEXT_PUBLIC_TURNSTILE_SITE_KEY && !turnstileToken)}
                 className="inline-flex items-center gap-2 px-8 py-4 bg-orange-500 hover:bg-orange-600 text-white font-semibold rounded-full transition-colors disabled:opacity-50"
               >
-                {status === "sending" ? "Sending..." : "Send Inquiry"}
+                {status === "sending" ? cta.sending : cta.submit}
                 <ArrowRight className="w-4 h-4" />
               </button>
             </div>
             {status === "error" && (
-              <p className="text-red-500 text-sm">Something went wrong. Please try again.</p>
+              <p className="text-red-500 text-sm">{cta.error}</p>
             )}
           </form>
         )}
