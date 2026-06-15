@@ -2,41 +2,55 @@
 
 import { ArrowRight } from "lucide-react";
 import Link from "next/link";
+import { useLocale } from "@/lib/i18n/use-locale";
+import { localizedHref, type PageKey } from "@/lib/i18n/routes";
 
-const industries = [
+const industries: Array<{
+  title: string;
+  description: string;
+  pageKey: PageKey;
+  slug: string;
+  division: string;
+}> = [
   {
     title: "Aerospace & Aviation",
     description: "Structural components, interior panels, and lightweight composites",
-    href: "/carbon-fiber/applications/aerospace",
+    pageKey: "carbon-application",
+    slug: "aerospace",
     division: "carbon",
   },
   {
     title: "Wind Energy",
     description: "Turbine blades, nacelle covers, and structural reinforcements",
-    href: "/glass-fiber/applications/wind-energy",
+    pageKey: "glass-application",
+    slug: "wind-energy",
     division: "glass",
   },
   {
     title: "Construction",
     description: "Insulation, waterproofing, and structural reinforcement materials",
-    href: "/glass-fiber/applications/construction",
+    pageKey: "glass-application",
+    slug: "construction",
     division: "glass",
   },
   {
     title: "Military & Defense",
     description: "Ballistic protection, stealth applications, and armored composites",
-    href: "/carbon-fiber/applications/military-defense",
+    pageKey: "carbon-application",
+    slug: "military-defense",
     division: "carbon",
   },
   {
     title: "New Energy",
     description: "Fuel cells, battery separators, and energy storage systems",
-    href: "/carbon-fiber/applications/new-energy",
+    pageKey: "carbon-application",
+    slug: "new-energy",
     division: "carbon",
   },
 ];
 
 export function IndustriesGrid() {
+  const locale = useLocale();
   return (
     <section className="bg-white section-padding">
       <div className="container-wide">
@@ -48,7 +62,7 @@ export function IndustriesGrid() {
           {industries.map((industry, i) => (
             <Link
               key={industry.title}
-              href={industry.href}
+              href={localizedHref(industry.pageKey, locale, { slug: industry.slug })}
               className="group block border-t border-neutral-100 py-6 sm:py-8"
             >
               <div className="flex items-center justify-between gap-4">

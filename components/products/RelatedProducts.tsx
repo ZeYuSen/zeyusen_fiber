@@ -4,12 +4,14 @@ import { Product } from "@/types/product";
 
 export function RelatedProducts({
   products,
-  basePath,
+  hrefFor,
   currentSlug,
+  title,
 }: {
   products: Product[];
-  basePath: string;
+  hrefFor: (slug: string) => string;
   currentSlug: string;
+  title: string;
 }) {
   const related = products.filter((p) => p.slug !== currentSlug).slice(0, 4);
   if (related.length === 0) return null;
@@ -18,13 +20,13 @@ export function RelatedProducts({
     <section className="py-12">
       <div className="container-wide">
         <h2 className="text-xs font-medium text-neutral-400 uppercase tracking-wider mb-6">
-          Related Products
+          {title}
         </h2>
         <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
           {related.map((product) => (
             <Link
               key={product.slug}
-              href={`${basePath}/${product.slug}`}
+              href={hrefFor(product.slug)}
               className="group block"
             >
               <div className="bg-white border border-neutral-100 rounded-lg hover:border-neutral-200 overflow-hidden transition-colors">

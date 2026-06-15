@@ -4,6 +4,8 @@ import { useEffect, useRef, useState, useCallback } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { gsap } from "@/lib/gsap";
+import { useLocale } from "@/lib/i18n/use-locale";
+import { localizedHref } from "@/lib/i18n/routes";
 
 const slides = [
   {
@@ -25,6 +27,7 @@ const slides = [
 
 export function HeroImmersive() {
   const sectionRef = useRef<HTMLElement>(null);
+  const locale = useLocale();
   const [current, setCurrent] = useState(0);
   const [isTransitioning, setIsTransitioning] = useState(false);
   const intervalRef = useRef<ReturnType<typeof setInterval> | null>(null);
@@ -100,13 +103,13 @@ export function HeroImmersive() {
             </p>
             <div className="flex gap-4 mt-10">
               <Link
-                href="/contact"
+                href={localizedHref("contact", locale)}
                 className="px-8 py-3 bg-white text-black font-medium rounded-sm hover:bg-white/90 transition-colors"
               >
                 Get a Quote
               </Link>
               <Link
-                href="/about"
+                href={localizedHref("about", locale)}
                 className="px-8 py-3 border border-white/60 text-white font-medium rounded-sm hover:bg-white/10 transition-colors"
               >
                 About Our Manufacturing

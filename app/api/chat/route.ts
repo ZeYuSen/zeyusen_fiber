@@ -104,8 +104,20 @@ export async function POST(request: NextRequest) {
       );
     }
 
+    const languageNames: Record<string, string> = {
+      en: "English",
+      ko: "Korean",
+      es: "Spanish",
+      pt: "Portuguese",
+    };
+    const replyLanguage = languageNames[body.locale ?? "en"] ?? "English";
+    const systemContent =
+      body.locale && body.locale !== "en"
+        ? `${SYSTEM_PROMPT}\n\nIMPORTANT: Reply to the user in ${replyLanguage}. Keep product names, model numbers, and technical units unchanged.`
+        : SYSTEM_PROMPT;
+
     const messages = [
-      { role: "system", content: SYSTEM_PROMPT },
+      { role: "system", content: systemContent },
       ...body.messages.slice(-20),
     ];
 

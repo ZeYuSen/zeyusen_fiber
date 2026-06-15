@@ -1,13 +1,14 @@
 import { absoluteUrl, siteConfig } from "./seo";
 import { contactInfo } from "./contact";
 
-export function websiteJsonLd() {
+export function websiteJsonLd(url: string = absoluteUrl("/"), inLanguage?: string) {
   return {
     "@context": "https://schema.org",
     "@type": "WebSite",
     name: siteConfig.legalName,
     alternateName: siteConfig.name,
-    url: absoluteUrl("/"),
+    url,
+    ...(inLanguage ? { inLanguage } : {}),
   };
 }
 
@@ -60,7 +61,7 @@ export function organizationJsonLd() {
       telephone: contactInfo.phones[0],
       email: contactInfo.emails[0],
       contactType: "sales",
-      availableLanguage: ["English", "Chinese"],
+      availableLanguage: ["English", "Korean", "Spanish", "Portuguese", "Chinese"],
     },
     sameAs: contactInfo.sameAs,
   };

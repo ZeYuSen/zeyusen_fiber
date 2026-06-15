@@ -7,6 +7,7 @@ export interface ChatMessage {
 
 export interface ChatRequest {
   sessionId?: string;
+  locale?: string;
   messages: Pick<ChatMessage, "role" | "content">[];
 }
 

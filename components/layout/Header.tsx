@@ -5,27 +5,43 @@ import { usePathname } from "next/navigation";
 import Link from "next/link";
 import Image from "next/image";
 import { Menu, X, ChevronDown } from "lucide-react";
+import { isLocale, defaultLocale } from "@/lib/i18n/config";
+import { localizedHref } from "@/lib/i18n/routes";
+import type { Dictionary } from "@/lib/i18n/dictionaries";
+import { LanguageSwitcher } from "./LanguageSwitcher";
 
-const carbonProducts = [
-  { name: "Carbon Fiber Mat", href: "/carbon-fiber/products/carbon-fiber-mat" },
-  { name: "Carbon Fiber Cloth", href: "/carbon-fiber/products/carbon-fiber-cloth" },
-  { name: "Carbon Fiber Raw Materials", href: "/carbon-fiber/products/carbon-fiber-raw" },
+// Carbon/glass dropdown items reference category pages by slug.
+const carbonCategorySlugs = [
+  "carbon-fiber-mat",
+  "carbon-fiber-cloth",
+  "carbon-fiber-raw",
+];
+const glassCategorySlugs = [
+  "tissue-mat",
+  "fiberglass-cloth",
+  "composite-mat",
+  "chopped-strand-mat",
+  "other-materials",
 ];
 
-const glassProducts = [
-  { name: "Fiberglass Tissue Mat", href: "/glass-fiber/products/tissue-mat" },
-  { name: "Fiberglass Cloth", href: "/glass-fiber/products/fiberglass-cloth" },
-  { name: "Composite Mat", href: "/glass-fiber/products/composite-mat" },
-  { name: "Chopped Strand Mat", href: "/glass-fiber/products/chopped-strand-mat" },
-  { name: "Other Fiber Materials", href: "/glass-fiber/products/other-materials" },
-];
-
-export function Header() {
+export function Header({ dict }: { dict: Dictionary }) {
   const [scrolled, setScrolled] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
   const [activeDropdown, setActiveDropdown] = useState<string | null>(null);
   const pathname = usePathname();
-  const isHome = pathname === "/";
+
+  const segments = pathname.split("/").filter(Boolean);
+  const locale = segments[0] && isLocale(segments[0]) ? segments[0] : defaultLocale;
+  const isHome = pathname === `/${locale}` || pathname === "/";
+
+  const carbonProducts = carbonCategorySlugs.map((slug) => ({
+    name: dict.products?.[slug as keyof typeof dict.products] ?? slug,
+    href: localizedHref("carbon-category", locale, { category: slug }),
+  }));
+  const glassProducts = glassCategorySlugs.map((slug) => ({
+    name: dict.products?.[slug as keyof typeof dict.products] ?? slug,
+    href: localizedHref("glass-category", locale, { category: slug }),
+  }));
 
   useEffect(() => {
     const handleScroll = () => setScrolled(window.scrollY > 20);
@@ -54,7 +70,7 @@ export function Header() {
       <div className="container-wide">
         <div className="flex items-center justify-between">
           {/* Logo */}
-          <Link href="/" className="flex items-center gap-2">
+          <Link href={localizedHref("home", locale)} className="flex items-center gap-2">
             <Image
               src="/logo.png"
               alt="ZeYuSen Fiber"
@@ -70,7 +86,9 @@ export function Header() {
 
           {/* Desktop Navigation */}
           <nav className="hidden lg:flex items-center gap-8">
-            <NavLink href="/" textColor={textColor} textHover={textHover}>Home</NavLink>
+            <NavLink href={localizedHref("home", locale)} textColor={textColor} textHover={textHover}>
+              {dict.nav.home}
+            </NavLink>
 
             {/* Carbon Fiber Dropdown */}
             <div
@@ -78,8 +96,8 @@ export function Header() {
               onMouseEnter={() => setActiveDropdown("carbon")}
               onMouseLeave={() => setActiveDropdown(null)}
             >
-              <NavLink href="/carbon-fiber" hasDropdown textColor={textColor} textHover={textHover}>
-                Carbon Fiber
+              <NavLink href={localizedHref("carbon-fiber", locale)} hasDropdown textColor={textColor} textHover={textHover}>
+                {dict.nav.carbonFiber}
               </NavLink>
               <div
                 className={`absolute top-full left-0 pt-4 w-64 transition-all duration-200 ${
@@ -89,26 +107,24 @@ export function Header() {
                 }`}
               >
                 <div className="bg-white border border-black/[0.06] p-4 shadow-lg rounded-lg">
-                <p className="type-caption text-carbon-accent mb-3">
-                  Carbon Fiber Products
-                </p>
-                {carbonProducts.map((item) => (
-                  <Link
-                    key={item.href}
-                    href={item.href}
-                    className="block px-3 py-2 text-sm text-text-secondary hover:text-text-primary hover:bg-black/[0.03] transition-colors"
-                  >
-                    {item.name}
-                  </Link>
-                ))}
-                <div className="border-t border-black/[0.06] mt-3 pt-3">
-                  <Link
-                    href="/carbon-fiber/products"
-                    className="text-sm font-medium text-carbon-accent hover:text-text-primary transition-colors"
-                  >
-                    All Carbon Fiber Products
-                  </Link>
-                </div>
+                  <p className="type-caption text-carbon-accent mb-3">{dict.nav.carbonProducts}</p>
+                  {carbonProducts.map((item) => (
+                    <Link
+                      key={item.href}
+                      href={item.href}
+                      className="block px-3 py-2 text-sm text-text-secondary hover:text-text-primary hover:bg-black/[0.03] transition-colors"
+                    >
+                      {item.name}
+                    </Link>
+                  ))}
+                  <div className="border-t border-black/[0.06] mt-3 pt-3">
+                    <Link
+                      href={localizedHref("carbon-products", locale)}
+                      className="text-sm font-medium text-carbon-accent hover:text-text-primary transition-colors"
+                    >
+                      {dict.nav.carbonProducts}
+                    </Link>
+                  </div>
                 </div>
               </div>
             </div>
@@ -119,8 +135,8 @@ export function Header() {
               onMouseEnter={() => setActiveDropdown("glass")}
               onMouseLeave={() => setActiveDropdown(null)}
             >
-              <NavLink href="/glass-fiber" hasDropdown textColor={textColor} textHover={textHover}>
-                Glass Fiber
+              <NavLink href={localizedHref("glass-fiber", locale)} hasDropdown textColor={textColor} textHover={textHover}>
+                {dict.nav.glassFiber}
               </NavLink>
               <div
                 className={`absolute top-full left-0 pt-4 w-64 transition-all duration-200 ${
@@ -130,48 +146,57 @@ export function Header() {
                 }`}
               >
                 <div className="bg-white border border-black/[0.06] p-4 shadow-lg rounded-lg">
-                <p className="type-caption text-glass-accent mb-3">
-                  Glass Fiber Products
-                </p>
-                {glassProducts.map((item) => (
-                  <Link
-                    key={item.href}
-                    href={item.href}
-                    className="block px-3 py-2 text-sm text-text-secondary hover:text-text-primary hover:bg-black/[0.03] transition-colors"
-                  >
-                    {item.name}
-                  </Link>
-                ))}
-                <div className="border-t border-black/[0.06] mt-3 pt-3">
-                  <Link
-                    href="/glass-fiber/products"
-                    className="text-sm font-medium text-glass-accent hover:text-text-primary transition-colors"
-                  >
-                    All Fiberglass Products
-                  </Link>
-                </div>
+                  <p className="type-caption text-glass-accent mb-3">{dict.nav.glassProducts}</p>
+                  {glassProducts.map((item) => (
+                    <Link
+                      key={item.href}
+                      href={item.href}
+                      className="block px-3 py-2 text-sm text-text-secondary hover:text-text-primary hover:bg-black/[0.03] transition-colors"
+                    >
+                      {item.name}
+                    </Link>
+                  ))}
+                  <div className="border-t border-black/[0.06] mt-3 pt-3">
+                    <Link
+                      href={localizedHref("glass-products", locale)}
+                      className="text-sm font-medium text-glass-accent hover:text-text-primary transition-colors"
+                    >
+                      {dict.nav.glassProducts}
+                    </Link>
+                  </div>
                 </div>
               </div>
             </div>
 
-            <NavLink href="/applications" textColor={textColor} textHover={textHover}>Applications</NavLink>
-            <NavLink href="/services" textColor={textColor} textHover={textHover}>Services</NavLink>
-            <NavLink href="/blog" textColor={textColor} textHover={textHover}>Blog</NavLink>
-            <NavLink href="/about" textColor={textColor} textHover={textHover}>About</NavLink>
+            <NavLink href={localizedHref("applications", locale)} textColor={textColor} textHover={textHover}>
+              {dict.nav.applications}
+            </NavLink>
+            <NavLink href={localizedHref("services", locale)} textColor={textColor} textHover={textHover}>
+              {dict.nav.services}
+            </NavLink>
+            <NavLink href={localizedHref("blog-index", locale)} textColor={textColor} textHover={textHover}>
+              {dict.nav.blog}
+            </NavLink>
+            <NavLink href={localizedHref("about", locale)} textColor={textColor} textHover={textHover}>
+              {dict.nav.about}
+            </NavLink>
           </nav>
 
-          {/* CTA + Mobile Toggle */}
+          {/* CTA + Language + Mobile Toggle */}
           <div className="flex items-center gap-4">
+            <div className="hidden lg:block">
+              <LanguageSwitcher light={useWhiteText} />
+            </div>
             <Link
-              href="/contact"
+              href={localizedHref("contact", locale)}
               className="hidden sm:inline-flex items-center px-5 py-2 bg-accent-500 hover:bg-accent-600 text-white text-sm font-medium rounded-full transition-all hover:shadow-[0_0_20px_rgba(249,115,22,0.3)]"
             >
-              Get Quote
+              {dict.nav.getQuote}
             </Link>
             <button
               onClick={() => setMobileOpen(!mobileOpen)}
               className={`lg:hidden p-2 ${useWhiteText ? "text-white" : "text-text-primary"} transition-colors duration-500`}
-              aria-label="Toggle menu"
+              aria-label={dict.nav.menu}
             >
               {mobileOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
             </button>
@@ -187,11 +212,11 @@ export function Header() {
       >
         <div className="container-wide">
           <div className="mt-4 border-t border-black/[0.06] py-6 space-y-4">
-            <Link href="/" onClick={closeMobile} className="block text-sm font-medium text-text-primary hover:text-accent-500">Home</Link>
+            <Link href={localizedHref("home", locale)} onClick={closeMobile} className="block text-sm font-medium text-text-primary hover:text-accent-500">
+              {dict.nav.home}
+            </Link>
             <div>
-              <p className="type-caption text-carbon-accent mb-2">
-                Carbon Fiber
-              </p>
+              <p className="type-caption text-carbon-accent mb-2">{dict.nav.carbonFiber}</p>
               {carbonProducts.map((item) => (
                 <Link
                   key={item.href}
@@ -204,9 +229,7 @@ export function Header() {
               ))}
             </div>
             <div>
-              <p className="type-caption text-glass-accent mb-2">
-                Glass Fiber
-              </p>
+              <p className="type-caption text-glass-accent mb-2">{dict.nav.glassFiber}</p>
               {glassProducts.map((item) => (
                 <Link
                   key={item.href}
@@ -219,17 +242,29 @@ export function Header() {
               ))}
             </div>
             <div className="border-t border-black/[0.06] pt-4 space-y-3">
-              <Link href="/applications" onClick={closeMobile} className="block text-sm font-medium text-text-secondary hover:text-text-primary">Applications</Link>
-              <Link href="/services" onClick={closeMobile} className="block text-sm font-medium text-text-secondary hover:text-text-primary">Services</Link>
-              <Link href="/blog" onClick={closeMobile} className="block text-sm font-medium text-text-secondary hover:text-text-primary">Blog</Link>
-              <Link href="/about" onClick={closeMobile} className="block text-sm font-medium text-text-secondary hover:text-text-primary">About</Link>
+              <Link href={localizedHref("applications", locale)} onClick={closeMobile} className="block text-sm font-medium text-text-secondary hover:text-text-primary">
+                {dict.nav.applications}
+              </Link>
+              <Link href={localizedHref("services", locale)} onClick={closeMobile} className="block text-sm font-medium text-text-secondary hover:text-text-primary">
+                {dict.nav.services}
+              </Link>
+              <Link href={localizedHref("blog-index", locale)} onClick={closeMobile} className="block text-sm font-medium text-text-secondary hover:text-text-primary">
+                {dict.nav.blog}
+              </Link>
+              <Link href={localizedHref("about", locale)} onClick={closeMobile} className="block text-sm font-medium text-text-secondary hover:text-text-primary">
+                {dict.nav.about}
+              </Link>
+            </div>
+            <div className="border-t border-black/[0.06] pt-4">
+              <p className="type-caption text-neutral-400 mb-2">{dict.nav.language}</p>
+              <LanguageSwitcher />
             </div>
             <Link
-              href="/contact"
+              href={localizedHref("contact", locale)}
               onClick={closeMobile}
               className="block w-full text-center px-5 py-3 bg-accent-500 text-white text-sm font-medium rounded-full"
             >
-              Get Quote
+              {dict.nav.getQuote}
             </Link>
           </div>
         </div>

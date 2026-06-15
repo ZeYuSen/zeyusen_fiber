@@ -3,8 +3,18 @@
 import Image from "next/image";
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
+import { useLocale } from "@/lib/i18n/use-locale";
+import { localizedHref, type PageKey } from "@/lib/i18n/routes";
 
-const divisions = [
+const divisions: Array<{
+  id: string;
+  label: string;
+  headline: string;
+  description: string;
+  image: string;
+  pageKey: PageKey;
+  accentColor: string;
+}> = [
   {
     id: "carbon",
     label: "Carbon Fiber",
@@ -12,7 +22,7 @@ const divisions = [
     description:
       "Ultra-lightweight carbon fiber composites for aerospace, motorsport, and advanced manufacturing. From 10g/m² surface mats to complex hybrid structures.",
     image: "/images/carbon-fiber/carbon_bg.webp",
-    href: "/carbon-fiber",
+    pageKey: "carbon-fiber",
     accentColor: "cyan",
   },
   {
@@ -22,12 +32,13 @@ const divisions = [
     description:
       "Corrosion-resistant materials for wind energy, construction, and industrial filtration. Tissue mats, woven cloth, and composite reinforcements.",
     image: "/images/glass-fiber/glass_bg.webp",
-    href: "/glass-fiber",
+    pageKey: "glass-fiber",
     accentColor: "emerald",
   },
 ];
 
 export function DivisionsSplit() {
+  const locale = useLocale();
   return (
     <section className="section-padding bg-white">
       <div className="container-wide">
@@ -35,7 +46,7 @@ export function DivisionsSplit() {
           {divisions.map((div) => (
             <Link
               key={div.id}
-              href={div.href}
+              href={localizedHref(div.pageKey, locale)}
               className="group relative overflow-hidden rounded-2xl aspect-[4/3] block"
             >
               {/* Background image */}
