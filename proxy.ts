@@ -11,10 +11,14 @@ export function proxy(request: NextRequest) {
   );
   if (hasLocale) return NextResponse.next();
 
-  // Root → default language. English is the permanent canonical default.
+  // Root → language based on crawler detection.
+  // Baidu spider gets Chinese; everyone else gets the default (English).
   if (pathname === "/") {
+    const ua = request.headers.get("user-agent") || "";
+    const isBaidu = /Baiduspider/i.test(ua);
+    const targetLocale = isBaidu ? "zh" : defaultLocale;
     const url = request.nextUrl.clone();
-    url.pathname = `/${defaultLocale}`;
+    url.pathname = `/${targetLocale}`;
     return NextResponse.redirect(url, 301);
   }
 
