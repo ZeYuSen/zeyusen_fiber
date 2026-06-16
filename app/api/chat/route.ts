@@ -1,6 +1,6 @@
 import { NextRequest, NextResponse } from "next/server";
 import type { ChatRequest } from "@/types/chat";
-import { supabase } from "@/lib/supabase";
+import { getSupabaseClient } from "@/lib/supabase";
 
 const WINDOW_MS = 60 * 1000;
 const MAX_REQUESTS = 20;
@@ -84,16 +84,20 @@ export async function POST(request: NextRequest) {
 
     const sessionId = body.sessionId;
 
-    // Ensure session exists in Supabase
+    const supabase = getSupabaseClient();
+
+    // Ensure session exists in Supabase when analytics storage is configured.
     if (sessionId) {
       const userAgent = request.headers.get("user-agent") || "";
-      await supabase
-        .from("chat_sessions")
-        .upsert(
-          { session_id: sessionId, ip, user_agent: userAgent, message_count: body.messages.length },
-          { onConflict: "session_id" }
-        )
-        .then(() => {});
+      if (supabase) {
+        await supabase
+          .from("chat_sessions")
+          .upsert(
+            { session_id: sessionId, ip, user_agent: userAgent, message_count: body.messages.length },
+            { onConflict: "session_id" }
+          )
+          .then(() => {});
+      }
     }
 
     const apiKey = process.env.DEEPSEEK_API_KEY;
@@ -148,7 +152,7 @@ export async function POST(request: NextRequest) {
     const reply = data.choices?.[0]?.message?.content || "Sorry, I could not generate a response.";
 
     // Write user message and AI reply to Supabase (non-blocking)
-    if (sessionId) {
+    if (sessionId && supabase) {
       const lastUserMsg = body.messages[body.messages.length - 1];
       supabase
         .from("chat_messages")
