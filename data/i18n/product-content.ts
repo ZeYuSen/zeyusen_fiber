@@ -7,6 +7,7 @@ import type { ProductContent } from "@/data/product-content";
 export type ProductContentTranslation = Partial<ProductContent>;
 export type ProductContentTranslations = Record<string, ProductContentTranslation>;
 
+export { productContentZh } from "./product-content.zh";
 export { productContentKo } from "./product-content.ko";
 export { productContentEs } from "./product-content.es";
 export { productContentPt } from "./product-content.pt";

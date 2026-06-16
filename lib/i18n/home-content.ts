@@ -348,7 +348,77 @@ const pt: HomeContent = {
   },
 };
 
-const content: Record<Locale, HomeContent> = { en, ko, es, pt };
+const zh: HomeContent = {
+  hero: [
+    { title: "泽宇森研发中心", subtitle: "专注碳纤维和玻璃纤维复合材料创新的研发设施" },
+    { title: "先进复合材料", subtitle: "从碳纤维到玻璃纤维——为全球最严苛行业而设计" },
+    { title: "先进制造设施", subtitle: "80,000平方米生产基地，配备自动化生产线和严格质量管控" },
+  ],
+  heroCta: { quote: "获取报价", about: "了解我们的制造" },
+  divisions: {
+    carbon: { label: "碳纤维", headline: "高性能轻量化解决方案", description: "用于航空航天、赛车运动和先进制造的超轻碳纤维复合材料。从10g/m²表面毡到复杂混合结构。" },
+    glass: { label: "玻璃纤维", headline: "可靠、经济的增强材料", description: "用于风电、建筑和工业过滤的耐腐蚀材料。薄毡、织物和复合增强材料。" },
+  },
+  exploreProducts: "浏览产品",
+  stats: [
+    { value: 10, suffix: "+", label: "年经验" },
+    { value: 50, suffix: "+", label: "出口国家" },
+    { value: 80, suffix: "M", label: "平方米年产量" },
+    { value: 13, suffix: "+", label: "授权专利" },
+  ],
+  industries: {
+    heading: "服务行业",
+    items: [
+      { title: "航空航天", description: "结构件、内饰面板和轻量化复合材料" },
+      { title: "风力发电", description: "涡轮叶片、机舱罩和结构增强材料" },
+      { title: "建筑工程", description: "保温、防水和结构加固材料" },
+      { title: "军工国防", description: "防弹防护、隐身应用和装甲复合材料" },
+      { title: "新能源", description: "燃料电池、电池隔膜和储能系统" },
+    ],
+  },
+  whyPartner: {
+    title: "每个规模都精准无误。",
+    intro: "凭借15年以上制造经验和与顶尖科研机构的合作，我们交付满足最严苛规格要求的复合材料——准时，每一次。",
+    capabilities: [
+      { number: "01", title: "定制工程", description: "从10g/m²到1200g/m²，任何规格的定制纤维解决方案。" },
+      { number: "02", title: "全球物流", description: "双生产基地，距上海港240公里。出口50+国家。" },
+      { number: "03", title: "质量认证", description: "ISO 9001、14001、45001认证。复合材料领域15+项专利。" },
+    ],
+  },
+  trust: {
+    title: "每项声明，可验证。",
+    intro: "认证、研发能力、物流基础设施和订单支持——在您下单之前即可审查，一切文档齐备。",
+    metrics: [
+      { number: "01", metric: "15", suffix: "+", unit: "年", title: "复合材料经验", text: "自2008年起专注玻璃纤维和碳纤维，服务全球严苛工业应用。" },
+      { number: "02", metric: "2", suffix: "", unit: "研发中心", title: "工程技术基石", text: "专属研发团队从选材到生产全程指导——了解您工艺的工程师。" },
+      { number: "03", metric: "50", suffix: "+", unit: "国家", title: "出口足迹", text: "双基地稳定全球交付，距上海港240公里。FOB、CIF、DDP——按您的条款协调。" },
+    ],
+    certHeading: "认证品质与专利",
+    certCount: "项认证",
+    certNote: "ISO 9001 / ISO 14001 / ISO 45001认证。13+项实用新型专利。",
+    deliveryHeading: "交付与支持",
+    deliveryFlow: "询价 → 发货",
+    logistics: [
+      { label: "双生产基地", text: "南通和泰州制造——稳定、可扩展的产出。" },
+      { label: "距上海港240公里", text: "出口就绪的物流枢纽，高效海运覆盖全球。" },
+      { label: "灵活贸易条款", text: "FOB、CIF、DDP——从样品寄送到批量订单。" },
+    ],
+    followUp: "端到端全程跟踪",
+    steps: ["询价", "生产", "检验", "发货"],
+  },
+  cta: {
+    title: "让我们一起创造",
+    intro: "告诉我们您的需求。我们的工程师将在24小时内为您提供定制推荐。",
+    emailPlaceholder: "您的邮箱",
+    messagePlaceholder: "您在寻找什么？",
+    sending: "发送中...",
+    submit: "发送询价",
+    successInline: "感谢您的咨询！我们将在24小时内联系您。",
+    error: "出了点问题，请重试。",
+  },
+};
+
+const content: Record<Locale, HomeContent> = { en, zh, ko, es, pt };
 
 export function getHomeContent(locale: Locale): HomeContent {
   return content[locale] ?? content[defaultLocale];

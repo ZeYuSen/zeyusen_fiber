@@ -30,12 +30,14 @@ export type RouteParams = Record<string, string>;
 const divisionRoot: Record<"carbon" | "glass", Record<Locale, string>> = {
   carbon: {
     en: "carbon-fiber",
+    zh: "碳纤维",
     ko: "탄소섬유",
     es: "fibra-de-carbono",
     pt: "fibra-de-carbono",
   },
   glass: {
     en: "glass-fiber",
+    zh: "玻璃纤维",
     ko: "유리섬유",
     es: "fibra-de-vidrio",
     pt: "fibra-de-vidro",
@@ -44,29 +46,31 @@ const divisionRoot: Record<"carbon" | "glass", Record<Locale, string>> = {
 
 // Reusable localized path segments (column-level localization).
 export const segmentLabels: Record<string, Record<Locale, string>> = {
-  products: { en: "products", ko: "제품", es: "productos", pt: "produtos" },
+  products: { en: "products", zh: "产品", ko: "제품", es: "productos", pt: "produtos" },
   applications: {
     en: "applications",
+    zh: "应用",
     ko: "응용분야",
     es: "aplicaciones",
     pt: "aplicacoes",
   },
-  blog: { en: "blog", ko: "블로그", es: "blog", pt: "blog" },
-  glass: { en: "glass", ko: "유리", es: "vidrio", pt: "vidro" },
+  blog: { en: "blog", zh: "博客", ko: "블로그", es: "blog", pt: "blog" },
+  glass: { en: "glass", zh: "玻璃", ko: "유리", es: "vidrio", pt: "vidro" },
 };
 
 // Localized standalone static-page segments.
 const staticSegment: Record<string, Record<Locale, string>> = {
-  about: { en: "about", ko: "회사소개", es: "sobre-nosotros", pt: "sobre-nos" },
-  services: { en: "services", ko: "서비스", es: "servicios", pt: "servicos" },
-  contact: { en: "contact", ko: "문의", es: "contacto", pt: "contato" },
+  about: { en: "about", zh: "关于我们", ko: "회사소개", es: "sobre-nosotros", pt: "sobre-nos" },
+  services: { en: "services", zh: "服务", ko: "서비스", es: "servicios", pt: "servicos" },
+  contact: { en: "contact", zh: "联系我们", ko: "문의", es: "contacto", pt: "contato" },
   privacy: {
     en: "privacy",
+    zh: "隐私政策",
     ko: "개인정보처리방침",
     es: "privacidad",
     pt: "privacidade",
   },
-  terms: { en: "terms", ko: "이용약관", es: "terminos", pt: "termos" },
+  terms: { en: "terms", zh: "服务条款", ko: "이용약관", es: "terminos", pt: "termos" },
 };
 
 // Segment spec primitives that compose a route path.

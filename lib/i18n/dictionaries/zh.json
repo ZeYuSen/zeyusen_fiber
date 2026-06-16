@@ -1,0 +1,133 @@
+{
+  "nav": {
+    "home": "首页",
+    "carbonFiber": "碳纤维",
+    "glassFiber": "玻璃纤维",
+    "applications": "应用领域",
+    "services": "服务",
+    "blog": "博客",
+    "about": "关于",
+    "contact": "联系我们",
+    "getQuote": "获取报价",
+    "allProducts": "全部产品",
+    "carbonProducts": "碳纤维产品",
+    "glassProducts": "玻璃纤维产品",
+    "menu": "菜单",
+    "language": "语言"
+  },
+  "products": {
+    "carbon-fiber-mat": "碳纤维毡",
+    "carbon-fiber-cloth": "碳纤维布",
+    "carbon-fiber-raw": "碳纤维原材料",
+    "tissue-mat": "玻璃纤维薄毡",
+    "fiberglass-cloth": "玻璃纤维布",
+    "composite-mat": "复合毡",
+    "chopped-strand-mat": "短切毡",
+    "other-materials": "其他纤维材料"
+  },
+  "actions": {
+    "sendInquiry": "发送询价",
+    "getQuote": "获取免费报价",
+    "whatsapp": "WhatsApp",
+    "viewAll": "查看全部",
+    "viewDetails": "查看详情",
+    "browseRelated": "浏览相关产品",
+    "readMore": "阅读更多",
+    "backToHome": "返回首页",
+    "contactUs": "联系我们",
+    "backToApplications": "返回应用领域",
+    "requestQuote": "请求报价"
+  },
+  "sections": {
+    "overview": "概述",
+    "keyFeatures": "主要特性",
+    "specifications": "技术规格",
+    "applications": "应用领域",
+    "faq": "常见问题",
+    "relatedProducts": "相关产品",
+    "relatedGuides": "相关指南",
+    "keyBenefits": "核心优势",
+    "recommendedProducts": "推荐产品",
+    "tableOfContents": "本页目录",
+    "productsInCategory": "该分类产品",
+    "parameter": "参数",
+    "value": "数值"
+  },
+  "footer": {
+    "tagline": "为全球先进复合材料制造提供高性能碳纤维和玻璃纤维材料。",
+    "products": "产品",
+    "company": "公司",
+    "resources": "资源",
+    "legal": "法律",
+    "carbonFiber": "碳纤维",
+    "glassFiber": "玻璃纤维",
+    "about": "关于我们",
+    "services": "服务",
+    "applications": "应用领域",
+    "blog": "博客",
+    "contact": "联系我们",
+    "privacy": "隐私政策",
+    "terms": "服务条款",
+    "rights": "版权所有。",
+    "certifications": "ISO 9001 · ISO 14001 · ISO 45001 认证"
+  },
+  "chat": {
+    "title": "泽宇森助手",
+    "subtitle": "咨询产品、规格或应用相关问题",
+    "placeholder": "输入您的消息...",
+    "welcome": "您好！我是泽宇森纤维助手。欢迎咨询我们的碳纤维和玻璃纤维产品、规格或应用方面的问题。",
+    "send": "发送",
+    "openChat": "打开聊天",
+    "closeChat": "关闭聊天",
+    "thinking": "思考中...",
+    "error": "出了点问题，请重试或直接联系我们。",
+    "disclaimer": "AI 回答可能不准确，请与我们的团队确认详情。"
+  },
+  "blog": {
+    "eyebrow": "行业资讯与指南",
+    "intro": "为复合材料专业人士提供行业洞察、产品知识和技术指南。",
+    "publishedBy": "泽宇森纤维技术团队",
+    "published": "发布于",
+    "updated": "更新于",
+    "needHelpTitle": "需要帮助选择材料？",
+    "needHelpBody": "请告诉我们您的目标应用、工艺和所需规格。泽宇森纤维可以帮助比较碳纤维和玻璃纤维材料选项。",
+    "needHelpCta": "联系泽宇森纤维",
+    "print": "打印"
+  },
+  "form": {
+    "name": "姓名",
+    "email": "邮箱",
+    "company": "公司",
+    "country": "国家",
+    "phone": "电话",
+    "message": "留言",
+    "productInterest": "感兴趣的产品",
+    "namePlaceholder": "您的姓名",
+    "emailPlaceholder": "you@company.com",
+    "companyPlaceholder": "您的公司",
+    "phonePlaceholder": "您的电话号码",
+    "messagePlaceholder": "请告诉我们您的项目、目标规格和需求数量。",
+    "submit": "发送询价",
+    "submitting": "发送中...",
+    "successTitle": "感谢您的询价",
+    "successBody": "我们的团队将在一个工作日内回复您。",
+    "errorTitle": "提交失败",
+    "errorBody": "出了点问题，请重试或直接发送邮件给我们。",
+    "required": "此字段为必填项",
+    "invalidEmail": "请输入有效的邮箱地址",
+    "verifyHuman": "请完成验证"
+  },
+  "notFound": {
+    "title": "页面未找到",
+    "body": "您查找的页面可能已被移动或不再存在。",
+    "code": "404"
+  },
+  "breadcrumb": {
+    "home": "首页"
+  },
+  "cta": {
+    "customTitle": "需要定制方案？",
+    "customBodyCarbon": "我们的工程师可以按照您的精确规格定制碳纤维材料。",
+    "customBodyGlass": "我们的工程师可以按照您的精确规格定制玻璃纤维材料。"
+  }
+}

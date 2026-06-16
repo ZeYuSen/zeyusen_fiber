@@ -242,10 +242,11 @@ const en: PagesContent = {
 };
 
 import { ko } from "./pages-content.ko";
+import { zh } from "./pages-content.zh";
 import { es } from "./pages-content.es";
 import { pt } from "./pages-content.pt";
 
-const content: Record<Locale, PagesContent> = { en, ko, es, pt };
+const content: Record<Locale, PagesContent> = { en, zh, ko, es, pt };
 
 export function getPagesContent(locale: Locale): PagesContent {
   return content[locale] ?? content[defaultLocale];

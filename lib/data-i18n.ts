@@ -13,23 +13,28 @@ import {
 } from "@/data/application-details";
 import { mergeCategories, type DivisionTranslations } from "@/data/i18n/types";
 
-// --- Translation registries (ko/es/pt). English uses the base verbatim. ---
+// --- Translation registries (zh/ko/es/pt). English uses the base verbatim. ---
+import { carbonFiberZh } from "@/data/i18n/carbon-fiber.zh";
 import { carbonFiberKo } from "@/data/i18n/carbon-fiber.ko";
 import { carbonFiberEs } from "@/data/i18n/carbon-fiber.es";
 import { carbonFiberPt } from "@/data/i18n/carbon-fiber.pt";
+import { glassFiberZh } from "@/data/i18n/glass-fiber.zh";
 import { glassFiberKo } from "@/data/i18n/glass-fiber.ko";
 import { glassFiberEs } from "@/data/i18n/glass-fiber.es";
 import { glassFiberPt } from "@/data/i18n/glass-fiber.pt";
 import {
+  productContentZh,
   productContentKo,
   productContentEs,
   productContentPt,
   type ProductContentTranslations,
 } from "@/data/i18n/product-content";
 import {
+  applicationDetailsZh,
   applicationDetailsKo,
   applicationDetailsEs,
   applicationDetailsPt,
+  applicationGroupsZh,
   applicationGroupsKo,
   applicationGroupsEs,
   applicationGroupsPt,
@@ -38,26 +43,31 @@ import {
 } from "@/data/i18n/applications";
 
 const carbonTranslations: Partial<Record<Locale, DivisionTranslations>> = {
+  zh: carbonFiberZh,
   ko: carbonFiberKo,
   es: carbonFiberEs,
   pt: carbonFiberPt,
 };
 const glassTranslations: Partial<Record<Locale, DivisionTranslations>> = {
+  zh: glassFiberZh,
   ko: glassFiberKo,
   es: glassFiberEs,
   pt: glassFiberPt,
 };
 const productContentTranslations: Partial<Record<Locale, ProductContentTranslations>> = {
+  zh: productContentZh,
   ko: productContentKo,
   es: productContentEs,
   pt: productContentPt,
 };
 const applicationDetailTranslations: Partial<Record<Locale, ApplicationDetailTranslations>> = {
+  zh: applicationDetailsZh,
   ko: applicationDetailsKo,
   es: applicationDetailsEs,
   pt: applicationDetailsPt,
 };
 const applicationGroupTranslations: Partial<Record<Locale, ApplicationGroupTranslations>> = {
+  zh: applicationGroupsZh,
   ko: applicationGroupsKo,
   es: applicationGroupsEs,
   pt: applicationGroupsPt,

@@ -527,6 +527,211 @@ export const applicationDetailsPt: ApplicationDetailTranslations = {
   }
 };
 
+export const applicationDetailsZh: ApplicationDetailTranslations = {
+  "aerospace": {
+    "title": "航空航天",
+    "metaDescription": "用于航空航天结构件、内饰面板和轻量化航空解决方案的高性能碳纤维复合材料。",
+    "headline": "为蓝天而设计",
+    "description": "航空航天行业需要兼具卓越强度和最轻重量的材料。我们的碳纤维解决方案专为飞机结构件、卫星系统、无人机框架和客舱内饰面板设计。",
+    "benefits": [
+      "超轻量：比铝合金减重最高70%",
+      "优异的抗疲劳性能延长使用寿命",
+      "耐高温至300°C",
+      "出色的振动阻尼特性",
+      "极端环境下的无腐蚀性能",
+      "10g/m²到600g/m²定制克重规格"
+    ],
+    "products": [
+      "碳纤维表面毡 10g",
+      "碳纤维针刺毡",
+      "碳-玻混合织物"
+    ]
+  },
+  "military-defense": {
+    "title": "军工国防",
+    "metaDescription": "用于EMI屏蔽、防弹防护和隐身应用的特种碳纤维材料。",
+    "headline": "以创新实现防护",
+    "description": "现代国防系统需要能提供电磁屏蔽、结构完整性和隐身功能的材料。我们的镀镍碳纤维毡在保持轻量化的同时提供优异的EMI/RFI屏蔽性能。",
+    "benefits": [
+      "优异的EMI/RFI屏蔽效能（60-90 dB）",
+      "轻量化防弹防护解决方案",
+      "雷达吸波材料（RAM）能力",
+      "耐化学和耐腐蚀性",
+      "高冲击强度和损伤容限",
+      "保密应用的定制规格"
+    ],
+    "products": [
+      "镀镍碳纤维毡",
+      "碳纤维复合毡",
+      "碳纤维表面毡 10g"
+    ]
+  },
+  "new-energy": {
+    "title": "新能源",
+    "metaDescription": "用于氢燃料电池GDL、电池隔膜和储能系统的先进碳纤维材料。",
+    "headline": "驱动明天的能源",
+    "description": "向清洁能源的转型需要具有卓越导电性和化学稳定性的先进材料。我们的超薄碳纤维毡可用作氢燃料电池的气体扩散层（GDL）和先进电池的隔膜。",
+    "benefits": [
+      "针对气体扩散层应用优化的孔隙率",
+      "优异的电导率（< 5 mΩ·cm²）",
+      "酸碱环境下的化学稳定性",
+      "燃料电池应用10g/m²起的超薄选项",
+      "一致的厚度均匀性（±5%）",
+      "商用能源系统的规模化生产"
+    ],
+    "products": [
+      "碳纤维表面毡 10g",
+      "碳纤维表面毡 20g",
+      "碳-玻混合毡"
+    ]
+  },
+  "wind-energy": {
+    "title": "风力发电",
+    "metaDescription": "用于风力涡轮叶片、机舱罩和结构件的高性能玻璃纤维增强材料。",
+    "headline": "增强可再生能源",
+    "description": "风电是可再生能源发电中增长最快的领域之一，玻璃纤维复合材料是涡轮叶片制造的核心。我们的多轴织物和复合毡专为叶片生产设计。",
+    "benefits": [
+      "针对叶片主梁和壳体优化的多轴织物",
+      "优异的抗疲劳性能满足20年以上使用寿命",
+      "出色的树脂灌注特性实现无空隙层压",
+      "一致的纤维分布确保可预测的力学性能",
+      "兼容环氧、聚酯和乙烯基酯树脂体系",
+      "300g/m²到1200g/m²多种克重"
+    ],
+    "products": [
+      "多轴向织物",
+      "单向织物",
+      "缝编复合毡"
+    ]
+  },
+  "construction": {
+    "title": "建筑工程",
+    "metaDescription": "用于建筑领域屋面防水、保温和结构加固的耐久玻璃纤维材料。",
+    "headline": "构建更坚实的基础",
+    "description": "建筑行业依赖玻璃纤维材料用于防水卷材、屋面系统、管道保温和结构加固。我们的薄毡为SBS/APP改性沥青防水卷材提供优异的表面质量。",
+    "benefits": [
+      "热循环下优异的尺寸稳定性",
+      "与沥青和聚合物改性系统优异的粘结性",
+      "混凝土加固用耐碱选项",
+      "结构应用的轻量高强",
+      "户外应用的抗紫外和防潮",
+      "阻燃等级可选（A级）"
+    ],
+    "products": [
+      "玻璃纤维表面毡",
+      "短切毡",
+      "方格布"
+    ]
+  }
+};
+
+export const applicationGroupsZh: ApplicationGroupTranslations = {
+  "carbon": {
+    "label": "碳纤维",
+    "eyebrow": "碳纤维应用领域",
+    "summary": "轻量、导电、高强度材料，服务于性能关键型行业。",
+    "applications": {
+      "aerospace": {
+        "title": "航空航天",
+        "description": "用于结构件、内饰面板和先进航空航天应用的超轻碳纤维复合材料。",
+        "products": [
+          "碳纤维表面毡 10g",
+          "碳纤维针刺毡",
+          "碳纤维纱线"
+        ]
+      },
+      "motorsport": {
+        "title": "赛车与汽车",
+        "description": "用于车身面板、结构加固和轻量化部件的高性能碳纤维材料。",
+        "products": [
+          "碳-玻混合织物",
+          "碳纤维斜纹布",
+          "碳纤维平纹布"
+        ]
+      },
+      "new-energy": {
+        "title": "新能源与燃料电池",
+        "description": "用于氢燃料电池GDL、电池隔膜和储能系统的先进碳纤维材料。",
+        "products": [
+          "碳纤维表面毡 10g",
+          "碳纤维表面毡 20g",
+          "碳-玻混合毡"
+        ]
+      },
+      "military-defense": {
+        "title": "军工国防",
+        "description": "用于电磁屏蔽、防弹防护和隐身应用的特种碳纤维解决方案。",
+        "products": [
+          "镀镍碳纤维毡",
+          "碳纤维表面毡 10g",
+          "碳纤维复合毡"
+        ]
+      },
+      "manufacturing": {
+        "title": "先进制造",
+        "description": "用于拉挤工艺、模具制造和先进复合材料制造的优质碳纤维材料。",
+        "products": [
+          "碳纤维复合毡",
+          "碳纤维针刺毡",
+          "碳纤维短切丝"
+        ]
+      }
+    }
+  },
+  "glass": {
+    "label": "玻璃纤维",
+    "eyebrow": "玻璃纤维应用领域",
+    "summary": "经济高效、耐腐蚀的增强材料，服务于能源、建筑、交通和工业。",
+    "applications": {
+      "wind-energy": {
+        "title": "风力发电",
+        "description": "用于涡轮叶片、机舱罩和结构件的高性能玻璃纤维增强材料。",
+        "products": [
+          "双轴缝编毡",
+          "多轴缝编毡",
+          "单向布"
+        ]
+      },
+      "construction": {
+        "title": "建筑工程",
+        "description": "用于保温、防水卷材、墙面覆盖和结构加固的耐久玻璃纤维材料。",
+        "products": [
+          "玻璃纤维表面毡",
+          "黑色玻纤薄毡",
+          "玻纤屋面毡"
+        ]
+      },
+      "industrial-filtration": {
+        "title": "工业过滤",
+        "description": "用于高温过滤、化工处理和环境保护的特种纤维材料。",
+        "products": [
+          "玄武岩纤维毡",
+          "针织缝编毡",
+          "短切毡"
+        ]
+      },
+      "transportation": {
+        "title": "交通运输",
+        "description": "用于高铁内饰、汽车部件和交通基础设施的轻量化复合材料。",
+        "products": [
+          "PP芯夹层毡",
+          "复合毡",
+          "方格布"
+        ]
+      },
+      "marine": {
+        "title": "船舶与防腐",
+        "description": "用于造船、化学储罐和海洋基础设施的耐腐蚀玻璃纤维解决方案。",
+        "products": [
+          "方格布",
+          "短切毡",
+          "玻璃纤维表面毡"
+        ]
+      }
+    }
+  }
+};
+
 export const applicationGroupsPt: ApplicationGroupTranslations = {
   "carbon": {
     "label": "Fibra de Carbono",

@@ -295,11 +295,12 @@ const en: PageContent = {
 };
 
 // Per-locale overrides. English is the base/fallback.
+import { zh } from "./page-content.zh";
 import { ko } from "./page-content.ko";
 import { es } from "./page-content.es";
 import { pt } from "./page-content.pt";
 
-const overrides: Partial<Record<Locale, PageContent>> = { ko, es, pt };
+const overrides: Partial<Record<Locale, PageContent>> = { zh, ko, es, pt };
 
 export function getPageContent(locale: Locale): PageContent {
   if (locale === defaultLocale) return en;

@@ -62,6 +62,7 @@ export function createPageMetadata({
       languages: {
         "x-default": absoluteUrl(alternates.en),
         en: absoluteUrl(alternates.en),
+        zh: absoluteUrl(alternates.zh),
         ko: absoluteUrl(alternates.ko),
         es: absoluteUrl(alternates.es),
         pt: absoluteUrl(alternates.pt),
