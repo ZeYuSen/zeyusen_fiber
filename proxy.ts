@@ -11,11 +11,11 @@ export function proxy(request: NextRequest) {
   );
   if (hasLocale) return NextResponse.next();
 
-  // Root → default language (temporary redirect leaves room to change default).
+  // Root → default language. English is the permanent canonical default.
   if (pathname === "/") {
     const url = request.nextUrl.clone();
     url.pathname = `/${defaultLocale}`;
-    return NextResponse.redirect(url, 307);
+    return NextResponse.redirect(url, 301);
   }
 
   // Legacy un-prefixed URL → /en/* (301 permanent, preserves SEO equity).
