@@ -3,31 +3,34 @@
 import Image from "next/image";
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
+import { useLocale } from "@/lib/i18n/use-locale";
+import { localizedHref, type PageKey } from "@/lib/i18n/routes";
+import { getHomeContent } from "@/lib/i18n/home-content";
 
-const divisions = [
+const divisionMeta: Array<{
+  id: "carbon" | "glass";
+  image: string;
+  pageKey: PageKey;
+  accentColor: string;
+}> = [
   {
     id: "carbon",
-    label: "Carbon Fiber",
-    headline: "High Performance, Lightweight Solutions",
-    description:
-      "Ultra-lightweight carbon fiber composites for aerospace, motorsport, and advanced manufacturing. From 10g/m² surface mats to complex hybrid structures.",
     image: "/images/carbon-fiber/carbon_bg.webp",
-    href: "/carbon-fiber",
+    pageKey: "carbon-fiber",
     accentColor: "cyan",
   },
   {
     id: "glass",
-    label: "Glass Fiber",
-    headline: "Reliable, Cost-Effective Reinforcements",
-    description:
-      "Corrosion-resistant materials for wind energy, construction, and industrial filtration. Tissue mats, woven cloth, and composite reinforcements.",
     image: "/images/glass-fiber/glass_bg.webp",
-    href: "/glass-fiber",
+    pageKey: "glass-fiber",
     accentColor: "emerald",
   },
 ];
 
 export function DivisionsSplit() {
+  const locale = useLocale();
+  const home = getHomeContent(locale);
+  const divisions = divisionMeta.map((m) => ({ ...m, ...home.divisions[m.id] }));
   return (
     <section className="section-padding bg-white">
       <div className="container-wide">
@@ -35,7 +38,7 @@ export function DivisionsSplit() {
           {divisions.map((div) => (
             <Link
               key={div.id}
-              href={div.href}
+              href={localizedHref(div.pageKey, locale)}
               className="group relative overflow-hidden rounded-2xl aspect-[4/3] block"
             >
               {/* Background image */}
@@ -65,7 +68,7 @@ export function DivisionsSplit() {
                 <span className={`inline-flex items-center gap-2 text-sm font-medium ${
                   div.accentColor === "cyan" ? "text-cyan-400" : "text-emerald-400"
                 } group-hover:gap-3 transition-all duration-300`}>
-                  Explore Products <ArrowRight className="w-4 h-4" />
+                  {home.exploreProducts} <ArrowRight className="w-4 h-4" />
                 </span>
               </div>
             </Link>

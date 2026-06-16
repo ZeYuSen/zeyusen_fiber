@@ -1,7 +1,7 @@
 import { NextRequest, NextResponse } from "next/server";
 import nodemailer from "nodemailer";
 import { primaryEmail } from "@/lib/contact";
-import { supabase } from "@/lib/supabase";
+import { getSupabaseClient } from "@/lib/supabase";
 
 // Dedup: only send one email per session
 const sentSessions = new Set<string>();
@@ -28,6 +28,15 @@ function isSummaryRateLimited(ip: string): boolean {
 
   entry.count++;
   return entry.count > MAX_SUMMARIES_PER_IP;
+}
+
+function escapeHtml(str: string): string {
+  return str
+    .replace(/&/g, "&amp;")
+    .replace(/</g, "&lt;")
+    .replace(/>/g, "&gt;")
+    .replace(/"/g, "&quot;")
+    .replace(/'/g, "&#039;");
 }
 
 const SUMMARY_PROMPT = `Analyze the following customer chat conversation and return a JSON response with two fields:
@@ -144,28 +153,32 @@ export async function POST(request: NextRequest) {
       });
 
       const timestamp = new Date().toLocaleString("zh-CN", { timeZone: "Asia/Shanghai" });
+      const safeSessionId = escapeHtml(String(sessionId || "unknown"));
+      const safeSummary = escapeHtml(summary);
+      const safeTranscript = escapeHtml(transcript);
 
       await transporter.sendMail({
         from: `ZeYuSen AI Chat <${emailUser}>`,
         to: notifyEmail,
         subject: `[High Intent] Sales Lead - ${timestamp}`,
         html: `
-          <h2>🔥 High-Intent Customer Conversation</h2>
-          <p><strong>Session:</strong> ${sessionId || "unknown"}</p>
+          <h2>High-Intent Customer Conversation</h2>
+          <p><strong>Session:</strong> ${safeSessionId}</p>
           <p><strong>Time:</strong> ${timestamp}</p>
           <p><strong>Messages:</strong> ${messages.length} (${userMessages.length} from customer)</p>
           <hr />
           <h3>AI Summary</h3>
-          <div style="background:#f5f5f5;padding:16px;border-radius:8px;white-space:pre-wrap;font-size:14px;">${summary}</div>
+          <div style="background:#f5f5f5;padding:16px;border-radius:8px;white-space:pre-wrap;font-size:14px;">${safeSummary}</div>
           <hr />
           <h3>Full Transcript</h3>
-          <div style="background:#fafafa;padding:16px;border-radius:8px;font-size:13px;white-space:pre-wrap;">${transcript}</div>
+          <div style="background:#fafafa;padding:16px;border-radius:8px;font-size:13px;white-space:pre-wrap;">${safeTranscript}</div>
         `,
       });
     }
 
     // Update session in Supabase with summary, intent, and ended_at
-    if (sessionId) {
+    const supabase = getSupabaseClient();
+    if (sessionId && supabase) {
       await supabase
         .from("chat_sessions")
         .update({ summary, intent, ended_at: new Date().toISOString(), message_count: messages.length })

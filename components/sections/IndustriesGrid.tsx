@@ -2,53 +2,38 @@
 
 import { ArrowRight } from "lucide-react";
 import Link from "next/link";
+import { useLocale } from "@/lib/i18n/use-locale";
+import { localizedHref, type PageKey } from "@/lib/i18n/routes";
+import { getHomeContent } from "@/lib/i18n/home-content";
 
-const industries = [
-  {
-    title: "Aerospace & Aviation",
-    description: "Structural components, interior panels, and lightweight composites",
-    href: "/carbon-fiber/applications/aerospace",
-    division: "carbon",
-  },
-  {
-    title: "Wind Energy",
-    description: "Turbine blades, nacelle covers, and structural reinforcements",
-    href: "/glass-fiber/applications/wind-energy",
-    division: "glass",
-  },
-  {
-    title: "Construction",
-    description: "Insulation, waterproofing, and structural reinforcement materials",
-    href: "/glass-fiber/applications/construction",
-    division: "glass",
-  },
-  {
-    title: "Military & Defense",
-    description: "Ballistic protection, stealth applications, and armored composites",
-    href: "/carbon-fiber/applications/military-defense",
-    division: "carbon",
-  },
-  {
-    title: "New Energy",
-    description: "Fuel cells, battery separators, and energy storage systems",
-    href: "/carbon-fiber/applications/new-energy",
-    division: "carbon",
-  },
+const industryMeta: Array<{
+  pageKey: PageKey;
+  slug: string;
+  division: string;
+}> = [
+  { pageKey: "carbon-application", slug: "aerospace", division: "carbon" },
+  { pageKey: "glass-application", slug: "wind-energy", division: "glass" },
+  { pageKey: "glass-application", slug: "construction", division: "glass" },
+  { pageKey: "carbon-application", slug: "military-defense", division: "carbon" },
+  { pageKey: "carbon-application", slug: "new-energy", division: "carbon" },
 ];
 
 export function IndustriesGrid() {
+  const locale = useLocale();
+  const home = getHomeContent(locale);
+  const industries = industryMeta.map((m, i) => ({ ...m, ...home.industries.items[i] }));
   return (
     <section className="bg-white section-padding">
       <div className="container-wide">
         <h2 className="text-2xl sm:text-3xl font-semibold text-neutral-900 mb-20">
-          Industries We Serve
+          {home.industries.heading}
         </h2>
 
         <div data-industry-list>
           {industries.map((industry, i) => (
             <Link
               key={industry.title}
-              href={industry.href}
+              href={localizedHref(industry.pageKey, locale, { slug: industry.slug })}
               className="group block border-t border-neutral-100 py-6 sm:py-8"
             >
               <div className="flex items-center justify-between gap-4">
@@ -71,7 +56,7 @@ export function IndustriesGrid() {
                       industry.division === "carbon" ? "text-cyan-600" : "text-emerald-600"
                     }`}
                   >
-                    {industry.division === "carbon" ? "Carbon" : "Glass"}
+                    {industry.division === "carbon" ? home.divisions.carbon.label : home.divisions.glass.label}
                   </span>
                   <ArrowRight className="w-4 h-4 text-neutral-400 group-hover:text-neutral-900 group-hover:translate-x-1 transition-all duration-300" />
                 </div>

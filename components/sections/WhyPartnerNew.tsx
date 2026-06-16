@@ -1,36 +1,21 @@
-const capabilities = [
-  {
-    number: "01",
-    title: "Custom Engineering",
-    description: "Tailored fiber solutions from 10g/m² to 1200g/m², any specification.",
-  },
-  {
-    number: "02",
-    title: "Global Logistics",
-    description: "Dual production bases, 240km from Shanghai Port. Exporting to 50+ countries.",
-  },
-  {
-    number: "03",
-    title: "Quality Certified",
-    description: "ISO 9001, 14001, 45001 certified. 15+ patents in composite materials.",
-  },
-];
+"use client";
+
+import { useLocale } from "@/lib/i18n/use-locale";
+import { getHomeContent } from "@/lib/i18n/home-content";
 
 export function WhyPartnerNew() {
+  const { whyPartner } = getHomeContent(useLocale());
+  const capabilities = whyPartner.capabilities;
   return (
     <section className="bg-neutral-50 section-padding">
       <div className="container-wide">
         {/* Header */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16 mb-24">
           <h2 className="text-2xl sm:text-3xl font-semibold text-neutral-900">
-            Precision at
-            <br />
-            every scale.
+            {whyPartner.title}
           </h2>
           <p className="text-neutral-500 leading-relaxed self-end">
-            With 15+ years of manufacturing expertise and partnerships with
-            leading research institutions, we deliver composite materials that
-            meet the most demanding specifications — on time, every time.
+            {whyPartner.intro}
           </p>
         </div>
 

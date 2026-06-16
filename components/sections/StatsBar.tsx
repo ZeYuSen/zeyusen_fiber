@@ -1,11 +1,10 @@
-const stats = [
-  { value: 10, suffix: "+", label: "Years Experience" },
-  { value: 50, suffix: "+", label: "Countries Exported" },
-  { value: 80, suffix: "M", label: "Sqm Annual Output" },
-  { value: 13, suffix: "+", label: "Patents Granted" },
-];
+"use client";
+
+import { useLocale } from "@/lib/i18n/use-locale";
+import { getHomeContent } from "@/lib/i18n/home-content";
 
 export function StatsBar() {
+  const stats = getHomeContent(useLocale()).stats;
   return (
     <section className="bg-neutral-50 py-24 sm:py-32">
       <div className="container-wide">

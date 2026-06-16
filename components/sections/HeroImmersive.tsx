@@ -4,27 +4,21 @@ import { useEffect, useRef, useState, useCallback } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { gsap } from "@/lib/gsap";
+import { useLocale } from "@/lib/i18n/use-locale";
+import { localizedHref } from "@/lib/i18n/routes";
+import { getHomeContent } from "@/lib/i18n/home-content";
 
-const slides = [
-  {
-    image: "/images/hero/banner4.jpg",
-    title: "ZeYuSen R&D Center",
-    subtitle: "Dedicated research facility driving innovation in carbon fiber and fiberglass composite materials",
-  },
-  {
-    image: "/images/hero/banner1.jpg",
-    title: "Advanced Composite Materials",
-    subtitle: "From carbon fiber to fiberglass — engineered for the world's most demanding industries",
-  },
-  {
-    image: "/images/hero/banner2.jpg",
-    title: "State-of-the-Art Manufacturing",
-    subtitle: "80,000 m² production facility with automated production lines and strict quality control",
-  },
+const slideImages = [
+  "/images/hero/banner4.jpg",
+  "/images/hero/banner1.jpg",
+  "/images/hero/banner2.jpg",
 ];
 
 export function HeroImmersive() {
   const sectionRef = useRef<HTMLElement>(null);
+  const locale = useLocale();
+  const home = getHomeContent(locale);
+  const slides = home.hero.map((s, i) => ({ ...s, image: slideImages[i] }));
   const [current, setCurrent] = useState(0);
   const [isTransitioning, setIsTransitioning] = useState(false);
   const intervalRef = useRef<ReturnType<typeof setInterval> | null>(null);
@@ -38,7 +32,7 @@ export function HeroImmersive() {
   }, [current, isTransitioning]);
 
   const next = useCallback(() => {
-    goTo((current + 1) % slides.length);
+    goTo((current + 1) % slideImages.length);
   }, [current, goTo]);
 
   useEffect(() => {
@@ -100,16 +94,16 @@ export function HeroImmersive() {
             </p>
             <div className="flex gap-4 mt-10">
               <Link
-                href="/contact"
+                href={localizedHref("contact", locale)}
                 className="px-8 py-3 bg-white text-black font-medium rounded-sm hover:bg-white/90 transition-colors"
               >
-                Get a Quote
+                {home.heroCta.quote}
               </Link>
               <Link
-                href="/about"
+                href={localizedHref("about", locale)}
                 className="px-8 py-3 border border-white/60 text-white font-medium rounded-sm hover:bg-white/10 transition-colors"
               >
-                About Our Manufacturing
+                {home.heroCta.about}
               </Link>
             </div>
           </div>

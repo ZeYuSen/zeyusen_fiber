@@ -1,6 +1,8 @@
 import fs from "node:fs";
 import path from "node:path";
 import matter from "gray-matter";
+import type { Locale } from "@/lib/i18n/config";
+import { defaultLocale } from "@/lib/i18n/config";
 
 export type FAQItem = { question: string; answer: string };
 export type TocHeading = { id: string; text: string; level: 2 | 3 };
@@ -18,7 +20,11 @@ export type BlogPost = {
   headings: TocHeading[];
 };
 
-const blogDirectory = path.join(process.cwd(), "content", "blog");
+const blogRoot = path.join(process.cwd(), "content", "blog");
+
+function localeDir(locale: Locale): string {
+  return path.join(blogRoot, locale);
+}
 
 function slugify(text: string): string {
   return text
@@ -97,8 +103,8 @@ function extractHeadings(content: string): TocHeading[] {
   return headings;
 }
 
-function readBlogPost(fileName: string): BlogPost {
-  const fullPath = path.join(blogDirectory, fileName);
+function readBlogPost(dir: string, fileName: string): BlogPost {
+  const fullPath = path.join(dir, fileName);
   const source = fs.readFileSync(fullPath, "utf8");
   const { data, content } = matter(source);
 
@@ -120,18 +126,31 @@ function readBlogPost(fileName: string): BlogPost {
   };
 }
 
-export function getAllBlogPosts(): BlogPost[] {
-  if (!fs.existsSync(blogDirectory)) return [];
+// Read every English post (the canonical slug set) for a given locale, falling
+// back to the English file whenever a translation is missing.
+export function getBlogPosts(locale: Locale): BlogPost[] {
+  const enDir = localeDir(defaultLocale);
+  if (!fs.existsSync(enDir)) return [];
+  const localizedDir = localeDir(locale);
 
   return fs
-    .readdirSync(blogDirectory)
+    .readdirSync(enDir)
     .filter((fileName) => fileName.endsWith(".md"))
-    .map(readBlogPost)
+    .map((fileName) => {
+      const dir =
+        locale !== defaultLocale && fs.existsSync(path.join(localizedDir, fileName))
+          ? localizedDir
+          : enDir;
+      return readBlogPost(dir, fileName);
+    })
     .sort((a, b) => b.date.localeCompare(a.date));
 }
 
-export function getBlogPost(slug: string) {
-  return getAllBlogPosts().find((post) => post.slug === slug);
+export function getBlogPost(locale: Locale, slug: string) {
+  return getBlogPosts(locale).find((post) => post.slug === slug);
 }
 
-export const blogPosts = getAllBlogPosts();
+// Canonical slug list (English) for generateStaticParams and sitemap.
+export function getBlogSlugs(): string[] {
+  return getBlogPosts(defaultLocale).map((post) => post.slug);
+}

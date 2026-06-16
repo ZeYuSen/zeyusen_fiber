@@ -1,0 +1,133 @@
+{
+  "nav": {
+    "home": "Início",
+    "carbonFiber": "Fibra de Carbono",
+    "glassFiber": "Fibra de Vidro",
+    "applications": "Aplicações",
+    "services": "Serviços",
+    "blog": "Blog",
+    "about": "Sobre",
+    "contact": "Contato",
+    "getQuote": "Solicitar Orçamento",
+    "allProducts": "Todos os Produtos",
+    "carbonProducts": "Produtos de Fibra de Carbono",
+    "glassProducts": "Produtos de Fibra de Vidro",
+    "menu": "Menu",
+    "language": "Idioma"
+  },
+  "products": {
+    "carbon-fiber-mat": "Manta de Fibra de Carbono",
+    "carbon-fiber-cloth": "Tecido de Fibra de Carbono",
+    "carbon-fiber-raw": "Matérias-Primas de Fibra de Carbono",
+    "tissue-mat": "Véu de Fibra de Vidro",
+    "fiberglass-cloth": "Tecido de Fibra de Vidro",
+    "composite-mat": "Manta Composta",
+    "chopped-strand-mat": "Manta de Fios Cortados",
+    "other-materials": "Outros Materiais de Fibra"
+  },
+  "actions": {
+    "sendInquiry": "Enviar Consulta",
+    "getQuote": "Solicitar Orçamento Gratuito",
+    "whatsapp": "WhatsApp",
+    "viewAll": "Ver tudo",
+    "viewDetails": "Ver Detalhes",
+    "browseRelated": "Ver produtos relacionados",
+    "readMore": "Ler mais",
+    "backToHome": "Voltar ao Início",
+    "contactUs": "Fale Conosco",
+    "backToApplications": "Voltar às Aplicações",
+    "requestQuote": "Solicitar Orçamento"
+  },
+  "sections": {
+    "overview": "Visão Geral",
+    "keyFeatures": "Principais Características",
+    "specifications": "Especificações",
+    "applications": "Aplicações",
+    "faq": "Perguntas Frequentes",
+    "relatedProducts": "Produtos Relacionados",
+    "relatedGuides": "Guias Relacionados",
+    "keyBenefits": "Principais Benefícios",
+    "recommendedProducts": "Produtos Recomendados",
+    "tableOfContents": "Nesta página",
+    "productsInCategory": "Produtos nesta categoria",
+    "parameter": "Parâmetro",
+    "value": "Valor"
+  },
+  "footer": {
+    "tagline": "Materiais de fibra de carbono e fibra de vidro de engenharia para a fabricação avançada de compósitos em todo o mundo.",
+    "products": "Produtos",
+    "company": "Empresa",
+    "resources": "Recursos",
+    "legal": "Jurídico",
+    "carbonFiber": "Fibra de Carbono",
+    "glassFiber": "Fibra de Vidro",
+    "about": "Sobre",
+    "services": "Serviços",
+    "applications": "Aplicações",
+    "blog": "Blog",
+    "contact": "Contato",
+    "privacy": "Política de Privacidade",
+    "terms": "Termos de Serviço",
+    "rights": "Todos os direitos reservados.",
+    "certifications": "Certificado ISO 9001 · ISO 14001 · ISO 45001"
+  },
+  "chat": {
+    "title": "Assistente ZeYuSen",
+    "subtitle": "Pergunte sobre produtos, especificações ou aplicações",
+    "placeholder": "Digite sua mensagem...",
+    "welcome": "Olá! Sou o assistente da ZeYuSen Fiber. Pergunte-me sobre nossos produtos de fibra de carbono e fibra de vidro, especificações ou aplicações.",
+    "send": "Enviar",
+    "openChat": "Abrir chat",
+    "closeChat": "Fechar chat",
+    "thinking": "Pensando...",
+    "error": "Algo deu errado. Tente novamente ou entre em contato diretamente.",
+    "disclaimer": "As respostas da IA podem ser imprecisas. Confirme os detalhes com nossa equipe."
+  },
+  "blog": {
+    "eyebrow": "Insights e Guias",
+    "intro": "Insights do setor, conhecimento de produtos e guias técnicos para profissionais de materiais compósitos.",
+    "publishedBy": "Pela Equipe Técnica da ZeYuSen Fiber",
+    "published": "Publicado",
+    "updated": "Atualizado",
+    "needHelpTitle": "Precisa de ajuda para escolher um material?",
+    "needHelpBody": "Envie sua aplicação-alvo, processo e especificações necessárias. A ZeYuSen Fiber pode ajudar a comparar opções de materiais de fibra de carbono e fibra de vidro para o seu projeto.",
+    "needHelpCta": "Entre em Contato com a ZeYuSen Fiber",
+    "print": "Imprimir"
+  },
+  "form": {
+    "name": "Nome",
+    "email": "E-mail",
+    "company": "Empresa",
+    "country": "País",
+    "phone": "Telefone",
+    "message": "Mensagem",
+    "productInterest": "Produto de Interesse",
+    "namePlaceholder": "Seu nome",
+    "emailPlaceholder": "voce@empresa.com",
+    "companyPlaceholder": "Sua empresa",
+    "phonePlaceholder": "Seu número de telefone",
+    "messagePlaceholder": "Conte-nos sobre seu projeto, especificações-alvo e quantidades.",
+    "submit": "Enviar Consulta",
+    "submitting": "Enviando...",
+    "successTitle": "Obrigado pela sua consulta",
+    "successBody": "Nossa equipe responderá em até um dia útil.",
+    "errorTitle": "Falha no envio",
+    "errorBody": "Algo deu errado. Tente novamente ou envie-nos um e-mail diretamente.",
+    "required": "Este campo é obrigatório",
+    "invalidEmail": "Insira um endereço de e-mail válido",
+    "verifyHuman": "Por favor, conclua a verificação"
+  },
+  "notFound": {
+    "title": "Página Não Encontrada",
+    "body": "A página que você procura pode ter sido movida ou não existe mais.",
+    "code": "404"
+  },
+  "breadcrumb": {
+    "home": "Início"
+  },
+  "cta": {
+    "customTitle": "Precisa de uma Solução Personalizada?",
+    "customBodyCarbon": "Nossos engenheiros podem adaptar os materiais de fibra de carbono às suas especificações exatas.",
+    "customBodyGlass": "Nossos engenheiros podem adaptar os materiais de fibra de vidro às suas especificações exatas."
+  }
+}

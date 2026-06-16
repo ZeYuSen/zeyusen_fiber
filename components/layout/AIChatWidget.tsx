@@ -7,16 +7,25 @@ import ReactMarkdown from "react-markdown";
 import remarkGfm from "remark-gfm";
 import { whatsappPhone } from "@/lib/contact";
 import type { ChatMessage } from "@/types/chat";
+import type { Locale } from "@/lib/i18n/config";
+import type { Dictionary } from "@/lib/i18n/dictionaries";
 
-const WELCOME_MESSAGE: ChatMessage = {
-  id: "welcome",
-  role: "assistant",
-  content:
-    "Hi! I'm ZeYuSen's AI assistant. Ask me about our carbon fiber or fiberglass products, specifications, pricing, or anything else. How can I help you today?",
-  timestamp: Date.now(),
-};
-
-export function AIChatWidget() {
+export function AIChatWidget({
+  locale = "en",
+  dict,
+}: {
+  locale?: Locale;
+  dict?: Dictionary;
+}) {
+  const welcomeContent =
+    dict?.chat.welcome ??
+    "Hi! I'm ZeYuSen's AI assistant. Ask me about our carbon fiber or fiberglass products, specifications, pricing, or anything else. How can I help you today?";
+  const WELCOME_MESSAGE: ChatMessage = {
+    id: "welcome",
+    role: "assistant",
+    content: welcomeContent,
+    timestamp: 0,
+  };
   const [isOpen, setIsOpen] = useState(false);
   const [messages, setMessages] = useState<ChatMessage[]>([WELCOME_MESSAGE]);
   const [input, setInput] = useState("");
@@ -125,6 +134,7 @@ export function AIChatWidget() {
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
           sessionId,
+          locale,
           messages: [...messages, userMsg]
             .filter((m) => m.id !== "welcome")
             .map((m) => ({ role: m.role, content: m.content })),

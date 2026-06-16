@@ -1,0 +1,133 @@
+{
+  "nav": {
+    "home": "Inicio",
+    "carbonFiber": "Fibra de Carbono",
+    "glassFiber": "Fibra de Vidrio",
+    "applications": "Aplicaciones",
+    "services": "Servicios",
+    "blog": "Blog",
+    "about": "Nosotros",
+    "contact": "Contacto",
+    "getQuote": "Solicitar Cotización",
+    "allProducts": "Todos los Productos",
+    "carbonProducts": "Productos de Fibra de Carbono",
+    "glassProducts": "Productos de Fibra de Vidrio",
+    "menu": "Menú",
+    "language": "Idioma"
+  },
+  "products": {
+    "carbon-fiber-mat": "Estera de Fibra de Carbono",
+    "carbon-fiber-cloth": "Tejido de Fibra de Carbono",
+    "carbon-fiber-raw": "Materias Primas de Fibra de Carbono",
+    "tissue-mat": "Velo de Fibra de Vidrio",
+    "fiberglass-cloth": "Tejido de Fibra de Vidrio",
+    "composite-mat": "Estera Compuesta",
+    "chopped-strand-mat": "Mat de Hilos Cortados",
+    "other-materials": "Otros Materiales de Fibra"
+  },
+  "actions": {
+    "sendInquiry": "Enviar Consulta",
+    "getQuote": "Solicitar Cotización Gratuita",
+    "whatsapp": "WhatsApp",
+    "viewAll": "Ver todo",
+    "viewDetails": "Ver Detalles",
+    "browseRelated": "Ver productos relacionados",
+    "readMore": "Leer más",
+    "backToHome": "Volver al Inicio",
+    "contactUs": "Contáctenos",
+    "backToApplications": "Volver a Aplicaciones",
+    "requestQuote": "Solicitar Cotización"
+  },
+  "sections": {
+    "overview": "Descripción General",
+    "keyFeatures": "Características Principales",
+    "specifications": "Especificaciones",
+    "applications": "Aplicaciones",
+    "faq": "Preguntas Frecuentes",
+    "relatedProducts": "Productos Relacionados",
+    "relatedGuides": "Guías Relacionadas",
+    "keyBenefits": "Beneficios Clave",
+    "recommendedProducts": "Productos Recomendados",
+    "tableOfContents": "En esta página",
+    "productsInCategory": "Productos en esta categoría",
+    "parameter": "Parámetro",
+    "value": "Valor"
+  },
+  "footer": {
+    "tagline": "Materiales de fibra de carbono y fibra de vidrio de ingeniería para la fabricación avanzada de compuestos en todo el mundo.",
+    "products": "Productos",
+    "company": "Empresa",
+    "resources": "Recursos",
+    "legal": "Legal",
+    "carbonFiber": "Fibra de Carbono",
+    "glassFiber": "Fibra de Vidrio",
+    "about": "Nosotros",
+    "services": "Servicios",
+    "applications": "Aplicaciones",
+    "blog": "Blog",
+    "contact": "Contacto",
+    "privacy": "Política de Privacidad",
+    "terms": "Términos de Servicio",
+    "rights": "Todos los derechos reservados.",
+    "certifications": "Certificado ISO 9001 · ISO 14001 · ISO 45001"
+  },
+  "chat": {
+    "title": "Asistente ZeYuSen",
+    "subtitle": "Consulte sobre productos, especificaciones o aplicaciones",
+    "placeholder": "Escriba su mensaje...",
+    "welcome": "¡Hola! Soy el asistente de ZeYuSen Fiber. Pregúnteme sobre nuestros productos de fibra de carbono y fibra de vidrio, especificaciones o aplicaciones.",
+    "send": "Enviar",
+    "openChat": "Abrir chat",
+    "closeChat": "Cerrar chat",
+    "thinking": "Pensando...",
+    "error": "Algo salió mal. Inténtelo de nuevo o contáctenos directamente.",
+    "disclaimer": "Las respuestas de IA pueden ser inexactas. Confirme los detalles con nuestro equipo."
+  },
+  "blog": {
+    "eyebrow": "Perspectivas y Guías",
+    "intro": "Perspectivas del sector, conocimiento de productos y guías técnicas para profesionales de materiales compuestos.",
+    "publishedBy": "Por el Equipo Técnico de ZeYuSen Fiber",
+    "published": "Publicado",
+    "updated": "Actualizado",
+    "needHelpTitle": "¿Necesita ayuda para elegir un material?",
+    "needHelpBody": "Envíenos su aplicación objetivo, proceso y especificaciones requeridas. ZeYuSen Fiber puede ayudarle a comparar opciones de materiales de fibra de carbono y fibra de vidrio para su proyecto.",
+    "needHelpCta": "Contactar a ZeYuSen Fiber",
+    "print": "Imprimir"
+  },
+  "form": {
+    "name": "Nombre",
+    "email": "Correo electrónico",
+    "company": "Empresa",
+    "country": "País",
+    "phone": "Teléfono",
+    "message": "Mensaje",
+    "productInterest": "Producto de Interés",
+    "namePlaceholder": "Su nombre",
+    "emailPlaceholder": "usted@empresa.com",
+    "companyPlaceholder": "Su empresa",
+    "phonePlaceholder": "Su número de teléfono",
+    "messagePlaceholder": "Cuéntenos sobre su proyecto, especificaciones objetivo y cantidades.",
+    "submit": "Enviar Consulta",
+    "submitting": "Enviando...",
+    "successTitle": "Gracias por su consulta",
+    "successBody": "Nuestro equipo le responderá en un día hábil.",
+    "errorTitle": "Error en el envío",
+    "errorBody": "Algo salió mal. Inténtelo de nuevo o escríbanos directamente.",
+    "required": "Este campo es obligatorio",
+    "invalidEmail": "Introduzca una dirección de correo electrónico válida",
+    "verifyHuman": "Por favor complete la verificación"
+  },
+  "notFound": {
+    "title": "Página No Encontrada",
+    "body": "Es posible que la página que busca se haya movido o ya no exista.",
+    "code": "404"
+  },
+  "breadcrumb": {
+    "home": "Inicio"
+  },
+  "cta": {
+    "customTitle": "¿Necesita una Solución Personalizada?",
+    "customBodyCarbon": "Nuestros ingenieros pueden adaptar los materiales de fibra de carbono a sus especificaciones exactas.",
+    "customBodyGlass": "Nuestros ingenieros pueden adaptar los materiales de fibra de vidrio a sus especificaciones exactas."
+  }
+}

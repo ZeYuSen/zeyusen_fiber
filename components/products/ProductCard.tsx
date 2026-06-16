@@ -5,17 +5,19 @@ import { Product } from "@/types/product";
 
 export function ProductCard({
   product,
-  basePath,
+  href,
+  detailLabel,
   accentColor = "carbon-accent",
 }: {
   product: Product;
-  basePath: string;
+  href: string;
+  detailLabel: string;
   accentColor?: string;
 }) {
   return (
     <div>
       <Link
-        href={`${basePath}/${product.slug}`}
+        href={href}
         className="group block h-full"
       >
         <div className="h-full bg-white border border-neutral-100 rounded-lg hover:border-neutral-200 overflow-hidden transition-colors cursor-pointer">
@@ -47,7 +49,7 @@ export function ProductCard({
               ))}
             </div>
             <span className={`inline-flex items-center gap-1 mt-4 text-xs font-medium text-${accentColor}`}>
-              View Details <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-0.5 transition-transform" />
+              {detailLabel} <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-0.5 transition-transform" />
             </span>
           </div>
         </div>

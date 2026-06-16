@@ -1,16 +1,24 @@
 import { ProductSpec } from "@/types/product";
 
-export function SpecTable({ specs }: { specs: ProductSpec[] }) {
+export function SpecTable({
+  specs,
+  parameterLabel = "Parameter",
+  valueLabel = "Value",
+}: {
+  specs: ProductSpec[];
+  parameterLabel?: string;
+  valueLabel?: string;
+}) {
   return (
     <div className="overflow-hidden rounded-lg border border-neutral-200">
       <table className="w-full text-sm">
         <thead>
           <tr className="bg-neutral-50">
             <th className="text-left px-4 py-3 text-xs font-medium text-neutral-500 uppercase tracking-wider">
-              Parameter
+              {parameterLabel}
             </th>
             <th className="text-left px-4 py-3 text-xs font-medium text-neutral-500 uppercase tracking-wider">
-              Value
+              {valueLabel}
             </th>
           </tr>
         </thead>
