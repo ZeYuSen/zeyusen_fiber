@@ -9,7 +9,7 @@ import { localizedHref } from "@/lib/i18n/routes";
 import { getHomeContent } from "@/lib/i18n/home-content";
 
 const slideImages = [
-  "/images/hero/banner4.jpg",
+  "/images/hero/banner5.png",
   "/images/hero/banner1.jpg",
   "/images/hero/banner2.jpg",
 ];
@@ -75,7 +75,7 @@ export function HeroImmersive() {
             fill
             priority={i === 0}
             quality={65}
-            className="object-cover"
+            className="object-cover transition-transform duration-[1.2s]"
             sizes="100vw"
           />
           <div className="absolute inset-0 bg-black/20" />

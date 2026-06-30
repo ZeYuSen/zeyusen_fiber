@@ -1,6 +1,8 @@
 import { absoluteUrl, siteConfig } from "./seo";
 import { contactInfo } from "./contact";
 
+const logoSrc = "/logo.png?v=logo-20260626";
+
 export function websiteJsonLd(url: string = absoluteUrl("/"), inLanguage?: string) {
   return {
     "@context": "https://schema.org",
@@ -35,7 +37,7 @@ export function organizationJsonLd() {
     alternateName: siteConfig.name,
     legalName: contactInfo.company,
     url: absoluteUrl("/"),
-    logo: absoluteUrl("/logo.png"),
+    logo: absoluteUrl(logoSrc),
     description:
       "Carbon fiber and glass fiber composite materials manufacturer for aerospace, wind energy, construction, transportation, and advanced manufacturing.",
     foundingDate: contactInfo.foundingDate,
@@ -159,7 +161,7 @@ export function articleJsonLd({
       name: "ZeYuSen Fiber",
       logo: {
         "@type": "ImageObject",
-        url: absoluteUrl("/logo.png"),
+        url: absoluteUrl(logoSrc),
       },
     },
     mainEntityOfPage: absoluteUrl(path),

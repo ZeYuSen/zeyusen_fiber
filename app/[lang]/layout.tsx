@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Inter, JetBrains_Mono } from "next/font/google";
+import { Inter, JetBrains_Mono, Bebas_Neue } from "next/font/google";
 import Script from "next/script";
 import { notFound } from "next/navigation";
 import { Analytics } from "@vercel/analytics/react";
@@ -24,6 +24,13 @@ const inter = Inter({
 
 const jetbrainsMono = JetBrains_Mono({
   variable: "--font-jetbrains-mono",
+  subsets: ["latin"],
+  display: "swap",
+});
+
+const bebasNeue = Bebas_Neue({
+  variable: "--font-bebas",
+  weight: "400",
   subsets: ["latin"],
   display: "swap",
 });
@@ -70,7 +77,7 @@ export default async function LangLayout({
   const homeAlternates = allLocaleHrefs("home");
 
   return (
-    <html lang={localeMeta[locale].htmlLang} className={`${inter.variable} ${jetbrainsMono.variable}`}>
+    <html lang={localeMeta[locale].htmlLang} className={`${inter.variable} ${jetbrainsMono.variable} ${bebasNeue.variable}`}>
       <head>
         {gaId && (
           <>
