@@ -1,22 +1,12 @@
 "use client";
 
-import { useRef, useState, useCallback } from "react";
+import { useRef, useState, useEffect, useCallback } from "react";
 import { createPortal } from "react-dom";
 import Image from "next/image";
-import {
-  Award,
-  ChevronLeft,
-  ChevronRight,
-  FileCheck2,
-  Handshake,
-  MapPin,
-  Ship,
-  Truck,
-} from "lucide-react";
+import { motion, AnimatePresence } from "framer-motion";
+import { Award, ChevronLeft, ChevronRight } from "lucide-react";
 import { useLocale } from "@/lib/i18n/use-locale";
 import { getHomeContent } from "@/lib/i18n/home-content";
-
-const logisticsIcons = [MapPin, Ship, Truck];
 
 const certificates = [
   { src: "/images/certificates/cert_14.jpg", alt: "ISO 9001 Quality Management System", label: "ISO 9001" },
@@ -28,17 +18,17 @@ const certificates = [
   { src: "/images/certificates/cert_20.jpg", alt: "Intellectual Property Management System", label: "IP System" },
   { src: "/images/certificates/cert_01.jpg", alt: "Patent Certificate 1", label: "Patent" },
   { src: "/images/certificates/cert_02.jpg", alt: "Patent Certificate 2", label: "Patent" },
-  { src: "/images/certificates/cert_03.jpg", alt: "Utility Model Patent - Wear-resistant fiberglass surface mat", label: "Patent" },
-  { src: "/images/certificates/cert_04.jpg", alt: "Utility Model Patent - Embedded bonding carbon fiber surface mat", label: "Patent" },
-  { src: "/images/certificates/cert_05.jpg", alt: "Utility Model Patent - Composite fiberglass flame retardant felt", label: "Patent" },
-  { src: "/images/certificates/cert_06.jpg", alt: "Utility Model Patent - Wear-resistant fiberglass surface mat", label: "Patent" },
-  { src: "/images/certificates/cert_07.jpg", alt: "Utility Model Patent - Polyester nonwoven fiberglass composite felt", label: "Patent" },
-  { src: "/images/certificates/cert_08.jpg", alt: "Utility Model Patent - High-strength fiberglass surface mat", label: "Patent" },
-  { src: "/images/certificates/cert_09.jpg", alt: "Utility Model Patent - High tensile PET skeleton cloth", label: "Patent" },
-  { src: "/images/certificates/cert_10.jpg", alt: "Utility Model Patent - PVA carbon fiber mat prepreg device", label: "Patent" },
-  { src: "/images/certificates/cert_11.jpg", alt: "Utility Model Patent - Fiberglass surface mat cutting equipment", label: "Patent" },
-  { src: "/images/certificates/cert_12.jpg", alt: "Utility Model Patent - Carbon fiber surface mat oven", label: "Patent" },
-  { src: "/images/certificates/cert_13.jpg", alt: "Utility Model Patent - High tear strength fiberglass roofing mat", label: "Patent" },
+  { src: "/images/certificates/cert_03.jpg", alt: "Utility Model Patent", label: "Patent" },
+  { src: "/images/certificates/cert_04.jpg", alt: "Utility Model Patent", label: "Patent" },
+  { src: "/images/certificates/cert_05.jpg", alt: "Utility Model Patent", label: "Patent" },
+  { src: "/images/certificates/cert_06.jpg", alt: "Utility Model Patent", label: "Patent" },
+  { src: "/images/certificates/cert_07.jpg", alt: "Utility Model Patent", label: "Patent" },
+  { src: "/images/certificates/cert_08.jpg", alt: "Utility Model Patent", label: "Patent" },
+  { src: "/images/certificates/cert_09.jpg", alt: "Utility Model Patent", label: "Patent" },
+  { src: "/images/certificates/cert_10.jpg", alt: "Utility Model Patent", label: "Patent" },
+  { src: "/images/certificates/cert_11.jpg", alt: "Utility Model Patent", label: "Patent" },
+  { src: "/images/certificates/cert_12.jpg", alt: "Utility Model Patent", label: "Patent" },
+  { src: "/images/certificates/cert_13.jpg", alt: "Utility Model Patent", label: "Patent" },
 ];
 
 function CertificateCarousel() {
@@ -47,18 +37,27 @@ function CertificateCarousel() {
   const [scale, setScale] = useState(1);
   const [position, setPosition] = useState({ x: 0, y: 0 });
   const [dragging, setDragging] = useState(false);
+  const [paused, setPaused] = useState(false);
   const dragStart = useRef({ x: 0, y: 0 });
   const posStart = useRef({ x: 0, y: 0 });
-  const visibleCount = 3;
-  const maxIndex = certificates.length - visibleCount;
+  const total = certificates.length;
 
   const prev = useCallback(() => {
-    setCurrentIndex((i) => Math.max(0, i - 1));
-  }, []);
+    setCurrentIndex((i) => (i - 1 + total) % total);
+  }, [total]);
 
   const next = useCallback(() => {
-    setCurrentIndex((i) => Math.min(maxIndex, i + 1));
-  }, [maxIndex]);
+    setCurrentIndex((i) => (i + 1) % total);
+  }, [total]);
+
+  // Auto-rotate every 3.5s, pause on hover or when lightbox is open
+  useEffect(() => {
+    if (paused || lightboxImg) return;
+    const id = setInterval(() => {
+      setCurrentIndex((i) => (i + 1) % total);
+    }, 3500);
+    return () => clearInterval(id);
+  }, [paused, lightboxImg, total]);
 
   const openLightbox = (src: string) => {
     setLightboxImg(src);
@@ -75,9 +74,9 @@ function CertificateCarousel() {
   const zoomIn = () => setScale((s) => Math.min(s + 0.5, 4));
   const zoomOut = () => {
     setScale((s) => {
-      const next = Math.max(s - 0.5, 0.5);
-      if (next <= 1) setPosition({ x: 0, y: 0 });
-      return next;
+      const n = Math.max(s - 0.5, 0.5);
+      if (n <= 1) setPosition({ x: 0, y: 0 });
+      return n;
     });
   };
 
@@ -97,69 +96,104 @@ function CertificateCarousel() {
     });
   };
 
-  const handlePointerUp = () => {
-    setDragging(false);
-  };
+  const handlePointerUp = () => setDragging(false);
+
+  const prevIndex = (currentIndex - 1 + total) % total;
+  const nextIndex = (currentIndex + 1) % total;
+  const slots = [
+    { idx: prevIndex, cert: certificates[prevIndex], pos: "side", onClick: prev },
+    { idx: currentIndex, cert: certificates[currentIndex], pos: "center", onClick: () => openLightbox(certificates[currentIndex].src) },
+    { idx: nextIndex, cert: certificates[nextIndex], pos: "side", onClick: next },
+  ];
 
   return (
     <>
-      <div className="relative">
-        <div className="overflow-hidden">
-          <div
-            className="flex gap-3 transition-transform duration-500 ease-out"
-            style={{ transform: `translateX(-${currentIndex * (100 / visibleCount)}%)` }}
-          >
-            {certificates.map((cert, i) => (
-              <div
-                key={i}
-                className="flex-shrink-0 cursor-pointer group/cert"
-                style={{ width: `calc(${100 / visibleCount}% - ${(visibleCount - 1) * 12 / visibleCount}px)` }}
-                onClick={() => openLightbox(cert.src)}
-              >
-                <div className="relative aspect-[3/4] overflow-hidden rounded-md bg-neutral-50 border border-neutral-100">
-                  <Image
-                    src={cert.src}
-                    alt={cert.alt}
-                    fill
-                    sizes="(max-width: 640px) 50vw, 33vw"
-                    quality={55}
-                    className="object-contain p-1 group-hover/cert:scale-[1.03] transition-transform duration-500"
-                  />
-                </div>
-              </div>
-            ))}
-          </div>
+      <div
+        className="relative w-full"
+        onMouseEnter={() => setPaused(true)}
+        onMouseLeave={() => setPaused(false)}
+      >
+        <div className="flex items-center justify-center gap-4 sm:gap-6">
+          <AnimatePresence initial={false}>
+            {slots.map((slot) => {
+              const isCenter = slot.pos === "center";
+              return (
+                <motion.div
+                  key={slot.idx}
+                  layout
+                  initial={{ opacity: 0 }}
+                  animate={{ opacity: isCenter ? 1 : 0.6 }}
+                  exit={{ opacity: 0 }}
+                  transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
+                  className={`flex-shrink-0 cursor-pointer group/cert hover:opacity-90 ${
+                    isCenter ? "w-[38%] z-10" : "w-1/4"
+                  }`}
+                  onClick={slot.onClick}
+                >
+                  <motion.div
+                    layout
+                    className={`relative aspect-[3/4] overflow-hidden rounded-lg bg-white ring-1 ${
+                      isCenter ? "ring-neutral-200 shadow-xl" : "ring-neutral-100"
+                    }`}
+                  >
+                    <Image
+                      src={slot.cert.src}
+                      alt={slot.cert.alt}
+                      fill
+                      sizes={isCenter ? "30vw" : "20vw"}
+                      quality={isCenter ? 70 : 45}
+                      className={`object-contain p-2 transition-transform duration-500 ${
+                        isCenter ? "group-hover/cert:scale-[1.03]" : ""
+                      }`}
+                    />
+                  </motion.div>
+                  {isCenter && (
+                    <motion.p
+                      layout
+                      className="mt-3 text-xs font-medium text-neutral-700 text-center truncate"
+                    >
+                      {slot.cert.label}
+                    </motion.p>
+                  )}
+                </motion.div>
+              );
+            })}
+          </AnimatePresence>
         </div>
-        {currentIndex > 0 && (
-          <button
-            onClick={prev}
-            aria-label="Previous certificates"
-            className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-3 w-8 h-8 rounded-full bg-white border border-neutral-200 shadow-sm flex items-center justify-center hover:bg-neutral-50 transition-colors"
-          >
-            <ChevronLeft className="w-4 h-4 text-neutral-600" />
-          </button>
-        )}
-        {currentIndex < maxIndex && (
-          <button
-            onClick={next}
-            aria-label="Next certificates"
-            className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-3 w-8 h-8 rounded-full bg-white border border-neutral-200 shadow-sm flex items-center justify-center hover:bg-neutral-50 transition-colors"
-          >
-            <ChevronRight className="w-4 h-4 text-neutral-600" />
-          </button>
-        )}
+
+        <button
+          onClick={prev}
+          aria-label="Previous"
+          className="absolute left-0 top-[42%] -translate-y-1/2 -translate-x-1 sm:-translate-x-3 w-9 h-9 rounded-full bg-white ring-1 ring-neutral-200 shadow-sm flex items-center justify-center hover:bg-neutral-50 transition-colors z-20"
+        >
+          <ChevronLeft className="w-4 h-4 text-neutral-700" />
+        </button>
+        <button
+          onClick={next}
+          aria-label="Next"
+          className="absolute right-0 top-[42%] -translate-y-1/2 translate-x-1 sm:translate-x-3 w-9 h-9 rounded-full bg-white ring-1 ring-neutral-200 shadow-sm flex items-center justify-center hover:bg-neutral-50 transition-colors z-20"
+        >
+          <ChevronRight className="w-4 h-4 text-neutral-700" />
+        </button>
+
+        {/* Dots */}
+        <div className="flex items-center justify-center gap-1.5 mt-5">
+          {certificates.map((_, i) => (
+            <button
+              key={i}
+              onClick={() => setCurrentIndex(i)}
+              aria-label={`Go to certificate ${i + 1}`}
+              className={`h-1.5 rounded-full transition-all duration-300 ${
+                i === currentIndex ? "w-5 bg-brand-600" : "w-1.5 bg-neutral-300 hover:bg-neutral-400"
+              }`}
+            />
+          ))}
+        </div>
       </div>
 
-      {/* Lightbox - rendered via portal to body */}
       {lightboxImg && createPortal(
-        <div
-          className="fixed inset-0 z-[9999] bg-black/95 flex items-center justify-center"
-          onClick={closeLightbox}
-        >
-          <div
-            className="relative w-full h-full flex items-center justify-center p-8"
-            onClick={(e) => e.stopPropagation()}
-          >
+        <div className="fixed inset-0 z-[9999] bg-black/95 flex items-center justify-center" onClick={closeLightbox}>
+          <div className="relative w-full h-full flex items-center justify-center p-8" onClick={(e) => e.stopPropagation()}>
             <Image
               src={lightboxImg}
               alt="Certificate"
@@ -176,32 +210,12 @@ function CertificateCarousel() {
               onPointerCancel={handlePointerUp}
             />
           </div>
-
-          {/* Controls */}
           <div className="absolute bottom-8 left-1/2 -translate-x-1/2 flex items-center gap-3 bg-black/70 backdrop-blur-md rounded-full px-4 py-2">
-            <button
-              onClick={(e) => { e.stopPropagation(); zoomOut(); }}
-              className="w-8 h-8 rounded-full bg-white/20 text-white flex items-center justify-center hover:bg-white/30 transition-colors text-lg font-bold"
-              aria-label="Zoom out"
-            >
-              −
-            </button>
+            <button onClick={(e) => { e.stopPropagation(); zoomOut(); }} className="w-8 h-8 rounded-full bg-white/20 text-white flex items-center justify-center hover:bg-white/30 text-lg font-bold" aria-label="Zoom out">−</button>
             <span className="text-white text-sm min-w-[4rem] text-center">{Math.round(scale * 100)}%</span>
-            <button
-              onClick={(e) => { e.stopPropagation(); zoomIn(); }}
-              className="w-8 h-8 rounded-full bg-white/20 text-white flex items-center justify-center hover:bg-white/30 transition-colors text-lg font-bold"
-              aria-label="Zoom in"
-            >
-              +
-            </button>
+            <button onClick={(e) => { e.stopPropagation(); zoomIn(); }} className="w-8 h-8 rounded-full bg-white/20 text-white flex items-center justify-center hover:bg-white/30 text-lg font-bold" aria-label="Zoom in">+</button>
           </div>
-
-          {/* Close button */}
-          <button
-            onClick={closeLightbox}
-            className="absolute top-6 right-6 w-10 h-10 rounded-full bg-white/10 backdrop-blur-sm flex items-center justify-center hover:bg-white/20 transition-colors"
-            aria-label="Close"
-          >
+          <button onClick={closeLightbox} className="absolute top-6 right-6 w-10 h-10 rounded-full bg-white/10 backdrop-blur-sm flex items-center justify-center hover:bg-white/20" aria-label="Close">
             <span className="text-white text-xl">✕</span>
           </button>
         </div>,
@@ -211,151 +225,66 @@ function CertificateCarousel() {
   );
 }
 
-function AnimatedMetric({ metric, suffix }: { metric: string; suffix: string }) {
-  return (
-    <span className="tabular-nums">
-      {metric}
-      {suffix}
-    </span>
-  );
-}
-
 export function TrustEvidence() {
-  const { trust } = getHomeContent(useLocale());
-  const trustMetrics = trust.metrics;
-  const logistics = trust.logistics.map((item, i) => ({ ...item, icon: logisticsIcons[i] }));
-  const supportSteps = trust.steps;
+  const { trust, stats } = getHomeContent(useLocale());
+
   return (
-    <section className="bg-white section-padding">
+    <section className="bg-neutral-50 section-padding">
       <div className="container-wide">
-        {/* Header */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16 mb-24">
-          <h2
-            className="text-2xl sm:text-3xl font-semibold text-neutral-900"
-          >
-            {trust.title}
-          </h2>
-          <p
-            className="text-neutral-500 leading-relaxed self-end"
-          >
-            {trust.intro}
-          </p>
-        </div>
-
-        {/* Metrics row */}
-        <div
-          className="grid grid-cols-1 md:grid-cols-3 gap-px bg-neutral-200 mb-px"
-        >
-          {trustMetrics.map((item) => (
-            <div
-              key={item.number}
-              className="bg-white p-8 sm:p-10"
-            >
-              <span className="font-mono text-xs text-neutral-400 block mb-6">
-                {item.number}
-              </span>
-              <div className="flex items-baseline gap-2 mb-4">
-                <span className="text-4xl sm:text-5xl font-semibold text-neutral-900">
-                  <AnimatedMetric metric={item.metric} suffix={item.suffix} />
-                </span>
-                <span className="text-sm text-neutral-500">{item.unit}</span>
-              </div>
-              <h3 className="text-lg font-medium text-neutral-900 mb-3">
-                {item.title}
-              </h3>
-              <p className="text-sm text-neutral-500 leading-relaxed">
-                {item.text}
-              </p>
-            </div>
-          ))}
-        </div>
-
-        {/* Detail panels */}
-        <div
-          className="grid grid-cols-1 lg:grid-cols-2 gap-px bg-neutral-200"
-        >
-          {/* Certificates Carousel */}
-          <div
-            className="bg-white p-8 sm:p-10"
-          >
-            <div className="flex items-baseline justify-between mb-8">
-              <div>
-                <span className="font-mono text-xs text-neutral-400 block mb-3">
-                  04
-                </span>
-                <h3 className="text-lg font-medium text-neutral-900 flex items-center gap-2">
-                  <Award className="w-4 h-4 text-neutral-400" />
-                  {trust.certHeading}
-                </h3>
-              </div>
-              <span className="type-caption text-neutral-400">
-                {certificates.length} {trust.certCount}
-              </span>
-            </div>
-
-            <CertificateCarousel />
-
-            <p className="text-xs text-neutral-400 mt-6 leading-relaxed">
-              {trust.certNote}
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-16 items-stretch">
+          {/* Left — heading + vertical data axis */}
+          <div className="lg:col-span-4 flex flex-col">
+            <p className="text-[11px] font-medium uppercase tracking-[0.2em] text-brand-600 mb-5">
+              Verified &amp; Certified
             </p>
+            <h2 className="text-3xl sm:text-4xl font-semibold text-neutral-900 leading-[1.1] tracking-tight">
+              {trust.title}
+            </h2>
+            <p className="text-neutral-500 leading-relaxed mt-5">
+              {trust.intro}
+            </p>
+
+            {/* Data axis — stretches to fill, rows distribute to align bottom with the card */}
+            <div className="mt-10 border-t border-neutral-200 flex-1 flex flex-col">
+              {stats.map((s) => (
+                <div
+                  key={s.label}
+                  className="group flex items-center gap-5 py-5 border-b border-neutral-200 flex-1"
+                >
+                  <div className="flex items-baseline gap-1 w-28 shrink-0">
+                    <span className="text-3xl sm:text-[2.5rem] font-semibold text-neutral-900 tabular-nums tracking-tight leading-none">
+                      {s.value}
+                    </span>
+                    <span className="text-lg font-semibold text-brand-600 leading-none">{s.suffix}</span>
+                  </div>
+                  <div className="min-w-0 pt-1">
+                    <p className="text-sm font-medium text-neutral-900">{s.label}</p>
+                  </div>
+                </div>
+              ))}
+            </div>
           </div>
 
-          {/* Logistics + Support */}
-          <div
-            className="bg-white p-8 sm:p-10"
-          >
-            <div className="flex items-baseline justify-between mb-8">
-              <div>
-                <span className="font-mono text-xs text-neutral-400 block mb-3">
-                  05
-                </span>
-                <h3 className="text-lg font-medium text-neutral-900 flex items-center gap-2">
-                  <FileCheck2 className="w-4 h-4 text-neutral-400" />
-                  {trust.deliveryHeading}
+          {/* Right — certificate stream */}
+          <div className="lg:col-span-8 flex">
+            <div className="flex flex-col w-full rounded-2xl bg-white ring-1 ring-neutral-200 p-6 sm:p-8">
+              <div className="flex items-center justify-between mb-6">
+                <h3 className="text-base font-medium text-neutral-900 flex items-center gap-2">
+                  <Award className="w-4 h-4 text-brand-600" />
+                  {trust.certHeading}
                 </h3>
-              </div>
-              <span className="type-caption text-neutral-400">
-                {trust.deliveryFlow}
-              </span>
-            </div>
-
-            <ul className="space-y-5 mb-8">
-              {logistics.map((item) => (
-                <li key={item.label} className="flex gap-4">
-                  <div className="flex-shrink-0 w-8 h-8 rounded-md border border-neutral-200 flex items-center justify-center mt-0.5">
-                    <item.icon className="w-4 h-4 text-neutral-500" />
-                  </div>
-                  <div>
-                    <p className="text-sm font-medium text-neutral-900">
-                      {item.label}
-                    </p>
-                    <p className="text-sm text-neutral-500 leading-relaxed mt-1">
-                      {item.text}
-                    </p>
-                  </div>
-                </li>
-              ))}
-            </ul>
-
-            <div className="border-t border-neutral-100 pt-6">
-              <div className="flex items-center gap-2 mb-4">
-                <Handshake className="w-4 h-4 text-neutral-400" />
-                <span className="type-caption text-neutral-500">
-                  {trust.followUp}
+                <span className="text-xs text-neutral-400">
+                  {certificates.length} {trust.certCount}
                 </span>
               </div>
-              <div className="flex flex-wrap items-center gap-2">
-                {supportSteps.map((step, i) => (
-                  <div key={step} className="flex items-center gap-2">
-                    <span className="text-xs font-medium text-neutral-700 bg-neutral-50 border border-neutral-200 px-3 py-1.5 rounded-full">
-                      {step}
-                    </span>
-                    {i < supportSteps.length - 1 && (
-                      <span className="w-3 h-px bg-neutral-300" />
-                    )}
-                  </div>
-                ))}
+
+              <div className="flex-1 flex items-start">
+                <CertificateCarousel />
               </div>
+
+              <p className="text-xs text-neutral-400 mt-6 leading-relaxed">
+                {trust.certNote}
+              </p>
             </div>
           </div>
         </div>
