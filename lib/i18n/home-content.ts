@@ -39,9 +39,25 @@ export type HomeContent = {
     successInline: string;
     error: string;
   };
+  factory: {
+    eyebrow: string;
+    title: string;
+    intro: string;
+    featureCaption: string;
+    featureTitle: string;
+    featureText: string;
+    tabs: { production: string; testing: string; equipment: string; warehouse: string };
+    note: string;
+  };
 };
 
-type DivisionCard = { label: string; headline: string; description: string };
+type DivisionCard = {
+  label: string;
+  headline: string;
+  description: string;
+  specs: { label: string; value: string }[];
+  categories: string[];
+};
 
 const en: HomeContent = {
   hero: [
@@ -68,17 +84,43 @@ const en: HomeContent = {
       headline: "High Performance, Lightweight Solutions",
       description:
         "Ultra-lightweight carbon fiber composites for aerospace, motorsport, and advanced manufacturing. From 10g/m² surface mats to complex hybrid structures.",
+      specs: [
+        { label: "Weight Range", value: "10–50 g/m²" },
+        { label: "Product Series", value: "6+" },
+        { label: "Customization", value: "OEM / ODM" },
+      ],
+      categories: [
+        "Surface Mat",
+        "Nickel-Plated Mat",
+        "Carbon-Glass Hybrid",
+        "Composite Mat",
+        "Needled Mat",
+        "Hybrid Cloth",
+      ],
     },
     glass: {
       label: "Glass Fiber",
       headline: "Reliable, Cost-Effective Reinforcements",
       description:
         "Corrosion-resistant materials for wind energy, construction, and industrial filtration. Tissue mats, woven cloth, and composite reinforcements.",
+      specs: [
+        { label: "Weight Range", value: "30–1200 g/m²" },
+        { label: "Product Series", value: "9+" },
+        { label: "Customization", value: "OEM / ODM" },
+      ],
+      categories: [
+        "Tissue Mat",
+        "Woven Cloth",
+        "Composite Mat",
+        "Chopped Strand",
+        "Needled Mat",
+        "Basalt Mat",
+      ],
     },
   },
   exploreProducts: "Explore Products",
   stats: [
-    { value: 10, suffix: "+", label: "Years Experience" },
+    { value: 15, suffix: "+", label: "Years Experience" },
     { value: 50, suffix: "+", label: "Countries Exported" },
     { value: 80, suffix: "M", label: "Sqm Annual Output" },
     { value: 13, suffix: "+", label: "Patents Granted" },
@@ -136,6 +178,18 @@ const en: HomeContent = {
     successInline: "Thank you! We'll be in touch within 24 hours.",
     error: "Something went wrong. Please try again.",
   },
+  factory: {
+    eyebrow: "Inside Our Operation",
+    title: "Real factory. Real stock. Ready to ship.",
+    intro:
+      "What you order is what we make — production lines, testing labs, and a stocked warehouse you can verify before committing.",
+    featureCaption: "R&D Center",
+    featureTitle: "In-house research, formula to finished product",
+    featureText:
+      "Dedicated R&D facility with pilot production lines, enabling rapid prototyping from raw fiber to certified composite — 13+ patents and counting.",
+    tabs: { production: "Production Line", testing: "Quality Testing", equipment: "Slitting & Winding", warehouse: "Warehouse & Shipping" },
+    note: "All photos taken at our own facility. Factory visits and live video tours welcome.",
+  },
 };
 
 const ko: HomeContent = {
@@ -146,12 +200,26 @@ const ko: HomeContent = {
   ],
   heroCta: { quote: "견적 요청", about: "제조 시설 소개" },
   divisions: {
-    carbon: { label: "탄소섬유", headline: "고성능 경량 솔루션", description: "항공우주, 모터스포츠 및 첨단 제조를 위한 초경량 탄소섬유 복합재. 10g/m² 표면 매트부터 복잡한 하이브리드 구조까지." },
-    glass: { label: "유리섬유", headline: "신뢰할 수 있는 경제적 보강재", description: "풍력에너지, 건설 및 산업용 여과를 위한 내식성 소재. 티슈 매트, 직물 및 복합 보강재." },
+    carbon: { label: "탄소섬유", headline: "고성능 경량 솔루션", description: "항공우주, 모터스포츠 및 첨단 제조를 위한 초경량 탄소섬유 복합재. 10g/m² 표면 매트부터 복잡한 하이브리드 구조까지.",
+      specs: [
+        { label: "중량 범위", value: "10–50 g/m²" },
+        { label: "제품 시리즈", value: "6+" },
+        { label: "맞춤 제작", value: "OEM / ODM" },
+      ],
+      categories: ["표면 매트", "니켈 도금 매트", "탄소-유리 하이브리드", "복합 매트", "니들 매트", "하이브리드 직물"],
+    },
+    glass: { label: "유리섬유", headline: "신뢰할 수 있는 경제적 보강재", description: "풍력에너지, 건설 및 산업용 여과를 위한 내식성 소재. 티슈 매트, 직물 및 복합 보강재.",
+      specs: [
+        { label: "중량 범위", value: "30–1200 g/m²" },
+        { label: "제품 시리즈", value: "9+" },
+        { label: "맞춤 제작", value: "OEM / ODM" },
+      ],
+      categories: ["티슈 매트", "직물", "복합 매트", "촙드 스트랜드", "니들 매트", "현무암 매트"],
+    },
   },
   exploreProducts: "제품 둘러보기",
   stats: [
-    { value: 10, suffix: "+", label: "년 경력" },
+    { value: 15, suffix: "+", label: "년 경력" },
     { value: 50, suffix: "+", label: "수출 국가" },
     { value: 80, suffix: "M", label: "연간 생산량(㎡)" },
     { value: 13, suffix: "+", label: "특허 등록" },
@@ -206,6 +274,16 @@ const ko: HomeContent = {
     successInline: "감사합니다! 24시간 이내에 연락드리겠습니다.",
     error: "오류가 발생했습니다. 다시 시도해 주세요.",
   },
+  factory: {
+    eyebrow: "공장 내부 둘러보기",
+    title: "실제 공장, 실제 재고, 즉시 출하.",
+    intro: "주문하신 그대로 생산합니다 — 생산 라인, 검사 실험실, 재고 창고를 주문 전에 확인하실 수 있습니다.",
+    featureCaption: "연구개발 센터",
+    featureTitle: "자체 연구, 원료에서 완제품까지",
+    featureText: "파일럿 생산라인을 갖춘 전용 R&D 시설에서 원사부터 인증된 복합재까지 신속 시제품 제작 — 13건 이상 특허 보유.",
+    tabs: { production: "생산 라인", testing: "품질 검사", equipment: "슬리팅 & 와인딩", warehouse: "창고 & 출하" },
+    note: "모든 사진은 자체 시설에서 촬영했습니다. 현장 방문 및 화상 공장 투어를 환영합니다.",
+  },
 };
 
 const es: HomeContent = {
@@ -216,12 +294,26 @@ const es: HomeContent = {
   ],
   heroCta: { quote: "Solicitar Cotización", about: "Sobre Nuestra Fabricación" },
   divisions: {
-    carbon: { label: "Fibra de Carbono", headline: "Soluciones Ligeras de Alto Rendimiento", description: "Compuestos de fibra de carbono ultraligeros para aeroespacial, automovilismo y fabricación avanzada. Desde esteras de superficie de 10g/m² hasta estructuras híbridas complejas." },
-    glass: { label: "Fibra de Vidrio", headline: "Refuerzos Fiables y Económicos", description: "Materiales resistentes a la corrosión para energía eólica, construcción y filtración industrial. Velos, tejidos y refuerzos compuestos." },
+    carbon: { label: "Fibra de Carbono", headline: "Soluciones Ligeras de Alto Rendimiento", description: "Compuestos de fibra de carbono ultraligeros para aeroespacial, automovilismo y fabricación avanzada. Desde esteras de superficie de 10g/m² hasta estructuras híbridas complejas.",
+      specs: [
+        { label: "Rango de Gramaje", value: "10–50 g/m²" },
+        { label: "Series de Producto", value: "6+" },
+        { label: "Personalización", value: "OEM / ODM" },
+      ],
+      categories: ["Estera de Superficie", "Estera Niquelada", "Híbrido Carbono-Vidrio", "Estera Compuesta", "Estera Punzonada", "Tejido Híbrido"],
+    },
+    glass: { label: "Fibra de Vidrio", headline: "Refuerzos Fiables y Económicos", description: "Materiales resistentes a la corrosión para energía eólica, construcción y filtración industrial. Velos, tejidos y refuerzos compuestos.",
+      specs: [
+        { label: "Rango de Gramaje", value: "30–1200 g/m²" },
+        { label: "Series de Producto", value: "9+" },
+        { label: "Personalización", value: "OEM / ODM" },
+      ],
+      categories: ["Velo", "Tejido", "Estera Compuesta", "Hilo Cortado", "Estera Punzonada", "Estera de Basalto"],
+    },
   },
   exploreProducts: "Explorar Productos",
   stats: [
-    { value: 10, suffix: "+", label: "Años de Experiencia" },
+    { value: 15, suffix: "+", label: "Años de Experiencia" },
     { value: 50, suffix: "+", label: "Países de Exportación" },
     { value: 80, suffix: "M", label: "m² Producción Anual" },
     { value: 13, suffix: "+", label: "Patentes Concedidas" },
@@ -276,6 +368,18 @@ const es: HomeContent = {
     successInline: "¡Gracias! Nos pondremos en contacto en 24 horas.",
     error: "Algo salió mal. Inténtelo de nuevo.",
   },
+  factory: {
+    eyebrow: "Dentro de nuestra fábrica",
+    title: "Fábrica real. Stock real. Listo para enviar.",
+    intro:
+      "Lo que pide es lo que fabricamos — líneas de producción, laboratorios de ensayo y un almacén con stock que puede verificar antes de comprometerse.",
+    featureCaption: "Centro de I+D",
+    featureTitle: "Investigación propia, de la fórmula al producto final",
+    featureText:
+      "Instalación de I+D dedicada con líneas piloto, prototipado rápido desde fibra cruda hasta compuesto certificado — más de 13 patentes.",
+    tabs: { production: "Línea de producción", testing: "Control de calidad", equipment: "Corte y bobinado", warehouse: "Almacén y envío" },
+    note: "Todas las fotos tomadas en nuestras instalaciones. Visitas a fábrica y recorridos por video bienvenidos.",
+  },
 };
 
 const pt: HomeContent = {
@@ -286,12 +390,26 @@ const pt: HomeContent = {
   ],
   heroCta: { quote: "Solicitar Orçamento", about: "Sobre Nossa Fabricação" },
   divisions: {
-    carbon: { label: "Fibra de Carbono", headline: "Soluções Leves de Alto Desempenho", description: "Compósitos de fibra de carbono ultraleves para aeroespacial, automobilismo e manufatura avançada. De mantas de superfície de 10g/m² a estruturas híbridas complexas." },
-    glass: { label: "Fibra de Vidro", headline: "Reforços Confiáveis e Econômicos", description: "Materiais resistentes à corrosão para energia eólica, construção e filtração industrial. Véus, tecidos e reforços compostos." },
+    carbon: { label: "Fibra de Carbono", headline: "Soluções Leves de Alto Desempenho", description: "Compósitos de fibra de carbono ultraleves para aeroespacial, automobilismo e manufatura avançada. De mantas de superfície de 10g/m² a estruturas híbridas complexas.",
+      specs: [
+        { label: "Faixa de Gramatura", value: "10–50 g/m²" },
+        { label: "Séries de Produto", value: "6+" },
+        { label: "Personalização", value: "OEM / ODM" },
+      ],
+      categories: ["Manta de Superfície", "Manta Niquelada", "Híbrido Carbono-Vidro", "Manta Compósita", "Manta Agulhada", "Tecido Híbrido"],
+    },
+    glass: { label: "Fibra de Vidro", headline: "Reforços Confiáveis e Econômicos", description: "Materiais resistentes à corrosão para energia eólica, construção e filtração industrial. Véus, tecidos e reforços compostos.",
+      specs: [
+        { label: "Faixa de Gramatura", value: "30–1200 g/m²" },
+        { label: "Séries de Produto", value: "9+" },
+        { label: "Personalização", value: "OEM / ODM" },
+      ],
+      categories: ["Véu", "Tecido", "Manta Compósita", "Fio Picado", "Manta Agulhada", "Manta de Basalto"],
+    },
   },
   exploreProducts: "Explorar Produtos",
   stats: [
-    { value: 10, suffix: "+", label: "Anos de Experiência" },
+    { value: 15, suffix: "+", label: "Anos de Experiência" },
     { value: 50, suffix: "+", label: "Países de Exportação" },
     { value: 80, suffix: "M", label: "m² Produção Anual" },
     { value: 13, suffix: "+", label: "Patentes Concedidas" },
@@ -346,6 +464,18 @@ const pt: HomeContent = {
     successInline: "Obrigado! Entraremos em contato em 24 horas.",
     error: "Algo deu errado. Tente novamente.",
   },
+  factory: {
+    eyebrow: "Dentro da nossa fábrica",
+    title: "Fábrica real. Estoque real. Pronto para enviar.",
+    intro:
+      "O que você pede é o que fabricamos — linhas de produção, laboratórios de ensaio e um armazém com estoque que você pode verificar antes de fechar.",
+    featureCaption: "Centro de P&D",
+    featureTitle: "Pesquisa própria, da fórmula ao produto final",
+    featureText:
+      "Instalação de P&D dedicada com linhas piloto, prototipagem rápida da fibra bruta ao compósito certificado — mais de 13 patentes.",
+    tabs: { production: "Linha de produção", testing: "Controle de qualidade", equipment: "Corte e bobinamento", warehouse: "Armazém e envio" },
+    note: "Todas as fotos tiradas em nossas instalações. Visitas à fábrica e tours por vídeo são bem-vindos.",
+  },
 };
 
 const zh: HomeContent = {
@@ -356,12 +486,26 @@ const zh: HomeContent = {
   ],
   heroCta: { quote: "获取报价", about: "了解我们的制造" },
   divisions: {
-    carbon: { label: "碳纤维", headline: "高性能轻量化解决方案", description: "用于航空航天、赛车运动和先进制造的超轻碳纤维复合材料。从10g/m²表面毡到复杂混合结构。" },
-    glass: { label: "玻璃纤维", headline: "可靠、经济的增强材料", description: "用于风电、建筑和工业过滤的耐腐蚀材料。薄毡、织物和复合增强材料。" },
+    carbon: { label: "碳纤维", headline: "高性能轻量化解决方案", description: "用于航空航天、赛车运动和先进制造的超轻碳纤维复合材料。从10g/m²表面毡到复杂混合结构。",
+      specs: [
+        { label: "克重范围", value: "10–50 g/m²" },
+        { label: "产品系列", value: "6+" },
+        { label: "定制服务", value: "OEM / ODM" },
+      ],
+      categories: ["表面毡", "镀镍碳毡", "碳玻混编", "复合毡", "针刺毡", "混编布"],
+    },
+    glass: { label: "玻璃纤维", headline: "可靠、经济的增强材料", description: "用于风电、建筑和工业过滤的耐腐蚀材料。薄毡、织物和复合增强材料。",
+      specs: [
+        { label: "克重范围", value: "30–1200 g/m²" },
+        { label: "产品系列", value: "9+" },
+        { label: "定制服务", value: "OEM / ODM" },
+      ],
+      categories: ["表面毡", "机织布", "复合毡", "短切毡", "针刺毡", "玄武岩毡"],
+    },
   },
   exploreProducts: "浏览产品",
   stats: [
-    { value: 10, suffix: "+", label: "年经验" },
+    { value: 15, suffix: "+", label: "年经验" },
     { value: 50, suffix: "+", label: "出口国家" },
     { value: 80, suffix: "M", label: "平方米年产量" },
     { value: 13, suffix: "+", label: "授权专利" },
@@ -415,6 +559,16 @@ const zh: HomeContent = {
     submit: "发送询价",
     successInline: "感谢您的咨询！我们将在24小时内联系您。",
     error: "出了点问题，请重试。",
+  },
+  factory: {
+    eyebrow: "走进我们的工厂",
+    title: "真实工厂，真实库存，随时发货。",
+    intro: "您所订即我们所产——生产线、检测实验室和备货仓库，下单前皆可核验。",
+    featureCaption: "研发中心",
+    featureTitle: "自主研发，从配方到成品",
+    featureText: "配备中试产线的自有研发中心，从原丝到认证复合材料快速打样——已获授权专利13+项。",
+    tabs: { production: "生产线", testing: "质量检测", equipment: "分切与复卷", warehouse: "仓储运输" },
+    note: "所有照片均摄于自有厂房。欢迎实地参观与视频验厂。",
   },
 };
 

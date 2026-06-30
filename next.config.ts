@@ -29,6 +29,19 @@ const securityHeaders = [
 const nextConfig: NextConfig = {
   images: {
     formats: ["image/avif", "image/webp"],
+    localPatterns: [
+      {
+        pathname: "/images/**",
+      },
+      {
+        pathname: "/logo.png",
+        search: "?v=logo-20260626",
+      },
+      {
+        pathname: "/logo.png",
+        search: "",
+      },
+    ],
   },
   async redirects() {
     return [

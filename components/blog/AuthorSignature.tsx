@@ -1,11 +1,13 @@
 import Image from "next/image";
 
+const logoSrc = "/logo.png?v=logo-20260626";
+
 export function AuthorSignature() {
   return (
     <div className="mt-12 flex items-start gap-4 rounded-xl border border-neutral-100 bg-neutral-50 p-5">
       <div className="relative h-12 w-12 flex-shrink-0 overflow-hidden rounded-full bg-neutral-200">
         <Image
-          src="/logo.png"
+          src={logoSrc}
           alt="ZeYuSen Fiber"
           width={48}
           height={48}

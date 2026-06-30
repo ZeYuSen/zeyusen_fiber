@@ -42,9 +42,8 @@ import AboutPageContent from "@/components/renderers/AboutWrapper";
 import ServicesPageContent from "@/components/renderers/ServicesWrapper";
 import ContactPageContent from "@/components/renderers/ContactWrapper";
 
-const StatsBar = dynamic(() => import("@/components/sections/StatsBar").then((m) => m.StatsBar));
 const IndustriesGrid = dynamic(() => import("@/components/sections/IndustriesGrid").then((m) => m.IndustriesGrid));
-const WhyPartnerNew = dynamic(() => import("@/components/sections/WhyPartnerNew").then((m) => m.WhyPartnerNew));
+const FactoryShowcase = dynamic(() => import("@/components/sections/FactoryShowcase").then((m) => m.FactoryShowcase));
 const TrustEvidence = dynamic(() => import("@/components/sections/TrustEvidence").then((m) => m.TrustEvidence));
 const CTAFinal = dynamic(() => import("@/components/sections/CTAFinal").then((m) => m.CTAFinal));
 
@@ -207,9 +206,8 @@ export default async function LocalizedPage({ params }: PageProps<"/[lang]/[[...
         <>
           <HeroImmersive />
           <DivisionsSplit />
-          <StatsBar />
           <IndustriesGrid />
-          <WhyPartnerNew />
+          <FactoryShowcase />
           <TrustEvidence />
           <CTAFinal />
         </>
