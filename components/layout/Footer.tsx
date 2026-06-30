@@ -9,6 +9,7 @@ const madeInChinaUrl =
   "https://js-zys.en.made-in-china.com/company-JIANGSU-ZEYUSEN-CARBON-FIBER-TECHNOLOGY-CO-LTD-.html?pv_id=1jqr933jbfc3&faw_id=1jqr93dmccb5&bv_id=1jqr93dmea79&pbv_id=1jqr932uc858";
 const linkedinUrl = "https://www.linkedin.com/in/andrea-ling-8b2873408/";
 const youtubeUrl = "https://www.youtube.com/channel/UCwP3-wR-SPNxixyzCqxFqLQ";
+const logoSrc = "/logo.png?v=logo-20260626";
 
 export function Footer({ locale, dict }: { locale: Locale; dict: Dictionary }) {
   const carbonFiberLinks = [
@@ -39,15 +40,23 @@ export function Footer({ locale, dict }: { locale: Locale; dict: Dictionary }) {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10">
           {/* Brand */}
           <div>
-            <div className="flex items-center gap-2 mb-4">
+            <div className="flex items-center gap-2.5 mb-5">
               <Image
-                src="/logo.png"
+                src={logoSrc}
                 alt="ZeYuSen Fiber"
-                width={28}
-                height={28}
-                className="block h-7 w-7 object-contain"
+                width={48}
+                height={48}
+                className="block h-12 w-12 shrink-0 object-cover scale-[1.08] brightness-0 invert"
               />
-              <span className="text-lg font-bold text-white">ZeYuSen</span>
+              <span
+                className={`leading-none text-white ${
+                  locale === "zh"
+                    ? "text-[1.6rem] font-black tracking-[0.04em]"
+                    : "text-[1.45rem] font-[family-name:var(--font-jetbrains-mono)] font-[900] tracking-[0.07em]"
+                }`}
+              >
+                {locale === "zh" ? "泽宇森" : "ZEYUSEN"}
+              </span>
             </div>
             <p className="text-sm text-neutral-400 leading-relaxed">{dict.footer.tagline}</p>
             <div className="flex items-center gap-3 mt-6">
@@ -140,7 +149,7 @@ export function Footer({ locale, dict }: { locale: Locale; dict: Dictionary }) {
         {/* Bottom */}
         <div className="border-t border-white/10 mt-12 pt-8 flex flex-col sm:flex-row items-center justify-between gap-4">
           <p className="text-xs text-neutral-500">
-            &copy; {new Date().getFullYear()} ZeYuSen Fiber. {dict.footer.rights}
+            &copy; {new Date().getFullYear()} Jiangsu Zeyusen Carbon Fiber Technology Co., Ltd. {dict.footer.rights}
           </p>
           <div className="flex items-center gap-6">
             <Link href={localizedHref("privacy", locale)} className="text-xs text-neutral-500 hover:text-neutral-300 transition-colors">

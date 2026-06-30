@@ -1,6 +1,6 @@
 export const contactInfo = {
   company: "JIANGSU ZEYUSEN CARBON FIBER TECHNOLOGY CO. LTD.",
-  emails: ["zys@jsfiberglass.com", "au4682@qq.com"],
+  emails: ["zys@jsfiberglass.com"],
   phones: ["+86-0513-81813680", "+86-18012885770"],
   address:
     "Group 10, Cuimu Village, Industrial Concentration Zone, Qutang Town, Haian County, Nantong City, Jiangsu Province, China",
