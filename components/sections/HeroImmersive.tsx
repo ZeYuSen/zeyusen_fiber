@@ -9,7 +9,6 @@ import { localizedHref } from "@/lib/i18n/routes";
 import { getHomeContent } from "@/lib/i18n/home-content";
 
 const slideImages = [
-  "/images/hero/banner5.png",
   "/images/hero/banner1.jpg",
   "/images/hero/banner2.jpg",
 ];

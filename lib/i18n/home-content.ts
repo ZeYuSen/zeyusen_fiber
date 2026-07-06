@@ -62,11 +62,6 @@ type DivisionCard = {
 const en: HomeContent = {
   hero: [
     {
-      title: "ZeYuSen R&D Center",
-      subtitle:
-        "Dedicated research facility driving innovation in carbon fiber and fiberglass composite materials",
-    },
-    {
       title: "Advanced Composite Materials",
       subtitle:
         "From carbon fiber to fiberglass — engineered for the world's most demanding industries",
@@ -194,7 +189,6 @@ const en: HomeContent = {
 
 const ko: HomeContent = {
   hero: [
-    { title: "ZeYuSen R&D 센터", subtitle: "탄소섬유 및 유리섬유 복합재 혁신을 이끄는 전용 연구 시설" },
     { title: "첨단 복합재 소재", subtitle: "탄소섬유부터 유리섬유까지 — 세계에서 가장 까다로운 산업을 위해 설계됨" },
     { title: "최첨단 제조 시설", subtitle: "자동화 생산 라인과 엄격한 품질 관리를 갖춘 80,000 m² 생산 시설" },
   ],
@@ -288,7 +282,6 @@ const ko: HomeContent = {
 
 const es: HomeContent = {
   hero: [
-    { title: "Centro de I+D de ZeYuSen", subtitle: "Instalación de investigación dedicada que impulsa la innovación en materiales compuestos de fibra de carbono y fibra de vidrio" },
     { title: "Materiales Compuestos Avanzados", subtitle: "De la fibra de carbono a la fibra de vidrio — diseñados para las industrias más exigentes del mundo" },
     { title: "Fabricación de Vanguardia", subtitle: "Planta de producción de 80.000 m² con líneas automatizadas y estricto control de calidad" },
   ],
@@ -384,7 +377,6 @@ const es: HomeContent = {
 
 const pt: HomeContent = {
   hero: [
-    { title: "Centro de P&D da ZeYuSen", subtitle: "Instalação de pesquisa dedicada que impulsiona a inovação em materiais compósitos de fibra de carbono e fibra de vidro" },
     { title: "Materiais Compósitos Avançados", subtitle: "Da fibra de carbono à fibra de vidro — projetados para os setores mais exigentes do mundo" },
     { title: "Fabricação de Última Geração", subtitle: "Planta de produção de 80.000 m² com linhas automatizadas e rigoroso controle de qualidade" },
   ],
@@ -480,7 +472,6 @@ const pt: HomeContent = {
 
 const zh: HomeContent = {
   hero: [
-    { title: "泽宇森研发中心", subtitle: "专注碳纤维和玻璃纤维复合材料创新的研发设施" },
     { title: "先进复合材料", subtitle: "从碳纤维到玻璃纤维——为全球最严苛行业而设计" },
     { title: "先进制造设施", subtitle: "80,000平方米生产基地，配备自动化生产线和严格质量管控" },
   ],

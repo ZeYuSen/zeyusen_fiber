@@ -1,8 +1,8 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Image from "next/image";
-import { Factory, FlaskConical, Warehouse } from "lucide-react";
+import { motion, AnimatePresence } from "framer-motion";
 import { useLocale } from "@/lib/i18n/use-locale";
 import { getHomeContent } from "@/lib/i18n/home-content";
 
@@ -24,16 +24,26 @@ const galleries = {
   ],
 } as const;
 
-const tabIcons = { production: Factory, testing: FlaskConical, warehouse: Warehouse };
 const tabKeys = ["production", "testing", "warehouse"] as const;
 
 export function FactoryShowcase() {
   const { factory } = getHomeContent(useLocale());
-  const [active, setActive] = useState<keyof typeof galleries>("production");
+  const [activeIndex, setActiveIndex] = useState(0);
+  const [paused, setPaused] = useState(false);
+  const active = tabKeys[activeIndex];
   const images = galleries[active];
 
+  // Auto-rotate tabs every 4s, pause on hover
+  useEffect(() => {
+    if (paused) return;
+    const id = setInterval(() => {
+      setActiveIndex((i) => (i + 1) % tabKeys.length);
+    }, 4000);
+    return () => clearInterval(id);
+  }, [paused]);
+
   return (
-    <section className="bg-neutral-50 section-padding">
+    <section className="bg-white section-padding">
       <div className="container-wide">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16 mb-16">
           <div>
@@ -47,16 +57,16 @@ export function FactoryShowcase() {
           <p className="text-neutral-500 leading-relaxed self-end">{factory.intro}</p>
         </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-6">
           {/* Feature: warehouse + shipment */}
-          <div className="relative overflow-hidden rounded-2xl aspect-[4/3] group">
+          <div className="relative overflow-hidden rounded-2xl aspect-[4/3] group lg:col-span-5">
             <Image
               src="/images/hero/banner4.jpg"
               alt={factory.featureTitle}
               fill
               quality={70}
               className="object-cover object-[72%_25%] transition-transform duration-700 group-hover:scale-105"
-              sizes="(max-width: 1024px) 100vw, 50vw"
+              sizes="(max-width: 1024px) 100vw, 42vw"
             />
             <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent" />
             <div className="absolute inset-0 flex flex-col justify-end p-8 sm:p-10">
@@ -69,44 +79,64 @@ export function FactoryShowcase() {
           </div>
 
           {/* Tabbed gallery */}
-          <div className="bg-white rounded-2xl p-6 sm:p-8 flex flex-col">
-            <div className="flex gap-2 mb-6 flex-wrap">
-              {tabKeys.map((key) => {
-                const Icon = tabIcons[key];
-                const on = active === key;
-                return (
-                  <button
-                    key={key}
-                    onClick={() => setActive(key)}
-                    className={`inline-flex items-center gap-2 text-sm font-medium px-4 py-2 rounded-full transition-colors ${
-                      on
-                        ? "bg-neutral-900 text-white"
-                        : "bg-neutral-100 text-neutral-600 hover:bg-neutral-200"
-                    }`}
-                  >
-                    <Icon className="w-4 h-4" />
-                    {factory.tabs[key]}
-                  </button>
-                );
-              })}
+          <div
+            className="bg-white rounded-2xl px-6 sm:px-8 flex flex-col h-full lg:col-span-7"
+            onMouseEnter={() => setPaused(true)}
+            onMouseLeave={() => setPaused(false)}
+          >
+            <div className="relative flex w-full p-1 bg-neutral-100 rounded-lg mb-6">
+              {/* Sliding white indicator */}
+              <div
+                className="absolute top-1 bottom-1 rounded-md bg-white shadow-sm transition-transform duration-[900ms] ease-[cubic-bezier(0.16,1,0.3,1)]"
+                style={{
+                  width: `calc((100% - 0.5rem) / ${tabKeys.length})`,
+                  transform: `translateX(${activeIndex * 100}%)`,
+                }}
+              />
+              {tabKeys.map((key, i) => (
+                <button
+                  key={key}
+                  onClick={() => setActiveIndex(i)}
+                  className={`relative z-10 flex-1 text-center px-4 py-2 text-sm font-medium transition-colors duration-[600ms] ${
+                    activeIndex === i
+                      ? "text-neutral-900"
+                      : "text-neutral-500 hover:text-neutral-700"
+                  }`}
+                >
+                  {factory.tabs[key]}
+                </button>
+              ))}
             </div>
 
-            <div className="grid gap-3 flex-1 grid-cols-3">
-              {images.map((img) => (
-                <div
-                  key={img.src}
-                  className="relative overflow-hidden rounded-lg bg-neutral-100 aspect-[3/4]"
-                >
-                  <Image
-                    src={img.src}
-                    alt={img.alt}
-                    fill
-                    quality={70}
-                    className="object-cover"
-                    sizes="(max-width: 1024px) 30vw, 15vw"
-                  />
-                </div>
-              ))}
+            <div className="flex-1 min-h-0">
+              <div className="relative w-full h-full">
+                <AnimatePresence mode="wait">
+                  <motion.div
+                    key={active}
+                    initial={{ opacity: 0 }}
+                    animate={{ opacity: 1 }}
+                    exit={{ opacity: 0 }}
+                    transition={{ duration: 0.6, ease: "easeInOut" }}
+                    className="grid gap-3 grid-cols-3 w-full h-full"
+                  >
+                    {images.map((img) => (
+                      <div
+                        key={img.src}
+                        className="relative overflow-hidden rounded-lg bg-neutral-100 h-full min-h-[220px]"
+                      >
+                        <Image
+                          src={img.src}
+                          alt={img.alt}
+                          fill
+                          quality={70}
+                          className="object-cover"
+                          sizes="(max-width: 1024px) 30vw, 19vw"
+                        />
+                      </div>
+                    ))}
+                  </motion.div>
+                </AnimatePresence>
+              </div>
             </div>
 
             <p className="text-xs text-neutral-400 mt-6 leading-relaxed">{factory.note}</p>

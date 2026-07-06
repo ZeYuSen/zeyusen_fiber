@@ -34,7 +34,7 @@ export function DivisionsSplit() {
   const divisions = divisionMeta.map((m) => ({ ...m, ...home.divisions[m.id] }));
 
   return (
-    <section className="section-padding bg-neutral-50">
+    <section className="section-padding bg-white">
       <div className="container-wide">
         {/* Division features — editorial, numbered, asymmetric, edge-bleed */}
         <div className="flex flex-col gap-20 sm:gap-32">
@@ -55,7 +55,7 @@ export function DivisionsSplit() {
                     reversed ? "lg:order-2 lg:col-start-9" : "lg:order-1"
                   }`}
                 >
-                  <span className="block text-6xl sm:text-7xl font-semibold text-neutral-200 tabular-nums leading-none select-none">
+                  <span className="block text-6xl sm:text-7xl font-semibold text-neutral-400 tabular-nums leading-none select-none">
                     {div.number}
                   </span>
                   <h3 className="mt-5 text-3xl sm:text-4xl font-semibold text-neutral-900 tracking-tight">

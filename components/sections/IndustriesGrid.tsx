@@ -25,7 +25,7 @@ export function IndustriesGrid() {
   const home = getHomeContent(locale);
   const industries = industryMeta.map((m, i) => ({ ...m, ...home.industries.items[i] }));
   return (
-    <section className="bg-white section-padding">
+    <section className="bg-neutral-100 section-padding">
       <div className="container-wide">
         <h2 className="text-2xl sm:text-3xl font-semibold text-neutral-900 mb-12">
           {home.industries.heading}

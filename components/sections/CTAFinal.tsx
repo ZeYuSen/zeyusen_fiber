@@ -46,7 +46,7 @@ export function CTAFinal() {
   };
 
   return (
-    <section className="relative bg-neutral-50 section-padding overflow-hidden">
+    <section className="relative bg-white section-padding overflow-hidden">
       {/* Subtle gradient accent */}
       <div className="absolute inset-0 opacity-10">
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] rounded-full bg-gradient-to-br from-cyan-500/20 via-transparent to-emerald-500/20 animate-[gradient-rotate_20s_linear_infinite]" />

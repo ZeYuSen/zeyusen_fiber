@@ -98,13 +98,22 @@ function CertificateCarousel() {
 
   const handlePointerUp = () => setDragging(false);
 
-  const prevIndex = (currentIndex - 1 + total) % total;
-  const nextIndex = (currentIndex + 1) % total;
-  const slots = [
-    { idx: prevIndex, cert: certificates[prevIndex], pos: "side", onClick: prev },
-    { idx: currentIndex, cert: certificates[currentIndex], pos: "center", onClick: () => openLightbox(certificates[currentIndex].src) },
-    { idx: nextIndex, cert: certificates[nextIndex], pos: "side", onClick: next },
-  ];
+  // Render a 5-wide window (offsets -2..2) around the current card. Each card
+  // is absolutely centered and animated purely via transform, so nothing ever
+  // reflows — the browser only tweens GPU-friendly x / scale / opacity.
+  const visible = [-2, -1, 0, 1, 2].map((offset) => {
+    const idx = (currentIndex + offset + total) % total;
+    return { offset, idx, cert: certificates[idx] };
+  });
+
+  const layoutFor = (offset: number) => {
+    const abs = Math.abs(offset);
+    if (abs === 0) return { x: "0%", scale: 1, opacity: 1 };
+    if (abs === 1) return { x: `${offset * 95}%`, scale: 0.66, opacity: 0.5 };
+    return { x: `${offset * 175}%`, scale: 0.5, opacity: 0 };
+  };
+
+  const zFor = (offset: number) => (offset === 0 ? 30 : Math.abs(offset) === 1 ? 20 : 10);
 
   return (
     <>
@@ -113,68 +122,74 @@ function CertificateCarousel() {
         onMouseEnter={() => setPaused(true)}
         onMouseLeave={() => setPaused(false)}
       >
-        <div className="flex items-center justify-center gap-4 sm:gap-6">
-          <AnimatePresence initial={false}>
-            {slots.map((slot) => {
-              const isCenter = slot.pos === "center";
-              return (
-                <motion.div
-                  key={slot.idx}
-                  layout
-                  initial={{ opacity: 0 }}
-                  animate={{ opacity: isCenter ? 1 : 0.6 }}
-                  exit={{ opacity: 0 }}
-                  transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
-                  className={`flex-shrink-0 cursor-pointer group/cert hover:opacity-90 ${
-                    isCenter ? "w-[38%] z-10" : "w-1/4"
+        <div className="relative flex justify-center overflow-hidden py-6">
+          {/* Invisible spacer establishes the height from the center card */}
+          <div className="w-[38%] aspect-[3/4] invisible" aria-hidden />
+
+          {visible.map(({ offset, idx, cert }) => {
+            const isCenter = offset === 0;
+            const target = layoutFor(offset);
+            return (
+              <motion.div
+                key={idx}
+                initial={false}
+                animate={target}
+                transition={{ duration: 0.6, ease: [0.32, 0.72, 0, 1] }}
+                style={{ zIndex: zFor(offset) }}
+                className="absolute top-6 left-1/2 w-[38%] -ml-[19%] cursor-pointer group/cert"
+                onClick={isCenter ? () => openLightbox(cert.src) : offset < 0 ? prev : next}
+              >
+                <div
+                  className={`relative aspect-[3/4] overflow-hidden rounded-lg bg-white ring-1 ${
+                    isCenter ? "ring-neutral-200 shadow-xl" : "ring-neutral-100"
                   }`}
-                  onClick={slot.onClick}
                 >
-                  <motion.div
-                    layout
-                    className={`relative aspect-[3/4] overflow-hidden rounded-lg bg-white ring-1 ${
-                      isCenter ? "ring-neutral-200 shadow-xl" : "ring-neutral-100"
+                  <Image
+                    src={cert.src}
+                    alt={cert.alt}
+                    fill
+                    sizes={isCenter ? "30vw" : "20vw"}
+                    quality={isCenter ? 70 : 45}
+                    className={`object-contain p-2 transition-transform duration-500 ${
+                      isCenter ? "group-hover/cert:scale-[1.03]" : ""
                     }`}
-                  >
-                    <Image
-                      src={slot.cert.src}
-                      alt={slot.cert.alt}
-                      fill
-                      sizes={isCenter ? "30vw" : "20vw"}
-                      quality={isCenter ? 70 : 45}
-                      className={`object-contain p-2 transition-transform duration-500 ${
-                        isCenter ? "group-hover/cert:scale-[1.03]" : ""
-                      }`}
-                    />
-                  </motion.div>
-                  {isCenter && (
-                    <motion.p
-                      layout
-                      className="mt-3 text-xs font-medium text-neutral-700 text-center truncate"
-                    >
-                      {slot.cert.label}
-                    </motion.p>
-                  )}
-                </motion.div>
-              );
-            })}
-          </AnimatePresence>
+                  />
+                </div>
+              </motion.div>
+            );
+          })}
+
+          <button
+            onClick={prev}
+            aria-label="Previous"
+            className="absolute left-0 top-1/2 -translate-y-1/2 w-9 h-9 rounded-full bg-white ring-1 ring-neutral-200 shadow-md flex items-center justify-center hover:bg-neutral-50 transition-colors z-40"
+          >
+            <ChevronLeft className="w-4 h-4 text-neutral-700" />
+          </button>
+          <button
+            onClick={next}
+            aria-label="Next"
+            className="absolute right-0 top-1/2 -translate-y-1/2 w-9 h-9 rounded-full bg-white ring-1 ring-neutral-200 shadow-md flex items-center justify-center hover:bg-neutral-50 transition-colors z-40"
+          >
+            <ChevronRight className="w-4 h-4 text-neutral-700" />
+          </button>
         </div>
 
-        <button
-          onClick={prev}
-          aria-label="Previous"
-          className="absolute left-0 top-[42%] -translate-y-1/2 -translate-x-1 sm:-translate-x-3 w-9 h-9 rounded-full bg-white ring-1 ring-neutral-200 shadow-sm flex items-center justify-center hover:bg-neutral-50 transition-colors z-20"
-        >
-          <ChevronLeft className="w-4 h-4 text-neutral-700" />
-        </button>
-        <button
-          onClick={next}
-          aria-label="Next"
-          className="absolute right-0 top-[42%] -translate-y-1/2 translate-x-1 sm:translate-x-3 w-9 h-9 rounded-full bg-white ring-1 ring-neutral-200 shadow-sm flex items-center justify-center hover:bg-neutral-50 transition-colors z-20"
-        >
-          <ChevronRight className="w-4 h-4 text-neutral-700" />
-        </button>
+        {/* Center card label — crossfades with the active certificate */}
+        <div className="relative h-4 mt-3">
+          <AnimatePresence initial={false} mode="wait">
+            <motion.p
+              key={currentIndex}
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              transition={{ duration: 0.4, ease: "easeInOut" }}
+              className="absolute inset-0 text-xs font-medium text-neutral-700 text-center truncate"
+            >
+              {certificates[currentIndex].label}
+            </motion.p>
+          </AnimatePresence>
+        </div>
 
         {/* Dots */}
         <div className="flex items-center justify-center gap-1.5 mt-5">
@@ -229,7 +244,7 @@ export function TrustEvidence() {
   const { trust, stats } = getHomeContent(useLocale());
 
   return (
-    <section className="bg-neutral-50 section-padding">
+    <section className="bg-neutral-100 section-padding">
       <div className="container-wide">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-16 items-stretch">
           {/* Left — heading + vertical data axis */}
