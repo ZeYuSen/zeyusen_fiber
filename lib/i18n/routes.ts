@@ -13,13 +13,11 @@ export type PageKey =
   | "blog-post"
   | "applications" // carbon applications overview (legacy /applications)
   | "applications-glass" // glass applications overview
-  | "carbon-fiber" // carbon division home
-  | "carbon-products" // carbon catalog
+  | "carbon-fiber" // carbon division catalog
   | "carbon-category" // carbon product category
   | "carbon-product" // carbon product detail
   | "carbon-application" // carbon application detail
-  | "glass-fiber" // glass division home
-  | "glass-products" // glass catalog
+  | "glass-fiber" // glass division catalog
   | "glass-category" // glass product category
   | "glass-product" // glass product detail
   | "glass-application"; // glass application detail
@@ -27,7 +25,7 @@ export type PageKey =
 export type RouteParams = Record<string, string>;
 
 // Division root segment is localized; leaf product/blog slugs stay English.
-const divisionRoot: Record<"carbon" | "glass", Record<Locale, string>> = {
+export const divisionRoot: Record<"carbon" | "glass", Record<Locale, string>> = {
   carbon: {
     en: "carbon-fiber",
     zh: "碳纤维",
@@ -46,7 +44,6 @@ const divisionRoot: Record<"carbon" | "glass", Record<Locale, string>> = {
 
 // Reusable localized path segments (column-level localization).
 export const segmentLabels: Record<string, Record<Locale, string>> = {
-  products: { en: "products", zh: "产品", ko: "제품", es: "productos", pt: "produtos" },
   applications: {
     en: "applications",
     zh: "应用",
@@ -101,39 +98,8 @@ const ROUTES: RouteDef[] = [
   },
   { key: "applications", segments: [{ t: "label", key: "applications" }] },
   { key: "carbon-fiber", segments: [{ t: "root", div: "carbon" }] },
-  {
-    key: "carbon-products",
-    segments: [
-      { t: "root", div: "carbon" },
-      { t: "label", key: "products" },
-    ],
-  },
   { key: "glass-fiber", segments: [{ t: "root", div: "glass" }] },
-  {
-    key: "glass-products",
-    segments: [
-      { t: "root", div: "glass" },
-      { t: "label", key: "products" },
-    ],
-  },
-  // Dynamic routes (longest first within each family to avoid prefix shadowing).
-  {
-    key: "carbon-product",
-    segments: [
-      { t: "root", div: "carbon" },
-      { t: "label", key: "products" },
-      { t: "param", name: "category" },
-      { t: "param", name: "product" },
-    ],
-  },
-  {
-    key: "carbon-category",
-    segments: [
-      { t: "root", div: "carbon" },
-      { t: "label", key: "products" },
-      { t: "param", name: "category" },
-    ],
-  },
+  // Dynamic routes (most-specific first to avoid param shadowing).
   {
     key: "carbon-application",
     segments: [
@@ -143,19 +109,17 @@ const ROUTES: RouteDef[] = [
     ],
   },
   {
-    key: "glass-product",
+    key: "carbon-product",
     segments: [
-      { t: "root", div: "glass" },
-      { t: "label", key: "products" },
+      { t: "root", div: "carbon" },
       { t: "param", name: "category" },
       { t: "param", name: "product" },
     ],
   },
   {
-    key: "glass-category",
+    key: "carbon-category",
     segments: [
-      { t: "root", div: "glass" },
-      { t: "label", key: "products" },
+      { t: "root", div: "carbon" },
       { t: "param", name: "category" },
     ],
   },
@@ -165,6 +129,21 @@ const ROUTES: RouteDef[] = [
       { t: "root", div: "glass" },
       { t: "label", key: "applications" },
       { t: "param", name: "slug" },
+    ],
+  },
+  {
+    key: "glass-product",
+    segments: [
+      { t: "root", div: "glass" },
+      { t: "param", name: "category" },
+      { t: "param", name: "product" },
+    ],
+  },
+  {
+    key: "glass-category",
+    segments: [
+      { t: "root", div: "glass" },
+      { t: "param", name: "category" },
     ],
   },
   {

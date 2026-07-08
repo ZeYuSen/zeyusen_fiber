@@ -15,6 +15,7 @@ import { organizationJsonLd, websiteJsonLd } from "@/lib/jsonld";
 import { locales, isLocale, localeMeta, type Locale } from "@/lib/i18n/config";
 import { getDictionary } from "@/lib/i18n/dictionaries";
 import { allLocaleHrefs } from "@/lib/i18n/routes";
+import { getCategories } from "@/lib/data-i18n";
 
 const inter = Inter({
   variable: "--font-inter",
@@ -75,6 +76,8 @@ export default async function LangLayout({
   const locale = lang as Locale;
   const dict = await getDictionary(locale);
   const homeAlternates = allLocaleHrefs("home");
+  const carbonCategories = getCategories("carbon", locale).map(({ slug, name }) => ({ slug, name }));
+  const glassCategories = getCategories("glass", locale).map(({ slug, name }) => ({ slug, name }));
 
   return (
     <html lang={localeMeta[locale].htmlLang} className={`${inter.variable} ${jetbrainsMono.variable} ${bebasNeue.variable}`}>
@@ -108,7 +111,7 @@ export default async function LangLayout({
           }}
         />
         <SmoothScrollProvider>
-          <Header dict={dict} />
+          <Header dict={dict} carbonCategories={carbonCategories} glassCategories={glassCategories} />
           <NewTabLinkBehavior />
           <main className="flex-1">{children}</main>
           <Footer locale={locale} dict={dict} />

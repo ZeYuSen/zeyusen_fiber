@@ -20,7 +20,7 @@ export const zh: PagesContent = {
       post: "，满足复杂复合材料应用需求。",
     },
     quickStats: [
-      { num: "15+", label: "年经验" },
+      { num: "10+", label: "年经验" },
       { num: "50+", label: "出口国家" },
       { num: "7", label: "产品线" },
       { num: "100%", label: "定制支持" },
@@ -93,7 +93,7 @@ export const zh: PagesContent = {
       { title: "生产", desc: "专属团队实时更新管理您的订单。" },
       { title: "交付", desc: "从出口就绪的工厂快速全球发货。" },
     ],
-    ctaTitle: "准备好开始您的项目了吗？",
+    ctaTitle: "发送您的规格，24小时内获取报价",
     ctaBody: "无论您需要定制配方还是标准产品批量采购，我们的团队随时为您服务。",
     ctaButton: "获取免费报价",
   },

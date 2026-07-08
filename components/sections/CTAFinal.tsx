@@ -47,10 +47,8 @@ export function CTAFinal() {
 
   return (
     <section className="relative bg-white section-padding overflow-hidden">
-      {/* Subtle gradient accent */}
-      <div className="absolute inset-0 opacity-10">
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] rounded-full bg-gradient-to-br from-cyan-500/20 via-transparent to-emerald-500/20 animate-[gradient-rotate_20s_linear_infinite]" />
-      </div>
+      {/* Subtle top hairline accent */}
+      <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-neutral-200 to-transparent" />
 
       <div className="relative z-10 container-wide max-w-[800px] text-center">
         <h2 className="text-2xl sm:text-3xl font-semibold text-neutral-900">

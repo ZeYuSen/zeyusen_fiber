@@ -109,7 +109,7 @@ const en: PagesContent = {
       post: " for complex composite applications.",
     },
     quickStats: [
-      { num: "15+", label: "Years Experience" },
+      { num: "10+", label: "Years Experience" },
       { num: "50+", label: "Export Countries" },
       { num: "7", label: "Product Lines" },
       { num: "100%", label: "Custom Support" },
@@ -182,7 +182,7 @@ const en: PagesContent = {
       { title: "Production", desc: "Dedicated team manages your order with real-time updates." },
       { title: "Delivery", desc: "Fast global shipping from our export-ready facilities." },
     ],
-    ctaTitle: "Ready to Start Your Project?",
+    ctaTitle: "Send Your Spec, Get a Quote in 24 Hours",
     ctaBody: "Whether you need a custom formulation or a standard product in bulk, our team is ready to help.",
     ctaButton: "Get a Free Quote",
   },

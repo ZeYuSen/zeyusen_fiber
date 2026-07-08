@@ -4,7 +4,7 @@ import { useState, useEffect, useCallback } from "react";
 import { usePathname } from "next/navigation";
 import Link from "next/link";
 import Image from "next/image";
-import { Menu, X, ChevronDown } from "lucide-react";
+import { Menu, X, ChevronDown, ChevronRight } from "lucide-react";
 import { isLocale, defaultLocale } from "@/lib/i18n/config";
 import { localizedHref } from "@/lib/i18n/routes";
 import type { Dictionary } from "@/lib/i18n/dictionaries";
@@ -12,10 +12,22 @@ import { LanguageSwitcher } from "./LanguageSwitcher";
 
 const logoSrc = "/logo.png?v=logo-20260626";
 
-export function Header({ dict }: { dict: Dictionary }) {
+type CategoryLink = { slug: string; name: string };
+
+export function Header({
+  dict,
+  carbonCategories,
+  glassCategories,
+}: {
+  dict: Dictionary;
+  carbonCategories: CategoryLink[];
+  glassCategories: CategoryLink[];
+}) {
   const [scrolled, setScrolled] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
   const [activeDropdown, setActiveDropdown] = useState<string | null>(null);
+  const [activeSubmenu, setActiveSubmenu] = useState<"carbon" | "glass" | null>(null);
+  const [mobileExpanded, setMobileExpanded] = useState<"carbon" | "glass" | null>(null);
   const pathname = usePathname();
 
   const segments = pathname.split("/").filter(Boolean);
@@ -77,34 +89,84 @@ export function Header({ dict }: { dict: Dictionary }) {
             <div
               className="relative"
               onMouseEnter={() => setActiveDropdown("products")}
-              onMouseLeave={() => setActiveDropdown(null)}
+              onMouseLeave={() => { setActiveDropdown(null); setActiveSubmenu(null); }}
             >
               <NavTrigger textColor={textColor} textHover={textHover}>
                 {dict.nav.products}
               </NavTrigger>
               <div
-                className={`absolute top-full left-0 pt-4 w-64 transition-all duration-200 ${
+                className={`absolute top-full left-0 pt-4 w-52 transition-all duration-200 ${
                   activeDropdown === "products"
                     ? "opacity-100 translate-y-0 pointer-events-auto"
                     : "opacity-0 translate-y-2 pointer-events-none"
                 }`}
               >
-                <div className="bg-white border border-black/[0.06] p-3 shadow-lg rounded-lg">
-                  <Link
-                    href={localizedHref("carbon-fiber", locale)}
-                    className="flex items-center justify-between px-3 py-3 text-sm font-semibold text-carbon-accent hover:bg-black/[0.03] transition-colors"
+                <div className="bg-white border border-black/[0.06] p-2 shadow-lg rounded-lg">
+                  {/* Carbon — hover reveals right flyout */}
+                  <div
+                    className="relative"
+                    onMouseEnter={() => setActiveSubmenu("carbon")}
                   >
-                    <span>{dict.nav.carbonFiber}</span>
-                    <ChevronDown className="-rotate-90 w-3.5 h-3.5" />
-                  </Link>
+                    <Link
+                      href={localizedHref("carbon-fiber", locale)}
+                      className={`flex items-center justify-between px-3 py-3 text-sm font-semibold rounded-md transition-colors ${
+                        activeSubmenu === "carbon"
+                          ? "bg-black/[0.03] text-carbon-accent"
+                          : "text-carbon-accent hover:bg-black/[0.03]"
+                      }`}
+                    >
+                      <span>{dict.nav.carbonFiber}</span>
+                      <ChevronRight className="w-3.5 h-3.5" />
+                    </Link>
+                    {activeSubmenu === "carbon" && carbonCategories.length > 0 && (
+                      <div className="absolute left-full top-0 pl-1">
+                        <div className="w-56 bg-white border border-black/[0.06] p-2 shadow-lg rounded-lg">
+                          {carbonCategories.map((category) => (
+                            <Link
+                              key={category.slug}
+                              href={localizedHref("carbon-category", locale, { category: category.slug })}
+                              className="block px-3 py-2.5 text-sm text-text-secondary hover:text-text-primary hover:bg-black/[0.03] rounded-md transition-colors"
+                            >
+                              {category.name}
+                            </Link>
+                          ))}
+                        </div>
+                      </div>
+                    )}
+                  </div>
                   <div className="border-t border-black/[0.06] my-1" />
-                  <Link
-                    href={localizedHref("glass-fiber", locale)}
-                    className="flex items-center justify-between px-3 py-3 text-sm font-semibold text-glass-accent hover:bg-black/[0.03] transition-colors"
+                  {/* Glass — hover reveals right flyout */}
+                  <div
+                    className="relative"
+                    onMouseEnter={() => setActiveSubmenu("glass")}
                   >
-                    <span>{dict.nav.glassFiber}</span>
-                    <ChevronDown className="-rotate-90 w-3.5 h-3.5" />
-                  </Link>
+                    <Link
+                      href={localizedHref("glass-fiber", locale)}
+                      className={`flex items-center justify-between px-3 py-3 text-sm font-semibold rounded-md transition-colors ${
+                        activeSubmenu === "glass"
+                          ? "bg-black/[0.03] text-glass-accent"
+                          : "text-glass-accent hover:bg-black/[0.03]"
+                      }`}
+                    >
+                      <span>{dict.nav.glassFiber}</span>
+                      <ChevronRight className="w-3.5 h-3.5" />
+                    </Link>
+                    {activeSubmenu === "glass" && glassCategories.length > 0 && (
+                      <div className="absolute left-full top-0 pl-1">
+                        <div className="w-56 bg-white border border-black/[0.06] p-2 shadow-lg rounded-lg">
+                          {glassCategories.map((category) => (
+                            <Link
+                              key={category.slug}
+                              href={localizedHref("glass-category", locale, { category: category.slug })}
+                              className="block px-3 py-2.5 text-sm text-text-secondary hover:text-text-primary hover:bg-black/[0.03] rounded-md transition-colors"
+                            >
+                              {category.name}
+                            </Link>
+                          ))}
+                        </div>
+                      </div>
+                    )}
+                  </div>
                 </div>
               </div>
             </div>
@@ -158,20 +220,72 @@ export function Header({ dict }: { dict: Dictionary }) {
             </Link>
             <div>
               <p className="type-caption text-neutral-400 mb-3">{dict.nav.products}</p>
-              <Link
-                href={localizedHref("carbon-fiber", locale)}
-                onClick={closeMobile}
-                className="block py-2 text-sm font-semibold text-carbon-accent hover:text-text-primary transition-colors"
-              >
-                {dict.nav.carbonFiber}
-              </Link>
-              <Link
-                href={localizedHref("glass-fiber", locale)}
-                onClick={closeMobile}
-                className="block py-2 text-sm font-semibold text-glass-accent hover:text-text-primary transition-colors"
-              >
-                {dict.nav.glassFiber}
-              </Link>
+              {/* Carbon accordion */}
+              <div className="flex items-center justify-between">
+                <Link
+                  href={localizedHref("carbon-fiber", locale)}
+                  onClick={closeMobile}
+                  className="py-2 text-sm font-semibold text-carbon-accent hover:text-text-primary transition-colors"
+                >
+                  {dict.nav.carbonFiber}
+                </Link>
+                <button
+                  type="button"
+                  onClick={() => setMobileExpanded(mobileExpanded === "carbon" ? null : "carbon")}
+                  className="p-2 -mr-2 text-carbon-accent"
+                  aria-label={`${dict.nav.carbonFiber} ${dict.nav.products}`}
+                  aria-expanded={mobileExpanded === "carbon"}
+                >
+                  <ChevronDown className={`w-4 h-4 transition-transform ${mobileExpanded === "carbon" ? "rotate-180" : ""}`} />
+                </button>
+              </div>
+              {mobileExpanded === "carbon" && (
+                <div className="pl-3 pb-2 space-y-1">
+                  {carbonCategories.map((category) => (
+                    <Link
+                      key={category.slug}
+                      href={localizedHref("carbon-category", locale, { category: category.slug })}
+                      onClick={closeMobile}
+                      className="block py-1.5 text-sm text-text-secondary hover:text-text-primary transition-colors"
+                    >
+                      {category.name}
+                    </Link>
+                  ))}
+                </div>
+              )}
+              {/* Glass accordion */}
+              <div className="flex items-center justify-between">
+                <Link
+                  href={localizedHref("glass-fiber", locale)}
+                  onClick={closeMobile}
+                  className="py-2 text-sm font-semibold text-glass-accent hover:text-text-primary transition-colors"
+                >
+                  {dict.nav.glassFiber}
+                </Link>
+                <button
+                  type="button"
+                  onClick={() => setMobileExpanded(mobileExpanded === "glass" ? null : "glass")}
+                  className="p-2 -mr-2 text-glass-accent"
+                  aria-label={`${dict.nav.glassFiber} ${dict.nav.products}`}
+                  aria-expanded={mobileExpanded === "glass"}
+                >
+                  <ChevronDown className={`w-4 h-4 transition-transform ${mobileExpanded === "glass" ? "rotate-180" : ""}`} />
+                </button>
+              </div>
+              {mobileExpanded === "glass" && (
+                <div className="pl-3 pb-2 space-y-1">
+                  {glassCategories.map((category) => (
+                    <Link
+                      key={category.slug}
+                      href={localizedHref("glass-category", locale, { category: category.slug })}
+                      onClick={closeMobile}
+                      className="block py-1.5 text-sm text-text-secondary hover:text-text-primary transition-colors"
+                    >
+                      {category.name}
+                    </Link>
+                  ))}
+                </div>
+              )}
             </div>
             <div className="border-t border-black/[0.06] pt-4 space-y-3">
               <Link href={localizedHref("applications", locale)} onClick={closeMobile} className="block text-sm font-medium text-text-secondary hover:text-text-primary">

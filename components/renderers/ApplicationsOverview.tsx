@@ -131,8 +131,8 @@ export function ApplicationsOverview({
             <Link
               href={
                 selectedMaterial === "carbon"
-                  ? localizedHref("carbon-products", locale)
-                  : localizedHref("glass-products", locale)
+                  ? localizedHref("carbon-fiber", locale)
+                  : localizedHref("glass-fiber", locale)
               }
               className={`inline-flex items-center gap-2 text-sm font-medium ${selectedGroup.accentClass} hover:text-neutral-900 transition-colors`}
             >

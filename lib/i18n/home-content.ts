@@ -71,6 +71,11 @@ const en: HomeContent = {
       subtitle:
         "80,000 m² production facility with automated production lines and strict quality control",
     },
+    {
+      title: "Shipped to 50+ Countries",
+      subtitle:
+        "Dual production bases 240 km from Shanghai Port — FOB, CIF or DDP, coordinated to your terms",
+    },
   ],
   heroCta: { quote: "Get a Quote", about: "About Our Manufacturing" },
   divisions: {
@@ -115,7 +120,7 @@ const en: HomeContent = {
   },
   exploreProducts: "Explore Products",
   stats: [
-    { value: 15, suffix: "+", label: "Years Experience" },
+    { value: 10, suffix: "+", label: "Years Experience" },
     { value: 50, suffix: "+", label: "Countries Exported" },
     { value: 80, suffix: "M", label: "Sqm Annual Output" },
     { value: 13, suffix: "+", label: "Patents Granted" },
@@ -133,11 +138,11 @@ const en: HomeContent = {
   whyPartner: {
     title: "Precision at every scale.",
     intro:
-      "With 15+ years of manufacturing expertise and partnerships with leading research institutions, we deliver composite materials that meet the most demanding specifications — on time, every time.",
+      "With a decade of manufacturing expertise and partnerships with leading research institutions, we deliver composite materials that meet the most demanding specifications — on time, every time.",
     capabilities: [
       { number: "01", title: "Custom Engineering", description: "Tailored fiber solutions from 10g/m² to 1200g/m², any specification." },
       { number: "02", title: "Global Logistics", description: "Dual production bases, 240km from Shanghai Port. Exporting to 50+ countries." },
-      { number: "03", title: "Quality Certified", description: "ISO 9001, 14001, 45001 certified. 15+ patents in composite materials." },
+      { number: "03", title: "Quality Certified", description: "ISO 9001, 14001, 45001 certified. 13+ patents in composite materials." },
     ],
   },
   trust: {
@@ -145,7 +150,7 @@ const en: HomeContent = {
     intro:
       "Certifications, R&D capability, logistics infrastructure, and order support — documented and ready for your review before you place a single order.",
     metrics: [
-      { number: "01", metric: "15", suffix: "+", unit: "Years", title: "Composite Experience", text: "Focused exclusively on fiberglass and carbon fiber since 2008, serving demanding industrial applications worldwide." },
+      { number: "01", metric: "10", suffix: "+", unit: "Years", title: "Composite Experience", text: "Focused exclusively on fiberglass and carbon fiber since 2015, serving demanding industrial applications worldwide." },
       { number: "02", metric: "2", suffix: "", unit: "R&D Centers", title: "Engineering Backbone", text: "Dedicated R&D staff guide you from material selection through production — engineers who understand your process." },
       { number: "03", metric: "50", suffix: "+", unit: "Countries", title: "Export Footprint", text: "Stable global delivery from dual production bases, 240 km to Shanghai Port. FOB, CIF, DDP — coordinated to your terms." },
     ],
@@ -163,7 +168,7 @@ const en: HomeContent = {
     steps: ["Inquiry", "Production", "Inspection", "Shipment"],
   },
   cta: {
-    title: "Let's Build Something Together",
+    title: "Send Your Spec, Get a Recommendation in 24h",
     intro:
       "Tell us your requirements. Our engineers will provide a tailored recommendation within 24 hours.",
     emailPlaceholder: "Your email",
@@ -191,6 +196,7 @@ const ko: HomeContent = {
   hero: [
     { title: "첨단 복합재 소재", subtitle: "탄소섬유부터 유리섬유까지 — 세계에서 가장 까다로운 산업을 위해 설계됨" },
     { title: "최첨단 제조 시설", subtitle: "자동화 생산 라인과 엄격한 품질 관리를 갖춘 80,000 m² 생산 시설" },
+    { title: "50개국 이상에 공급", subtitle: "상하이항에서 240km 거리의 이중 생산 거점 — FOB, CIF, DDP, 귀하의 조건에 맞춰 조율" },
   ],
   heroCta: { quote: "견적 요청", about: "제조 시설 소개" },
   divisions: {
@@ -213,7 +219,7 @@ const ko: HomeContent = {
   },
   exploreProducts: "제품 둘러보기",
   stats: [
-    { value: 15, suffix: "+", label: "년 경력" },
+    { value: 10, suffix: "+", label: "년 경력" },
     { value: 50, suffix: "+", label: "수출 국가" },
     { value: 80, suffix: "M", label: "연간 생산량(㎡)" },
     { value: 13, suffix: "+", label: "특허 등록" },
@@ -230,18 +236,18 @@ const ko: HomeContent = {
   },
   whyPartner: {
     title: "모든 규모에서의 정밀함.",
-    intro: "15년 이상의 제조 전문성과 선도적인 연구 기관과의 협력을 통해, 가장 까다로운 사양을 충족하는 복합재 소재를 항상 정시에 제공합니다.",
+    intro: "10년 이상의 제조 전문성과 선도적인 연구 기관과의 협력을 통해, 가장 까다로운 사양을 충족하는 복합재 소재를 항상 정시에 제공합니다.",
     capabilities: [
       { number: "01", title: "맞춤 엔지니어링", description: "10g/m²에서 1200g/m²까지, 모든 사양에 맞춘 섬유 솔루션." },
       { number: "02", title: "글로벌 물류", description: "상하이항에서 240km 거리의 이중 생산 거점. 50개국 이상 수출." },
-      { number: "03", title: "품질 인증", description: "ISO 9001, 14001, 45001 인증. 복합재 분야 15건 이상 특허." },
+      { number: "03", title: "품질 인증", description: "ISO 9001, 14001, 45001 인증. 복합재 분야 13건 이상 특허." },
     ],
   },
   trust: {
     title: "모든 주장은 검증 가능합니다.",
     intro: "인증, R&D 역량, 물류 인프라 및 주문 지원 — 단 한 건의 주문을 하기 전에 검토할 수 있도록 문서화되어 준비되어 있습니다.",
     metrics: [
-      { number: "01", metric: "15", suffix: "+", unit: "년", title: "복합재 경력", text: "2008년부터 유리섬유와 탄소섬유에만 전념하며 전 세계의 까다로운 산업 응용에 서비스를 제공합니다." },
+      { number: "01", metric: "10", suffix: "+", unit: "년", title: "복합재 경력", text: "2015년부터 유리섬유와 탄소섬유에만 전념하며 전 세계의 까다로운 산업 응용에 서비스를 제공합니다." },
       { number: "02", metric: "2", suffix: "", unit: "R&D 센터", title: "엔지니어링 기반", text: "전담 R&D 인력이 소재 선택부터 생산까지 안내합니다 — 귀하의 공정을 이해하는 엔지니어." },
       { number: "03", metric: "50", suffix: "+", unit: "개국", title: "수출 거점", text: "이중 생산 거점에서 안정적인 글로벌 배송, 상하이항까지 240km. FOB, CIF, DDP — 귀하의 조건에 맞춰 조율." },
     ],
@@ -259,7 +265,7 @@ const ko: HomeContent = {
     steps: ["문의", "생산", "검사", "출하"],
   },
   cta: {
-    title: "함께 만들어 갑시다",
+    title: "사양을 보내주시면 24시간 내 추천해 드립니다",
     intro: "요구사항을 알려주세요. 당사 엔지니어가 24시간 이내에 맞춤 추천을 제공합니다.",
     emailPlaceholder: "이메일",
     messagePlaceholder: "무엇을 찾고 계신가요?",
@@ -284,6 +290,7 @@ const es: HomeContent = {
   hero: [
     { title: "Materiales Compuestos Avanzados", subtitle: "De la fibra de carbono a la fibra de vidrio — diseñados para las industrias más exigentes del mundo" },
     { title: "Fabricación de Vanguardia", subtitle: "Planta de producción de 80.000 m² con líneas automatizadas y estricto control de calidad" },
+    { title: "Exportamos a más de 50 países", subtitle: "Bases de producción duales a 240 km del Puerto de Shanghái — FOB, CIF o DDP, coordinado a sus términos" },
   ],
   heroCta: { quote: "Solicitar Cotización", about: "Sobre Nuestra Fabricación" },
   divisions: {
@@ -306,7 +313,7 @@ const es: HomeContent = {
   },
   exploreProducts: "Explorar Productos",
   stats: [
-    { value: 15, suffix: "+", label: "Años de Experiencia" },
+    { value: 10, suffix: "+", label: "Años de Experiencia" },
     { value: 50, suffix: "+", label: "Países de Exportación" },
     { value: 80, suffix: "M", label: "m² Producción Anual" },
     { value: 13, suffix: "+", label: "Patentes Concedidas" },
@@ -323,18 +330,18 @@ const es: HomeContent = {
   },
   whyPartner: {
     title: "Precisión a cualquier escala.",
-    intro: "Con más de 15 años de experiencia en fabricación y alianzas con instituciones de investigación líderes, entregamos materiales compuestos que cumplen las especificaciones más exigentes — a tiempo, siempre.",
+    intro: "Con más de 10 años de experiencia en fabricación y alianzas con instituciones de investigación líderes, entregamos materiales compuestos que cumplen las especificaciones más exigentes — a tiempo, siempre.",
     capabilities: [
       { number: "01", title: "Ingeniería Personalizada", description: "Soluciones de fibra a medida de 10g/m² a 1200g/m², cualquier especificación." },
       { number: "02", title: "Logística Global", description: "Bases de producción duales, a 240 km del Puerto de Shanghái. Exportando a más de 50 países." },
-      { number: "03", title: "Calidad Certificada", description: "Certificado ISO 9001, 14001, 45001. Más de 15 patentes en materiales compuestos." },
+      { number: "03", title: "Calidad Certificada", description: "Certificado ISO 9001, 14001, 45001. Más de 13 patentes en materiales compuestos." },
     ],
   },
   trust: {
     title: "Cada afirmación, verificable.",
     intro: "Certificaciones, capacidad de I+D, infraestructura logística y soporte de pedidos — documentados y listos para su revisión antes de realizar un solo pedido.",
     metrics: [
-      { number: "01", metric: "15", suffix: "+", unit: "Años", title: "Experiencia en Compuestos", text: "Enfocados exclusivamente en fibra de vidrio y fibra de carbono desde 2008, atendiendo aplicaciones industriales exigentes en todo el mundo." },
+      { number: "01", metric: "10", suffix: "+", unit: "Años", title: "Experiencia en Compuestos", text: "Enfocados exclusivamente en fibra de vidrio y fibra de carbono desde 2015, atendiendo aplicaciones industriales exigentes en todo el mundo." },
       { number: "02", metric: "2", suffix: "", unit: "Centros de I+D", title: "Base de Ingeniería", text: "Personal de I+D dedicado lo guía desde la selección de materiales hasta la producción — ingenieros que entienden su proceso." },
       { number: "03", metric: "50", suffix: "+", unit: "Países", title: "Presencia Exportadora", text: "Entrega global estable desde bases de producción duales, a 240 km del Puerto de Shanghái. FOB, CIF, DDP — coordinado a sus términos." },
     ],
@@ -352,7 +359,7 @@ const es: HomeContent = {
     steps: ["Consulta", "Producción", "Inspección", "Envío"],
   },
   cta: {
-    title: "Construyamos Algo Juntos",
+    title: "Envíe su especificación y reciba una recomendación en 24 h",
     intro: "Cuéntenos sus requisitos. Nuestros ingenieros le brindarán una recomendación a medida en 24 horas.",
     emailPlaceholder: "Su correo electrónico",
     messagePlaceholder: "¿Qué está buscando?",
@@ -379,6 +386,7 @@ const pt: HomeContent = {
   hero: [
     { title: "Materiais Compósitos Avançados", subtitle: "Da fibra de carbono à fibra de vidro — projetados para os setores mais exigentes do mundo" },
     { title: "Fabricação de Última Geração", subtitle: "Planta de produção de 80.000 m² com linhas automatizadas e rigoroso controle de qualidade" },
+    { title: "Exportamos para mais de 50 países", subtitle: "Bases de produção duplas a 240 km do Porto de Xangai — FOB, CIF ou DDP, coordenado aos seus termos" },
   ],
   heroCta: { quote: "Solicitar Orçamento", about: "Sobre Nossa Fabricação" },
   divisions: {
@@ -401,7 +409,7 @@ const pt: HomeContent = {
   },
   exploreProducts: "Explorar Produtos",
   stats: [
-    { value: 15, suffix: "+", label: "Anos de Experiência" },
+    { value: 10, suffix: "+", label: "Anos de Experiência" },
     { value: 50, suffix: "+", label: "Países de Exportação" },
     { value: 80, suffix: "M", label: "m² Produção Anual" },
     { value: 13, suffix: "+", label: "Patentes Concedidas" },
@@ -418,18 +426,18 @@ const pt: HomeContent = {
   },
   whyPartner: {
     title: "Precisão em qualquer escala.",
-    intro: "Com mais de 15 anos de experiência em fabricação e parcerias com instituições de pesquisa líderes, entregamos materiais compósitos que atendem às especificações mais exigentes — no prazo, sempre.",
+    intro: "Com mais de 10 anos de experiência em fabricação e parcerias com instituições de pesquisa líderes, entregamos materiais compósitos que atendem às especificações mais exigentes — no prazo, sempre.",
     capabilities: [
       { number: "01", title: "Engenharia Personalizada", description: "Soluções de fibra sob medida de 10g/m² a 1200g/m², qualquer especificação." },
       { number: "02", title: "Logística Global", description: "Bases de produção duplas, a 240 km do Porto de Xangai. Exportando para mais de 50 países." },
-      { number: "03", title: "Qualidade Certificada", description: "Certificado ISO 9001, 14001, 45001. Mais de 15 patentes em materiais compósitos." },
+      { number: "03", title: "Qualidade Certificada", description: "Certificado ISO 9001, 14001, 45001. Mais de 13 patentes em materiais compósitos." },
     ],
   },
   trust: {
     title: "Cada afirmação, verificável.",
     intro: "Certificações, capacidade de P&D, infraestrutura logística e suporte a pedidos — documentados e prontos para sua análise antes de fazer um único pedido.",
     metrics: [
-      { number: "01", metric: "15", suffix: "+", unit: "Anos", title: "Experiência em Compósitos", text: "Focados exclusivamente em fibra de vidro e fibra de carbono desde 2008, atendendo aplicações industriais exigentes em todo o mundo." },
+      { number: "01", metric: "10", suffix: "+", unit: "Anos", title: "Experiência em Compósitos", text: "Focados exclusivamente em fibra de vidro e fibra de carbono desde 2015, atendendo aplicações industriais exigentes em todo o mundo." },
       { number: "02", metric: "2", suffix: "", unit: "Centros de P&D", title: "Base de Engenharia", text: "Equipe de P&D dedicada o orienta da seleção de materiais à produção — engenheiros que entendem o seu processo." },
       { number: "03", metric: "50", suffix: "+", unit: "Países", title: "Presença de Exportação", text: "Entrega global estável a partir de bases de produção duplas, a 240 km do Porto de Xangai. FOB, CIF, DDP — coordenado aos seus termos." },
     ],
@@ -447,7 +455,7 @@ const pt: HomeContent = {
     steps: ["Consulta", "Produção", "Inspeção", "Embarque"],
   },
   cta: {
-    title: "Vamos Construir Algo Juntos",
+    title: "Envie sua especificação e receba uma recomendação em 24 h",
     intro: "Conte-nos seus requisitos. Nossos engenheiros fornecerão uma recomendação sob medida em 24 horas.",
     emailPlaceholder: "Seu e-mail",
     messagePlaceholder: "O que você está procurando?",
@@ -474,6 +482,7 @@ const zh: HomeContent = {
   hero: [
     { title: "先进复合材料", subtitle: "从碳纤维到玻璃纤维——为全球最严苛行业而设计" },
     { title: "先进制造设施", subtitle: "80,000平方米生产基地，配备自动化生产线和严格质量管控" },
+    { title: "出口50多个国家", subtitle: "距上海港240公里的双生产基地——FOB、CIF 或 DDP，按您的条款灵活协调" },
   ],
   heroCta: { quote: "获取报价", about: "了解我们的制造" },
   divisions: {
@@ -496,7 +505,7 @@ const zh: HomeContent = {
   },
   exploreProducts: "浏览产品",
   stats: [
-    { value: 15, suffix: "+", label: "年经验" },
+    { value: 10, suffix: "+", label: "年经验" },
     { value: 50, suffix: "+", label: "出口国家" },
     { value: 80, suffix: "M", label: "平方米年产量" },
     { value: 13, suffix: "+", label: "授权专利" },
@@ -513,18 +522,18 @@ const zh: HomeContent = {
   },
   whyPartner: {
     title: "每个规模都精准无误。",
-    intro: "凭借15年以上制造经验和与顶尖科研机构的合作，我们交付满足最严苛规格要求的复合材料——准时，每一次。",
+    intro: "凭借10年以上制造经验和与顶尖科研机构的合作，我们交付满足最严苛规格要求的复合材料——准时，每一次。",
     capabilities: [
       { number: "01", title: "定制工程", description: "从10g/m²到1200g/m²，任何规格的定制纤维解决方案。" },
       { number: "02", title: "全球物流", description: "双生产基地，距上海港240公里。出口50+国家。" },
-      { number: "03", title: "质量认证", description: "ISO 9001、14001、45001认证。复合材料领域15+项专利。" },
+      { number: "03", title: "质量认证", description: "ISO 9001、14001、45001认证。复合材料领域13+项专利。" },
     ],
   },
   trust: {
     title: "每项声明，可验证。",
     intro: "认证、研发能力、物流基础设施和订单支持——在您下单之前即可审查，一切文档齐备。",
     metrics: [
-      { number: "01", metric: "15", suffix: "+", unit: "年", title: "复合材料经验", text: "自2008年起专注玻璃纤维和碳纤维，服务全球严苛工业应用。" },
+      { number: "01", metric: "10", suffix: "+", unit: "年", title: "复合材料经验", text: "自2015年起专注玻璃纤维和碳纤维，服务全球严苛工业应用。" },
       { number: "02", metric: "2", suffix: "", unit: "研发中心", title: "工程技术基石", text: "专属研发团队从选材到生产全程指导——了解您工艺的工程师。" },
       { number: "03", metric: "50", suffix: "+", unit: "国家", title: "出口足迹", text: "双基地稳定全球交付，距上海港240公里。FOB、CIF、DDP——按您的条款协调。" },
     ],
@@ -542,7 +551,7 @@ const zh: HomeContent = {
     steps: ["询价", "生产", "检验", "发货"],
   },
   cta: {
-    title: "让我们一起创造",
+    title: "发送您的规格，24小时内获取选型建议",
     intro: "告诉我们您的需求。我们的工程师将在24小时内为您提供定制推荐。",
     emailPlaceholder: "您的邮箱",
     messagePlaceholder: "您在寻找什么？",

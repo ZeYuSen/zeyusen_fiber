@@ -20,7 +20,7 @@ export const ko: PagesContent = {
       post: "를 제공합니다.",
     },
     quickStats: [
-      { num: "15+", label: "년 경력" },
+      { num: "10+", label: "년 경력" },
       { num: "50+", label: "수출 국가" },
       { num: "7", label: "제품 라인" },
       { num: "100%", label: "맞춤 지원" },
@@ -93,7 +93,7 @@ export const ko: PagesContent = {
       { title: "생산", desc: "전담팀이 실시간 업데이트와 함께 주문을 관리합니다." },
       { title: "배송", desc: "수출 준비된 시설에서 신속한 글로벌 배송." },
     ],
-    ctaTitle: "프로젝트를 시작할 준비가 되셨나요?",
+    ctaTitle: "사양을 보내주시면 24시간 내 견적을 드립니다",
     ctaBody: "맞춤 배합이 필요하시든 표준 제품을 대량으로 필요하시든, 당사 팀이 도와드릴 준비가 되어 있습니다.",
     ctaButton: "무료 견적 요청",
   },

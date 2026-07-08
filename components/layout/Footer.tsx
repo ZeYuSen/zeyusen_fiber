@@ -17,14 +17,14 @@ export function Footer({ locale, dict }: { locale: Locale; dict: Dictionary }) {
     { name: dict.products["carbon-fiber-cloth"], href: localizedHref("carbon-category", locale, { category: "carbon-fiber-cloth" }) },
     { name: dict.products["carbon-fiber-raw"], href: localizedHref("carbon-category", locale, { category: "carbon-fiber-raw" }) },
     { name: dict.footer.applications, href: localizedHref("applications", locale) },
-    { name: dict.nav.allProducts, href: localizedHref("carbon-products", locale) },
+    { name: dict.nav.allProducts, href: localizedHref("carbon-fiber", locale) },
   ];
   const glassFiberLinks = [
     { name: dict.products["tissue-mat"], href: localizedHref("glass-category", locale, { category: "tissue-mat" }) },
     { name: dict.products["fiberglass-cloth"], href: localizedHref("glass-category", locale, { category: "fiberglass-cloth" }) },
     { name: dict.products["composite-mat"], href: localizedHref("glass-category", locale, { category: "composite-mat" }) },
     { name: dict.footer.applications, href: localizedHref("applications-glass", locale) },
-    { name: dict.nav.allProducts, href: localizedHref("glass-products", locale) },
+    { name: dict.nav.allProducts, href: localizedHref("glass-fiber", locale) },
   ];
   const companyLinks = [
     { name: dict.footer.applications, href: localizedHref("applications", locale) },

@@ -26,7 +26,6 @@ export function ProductCatalog({
 }) {
   const categories = getCategories(division, locale);
   const accent = division === "carbon" ? "carbon-accent" : "glass-accent";
-  const divisionKey = division === "carbon" ? "carbon-fiber" : "glass-fiber";
   const categoryKey = division === "carbon" ? "carbon-category" : "glass-category";
   const productKey = division === "carbon" ? "carbon-product" : "glass-product";
 
@@ -39,11 +38,7 @@ export function ProductCatalog({
               {dict.nav.home}
             </Link>
             <span>/</span>
-            <Link href={localizedHref(divisionKey, locale)} className="hover:text-neutral-700 transition-colors">
-              {copy.breadcrumbDivision}
-            </Link>
-            <span>/</span>
-            <span className="text-neutral-600">{dict.nav.allProducts}</span>
+            <span className="text-neutral-600">{copy.breadcrumbDivision}</span>
           </nav>
           <h1 className="text-2xl sm:text-3xl font-semibold text-neutral-900">
             {copy.title}

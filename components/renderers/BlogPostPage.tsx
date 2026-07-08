@@ -350,6 +350,21 @@ export function BlogPostPage({
             </div>
             <p className="mt-6 text-lg leading-relaxed text-neutral-500">{post.excerpt}</p>
 
+            {post.image && (
+              <figure className="mt-8 overflow-hidden rounded-2xl border border-neutral-100 bg-neutral-50">
+                <div className="relative aspect-[16/9]">
+                  <Image
+                    src={post.image}
+                    alt={post.title}
+                    fill
+                    priority
+                    sizes="(max-width: 1024px) 100vw, 768px"
+                    className="object-cover"
+                  />
+                </div>
+              </figure>
+            )}
+
             <div className="mt-10 space-y-5 text-sm">
               {renderMarkdown(post.content, locale)}
             </div>

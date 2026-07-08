@@ -64,11 +64,6 @@
   }
 }
 
-@keyframes gradient-rotate {
-  0% { transform: rotate(0deg); }
-  100% { transform: rotate(360deg); }
-}
-
 /* ===== Lenis Smooth Scroll ===== */
 html.lenis, html.lenis body {
   height: auto;
@@ -205,34 +200,6 @@ body {
   height: 100vh;
   position: relative;
   overflow: hidden;
-}
-
-/* ===== Hero Gradient Text Flow ===== */
-@keyframes gradient-flow {
-  0% {
-    background-position: 0% 50%;
-  }
-  50% {
-    background-position: 100% 50%;
-  }
-  100% {
-    background-position: 0% 50%;
-  }
-}
-
-.hero-gradient-text {
-  background: linear-gradient(
-    90deg,
-    #06B6D4,
-    #8B5CF6,
-    #10B981,
-    #06B6D4
-  );
-  background-size: 300% 100%;
-  -webkit-background-clip: text;
-  background-clip: text;
-  color: transparent;
-  animation: gradient-flow 6s ease infinite;
 }
 
 /* ===== Clip Path Base States ===== */

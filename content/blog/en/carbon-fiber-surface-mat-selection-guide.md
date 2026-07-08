@@ -13,7 +13,7 @@ image: "/images/blog/carbon-fiber-surface-mat-cover.jpg"
 
 Carbon fiber surface mat — also known as carbon veil, carbon tissue, or carbon fiber non-woven — is a family of thin-to-medium weight carbon fiber reinforcements used across military, new energy, wind power, and industrial composite applications. From ultra-thin 10g/m² surface veils to 350g/m² needled mats, the right product depends on your application, process, and performance targets.
 
-For manufacturers, the key question is not simply "which carbon mat is strongest?" but "which mat weight, structure, and process fit the part I need to make?" Based on our 15+ years of production experience supplying carbon fiber mat to 50+ countries, this guide covers the full range of options available.
+For manufacturers, the key question is not simply "which carbon mat is strongest?" but "which mat weight, structure, and process fit the part I need to make?" Based on our 10+ years of production experience supplying carbon fiber mat to 50+ countries, this guide covers the full range of options available.
 
 ## What Carbon Fiber Surface Mat Does
 

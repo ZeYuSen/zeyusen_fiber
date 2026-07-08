@@ -20,7 +20,7 @@ export const es: PagesContent = {
       post: " para aplicaciones complejas de compuestos.",
     },
     quickStats: [
-      { num: "15+", label: "Años de Experiencia" },
+      { num: "10+", label: "Años de Experiencia" },
       { num: "50+", label: "Países de Exportación" },
       { num: "7", label: "Líneas de Producto" },
       { num: "100%", label: "Soporte Personalizado" },
@@ -93,7 +93,7 @@ export const es: PagesContent = {
       { title: "Producción", desc: "Un equipo dedicado gestiona su pedido con actualizaciones en tiempo real." },
       { title: "Entrega", desc: "Envío global rápido desde nuestras instalaciones listas para exportación." },
     ],
-    ctaTitle: "¿Listo para Iniciar su Proyecto?",
+    ctaTitle: "Envíe su especificación y reciba una cotización en 24 horas",
     ctaBody: "Ya sea que necesite una formulación personalizada o un producto estándar a granel, nuestro equipo está listo para ayudar.",
     ctaButton: "Solicitar Cotización Gratuita",
   },

@@ -20,7 +20,7 @@ export const pt: PagesContent = {
       post: " para aplicações complexas de compósitos.",
     },
     quickStats: [
-      { num: "15+", label: "Anos de Experiência" },
+      { num: "10+", label: "Anos de Experiência" },
       { num: "50+", label: "Países de Exportação" },
       { num: "7", label: "Linhas de Produto" },
       { num: "100%", label: "Suporte Personalizado" },
@@ -93,7 +93,7 @@ export const pt: PagesContent = {
       { title: "Produção", desc: "Uma equipe dedicada gerencia seu pedido com atualizações em tempo real." },
       { title: "Entrega", desc: "Envio global rápido a partir de nossas instalações prontas para exportação." },
     ],
-    ctaTitle: "Pronto para Iniciar seu Projeto?",
+    ctaTitle: "Envie sua especificação e receba um orçamento em 24 horas",
     ctaBody: "Seja para uma formulação personalizada ou um produto padrão em grande volume, nossa equipe está pronta para ajudar.",
     ctaButton: "Solicitar Orçamento Gratuito",
   },

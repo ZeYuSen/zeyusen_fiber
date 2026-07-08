@@ -13,7 +13,7 @@ image: "/images/blog/carbon-fiber-surface-mat-cover.jpg"
 
 El mat de superficie de fibra de carbono — también conocido como velo de carbono, tejido de carbono o no tejido de fibra de carbono — es una familia de refuerzos de fibra de carbono de peso ligero a medio utilizados en aplicaciones militares, energías nuevas, energía eólica e industriales. Desde velos de superficie ultraligeros de 10g/m² hasta mats agujados de 350g/m², el producto adecuado depende de la aplicación, el proceso y los objetivos de rendimiento.
 
-Para los fabricantes, la pregunta clave no es simplemente "¿cuál es el mat de carbono más resistente?", sino "¿qué peso, estructura y proceso de mat se adapta a la pieza que necesito fabricar?" Basándonos en más de 15 años de experiencia de producción suministrando mat de fibra de carbono a más de 50 países, esta guía cubre la gama completa de opciones disponibles.
+Para los fabricantes, la pregunta clave no es simplemente "¿cuál es el mat de carbono más resistente?", sino "¿qué peso, estructura y proceso de mat se adapta a la pieza que necesito fabricar?" Basándonos en más de 10 años de experiencia de producción suministrando mat de fibra de carbono a más de 50 países, esta guía cubre la gama completa de opciones disponibles.
 
 ## Qué Hace el Mat de Superficie de Fibra de Carbono
 

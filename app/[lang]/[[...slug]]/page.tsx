@@ -29,7 +29,6 @@ import { getBlogPosts, getBlogPost, getBlogSlugs } from "@/data/blog";
 
 import { HeroImmersive } from "@/components/sections/HeroImmersive";
 import { DivisionsSplit } from "@/components/sections/DivisionsSplit";
-import { DivisionHome } from "@/components/renderers/DivisionHome";
 import { ProductCatalog } from "@/components/renderers/ProductCatalog";
 import { CategoryPage } from "@/components/renderers/CategoryPage";
 import { ProductDetail } from "@/components/renderers/ProductDetail";
@@ -61,9 +60,7 @@ export async function generateStaticParams() {
     "applications",
     "applications-glass",
     "carbon-fiber",
-    "carbon-products",
     "glass-fiber",
-    "glass-products",
   ];
 
   const blogSlugs = getBlogSlugs();
@@ -231,26 +228,13 @@ export default async function LocalizedPage({ params }: PageProps<"/[lang]/[[...
       return (
         <>
           <JsonLd data={faqJsonLd(content.divisionFaq[division])} />
-          <DivisionHome
+          <ProductCatalog
             division={division}
             locale={locale}
             dict={dict}
-            copy={content.divisionHome[division]}
+            copy={content.catalog[division]}
           />
         </>
-      );
-    }
-
-    case "carbon-products":
-    case "glass-products": {
-      const division = pageKey === "carbon-products" ? "carbon" : "glass";
-      return (
-        <ProductCatalog
-          division={division}
-          locale={locale}
-          dict={dict}
-          copy={content.catalog[division]}
-        />
       );
     }
 

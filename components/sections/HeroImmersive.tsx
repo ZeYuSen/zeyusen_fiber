@@ -11,6 +11,7 @@ import { getHomeContent } from "@/lib/i18n/home-content";
 const slideImages = [
   "/images/hero/banner1.jpg",
   "/images/hero/banner2.jpg",
+  "/images/hero/banner3.jpg",
 ];
 
 export function HeroImmersive() {
