@@ -144,7 +144,7 @@ export function ApplicationsOverview({
             </Link>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-12">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
             {selectedGroup.applications.map((application) => {
               const detail = detailSlug(application.detailHref, application.slug);
               const href = localizedHref(
@@ -164,17 +164,17 @@ export function ApplicationsOverview({
                       alt={`${application.title} — ${copy.imageNote}`}
                       fill
                       quality={72}
-                      sizes="(max-width: 768px) 100vw, 50vw"
+                      sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw"
                       className="object-cover transition-transform duration-700 group-hover:scale-105"
                     />
                     <div className="absolute inset-0 bg-black/10 transition-colors group-hover:bg-black/0" />
                   </div>
-                  <div className="p-8">
+                  <div className="p-6">
                     <div className="min-w-0">
-                      <h3 className="text-xl font-semibold text-neutral-900">
+                      <h3 className="text-lg font-semibold text-neutral-900">
                         {application.title}
                       </h3>
-                      <p className="mt-3 text-base text-neutral-500 leading-relaxed">
+                      <p className="mt-3 text-sm text-neutral-500 leading-relaxed">
                         {application.description}
                       </p>
                       <div className="mt-6 flex flex-wrap gap-2">
