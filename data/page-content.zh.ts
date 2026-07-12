@@ -134,6 +134,7 @@ export const zh: PageContent = {
     ],
     viewDetails: "查看应用详情",
     requestGuidance: "请求应用指导",
+    imageNote: "行业应用示意图",
   },
   divisionFaq: {
     carbon: [

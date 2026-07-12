@@ -244,48 +244,48 @@ export function TrustEvidence() {
   const { trust, stats } = getHomeContent(useLocale());
 
   return (
-    <section className="bg-neutral-100 section-padding">
+    <section className="py-20 lg:py-28" style={{ backgroundColor: "#060D1F" }}>
       <div className="container-wide">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-16 items-stretch">
-          {/* Left — heading + vertical data axis */}
+
+          {/* Left — editorial stats on dark */}
           <div className="lg:col-span-4 flex flex-col">
-            <p className="text-[11px] font-medium uppercase tracking-[0.2em] text-brand-600 mb-5">
+            <span className="inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-widest text-blue-400 mb-5">
+              <span className="w-6 h-px bg-blue-400" />
               Verified &amp; Certified
-            </p>
-            <h2 className="text-3xl sm:text-4xl font-semibold text-neutral-900 leading-[1.1] tracking-tight">
+            </span>
+            <h2 className="text-3xl sm:text-4xl font-bold text-white leading-[1.1] tracking-tight">
               {trust.title}
             </h2>
-            <p className="text-neutral-500 leading-relaxed mt-5">
+            <p className="text-white/40 leading-relaxed mt-5 text-[15px]">
               {trust.intro}
             </p>
 
-            {/* Data axis — stretches to fill, rows distribute to align bottom with the card */}
-            <div className="mt-10 border-t border-neutral-200 flex-1 flex flex-col">
+            {/* Stats axis */}
+            <div className="mt-10 border-t border-white/10 flex-1 flex flex-col">
               {stats.map((s) => (
                 <div
                   key={s.label}
-                  className="group flex items-center gap-5 py-5 border-b border-neutral-200 flex-1"
+                  className="flex items-center gap-5 py-5 border-b border-white/10 flex-1"
                 >
-                  <div className="flex items-baseline gap-1 w-28 shrink-0">
-                    <span className="text-3xl sm:text-[2.5rem] font-semibold text-neutral-900 tabular-nums tracking-tight leading-none">
+                  <div className="flex items-baseline gap-0.5 w-28 shrink-0">
+                    <span className="text-3xl sm:text-[2.5rem] font-bold text-white tabular-nums tracking-tight leading-none">
                       {s.value}
                     </span>
-                    <span className="text-lg font-semibold text-brand-600 leading-none">{s.suffix}</span>
+                    <span className="text-lg font-bold text-blue-400 leading-none">{s.suffix}</span>
                   </div>
-                  <div className="min-w-0 pt-1">
-                    <p className="text-sm font-medium text-neutral-900">{s.label}</p>
-                  </div>
+                  <p className="text-sm font-medium text-white/60 min-w-0 pt-1">{s.label}</p>
                 </div>
               ))}
             </div>
           </div>
 
-          {/* Right — certificate stream */}
+          {/* Right — light inset certificate panel (暗底亮框) */}
           <div className="lg:col-span-8 flex">
-            <div className="flex flex-col w-full rounded-2xl bg-white ring-1 ring-neutral-200 p-6 sm:p-8">
+            <div className="flex flex-col w-full rounded-2xl bg-[#EFF6FF] p-6 sm:p-8">
               <div className="flex items-center justify-between mb-6">
                 <h3 className="text-base font-medium text-neutral-900 flex items-center gap-2">
-                  <Award className="w-4 h-4 text-brand-600" />
+                  <Award className="w-4 h-4 text-blue-600" />
                   {trust.certHeading}
                 </h3>
                 <span className="text-xs text-neutral-400">
@@ -302,6 +302,7 @@ export function TrustEvidence() {
               </p>
             </div>
           </div>
+
         </div>
       </div>
     </section>

@@ -58,7 +58,7 @@ export const ko: PagesContent = {
       },
       stats: [
         { num: "80,000", unit: "m²", label: "공장 면적" },
-        { num: "13,000", unit: "m²", label: "부지 면적" },
+        { num: "13+", unit: "", label: "실용신안 특허" },
         { num: "240", unit: "km", label: "상하이항까지" },
         { num: "2", unit: "", label: "생산 거점" },
       ],
@@ -77,6 +77,8 @@ export const ko: PagesContent = {
       post: " 제품 라인 전반의 조달 결정을 가속화하도록 설계되었습니다.",
     },
     servicesHeading: "서비스 역량",
+    flowHeading: "엔드투엔드 서비스 플로우",
+    flowSubtitle: "맞춤 R&D부터 글로벌 배송까지 — 복합소재 니즈에 맞춘 완전한 서비스 생태계.",
     services: [
       { title: "OEM/ODM 맞춤 제작", description: "귀하의 정확한 사양에 맞춘 원스톱 OEM/ODM 솔루션.", features: ["맞춤 색상 옵션(검정, 파랑, 노랑, 초록 등)", "소재 구성 맞춤 제작", "성능 파라미터 조정", "맞춤 폭 및 롤 길이"] },
       { title: "R&D & 기술 지원", description: "소재 선택부터 공정 최적화까지 전문 기술 지도.", features: ["제품 상담 & 소재 선택", "기술 솔루션 추천", "공정 최적화 컨설팅", "현장 기술 교육 가능"] },

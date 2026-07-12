@@ -26,6 +26,11 @@ import {
   getApplicationDetail,
 } from "@/lib/data-i18n";
 import { getBlogPosts, getBlogPost, getBlogSlugs } from "@/data/blog";
+import {
+  divisionHeroImages,
+  getApplicationImage,
+  pageHeroImages,
+} from "@/lib/site-images";
 
 import { HeroImmersive } from "@/components/sections/HeroImmersive";
 import { DivisionsSplit } from "@/components/sections/DivisionsSplit";
@@ -93,13 +98,13 @@ export async function generateStaticParams() {
       }
     }
     // Application detail pages
-    for (const slug of ["aerospace", "military-defense", "new-energy"]) {
+    for (const slug of ["aerospace", "motorsport", "new-energy", "military-defense", "manufacturing"]) {
       params.push({
         lang,
         slug: localizedHref("carbon-application", lang, { slug }).split("/").slice(2),
       });
     }
-    for (const slug of ["wind-energy", "construction"]) {
+    for (const slug of ["wind-energy", "construction", "industrial-filtration", "transportation", "marine"]) {
       params.push({
         lang,
         slug: localizedHref("glass-application", lang, { slug }).split("/").slice(2),
@@ -139,28 +144,38 @@ export async function generateMetadata({ params }: PageProps<"/[lang]/[[...slug]
   // Resolve title/description + alternates + image per page type.
   let seo = content.seo[pageKey] ?? content.seo.home;
   const alternates = allLocaleHrefs(pageKey, routeParams);
-  let image: string | undefined;
+  const staticPageImages: Partial<Record<PageKey, string>> = {
+    about: pageHeroImages.about,
+    services: pageHeroImages.services,
+    contact: pageHeroImages.contact,
+    "carbon-fiber": divisionHeroImages.carbon,
+    "glass-fiber": divisionHeroImages.glass,
+    applications: getApplicationImage("aerospace", "carbon"),
+    "applications-glass": getApplicationImage("wind-energy", "glass"),
+    "blog-index": "/images/blog/carbon-fiber-cloth-cover.jpg",
+  };
+  let image: string | undefined = staticPageImages[pageKey];
   let type: "website" | "article" = "website";
 
   if (pageKey === "carbon-category" || pageKey === "glass-category") {
     const division = pageKey === "carbon-category" ? "carbon" : "glass";
     const category = getCategories(division, locale).find((c) => c.slug === routeParams.category);
     if (!category) return {};
-    seo = { title: `${category.name} Supplier`, description: category.description };
+    seo = { title: category.name, description: category.description };
     image = category.image;
   } else if (pageKey === "carbon-product" || pageKey === "glass-product") {
     const division = pageKey === "carbon-product" ? "carbon" : "glass";
     const category = getCategories(division, locale).find((c) => c.slug === routeParams.category);
     const product = category?.products.find((p) => p.slug === routeParams.product);
     if (!category || !product) return {};
-    const suffix = division === "carbon" ? "Carbon Fiber" : "Fiberglass";
-    seo = { title: `${product.name} ${suffix}`, description: product.description };
+    seo = { title: product.name, description: product.description };
     image = product.images[0];
   } else if (pageKey === "carbon-application" || pageKey === "glass-application") {
     const division = pageKey === "carbon-application" ? "carbon" : "glass";
     const detail = getApplicationDetail(locale, division, routeParams.slug);
     if (!detail) return {};
     seo = { title: detail.title, description: detail.metaDescription };
+    image = getApplicationImage(routeParams.slug, division);
   } else if (pageKey === "blog-post") {
     const post = getBlogPost(locale, routeParams.slug);
     if (!post) return {};
@@ -323,7 +338,14 @@ export default async function LocalizedPage({ params }: PageProps<"/[lang]/[[...
       const detail = getApplicationDetail(locale, division, routeParams.slug);
       if (!detail) notFound();
       return (
-        <ApplicationDetailPage division={division} locale={locale} dict={dict} detail={detail} />
+        <ApplicationDetailPage
+          division={division}
+          locale={locale}
+          dict={dict}
+          detail={detail}
+          slug={routeParams.slug}
+          imageNote={content.applications.imageNote}
+        />
       );
     }
 

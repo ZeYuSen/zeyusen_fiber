@@ -26,6 +26,13 @@ const galleries = {
 
 const tabKeys = ["production", "testing", "warehouse"] as const;
 
+const TAB_COLORS = {
+  inactive: ["#1E3A8A", "#172554", "#0F172A"],
+  active: "#1D4ED8",
+};
+
+const easing = [0.22, 1, 0.36, 1] as const;
+
 export function FactoryShowcase() {
   const { factory } = getHomeContent(useLocale());
   const [activeIndex, setActiveIndex] = useState(0);
@@ -33,7 +40,6 @@ export function FactoryShowcase() {
   const active = tabKeys[activeIndex];
   const images = galleries[active];
 
-  // Auto-rotate tabs every 4s, pause on hover
   useEffect(() => {
     if (paused) return;
     const id = setInterval(() => {
@@ -43,104 +49,89 @@ export function FactoryShowcase() {
   }, [paused]);
 
   return (
-    <section className="bg-white section-padding">
+    <section className="py-20 lg:py-28" style={{ backgroundColor: "#0C1128" }}>
       <div className="container-wide">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16 mb-16">
-          <div>
-            <p className="text-xs font-medium uppercase tracking-wider text-cyan-600 mb-3">
-              {factory.eyebrow}
-            </p>
-            <h2 className="text-2xl sm:text-3xl font-semibold text-neutral-900">
-              {factory.title}
-            </h2>
-          </div>
-          <p className="text-neutral-500 leading-relaxed self-end">{factory.intro}</p>
+        {/* Header */}
+        <div className="text-center mb-12 lg:mb-16">
+          <span className="inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-widest text-cyan-400 mb-4">
+            <span className="w-6 h-px bg-cyan-400" />
+            {factory.eyebrow}
+            <span className="w-6 h-px bg-cyan-400" />
+          </span>
+          <h2 className="text-3xl sm:text-4xl font-bold text-white">{factory.title}</h2>
+          <p className="mt-4 text-white/50 max-w-2xl mx-auto text-[15px]">{factory.intro}</p>
         </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-6">
-          {/* Feature: warehouse + shipment */}
-          <div className="relative overflow-hidden rounded-2xl aspect-[4/3] group lg:col-span-5">
-            <Image
-              src="/images/hero/banner4.jpg"
-              alt={factory.featureTitle}
-              fill
-              quality={70}
-              className="object-cover object-[72%_25%] transition-transform duration-700 group-hover:scale-105"
-              sizes="(max-width: 1024px) 100vw, 42vw"
-            />
-            <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent" />
-            <div className="absolute inset-0 flex flex-col justify-end p-8 sm:p-10">
-              <p className="text-xs font-medium uppercase tracking-wider text-cyan-400 mb-3">
-                {factory.featureCaption}
-              </p>
-              <h3 className="text-xl font-semibold text-white mb-3">{factory.featureTitle}</h3>
-              <p className="text-sm text-white/75 leading-relaxed max-w-md">{factory.featureText}</p>
-            </div>
-          </div>
-
-          {/* Tabbed gallery */}
-          <div
-            className="bg-white rounded-2xl px-6 sm:px-8 flex flex-col h-full lg:col-span-7"
-            onMouseEnter={() => setPaused(true)}
-            onMouseLeave={() => setPaused(false)}
-          >
-            <div className="relative flex w-full p-1 bg-neutral-100 rounded-lg mb-6">
-              {/* Sliding white indicator */}
-              <div
-                className="absolute top-1 bottom-1 rounded-md bg-white shadow-sm transition-transform duration-[900ms] ease-[cubic-bezier(0.16,1,0.3,1)]"
-                style={{
-                  width: `calc((100% - 0.5rem) / ${tabKeys.length})`,
-                  transform: `translateX(${activeIndex * 100}%)`,
-                }}
-              />
-              {tabKeys.map((key, i) => (
-                <button
-                  key={key}
-                  onClick={() => setActiveIndex(i)}
-                  className={`relative z-10 flex-1 text-center px-4 py-2 text-sm font-medium transition-colors duration-[600ms] ${
-                    activeIndex === i
-                      ? "text-neutral-900"
-                      : "text-neutral-500 hover:text-neutral-700"
-                  }`}
-                >
+        {/* Numbered tab strip */}
+        <div
+          className="flex rounded-t-2xl overflow-hidden"
+          onMouseEnter={() => setPaused(true)}
+          onMouseLeave={() => setPaused(false)}
+        >
+          {tabKeys.map((key, i) => {
+            const isActive = i === activeIndex;
+            const bg = isActive ? TAB_COLORS.active : TAB_COLORS.inactive[i] ?? "#0F172A";
+            return (
+              <motion.button
+                key={key}
+                onClick={() => setActiveIndex(i)}
+                className="flex-1 flex items-center gap-3 px-6 py-4 text-left transition-colors"
+                style={{ backgroundColor: bg }}
+                animate={{ backgroundColor: bg }}
+                transition={{ duration: 0.4, ease: easing }}
+              >
+                <span className={`text-xs font-bold tabular-nums shrink-0 ${isActive ? "text-white/60" : "text-white/30"}`}>
+                  {String(i + 1).padStart(2, "0")}
+                </span>
+                <span className={`text-sm font-semibold ${isActive ? "text-white" : "text-white/50"}`}>
                   {factory.tabs[key]}
-                </button>
+                </span>
+                {isActive && (
+                  <motion.span
+                    layoutId="tab-dot"
+                    className="ml-auto w-1.5 h-1.5 rounded-full bg-cyan-400 shrink-0"
+                  />
+                )}
+              </motion.button>
+            );
+          })}
+        </div>
+
+        {/* Image panel */}
+        <div
+          className="rounded-b-2xl overflow-hidden p-6 sm:p-8"
+          style={{ backgroundColor: "#162042" }}
+          onMouseEnter={() => setPaused(true)}
+          onMouseLeave={() => setPaused(false)}
+        >
+          <AnimatePresence mode="wait">
+            <motion.div
+              key={active}
+              initial={{ opacity: 0, y: 8 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: -8 }}
+              transition={{ duration: 0.5, ease: easing }}
+              className="grid grid-cols-3 gap-4"
+            >
+              {images.map((img) => (
+                <div
+                  key={img.src}
+                  className="relative overflow-hidden rounded-xl bg-[#0C1128] aspect-[4/3]"
+                >
+                  <Image
+                    src={img.src}
+                    alt={img.alt}
+                    fill
+                    quality={70}
+                    className="object-cover opacity-90 hover:opacity-100 transition-opacity duration-300"
+                    sizes="(max-width: 1024px) 33vw, 28vw"
+                  />
+                </div>
               ))}
-            </div>
+            </motion.div>
+          </AnimatePresence>
 
-            <div className="flex-1 min-h-0">
-              <div className="relative w-full h-full">
-                <AnimatePresence mode="wait">
-                  <motion.div
-                    key={active}
-                    initial={{ opacity: 0 }}
-                    animate={{ opacity: 1 }}
-                    exit={{ opacity: 0 }}
-                    transition={{ duration: 0.6, ease: "easeInOut" }}
-                    className="grid gap-3 grid-cols-3 w-full h-full"
-                  >
-                    {images.map((img) => (
-                      <div
-                        key={img.src}
-                        className="relative overflow-hidden rounded-lg bg-neutral-100 h-full min-h-[220px]"
-                      >
-                        <Image
-                          src={img.src}
-                          alt={img.alt}
-                          fill
-                          quality={70}
-                          className="object-cover"
-                          sizes="(max-width: 1024px) 30vw, 19vw"
-                        />
-                      </div>
-                    ))}
-                  </motion.div>
-                </AnimatePresence>
-              </div>
-            </div>
-
-            <p className="text-xs text-neutral-400 mt-6 leading-relaxed">{factory.note}</p>
-          </div>
+          <p className="text-xs text-white/30 mt-5 leading-relaxed">{factory.note}</p>
         </div>
       </div>
     </section>

@@ -136,6 +136,7 @@ export const ko: PageContent = {
     ],
     viewDetails: "응용 상세 보기",
     requestGuidance: "응용 가이드 요청",
+    imageNote: "산업 응용 예시 이미지",
   },
   divisionFaq: {
     carbon: [

@@ -26,6 +26,7 @@ export type PageContent = {
     hubParagraphs: string[];
     viewDetails: string;
     requestGuidance: string;
+    imageNote: string;
   };
   divisionFaq: {
     carbon: { question: string; answer: string }[];
@@ -201,6 +202,7 @@ const en: PageContent = {
     ],
     viewDetails: "View application details",
     requestGuidance: "Request application guidance",
+    imageNote: "industry application reference image",
   },
   divisionFaq: {
     carbon: [

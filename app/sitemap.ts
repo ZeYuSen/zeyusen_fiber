@@ -65,14 +65,14 @@ function productEntries(): RouteEntry[] {
 }
 
 function applicationEntries(): RouteEntry[] {
-  const carbon = ["aerospace", "military-defense", "new-energy"].map((slug) => ({
+  const carbon = ["aerospace", "motorsport", "new-energy", "military-defense", "manufacturing"].map((slug) => ({
     key: "carbon-application" as const,
     params: { slug },
     lastModified: LAST_UPDATE,
     changeFrequency: "monthly" as const,
     priority: 0.7,
   }));
-  const glass = ["wind-energy", "construction"].map((slug) => ({
+  const glass = ["wind-energy", "construction", "industrial-filtration", "transportation", "marine"].map((slug) => ({
     key: "glass-application" as const,
     params: { slug },
     lastModified: LAST_UPDATE,

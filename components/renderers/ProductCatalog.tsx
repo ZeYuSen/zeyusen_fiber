@@ -4,6 +4,8 @@ import type { Locale } from "@/lib/i18n/config";
 import { localizedHref } from "@/lib/i18n/routes";
 import type { Dictionary } from "@/lib/i18n/dictionaries";
 import { getCategories } from "@/lib/data-i18n";
+import { PageMediaHero } from "@/components/ui/PageMediaHero";
+import { divisionHeroImages } from "@/lib/site-images";
 
 // Carbon/Glass full catalog page.
 export function ProductCatalog({
@@ -31,24 +33,29 @@ export function ProductCatalog({
 
   return (
     <>
-      <section className="pt-36 pb-16">
-        <div className="container-wide">
-          <nav className="flex items-center gap-2 text-sm text-neutral-400 mb-6">
-            <Link href={localizedHref("home", locale)} className="hover:text-neutral-700 transition-colors">
-              {dict.nav.home}
-            </Link>
+      <PageMediaHero
+        eyebrow={copy.breadcrumbDivision}
+        title={copy.title}
+        description={copy.intro}
+        image={divisionHeroImages[division]}
+        imageAlt={copy.title}
+        accent={division}
+        breadcrumbs={
+          <nav aria-label="Breadcrumb" className="flex items-center gap-2">
+            <Link href={localizedHref("home", locale)}>{dict.nav.home}</Link>
             <span>/</span>
-            <span className="text-neutral-600">{copy.breadcrumbDivision}</span>
+            <span className="text-white/90">{copy.breadcrumbDivision}</span>
           </nav>
-          <h1 className="text-2xl sm:text-3xl font-semibold text-neutral-900">
-            {copy.title}
-          </h1>
-          <p className="text-neutral-500 mt-3 max-w-2xl leading-relaxed">{copy.intro}</p>
-          <p className="text-neutral-500 mt-4 max-w-3xl leading-relaxed">{copy.body}</p>
+        }
+      />
+
+      <section className="border-b border-neutral-100 py-14">
+        <div className="container-wide">
+          <p className="max-w-3xl text-neutral-600 leading-relaxed">{copy.body}</p>
         </div>
       </section>
 
-      <section className="pb-24">
+      <section className="py-20 sm:py-24">
         <div className="container-wide space-y-16">
           {categories.map((category) => (
             <div key={category.slug}>

@@ -8,6 +8,8 @@ import { contactInfo } from "@/lib/contact";
 import { useLocale } from "@/lib/i18n/use-locale";
 import { localizedHref } from "@/lib/i18n/routes";
 import { getPagesContent } from "@/lib/i18n/pages-content";
+import { PageMediaHero } from "@/components/ui/PageMediaHero";
+import { pageHeroImages } from "@/lib/site-images";
 
 const valueIcons = [Factory, Award, Globe, Users];
 const valueIconColors = ["text-carbon-accent", "text-accent-500", "text-glass-accent", "text-carbon-accent"];
@@ -122,23 +124,17 @@ export default function AboutPageContent() {
   const milestones = c.milestones;
   return (
     <>
-      {/* Page Header */}
-      <section className="pt-36 pb-16">
-        <div className="container-wide">
-          <div>
-            <p className="type-caption text-neutral-400">{c.eyebrow}</p>
-            <h1 className="text-3xl sm:text-4xl font-semibold text-neutral-900 mt-3">
-              {c.title}
-            </h1>
-	            <p className="text-neutral-500 mt-4 max-w-2xl leading-relaxed">
-	              {contactInfo.company} {c.lead}
-	            </p>
-          </div>
-        </div>
-      </section>
+      <PageMediaHero
+        eyebrow={c.eyebrow}
+        title={c.title}
+        description={<>{contactInfo.company} {c.lead}</>}
+        image={pageHeroImages.about}
+        imageAlt={c.factory.title}
+        objectPosition="center 45%"
+      />
 
       {/* Company Story */}
-      <section className="pb-24">
+      <section className="py-24">
         <div className="container-wide">
           <div className="grid lg:grid-cols-2 gap-12 lg:gap-20">
             <div>

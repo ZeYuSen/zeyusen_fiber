@@ -44,7 +44,7 @@ export function MaterialShowcase() {
               className="object-cover"
               data-parallax-img
               sizes="100vw"
-              priority={i === 0}
+              preload={i === 0}
             />
             {/* Light overlay for text readability */}
             <div className="absolute inset-0 bg-white/60" />

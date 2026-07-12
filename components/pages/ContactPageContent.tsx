@@ -1,11 +1,14 @@
 "use client";
 
 import { useState, useRef } from "react";
+import Image from "next/image";
 import { Send, MessageCircle, Mail, MapPin } from "lucide-react";
 import { contactInfo, whatsappPhone } from "@/lib/contact";
 import { Turnstile, type TurnstileInstance } from "@marsidev/react-turnstile";
 import { useLocale } from "@/lib/i18n/use-locale";
 import { getPagesContent } from "@/lib/i18n/pages-content";
+import { PageMediaHero } from "@/components/ui/PageMediaHero";
+import { pageHeroImages } from "@/lib/site-images";
 
 export default function ContactPageContent() {
   const c = getPagesContent(useLocale()).contact;
@@ -63,23 +66,18 @@ export default function ContactPageContent() {
 
   return (
     <>
-      {/* Page Header */}
-      <section className="pt-28 pb-6">
-        <div className="container-wide">
-          <div>
-            <p className="type-caption text-neutral-400">{c.eyebrow}</p>
-            <h1 className="text-2xl sm:text-3xl font-semibold text-neutral-900 mt-2">
-              {c.title}
-            </h1>
-            <p className="text-sm text-neutral-500 mt-2 max-w-xl leading-relaxed">
-              {c.lead}
-            </p>
-          </div>
-        </div>
-      </section>
+      <PageMediaHero
+        eyebrow={c.eyebrow}
+        title={c.title}
+        description={c.lead}
+        image={pageHeroImages.contact}
+        imageAlt={c.contactInfoHeading}
+        compact
+        objectPosition="center 48%"
+      />
 
       {/* Form + Sidebar */}
-      <section className="pb-16">
+      <section className="py-16">
         <div className="container-wide">
           <div className="grid lg:grid-cols-3 gap-8">
             {/* Form */}
@@ -257,6 +255,15 @@ export default function ContactPageContent() {
             {/* Sidebar */}
             <div className="space-y-5">
               <div className="p-6 bg-white border border-neutral-100 rounded-xl shadow-sm">
+                <div className="relative -mx-6 -mt-6 mb-6 aspect-[16/8] overflow-hidden rounded-t-xl bg-neutral-100">
+                  <Image
+                    src="/images/showcase/warehouse-stock.webp"
+                    alt={c.contactInfoHeading}
+                    fill
+                    sizes="(max-width: 1024px) 100vw, 33vw"
+                    className="object-cover"
+                  />
+                </div>
                 <h2 className="text-sm font-medium text-neutral-900 mb-4">
                   {c.contactInfoHeading}
                 </h2>

@@ -357,7 +357,7 @@ export function BlogPostPage({
                     src={post.image}
                     alt={post.title}
                     fill
-                    priority
+                    preload
                     sizes="(max-width: 1024px) 100vw, 768px"
                     className="object-cover"
                   />

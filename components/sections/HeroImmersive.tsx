@@ -73,7 +73,7 @@ export function HeroImmersive() {
             src={slide.image}
             alt={slide.title}
             fill
-            priority={i === 0}
+            preload={i === 0}
             quality={65}
             className="object-cover transition-transform duration-[1.2s]"
             sizes="100vw"

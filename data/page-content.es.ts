@@ -136,6 +136,7 @@ export const es: PageContent = {
     ],
     viewDetails: "Ver detalles de la aplicación",
     requestGuidance: "Solicitar orientación de aplicación",
+    imageNote: "imagen de referencia de aplicación industrial",
   },
   divisionFaq: {
     carbon: [

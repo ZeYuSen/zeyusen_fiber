@@ -4,6 +4,7 @@ import { localizedHref } from "@/lib/i18n/routes";
 import type { Dictionary } from "@/lib/i18n/dictionaries";
 import type { ProductCategory } from "@/types/product";
 import { ProductCard } from "@/components/products/ProductCard";
+import { PageMediaHero } from "@/components/ui/PageMediaHero";
 
 // Carbon/Glass product category page.
 export function CategoryPage({
@@ -25,27 +26,25 @@ export function CategoryPage({
 
   return (
     <>
-      <section className="pt-36 pb-16">
-        <div className="container-wide">
-          <nav className="flex items-center gap-2 text-sm text-neutral-400 mb-6">
-            <Link href={localizedHref("home", locale)} className="hover:text-neutral-700 transition-colors">
-              {dict.nav.home}
-            </Link>
+      <PageMediaHero
+        eyebrow={breadcrumbDivision}
+        title={category.name}
+        description={category.description}
+        image={category.image}
+        imageAlt={category.name}
+        accent={division}
+        breadcrumbs={
+          <nav aria-label="Breadcrumb" className="flex flex-wrap items-center gap-2">
+            <Link href={localizedHref("home", locale)}>{dict.nav.home}</Link>
             <span>/</span>
-            <Link href={localizedHref(divisionKey, locale)} className="hover:text-neutral-700 transition-colors">
-              {breadcrumbDivision}
-            </Link>
+            <Link href={localizedHref(divisionKey, locale)}>{breadcrumbDivision}</Link>
             <span>/</span>
-            <span className="text-neutral-600">{category.name}</span>
+            <span className="text-white/90">{category.name}</span>
           </nav>
-          <h1 className="text-2xl sm:text-3xl font-semibold text-neutral-900">
-            {category.name}
-          </h1>
-          <p className="text-neutral-500 mt-3 max-w-2xl leading-relaxed">{category.description}</p>
-        </div>
-      </section>
+        }
+      />
 
-      <section className="pb-24">
+      <section className="py-24">
         <div className="container-wide">
           <h2 className="sr-only">{dict.sections.productsInCategory}</h2>
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">

@@ -58,7 +58,7 @@ export const es: PagesContent = {
       },
       stats: [
         { num: "80.000", unit: "m²", label: "Área de Fábrica" },
-        { num: "13.000", unit: "m²", label: "Área de Terreno" },
+        { num: "13+", unit: "", label: "Patentes de utilidad" },
         { num: "240", unit: "km", label: "Al Puerto de Shanghái" },
         { num: "2", unit: "", label: "Bases de Producción" },
       ],
@@ -77,6 +77,8 @@ export const es: PagesContent = {
       post: ".",
     },
     servicesHeading: "Capacidades de Servicio",
+    flowHeading: "Flujo de Servicio Integral",
+    flowSubtitle: "Desde I+D personalizado hasta entrega global — un ecosistema de servicios completo para sus necesidades en materiales compuestos.",
     services: [
       { title: "Personalización OEM/ODM", description: "Soluciones OEM/ODM integrales adaptadas a sus especificaciones exactas.", features: ["Opciones de color personalizadas (negro, azul, amarillo, verde, etc.)", "Personalización de composición de material", "Ajuste de parámetros de rendimiento", "Ancho y longitud de rollo personalizados"] },
       { title: "I+D y Soporte Técnico", description: "Orientación técnica experta desde la selección de materiales hasta la optimización de procesos.", features: ["Consultoría de producto y selección de materiales", "Recomendaciones de soluciones técnicas", "Consultoría de optimización de procesos", "Formación técnica in situ disponible"] },

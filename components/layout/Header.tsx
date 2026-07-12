@@ -71,7 +71,7 @@ export function Header({
               alt="ZEYUSEN Fiber"
               width={62}
               height={62}
-              priority
+              loading="eager"
               className={`block h-[3.85rem] w-[3.85rem] shrink-0 object-cover scale-[1.08] transition-[filter] duration-500 ${logoTone}`}
             />
             <span className={`${brandTextClass} ${logoText} transition-colors duration-500`}>

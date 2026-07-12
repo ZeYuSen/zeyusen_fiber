@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 import {
   Anchor,
@@ -21,6 +22,8 @@ import {
   type ApplicationIcon,
   type ApplicationMaterial,
 } from "@/data/applications";
+import { PageMediaHero } from "@/components/ui/PageMediaHero";
+import { getApplicationImage, getApplicationCardImage } from "@/lib/site-images";
 
 const icons: Record<ApplicationIcon, React.ComponentType<{ className?: string }>> = {
   anchor: Anchor,
@@ -36,10 +39,16 @@ const icons: Record<ApplicationIcon, React.ComponentType<{ className?: string }>
 };
 
 // Detail slug for an application item, derived from its English detailHref.
-function detailSlug(detailHref?: string): { division: "carbon" | "glass"; slug: string } | null {
-  if (!detailHref) return null;
+// Every application must resolve to a detail page — a missing or malformed
+// detailHref is a data error, never a silent redirect to Contact.
+function detailSlug(detailHref: string | undefined, slug: string): { division: "carbon" | "glass"; slug: string } {
+  if (!detailHref) {
+    throw new Error(`Application "${slug}" is missing detailHref — add its detail data instead of falling back to Contact.`);
+  }
   const m = detailHref.match(/^\/(carbon|glass)-fiber\/applications\/(.+)$/);
-  if (!m) return null;
+  if (!m) {
+    throw new Error(`Application "${slug}" has malformed detailHref "${detailHref}".`);
+  }
   return { division: m[1] as "carbon" | "glass", slug: m[2] };
 }
 
@@ -61,11 +70,13 @@ export function ApplicationsOverview({
     hubParagraphs: string[];
     viewDetails: string;
     requestGuidance: string;
+    imageNote: string;
   };
 }) {
-  void getApplicationGroups(locale); // locale-aware data hook (en passthrough for now)
-  const selectedGroup = getApplicationGroup(selectedMaterial);
   const groups = getApplicationGroups(locale);
+  const selectedGroup =
+    groups.find((group) => group.material === selectedMaterial) ??
+    getApplicationGroup(selectedMaterial);
 
   const materialHref = (material: ApplicationMaterial) =>
     material === "carbon"
@@ -74,47 +85,45 @@ export function ApplicationsOverview({
 
   return (
     <>
-      <section className="pt-36 pb-12">
-        <div className="container-wide">
-          <p className="type-caption text-neutral-400">{copy.eyebrow}</p>
-          <div className="mt-4 grid grid-cols-1 lg:grid-cols-[minmax(0,1fr)_420px] gap-10 lg:gap-16 items-end">
-            <div>
-              <h1 className="text-3xl sm:text-4xl font-semibold text-neutral-900 max-w-3xl">
-                {copy.title}
-              </h1>
-              <p className="text-neutral-500 mt-5 max-w-2xl leading-relaxed">
-                {copy.intro}
-              </p>
-            </div>
+      <PageMediaHero
+        eyebrow={copy.eyebrow}
+        title={copy.title}
+        description={copy.intro}
+        image={getApplicationImage(selectedGroup.applications[0].slug, selectedMaterial)}
+        imageAlt={`${selectedGroup.label} — ${copy.imageNote}`}
+        accent={selectedMaterial}
+      />
 
-            <div className="grid grid-cols-2 gap-3">
-              {groups.map((group) => {
-                const isActive = group.material === selectedMaterial;
-                return (
-                  <Link
-                    key={group.material}
-                    href={materialHref(group.material)}
-                    className={`rounded-lg border p-4 transition-colors ${
-                      isActive
-                        ? `${group.borderClass} ${group.bgClass}`
-                        : "border-neutral-100 bg-white hover:border-neutral-200"
-                    }`}
-                  >
-                    <span className={`type-caption ${group.accentClass}`}>
-                      {group.label}
-                    </span>
-                    <span className="mt-3 block text-sm text-neutral-500 leading-relaxed">
-                      {group.applications.length} {copy.fieldsSuffix}
-                    </span>
-                  </Link>
-                );
-              })}
-            </div>
+      <section className="border-b border-neutral-100 py-10">
+        <div className="container-wide">
+          <div className="grid grid-cols-1 gap-3 sm:grid-cols-2 lg:ml-auto lg:max-w-2xl">
+            {groups.map((group) => {
+              const isActive = group.material === selectedMaterial;
+              return (
+                <Link
+                  key={group.material}
+                  href={materialHref(group.material)}
+                  className={`border p-5 transition-colors ${
+                    isActive
+                      ? `${group.borderClass} ${group.bgClass}`
+                      : "border-neutral-200 bg-white hover:border-neutral-400"
+                  }`}
+                  aria-current={isActive ? "page" : undefined}
+                >
+                  <span className={`text-xs font-semibold uppercase ${group.accentClass}`}>
+                    {group.label}
+                  </span>
+                  <span className="mt-2 block text-sm text-neutral-500 leading-relaxed">
+                    {group.applications.length} {copy.fieldsSuffix}
+                  </span>
+                </Link>
+              );
+            })}
           </div>
         </div>
       </section>
 
-      <section className="pb-24">
+      <section className="py-24">
         <div className="container-wide">
           <div className="mb-8 flex flex-col sm:flex-row sm:items-end sm:justify-between gap-4">
             <div>
@@ -143,21 +152,30 @@ export function ApplicationsOverview({
           <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
             {selectedGroup.applications.map((application) => {
               const Icon = icons[application.icon];
-              const detail = detailSlug(application.detailHref);
-              const href = detail
-                ? localizedHref(
-                    detail.division === "carbon" ? "carbon-application" : "glass-application",
-                    locale,
-                    { slug: detail.slug },
-                  )
-                : localizedHref("contact", locale);
+              const detail = detailSlug(application.detailHref, application.slug);
+              const href = localizedHref(
+                detail.division === "carbon" ? "carbon-application" : "glass-application",
+                locale,
+                { slug: detail.slug },
+              );
               return (
                 <Link
                   key={application.slug}
                   href={href}
-                  className="group block rounded-lg border border-neutral-100 bg-white p-6 sm:p-7 hover:border-neutral-200 transition-colors"
+                  className="group block overflow-hidden border border-neutral-100 bg-white hover:border-neutral-300 transition-colors"
                 >
-                  <div className="flex items-start gap-5">
+                  <div className="relative aspect-[16/8] overflow-hidden bg-neutral-100">
+                    <Image
+                      src={getApplicationCardImage(application.slug, selectedMaterial)}
+                      alt={`${application.title} — ${copy.imageNote}`}
+                      fill
+                      quality={72}
+                      sizes="(max-width: 768px) 100vw, 50vw"
+                      className="object-cover transition-transform duration-700 group-hover:scale-[1.03]"
+                    />
+                    <div className="absolute inset-0 bg-black/10 transition-colors group-hover:bg-black/0" />
+                  </div>
+                  <div className="flex items-start gap-5 p-6 sm:p-7">
                     <div className="w-10 h-10 rounded-lg border border-neutral-100 bg-neutral-50 flex items-center justify-center flex-shrink-0">
                       <Icon className={`w-5 h-5 ${selectedGroup.accentClass}`} />
                     </div>
@@ -181,7 +199,7 @@ export function ApplicationsOverview({
                       <span
                         className={`mt-5 inline-flex items-center gap-1 text-xs font-medium ${selectedGroup.accentClass} group-hover:text-neutral-900 transition-colors`}
                       >
-                        {application.detailHref ? copy.viewDetails : copy.requestGuidance}
+                        {copy.viewDetails}
                         <ArrowRight className="w-3.5 h-3.5" />
                       </span>
                     </div>

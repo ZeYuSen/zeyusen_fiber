@@ -59,6 +59,7 @@ export const applicationGroups: ApplicationGroup[] = [
         description:
           "High-performance carbon fiber materials for body panels, structural reinforcement, and lightweight components.",
         products: ["Carbon-Glass Hybrid Woven Cloth", "Carbon Fiber Twill Cloth", "Carbon Fiber Plain Cloth"],
+        detailHref: "/carbon-fiber/applications/motorsport",
       },
       {
         slug: "new-energy",
@@ -85,6 +86,7 @@ export const applicationGroups: ApplicationGroup[] = [
         description:
           "Premium carbon fiber materials for pultrusion processes, mold making, and advanced composite manufacturing.",
         products: ["Carbon Fiber Composite Mat", "Carbon Fiber Needled Mat", "Short Cut Carbon Fiber"],
+        detailHref: "/carbon-fiber/applications/manufacturing",
       },
     ],
   },
@@ -123,6 +125,7 @@ export const applicationGroups: ApplicationGroup[] = [
         description:
           "Specialized fiber materials for high-temperature filtration, chemical processing, and environmental protection.",
         products: ["Basalt Fiber Mat", "Knitted Stitched Mat", "Chopped Strand Mat"],
+        detailHref: "/glass-fiber/applications/industrial-filtration",
       },
       {
         slug: "transportation",
@@ -131,6 +134,7 @@ export const applicationGroups: ApplicationGroup[] = [
         description:
           "Lightweight composite materials for high-speed rail interiors, automotive components, and transportation infrastructure.",
         products: ["PP Core Sandwich Mat", "Composite Mat", "Woven Roving"],
+        detailHref: "/glass-fiber/applications/transportation",
       },
       {
         slug: "marine",
@@ -139,6 +143,7 @@ export const applicationGroups: ApplicationGroup[] = [
         description:
           "Corrosion-resistant fiberglass solutions for shipbuilding, chemical storage tanks, and marine infrastructure.",
         products: ["Woven Roving", "Chopped Strand Mat", "Surface Tissue Mat"],
+        detailHref: "/glass-fiber/applications/marine",
       },
     ],
   },

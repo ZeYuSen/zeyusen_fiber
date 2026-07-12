@@ -147,7 +147,10 @@ export function getApplicationDetail(
     metaDescription: t.metaDescription ?? base.metaDescription,
     headline: t.headline ?? base.headline,
     description: t.description ?? base.description,
+    challenge: t.challenge ?? base.challenge,
+    components: t.components ?? base.components,
     benefits: t.benefits ?? base.benefits,
+    selectionCriteria: t.selectionCriteria ?? base.selectionCriteria,
     // Product link names: keep route keys, swap display names if provided.
     products: base.products.map((p, i) => ({
       ...p,

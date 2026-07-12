@@ -32,6 +32,8 @@ export type ServicesContent = {
   title: string;
   lead1: string;
   lead2: { pre: string; carbonLink: string; mid: string; glassLink: string; post: string };
+  flowHeading: string;
+  flowSubtitle: string;
   servicesHeading: string;
   services: { title: string; description: string; features: string[] }[];
   processEyebrow: string;
@@ -147,7 +149,7 @@ const en: PagesContent = {
       },
       stats: [
         { num: "80,000", unit: "m²", label: "Factory Area" },
-        { num: "13,000", unit: "m²", label: "Land Area" },
+        { num: "13+", unit: "", label: "Utility Patents" },
         { num: "240", unit: "km", label: "To Shanghai Port" },
         { num: "2", unit: "", label: "Production Bases" },
       ],
@@ -166,6 +168,8 @@ const en: PagesContent = {
       post: " product lines.",
     },
     servicesHeading: "Service Capabilities",
+    flowHeading: "End-to-End Service Flow",
+    flowSubtitle: "From custom R&D to global delivery — a complete service ecosystem built around your composite material needs.",
     services: [
       { title: "OEM/ODM Customization", description: "One-stop OEM/ODM solutions tailored to your exact specifications.", features: ["Custom color options (black, blue, yellow, green, etc.)", "Material composition customization", "Performance parameter tuning", "Custom width and roll length"] },
       { title: "R&D & Technical Support", description: "Expert technical guidance from material selection to process optimization.", features: ["Product consultation & material selection", "Technical solution recommendations", "Process optimization consulting", "On-site technical training available"] },

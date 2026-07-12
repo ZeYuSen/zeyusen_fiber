@@ -58,7 +58,7 @@ export const zh: PagesContent = {
       },
       stats: [
         { num: "80,000", unit: "m²", label: "厂房面积" },
-        { num: "13,000", unit: "m²", label: "占地面积" },
+        { num: "13+", unit: "", label: "实用新型专利" },
         { num: "240", unit: "km", label: "距上海港" },
         { num: "2", unit: "", label: "生产基地" },
       ],
@@ -77,6 +77,8 @@ export const zh: PagesContent = {
       post: "产品线的采购决策。",
     },
     servicesHeading: "服务能力",
+    flowHeading: "全流程服务体系",
+    flowSubtitle: "从定制研发到全球交付——围绕您的复合材料需求，构建完整的服务生态。",
     services: [
       { title: "OEM/ODM定制", description: "按照您的精确规格提供一站式OEM/ODM解决方案。", features: ["自定义颜色选项（黑、蓝、黄、绿等）", "材料组成定制", "性能参数调整", "定制幅宽和卷长"] },
       { title: "研发与技术支持", description: "从材料选择到工艺优化的专业技术指导。", features: ["产品咨询与选材", "技术方案推荐", "工艺优化咨询", "可提供现场技术培训"] },

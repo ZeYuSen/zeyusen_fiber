@@ -10,7 +10,7 @@ export type HomeContent = {
   divisions: { carbon: DivisionCard; glass: DivisionCard };
   exploreProducts: string;
   stats: { value: number; suffix: string; label: string }[];
-  industries: { heading: string; items: { title: string; description: string }[] };
+  industries: { heading: string; subtitle: string; imageNote: string; items: { title: string; description: string }[] };
   whyPartner: {
     title: string;
     intro: string;
@@ -127,6 +127,8 @@ const en: HomeContent = {
   ],
   industries: {
     heading: "Industries We Serve",
+    subtitle: "High-performance carbon fiber and fiberglass composites — engineered for the world's most demanding sectors.",
+    imageNote: "industry application reference image",
     items: [
       { title: "Aerospace & Aviation", description: "Structural components, interior panels, and lightweight composites" },
       { title: "Wind Energy", description: "Turbine blades, nacelle covers, and structural reinforcements" },
@@ -226,6 +228,8 @@ const ko: HomeContent = {
   ],
   industries: {
     heading: "당사가 서비스하는 산업",
+    subtitle: "고성능 탄소섬유 및 유리섬유 복합재 — 세계에서 가장 까다로운 산업을 위해 설계되었습니다.",
+    imageNote: "산업 응용 예시 이미지",
     items: [
       { title: "항공우주 & 항공", description: "구조 부품, 인테리어 패널 및 경량 복합재" },
       { title: "풍력에너지", description: "터빈 블레이드, 나셀 커버 및 구조 보강재" },
@@ -320,6 +324,8 @@ const es: HomeContent = {
   ],
   industries: {
     heading: "Sectores que Atendemos",
+    subtitle: "Compuestos de fibra de carbono y fibra de vidrio de alto rendimiento — diseñados para los sectores más exigentes del mundo.",
+    imageNote: "imagen de referencia de aplicación industrial",
     items: [
       { title: "Aeroespacial y Aviación", description: "Componentes estructurales, paneles interiores y compuestos ligeros" },
       { title: "Energía Eólica", description: "Palas de turbina, cubiertas de góndola y refuerzos estructurales" },
@@ -416,6 +422,8 @@ const pt: HomeContent = {
   ],
   industries: {
     heading: "Setores que Atendemos",
+    subtitle: "Compósitos de fibra de carbono e fibra de vidro de alto desempenho — projetados para os setores mais exigentes do mundo.",
+    imageNote: "imagem de referência de aplicação industrial",
     items: [
       { title: "Aeroespacial e Aviação", description: "Componentes estruturais, painéis internos e compósitos leves" },
       { title: "Energia Eólica", description: "Pás de turbina, capôs de nacele e reforços estruturais" },
@@ -512,6 +520,8 @@ const zh: HomeContent = {
   ],
   industries: {
     heading: "服务行业",
+    subtitle: "高性能碳纤维与玻璃纤维复合材料——为全球最苛刻的行业量身定制。",
+    imageNote: "行业应用示意图",
     items: [
       { title: "航空航天", description: "结构件、内饰面板和轻量化复合材料" },
       { title: "风力发电", description: "涡轮叶片、机舱罩和结构增强材料" },
