@@ -7,8 +7,6 @@ tags: ["碳纤维", "玻璃纤维", "混合织物", "碳玻混合布", "混合�
 image: "/images/blog/carbon-glass-hybrid-cover.jpg"
 ---
 
-![复合设计用碳玻混合布](/images/blog/carbon-glass-hybrid-cover.jpg)
-
 # 碳玻混合布：全碳纤维增强材料的经济替代方案
 
 碳玻混合布——也称碳纤维-玻纤混合布或碳/玻混纺增强材料——将碳纤维和玻璃纤维结合在一种材料中。目标明确：获取碳纤维的刚度和减重优势，同时利用玻璃纤维改善成本平衡、韧性和工艺灵活性。
@@ -163,4 +161,6 @@ image: "/images/blog/carbon-glass-hybrid-cover.jpg"
 
 ## 下一步
 
-无论您需要T300混合编织布用于可见汽车面板，还是30g混合毡用于风能导电层——我们生产这两种形式。查看[碳纤维产品](/carbon-fiber/products)，对比[玻纤选项](/glass-fiber/products)，探索[风能应用](/applications/glass)，或通过[联系页面](/contact)发送您目标部件的需求。我们的团队可根据您的性能目标和预算约束推荐碳/玻比例。样品卷3–5个工作日内发货。
+如果增强材料家族尚未确定，可先阅读[碳纤维与玻璃纤维选型指南](/blog/carbon-fiber-vs-fiberglass-selection-guide)，按完整层合体系与工艺比较，而不是采用笼统的材料排名。
+
+无论您需要T300混合编织布用于可见汽车面板，还是30g混合毡用于风能导电层——我们生产这两种形式。查看[碳纤维产品](/carbon-fiber)，对比[玻纤选项](/glass-fiber)，探索[风能应用](/applications/glass)，或通过[联系页面](/contact)发送您目标部件的需求。我们的团队可根据您的性能目标和预算约束推荐碳/玻比例。样品卷3–5个工作日内发货。

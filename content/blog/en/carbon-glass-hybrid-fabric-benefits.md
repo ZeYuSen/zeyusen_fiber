@@ -7,8 +7,6 @@ tags: ["carbon fiber", "glass fiber", "hybrid fabric", "carbon glass hybrid clot
 image: "/images/blog/carbon-glass-hybrid-cover.jpg"
 ---
 
-![Carbon glass hybrid fabric for composite design](/images/blog/carbon-glass-hybrid-cover.jpg)
-
 # Carbon Glass Hybrid Fabric: Cost-Effective Alternative to Full Carbon Fiber Reinforcement
 
 Carbon glass hybrid fabric — also called carbon fiberglass hybrid cloth or carbon/glass blended reinforcement — combines carbon fiber and glass fiber in one material. The goal is straightforward: capture carbon fiber’s stiffness and weight-saving benefits while using glass fiber to improve cost balance, toughness, and process flexibility.
@@ -163,4 +161,6 @@ In many cases, yes. Where the primary requirement is conductivity (lightning pro
 
 ## Next Step
 
-Whether you need T300 hybrid woven cloth for visible automotive panels or 30g hybrid mat for wind energy conductivity layers — we manufacture both formats. Review [carbon fiber products](/carbon-fiber/products), compare with [glass fiber options](/glass-fiber/products), explore [wind energy applications](/applications/glass), or send your target part requirements through [contact](/contact). Our team can recommend carbon/glass ratios based on your performance targets and budget constraints. Sample rolls ship within 3–5 business days.
+If the reinforcement family is still open, start with the [carbon fiber versus fiberglass selection guide](/blog/carbon-fiber-vs-fiberglass-selection-guide) and compare the complete laminate and process rather than relying on a generic material ranking.
+
+Whether you need T300 hybrid woven cloth for visible automotive panels or 30g hybrid mat for wind energy conductivity layers — we manufacture both formats. Review [carbon fiber products](/carbon-fiber), compare with [glass fiber options](/glass-fiber), explore [wind energy applications](/applications/glass), or send your target part requirements through [contact](/contact). Our team can recommend carbon/glass ratios based on your performance targets and budget constraints. Sample rolls ship within 3–5 business days.

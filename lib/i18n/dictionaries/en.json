@@ -97,7 +97,18 @@
     "needHelpTitle": "Need help choosing a material?",
     "needHelpBody": "Send your target application, process, and required specifications. ZeYuSen Fiber can help compare carbon fiber and glass fiber material options for your project.",
     "needHelpCta": "Contact ZeYuSen Fiber",
-    "print": "Print"
+    "print": "Print",
+    "searchPlaceholder": "Search articles...",
+    "noResults": "No articles match your search.",
+    "previous": "Previous",
+    "next": "Next",
+    "pageLabel": "Blog pagination",
+    "sortLabel": "Sort articles",
+    "sortDateDesc": "Newest first",
+    "sortDateAsc": "Oldest first",
+    "sortTitleAsc": "Title A – Z",
+    "sortTitleDesc": "Title Z – A",
+    "jumpTo": "Go to"
   },
   "form": {
     "name": "Name",

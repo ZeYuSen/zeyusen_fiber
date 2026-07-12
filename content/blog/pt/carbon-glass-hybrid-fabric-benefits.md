@@ -7,8 +7,6 @@ tags: ["fibra de carbono", "fibra de vidro", "tecido híbrido", "tecido híbrido
 image: "/images/blog/carbon-glass-hybrid-cover.jpg"
 ---
 
-![Tecido híbrido carbono-vidro para projeto de compósitos](/images/blog/carbon-glass-hybrid-cover.jpg)
-
 # Tecido Híbrido Carbono-Vidro: Alternativa Econômica ao Reforço em Fibra de Carbono Pura
 
 O tecido híbrido carbono-vidro — também chamado de tecido híbrido fibra de carbono/fibra de vidro ou reforço misto carbono/vidro — combina fibra de carbono e fibra de vidro em um único material. O objetivo é direto: aproveitar a rigidez e os benefícios de redução de peso da fibra de carbono, enquanto usa a fibra de vidro para melhorar o equilíbrio de custo, a tenacidade e a flexibilidade de processamento.
@@ -163,4 +161,6 @@ Em muitos casos, sim. Onde o requisito principal é a condutividade (caminhos de
 
 ## Próximo Passo
 
-Seja para tecido woven híbrido T300 para painéis automotivos visíveis ou manta híbrida de 30g para camadas condutivas de energia eólica — fabricamos ambos os formatos. Revise os [produtos de fibra de carbono](/carbon-fiber/products), compare com as [opções de fibra de vidro](/glass-fiber/products), explore as [aplicações de energia eólica](/applications/glass), ou envie os requisitos da sua peça-alvo através do [contato](/contact). Nossa equipe pode recomendar proporções carbono/vidro com base nas suas metas de desempenho e restrições orçamentárias. Rolos de amostra são enviados em 3–5 dias úteis.
+Se a família do reforço ainda estiver aberta, comece pelo [guia de seleção entre fibra de carbono e fibra de vidro](/blog/carbon-fiber-vs-fiberglass-selection-guide) e compare o laminado e o processo completos, não uma classificação genérica de materiais.
+
+Seja para tecido woven híbrido T300 para painéis automotivos visíveis ou manta híbrida de 30g para camadas condutivas de energia eólica — fabricamos ambos os formatos. Revise os [produtos de fibra de carbono](/carbon-fiber), compare com as [opções de fibra de vidro](/glass-fiber), explore as [aplicações de energia eólica](/applications/glass), ou envie os requisitos da sua peça-alvo através do [contato](/contact). Nossa equipe pode recomendar proporções carbono/vidro com base nas suas metas de desempenho e restrições orçamentárias. Rolos de amostra são enviados em 3–5 dias úteis.

@@ -7,8 +7,6 @@ tags: ["碳纤维纱线", "短切碳纤维", "碳纤维粉末", "T300", "T700", 
 image: "/images/blog/carbon-fiber-raw-materials-cover.jpg"
 ---
 
-![碳纤维原材料](/images/blog/carbon-fiber-raw-materials-cover.jpg)
-
 # 碳纤维原材料：纱线、短切纤维与粉末选型指南
 
 除编织布和非织造毡之外，碳纤维还以原材料形式供应——纱线（连续丝束）、短切纤维和粉末（研磨纤维）。这些原材料作为复合、模压、增材制造和特种复合材料工艺的原料，适用于预制织物不合适的场景。
@@ -19,9 +17,9 @@ image: "/images/blog/carbon-fiber-raw-materials-cover.jpg"
 
 | 产品 | 形式 | 可选规格 | 主要应用 |
 |---|---|---|---|
-| [碳纤维纱线](/carbon-fiber/products/carbon-fiber-raw/carbon-yarn) | 筒装连续丝束 | T300 3K、T300 6K、T700 12K | 编织、缠绕成型、拉挤、编织成型 |
-| [短切碳纤维](/carbon-fiber/products/carbon-fiber-raw/short-cut-fiber) | 短切丝（3–12mm） | 标准模量 | 改性塑料、EMI屏蔽料、BMC/SMC |
-| [碳纤维粉末](/carbon-fiber/products/carbon-fiber-raw/carbon-powder) | 研磨纤维（50–200μm） | 标准模量 | 复合材料填料、摩擦材料、耐磨 |
+| [碳纤维纱线](/carbon-fiber/carbon-fiber-raw/carbon-yarn) | 筒装连续丝束 | T300 3K、T300 6K、T700 12K | 编织、缠绕成型、拉挤、编织成型 |
+| [短切碳纤维](/carbon-fiber/carbon-fiber-raw/short-cut-fiber) | 短切丝（3–12mm） | 标准模量 | 改性塑料、EMI屏蔽料、BMC/SMC |
+| [碳纤维粉末](/carbon-fiber/carbon-fiber-raw/carbon-powder) | 研磨纤维（50–200μm） | 标准模量 | 复合材料填料、摩擦材料、耐磨 |
 
 所有产品均以PAN基（聚丙烯腈）碳纤维前驱体制成，确保质量一致和力学性能稳定。
 
@@ -230,4 +228,4 @@ image: "/images/blog/carbon-fiber-raw-materials-cover.jpg"
 
 ## 下一步
 
-无论您需要T300 3K纱线用于编织、T700 12K用于缠绕成型、短切纤维用于注塑模塑料，还是研磨粉用于摩擦材料——我们供应全系列碳纤维原材料。查看完整的[碳纤维产品目录](/carbon-fiber/products)，探索[碳纤维应用领域](/applications)，或通过联系页面发送您的材料需求。评估样品（1–5 kg）可在5–7个工作日内发出。
+无论您需要T300 3K纱线用于编织、T700 12K用于缠绕成型、短切纤维用于注塑模塑料，还是研磨粉用于摩擦材料——我们供应全系列碳纤维原材料。查看完整的[碳纤维产品目录](/carbon-fiber)，探索[碳纤维应用领域](/applications)，或通过联系页面发送您的材料需求。评估样品（1–5 kg）可在5–7个工作日内发出。

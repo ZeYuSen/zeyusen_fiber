@@ -7,8 +7,6 @@ tags: ["玻璃纤维", "多轴向织物", "非屈曲布", "双轴缝编毡", "�
 image: "/images/blog/multiaxial-fiberglass-cover.jpg"
 ---
 
-![风能复合材料用多轴向玻璃纤维布](/images/blog/multiaxial-fiberglass-cover.jpg)
-
 # 多轴向玻璃纤维布：风能和结构复合材料用非屈曲增强材料
 
 多轴向玻璃纤维布——也称非屈曲布（NCF）、缝编织物或多层增强材料——专为需要在多个方向上具有强度的复合材料部件设计。多轴向增强材料不依赖于传统的编织0°/90°结构，而是将纤维按工程角度（如±45°、0°/90°或组合取向）排列，以匹配部件的载荷路径。
@@ -28,7 +26,7 @@ image: "/images/blog/multiaxial-fiberglass-cover.jpg"
 - 通过缝编结构提供有用的操作稳定性——比单向带更不易散边。
 - 改善灌注特性——缝线通道可辅助树脂流动。
 
-探索相关[玻璃纤维材料](/glass-fiber)和[玻璃纤维产品](/glass-fiber/products)。
+探索相关[玻璃纤维材料](/glass-fiber)和[玻璃纤维产品](/glass-fiber)。
 
 ## 我们的多轴向和双轴产品系列
 
@@ -36,12 +34,12 @@ image: "/images/blog/multiaxial-fiberglass-cover.jpg"
 
 | 产品 | 克重 | 取向 | 主要应用 |
 |---|---|---|---|
-| [多轴向玻璃纤维布](/glass-fiber/products/fiberglass-cloth/multiaxial) | 300 g/m² | ±45°双轴 | 风力涡轮机舱罩、轻量结构壳体 |
-| [单向缝编毡](/glass-fiber/products/composite-mat/unidirectional-450) | 450 g/m² | 0°（单向） | 风能拉挤型材、翼梁帽 |
-| [双轴缝编毡±45°](/glass-fiber/products/composite-mat/biaxial-45) | 900 g/m² | ±45° | 风力涡轮机舱、扭转载荷结构 |
-| [双轴缝编毡0/90°](/glass-fiber/products/composite-mat/biaxial-0-90) | 900 g/m² | 0°/90° | 风能面板、均衡面内载荷 |
-| [网格缝编复合毡](/glass-fiber/products/composite-mat/grid-stitched) | 1050 g/m² | 网格图案 | 机舱罩、大型结构面板 |
-| [多轴缝编毡](/glass-fiber/products/composite-mat/multiaxial-1200) | 1200 g/m² | 四轴向 | 风力涡轮叶片、高载荷结构壳体 |
+| [多轴向玻璃纤维布](/glass-fiber/fiberglass-cloth/multiaxial) | 300 g/m² | ±45°双轴 | 风力涡轮机舱罩、轻量结构壳体 |
+| [单向缝编毡](/glass-fiber/composite-mat/unidirectional-450) | 450 g/m² | 0°（单向） | 风能拉挤型材、翼梁帽 |
+| [双轴缝编毡±45°](/glass-fiber/composite-mat/biaxial-45) | 900 g/m² | ±45° | 风力涡轮机舱、扭转载荷结构 |
+| [双轴缝编毡0/90°](/glass-fiber/composite-mat/biaxial-0-90) | 900 g/m² | 0°/90° | 风能面板、均衡面内载荷 |
+| [网格缝编复合毡](/glass-fiber/composite-mat/grid-stitched) | 1050 g/m² | 网格图案 | 机舱罩、大型结构面板 |
+| [多轴缝编毡](/glass-fiber/composite-mat/multiaxial-1200) | 1200 g/m² | 四轴向 | 风力涡轮叶片、高载荷结构壳体 |
 
 所有产品使用E-玻纤纤维和涤纶缝编线。500m²以上订单可定制克重、幅宽（最宽2500mm）和取向组合。
 
@@ -85,10 +83,10 @@ image: "/images/blog/multiaxial-fiberglass-cover.jpg"
 除风能之外，多轴向玻璃纤维布还用于：
 
 - **船舶**：船壳、甲板、舱壁和结构纵梁——±45°用于抗扭，0°/90°用于面板刚度。
-- **交通**：卡车车身面板、铁路车辆部件（我们的[PP芯材夹层毡](/glass-fiber/products/composite-mat/pp-core)用于高铁）和巴士结构。
+- **交通**：卡车车身面板、铁路车辆部件（我们的[PP芯材夹层毡](/glass-fiber/composite-mat/pp-core)用于高铁）和巴士结构。
 - **基础设施**：桥梁面板、冷却塔面板和结构型材。
 - **工业**：压力容器、储罐、管道和大型外壳。
-- **拉挤**：需要特定纤维取向的连续型材——我们的[450g单向缝编毡](/glass-fiber/products/composite-mat/unidirectional-450)专为拉挤工艺设计。
+- **拉挤**：需要特定纤维取向的连续型材——我们的[450g单向缝编毡](/glass-fiber/composite-mat/unidirectional-450)专为拉挤工艺设计。
 - **建筑材料**：幕墙面板和结构保温板。
 
 应用灵感请访问[玻璃纤维应用领域](/applications/glass)。
@@ -165,4 +163,6 @@ image: "/images/blog/multiaxial-fiberglass-cover.jpg"
 
 ## 下一步
 
-无论您需要300g ±45°双轴用于机舱罩、900g缝编毡用于结构壳体，还是1200g四轴用于风力涡轮叶片——我们生产全系列非屈曲玻璃纤维增强材料。对比[玻璃纤维产品类别](/glass-fiber/products)，探索[风能应用](/applications/glass)，或通过联系页面分享您的层压铺层计划。我们的工程团队可帮助根据您的特定载荷工况和制造工艺选择正确的取向、克重和结构。样品卷5–7个工作日内发货。
+无论您需要300g ±45°双轴用于机舱罩、900g缝编毡用于结构壳体，还是1200g四轴用于风力涡轮叶片——我们生产全系列非屈曲玻璃纤维增强材料。对比[玻璃纤维产品类别](/glass-fiber)，探索[风能应用](/applications/glass)，或通过联系页面分享您的层压铺层计划。我们的工程团队可帮助根据您的特定载荷工况和制造工艺选择正确的取向、克重和结构。样品卷5–7个工作日内发货。
+
+如果增强结构尚未确定，可通过[单向玻璃纤维与编织玻璃纤维选型指南](/blog/unidirectional-vs-woven-fiberglass-guide)比较载荷方向和铺放操作上的差异。

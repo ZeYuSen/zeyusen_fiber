@@ -4,10 +4,8 @@ description: "Compare 200g carbon fiber twill and plain weave cloth for automoti
 slug: "carbon-fiber-cloth-twill-plain-weave-guide"
 date: "2026-05-28"
 tags: ["carbon fiber cloth", "carbon fiber fabric", "twill weave", "plain weave", "3K carbon fiber", "woven carbon fiber"]
-image: "/images/blog/carbon-fiber-cloth-cover.jpg"
+image: "/images/blog/carbon-fiber-twill-plain-cover.webp"
 ---
-
-![Carbon fiber cloth weave pattern](/images/blog/carbon-fiber-cloth-cover.jpg)
 
 # Carbon Fiber Cloth: 200g Twill vs Plain Weave Selection Guide
 
@@ -21,8 +19,8 @@ We manufacture carbon fiber woven cloth in two standard constructions, both usin
 
 | Product | GSM | Weave | Tow Size | Key Characteristics |
 |---|---|---|---|---|
-| [Carbon Fiber Twill Cloth](/carbon-fiber/products/carbon-fiber-cloth/twill-cloth) | 200 g/m² | 2×2 Twill | 3K T300 | Superior drape, diagonal pattern, premium appearance |
-| [Carbon Fiber Plain Cloth](/carbon-fiber/products/carbon-fiber-cloth/plain-cloth) | 200 g/m² | Plain (1×1) | 3K T300 | Maximum stability, balanced strength, flat surface |
+| [Carbon Fiber Twill Cloth](/carbon-fiber/carbon-fiber-cloth/twill-cloth) | 200 g/m² | 2×2 Twill | 3K T300 | Superior drape, diagonal pattern, premium appearance |
+| [Carbon Fiber Plain Cloth](/carbon-fiber/carbon-fiber-cloth/plain-cloth) | 200 g/m² | Plain (1×1) | 3K T300 | Maximum stability, balanced strength, flat surface |
 
 Both products use Toray T300-grade carbon fiber (tensile modulus 230 GPa, tensile strength 3530 MPa) — the industry standard for structural composite reinforcement. Standard roll widths are 1000mm and 1270mm.
 
@@ -71,7 +69,7 @@ Best for: Flat panels, tubes, simple geometries, structural applications where s
 
 **Rule of thumb**: Choose twill when the part has complex geometry or the carbon weave will be visible. Choose plain when fabric stability during layup is critical or the part is flat/tubular.
 
-![Carbon fiber woven cloth product](/images/carbon-fiber/06-carbon-fiber-cloth/01-carbon-glass-hybrid-cloth/carbon-glass-hybrid-cloth-03.jpg)
+![Carbon-glass hybrid woven cloth as an alternative to full-carbon fabric](/images/carbon-fiber/06-carbon-fiber-cloth/01-carbon-glass-hybrid-cloth/carbon-glass-hybrid-cloth-03.jpg)
 
 ## Applications by Industry
 
@@ -157,7 +155,7 @@ Yes. At 200g/m² with T300 fiber, each ply provides meaningful structural reinfo
 
 ### What is the difference between T300 and T700 carbon fiber?
 
-T300 (tensile modulus 230 GPa, strength 3530 MPa) is the standard-modulus grade used in most composite applications. T700 (tensile modulus 230 GPa, strength 4900 MPa) offers ~40% higher tensile strength at higher cost. Our woven cloth uses T300 — suitable for the vast majority of structural and decorative applications. For T700 requirements, we offer [carbon fiber yarn](/carbon-fiber/products/carbon-fiber-raw/carbon-yarn) in 12K format.
+T300 (tensile modulus 230 GPa, strength 3530 MPa) is the standard-modulus grade used in most composite applications. T700 (tensile modulus 230 GPa, strength 4900 MPa) offers ~40% higher tensile strength at higher cost. Our woven cloth uses T300 — suitable for the vast majority of structural and decorative applications. For T700 requirements, we offer [carbon fiber yarn](/carbon-fiber/carbon-fiber-raw/carbon-yarn) in 12K format.
 
 ### How much does carbon fiber cloth cost compared to fiberglass?
 
@@ -173,4 +171,6 @@ Dry (non-prepreg) carbon fiber cloth stored in sealed polyethylene packaging at 
 
 ## Next Step
 
-Whether you need 200g twill cloth for visible automotive panels or plain weave for structural flat laminates — we manufacture both in T300 3K format with standard stock availability. Compare the full [carbon fiber product range](/carbon-fiber/products), explore [carbon fiber applications](/applications), or send your specifications through the [contact page](/contact). Sample rolls (10–50m) ship within 3–5 business days to most countries.
+Before requesting a quote, use the [carbon fiber fabric specification guide](/blog/carbon-fiber-fabric-specification-guide) to define the product fields, then complete the [composite reinforcement RFQ checklist](/blog/composite-reinforcement-rfq-checklist) with your process, quantity, packaging, and document requirements.
+
+Whether you need 200g twill cloth for visible automotive panels or plain weave for structural flat laminates — we manufacture both in T300 3K format with standard stock availability. Compare the full [carbon fiber product range](/carbon-fiber), explore [carbon fiber applications](/applications), or send your specifications through the [contact page](/contact). Sample rolls (10–50m) ship within 3–5 business days to most countries.

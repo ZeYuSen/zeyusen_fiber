@@ -4,10 +4,8 @@ description: "Compare fiberglass chopped strand mat and woven roving for layup s
 slug: "fiberglass-chopped-strand-mat-vs-woven-roving"
 date: "2026-05-10"
 tags: ["fiberglass", "chopped strand mat", "woven roving"]
-image: "/images/glass-fiber/04-chopped-strand-mat/300g-chopped-strand-mat-01.jpg"
+image: "/images/blog/chopped-strand-mat-cover.jpg"
 ---
-
-![Fiberglass chopped strand mat roll](/images/glass-fiber/04-chopped-strand-mat/300g-chopped-strand-mat-01.jpg)
 
 # Fiberglass Chopped Strand Mat vs Woven Roving: How to Choose for Production
 
@@ -26,7 +24,7 @@ For procurement and engineering teams, the best choice depends on the part geome
 | Surface finish | Often smoother under gel coat | More print-through risk |
 | Typical use | General laminates, backing layers | Boats, panels, tanks, structural shells |
 
-Browse [chopped strand mat](/glass-fiber/products/chopped-strand-mat/chopped-strand-mat) and [woven roving](/glass-fiber/products/fiberglass-cloth/woven-roving) if you are comparing material families.
+Browse [chopped strand mat](/glass-fiber/chopped-strand-mat/chopped-strand-mat) and [woven roving](/glass-fiber/fiberglass-cloth/woven-roving) if you are comparing material families.
 
 ![Woven roving fiberglass reinforcement](/images/glass-fiber/02-fiberglass-cloth/06-woven-roving/400g-woven-roving-01.jpg)
 
@@ -100,4 +98,4 @@ Chopped strand mat is often easier to form around curves and corners. Heavy wove
 
 ## Next Step
 
-Review [fiberglass product categories](/glass-fiber/products) or [contact ZeYuSen Fiber](/contact) with your target GSM, process, and application.
+Review [fiberglass product categories](/glass-fiber) or [contact ZeYuSen Fiber](/contact) with your target GSM, process, and application.

@@ -7,8 +7,6 @@ tags: ["fiberglass", "multiaxial fabric", "non-crimp fabric", "biaxial stitched 
 image: "/images/blog/multiaxial-fiberglass-cover.jpg"
 ---
 
-![Multiaxial fiberglass fabric for wind energy composites](/images/blog/multiaxial-fiberglass-cover.jpg)
-
 # Multiaxial Fiberglass Fabric: Non-Crimp Reinforcement for Wind Energy and Structural Composites
 
 Multiaxial fiberglass fabric — also called non-crimp fabric (NCF), stitched fabric, or multi-ply reinforcement — is designed for composite parts that need strength in more than one direction. Instead of relying only on a traditional woven 0°/90° structure, multiaxial reinforcements place fibers at engineered angles such as ±45°, 0°/90°, or combined orientations to match the load path of the part.
@@ -29,7 +27,7 @@ Key advantages include:
 - Useful handling stability from stitched construction — less prone to fraying than UD tape.
 - Improved infusion characteristics — stitch channels can aid resin flow.
 
-Explore related [glass fiber materials](/glass-fiber) and [glass fiber products](/glass-fiber/products).
+Explore related [glass fiber materials](/glass-fiber) and [glass fiber products](/glass-fiber).
 
 ## Our Multiaxial and Biaxial Product Range
 
@@ -37,12 +35,12 @@ We manufacture a complete range of stitched fiberglass reinforcements optimized 
 
 | Product | GSM | Orientation | Primary Applications |
 |---|---|---|---|
-| [Multiaxial Fiberglass Fabric](/glass-fiber/products/fiberglass-cloth/multiaxial) | 300 g/m² | ±45° biaxial | Wind turbine nacelle covers, lightweight structural shells |
-| [Unidirectional Stitched Mat](/glass-fiber/products/composite-mat/unidirectional-450) | 450 g/m² | 0° (UD) | Wind energy pultrusion profiles, spar caps |
-| [Biaxial Stitched Mat ±45°](/glass-fiber/products/composite-mat/biaxial-45) | 900 g/m² | ±45° | Wind turbine nacelle, torsion-loaded structures |
-| [Biaxial Stitched Mat 0/90°](/glass-fiber/products/composite-mat/biaxial-0-90) | 900 g/m² | 0°/90° | Wind energy panels, balanced in-plane loading |
-| [Grid Stitched Composite Mat](/glass-fiber/products/composite-mat/grid-stitched) | 1050 g/m² | Grid pattern | Nacelle covers, large structural panels |
-| [Multiaxial Stitched Mat](/glass-fiber/products/composite-mat/multiaxial-1200) | 1200 g/m² | Quadraxial | Wind turbine blades, high-load structural shells |
+| [Multiaxial Fiberglass Fabric](/glass-fiber/fiberglass-cloth/multiaxial) | 300 g/m² | ±45° biaxial | Wind turbine nacelle covers, lightweight structural shells |
+| [Unidirectional Stitched Mat](/glass-fiber/composite-mat/unidirectional-450) | 450 g/m² | 0° (UD) | Wind energy pultrusion profiles, spar caps |
+| [Biaxial Stitched Mat ±45°](/glass-fiber/composite-mat/biaxial-45) | 900 g/m² | ±45° | Wind turbine nacelle, torsion-loaded structures |
+| [Biaxial Stitched Mat 0/90°](/glass-fiber/composite-mat/biaxial-0-90) | 900 g/m² | 0°/90° | Wind energy panels, balanced in-plane loading |
+| [Grid Stitched Composite Mat](/glass-fiber/composite-mat/grid-stitched) | 1050 g/m² | Grid pattern | Nacelle covers, large structural panels |
+| [Multiaxial Stitched Mat](/glass-fiber/composite-mat/multiaxial-1200) | 1200 g/m² | Quadraxial | Wind turbine blades, high-load structural shells |
 
 All products use E-glass fiber with polyester stitching thread. Custom GSM, width (up to 2500mm), and orientation combinations are available for orders above 500m².
 
@@ -86,10 +84,10 @@ For wind energy application details, visit [glass fiber wind energy applications
 Beyond wind energy, multiaxial fiberglass fabric is used in:
 
 - **Marine**: Hulls, decks, bulkheads, and structural stringers — ±45° for torsion resistance, 0°/90° for panel stiffness.
-- **Transportation**: Truck body panels, rail car components (our [PP Core Sandwich Mat](/glass-fiber/products/composite-mat/pp-core) is used in high-speed rail), and bus structures.
+- **Transportation**: Truck body panels, rail car components (our [PP Core Sandwich Mat](/glass-fiber/composite-mat/pp-core) is used in high-speed rail), and bus structures.
 - **Infrastructure**: Bridge decks, cooling tower panels, and structural profiles.
 - **Industrial**: Pressure vessels, tanks, pipes, and large enclosures.
-- **Pultrusion**: Continuous profiles requiring specific fiber orientation — our [450g UD stitched mat](/glass-fiber/products/composite-mat/unidirectional-450) is designed specifically for pultrusion processes.
+- **Pultrusion**: Continuous profiles requiring specific fiber orientation — our [450g UD stitched mat](/glass-fiber/composite-mat/unidirectional-450) is designed specifically for pultrusion processes.
 - **Building materials**: Cladding panels and structural insulated panels.
 
 For application ideas, visit [glass fiber applications](/applications/glass).
@@ -166,4 +164,6 @@ For our standard products (300g ±45°, 450g UD, 900g biaxial, 1200g quadraxial)
 
 ## Next Step
 
-Whether you need 300g ±45° biaxial for nacelle covers, 900g stitched mat for structural shells, or 1200g quadraxial for wind turbine blades — we manufacture the full range of non-crimp fiberglass reinforcements. Compare [glass fiber product categories](/glass-fiber/products), explore [wind energy applications](/applications/glass), or share your laminate schedule through the [contact page](/contact). Our engineering team can help select the right orientation, GSM, and construction for your specific load case and manufacturing process. Sample rolls available within 5–7 business days.
+Whether you need 300g ±45° biaxial for nacelle covers, 900g stitched mat for structural shells, or 1200g quadraxial for wind turbine blades — we manufacture the full range of non-crimp fiberglass reinforcements. Compare [glass fiber product categories](/glass-fiber), explore [wind energy applications](/applications/glass), or share your laminate schedule through the [contact page](/contact). Our engineering team can help select the right orientation, GSM, and construction for your specific load case and manufacturing process. Sample rolls available within 5–7 business days.
+
+If the architecture decision is still open, compare the load-direction and handling tradeoffs in the [unidirectional versus woven fiberglass guide](/blog/unidirectional-vs-woven-fiberglass-guide).

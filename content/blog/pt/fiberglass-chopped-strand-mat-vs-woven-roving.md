@@ -4,10 +4,8 @@ description: "Compare a manta de fibras cortadas e o roving tecido em fibra de v
 slug: "fiberglass-chopped-strand-mat-vs-woven-roving"
 date: "2026-05-10"
 tags: ["fibra de vidro", "manta de fibras cortadas", "roving tecido"]
-image: "/images/glass-fiber/04-chopped-strand-mat/300g-chopped-strand-mat-01.jpg"
+image: "/images/blog/chopped-strand-mat-cover.jpg"
 ---
-
-![Rolo de manta de fibras cortadas em fibra de vidro](/images/glass-fiber/04-chopped-strand-mat/300g-chopped-strand-mat-01.jpg)
 
 # Manta de Fibras Cortadas vs Roving Tecido em Fibra de Vidro: Como Escolher para a Produção
 
@@ -26,7 +24,7 @@ Para equipes de compras e engenharia, a melhor escolha depende da geometria da p
 | Acabamento superficial | Frequentemente mais liso sob gel coat | Maior risco de marcação das fibras |
 | Uso típico | Laminados gerais, camadas de suporte | Embarcações, painéis, tanques, cascas estruturais |
 
-Consulte a [manta de fibras cortadas](/glass-fiber/products/chopped-strand-mat/chopped-strand-mat) e o [roving tecido](/glass-fiber/products/fiberglass-cloth/woven-roving) para comparar famílias de materiais.
+Consulte a [manta de fibras cortadas](/glass-fiber/chopped-strand-mat/chopped-strand-mat) e o [roving tecido](/glass-fiber/fiberglass-cloth/woven-roving) para comparar famílias de materiais.
 
 ![Reforço de roving tecido em fibra de vidro](/images/glass-fiber/02-fiberglass-cloth/06-woven-roving/400g-woven-roving-01.jpg)
 
@@ -100,4 +98,4 @@ A manta de fibras cortadas é frequentemente mais fácil de moldar em curvas e c
 
 ## Próximo Passo
 
-Revise as [categorias de produtos de fibra de vidro](/glass-fiber/products) ou [entre em contato com a ZeYuSen Fiber](/contact) informando a gramagem-alvo, o processo e a aplicação.
+Revise as [categorias de produtos de fibra de vidro](/glass-fiber) ou [entre em contato com a ZeYuSen Fiber](/contact) informando a gramagem-alvo, o processo e a aplicação.

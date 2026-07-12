@@ -46,3 +46,6 @@ audits
 .audits
 
 .playwright-mcp
+
+# tooling state
+.vibio/

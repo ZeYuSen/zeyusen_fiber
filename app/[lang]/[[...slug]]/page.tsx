@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import dynamic from "next/dynamic";
 
-import { isLocale, locales, type Locale } from "@/lib/i18n/config";
+import { isLocale, locales, localeMeta, type Locale } from "@/lib/i18n/config";
 import {
   resolveRoute,
   localizedHref,
@@ -458,6 +458,7 @@ export default async function LocalizedPage({ params }: PageProps<"/[lang]/[[...
               datePublished: post.date,
               dateModified: post.dateModified,
               path,
+              inLanguage: localeMeta[locale].hreflang,
             })}
           />
           <JsonLd

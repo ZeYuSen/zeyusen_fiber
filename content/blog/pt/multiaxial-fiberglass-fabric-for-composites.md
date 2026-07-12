@@ -7,8 +7,6 @@ tags: ["fibra de vidro", "tecido multiaxial", "tecido não-ondulado", "manta bia
 image: "/images/blog/multiaxial-fiberglass-cover.jpg"
 ---
 
-![Tecido multiaxial de fibra de vidro para compósitos de energia eólica](/images/blog/multiaxial-fiberglass-cover.jpg)
-
 # Tecido Multiaxial de Fibra de Vidro: Reforço Não-Ondulado para Energia Eólica e Compósitos Estruturais
 
 O tecido multiaxial de fibra de vidro — também chamado de tecido não-ondulado (NCF), tecido costurado ou reforço multi-camadas — é projetado para peças compostas que precisam de resistência em mais de uma direção. Em vez de depender apenas de uma estrutura woven tradicional 0°/90°, os reforços multiaxiais posicionam as fibras em ângulos projetados como ±45°, 0°/90°, ou orientações combinadas para corresponder ao caminho de carga da peça.
@@ -29,7 +27,7 @@ As principais vantagens incluem:
 - Estabilidade de manuseio útil graças à construção costurada — menos propenso a desfiar do que fita UD.
 - Características de infusão melhoradas — canais de costura podem auxiliar o fluxo de resina.
 
-Explore os [materiais de fibra de vidro](/glass-fiber) e os [produtos de fibra de vidro](/glass-fiber/products) relacionados.
+Explore os [materiais de fibra de vidro](/glass-fiber) e os [produtos de fibra de vidro](/glass-fiber) relacionados.
 
 ## Nossa Linha de Produtos Multiaxiais e Biaxiais
 
@@ -37,12 +35,12 @@ Fabricamos uma linha completa de reforços de fibra de vidro costurados, otimiza
 
 | Produto | GSM | Orientação | Principais Aplicações |
 |---|---|---|---|
-| [Tecido Multiaxial de Fibra de Vidro](/glass-fiber/products/fiberglass-cloth/multiaxial) | 300 g/m² | ±45° biaxial | Coberturas de nacele de turbinas eólicas, cascas estruturais leves |
-| [Manta Costurada Unidirecional](/glass-fiber/products/composite-mat/unidirectional-450) | 450 g/m² | 0° (UD) | Perfis de pultrusão para energia eólica, tampas de longarina |
-| [Manta Biaxial Costurada ±45°](/glass-fiber/products/composite-mat/biaxial-45) | 900 g/m² | ±45° | Nacele de turbina eólica, estruturas sob torção |
-| [Manta Biaxial Costurada 0/90°](/glass-fiber/products/composite-mat/biaxial-0-90) | 900 g/m² | 0°/90° | Painéis de energia eólica, carregamento equilibrado no plano |
-| [Manta Composta Costurada em Grade](/glass-fiber/products/composite-mat/grid-stitched) | 1050 g/m² | Padrão em grade | Coberturas de nacele, painéis estruturais de grande porte |
-| [Manta Costurada Multiaxial](/glass-fiber/products/composite-mat/multiaxial-1200) | 1200 g/m² | Quadraxial | Pás de turbinas eólicas, cascas estruturais de alta carga |
+| [Tecido Multiaxial de Fibra de Vidro](/glass-fiber/fiberglass-cloth/multiaxial) | 300 g/m² | ±45° biaxial | Coberturas de nacele de turbinas eólicas, cascas estruturais leves |
+| [Manta Costurada Unidirecional](/glass-fiber/composite-mat/unidirectional-450) | 450 g/m² | 0° (UD) | Perfis de pultrusão para energia eólica, tampas de longarina |
+| [Manta Biaxial Costurada ±45°](/glass-fiber/composite-mat/biaxial-45) | 900 g/m² | ±45° | Nacele de turbina eólica, estruturas sob torção |
+| [Manta Biaxial Costurada 0/90°](/glass-fiber/composite-mat/biaxial-0-90) | 900 g/m² | 0°/90° | Painéis de energia eólica, carregamento equilibrado no plano |
+| [Manta Composta Costurada em Grade](/glass-fiber/composite-mat/grid-stitched) | 1050 g/m² | Padrão em grade | Coberturas de nacele, painéis estruturais de grande porte |
+| [Manta Costurada Multiaxial](/glass-fiber/composite-mat/multiaxial-1200) | 1200 g/m² | Quadraxial | Pás de turbinas eólicas, cascas estruturais de alta carga |
 
 Todos os produtos usam fibra E-glass com fio de costura de poliéster. GSM personalizado, largura (até 2500mm) e combinações de orientação estão disponíveis para pedidos acima de 500m².
 
@@ -86,10 +84,10 @@ Para detalhes sobre aplicações de energia eólica, visite [aplicações de fib
 Além da energia eólica, o tecido multiaxial de fibra de vidro é usado em:
 
 - **Náutico**: Cascos, conveses, anteparas e cavernas estruturais — ±45° para resistência à torção, 0°/90° para rigidez de painéis.
-- **Transporte**: Painéis de carroceria de caminhões, componentes de vagões ferroviários (nossa [Manta Sanduíche de Núcleo PP](/glass-fiber/products/composite-mat/pp-core) é usada em trens de alta velocidade) e estruturas de ônibus.
+- **Transporte**: Painéis de carroceria de caminhões, componentes de vagões ferroviários (nossa [Manta Sanduíche de Núcleo PP](/glass-fiber/composite-mat/pp-core) é usada em trens de alta velocidade) e estruturas de ônibus.
 - **Infraestrutura**: Tabuleiros de pontes, painéis de torres de resfriamento e perfis estruturais.
 - **Industrial**: Vasos de pressão, tanques, tubulações e invólucros de grande porte.
-- **Pultrusão**: Perfis contínuos que requerem orientação específica de fibras — nossa [manta UD costurada de 450g](/glass-fiber/products/composite-mat/unidirectional-450) é projetada especificamente para processos de pultrusão.
+- **Pultrusão**: Perfis contínuos que requerem orientação específica de fibras — nossa [manta UD costurada de 450g](/glass-fiber/composite-mat/unidirectional-450) é projetada especificamente para processos de pultrusão.
 - **Materiais de construção**: Painéis de revestimento e painéis estruturais isolados.
 
 Para ideias de aplicação, visite [aplicações de fibra de vidro](/applications/glass).
@@ -166,4 +164,6 @@ Para nossos produtos padrão (300g ±45°, 450g UD, 900g biaxial, 1200g quadraxi
 
 ## Próximo Passo
 
-Seja para biaxial ±45° de 300g para coberturas de nacele, manta costurada de 900g para cascas estruturais ou quadraxial de 1200g para pás de turbinas eólicas — fabricamos a linha completa de reforços de fibra de vidro não-ondulados. Compare as [categorias de produtos de fibra de vidro](/glass-fiber/products), explore as [aplicações de energia eólica](/applications/glass), ou compartilhe seu esquema de laminado através da [página de contato](/contact). Nossa equipe de engenharia pode ajudar a selecionar a orientação, GSM e construção corretos para seu caso de carga específico e processo de fabricação. Rolos de amostra disponíveis em 5–7 dias úteis.
+Seja para biaxial ±45° de 300g para coberturas de nacele, manta costurada de 900g para cascas estruturais ou quadraxial de 1200g para pás de turbinas eólicas — fabricamos a linha completa de reforços de fibra de vidro não-ondulados. Compare as [categorias de produtos de fibra de vidro](/glass-fiber), explore as [aplicações de energia eólica](/applications/glass), ou compartilhe seu esquema de laminado através da [página de contato](/contact). Nossa equipe de engenharia pode ajudar a selecionar a orientação, GSM e construção corretos para seu caso de carga específico e processo de fabricação. Rolos de amostra disponíveis em 5–7 dias úteis.
+
+Se a arquitetura continuar em aberto, compare as diferenças de carga e manuseio no [guia de fibra de vidro unidirecional versus tecida](/blog/unidirectional-vs-woven-fiberglass-guide).

@@ -1,9 +1,9 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useRef } from "react";
 import Image from "next/image";
 import Link from "next/link";
-import { motion, AnimatePresence } from "framer-motion";
+import { motion, AnimatePresence, useScroll, useSpring } from "framer-motion";
 import { contactInfo } from "@/lib/contact";
 import { useLocale } from "@/lib/i18n/use-locale";
 import { localizedHref } from "@/lib/i18n/routes";
@@ -44,8 +44,6 @@ const factoryGallery = {
 
 const factoryTabKeys = ["production", "inspection", "testing", "exhibition"] as const;
 
-const FACTORY_TAB_INACTIVE = ["#1E3A8A", "#172554", "#0F172A", "#0F172A"];
-const FACTORY_TAB_ACTIVE = "#1D4ED8";
 const easing = [0.22, 1, 0.36, 1] as const;
 
 function FactorySection() {
@@ -70,39 +68,35 @@ function FactorySection() {
           </p>
         </div>
 
-        {/* Numbered tab strip */}
-        <div className="flex rounded-t-2xl overflow-hidden mt-14">
+        {/* Underline tab strip */}
+        <div className="flex flex-wrap gap-8 border-b border-white/10 mt-14">
           {factoryTabs.map((tab, i) => {
             const isActive = activeTab === tab.key;
-            const bg = isActive ? FACTORY_TAB_ACTIVE : FACTORY_TAB_INACTIVE[i] ?? "#0F172A";
             return (
-              <motion.button
+              <button
                 key={tab.key}
                 onClick={() => setActiveTab(tab.key)}
-                className="flex-1 flex items-center gap-3 px-6 py-4 text-left transition-colors"
-                style={{ backgroundColor: bg }}
-                animate={{ backgroundColor: bg }}
-                transition={{ duration: 0.4, ease: easing }}
+                className="relative flex items-center gap-3 py-4 text-left transition-colors"
               >
-                <span className={`text-xs font-bold tabular-nums shrink-0 ${isActive ? "text-white/60" : "text-white/30"}`}>
+                <span className={`text-xs font-bold tabular-nums shrink-0 ${isActive ? "text-cyan-400" : "text-white/30"}`}>
                   {String(i + 1).padStart(2, "0")}
                 </span>
-                <span className={`text-sm font-semibold ${isActive ? "text-white" : "text-white/50"}`}>
+                <span className={`text-sm font-semibold ${isActive ? "text-white" : "text-white/50 hover:text-white/80"}`}>
                   {tab.label}
                 </span>
                 {isActive && (
                   <motion.span
-                    layoutId="factory-tab-dot"
-                    className="ml-auto w-1.5 h-1.5 rounded-full bg-cyan-400 shrink-0"
+                    layoutId="about-factory-tab-underline"
+                    className="absolute -bottom-px left-0 right-0 h-0.5 bg-cyan-400"
                   />
                 )}
-              </motion.button>
+              </button>
             );
           })}
         </div>
 
-        {/* Gallery Panel */}
-        <div className="rounded-b-2xl overflow-hidden p-4 sm:p-6" style={{ backgroundColor: "#162042" }}>
+        {/* Image gallery — floats directly on the section background */}
+        <div className="pt-8">
           <AnimatePresence mode="wait">
             <motion.div
               key={activeTab}
@@ -115,7 +109,7 @@ function FactorySection() {
               {images.map((img, i) => (
                 <div
                   key={`${activeTab}-${i}`}
-                  className="relative aspect-[4/3] overflow-hidden rounded-xl bg-[#0C1128] group"
+                  className="relative aspect-[4/3] overflow-hidden bg-[#0C1128] group"
                 >
                   <Image
                     src={img.src}
@@ -142,6 +136,96 @@ function FactorySection() {
               <p className="text-xs uppercase tracking-[0.15em] text-white/40 mt-3">{stat.label}</p>
             </div>
           ))}
+        </div>
+      </div>
+    </section>
+  );
+}
+
+function TimelineSection({
+  eyebrow,
+  title,
+  milestones,
+}: {
+  eyebrow: string;
+  title: string;
+  milestones: { year: string; event: string }[];
+}) {
+  const railRef = useRef<HTMLDivElement>(null);
+  // Track scroll progress through the rail so the gradient fills as you scroll.
+  const { scrollYProgress } = useScroll({
+    target: railRef,
+    offset: ["start 80%", "end 55%"],
+  });
+  const fillScale = useSpring(scrollYProgress, {
+    stiffness: 90,
+    damping: 24,
+    restDelta: 0.001,
+  });
+
+  return (
+    <section className="section-padding overflow-hidden">
+      <div className="container-wide">
+        <div className="grid lg:grid-cols-12 gap-12 lg:gap-16">
+          <div className="lg:col-span-4">
+            <p className="type-caption text-neutral-400">{eyebrow}</p>
+            <h2 className="text-4xl sm:text-5xl font-semibold text-neutral-900 mt-4 tracking-tight leading-[1.05] lg:sticky lg:top-32">
+              {title}
+            </h2>
+          </div>
+
+          <div className="lg:col-span-8">
+            {/* The marker column is a fixed 40px wide; the rail lives at its
+                horizontal center (left-5 = 1.25rem) so dots + line always align. */}
+            <div ref={railRef} className="relative">
+              {/* Static track */}
+              <div className="absolute left-5 top-3 bottom-3 w-px -translate-x-1/2 bg-neutral-200/70" />
+              {/* Animated gradient fill, scaled by scroll progress */}
+              <motion.div
+                aria-hidden
+                style={{ scaleY: fillScale }}
+                className="absolute left-5 top-3 bottom-3 w-[2px] -translate-x-1/2 origin-top rounded-full bg-gradient-to-b from-carbon-accent via-glass-accent to-glass-accent"
+              />
+
+              <ul>
+                {milestones.map((item) => (
+                  <motion.li
+                    key={item.year}
+                    initial={{ opacity: 0, y: 24 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true, margin: "-15% 0px -10% 0px" }}
+                    transition={{ duration: 0.6, ease: easing, delay: 0.04 }}
+                    className="group relative grid grid-cols-[2.5rem_1fr] gap-6 pb-11 last:pb-0"
+                  >
+                    {/* Marker */}
+                    <div className="relative flex justify-center pt-1">
+                      <motion.span
+                        initial={{ scale: 0, opacity: 0 }}
+                        whileInView={{ scale: 1, opacity: 1 }}
+                        viewport={{ once: true, margin: "-15% 0px -10% 0px" }}
+                        transition={{ type: "spring", stiffness: 320, damping: 20, delay: 0.12 }}
+                        className="relative z-10 mt-1 flex h-3.5 w-3.5 items-center justify-center rounded-full bg-white ring-1 ring-neutral-200 shadow-sm"
+                      >
+                        <span className="h-2 w-2 rounded-full bg-gradient-to-br from-carbon-accent to-glass-accent transition-transform duration-300 group-hover:scale-125" />
+                        {/* Soft glow halo on hover */}
+                        <span className="absolute inset-0 rounded-full bg-carbon-accent/25 blur-sm opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                      </motion.span>
+                    </div>
+
+                    {/* Content */}
+                    <div className="pt-0.5 -mt-0.5">
+                      <span className="inline-block font-mono text-xs font-semibold tracking-[0.15em] text-carbon-accent tabular-nums">
+                        {item.year}
+                      </span>
+                      <p className="mt-1.5 text-neutral-600 leading-relaxed transition-colors duration-300 group-hover:text-neutral-900">
+                        {item.event}
+                      </p>
+                    </div>
+                  </motion.li>
+                ))}
+              </ul>
+            </div>
+          </div>
         </div>
       </div>
     </section>
@@ -266,38 +350,11 @@ export default function AboutPageContent({ nav }: { nav?: { home: string; curren
       </section>
 
       {/* Timeline */}
-      <section className="section-padding">
-        <div className="container-wide">
-          <div className="grid lg:grid-cols-12 gap-12 lg:gap-16">
-            <div className="lg:col-span-4">
-              <p className="type-caption text-neutral-400">{c.journeyEyebrow}</p>
-              <h2 className="text-4xl sm:text-5xl font-semibold text-neutral-900 mt-4 tracking-tight leading-[1.05] lg:sticky lg:top-32">
-                {c.journeyTitle}
-              </h2>
-            </div>
-
-            <div className="lg:col-span-8 lg:border-l lg:border-neutral-100 lg:pl-16">
-              {milestones.map((item, i) => (
-                <div
-                  key={item.year}
-                  className="group grid grid-cols-[auto_1fr] gap-8 pb-12 last:pb-0 relative"
-                >
-                  {i < milestones.length - 1 && (
-                    <div className="absolute left-[3.5rem] top-4 bottom-0 w-px bg-neutral-100" />
-                  )}
-                  <div className="flex items-center gap-4">
-                    <span className="font-mono text-sm text-neutral-900 w-12 tabular-nums">
-                      {item.year}
-                    </span>
-                    <div className="w-2.5 h-2.5 rounded-full bg-gradient-to-br from-carbon-accent to-glass-accent ring-4 ring-white relative z-10" />
-                  </div>
-                  <p className="text-neutral-600 leading-relaxed pt-px">{item.event}</p>
-                </div>
-              ))}
-            </div>
-          </div>
-        </div>
-      </section>
+      <TimelineSection
+        eyebrow={c.journeyEyebrow}
+        title={c.journeyTitle}
+        milestones={milestones}
+      />
     </>
   );
 }

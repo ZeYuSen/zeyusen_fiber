@@ -7,8 +7,6 @@ tags: ["탄소섬유 원사", "촙드 탄소섬유", "탄소섬유 분말", "T30
 image: "/images/blog/carbon-fiber-raw-materials-cover.jpg"
 ---
 
-![탄소섬유 원자재](/images/blog/carbon-fiber-raw-materials-cover.jpg)
-
 # 탄소섬유 원자재: 원사, 촙드 파이버 & 분말 선택 가이드
 
 직물 및 부직포 매트 외에도, 탄소섬유는 원자재 형태로도 공급됩니다 — 원사(연속 토우), 단섬유(촙드 스트랜드), 분말(밀링 파이버). 이러한 원자재는 사전 성형된 패브릭이 적합하지 않은 컴파운딩, 성형, 적층 제조, 특수 복합재 공정의 기본 재료로 활용됩니다.
@@ -19,9 +17,9 @@ image: "/images/blog/carbon-fiber-raw-materials-cover.jpg"
 
 | 제품 | 형태 | 가용 등급 | 주요 용도 |
 |---|---|---|---|
-| [탄소섬유 원사](/carbon-fiber/products/carbon-fiber-raw/carbon-yarn) | 보빈 권취 연속 토우 | T300 3K, T300 6K, T700 12K | 직조, 필라멘트 와인딩, 인발 성형, 브레이딩 |
-| [단섬유 탄소섬유](/carbon-fiber/products/carbon-fiber-raw/short-cut-fiber) | 촙드 스트랜드 (3–12mm) | 표준 탄성률 | 개질 플라스틱, EMI 차폐 컴파운드, BMC/SMC |
-| [탄소섬유 분말](/carbon-fiber/products/carbon-fiber-raw/carbon-powder) | 밀링 파이버 (50–200μm) | 표준 탄성률 | 복합재 충전제, 마찰 소재, 내마모성 |
+| [탄소섬유 원사](/carbon-fiber/carbon-fiber-raw/carbon-yarn) | 보빈 권취 연속 토우 | T300 3K, T300 6K, T700 12K | 직조, 필라멘트 와인딩, 인발 성형, 브레이딩 |
+| [단섬유 탄소섬유](/carbon-fiber/carbon-fiber-raw/short-cut-fiber) | 촙드 스트랜드 (3–12mm) | 표준 탄성률 | 개질 플라스틱, EMI 차폐 컴파운드, BMC/SMC |
+| [탄소섬유 분말](/carbon-fiber/carbon-fiber-raw/carbon-powder) | 밀링 파이버 (50–200μm) | 표준 탄성률 | 복합재 충전제, 마찰 소재, 내마모성 |
 
 모든 제품은 PAN계(폴리아크릴로니트릴) 탄소섬유 전구체로 제조되어 일관된 품질과 기계적 특성을 보장합니다.
 
@@ -230,4 +228,4 @@ image: "/images/blog/carbon-fiber-raw-materials-cover.jpg"
 
 ## 다음 단계
 
-직조용 T300 3K 원사, 필라멘트 와인딩용 T700 12K, 사출 성형 컴파운드용 촙드 파이버, 마찰 소재용 밀링 분말 — 당사는 탄소섬유 원자재의 전체 범위를 공급합니다. 전체 [탄소섬유 제품 카탈로그](/carbon-fiber/products)를 검토하고, [탄소섬유 응용 분야](/applications)를 탐색하거나, [문의 페이지](/contact)를 통해 재료 요구 사항을 보내주십시오. 샘플 수량(1–5 kg)은 5–7 영업일 내에 평가 가능합니다.
+직조용 T300 3K 원사, 필라멘트 와인딩용 T700 12K, 사출 성형 컴파운드용 촙드 파이버, 마찰 소재용 밀링 분말 — 당사는 탄소섬유 원자재의 전체 범위를 공급합니다. 전체 [탄소섬유 제품 카탈로그](/carbon-fiber)를 검토하고, [탄소섬유 응용 분야](/applications)를 탐색하거나, [문의 페이지](/contact)를 통해 재료 요구 사항을 보내주십시오. 샘플 수량(1–5 kg)은 5–7 영업일 내에 평가 가능합니다.

@@ -7,8 +7,6 @@ tags: ["fibra de carbono", "fibra de vidrio", "tejido híbrido", "tejido híbrid
 image: "/images/blog/carbon-glass-hybrid-cover.jpg"
 ---
 
-![Tejido híbrido carbono-vidrio para diseño de composites](/images/blog/carbon-glass-hybrid-cover.jpg)
-
 # Tejido Híbrido Carbono-Vidrio: Alternativa Rentable al Refuerzo de Fibra de Carbono Pura
 
 El tejido híbrido carbono-vidrio —también llamado tejido híbrido carbono-fibra de vidrio o refuerzo mezclado carbono/vidrio— combina fibra de carbono y fibra de vidrio en un único material. El objetivo es sencillo: aprovechar la rigidez y el ahorro de peso de la fibra de carbono mientras se utiliza la fibra de vidrio para mejorar el balance de costes, la tenacidad y la flexibilidad de proceso.
@@ -163,4 +161,6 @@ En muchos casos, sí. Donde el requisito principal es la conductividad (rutas de
 
 ## Siguiente Paso
 
-Tanto si necesitas tejido híbrido tejido T300 para paneles de automóviles visibles como estera híbrida de 30g para capas de conductividad en energía eólica — fabricamos ambos formatos. Revisa los [productos de fibra de carbono](/carbon-fiber/products), compara con las [opciones de fibra de vidrio](/glass-fiber/products), explora las [aplicaciones de energía eólica](/applications/glass), o envía los requisitos de tu pieza objetivo a través del [contacto](/contact). Nuestro equipo puede recomendar ratios carbono/vidrio basándose en tus objetivos de rendimiento y restricciones presupuestarias. Los rollos de muestra se envían en 3–5 días hábiles.
+Si la familia de refuerzo todavía no está definida, empiece por la [guía de selección entre fibra de carbono y fibra de vidrio](/blog/carbon-fiber-vs-fiberglass-selection-guide) y compare el laminado y el proceso completos, no una clasificación genérica de materiales.
+
+Tanto si necesitas tejido híbrido tejido T300 para paneles de automóviles visibles como estera híbrida de 30g para capas de conductividad en energía eólica — fabricamos ambos formatos. Revisa los [productos de fibra de carbono](/carbon-fiber), compara con las [opciones de fibra de vidrio](/glass-fiber), explora las [aplicaciones de energía eólica](/applications/glass), o envía los requisitos de tu pieza objetivo a través del [contacto](/contact). Nuestro equipo puede recomendar ratios carbono/vidrio basándose en tus objetivos de rendimiento y restricciones presupuestarias. Los rollos de muestra se envían en 3–5 días hábiles.

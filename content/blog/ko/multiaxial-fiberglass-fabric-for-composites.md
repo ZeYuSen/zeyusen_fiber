@@ -7,8 +7,6 @@ tags: ["유리섬유", "멀티액시얼 패브릭", "논-크림프 패브릭", "
 image: "/images/blog/multiaxial-fiberglass-cover.jpg"
 ---
 
-![풍력 에너지 복합재용 멀티액시얼 유리섬유 패브릭](/images/blog/multiaxial-fiberglass-cover.jpg)
-
 # 멀티액시얼 유리섬유 패브릭: 풍력 에너지 및 구조용 복합재를 위한 논-크림프 보강재
 
 멀티액시얼 유리섬유 패브릭 — 논-크림프 패브릭(NCF), 스티치 패브릭, 또는 멀티-플라이 보강재라고도 불립니다 — 은 두 개 이상의 방향에서 강도가 필요한 복합재 부품을 위해 설계되었습니다. 전통적인 직조 0°/90° 구조에만 의존하는 대신, 멀티액시얼 보강재는 부품의 하중 경로에 맞게 ±45°, 0°/90° 또는 복합 배향 등 설계된 각도로 섬유를 배치합니다.
@@ -29,7 +27,7 @@ image: "/images/blog/multiaxial-fiberglass-cover.jpg"
 - 스티치 구조의 유용한 핸들링 안정성 — UD 테이프보다 풀림에 덜 취약합니다.
 - 향상된 주입 특성 — 스티치 채널이 수지 흐름을 도울 수 있습니다.
 
-관련 [유리섬유 재료](/glass-fiber) 및 [유리섬유 제품](/glass-fiber/products)을 살펴보세요.
+관련 [유리섬유 재료](/glass-fiber) 및 [유리섬유 제품](/glass-fiber)을 살펴보세요.
 
 ## 멀티액시얼 및 바이액시얼 제품 라인업
 
@@ -37,12 +35,12 @@ image: "/images/blog/multiaxial-fiberglass-cover.jpg"
 
 | 제품 | GSM | 방향 | 주요 응용 분야 |
 |---|---|---|---|
-| [멀티액시얼 유리섬유 패브릭](/glass-fiber/products/fiberglass-cloth/multiaxial) | 300 g/m² | ±45° 바이액시얼 | 풍력 터빈 나셀 커버, 경량 구조 쉘 |
-| [단방향 스티치 매트](/glass-fiber/products/composite-mat/unidirectional-450) | 450 g/m² | 0° (UD) | 풍력 에너지 인발 성형 프로파일, 스파 캡 |
-| [바이액시얼 스티치 매트 ±45°](/glass-fiber/products/composite-mat/biaxial-45) | 900 g/m² | ±45° | 풍력 터빈 나셀, 비틀림 하중 구조물 |
-| [바이액시얼 스티치 매트 0/90°](/glass-fiber/products/composite-mat/biaxial-0-90) | 900 g/m² | 0°/90° | 풍력 에너지 패널, 균형 잡힌 면내 하중 |
-| [그리드 스티치 복합 매트](/glass-fiber/products/composite-mat/grid-stitched) | 1050 g/m² | 그리드 패턴 | 나셀 커버, 대형 구조 패널 |
-| [멀티액시얼 스티치 매트](/glass-fiber/products/composite-mat/multiaxial-1200) | 1200 g/m² | 쿼드락시얼 | 풍력 터빈 블레이드, 고하중 구조 쉘 |
+| [멀티액시얼 유리섬유 패브릭](/glass-fiber/fiberglass-cloth/multiaxial) | 300 g/m² | ±45° 바이액시얼 | 풍력 터빈 나셀 커버, 경량 구조 쉘 |
+| [단방향 스티치 매트](/glass-fiber/composite-mat/unidirectional-450) | 450 g/m² | 0° (UD) | 풍력 에너지 인발 성형 프로파일, 스파 캡 |
+| [바이액시얼 스티치 매트 ±45°](/glass-fiber/composite-mat/biaxial-45) | 900 g/m² | ±45° | 풍력 터빈 나셀, 비틀림 하중 구조물 |
+| [바이액시얼 스티치 매트 0/90°](/glass-fiber/composite-mat/biaxial-0-90) | 900 g/m² | 0°/90° | 풍력 에너지 패널, 균형 잡힌 면내 하중 |
+| [그리드 스티치 복합 매트](/glass-fiber/composite-mat/grid-stitched) | 1050 g/m² | 그리드 패턴 | 나셀 커버, 대형 구조 패널 |
+| [멀티액시얼 스티치 매트](/glass-fiber/composite-mat/multiaxial-1200) | 1200 g/m² | 쿼드락시얼 | 풍력 터빈 블레이드, 고하중 구조 쉘 |
 
 모든 제품은 폴리에스터 스티치 실로 제작된 E-glass 섬유를 사용합니다. 500m² 이상 주문 시 맞춤형 GSM, 폭(최대 2500mm), 방향 조합이 가능합니다.
 
@@ -86,10 +84,10 @@ image: "/images/blog/multiaxial-fiberglass-cover.jpg"
 풍력 에너지 외에도, 멀티액시얼 유리섬유 패브릭은 다음 분야에서 사용됩니다:
 
 - **선박**: 선체, 데크, 격벽, 구조용 스트링거 — 비틀림 저항을 위한 ±45°, 패널 강성을 위한 0°/90°.
-- **운송**: 트럭 차체 패널, 철도 차량 구성요소(저희 [PP Core Sandwich Mat](/glass-fiber/products/composite-mat/pp-core)는 고속철도에 사용됨), 버스 구조물.
+- **운송**: 트럭 차체 패널, 철도 차량 구성요소(저희 [PP Core Sandwich Mat](/glass-fiber/composite-mat/pp-core)는 고속철도에 사용됨), 버스 구조물.
 - **인프라**: 교량 데크, 냉각탑 패널, 구조용 프로파일.
 - **산업용**: 압력 용기, 탱크, 파이프, 대형 인클로저.
-- **인발 성형**: 특정 섬유 방향이 필요한 연속 프로파일 — 저희 [450g UD 스티치 매트](/glass-fiber/products/composite-mat/unidirectional-450)는 인발 성형 공정을 위해 특별히 설계되었습니다.
+- **인발 성형**: 특정 섬유 방향이 필요한 연속 프로파일 — 저희 [450g UD 스티치 매트](/glass-fiber/composite-mat/unidirectional-450)는 인발 성형 공정을 위해 특별히 설계되었습니다.
 - **건축 자재**: 클래딩 패널 및 구조 단열 패널.
 
 응용 분야 아이디어는 [유리섬유 응용 분야](/applications/glass)를 방문하세요.
@@ -166,4 +164,6 @@ image: "/images/blog/multiaxial-fiberglass-cover.jpg"
 
 ## 다음 단계
 
-나셀 커버를 위한 300g ±45° 바이액시얼, 구조 쉘을 위한 900g 스티치 매트, 또는 풍력 터빈 블레이드를 위한 1200g 쿼드락시얼이 필요하든 — 저희는 논-크림프 유리섬유 보강재의 전체 라인업을 제조합니다. [유리섬유 제품 카테고리](/glass-fiber/products)를 비교하거나, [풍력 에너지 응용 분야](/applications/glass)를 살펴보거나, [문의 페이지](/contact)를 통해 적층 스케줄을 공유하세요. 저희 엔지니어링 팀이 특정 하중 조건과 제조 공정에 맞는 올바른 방향, GSM, 구조를 선택하는 데 도움을 드릴 수 있습니다. 샘플 롤은 영업일 기준 5–7일 이내에 제공 가능합니다.
+나셀 커버를 위한 300g ±45° 바이액시얼, 구조 쉘을 위한 900g 스티치 매트, 또는 풍력 터빈 블레이드를 위한 1200g 쿼드락시얼이 필요하든 — 저희는 논-크림프 유리섬유 보강재의 전체 라인업을 제조합니다. [유리섬유 제품 카테고리](/glass-fiber)를 비교하거나, [풍력 에너지 응용 분야](/applications/glass)를 살펴보거나, [문의 페이지](/contact)를 통해 적층 스케줄을 공유하세요. 저희 엔지니어링 팀이 특정 하중 조건과 제조 공정에 맞는 올바른 방향, GSM, 구조를 선택하는 데 도움을 드릴 수 있습니다. 샘플 롤은 영업일 기준 5–7일 이내에 제공 가능합니다.
+
+보강 구조가 아직 열려 있다면 [단방향과 직조 유리섬유 선택 가이드](/blog/unidirectional-vs-woven-fiberglass-guide)에서 하중 방향과 취급 차이를 비교하십시오.

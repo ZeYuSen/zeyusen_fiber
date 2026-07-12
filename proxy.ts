@@ -20,6 +20,33 @@ for (const div of ["carbon", "glass"] as const) {
   }
 }
 
+// Parse an Accept-Language header and return the best-matching supported
+// locale, or null if none match. Honors q-values and region subtags
+// (e.g. "pt-BR" → "pt", "zh-Hans-CN" → "zh").
+function matchLocale(acceptLanguage: string | null): Locale | null {
+  if (!acceptLanguage) return null;
+
+  const ranked = acceptLanguage
+    .split(",")
+    .map((part) => {
+      const [tag, ...params] = part.trim().split(";");
+      const qParam = params.find((p) => p.trim().startsWith("q="));
+      const q = qParam ? parseFloat(qParam.trim().slice(2)) : 1;
+      return { tag: tag.trim().toLowerCase(), q: Number.isNaN(q) ? 0 : q };
+    })
+    .filter((entry) => entry.tag && entry.q > 0)
+    .sort((a, b) => b.q - a.q);
+
+  for (const { tag } of ranked) {
+    if (tag === "*") return null; // wildcard → fall back to default
+    const primary = tag.split("-")[0];
+    if (locales.includes(primary as Locale)) {
+      return primary as Locale;
+    }
+  }
+  return null;
+}
+
 function redirectStrippingSegment(
   request: NextRequest,
   locale: string,
@@ -66,15 +93,26 @@ export function proxy(request: NextRequest) {
     return NextResponse.next();
   }
 
-  // Root → language based on crawler detection.
-  // Baidu spider gets Chinese; everyone else gets the default (English).
+  // Root → locale resolution.
+  //  1. Baidu spider is indexed on the Chinese site → permanent 301 to /zh.
+  //  2. Real users: negotiate via Accept-Language; matched locale wins,
+  //     otherwise fall back to the default (English).
   if (pathname === "/") {
     const ua = request.headers.get("user-agent") || "";
-    const isBaidu = /Baiduspider/i.test(ua);
-    const targetLocale = isBaidu ? "zh" : defaultLocale;
     const url = request.nextUrl.clone();
-    url.pathname = `/${targetLocale}`;
-    return NextResponse.redirect(url, 301);
+
+    if (/Baiduspider/i.test(ua)) {
+      url.pathname = "/zh";
+      return NextResponse.redirect(url, 301);
+    }
+
+    const matched = matchLocale(request.headers.get("accept-language"));
+    url.pathname = `/${matched ?? defaultLocale}`;
+    // Result depends on the request headers, so this must NOT be cached as a
+    // permanent redirect. Use a temporary 307 and signal cache variance.
+    const response = NextResponse.redirect(url, 307);
+    response.headers.set("Vary", "Accept-Language, User-Agent");
+    return response;
   }
 
   // Legacy un-prefixed URL → /en/* (301 permanent, preserves SEO equity).

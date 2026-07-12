@@ -4,10 +4,8 @@ description: "A practical guide to basalt fiber mat for composite buyers compari
 slug: "basalt-fiber-mat-industrial-composites"
 date: "2026-05-10"
 tags: ["basalt fiber", "industrial composites", "reinforcement"]
-image: "/images/glass-fiber/07-other-fiber/01-basalt-mat/30g-basalt-mat-01.jpg"
+image: "/images/blog/basalt-mat-cover.jpg"
 ---
-
-![Basalt fiber mat for industrial composites](/images/glass-fiber/07-other-fiber/01-basalt-mat/30g-basalt-mat-01.jpg)
 
 # Basalt Fiber Mat for Industrial Composites: Where It Fits
 
@@ -27,7 +25,7 @@ Potential advantages include:
 - Compatibility with composite manufacturing workflows, subject to validation.
 - A useful comparison point alongside fiberglass and carbon fiber.
 
-Browse the [glass fiber product catalog](/glass-fiber/products) to compare related reinforcement materials.
+Browse the [glass fiber product catalog](/glass-fiber) to compare related reinforcement materials.
 
 ![Basalt mat roll texture](/images/glass-fiber/07-other-fiber/01-basalt-mat/30g-basalt-mat-02.jpg)
 
@@ -87,3 +85,5 @@ Begin with small samples, define the laminate stack, run process trials, and com
 ## Next Step
 
 If you are evaluating specialty reinforcement materials, explore [glass fiber materials](/glass-fiber), review [applications](/applications), or [send your requirements](/contact) for material discussion.
+
+Use the [basalt fiber versus fiberglass selection guide](/blog/basalt-fiber-vs-fiberglass-selection-guide) to compare equivalent formats, supplier evidence, process validation, and sourcing requirements before changing material families.

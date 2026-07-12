@@ -4,10 +4,8 @@ description: "Learn how fiberglass surface tissue supports smoother composite su
 slug: "fiberglass-surface-tissue-for-composite-finish"
 date: "2026-05-10"
 tags: ["fiberglass", "surface tissue", "composite finish"]
-image: "/images/glass-fiber/01-fiberglass-tissue-mat/01-surface-tissue/50g-blue-surface-tissue-01.jpg"
+image: "/images/blog/fiberglass-surface-tissue-cover.jpg"
 ---
-
-![Fiberglass surface tissue mat](/images/glass-fiber/01-fiberglass-tissue-mat/01-surface-tissue/50g-blue-surface-tissue-01.jpg)
 
 # Fiberglass Surface Tissue for Composite Finish and Corrosion Barriers
 
@@ -26,7 +24,7 @@ Surface tissue can help with:
 - Surface uniformity on molded parts.
 - Protective layers in pipes, tanks, panels, and industrial products.
 
-Browse related [surface tissue materials](/glass-fiber/products/tissue-mat/surface-tissue) and [glass fiber product categories](/glass-fiber/products) for more reinforcement formats.
+Browse related [surface tissue materials](/glass-fiber/tissue-mat/surface-tissue) and [glass fiber product categories](/glass-fiber) for more reinforcement formats.
 
 ![White fiberglass tissue for composite surface layers](/images/glass-fiber/01-fiberglass-tissue-mat/01-surface-tissue/300g-white-surface-tissue-01.jpg)
 
@@ -93,4 +91,4 @@ Often it can support a smoother surface under or near finishing layers, but the 
 
 ## Next Step
 
-Compare [glass fiber products](/glass-fiber/products) or [contact ZeYuSen Fiber](/contact) with your target surface finish and resin system.
+Compare [glass fiber products](/glass-fiber) or [contact ZeYuSen Fiber](/contact) with your target surface finish and resin system.

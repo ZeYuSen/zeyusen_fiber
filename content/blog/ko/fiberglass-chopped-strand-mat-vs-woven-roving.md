@@ -4,10 +4,8 @@ description: "적층 강도, 수지 흐름, 표면 마감, 일반적인 B2B 생�
 slug: "fiberglass-chopped-strand-mat-vs-woven-roving"
 date: "2026-05-10"
 tags: ["유리섬유", "촙드 스트랜드 매트", "우븐 로빙"]
-image: "/images/glass-fiber/04-chopped-strand-mat/300g-chopped-strand-mat-01.jpg"
+image: "/images/blog/chopped-strand-mat-cover.jpg"
 ---
-
-![유리섬유 촙드 스트랜드 매트 롤](/images/glass-fiber/04-chopped-strand-mat/300g-chopped-strand-mat-01.jpg)
 
 # 유리섬유 촙드 스트랜드 매트 vs 우븐 로빙: 생산 공정을 위한 선택 방법
 
@@ -26,7 +24,7 @@ image: "/images/glass-fiber/04-chopped-strand-mat/300g-chopped-strand-mat-01.jpg
 | 표면 마감 | 젤 코트 하에서 종종 더 매끄러움 | 프린트 스루 위험 더 높음 |
 | 일반적 용도 | 범용 적층체, 배면층 | 보트, 패널, 탱크, 구조용 쉘 |
 
-소재 계열을 비교하려면 [촙드 스트랜드 매트](/glass-fiber/products/chopped-strand-mat/chopped-strand-mat)와 [우븐 로빙](/glass-fiber/products/fiberglass-cloth/woven-roving)을 살펴보세요.
+소재 계열을 비교하려면 [촙드 스트랜드 매트](/glass-fiber/chopped-strand-mat/chopped-strand-mat)와 [우븐 로빙](/glass-fiber/fiberglass-cloth/woven-roving)을 살펴보세요.
 
 ![우븐 로빙 유리섬유 보강재](/images/glass-fiber/02-fiberglass-cloth/06-woven-roving/400g-woven-roving-01.jpg)
 
@@ -100,4 +98,4 @@ image: "/images/glass-fiber/04-chopped-strand-mat/300g-chopped-strand-mat-01.jpg
 
 ## 다음 단계
 
-[유리섬유 제품 카테고리](/glass-fiber/products)를 검토하거나 목표 GSM, 공정, 용도를 포함하여 [ZeYuSen Fiber에 문의](/contact)하세요.
+[유리섬유 제품 카테고리](/glass-fiber)를 검토하거나 목표 GSM, 공정, 용도를 포함하여 [ZeYuSen Fiber에 문의](/contact)하세요.

@@ -4,10 +4,8 @@ description: "Compare tecido de fibra de carbono sarja e tafetá de 200g para co
 slug: "carbon-fiber-cloth-twill-plain-weave-guide"
 date: "2026-05-28"
 tags: ["tecido de fibra de carbono", "tecido carbono", "sarja", "tafetá", "fibra de carbono 3K", "carbono tecido"]
-image: "/images/blog/carbon-fiber-cloth-cover.jpg"
+image: "/images/blog/carbon-fiber-twill-plain-cover.webp"
 ---
-
-![Padrão de tecido de fibra de carbono](/images/blog/carbon-fiber-cloth-cover.jpg)
 
 # Tecido de Fibra de Carbono: Guia de Seleção Sarja vs Tafetá 200g
 
@@ -21,8 +19,8 @@ Fabricamos tecido de carbono em duas construções padrão, ambas usando fio de 
 
 | Produto | GSM | Tecelagem | Tamanho do Fio | Características Principais |
 |---|---|---|---|---|
-| [Tecido Sarja de Fibra de Carbono](/carbon-fiber/products/carbon-fiber-cloth/twill-cloth) | 200 g/m² | Sarja 2×2 | 3K T300 | Drapeabilidade superior, padrão diagonal, aparência premium |
-| [Tecido Tafetá de Fibra de Carbono](/carbon-fiber/products/carbon-fiber-cloth/plain-cloth) | 200 g/m² | Tafetá (1×1) | 3K T300 | Estabilidade máxima, resistência equilibrada, superfície plana |
+| [Tecido Sarja de Fibra de Carbono](/carbon-fiber/carbon-fiber-cloth/twill-cloth) | 200 g/m² | Sarja 2×2 | 3K T300 | Drapeabilidade superior, padrão diagonal, aparência premium |
+| [Tecido Tafetá de Fibra de Carbono](/carbon-fiber/carbon-fiber-cloth/plain-cloth) | 200 g/m² | Tafetá (1×1) | 3K T300 | Estabilidade máxima, resistência equilibrada, superfície plana |
 
 Ambos os produtos utilizam fibra de carbono grau Toray T300 (módulo de tração 230 GPa, resistência à tração 3530 MPa) — o padrão da indústria para reforço de compósitos estruturais. As larguras padrão dos rolos são 1000mm e 1270mm.
 
@@ -71,7 +69,7 @@ Ideal para: Painéis planos, tubos, geometrias simples, aplicações estruturais
 
 **Regra geral**: Escolha sarja quando a peça tem geometria complexa ou a trama de carbono ficará visível. Escolha tafetá quando a estabilidade do tecido durante a laminação é crítica ou a peça é plana/tubular.
 
-![Produto de tecido de carbono tecido](/images/carbon-fiber/06-carbon-fiber-cloth/01-carbon-glass-hybrid-cloth/carbon-glass-hybrid-cloth-03.jpg)
+![Tecido híbrido carbono-vidro como alternativa ao tecido totalmente de carbono](/images/carbon-fiber/06-carbon-fiber-cloth/01-carbon-glass-hybrid-cloth/carbon-glass-hybrid-cloth-03.jpg)
 
 ## Aplicações por Setor
 
@@ -157,7 +155,7 @@ Sim. A 200g/m² com fibra T300, cada camada fornece reforço estrutural signific
 
 ### Qual é a diferença entre fibra de carbono T300 e T700?
 
-T300 (módulo de tração 230 GPa, resistência 3530 MPa) é o grau de módulo padrão usado na maioria das aplicações compósitas. T700 (módulo de tração 230 GPa, resistência 4900 MPa) oferece ~40% maior resistência à tração a custo maior. Nosso tecido tecido usa T300 — adequado para a grande maioria das aplicações estruturais e decorativas. Para requisitos de T700, oferecemos [fio de fibra de carbono](/carbon-fiber/products/carbon-fiber-raw/carbon-yarn) no formato 12K.
+T300 (módulo de tração 230 GPa, resistência 3530 MPa) é o grau de módulo padrão usado na maioria das aplicações compósitas. T700 (módulo de tração 230 GPa, resistência 4900 MPa) oferece ~40% maior resistência à tração a custo maior. Nosso tecido tecido usa T300 — adequado para a grande maioria das aplicações estruturais e decorativas. Para requisitos de T700, oferecemos [fio de fibra de carbono](/carbon-fiber/carbon-fiber-raw/carbon-yarn) no formato 12K.
 
 ### Quanto custa o tecido de fibra de carbono em comparação com fibra de vidro?
 
@@ -173,4 +171,6 @@ O tecido de fibra de carbono seco (não-prepreg) armazenado em embalagem de poli
 
 ## Próximo Passo
 
-Seja para tecido sarja de 200g para painéis automotivos visíveis ou tafetá para laminados planos estruturais — fabricamos ambos no formato T300 3K com disponibilidade em estoque padrão. Compare a [linha completa de produtos de fibra de carbono](/carbon-fiber/products), explore [aplicações de fibra de carbono](/applications), ou envie suas especificações pela [página de contato](/contact). Rolos de amostra (10–50m) despachados em 3–5 dias úteis para a maioria dos países.
+Antes de solicitar uma cotação, use o [guia de especificação de tecido de fibra de carbono](/blog/carbon-fiber-fabric-specification-guide) para definir o produto e complete o [checklist de RFQ para reforços](/blog/composite-reinforcement-rfq-checklist) com processo, quantidade, embalagem e documentos.
+
+Seja para tecido sarja de 200g para painéis automotivos visíveis ou tafetá para laminados planos estruturais — fabricamos ambos no formato T300 3K com disponibilidade em estoque padrão. Compare a [linha completa de produtos de fibra de carbono](/carbon-fiber), explore [aplicações de fibra de carbono](/applications), ou envie suas especificações pela [página de contato](/contact). Rolos de amostra (10–50m) despachados em 3–5 dias úteis para a maioria dos países.

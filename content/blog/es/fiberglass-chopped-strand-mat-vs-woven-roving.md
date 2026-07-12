@@ -4,10 +4,8 @@ description: "Compare el mat de fibra de vidrio cortada y el tejido roving para 
 slug: "fiberglass-chopped-strand-mat-vs-woven-roving"
 date: "2026-05-10"
 tags: ["fibra de vidrio", "mat de hebra cortada", "tejido roving"]
-image: "/images/glass-fiber/04-chopped-strand-mat/300g-chopped-strand-mat-01.jpg"
+image: "/images/blog/chopped-strand-mat-cover.jpg"
 ---
-
-![Rollo de mat de fibra de vidrio cortada](/images/glass-fiber/04-chopped-strand-mat/300g-chopped-strand-mat-01.jpg)
 
 # Mat de Fibra de Vidrio Cortada vs Tejido Roving: Cómo Elegir para Producción
 
@@ -26,7 +24,7 @@ Para los equipos de adquisiciones e ingeniería, la mejor opción depende de la 
 | Acabado superficial | Más suave bajo gel coat | Mayor riesgo de marcas |
 | Uso típico | Laminados generales, capas de respaldo | Embarcaciones, paneles, tanques, carcasas estructurales |
 
-Explore [mat de hebra cortada](/glass-fiber/products/chopped-strand-mat/chopped-strand-mat) y [tejido roving](/glass-fiber/products/fiberglass-cloth/woven-roving) si está comparando familias de materiales.
+Explore [mat de hebra cortada](/glass-fiber/chopped-strand-mat/chopped-strand-mat) y [tejido roving](/glass-fiber/fiberglass-cloth/woven-roving) si está comparando familias de materiales.
 
 ![Refuerzo de fibra de vidrio tejido roving](/images/glass-fiber/02-fiberglass-cloth/06-woven-roving/400g-woven-roving-01.jpg)
 
@@ -100,4 +98,4 @@ El mat de hebra cortada suele ser más fácil de adaptar a curvas y esquinas. El
 
 ## Siguiente Paso
 
-Revise las [categorías de productos de fibra de vidrio](/glass-fiber/products) o [contacte a ZeYuSen Fiber](/contact) con su GSM objetivo, proceso y aplicación.
+Revise las [categorías de productos de fibra de vidrio](/glass-fiber) o [contacte a ZeYuSen Fiber](/contact) con su GSM objetivo, proceso y aplicación.

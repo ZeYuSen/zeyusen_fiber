@@ -4,10 +4,8 @@ description: "Aprende cómo el velo superficial de fibra de vidrio contribuye a 
 slug: "fiberglass-surface-tissue-for-composite-finish"
 date: "2026-05-10"
 tags: ["fibra de vidrio", "velo superficial", "acabado de composite"]
-image: "/images/glass-fiber/01-fiberglass-tissue-mat/01-surface-tissue/50g-blue-surface-tissue-01.jpg"
+image: "/images/blog/fiberglass-surface-tissue-cover.jpg"
 ---
-
-![Estera de velo superficial de fibra de vidrio](/images/glass-fiber/01-fiberglass-tissue-mat/01-surface-tissue/50g-blue-surface-tissue-01.jpg)
 
 # Velo Superficial de Fibra de Vidrio para Acabado de Composites y Barreras Anticorrosión
 
@@ -26,7 +24,7 @@ El velo superficial puede ayudar con:
 - Uniformidad superficial en piezas moldeadas.
 - Capas protectoras en tuberías, depósitos, paneles y productos industriales.
 
-Explora los [materiales de velo superficial](/glass-fiber/products/tissue-mat/surface-tissue) relacionados y las [categorías de productos de fibra de vidrio](/glass-fiber/products) para más formatos de refuerzo.
+Explora los [materiales de velo superficial](/glass-fiber/tissue-mat/surface-tissue) relacionados y las [categorías de productos de fibra de vidrio](/glass-fiber) para más formatos de refuerzo.
 
 ![Velo de fibra de vidrio blanco para capas superficiales de composite](/images/glass-fiber/01-fiberglass-tissue-mat/01-surface-tissue/300g-white-surface-tissue-01.jpg)
 
@@ -93,4 +91,4 @@ A menudo puede apoyar una superficie más lisa bajo o cerca de las capas de acab
 
 ## Siguiente Paso
 
-Compara los [productos de fibra de vidrio](/glass-fiber/products) o [contacta con ZeYuSen Fiber](/contact) con tu acabado superficial objetivo y sistema de resina.
+Compara los [productos de fibra de vidrio](/glass-fiber) o [contacta con ZeYuSen Fiber](/contact) con tu acabado superficial objetivo y sistema de resina.

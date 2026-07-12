@@ -4,10 +4,8 @@ description: "对比200g碳纤维斜纹与平纹编织布在汽车、航空航�
 slug: "carbon-fiber-cloth-twill-plain-weave-guide"
 date: "2026-05-28"
 tags: ["碳纤维布", "碳纤维织物", "斜纹编织", "平纹编织", "3K碳纤维", "编织碳纤维"]
-image: "/images/blog/carbon-fiber-cloth-cover.jpg"
+image: "/images/blog/carbon-fiber-twill-plain-cover.webp"
 ---
-
-![碳纤维布编织纹路](/images/blog/carbon-fiber-cloth-cover.jpg)
 
 # 碳纤维布：200g斜纹与平纹编织选型指南
 
@@ -21,8 +19,8 @@ image: "/images/blog/carbon-fiber-cloth-cover.jpg"
 
 | 产品 | 克重 | 编织 | 丝束规格 | 关键特性 |
 |---|---|---|---|---|
-| [碳纤维斜纹布](/carbon-fiber/products/carbon-fiber-cloth/twill-cloth) | 200 g/m² | 2×2斜纹 | 3K T300 | 优异铺覆性，斜纹图案，高级外观 |
-| [碳纤维平纹布](/carbon-fiber/products/carbon-fiber-cloth/plain-cloth) | 200 g/m² | 平纹（1×1） | 3K T300 | 最大稳定性，均衡强度，平整表面 |
+| [碳纤维斜纹布](/carbon-fiber/carbon-fiber-cloth/twill-cloth) | 200 g/m² | 2×2斜纹 | 3K T300 | 优异铺覆性，斜纹图案，高级外观 |
+| [碳纤维平纹布](/carbon-fiber/carbon-fiber-cloth/plain-cloth) | 200 g/m² | 平纹（1×1） | 3K T300 | 最大稳定性，均衡强度，平整表面 |
 
 两款产品均使用东丽T300级碳纤维（拉伸模量230 GPa，拉伸强度3530 MPa）——结构复合材料增强的行业标准。标准卷幅宽为1000mm和1270mm。
 
@@ -71,7 +69,7 @@ image: "/images/blog/carbon-fiber-cloth-cover.jpg"
 
 **基本规律**：当部件具有复杂几何外形或碳纤维纹路需外露时选斜纹。当铺层中织物稳定性至关重要或部件为平面/管状时选平纹。
 
-![碳纤维编织布产品](/images/carbon-fiber/06-carbon-fiber-cloth/01-carbon-glass-hybrid-cloth/carbon-glass-hybrid-cloth-03.jpg)
+![作为全碳布替代方案的碳玻混编织物](/images/carbon-fiber/06-carbon-fiber-cloth/01-carbon-glass-hybrid-cloth/carbon-glass-hybrid-cloth-03.jpg)
 
 ## 按行业分类的应用
 
@@ -157,7 +155,7 @@ image: "/images/blog/carbon-fiber-cloth-cover.jpg"
 
 ### T300和T700碳纤维有什么区别？
 
-T300（拉伸模量230 GPa，强度3530 MPa）是大多数复合材料应用中使用的标准模量级别。T700（拉伸模量230 GPa，强度4900 MPa）提供约40%更高的拉伸强度，但成本更高。我们的编织布使用T300——适合绝大多数结构和装饰应用。如需T700规格，我们提供[碳纤维纱线](/carbon-fiber/products/carbon-fiber-raw/carbon-yarn)12K规格。
+T300（拉伸模量230 GPa，强度3530 MPa）是大多数复合材料应用中使用的标准模量级别。T700（拉伸模量230 GPa，强度4900 MPa）提供约40%更高的拉伸强度，但成本更高。我们的编织布使用T300——适合绝大多数结构和装饰应用。如需T700规格，我们提供[碳纤维纱线](/carbon-fiber/carbon-fiber-raw/carbon-yarn)12K规格。
 
 ### 碳纤维布与玻璃纤维的成本对比？
 
@@ -173,4 +171,6 @@ T300（拉伸模量230 GPa，强度3530 MPa）是大多数复合材料应用中�
 
 ## 下一步
 
-无论您需要200g斜纹布用于可见汽车面板，还是平纹布用于结构平面层压板——我们均以T300 3K规格生产，保持标准库存。浏览完整的[碳纤维产品系列](/carbon-fiber/products)，探索[碳纤维应用领域](/applications)，或通过[联系页面](/contact)发送您的规格。样卷（10–50m）在3–5个工作日内发往大多数国家。
+询价前，可先使用[碳纤维布规格指南](/blog/carbon-fiber-fabric-specification-guide)定义产品字段，再用[复合材料增强材料询价清单](/blog/composite-reinforcement-rfq-checklist)补齐工艺、数量、包装和文件要求。
+
+无论您需要200g斜纹布用于可见汽车面板，还是平纹布用于结构平面层压板——我们均以T300 3K规格生产，保持标准库存。浏览完整的[碳纤维产品系列](/carbon-fiber)，探索[碳纤维应用领域](/applications)，或通过[联系页面](/contact)发送您的规格。样卷（10–50m）在3–5个工作日内发往大多数国家。

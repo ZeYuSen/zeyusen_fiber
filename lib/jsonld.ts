@@ -135,6 +135,7 @@ export function articleJsonLd({
   datePublished,
   dateModified,
   path,
+  inLanguage,
 }: {
   title: string;
   description: string;
@@ -142,15 +143,18 @@ export function articleJsonLd({
   datePublished: string;
   dateModified?: string;
   path: string;
+  inLanguage?: string;
 }) {
+  const url = absoluteUrl(path);
   return {
     "@context": "https://schema.org",
-    "@type": "Article",
+    "@type": "BlogPosting",
     headline: title,
     description,
     image: absoluteUrl(image),
     datePublished,
     dateModified: dateModified ?? datePublished,
+    ...(inLanguage ? { inLanguage } : {}),
     author: {
       "@type": "Organization",
       name: "ZeYuSen Fiber",
@@ -164,6 +168,9 @@ export function articleJsonLd({
         url: absoluteUrl(logoSrc),
       },
     },
-    mainEntityOfPage: absoluteUrl(path),
+    mainEntityOfPage: {
+      "@type": "WebPage",
+      "@id": url,
+    },
   };
 }

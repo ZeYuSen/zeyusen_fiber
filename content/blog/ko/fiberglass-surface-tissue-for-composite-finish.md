@@ -4,10 +4,8 @@ description: "유리섬유 표면 매트가 산업용 유리섬유 부품에서 
 slug: "fiberglass-surface-tissue-for-composite-finish"
 date: "2026-05-10"
 tags: ["유리섬유", "표면 매트", "복합재 마감"]
-image: "/images/glass-fiber/01-fiberglass-tissue-mat/01-surface-tissue/50g-blue-surface-tissue-01.jpg"
+image: "/images/blog/fiberglass-surface-tissue-cover.jpg"
 ---
-
-![유리섬유 표면 매트](/images/glass-fiber/01-fiberglass-tissue-mat/01-surface-tissue/50g-blue-surface-tissue-01.jpg)
 
 # 복합재 마감 및 부식 방어층을 위한 유리섬유 표면 매트
 
@@ -26,7 +24,7 @@ image: "/images/glass-fiber/01-fiberglass-tissue-mat/01-surface-tissue/50g-blue-
 - 성형 부품의 표면 균일성.
 - 파이프, 탱크, 패널, 산업 제품의 보호층.
 
-더 많은 보강재 형태를 보려면 관련 [표면 매트 소재](/glass-fiber/products/tissue-mat/surface-tissue)와 [유리섬유 제품 카테고리](/glass-fiber/products)를 살펴보세요.
+더 많은 보강재 형태를 보려면 관련 [표면 매트 소재](/glass-fiber/tissue-mat/surface-tissue)와 [유리섬유 제품 카테고리](/glass-fiber)를 살펴보세요.
 
 ![복합재 표면층용 흰색 유리섬유 매트](/images/glass-fiber/01-fiberglass-tissue-mat/01-surface-tissue/300g-white-surface-tissue-01.jpg)
 
@@ -93,4 +91,4 @@ image: "/images/glass-fiber/01-fiberglass-tissue-mat/01-surface-tissue/50g-blue-
 
 ## 다음 단계
 
-[유리섬유 제품](/glass-fiber/products)을 비교하거나 목표 표면 마감과 수지 시스템을 포함하여 [ZeYuSen Fiber에 문의](/contact)하세요.
+[유리섬유 제품](/glass-fiber)을 비교하거나 목표 표면 마감과 수지 시스템을 포함하여 [ZeYuSen Fiber에 문의](/contact)하세요.

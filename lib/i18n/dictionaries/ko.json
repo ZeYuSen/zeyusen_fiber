@@ -97,7 +97,18 @@
     "needHelpTitle": "소재 선택에 도움이 필요하신가요?",
     "needHelpBody": "목표 응용분야, 공정, 필요 사양을 알려주세요. ZeYuSen Fiber가 귀하의 프로젝트에 맞는 탄소섬유 및 유리섬유 소재 옵션을 비교해 드립니다.",
     "needHelpCta": "ZeYuSen Fiber 문의하기",
-    "print": "인쇄"
+    "print": "인쇄",
+    "searchPlaceholder": "기사 검색...",
+    "noResults": "검색 결과가 없습니다.",
+    "previous": "이전",
+    "next": "다음",
+    "pageLabel": "블로그 페이지",
+    "sortLabel": "정렬 기준",
+    "sortDateDesc": "최신순",
+    "sortDateAsc": "오래된순",
+    "sortTitleAsc": "제목 A – Z",
+    "sortTitleDesc": "제목 Z – A",
+    "jumpTo": "이동"
   },
   "form": {
     "name": "이름",

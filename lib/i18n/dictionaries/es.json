@@ -97,7 +97,18 @@
     "needHelpTitle": "¿Necesita ayuda para elegir un material?",
     "needHelpBody": "Envíenos su aplicación objetivo, proceso y especificaciones requeridas. ZeYuSen Fiber puede ayudarle a comparar opciones de materiales de fibra de carbono y fibra de vidrio para su proyecto.",
     "needHelpCta": "Contactar a ZeYuSen Fiber",
-    "print": "Imprimir"
+    "print": "Imprimir",
+    "searchPlaceholder": "Buscar artículos...",
+    "noResults": "Ningún artículo coincide con tu búsqueda.",
+    "previous": "Anterior",
+    "next": "Siguiente",
+    "pageLabel": "Paginación del blog",
+    "sortLabel": "Ordenar",
+    "sortDateDesc": "Más recientes",
+    "sortDateAsc": "Más antiguos",
+    "sortTitleAsc": "Título A – Z",
+    "sortTitleDesc": "Título Z – A",
+    "jumpTo": "Ir a"
   },
   "form": {
     "name": "Nombre",

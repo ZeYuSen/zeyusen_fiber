@@ -4,10 +4,8 @@ description: "了解玻璃纤维表面薄毡如何在工业玻纤部件中支持
 slug: "fiberglass-surface-tissue-for-composite-finish"
 date: "2026-05-10"
 tags: ["玻璃纤维", "表面薄毡", "复合材料表面"]
-image: "/images/glass-fiber/01-fiberglass-tissue-mat/01-surface-tissue/50g-blue-surface-tissue-01.jpg"
+image: "/images/blog/fiberglass-surface-tissue-cover.jpg"
 ---
-
-![玻璃纤维表面薄毡](/images/glass-fiber/01-fiberglass-tissue-mat/01-surface-tissue/50g-blue-surface-tissue-01.jpg)
 
 # 玻璃纤维表面薄毡在复合材料表面效果与防腐层中的应用
 
@@ -26,7 +24,7 @@ image: "/images/glass-fiber/01-fiberglass-tissue-mat/01-surface-tissue/50g-blue-
 - 模压部件的表面均匀性。
 - 管道、储罐、面板和工业产品中的保护层。
 
-浏览相关[表面薄毡材料](/glass-fiber/products/tissue-mat/surface-tissue)和[玻璃纤维产品类别](/glass-fiber/products)了解更多增强形式。
+浏览相关[表面薄毡材料](/glass-fiber/tissue-mat/surface-tissue)和[玻璃纤维产品类别](/glass-fiber)了解更多增强形式。
 
 ![复合材料表层面用白色玻纤薄毡](/images/glass-fiber/01-fiberglass-tissue-mat/01-surface-tissue/300g-white-surface-tissue-01.jpg)
 
@@ -93,4 +91,4 @@ image: "/images/glass-fiber/01-fiberglass-tissue-mat/01-surface-tissue/50g-blue-
 
 ## 下一步
 
-对比[玻璃纤维产品](/glass-fiber/products)或联系泽宇森纤维，提供您的目标表面效果和树脂体系。
+对比[玻璃纤维产品](/glass-fiber)或联系泽宇森纤维，提供您的目标表面效果和树脂体系。

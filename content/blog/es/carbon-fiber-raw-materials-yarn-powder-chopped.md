@@ -7,8 +7,6 @@ tags: ["hilo de fibra de carbono", "fibra de carbono cortada", "polvo de fibra d
 image: "/images/blog/carbon-fiber-raw-materials-cover.jpg"
 ---
 
-![Materias primas de fibra de carbono](/images/blog/carbon-fiber-raw-materials-cover.jpg)
-
 # Materias Primas de Fibra de Carbono: Guía de Selección de Hilo, Fibra Cortada y Polvo
 
 Más allá de los tejidos y los mats no tejidos, la fibra de carbono también se suministra en formatos de materia prima: hilo (mecha continua), fibra corta (hilos cortados) y polvo (fibra molida). Estas materias primas sirven como insumo para compoundización, moldeo, fabricación aditiva y procesos de compuestos especiales donde los tejidos preformados no son adecuados.
@@ -19,9 +17,9 @@ Fabricamos y suministramos los tres formatos de materia prima de fibra de carbon
 
 | Producto | Formato | Grados Disponibles | Aplicaciones Principales |
 |---|---|---|---|
-| [Hilo de Fibra de Carbono](/carbon-fiber/products/carbon-fiber-raw/carbon-yarn) | Mecha continua en bobina | T300 3K, T300 6K, T700 12K | Tejido, enrollado por filamento, pultrusión, trenzado |
-| [Fibra de Carbono Corta](/carbon-fiber/products/carbon-fiber-raw/short-cut-fiber) | Hilos cortados (3–12mm) | Módulo estándar | Plásticos modificados, compuestos para apantallamiento EMI, BMC/SMC |
-| [Polvo de Fibra de Carbono](/carbon-fiber/products/carbon-fiber-raw/carbon-powder) | Fibra molida (50–200μm) | Módulo estándar | Relleno de compuestos, materiales de fricción, resistencia al desgaste |
+| [Hilo de Fibra de Carbono](/carbon-fiber/carbon-fiber-raw/carbon-yarn) | Mecha continua en bobina | T300 3K, T300 6K, T700 12K | Tejido, enrollado por filamento, pultrusión, trenzado |
+| [Fibra de Carbono Corta](/carbon-fiber/carbon-fiber-raw/short-cut-fiber) | Hilos cortados (3–12mm) | Módulo estándar | Plásticos modificados, compuestos para apantallamiento EMI, BMC/SMC |
+| [Polvo de Fibra de Carbono](/carbon-fiber/carbon-fiber-raw/carbon-powder) | Fibra molida (50–200μm) | Módulo estándar | Relleno de compuestos, materiales de fricción, resistencia al desgaste |
 
 Todos los productos se fabrican a partir de precursor de fibra de carbono de base PAN (poliacrilonitrilo), garantizando calidad constante y propiedades mecánicas uniformes.
 
@@ -230,4 +228,4 @@ Sí. Nuestro hilo T700 12K está específicamente indicado para aplicaciones de 
 
 ## Próximo Paso
 
-Ya sea que necesite hilo T300 3K para tejido, T700 12K para enrollado por filamento, fibra cortada para compuestos de moldeo por inyección o polvo molido para materiales de fricción — suministramos la gama completa de materias primas de fibra de carbono. Revise el [catálogo completo de productos de fibra de carbono](/carbon-fiber/products), explore las [aplicaciones de fibra de carbono](/applications) o envíe sus requisitos de material a través de la [página de contacto](/contact). Cantidades de muestra (1–5 kg) disponibles para evaluación en un plazo de 5–7 días hábiles.
+Ya sea que necesite hilo T300 3K para tejido, T700 12K para enrollado por filamento, fibra cortada para compuestos de moldeo por inyección o polvo molido para materiales de fricción — suministramos la gama completa de materias primas de fibra de carbono. Revise el [catálogo completo de productos de fibra de carbono](/carbon-fiber), explore las [aplicaciones de fibra de carbono](/applications) o envíe sus requisitos de material a través de la [página de contacto](/contact). Cantidades de muestra (1–5 kg) disponibles para evaluación en un plazo de 5–7 días hábiles.

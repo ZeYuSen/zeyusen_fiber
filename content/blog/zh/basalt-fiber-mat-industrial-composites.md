@@ -4,10 +4,8 @@ description: "面向复合材料采购方的玄武岩纤维毡实用指南，比
 slug: "basalt-fiber-mat-industrial-composites"
 date: "2026-05-10"
 tags: ["玄武岩纤维", "工业复合材料", "增强材料"]
-image: "/images/glass-fiber/07-other-fiber/01-basalt-mat/30g-basalt-mat-01.jpg"
+image: "/images/blog/basalt-mat-cover.jpg"
 ---
-
-![工业复合材料用玄武岩纤维毡](/images/glass-fiber/07-other-fiber/01-basalt-mat/30g-basalt-mat-01.jpg)
 
 # 工业复合材料用玄武岩纤维毡：适用场景分析
 
@@ -27,7 +25,7 @@ image: "/images/glass-fiber/07-other-fiber/01-basalt-mat/30g-basalt-mat-01.jpg"
 - 经验证与复合材料制造流程兼容。
 - 与玻璃纤维和碳纤维并列的有价值的对比参照物。
 
-浏览[玻璃纤维产品目录](/glass-fiber/products)比较相关增强材料。
+浏览[玻璃纤维产品目录](/glass-fiber)比较相关增强材料。
 
 ![玄武岩毡卷纹理](/images/glass-fiber/07-other-fiber/01-basalt-mat/30g-basalt-mat-02.jpg)
 
@@ -87,3 +85,5 @@ image: "/images/glass-fiber/07-other-fiber/01-basalt-mat/30g-basalt-mat-01.jpg"
 ## 下一步
 
 如您正在评估特种增强材料，可浏览[玻璃纤维材料](/glass-fiber)、查看[应用领域](/applications)或[发送您的需求](/contact)进行材料讨论。
+
+在更换材料家族前，请使用[玄武岩纤维与玻璃纤维选型指南](/blog/basalt-fiber-vs-fiberglass-selection-guide)对比同类结构、供应商证据、工艺验证和供应条件。

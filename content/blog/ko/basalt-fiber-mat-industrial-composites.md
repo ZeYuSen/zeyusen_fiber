@@ -4,10 +4,8 @@ description: "내열성, 내구성, 산업용 적층 설계를 위한 보강재 
 slug: "basalt-fiber-mat-industrial-composites"
 date: "2026-05-10"
 tags: ["현무암 섬유", "산업용 복합재", "보강재"]
-image: "/images/glass-fiber/07-other-fiber/01-basalt-mat/30g-basalt-mat-01.jpg"
+image: "/images/blog/basalt-mat-cover.jpg"
 ---
-
-![산업용 복합재를 위한 현무암 섬유 매트](/images/glass-fiber/07-other-fiber/01-basalt-mat/30g-basalt-mat-01.jpg)
 
 # 산업용 복합재를 위한 현무암 섬유 매트: 적합한 용도
 
@@ -27,7 +25,7 @@ image: "/images/glass-fiber/07-other-fiber/01-basalt-mat/30g-basalt-mat-01.jpg"
 - 검증이 필요하지만 복합재 제조 공정과의 호환성.
 - 유리섬유 및 탄소섬유와의 유용한 비교 기준점.
 
-관련 보강 소재를 비교하려면 [유리섬유 제품 카탈로그](/glass-fiber/products)를 참조하세요.
+관련 보강 소재를 비교하려면 [유리섬유 제품 카탈로그](/glass-fiber)를 참조하세요.
 
 ![현무암 매트 롤 텍스처](/images/glass-fiber/07-other-fiber/01-basalt-mat/30g-basalt-mat-02.jpg)
 
@@ -87,3 +85,5 @@ image: "/images/glass-fiber/07-other-fiber/01-basalt-mat/30g-basalt-mat-01.jpg"
 ## 다음 단계
 
 특수 보강 소재를 평가 중이라면 [유리섬유 소재](/glass-fiber)를 살펴보고, [응용 분야](/applications)를 검토하거나, 소재 상담을 위해 [요구 사항을 보내주세요](/contact).
+
+소재 계열을 변경하기 전에 [현무암 섬유와 유리섬유 선택 가이드](/blog/basalt-fiber-vs-fiberglass-selection-guide)에서 동등한 형식, 공급업체 근거, 공정 검증과 조달 조건을 비교하십시오.

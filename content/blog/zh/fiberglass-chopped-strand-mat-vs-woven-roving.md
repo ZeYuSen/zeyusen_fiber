@@ -4,10 +4,8 @@ description: "对比玻璃纤维短切毡和方格布在铺层强度、树脂流
 slug: "fiberglass-chopped-strand-mat-vs-woven-roving"
 date: "2026-05-10"
 tags: ["玻璃纤维", "短切毡", "方格布"]
-image: "/images/glass-fiber/04-chopped-strand-mat/300g-chopped-strand-mat-01.jpg"
+image: "/images/blog/chopped-strand-mat-cover.jpg"
 ---
-
-![玻璃纤维短切毡卷](/images/glass-fiber/04-chopped-strand-mat/300g-chopped-strand-mat-01.jpg)
 
 # 玻璃纤维短切毡与方格布：生产工艺选型指南
 
@@ -26,7 +24,7 @@ image: "/images/glass-fiber/04-chopped-strand-mat/300g-chopped-strand-mat-01.jpg
 | 表面效果 | 胶衣下常更平滑 | 纹路透出风险更大 |
 | 典型用途 | 通用层压板、背衬层 | 船体、面板、储罐、结构壳体 |
 
-如需对比材料系列，请浏览[短切毡](/glass-fiber/products/chopped-strand-mat/chopped-strand-mat)和[方格布](/glass-fiber/products/fiberglass-cloth/woven-roving)。
+如需对比材料系列，请浏览[短切毡](/glass-fiber/chopped-strand-mat/chopped-strand-mat)和[方格布](/glass-fiber/fiberglass-cloth/woven-roving)。
 
 ![方格布玻纤增强材料](/images/glass-fiber/02-fiberglass-cloth/06-woven-roving/400g-woven-roving-01.jpg)
 
@@ -100,4 +98,4 @@ image: "/images/glass-fiber/04-chopped-strand-mat/300g-chopped-strand-mat-01.jpg
 
 ## 下一步
 
-查看[玻璃纤维产品类别](/glass-fiber/products)或联系泽宇森纤维，提供您的目标克重、工艺和应用。
+查看[玻璃纤维产品类别](/glass-fiber)或联系泽宇森纤维，提供您的目标克重、工艺和应用。

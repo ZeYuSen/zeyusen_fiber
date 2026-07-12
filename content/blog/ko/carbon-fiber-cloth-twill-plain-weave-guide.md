@@ -4,10 +4,8 @@ description: "자동차, 항공우주, 산업용 복합재를 위한 200g 탄소
 slug: "carbon-fiber-cloth-twill-plain-weave-guide"
 date: "2026-05-28"
 tags: ["탄소섬유 직물", "탄소섬유 패브릭", "능직", "평직", "3K 탄소섬유", "우븐 탄소섬유"]
-image: "/images/blog/carbon-fiber-cloth-cover.jpg"
+image: "/images/blog/carbon-fiber-twill-plain-cover.webp"
 ---
-
-![탄소섬유 직물 직조 패턴](/images/blog/carbon-fiber-cloth-cover.jpg)
 
 # 탄소섬유 직물: 200g 능직 vs 평직 선택 가이드
 
@@ -21,8 +19,8 @@ image: "/images/blog/carbon-fiber-cloth-cover.jpg"
 
 | 제품 | GSM | 직조 | 토우 크기 | 주요 특징 |
 |---|---|---|---|---|
-| [탄소섬유 능직 클로스](/carbon-fiber/products/carbon-fiber-cloth/twill-cloth) | 200 g/m² | 2×2 능직 | 3K T300 | 우수한 드레이프성, 사선 패턴, 프리미엄 외관 |
-| [탄소섬유 평직 클로스](/carbon-fiber/products/carbon-fiber-cloth/plain-cloth) | 200 g/m² | 평직 (1×1) | 3K T300 | 최고 안정성, 균형 강도, 평탄한 표면 |
+| [탄소섬유 능직 클로스](/carbon-fiber/carbon-fiber-cloth/twill-cloth) | 200 g/m² | 2×2 능직 | 3K T300 | 우수한 드레이프성, 사선 패턴, 프리미엄 외관 |
+| [탄소섬유 평직 클로스](/carbon-fiber/carbon-fiber-cloth/plain-cloth) | 200 g/m² | 평직 (1×1) | 3K T300 | 최고 안정성, 균형 강도, 평탄한 표면 |
 
 두 제품 모두 Toray T300 등급 탄소섬유(인장 탄성률 230 GPa, 인장 강도 3530 MPa)를 사용합니다 — 구조용 복합재 보강재의 업계 표준입니다. 표준 롤 폭은 1000mm와 1270mm입니다.
 
@@ -71,7 +69,7 @@ image: "/images/blog/carbon-fiber-cloth-cover.jpg"
 
 **선택 원칙**: 부품의 형상이 복잡하거나 탄소섬유 직조 패턴이 보일 때는 능직을 선택하십시오. 적층 중 패브릭 안정성이 중요하거나 부품이 평탄/원통형일 때는 평직을 선택하십시오.
 
-![탄소섬유 직물 제품](/images/carbon-fiber/06-carbon-fiber-cloth/01-carbon-glass-hybrid-cloth/carbon-glass-hybrid-cloth-03.jpg)
+![전체 탄소 직물의 대안인 탄소-유리 하이브리드 직물](/images/carbon-fiber/06-carbon-fiber-cloth/01-carbon-glass-hybrid-cloth/carbon-glass-hybrid-cloth-03.jpg)
 
 ## 산업별 적용 사례
 
@@ -157,7 +155,7 @@ image: "/images/blog/carbon-fiber-cloth-cover.jpg"
 
 ### T300과 T700 탄소섬유의 차이점은 무엇입니까?
 
-T300(인장 탄성률 230 GPa, 강도 3530 MPa)은 대부분의 복합재 용도에 사용되는 표준 탄성률 등급입니다. T700(인장 탄성률 230 GPa, 강도 4900 MPa)은 높은 비용으로 약 40% 더 높은 인장 강도를 제공합니다. 당사의 직물은 T300을 사용합니다 — 대부분의 구조용 및 장식용 용도에 적합합니다. T700 요구 사항의 경우, 12K 형태의 [탄소섬유 원사](/carbon-fiber/products/carbon-fiber-raw/carbon-yarn)를 제공합니다.
+T300(인장 탄성률 230 GPa, 강도 3530 MPa)은 대부분의 복합재 용도에 사용되는 표준 탄성률 등급입니다. T700(인장 탄성률 230 GPa, 강도 4900 MPa)은 높은 비용으로 약 40% 더 높은 인장 강도를 제공합니다. 당사의 직물은 T300을 사용합니다 — 대부분의 구조용 및 장식용 용도에 적합합니다. T700 요구 사항의 경우, 12K 형태의 [탄소섬유 원사](/carbon-fiber/carbon-fiber-raw/carbon-yarn)를 제공합니다.
 
 ### 탄소섬유 직물의 유리섬유 대비 비용은 어떻습니까?
 
@@ -173,4 +171,6 @@ T300(인장 탄성률 230 GPa, 강도 3530 MPa)은 대부분의 복합재 용도
 
 ## 다음 단계
 
-가시적 자동차 패널을 위한 200g 능직 직물이든 구조용 평판 적층을 위한 평직이든 — 당사는 표준 재고로 T300 3K 형태의 두 가지를 모두 제조합니다. 전체 [탄소섬유 제품 라인](/carbon-fiber/products)을 비교하고, [탄소섬유 응용 분야](/applications)를 탐색하거나, [문의 페이지](/contact)를 통해 사양을 보내주십시오. 샘플 롤(10–50m)은 대부분의 국가에 3–5 영업일 내에 발송됩니다.
+견적을 요청하기 전에 [탄소섬유 직물 사양 가이드](/blog/carbon-fiber-fabric-specification-guide)로 제품 필드를 정의하고, [복합재 보강재 RFQ 체크리스트](/blog/composite-reinforcement-rfq-checklist)에 공정, 수량, 포장 및 문서 요구사항을 정리하십시오.
+
+가시적 자동차 패널을 위한 200g 능직 직물이든 구조용 평판 적층을 위한 평직이든 — 당사는 표준 재고로 T300 3K 형태의 두 가지를 모두 제조합니다. 전체 [탄소섬유 제품 라인](/carbon-fiber)을 비교하고, [탄소섬유 응용 분야](/applications)를 탐색하거나, [문의 페이지](/contact)를 통해 사양을 보내주십시오. 샘플 롤(10–50m)은 대부분의 국가에 3–5 영업일 내에 발송됩니다.

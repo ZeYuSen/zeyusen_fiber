@@ -7,8 +7,6 @@ tags: ["fio de fibra de carbono", "fibra de carbono picada", "pó de fibra de ca
 image: "/images/blog/carbon-fiber-raw-materials-cover.jpg"
 ---
 
-![Matérias-primas de fibra de carbono](/images/blog/carbon-fiber-raw-materials-cover.jpg)
-
 # Matérias-Primas de Fibra de Carbono: Guia de Seleção de Fio, Fibra Picada e Pó
 
 Além de tecidos e mantas não-tecidas, a fibra de carbono também é fornecida em formatos de matéria-prima — fio (cabo contínuo), fibra picada (mechas cortadas) e pó (fibra moída). Essas matérias-primas servem como insumo para composição, moldagem, manufatura aditiva e processos de compósitos especializados onde tecidos pré-formados não são adequados.
@@ -19,9 +17,9 @@ Fabricamos e fornecemos os três formatos de matéria-prima de fibra de carbono,
 
 | Produto | Formato | Graus Disponíveis | Aplicações Primárias |
 |---|---|---|---|
-| [Fio de Fibra de Carbono](/carbon-fiber/products/carbon-fiber-raw/carbon-yarn) | Cabo contínuo em bobina | T300 3K, T300 6K, T700 12K | Tecelagem, enrolamento filamentar, pultrusão, trançagem |
-| [Fibra de Carbono Picada](/carbon-fiber/products/carbon-fiber-raw/short-cut-fiber) | Mechas cortadas (3–12mm) | Módulo padrão | Plásticos modificados, compostos de blindagem EMI, BMC/SMC |
-| [Pó de Fibra de Carbono](/carbon-fiber/products/carbon-fiber-raw/carbon-powder) | Fibra moída (50–200μm) | Módulo padrão | Carga para compósitos, materiais de fricção, resistência ao desgaste |
+| [Fio de Fibra de Carbono](/carbon-fiber/carbon-fiber-raw/carbon-yarn) | Cabo contínuo em bobina | T300 3K, T300 6K, T700 12K | Tecelagem, enrolamento filamentar, pultrusão, trançagem |
+| [Fibra de Carbono Picada](/carbon-fiber/carbon-fiber-raw/short-cut-fiber) | Mechas cortadas (3–12mm) | Módulo padrão | Plásticos modificados, compostos de blindagem EMI, BMC/SMC |
+| [Pó de Fibra de Carbono](/carbon-fiber/carbon-fiber-raw/carbon-powder) | Fibra moída (50–200μm) | Módulo padrão | Carga para compósitos, materiais de fricção, resistência ao desgaste |
 
 Todos os produtos são fabricados a partir de precursor de fibra de carbono à base de PAN (poliacrilonitrila), garantindo qualidade e propriedades mecânicas consistentes.
 
@@ -230,4 +228,4 @@ Sim. Nosso fio T700 12K é especificamente adequado para aplicações de enrolam
 
 ## Próximo Passo
 
-Quer você precise de fio T300 3K para tecelagem, T700 12K para enrolamento filamentar, fibra picada para compostos de moldagem por injeção ou pó moído para materiais de fricção — fornecemos toda a gama de matérias-primas de fibra de carbono. Consulte o [catálogo completo de produtos de fibra de carbono](/carbon-fiber/products), explore as [aplicações de fibra de carbono](/applications) ou envie seus requisitos de material pela [página de contato](/contact). Quantidades de amostra (1–5 kg) disponíveis para avaliação em 5–7 dias úteis.
+Quer você precise de fio T300 3K para tecelagem, T700 12K para enrolamento filamentar, fibra picada para compostos de moldagem por injeção ou pó moído para materiais de fricção — fornecemos toda a gama de matérias-primas de fibra de carbono. Consulte o [catálogo completo de produtos de fibra de carbono](/carbon-fiber), explore as [aplicações de fibra de carbono](/applications) ou envie seus requisitos de material pela [página de contato](/contact). Quantidades de amostra (1–5 kg) disponíveis para avaliação em 5–7 dias úteis.

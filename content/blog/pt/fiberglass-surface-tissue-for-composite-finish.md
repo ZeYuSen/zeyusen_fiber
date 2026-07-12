@@ -4,10 +4,8 @@ description: "Saiba como o véu de superfície em fibra de vidro auxilia em supe
 slug: "fiberglass-surface-tissue-for-composite-finish"
 date: "2026-05-10"
 tags: ["fibra de vidro", "véu de superfície", "acabamento composto"]
-image: "/images/glass-fiber/01-fiberglass-tissue-mat/01-surface-tissue/50g-blue-surface-tissue-01.jpg"
+image: "/images/blog/fiberglass-surface-tissue-cover.jpg"
 ---
-
-![Manta de véu de superfície em fibra de vidro](/images/glass-fiber/01-fiberglass-tissue-mat/01-surface-tissue/50g-blue-surface-tissue-01.jpg)
 
 # Véu de Superfície em Fibra de Vidro para Acabamento de Compostos e Barreiras Anticorrosão
 
@@ -26,7 +24,7 @@ O véu de superfície pode auxiliar com:
 - Uniformidade superficial em peças moldadas.
 - Camadas de proteção em tubulações, tanques, painéis e produtos industriais.
 
-Consulte os [materiais de véu de superfície](/glass-fiber/products/tissue-mat/surface-tissue) relacionados e as [categorias de produtos de fibra de vidro](/glass-fiber/products) para outros formatos de reforço.
+Consulte os [materiais de véu de superfície](/glass-fiber/tissue-mat/surface-tissue) relacionados e as [categorias de produtos de fibra de vidro](/glass-fiber) para outros formatos de reforço.
 
 ![Véu branco de fibra de vidro para camadas superficiais compostas](/images/glass-fiber/01-fiberglass-tissue-mat/01-surface-tissue/300g-white-surface-tissue-01.jpg)
 
@@ -93,4 +91,4 @@ Frequentemente pode proporcionar uma superfície mais lisa sob ou próximo às c
 
 ## Próximo Passo
 
-Compare os [produtos de fibra de vidro](/glass-fiber/products) ou [entre em contato com a ZeYuSen Fiber](/contact) informando o acabamento superficial desejado e o sistema de resina.
+Compare os [produtos de fibra de vidro](/glass-fiber) ou [entre em contato com a ZeYuSen Fiber](/contact) informando o acabamento superficial desejado e o sistema de resina.

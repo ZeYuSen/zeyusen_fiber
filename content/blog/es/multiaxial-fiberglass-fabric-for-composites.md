@@ -7,8 +7,6 @@ tags: ["fibra de vidrio", "tejido multiaxial", "tejido sin rizado", "estera cosi
 image: "/images/blog/multiaxial-fiberglass-cover.jpg"
 ---
 
-![Tejido multiaxial de fibra de vidrio para composites de energía eólica](/images/blog/multiaxial-fiberglass-cover.jpg)
-
 # Tejido Multiaxial de Fibra de Vidrio: Refuerzo Sin Rizado para Energía Eólica y Composites Estructurales
 
 El tejido multiaxial de fibra de vidrio —también llamado tejido sin rizado (NCF), tejido cosido o refuerzo multicapa— está diseñado para piezas de composite que necesitan resistencia en más de una dirección. En lugar de depender únicamente de una estructura tejida tradicional 0°/90°, los refuerzos multiaxiales colocan las fibras en ángulos calculados como ±45°, 0°/90° u orientaciones combinadas para adaptarse a la trayectoria de carga de la pieza.
@@ -29,7 +27,7 @@ Las ventajas principales incluyen:
 - Estabilidad de manipulación útil gracias a la construcción cosida — menos propenso al deshilachado que la cinta UD.
 - Mejores características de infusión — los canales de costura pueden facilitar el flujo de resina.
 
-Explora los [materiales de fibra de vidrio](/glass-fiber) relacionados y los [productos de fibra de vidrio](/glass-fiber/products).
+Explora los [materiales de fibra de vidrio](/glass-fiber) relacionados y los [productos de fibra de vidrio](/glass-fiber).
 
 ## Nuestra Gama de Productos Multiaxiales y Biaxiales
 
@@ -37,12 +35,12 @@ Fabricamos una gama completa de refuerzos de fibra de vidrio cosidos optimizados
 
 | Producto | GSM | Orientación | Aplicaciones Principales |
 |---|---|---|---|
-| [Tejido Multiaxial de Fibra de Vidrio](/glass-fiber/products/fiberglass-cloth/multiaxial) | 300 g/m² | ±45° biaxial | Cubiertas de góndola de aerogeneradores, carcasas estructurales ligeras |
-| [Estera Cosida Unidireccional](/glass-fiber/products/composite-mat/unidirectional-450) | 450 g/m² | 0° (UD) | Perfiles de pultrusión para energía eólica, costillas de larguero |
-| [Estera Cosida Biaxial ±45°](/glass-fiber/products/composite-mat/biaxial-45) | 900 g/m² | ±45° | Góndola de aerogenerador, estructuras sometidas a torsión |
-| [Estera Cosida Biaxial 0/90°](/glass-fiber/products/composite-mat/biaxial-0-90) | 900 g/m² | 0°/90° | Paneles de energía eólica, carga equilibrada en el plano |
-| [Estera Composite Cosida en Rejilla](/glass-fiber/products/composite-mat/grid-stitched) | 1050 g/m² | Patrón de rejilla | Cubiertas de góndola, grandes paneles estructurales |
-| [Estera Cosida Multiaxial](/glass-fiber/products/composite-mat/multiaxial-1200) | 1200 g/m² | Cuadriaxial | Palas de aerogenerador, carcasas estructurales de alta carga |
+| [Tejido Multiaxial de Fibra de Vidrio](/glass-fiber/fiberglass-cloth/multiaxial) | 300 g/m² | ±45° biaxial | Cubiertas de góndola de aerogeneradores, carcasas estructurales ligeras |
+| [Estera Cosida Unidireccional](/glass-fiber/composite-mat/unidirectional-450) | 450 g/m² | 0° (UD) | Perfiles de pultrusión para energía eólica, costillas de larguero |
+| [Estera Cosida Biaxial ±45°](/glass-fiber/composite-mat/biaxial-45) | 900 g/m² | ±45° | Góndola de aerogenerador, estructuras sometidas a torsión |
+| [Estera Cosida Biaxial 0/90°](/glass-fiber/composite-mat/biaxial-0-90) | 900 g/m² | 0°/90° | Paneles de energía eólica, carga equilibrada en el plano |
+| [Estera Composite Cosida en Rejilla](/glass-fiber/composite-mat/grid-stitched) | 1050 g/m² | Patrón de rejilla | Cubiertas de góndola, grandes paneles estructurales |
+| [Estera Cosida Multiaxial](/glass-fiber/composite-mat/multiaxial-1200) | 1200 g/m² | Cuadriaxial | Palas de aerogenerador, carcasas estructurales de alta carga |
 
 Todos los productos utilizan fibra E-glass con hilo de costura de poliéster. GSM personalizado, ancho (hasta 2500mm) y combinaciones de orientación están disponibles para pedidos superiores a 500m².
 
@@ -86,10 +84,10 @@ Para detalles de aplicaciones en energía eólica, visita las [aplicaciones de f
 Más allá de la energía eólica, el tejido multiaxial de fibra de vidrio se usa en:
 
 - **Marina**: Cascos, cubiertas, mamparos y refuerzos estructurales — ±45° para resistencia a torsión, 0°/90° para rigidez de paneles.
-- **Transporte**: Paneles de carrocería de camiones, componentes de vagones ferroviarios (nuestra [Estera Sándwich de Núcleo PP](/glass-fiber/products/composite-mat/pp-core) se usa en ferrocarril de alta velocidad) y estructuras de autobuses.
+- **Transporte**: Paneles de carrocería de camiones, componentes de vagones ferroviarios (nuestra [Estera Sándwich de Núcleo PP](/glass-fiber/composite-mat/pp-core) se usa en ferrocarril de alta velocidad) y estructuras de autobuses.
 - **Infraestructura**: Tableros de puentes, paneles de torres de refrigeración y perfiles estructurales.
 - **Industrial**: Recipientes a presión, depósitos, tuberías y grandes recintos.
-- **Pultrusión**: Perfiles continuos que requieren orientación específica de fibra — nuestra [estera cosida UD de 450g](/glass-fiber/products/composite-mat/unidirectional-450) está diseñada específicamente para procesos de pultrusión.
+- **Pultrusión**: Perfiles continuos que requieren orientación específica de fibra — nuestra [estera cosida UD de 450g](/glass-fiber/composite-mat/unidirectional-450) está diseñada específicamente para procesos de pultrusión.
 - **Materiales de construcción**: Paneles de revestimiento y paneles estructurales aislados.
 
 Para ideas de aplicación, visita [aplicaciones de fibra de vidrio](/applications/glass).
@@ -166,4 +164,6 @@ Para nuestros productos estándar (±45° de 300g, UD de 450g, biaxial de 900g, 
 
 ## Siguiente Paso
 
-Tanto si necesitas ±45° biaxial de 300g para cubiertas de góndola, estera cosida de 900g para carcasas estructurales o cuadriaxial de 1200g para palas de aerogeneradores — fabricamos la gama completa de refuerzos de fibra de vidrio sin rizado. Compara las [categorías de productos de fibra de vidrio](/glass-fiber/products), explora las [aplicaciones de energía eólica](/applications/glass), o comparte tu plan de laminado a través de la [página de contacto](/contact). Nuestro equipo de ingeniería puede ayudar a seleccionar la orientación, GSM y construcción correctos para tu caso de carga específico y proceso de fabricación. Rollos de muestra disponibles en 5–7 días hábiles.
+Tanto si necesitas ±45° biaxial de 300g para cubiertas de góndola, estera cosida de 900g para carcasas estructurales o cuadriaxial de 1200g para palas de aerogeneradores — fabricamos la gama completa de refuerzos de fibra de vidrio sin rizado. Compara las [categorías de productos de fibra de vidrio](/glass-fiber), explora las [aplicaciones de energía eólica](/applications/glass), o comparte tu plan de laminado a través de la [página de contacto](/contact). Nuestro equipo de ingeniería puede ayudar a seleccionar la orientación, GSM y construcción correctos para tu caso de carga específico y proceso de fabricación. Rollos de muestra disponibles en 5–7 días hábiles.
+
+Si la arquitectura sigue abierta, compare las diferencias de carga y manipulación en la [guía de fibra de vidrio unidireccional frente a tejida](/blog/unidirectional-vs-woven-fiberglass-guide).

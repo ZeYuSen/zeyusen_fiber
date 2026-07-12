@@ -97,7 +97,18 @@
     "needHelpTitle": "需要帮助选择材料？",
     "needHelpBody": "请告诉我们您的目标应用、工艺和所需规格。泽宇森纤维可以帮助比较碳纤维和玻璃纤维材料选项。",
     "needHelpCta": "联系泽宇森纤维",
-    "print": "打印"
+    "print": "打印",
+    "searchPlaceholder": "搜索文章...",
+    "noResults": "没有匹配的文章。",
+    "previous": "上一页",
+    "next": "下一页",
+    "pageLabel": "博客分页",
+    "sortLabel": "排序方式",
+    "sortDateDesc": "最新优先",
+    "sortDateAsc": "最早优先",
+    "sortTitleAsc": "标题 A – Z",
+    "sortTitleDesc": "标题 Z – A",
+    "jumpTo": "跳至"
   },
   "form": {
     "name": "姓名",
