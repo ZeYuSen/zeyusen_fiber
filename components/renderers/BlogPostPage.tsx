@@ -5,20 +5,12 @@ import { localizedHref } from "@/lib/i18n/routes";
 import { localizePath } from "@/lib/i18n/localize-path";
 import type { Dictionary } from "@/lib/i18n/dictionaries";
 import type { BlogPost } from "@/data/blog";
+import { createSlugger } from "@/lib/blog-slug";
 import { TableOfContents } from "@/components/blog/TableOfContents";
 import { FAQAccordion } from "@/components/blog/FAQAccordion";
 import { AuthorSignature } from "@/components/blog/AuthorSignature";
 import { PrintButton } from "@/components/blog/PrintButton";
 import { VideoEmbed } from "@/components/blog/VideoEmbed";
-
-function slugify(text: string): string {
-  return text
-    .toLowerCase()
-    .replace(/[*_`~]/g, "")
-    .replace(/\[([^\]]+)\]\([^)]+\)/g, "$1")
-    .replace(/[^a-z0-9]+/g, "-")
-    .replace(/(^-|-$)/g, "");
-}
 
 function renderInline(text: string, locale: Locale) {
   const parts = text.split(/(\[[^\]]+\]\([^)]+\)|`[^`]+`|\*\*[^*]+\*\*)/g);
@@ -67,6 +59,8 @@ function renderInline(text: string, locale: Locale) {
 function renderMarkdown(content: string, locale: Locale) {
   const lines = content.split("\n");
   const elements: React.ReactNode[] = [];
+  // Dedup heading ids identically to data/blog.ts so TOC anchors resolve.
+  const nextId = createSlugger();
   let paragraph: string[] = [];
   let list: string[] = [];
   let listOrdered = false;
@@ -235,7 +229,7 @@ function renderMarkdown(content: string, locale: Locale) {
       flushList();
       const text = trimmed.slice(3);
       elements.push(
-        <h2 key={`h2-${elements.length}`} id={slugify(text)} className="mt-10 scroll-mt-28 text-2xl font-semibold text-neutral-900">
+        <h2 key={`h2-${elements.length}`} id={nextId(text)} className="mt-10 scroll-mt-28 text-2xl font-semibold text-neutral-900">
           {renderInline(text, locale)}
         </h2>,
       );
@@ -247,7 +241,7 @@ function renderMarkdown(content: string, locale: Locale) {
       flushList();
       const text = trimmed.slice(4);
       elements.push(
-        <h3 key={`h3-${elements.length}`} id={slugify(text)} className="mt-7 scroll-mt-28 text-lg font-semibold text-neutral-900">
+        <h3 key={`h3-${elements.length}`} id={nextId(text)} className="mt-7 scroll-mt-28 text-lg font-semibold text-neutral-900">
           {renderInline(text, locale)}
         </h3>,
       );
@@ -259,7 +253,7 @@ function renderMarkdown(content: string, locale: Locale) {
       flushList();
       const text = trimmed.slice(5);
       elements.push(
-        <h4 key={`h4-${elements.length}`} id={slugify(text)} className="mt-5 scroll-mt-28 text-base font-semibold text-neutral-900">
+        <h4 key={`h4-${elements.length}`} id={nextId(text)} className="mt-5 scroll-mt-28 text-base font-semibold text-neutral-900">
           {renderInline(text, locale)}
         </h4>,
       );

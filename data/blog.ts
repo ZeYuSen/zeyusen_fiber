@@ -3,6 +3,7 @@ import path from "node:path";
 import matter from "gray-matter";
 import type { Locale } from "@/lib/i18n/config";
 import { defaultLocale } from "@/lib/i18n/config";
+import { createSlugger } from "@/lib/blog-slug";
 
 export type FAQItem = { question: string; answer: string };
 export type TocHeading = { id: string; text: string; level: 2 | 3 };
@@ -24,15 +25,6 @@ const blogRoot = path.join(process.cwd(), "content", "blog");
 
 function localeDir(locale: Locale): string {
   return path.join(blogRoot, locale);
-}
-
-function slugify(text: string): string {
-  return text
-    .toLowerCase()
-    .replace(/[*_`~]/g, "")
-    .replace(/\[([^\]]+)\]\([^)]+\)/g, "$1")
-    .replace(/[^a-z0-9]+/g, "-")
-    .replace(/(^-|-$)/g, "");
 }
 
 function parseFAQ(content: string): FAQItem[] {
@@ -87,17 +79,25 @@ function stripFAQSection(content: string): string {
 function extractHeadings(content: string): TocHeading[] {
   const headings: TocHeading[] = [];
   const lines = content.split("\n");
+  // Must advance in the same heading order the body renderer uses (h2/h3/h4),
+  // so the deduped ids stay identical and TOC anchors resolve correctly.
+  const nextId = createSlugger();
 
   for (const line of lines) {
     const h2 = line.match(/^## (.+)/);
     const h3 = line.match(/^### (.+)/);
+    const h4 = line.match(/^#### (.+)/);
     if (h2) {
       const text = h2[1].trim();
+      // FAQ is stripped before this runs, but guard anyway; do not consume an id.
       if (text.toLowerCase() === "faq") continue;
-      headings.push({ id: slugify(text), text, level: 2 });
+      headings.push({ id: nextId(text), text, level: 2 });
     } else if (h3) {
       const text = h3[1].trim();
-      headings.push({ id: slugify(text), text, level: 3 });
+      headings.push({ id: nextId(text), text, level: 3 });
+    } else if (h4) {
+      // Not shown in the TOC, but consume an id to stay in sync with the body.
+      nextId(h4[1].trim());
     }
   }
   return headings;
