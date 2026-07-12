@@ -1,6 +1,6 @@
 import Link from "next/link";
 import Image from "next/image";
-import { ArrowLeft, ArrowRight } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 import type { Locale } from "@/lib/i18n/config";
 import { localizedHref } from "@/lib/i18n/routes";
 import type { Dictionary } from "@/lib/i18n/dictionaries";
@@ -67,12 +67,13 @@ export function ApplicationDetailPage({
         imageAlt={`${detail.title} — ${imageNote}`}
         accent={division}
         breadcrumbs={
-          <Link
-            href={backHref}
-            className="inline-flex items-center gap-2"
-          >
-            <ArrowLeft className="w-4 h-4" /> {dict.actions.backToApplications}
-          </Link>
+          <nav aria-label="Breadcrumb" className="flex flex-wrap items-center gap-2">
+            <Link href={localizedHref("home", locale)}>{dict.nav.home}</Link>
+            <span>/</span>
+            <Link href={backHref}>{dict.nav.applications}</Link>
+            <span>/</span>
+            <span className="text-white/90">{detail.title}</span>
+          </nav>
         }
       />
 

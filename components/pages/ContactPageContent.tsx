@@ -72,7 +72,6 @@ export default function ContactPageContent() {
         description={c.lead}
         image={pageHeroImages.contact}
         imageAlt={c.contactInfoHeading}
-        compact
         objectPosition="center 48%"
       />
 
