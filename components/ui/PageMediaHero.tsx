@@ -55,11 +55,11 @@ export function PageMediaHero({
 
       {/* Title + description centered in the full hero */}
       <div className="container-wide relative z-10 flex w-full flex-1 flex-col items-center justify-center px-4 pb-10 pt-32 text-center sm:pt-36">
-        <h1 className="max-w-[20ch] text-3xl font-semibold leading-[1.1] tracking-tight text-white sm:text-4xl lg:text-5xl">
+        <h1 className="max-w-[24ch] text-balance text-3xl font-semibold leading-[1.12] tracking-tight text-white sm:text-4xl lg:text-5xl">
           {title}
         </h1>
         {description ? (
-          <div className="mt-4 max-w-2xl text-sm leading-relaxed text-white/80 sm:text-base">
+          <div className="mt-4 max-w-2xl text-pretty text-sm leading-relaxed text-white/80 sm:text-base">
             {description}
           </div>
         ) : null}

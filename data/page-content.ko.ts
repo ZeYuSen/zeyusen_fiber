@@ -125,7 +125,7 @@ export const ko: PageContent = {
   },
   applications: {
     eyebrow: "응용분야",
-    title: "소재를 선택한 다음, 적합한 산업용 사용 사례를 살펴보세요",
+    title: "산업별 응용분야",
     intro:
       "탄소섬유와 유리섬유는 서로 다른 엔지니어링 문제를 해결합니다. 소재 계열부터 시작한 다음 산업, 권장 제품 및 사용 가능한 솔루션 경로를 검토하세요.",
     fieldsSuffix: "개 응용 분야",

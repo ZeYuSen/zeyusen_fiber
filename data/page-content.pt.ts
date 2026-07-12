@@ -125,7 +125,7 @@ export const pt: PageContent = {
   },
   applications: {
     eyebrow: "Aplicações",
-    title: "Escolha um Material e Depois Explore os Casos de Uso Industriais Certos",
+    title: "Aplicações por Indústria",
     intro:
       "A fibra de carbono e a fibra de vidro resolvem diferentes problemas de engenharia. Comece pela família de materiais e depois revise os setores, os produtos recomendados e as rotas de solução disponíveis.",
     fieldsSuffix: "campos de aplicação",

@@ -191,7 +191,7 @@ const en: PageContent = {
   },
   applications: {
     eyebrow: "Applications",
-    title: "Choose a Material, Then Explore the Right Industrial Use Cases",
+    title: "Applications by Industry",
     intro:
       "Carbon fiber and glass fiber solve different engineering problems. Start with the material family, then review the industries, recommended products, and available solution paths.",
     fieldsSuffix: "application fields",

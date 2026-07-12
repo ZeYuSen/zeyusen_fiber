@@ -123,7 +123,7 @@ export const zh: PageContent = {
   },
   applications: {
     eyebrow: "应用领域",
-    title: "先选择材料，再探索对应行业应用",
+    title: "按行业划分的应用",
     intro:
       "碳纤维和玻璃纤维解决不同的工程问题。先从材料类别开始，再检视行业、推荐产品和可用的解决方案路径。",
     fieldsSuffix: "个应用领域",
