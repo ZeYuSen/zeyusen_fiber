@@ -65,7 +65,7 @@ export function IndustriesGrid() {
                 className="relative cursor-pointer overflow-hidden"
                 style={{ backgroundColor: isActive ? "#EFF6FF" : bgColor }}
                 animate={{ flex: isActive ? 6 : 0.5 }}
-                transition={{ duration: 0.55, ease: easing }}
+                transition={{ duration: 1.1, ease: easing }}
                 onClick={() => setActive(index)}
               >
                 {/* Collapsed strip */}
@@ -93,7 +93,7 @@ export function IndustriesGrid() {
                       initial={{ opacity: 0 }}
                       animate={{ opacity: 1 }}
                       exit={{ opacity: 0 }}
-                      transition={{ duration: 0.3, delay: 0.15 }}
+                      transition={{ duration: 0.6, delay: 0.3 }}
                       className="absolute inset-0 grid grid-cols-1 lg:grid-cols-2"
                     >
                       {/* Text side */}
@@ -160,7 +160,7 @@ export function IndustriesGrid() {
                       initial={{ height: 0, opacity: 0 }}
                       animate={{ height: "auto", opacity: 1 }}
                       exit={{ height: 0, opacity: 0 }}
-                      transition={{ duration: 0.35, ease: easing }}
+                      transition={{ duration: 0.7, ease: easing }}
                       className="overflow-hidden"
                     >
                       <div className="p-5 bg-white">
