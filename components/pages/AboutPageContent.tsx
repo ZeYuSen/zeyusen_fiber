@@ -4,7 +4,6 @@ import { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { motion, AnimatePresence } from "framer-motion";
-import { Award, Factory, Globe, Users } from "lucide-react";
 import { contactInfo } from "@/lib/contact";
 import { useLocale } from "@/lib/i18n/use-locale";
 import { localizedHref } from "@/lib/i18n/routes";
@@ -12,8 +11,7 @@ import { getPagesContent } from "@/lib/i18n/pages-content";
 import { PageMediaHero } from "@/components/ui/PageMediaHero";
 import { pageHeroImages } from "@/lib/site-images";
 
-const valueIcons = [Factory, Award, Globe, Users];
-const valueIconColors = ["text-carbon-accent", "text-accent-500", "text-glass-accent", "text-carbon-accent"];
+const valueAccents = ["bg-carbon-accent", "bg-accent-500", "bg-glass-accent", "bg-carbon-accent"];
 
 
 
@@ -153,7 +151,7 @@ function FactorySection() {
 export default function AboutPageContent() {
   const locale = useLocale();
   const c = getPagesContent(locale).about;
-  const values = c.values.map((v, i) => ({ ...v, icon: valueIcons[i], iconColor: valueIconColors[i] }));
+  const values = c.values.map((v, i) => ({ ...v, accent: valueAccents[i] }));
   const milestones = c.milestones;
   return (
     <>
@@ -247,14 +245,11 @@ export default function AboutPageContent() {
                 className="group relative p-7 bg-white border border-neutral-100 rounded-xl overflow-hidden hover:border-neutral-200 transition-colors"
               >
                 <span
-                  className={`absolute top-0 left-0 right-0 h-0.5 scale-x-0 group-hover:scale-x-100 origin-left transition-transform duration-300 ${item.iconColor.replace("text-", "bg-")}`}
+                  className={`absolute top-0 left-0 right-0 h-0.5 scale-x-0 group-hover:scale-x-100 origin-left transition-transform duration-300 ${item.accent}`}
                 />
-                <div className="flex items-center justify-between">
-                  <span className="text-4xl font-bold text-neutral-200 tabular-nums">
-                    {String(i + 1).padStart(2, "0")}
-                  </span>
-                  <item.icon className={`w-5 h-5 ${item.iconColor}`} />
-                </div>
+                <span className="text-4xl font-bold text-neutral-200 tabular-nums">
+                  {String(i + 1).padStart(2, "0")}
+                </span>
                 <h3 className="text-neutral-900 font-medium mt-4 text-sm">
                   {item.title}
                 </h3>

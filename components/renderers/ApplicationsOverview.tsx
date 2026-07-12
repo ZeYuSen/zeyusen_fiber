@@ -1,42 +1,16 @@
 import Image from "next/image";
 import Link from "next/link";
-import {
-  Anchor,
-  ArrowRight,
-  Building2,
-  Car,
-  Factory,
-  Filter,
-  Plane,
-  Shield,
-  Train,
-  Wind,
-  Zap,
-} from "lucide-react";
+import { ArrowRight } from "lucide-react";
 import type { Locale } from "@/lib/i18n/config";
 import { localizedHref } from "@/lib/i18n/routes";
 import type { Dictionary } from "@/lib/i18n/dictionaries";
 import { getApplicationGroups } from "@/lib/data-i18n";
 import {
   getApplicationGroup,
-  type ApplicationIcon,
   type ApplicationMaterial,
 } from "@/data/applications";
 import { PageMediaHero } from "@/components/ui/PageMediaHero";
 import { getApplicationImage, getApplicationCardImage } from "@/lib/site-images";
-
-const icons: Record<ApplicationIcon, React.ComponentType<{ className?: string }>> = {
-  anchor: Anchor,
-  building: Building2,
-  car: Car,
-  factory: Factory,
-  filter: Filter,
-  plane: Plane,
-  shield: Shield,
-  train: Train,
-  wind: Wind,
-  zap: Zap,
-};
 
 // Detail slug for an application item, derived from its English detailHref.
 // Every application must resolve to a detail page — a missing or malformed
@@ -162,7 +136,6 @@ export function ApplicationsOverview({
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
             {selectedGroup.applications.map((application) => {
-              const Icon = icons[application.icon];
               const detail = detailSlug(application.detailHref, application.slug);
               const href = localizedHref(
                 detail.division === "carbon" ? "carbon-application" : "glass-application",
@@ -186,12 +159,9 @@ export function ApplicationsOverview({
                     />
                     <div className="absolute inset-0 bg-black/10 transition-colors group-hover:bg-black/0" />
                   </div>
-                  <div className="flex items-start gap-5 p-6 sm:p-7">
-                    <div className="w-10 h-10 rounded-lg border border-neutral-100 bg-neutral-50 flex items-center justify-center flex-shrink-0">
-                      <Icon className={`w-5 h-5 ${selectedGroup.accentClass}`} />
-                    </div>
+                  <div className="p-6 sm:p-7">
                     <div className="min-w-0">
-                      <h3 className="text-sm font-medium text-neutral-900">
+                      <h3 className="text-base font-medium text-neutral-900">
                         {application.title}
                       </h3>
                       <p className="mt-2 text-sm text-neutral-500 leading-relaxed">

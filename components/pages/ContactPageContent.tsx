@@ -2,7 +2,7 @@
 
 import { useState, useRef } from "react";
 import Image from "next/image";
-import { Send, MessageCircle, Mail, MapPin } from "lucide-react";
+import { Send } from "lucide-react";
 import { contactInfo, whatsappPhone } from "@/lib/contact";
 import { Turnstile, type TurnstileInstance } from "@marsidev/react-turnstile";
 import { useLocale } from "@/lib/i18n/use-locale";
@@ -274,54 +274,45 @@ export default function ContactPageContent() {
                       {contactInfo.company}
                     </p>
                   </div>
-                  <div className="flex items-start gap-3">
-                    <Mail className="w-4 h-4 text-carbon-accent mt-0.5" />
-                    <div>
-                      <p className="text-xs uppercase tracking-wider text-neutral-400">{c.emailLabel}</p>
-                      <div className="space-y-1">
-                        {contactInfo.emails.map((email) => (
-                          <a
-                            key={email}
-                            href={`mailto:${email}`}
-                            className="block text-sm text-neutral-700 hover:text-neutral-900 transition-colors"
-                          >
-                            {email}
-                          </a>
-                        ))}
-                      </div>
+                  <div>
+                    <p className="text-xs uppercase tracking-wider text-neutral-400">{c.emailLabel}</p>
+                    <div className="space-y-1 mt-1">
+                      {contactInfo.emails.map((email) => (
+                        <a
+                          key={email}
+                          href={`mailto:${email}`}
+                          className="block text-sm text-neutral-700 hover:text-neutral-900 transition-colors"
+                        >
+                          {email}
+                        </a>
+                      ))}
                     </div>
                   </div>
-                  <div className="flex items-start gap-3">
-                    <MessageCircle className="w-4 h-4 text-[#25D366] mt-0.5" />
-                    <div>
-                      <p className="text-xs uppercase tracking-wider text-neutral-400">{c.phoneLabel}</p>
-                      <a
-                        href={`https://wa.me/${whatsappPhone}`}
-                        className="text-sm text-neutral-700 hover:text-neutral-900 transition-colors"
-                      >
-                        {contactInfo.phones[1]}
-                      </a>
-                      <a
-                        href={`tel:${contactInfo.phones[0]}`}
-                        className="block text-sm text-neutral-700 hover:text-neutral-900 transition-colors mt-1"
-                      >
-                        {contactInfo.phones[0]}
-                      </a>
-                    </div>
+                  <div>
+                    <p className="text-xs uppercase tracking-wider text-neutral-400">{c.phoneLabel}</p>
+                    <a
+                      href={`https://wa.me/${whatsappPhone}`}
+                      className="block text-sm text-neutral-700 hover:text-neutral-900 transition-colors mt-1"
+                    >
+                      {contactInfo.phones[1]}
+                    </a>
+                    <a
+                      href={`tel:${contactInfo.phones[0]}`}
+                      className="block text-sm text-neutral-700 hover:text-neutral-900 transition-colors mt-1"
+                    >
+                      {contactInfo.phones[0]}
+                    </a>
                   </div>
-                  <div className="flex items-start gap-3">
-                    <MapPin className="w-4 h-4 text-glass-accent mt-0.5" />
-                    <div>
-                      <p className="text-xs uppercase tracking-wider text-neutral-400">{c.addressLabel}</p>
-                      <a
-                        href={`https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(contactInfo.address)}&hl=en`}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="block text-sm text-neutral-700 hover:text-neutral-900 transition-colors"
-                      >
-                        {contactInfo.address}
-                      </a>
-                    </div>
+                  <div>
+                    <p className="text-xs uppercase tracking-wider text-neutral-400">{c.addressLabel}</p>
+                    <a
+                      href={`https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(contactInfo.address)}&hl=en`}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="block text-sm text-neutral-700 hover:text-neutral-900 transition-colors mt-1"
+                    >
+                      {contactInfo.address}
+                    </a>
                   </div>
                 </div>
               </div>
