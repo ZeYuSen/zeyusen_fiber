@@ -140,7 +140,7 @@ function CertificateCarousel() {
                 onClick={isCenter ? () => openLightbox(cert.src) : offset < 0 ? prev : next}
               >
                 <div
-                  className={`relative aspect-[3/4] overflow-hidden rounded-lg bg-white ring-1 ${
+                  className={`relative aspect-[3/4] overflow-hidden bg-white ring-1 ${
                     isCenter ? "ring-neutral-200 shadow-xl" : "ring-neutral-100"
                   }`}
                 >
@@ -162,16 +162,16 @@ function CertificateCarousel() {
           <button
             onClick={prev}
             aria-label="Previous"
-            className="absolute left-0 top-1/2 -translate-y-1/2 w-9 h-9 rounded-full bg-white ring-1 ring-neutral-200 shadow-md flex items-center justify-center hover:bg-neutral-50 transition-colors z-40"
+            className="absolute left-0 top-1/2 -translate-y-1/2 w-9 h-9 rounded-full bg-white/10 ring-1 ring-white/20 backdrop-blur-sm flex items-center justify-center hover:bg-white/20 transition-colors z-40"
           >
-            <ChevronLeft className="w-4 h-4 text-neutral-700" />
+            <ChevronLeft className="w-4 h-4 text-white" />
           </button>
           <button
             onClick={next}
             aria-label="Next"
-            className="absolute right-0 top-1/2 -translate-y-1/2 w-9 h-9 rounded-full bg-white ring-1 ring-neutral-200 shadow-md flex items-center justify-center hover:bg-neutral-50 transition-colors z-40"
+            className="absolute right-0 top-1/2 -translate-y-1/2 w-9 h-9 rounded-full bg-white/10 ring-1 ring-white/20 backdrop-blur-sm flex items-center justify-center hover:bg-white/20 transition-colors z-40"
           >
-            <ChevronRight className="w-4 h-4 text-neutral-700" />
+            <ChevronRight className="w-4 h-4 text-white" />
           </button>
         </div>
 
@@ -184,7 +184,7 @@ function CertificateCarousel() {
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
               transition={{ duration: 0.4, ease: "easeInOut" }}
-              className="absolute inset-0 text-xs font-medium text-neutral-700 text-center truncate"
+              className="absolute inset-0 text-xs font-medium text-white/70 text-center truncate"
             >
               {certificates[currentIndex].label}
             </motion.p>
@@ -199,7 +199,7 @@ function CertificateCarousel() {
               onClick={() => setCurrentIndex(i)}
               aria-label={`Go to certificate ${i + 1}`}
               className={`h-1.5 rounded-full transition-all duration-300 ${
-                i === currentIndex ? "w-5 bg-brand-600" : "w-1.5 bg-neutral-300 hover:bg-neutral-400"
+                i === currentIndex ? "w-5 bg-blue-400" : "w-1.5 bg-white/20 hover:bg-white/40"
               }`}
             />
           ))}
@@ -280,15 +280,15 @@ export function TrustEvidence() {
             </div>
           </div>
 
-          {/* Right — light inset certificate panel (暗底亮框) */}
-          <div className="lg:col-span-8 flex">
-            <div className="flex flex-col w-full rounded-2xl bg-[#EFF6FF] p-6 sm:p-8">
+          {/* Right — certificates floating directly on the dark background */}
+          <div className="lg:col-span-8 flex lg:border-l lg:border-white/10 lg:pl-16">
+            <div className="flex flex-col w-full">
               <div className="flex items-center justify-between mb-6">
-                <h3 className="text-base font-medium text-neutral-900 flex items-center gap-2">
-                  <Award className="w-4 h-4 text-blue-600" />
+                <h3 className="text-base font-medium text-white flex items-center gap-2">
+                  <Award className="w-4 h-4 text-blue-400" />
                   {trust.certHeading}
                 </h3>
-                <span className="text-xs text-neutral-400">
+                <span className="text-xs text-white/40">
                   {certificates.length} {trust.certCount}
                 </span>
               </div>
@@ -297,7 +297,7 @@ export function TrustEvidence() {
                 <CertificateCarousel />
               </div>
 
-              <p className="text-xs text-neutral-400 mt-6 leading-relaxed">
+              <p className="text-xs text-white/40 mt-6 leading-relaxed">
                 {trust.certNote}
               </p>
             </div>

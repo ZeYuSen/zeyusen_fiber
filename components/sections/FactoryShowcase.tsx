@@ -26,11 +26,6 @@ const galleries = {
 
 const tabKeys = ["production", "testing", "warehouse"] as const;
 
-const TAB_COLORS = {
-  inactive: ["#1E3A8A", "#172554", "#0F172A"],
-  active: "#1D4ED8",
-};
-
 const easing = [0.22, 1, 0.36, 1] as const;
 
 export function FactoryShowcase() {
@@ -62,45 +57,40 @@ export function FactoryShowcase() {
           <p className="mt-4 text-white/50 max-w-2xl mx-auto text-[15px]">{factory.intro}</p>
         </div>
 
-        {/* Numbered tab strip */}
+        {/* Underline tab strip */}
         <div
-          className="flex rounded-t-2xl overflow-hidden"
+          className="flex gap-8 border-b border-white/10"
           onMouseEnter={() => setPaused(true)}
           onMouseLeave={() => setPaused(false)}
         >
           {tabKeys.map((key, i) => {
             const isActive = i === activeIndex;
-            const bg = isActive ? TAB_COLORS.active : TAB_COLORS.inactive[i] ?? "#0F172A";
             return (
-              <motion.button
+              <button
                 key={key}
                 onClick={() => setActiveIndex(i)}
-                className="flex-1 flex items-center gap-3 px-6 py-4 text-left transition-colors"
-                style={{ backgroundColor: bg }}
-                animate={{ backgroundColor: bg }}
-                transition={{ duration: 0.4, ease: easing }}
+                className="relative flex items-center gap-3 py-4 text-left transition-colors"
               >
-                <span className={`text-xs font-bold tabular-nums shrink-0 ${isActive ? "text-white/60" : "text-white/30"}`}>
+                <span className={`text-xs font-bold tabular-nums shrink-0 ${isActive ? "text-cyan-400" : "text-white/30"}`}>
                   {String(i + 1).padStart(2, "0")}
                 </span>
-                <span className={`text-sm font-semibold ${isActive ? "text-white" : "text-white/50"}`}>
+                <span className={`text-sm font-semibold ${isActive ? "text-white" : "text-white/50 hover:text-white/80"}`}>
                   {factory.tabs[key]}
                 </span>
                 {isActive && (
                   <motion.span
-                    layoutId="tab-dot"
-                    className="ml-auto w-1.5 h-1.5 rounded-full bg-cyan-400 shrink-0"
+                    layoutId="factory-tab-underline"
+                    className="absolute -bottom-px left-0 right-0 h-0.5 bg-cyan-400"
                   />
                 )}
-              </motion.button>
+              </button>
             );
           })}
         </div>
 
-        {/* Image panel */}
+        {/* Image gallery — floats directly on the section background */}
         <div
-          className="rounded-b-2xl overflow-hidden p-6 sm:p-8"
-          style={{ backgroundColor: "#162042" }}
+          className="pt-8"
           onMouseEnter={() => setPaused(true)}
           onMouseLeave={() => setPaused(false)}
         >
@@ -116,7 +106,7 @@ export function FactoryShowcase() {
               {images.map((img) => (
                 <div
                   key={img.src}
-                  className="relative overflow-hidden rounded-xl bg-[#0C1128] aspect-[4/3]"
+                  className="relative overflow-hidden bg-[#0C1128] aspect-[4/3]"
                 >
                   <Image
                     src={img.src}
