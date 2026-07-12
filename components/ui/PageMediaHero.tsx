@@ -47,7 +47,7 @@ export function PageMediaHero({
       {/* Breadcrumbs pinned to the top (absolute), clear of the fixed navbar */}
       {breadcrumbs ? (
         <div className="container-wide absolute inset-x-0 top-0 z-10 pt-24 sm:pt-28">
-          <div className="flex justify-center text-sm text-white/65 [&_a]:transition-colors [&_a:hover]:text-white">
+          <div className="flex justify-start text-sm text-white/65 [&_a]:transition-colors [&_a:hover]:text-white">
             {breadcrumbs}
           </div>
         </div>
