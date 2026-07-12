@@ -24,25 +24,35 @@ export default function ServicesPageContent() {
         objectPosition="center 42%"
       />
 
-      <section className="pt-20 pb-12">
+      <section className="section-padding">
         <div className="container-wide">
-          <p className="max-w-3xl text-neutral-500 leading-relaxed">
-            {c.lead2.pre}
-            <Link
-              href={localizedHref("carbon-fiber", locale)}
-              className="text-carbon-accent hover:text-neutral-900 underline underline-offset-2 transition-colors"
-            >
-              {c.lead2.carbonLink}
-            </Link>
-            {c.lead2.mid}
-            <Link
-              href={localizedHref("glass-fiber", locale)}
-              className="text-glass-accent hover:text-neutral-900 underline underline-offset-2 transition-colors"
-            >
-              {c.lead2.glassLink}
-            </Link>
-            {c.lead2.post}
-          </p>
+          <div className="grid lg:grid-cols-12 gap-12 lg:gap-16">
+            <div className="lg:col-span-5">
+              <p className="type-caption text-neutral-400">{c.eyebrow}</p>
+              <h2 className="text-4xl sm:text-5xl lg:text-6xl font-semibold text-neutral-900 mt-4 tracking-tight leading-[1.05]">
+                {c.servicesHeading}
+              </h2>
+            </div>
+            <div className="lg:col-span-7 lg:border-l lg:border-neutral-100 lg:pl-16">
+              <p className="text-neutral-500 leading-relaxed text-lg">
+                {c.lead2.pre}
+                <Link
+                  href={localizedHref("carbon-fiber", locale)}
+                  className="text-carbon-accent hover:text-neutral-900 underline underline-offset-2 transition-colors"
+                >
+                  {c.lead2.carbonLink}
+                </Link>
+                {c.lead2.mid}
+                <Link
+                  href={localizedHref("glass-fiber", locale)}
+                  className="text-glass-accent hover:text-neutral-900 underline underline-offset-2 transition-colors"
+                >
+                  {c.lead2.glassLink}
+                </Link>
+                {c.lead2.post}
+              </p>
+            </div>
+          </div>
         </div>
       </section>
 
@@ -53,17 +63,17 @@ export default function ServicesPageContent() {
       />
 
       {/* CTA */}
-      <section className="py-24">
-        <div className="container-wide text-center max-w-xl mx-auto">
-          <h2 className="text-2xl sm:text-3xl font-semibold text-neutral-900">
+      <section className="section-padding" style={{ backgroundColor: "#0C1128" }}>
+        <div className="container-wide text-center max-w-2xl mx-auto">
+          <h2 className="text-3xl sm:text-4xl font-semibold text-white tracking-tight leading-[1.05]">
             {c.ctaTitle}
           </h2>
-          <p className="text-neutral-500 mt-4 leading-relaxed">
+          <p className="mt-5 text-white/50 leading-relaxed text-lg">
             {c.ctaBody}
           </p>
           <Link
             href={localizedHref("contact", locale)}
-            className="group inline-flex items-center gap-2 mt-8 px-7 py-3 bg-accent-500 hover:bg-accent-600 text-white text-sm font-semibold rounded-full transition-colors cursor-pointer"
+            className="group inline-flex items-center gap-2 mt-9 px-7 py-3 bg-accent-500 hover:bg-accent-600 text-white text-sm font-semibold rounded-full transition-colors cursor-pointer"
           >
             {c.ctaButton}
             <ArrowRight className="w-4 h-4 group-hover:translate-x-0.5 transition-transform" />

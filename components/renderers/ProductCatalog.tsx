@@ -1,5 +1,6 @@
 import Link from "next/link";
 import Image from "next/image";
+import { ArrowRight } from "lucide-react";
 import type { Locale } from "@/lib/i18n/config";
 import { localizedHref } from "@/lib/i18n/routes";
 import type { Dictionary } from "@/lib/i18n/dictionaries";
@@ -49,32 +50,35 @@ export function ProductCatalog({
         }
       />
 
-      <section className="border-b border-neutral-100 py-14">
+      <section className="py-16 sm:py-20 border-b border-neutral-100">
         <div className="container-wide">
-          <p className="max-w-3xl text-neutral-600 leading-relaxed">{copy.body}</p>
+          <p className="max-w-3xl text-xl sm:text-2xl text-neutral-700 leading-relaxed font-light tracking-tight">{copy.body}</p>
         </div>
       </section>
 
-      <section className="py-20 sm:py-24">
-        <div className="container-wide space-y-16">
+      <section className="section-padding">
+        <div className="container-wide space-y-24">
           {categories.map((category, i) => (
             <div key={category.slug}>
-              <div className="flex items-center justify-between mb-6">
-                <h2 className="flex items-center gap-3 text-lg sm:text-xl font-semibold text-neutral-900">
-                  <span className="text-lg font-bold tabular-nums text-neutral-300">
+              <div className="flex items-end justify-between gap-6 mb-10">
+                <h2 className="flex items-center gap-5">
+                  <span className="text-5xl sm:text-6xl font-semibold tabular-nums text-neutral-200 leading-none">
                     {String(i + 1).padStart(2, "0")}
                   </span>
-                  {category.name}
+                  <span className="text-2xl sm:text-3xl font-semibold tracking-tight text-neutral-900">
+                    {category.name}
+                  </span>
                 </h2>
                 <Link
                   href={localizedHref(categoryKey, locale, { category: category.slug })}
-                  className={`text-xs font-medium text-${accent} hover:text-neutral-900 transition-colors`}
+                  className={`inline-flex items-center gap-1 text-sm font-medium text-${accent} hover:text-neutral-900 transition-colors shrink-0`}
                 >
                   {dict.actions.viewAll}
+                  <ArrowRight className="w-4 h-4" />
                 </Link>
               </div>
-              <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
-                {category.products.slice(0, 4).map((product) => (
+              <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                {category.products.slice(0, 3).map((product) => (
                   <Link
                     key={product.slug}
                     href={localizedHref(productKey, locale, {
@@ -83,7 +87,7 @@ export function ProductCatalog({
                     })}
                     className="group block bg-white border border-neutral-100 rounded-xl hover:border-neutral-200 shadow-sm hover:shadow-md overflow-hidden transition-all cursor-pointer"
                   >
-                    <div className="relative h-48 bg-neutral-100 overflow-hidden">
+                    <div className="relative aspect-[4/3] bg-neutral-100 overflow-hidden">
                       <Image
                         src={product.images[0]}
                         alt={product.name}
@@ -91,11 +95,11 @@ export function ProductCatalog({
                         className="object-cover group-hover:scale-105 transition-transform duration-500"
                       />
                     </div>
-                    <div className="p-4">
-                      <h3 className={`text-sm font-medium text-neutral-900 group-hover:text-${accent} transition-colors line-clamp-1`}>
+                    <div className="p-5">
+                      <h3 className={`text-base font-medium text-neutral-900 group-hover:text-${accent} transition-colors line-clamp-1`}>
                         {product.name}
                       </h3>
-                      <p className="mt-1 text-xs text-neutral-500 line-clamp-1">
+                      <p className="mt-1.5 text-sm text-neutral-500 line-clamp-1">
                         {product.specs[0]?.value}
                       </p>
                     </div>
@@ -107,10 +111,20 @@ export function ProductCatalog({
         </div>
       </section>
 
-      <section className="pb-24">
-        <div className="container-wide max-w-3xl">
-          <h2 className="text-2xl font-semibold text-neutral-900">{copy.closingTitle}</h2>
-          <p className="mt-4 text-neutral-500 leading-relaxed">{copy.closingBody}</p>
+      <section className="section-padding" style={{ backgroundColor: "#0C1128" }}>
+        <div className="container-wide text-center">
+          <h2 className="text-3xl sm:text-4xl font-semibold text-white tracking-tight leading-[1.05]">
+            {copy.closingTitle}
+          </h2>
+          <p className="mt-5 max-w-2xl mx-auto text-white/50 leading-relaxed text-lg">
+            {copy.closingBody}
+          </p>
+          <Link
+            href={localizedHref("contact", locale)}
+            className="inline-flex items-center gap-2 mt-9 px-7 py-3 bg-accent-500 hover:bg-accent-600 text-white text-sm font-semibold rounded-full transition-colors"
+          >
+            {dict.actions.getQuote} <ArrowRight className="w-4 h-4" />
+          </Link>
         </div>
       </section>
     </>

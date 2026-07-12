@@ -62,7 +62,7 @@ export default function ContactPageContent() {
   };
 
   const inputClass =
-    "w-full px-4 py-3 bg-neutral-50 border border-neutral-200 text-neutral-900 placeholder:text-neutral-400 focus:outline-none focus:border-neutral-400 transition-colors text-sm rounded-lg";
+    "w-full px-4 py-3.5 bg-neutral-50 border border-neutral-200 text-neutral-900 placeholder:text-neutral-400 focus:outline-none focus:border-neutral-400 transition-colors text-sm rounded-lg";
 
   return (
     <>
@@ -77,16 +77,16 @@ export default function ContactPageContent() {
       />
 
       {/* Form + Sidebar */}
-      <section className="py-16">
+      <section className="section-padding">
         <div className="container-wide">
-          <div className="grid lg:grid-cols-3 gap-8">
+          <div className="grid lg:grid-cols-3 gap-12 lg:gap-16">
             {/* Form */}
             <div className="lg:col-span-2">
               <form
                 onSubmit={handleSubmit}
-                className="p-6 bg-white border border-neutral-100 rounded-xl shadow-sm"
+                className="p-8 sm:p-10 bg-white border border-neutral-100 rounded-xl shadow-sm"
               >
-                <div className="grid sm:grid-cols-2 gap-4">
+                <div className="grid sm:grid-cols-2 gap-6">
                   <div>
                     <label htmlFor="name" className="block text-xs font-medium text-neutral-600 mb-1.5">
                       {c.labels.name}
@@ -188,7 +188,7 @@ export default function ContactPageContent() {
                     </select>
                   </div>
                 </div>
-                <div className="mt-3">
+                <div className="mt-6">
                   <label htmlFor="product_interest" className="block text-xs font-medium text-neutral-600 mb-1.5">
                     {c.labels.productInterest}
                   </label>
@@ -204,7 +204,7 @@ export default function ContactPageContent() {
                     placeholder={c.placeholders.productInterest}
                   />
                 </div>
-                <div className="mt-3">
+                <div className="mt-6">
                   <label htmlFor="message" className="block text-xs font-medium text-neutral-600 mb-1.5">
                     {c.labels.message}
                   </label>
@@ -234,7 +234,7 @@ export default function ContactPageContent() {
                 <button
                   type="submit"
                   disabled={status === "sending" || (!!process.env.NEXT_PUBLIC_TURNSTILE_SITE_KEY && !turnstileToken)}
-                  className="mt-5 inline-flex items-center gap-2 px-7 py-3 bg-accent-500 hover:bg-accent-600 disabled:opacity-50 text-white text-sm font-semibold rounded-full transition-colors cursor-pointer"
+                  className="mt-8 inline-flex items-center gap-2 px-8 py-3.5 bg-accent-500 hover:bg-accent-600 disabled:opacity-50 text-white text-sm font-semibold rounded-full transition-colors cursor-pointer"
                 >
                   <Send className="w-4 h-4" />
                   {status === "sending" ? c.sending : c.submit}
@@ -253,9 +253,9 @@ export default function ContactPageContent() {
             </div>
 
             {/* Sidebar */}
-            <div className="space-y-5">
-              <div className="p-6 bg-white border border-neutral-100 rounded-xl shadow-sm">
-                <div className="relative -mx-6 -mt-6 mb-6 aspect-[16/8] overflow-hidden rounded-t-xl bg-neutral-100">
+            <div className="space-y-6">
+              <div className="p-8 bg-white border border-neutral-100 rounded-xl shadow-sm">
+                <div className="relative -mx-8 -mt-8 mb-8 aspect-[16/8] overflow-hidden rounded-t-xl bg-neutral-100">
                   <Image
                     src="/images/showcase/warehouse-stock.webp"
                     alt={c.contactInfoHeading}
@@ -264,52 +264,52 @@ export default function ContactPageContent() {
                     className="object-cover"
                   />
                 </div>
-                <h2 className="text-sm font-medium text-neutral-900 mb-4">
+                <h2 className="text-base font-semibold text-neutral-900 mb-6">
                   {c.contactInfoHeading}
                 </h2>
-                <div className="space-y-4">
+                <div className="space-y-8">
                   <div>
-                    <p className="text-xs uppercase tracking-wider text-neutral-400">{c.companyLabel}</p>
-                    <p className="text-sm text-neutral-700 mt-1">
+                    <p className="text-xs uppercase tracking-[0.15em] text-neutral-400">{c.companyLabel}</p>
+                    <p className="text-base text-neutral-700 mt-2">
                       {contactInfo.company}
                     </p>
                   </div>
-                  <div>
-                    <p className="text-xs uppercase tracking-wider text-neutral-400">{c.emailLabel}</p>
-                    <div className="space-y-1 mt-1">
+                  <div className="border-t border-neutral-100 pt-8">
+                    <p className="text-xs uppercase tracking-[0.15em] text-neutral-400">{c.emailLabel}</p>
+                    <div className="space-y-1.5 mt-2">
                       {contactInfo.emails.map((email) => (
                         <a
                           key={email}
                           href={`mailto:${email}`}
-                          className="block text-sm text-neutral-700 hover:text-neutral-900 transition-colors"
+                          className="block text-base text-neutral-700 hover:text-neutral-900 transition-colors"
                         >
                           {email}
                         </a>
                       ))}
                     </div>
                   </div>
-                  <div>
-                    <p className="text-xs uppercase tracking-wider text-neutral-400">{c.phoneLabel}</p>
+                  <div className="border-t border-neutral-100 pt-8">
+                    <p className="text-xs uppercase tracking-[0.15em] text-neutral-400">{c.phoneLabel}</p>
                     <a
                       href={`https://wa.me/${whatsappPhone}`}
-                      className="block text-sm text-neutral-700 hover:text-neutral-900 transition-colors mt-1"
+                      className="block text-base text-neutral-700 hover:text-neutral-900 transition-colors mt-2"
                     >
                       {contactInfo.phones[1]}
                     </a>
                     <a
                       href={`tel:${contactInfo.phones[0]}`}
-                      className="block text-sm text-neutral-700 hover:text-neutral-900 transition-colors mt-1"
+                      className="block text-base text-neutral-700 hover:text-neutral-900 transition-colors mt-1.5"
                     >
                       {contactInfo.phones[0]}
                     </a>
                   </div>
-                  <div>
-                    <p className="text-xs uppercase tracking-wider text-neutral-400">{c.addressLabel}</p>
+                  <div className="border-t border-neutral-100 pt-8">
+                    <p className="text-xs uppercase tracking-[0.15em] text-neutral-400">{c.addressLabel}</p>
                     <a
                       href={`https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(contactInfo.address)}&hl=en`}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="block text-sm text-neutral-700 hover:text-neutral-900 transition-colors mt-1"
+                      className="block text-base text-neutral-700 hover:text-neutral-900 transition-colors mt-2"
                     >
                       {contactInfo.address}
                     </a>
@@ -317,22 +317,22 @@ export default function ContactPageContent() {
                 </div>
               </div>
 
-              <div className="p-6 bg-white border border-neutral-100 rounded-xl shadow-sm">
-                <h2 className="text-sm font-medium text-neutral-900 mb-4">
+              <div className="p-8 bg-white border border-neutral-100 rounded-xl shadow-sm">
+                <h2 className="text-base font-semibold text-neutral-900 mb-6">
                   {c.faqHeading}
                 </h2>
-                <div className="space-y-4">
+                <div className="space-y-6">
                   {c.faqs.map((faq) => (
                     <div key={faq.q}>
                       <p className="text-sm text-neutral-800">{faq.q}</p>
-                      <p className="text-sm text-neutral-500 mt-1">{faq.a}</p>
+                      <p className="text-sm text-neutral-500 mt-1.5">{faq.a}</p>
                     </div>
                   ))}
                 </div>
               </div>
 
-              <div className="p-6 bg-white border border-neutral-100 rounded-xl shadow-sm">
-                <h2 className="text-sm font-medium text-neutral-900 mb-4">
+              <div className="p-8 bg-white border border-neutral-100 rounded-xl shadow-sm">
+                <h2 className="text-base font-semibold text-neutral-900 mb-6">
                   {c.fasterHeading}
                 </h2>
                 <p className="text-sm text-neutral-500 leading-relaxed">

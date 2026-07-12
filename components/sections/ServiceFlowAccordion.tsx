@@ -40,13 +40,13 @@ export function ServiceFlowAccordion({ heading, subtitle, services }: Props) {
   const [active, setActive] = useState(0);
 
   return (
-    <section className="py-20 lg:py-28">
+    <section className="section-padding">
       <div className="container-wide">
-        <div className="text-center mb-12 lg:mb-16">
-          <h2 className="text-3xl sm:text-4xl font-bold text-neutral-900">
+        <div className="max-w-3xl mb-14 lg:mb-20">
+          <h2 className="text-4xl sm:text-5xl lg:text-6xl font-semibold text-neutral-900 tracking-tight leading-[1.05]">
             {heading}
           </h2>
-          <p className="mt-4 text-neutral-500 max-w-2xl mx-auto">
+          <p className="mt-6 text-lg text-neutral-500 max-w-2xl leading-relaxed">
             {subtitle}
           </p>
         </div>
@@ -69,12 +69,12 @@ export function ServiceFlowAccordion({ heading, subtitle, services }: Props) {
                 {/* Collapsed strip */}
                 {!isActive && (
                   <div className="absolute inset-0 flex flex-col items-center pt-8 pb-8 border-l border-white/10">
-                    <span className="text-white/60 text-xs font-bold tracking-wider">
+                    <span className="text-white/50 text-2xl font-semibold tabular-nums tracking-tight">
                       {String(index + 1).padStart(2, "0")}
                     </span>
                     <div className="mt-6 flex-1 flex items-center">
                       <span
-                        className="text-white/90 font-semibold text-[13px] whitespace-nowrap tracking-wide"
+                        className="text-white/90 font-semibold text-sm whitespace-nowrap tracking-wide"
                         style={{
                           writingMode: "vertical-rl",
                           textOrientation: "mixed",
@@ -97,15 +97,14 @@ export function ServiceFlowAccordion({ heading, subtitle, services }: Props) {
                       transition={{ duration: 0.3, delay: 0.15 }}
                       className="absolute inset-0 grid grid-cols-1 lg:grid-cols-2"
                     >
-                      <div className="flex flex-col justify-center px-8 lg:px-12 py-10">
-                        <span className="inline-flex items-center gap-2 text-sm text-blue-600 font-semibold">
-                          <span className="w-6 h-px bg-blue-600" />
-                          Step {index + 1}
+                      <div className="flex flex-col justify-center px-10 lg:px-16 py-12">
+                        <span className="text-5xl lg:text-6xl font-semibold text-neutral-200 tabular-nums leading-none mb-6">
+                          {String(index + 1).padStart(2, "0")}
                         </span>
-                        <h3 className="text-2xl lg:text-[2rem] font-bold text-neutral-900 mt-3 leading-tight">
+                        <h3 className="text-3xl lg:text-4xl font-semibold text-neutral-900 tracking-tight leading-tight">
                           {service.title}
                         </h3>
-                        <p className="text-neutral-600 mt-4 leading-relaxed text-[15px] max-w-md">
+                        <p className="text-neutral-600 mt-5 leading-relaxed text-base max-w-md">
                           {service.description}
                         </p>
                         <ul className="mt-6 space-y-2.5">

@@ -68,16 +68,16 @@ export function ApplicationsOverview({
         accent={selectedMaterial}
       />
 
-      <section className="border-b border-neutral-100 py-10">
+      <section className="border-b border-neutral-100 py-14">
         <div className="container-wide">
-          <div className="grid grid-cols-1 gap-3 sm:grid-cols-2 lg:ml-auto lg:max-w-2xl">
+          <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:ml-auto lg:max-w-3xl">
             {groups.map((group) => {
               const isActive = group.material === selectedMaterial;
               return (
                 <Link
                   key={group.material}
                   href={materialHref(group.material)}
-                  className={`group rounded-xl border p-5 transition-colors ${
+                  className={`group rounded-2xl border p-8 transition-colors ${
                     isActive
                       ? `${group.borderClass} ${group.bgClass} ${
                           group.material === "carbon" ? "ring-1 ring-carbon-accent" : "ring-1 ring-glass-accent"
@@ -86,20 +86,23 @@ export function ApplicationsOverview({
                   }`}
                   aria-current={isActive ? "page" : undefined}
                 >
-                  <div className="flex items-center justify-between gap-3">
-                    <span className={`text-xs font-semibold uppercase ${group.accentClass}`}>
+                  <div className="flex items-center justify-between gap-4">
+                    <span className={`text-xl sm:text-2xl font-semibold ${group.accentClass}`}>
                       {group.label}
                     </span>
                     {isActive && (
-                      <ArrowRight className={`w-4 h-4 ${group.accentClass}`} />
+                      <ArrowRight className={`w-5 h-5 ${group.accentClass}`} />
                     )}
                   </div>
                   <span
-                    className={`mt-2 block text-sm leading-relaxed ${
-                      isActive ? "text-neutral-700 font-medium" : "text-neutral-500"
+                    className={`mt-5 flex items-baseline gap-2 ${
+                      isActive ? "text-neutral-700" : "text-neutral-500"
                     }`}
                   >
-                    {group.applications.length} {copy.fieldsSuffix}
+                    <span className="text-4xl font-semibold tabular-nums tracking-tight leading-none text-neutral-900">
+                      {group.applications.length}
+                    </span>
+                    <span className="text-sm">{copy.fieldsSuffix}</span>
                   </span>
                 </Link>
               );
@@ -108,17 +111,17 @@ export function ApplicationsOverview({
         </div>
       </section>
 
-      <section className="py-24">
+      <section className="section-padding">
         <div className="container-wide">
-          <div className="mb-8 flex flex-col sm:flex-row sm:items-end sm:justify-between gap-4">
+          <div className="mb-16 flex flex-col sm:flex-row sm:items-end sm:justify-between gap-6">
             <div>
               <p className={`type-caption ${selectedGroup.accentClass}`}>
                 {selectedGroup.eyebrow}
               </p>
-              <h2 className="text-2xl sm:text-3xl font-semibold text-neutral-900 mt-3">
+              <h2 className="text-4xl sm:text-5xl lg:text-6xl font-semibold text-neutral-900 mt-4 tracking-tight leading-[1.05]">
                 {selectedGroup.label}
               </h2>
-              <p className="text-neutral-500 mt-3 max-w-xl leading-relaxed">
+              <p className="text-neutral-500 mt-6 max-w-xl leading-relaxed text-lg">
                 {selectedGroup.summary}
               </p>
             </div>
@@ -134,7 +137,7 @@ export function ApplicationsOverview({
             </Link>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-12">
             {selectedGroup.applications.map((application) => {
               const detail = detailSlug(application.detailHref, application.slug);
               const href = localizedHref(
@@ -146,28 +149,28 @@ export function ApplicationsOverview({
                 <Link
                   key={application.slug}
                   href={href}
-                  className="group block overflow-hidden rounded-xl border border-neutral-100 bg-white transition-colors hover:border-neutral-300 hover:shadow-md"
+                  className="group block overflow-hidden rounded-2xl border border-neutral-100 bg-white transition-all hover:border-neutral-300 hover:shadow-lg"
                 >
-                  <div className="relative aspect-[16/8] overflow-hidden bg-neutral-100">
+                  <div className="relative aspect-[16/9] overflow-hidden bg-neutral-100">
                     <Image
                       src={getApplicationCardImage(application.slug, selectedMaterial)}
                       alt={`${application.title} — ${copy.imageNote}`}
                       fill
                       quality={72}
                       sizes="(max-width: 768px) 100vw, 50vw"
-                      className="object-cover transition-transform duration-700 group-hover:scale-[1.03]"
+                      className="object-cover transition-transform duration-700 group-hover:scale-105"
                     />
                     <div className="absolute inset-0 bg-black/10 transition-colors group-hover:bg-black/0" />
                   </div>
-                  <div className="p-6 sm:p-7">
+                  <div className="p-8">
                     <div className="min-w-0">
-                      <h3 className="text-base font-medium text-neutral-900">
+                      <h3 className="text-xl font-semibold text-neutral-900">
                         {application.title}
                       </h3>
-                      <p className="mt-2 text-sm text-neutral-500 leading-relaxed">
+                      <p className="mt-3 text-base text-neutral-500 leading-relaxed">
                         {application.description}
                       </p>
-                      <div className="mt-5 flex flex-wrap gap-2">
+                      <div className="mt-6 flex flex-wrap gap-2">
                         {application.products.map((product) => (
                           <span
                             key={product}
@@ -178,7 +181,7 @@ export function ApplicationsOverview({
                         ))}
                       </div>
                       <span
-                        className={`mt-5 inline-flex items-center gap-1 text-xs font-medium ${selectedGroup.accentClass} group-hover:text-neutral-900 transition-colors`}
+                        className={`mt-6 inline-flex items-center gap-1 text-xs font-medium ${selectedGroup.accentClass} group-hover:text-neutral-900 transition-colors`}
                       >
                         {copy.viewDetails}
                         <ArrowRight className="w-3.5 h-3.5" />
@@ -192,16 +195,20 @@ export function ApplicationsOverview({
         </div>
       </section>
 
-      <section className="pb-24">
-        <div className="container-wide max-w-3xl">
-          <h2 className="text-2xl sm:text-3xl font-semibold text-neutral-900">
-            {copy.hubTitle}
-          </h2>
-          {copy.hubParagraphs.map((paragraph, i) => (
-            <p key={i} className="mt-4 text-neutral-500 leading-relaxed">
-              {paragraph}
-            </p>
-          ))}
+      <section className="section-padding border-t border-neutral-100">
+        <div className="container-wide">
+          <div className="grid lg:grid-cols-12 gap-10 lg:gap-16">
+            <h2 className="lg:col-span-5 text-4xl sm:text-5xl font-semibold text-neutral-900 tracking-tight leading-[1.05]">
+              {copy.hubTitle}
+            </h2>
+            <div className="lg:col-span-7 lg:pt-2">
+              {copy.hubParagraphs.map((paragraph, i) => (
+                <p key={i} className="text-lg text-neutral-500 leading-relaxed [&:not(:first-child)]:mt-5">
+                  {paragraph}
+                </p>
+              ))}
+            </div>
+          </div>
         </div>
       </section>
     </>
