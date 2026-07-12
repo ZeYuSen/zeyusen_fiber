@@ -55,24 +55,23 @@ function FactorySection() {
   const factoryTabs = factoryTabKeys.map((key) => ({ key, label: f.tabs[key] }));
 
   return (
-    <section className="py-24" style={{ backgroundColor: "#0C1128" }}>
+    <section className="section-padding" style={{ backgroundColor: "#0C1128" }}>
       <div className="container-wide">
-        <div>
-          <span className="inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-widest text-cyan-400 mb-4">
-            <span className="w-6 h-px bg-cyan-400" />
+        <div className="max-w-3xl">
+          <span className="inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-[0.2em] text-cyan-400 mb-5">
+            <span className="w-8 h-px bg-cyan-400" />
             {f.eyebrow}
-            <span className="w-6 h-px bg-cyan-400" />
           </span>
-          <h2 className="text-2xl sm:text-3xl font-semibold text-white mt-3">
+          <h2 className="text-4xl sm:text-5xl lg:text-6xl font-semibold text-white tracking-tight leading-[1.05]">
             {f.title}
           </h2>
-          <p className="text-white/50 mt-4 max-w-2xl leading-relaxed">
+          <p className="text-white/50 mt-6 max-w-2xl leading-relaxed text-lg">
             {f.intro}
           </p>
         </div>
 
         {/* Numbered tab strip */}
-        <div className="flex rounded-t-2xl overflow-hidden mt-10">
+        <div className="flex rounded-t-2xl overflow-hidden mt-14">
           {factoryTabs.map((tab, i) => {
             const isActive = activeTab === tab.key;
             const bg = isActive ? FACTORY_TAB_ACTIVE : FACTORY_TAB_INACTIVE[i] ?? "#0F172A";
@@ -103,7 +102,7 @@ function FactorySection() {
         </div>
 
         {/* Gallery Panel */}
-        <div className="rounded-b-2xl overflow-hidden p-6 sm:p-8" style={{ backgroundColor: "#162042" }}>
+        <div className="rounded-b-2xl overflow-hidden p-4 sm:p-6" style={{ backgroundColor: "#162042" }}>
           <AnimatePresence mode="wait">
             <motion.div
               key={activeTab}
@@ -111,7 +110,7 @@ function FactorySection() {
               animate={{ opacity: 1, y: 0 }}
               exit={{ opacity: 0, y: -8 }}
               transition={{ duration: 0.5, ease: easing }}
-              className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-3"
+              className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4"
             >
               {images.map((img, i) => (
                 <div
@@ -122,7 +121,8 @@ function FactorySection() {
                     src={img.src}
                     alt={img.alt}
                     fill
-                    sizes="(max-width: 768px) 50vw, (max-width: 1024px) 33vw, 20vw"
+                    quality={72}
+                    sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
                     className="object-cover opacity-90 group-hover:opacity-100 group-hover:scale-105 transition-all duration-500"
                   />
                 </div>
@@ -132,14 +132,14 @@ function FactorySection() {
         </div>
 
         {/* Factory Stats */}
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mt-12">
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-x-8 gap-y-10 mt-16 border-t border-white/10 pt-12">
           {f.stats.map((stat) => (
-            <div key={stat.label} className="p-5 bg-white/5 border border-white/10 rounded-lg text-center">
-              <span className="text-2xl font-light text-white">
+            <div key={stat.label}>
+              <span className="block text-4xl sm:text-5xl font-semibold text-white tabular-nums tracking-tight leading-none">
                 {stat.num}
-                {stat.unit && <span className="text-sm text-white/40 ml-1">{stat.unit}</span>}
+                {stat.unit && <span className="text-lg text-white/40 ml-1 font-normal">{stat.unit}</span>}
               </span>
-              <p className="text-xs uppercase tracking-wider text-white/40 mt-2">{stat.label}</p>
+              <p className="text-xs uppercase tracking-[0.15em] text-white/40 mt-3">{stat.label}</p>
             </div>
           ))}
         </div>
@@ -165,14 +165,15 @@ export default function AboutPageContent() {
       />
 
       {/* Company Story */}
-      <section className="py-24">
+      <section className="section-padding">
         <div className="container-wide">
-          <div className="grid lg:grid-cols-2 gap-12 lg:gap-20">
-            <div>
-              <p className="text-lg text-neutral-700 leading-relaxed">
+          <div className="grid lg:grid-cols-12 gap-12 lg:gap-20">
+            <div className="lg:col-span-7">
+              <p className="type-caption text-neutral-400 mb-6">{c.eyebrow}</p>
+              <p className="text-2xl sm:text-3xl text-neutral-900 leading-[1.4] font-light tracking-tight">
                 {c.story1}
               </p>
-              <p className="text-neutral-500 leading-relaxed mt-5">
+              <p className="text-neutral-500 leading-relaxed mt-8 text-lg">
                 {c.story2.pre}
                 <Link
                   href={localizedHref("carbon-fiber", locale)}
@@ -189,7 +190,7 @@ export default function AboutPageContent() {
                 </Link>
                 {c.story2.post}
               </p>
-              <p className="text-neutral-500 leading-relaxed mt-5">
+              <p className="text-neutral-500 leading-relaxed mt-5 text-lg">
                 {c.story3.pre}
                 <Link
                   href={localizedHref("services", locale)}
@@ -200,60 +201,53 @@ export default function AboutPageContent() {
                 {c.story3.post}
               </p>
             </div>
-            <div
-              className="grid grid-cols-2 gap-4"
-            >
-              {c.quickStats.map((stat) => (
-                <div
-                  key={stat.label}
-                  className="p-5 bg-neutral-50 border border-neutral-100 rounded-lg"
-                >
-                  <span className="text-2xl font-light text-neutral-900">
-                    {stat.num}
-                  </span>
-                  <p className="text-xs uppercase tracking-wider text-neutral-400 mt-2">
-                    {stat.label}
-                  </p>
-                </div>
-              ))}
+            <div className="lg:col-span-5 lg:border-l lg:border-neutral-100 lg:pl-12">
+              <div className="grid grid-cols-2 gap-y-10 gap-x-8">
+                {c.quickStats.map((stat) => (
+                  <div key={stat.label}>
+                    <span className="block text-5xl sm:text-6xl font-semibold text-neutral-900 tabular-nums tracking-tight leading-none">
+                      {stat.num}
+                    </span>
+                    <p className="text-xs uppercase tracking-[0.15em] text-neutral-400 mt-3">
+                      {stat.label}
+                    </p>
+                  </div>
+                ))}
+              </div>
             </div>
           </div>
         </div>
       </section>
 
-      <div className="container-wide"><div className="h-px bg-neutral-100" /></div>
-
       {/* Factory Tour */}
       <FactorySection />
 
-      <div className="container-wide"><div className="h-px bg-neutral-100" /></div>
-
       {/* Values */}
-      <section className="py-24">
+      <section className="section-padding bg-neutral-50">
         <div className="container-wide">
-          <div>
+          <div className="max-w-3xl">
             <p className="type-caption text-neutral-400">{c.whyEyebrow}</p>
-            <h2 className="text-2xl sm:text-3xl font-semibold text-neutral-900 mt-3">
+            <h2 className="text-4xl sm:text-5xl lg:text-6xl font-semibold text-neutral-900 mt-4 tracking-tight leading-[1.05]">
               {c.whyTitle}
             </h2>
           </div>
 
-          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-5 mt-12">
+          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-px bg-neutral-200 mt-16 border border-neutral-200 rounded-2xl overflow-hidden">
             {values.map((item, i) => (
               <div
                 key={item.title}
-                className="group relative p-7 bg-white border border-neutral-100 rounded-xl overflow-hidden hover:border-neutral-200 transition-colors"
+                className="group relative p-8 lg:p-10 bg-neutral-50 hover:bg-white transition-colors"
               >
                 <span
                   className={`absolute top-0 left-0 right-0 h-0.5 scale-x-0 group-hover:scale-x-100 origin-left transition-transform duration-300 ${item.accent}`}
                 />
-                <span className="text-4xl font-bold text-neutral-200 tabular-nums">
+                <span className="block text-6xl font-semibold text-neutral-200 tabular-nums leading-none group-hover:text-neutral-300 transition-colors">
                   {String(i + 1).padStart(2, "0")}
                 </span>
-                <h3 className="text-neutral-900 font-medium mt-4 text-sm">
+                <h3 className="text-neutral-900 font-semibold mt-6 text-lg">
                   {item.title}
                 </h3>
-                <p className="text-neutral-500 mt-2 text-sm leading-relaxed">
+                <p className="text-neutral-500 mt-3 text-sm leading-relaxed">
                   {item.description}
                 </p>
               </div>
@@ -262,36 +256,36 @@ export default function AboutPageContent() {
         </div>
       </section>
 
-      <div className="container-wide"><div className="h-px bg-neutral-100" /></div>
-
       {/* Timeline */}
-      <section className="py-24">
+      <section className="section-padding">
         <div className="container-wide">
-          <div>
-            <p className="type-caption text-neutral-400">{c.journeyEyebrow}</p>
-            <h2 className="text-2xl sm:text-3xl font-semibold text-neutral-900 mt-3">
-              {c.journeyTitle}
-            </h2>
-          </div>
+          <div className="grid lg:grid-cols-12 gap-12 lg:gap-16">
+            <div className="lg:col-span-4">
+              <p className="type-caption text-neutral-400">{c.journeyEyebrow}</p>
+              <h2 className="text-4xl sm:text-5xl font-semibold text-neutral-900 mt-4 tracking-tight leading-[1.05] lg:sticky lg:top-32">
+                {c.journeyTitle}
+              </h2>
+            </div>
 
-          <div className="mt-12 max-w-xl">
-            {milestones.map((item, i) => (
-              <div
-                key={item.year}
-                className="flex items-start gap-6 pb-8 last:pb-0 relative"
-              >
-                {i < milestones.length - 1 && (
-                  <div className="absolute left-[2.35rem] top-7 bottom-0 w-px bg-neutral-100" />
-                )}
-                <span className="font-mono text-xs text-carbon-accent w-10 pt-0.5 flex-shrink-0 text-right">
-                  {item.year}
-                </span>
-                <div className="mt-2 flex-shrink-0">
-                  <div className="w-2 h-2 rounded-full bg-gradient-to-br from-carbon-accent to-glass-accent" />
+            <div className="lg:col-span-8 lg:border-l lg:border-neutral-100 lg:pl-16">
+              {milestones.map((item, i) => (
+                <div
+                  key={item.year}
+                  className="group grid grid-cols-[auto_1fr] gap-8 pb-12 last:pb-0 relative"
+                >
+                  {i < milestones.length - 1 && (
+                    <div className="absolute left-[3.5rem] top-4 bottom-0 w-px bg-neutral-100" />
+                  )}
+                  <div className="flex items-center gap-4">
+                    <span className="font-mono text-sm text-neutral-900 w-12 tabular-nums">
+                      {item.year}
+                    </span>
+                    <div className="w-2.5 h-2.5 rounded-full bg-gradient-to-br from-carbon-accent to-glass-accent ring-4 ring-white relative z-10" />
+                  </div>
+                  <p className="text-neutral-600 leading-relaxed pt-px">{item.event}</p>
                 </div>
-                <p className="text-neutral-600 text-sm pt-0.5">{item.event}</p>
-              </div>
-            ))}
+              ))}
+            </div>
           </div>
         </div>
       </section>
