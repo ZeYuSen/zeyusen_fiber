@@ -77,7 +77,7 @@ export default function ContactPageContent() {
       />
 
       {/* Form + Sidebar */}
-      <section className="section-padding">
+      <section className="pt-16 pb-24 sm:pt-20 sm:pb-32">
         <div className="container-wide">
           <div className="grid lg:grid-cols-3 gap-12 lg:gap-16">
             {/* Form */}
