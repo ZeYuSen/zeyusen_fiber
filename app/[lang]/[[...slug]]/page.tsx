@@ -226,11 +226,41 @@ export default async function LocalizedPage({ params }: PageProps<"/[lang]/[[...
       );
 
     case "about":
-      return <AboutPageContent />;
+      return (
+        <>
+          <JsonLd
+            data={breadcrumbJsonLd([
+              { name: dict.nav.home, href: localizedHref("home", locale) },
+              { name: dict.nav.about, href: localizedHref("about", locale) },
+            ])}
+          />
+          <AboutPageContent nav={{ home: dict.nav.home, current: dict.nav.about }} />
+        </>
+      );
     case "services":
-      return <ServicesPageContent />;
+      return (
+        <>
+          <JsonLd
+            data={breadcrumbJsonLd([
+              { name: dict.nav.home, href: localizedHref("home", locale) },
+              { name: dict.nav.services, href: localizedHref("services", locale) },
+            ])}
+          />
+          <ServicesPageContent nav={{ home: dict.nav.home, current: dict.nav.services }} />
+        </>
+      );
     case "contact":
-      return <ContactPageContent />;
+      return (
+        <>
+          <JsonLd
+            data={breadcrumbJsonLd([
+              { name: dict.nav.home, href: localizedHref("home", locale) },
+              { name: dict.nav.contact, href: localizedHref("contact", locale) },
+            ])}
+          />
+          <ContactPageContent nav={{ home: dict.nav.home, current: dict.nav.contact }} />
+        </>
+      );
 
     case "privacy":
       return <LegalPage {...content.legal.privacy} />;
@@ -243,6 +273,12 @@ export default async function LocalizedPage({ params }: PageProps<"/[lang]/[[...
       return (
         <>
           <JsonLd data={faqJsonLd(content.divisionFaq[division])} />
+          <JsonLd
+            data={breadcrumbJsonLd([
+              { name: dict.nav.home, href: localizedHref("home", locale) },
+              { name: content.catalog[division].breadcrumbDivision, href: localizedHref(pageKey, locale) },
+            ])}
+          />
           <ProductCatalog
             division={division}
             locale={locale}
@@ -259,13 +295,22 @@ export default async function LocalizedPage({ params }: PageProps<"/[lang]/[[...
       const category = getCategories(division, locale).find((c) => c.slug === routeParams.category);
       if (!category) notFound();
       return (
-        <CategoryPage
-          division={division}
-          locale={locale}
-          dict={dict}
-          category={category}
-          breadcrumbDivision={content.catalog[division].breadcrumbDivision}
-        />
+        <>
+          <JsonLd
+            data={breadcrumbJsonLd([
+              { name: dict.nav.home, href: localizedHref("home", locale) },
+              { name: content.catalog[division].breadcrumbDivision, href: localizedHref(division === "carbon" ? "carbon-fiber" : "glass-fiber", locale) },
+              { name: category.name, href: localizedHref(pageKey, locale, { category: category.slug }) },
+            ])}
+          />
+          <CategoryPage
+            division={division}
+            locale={locale}
+            dict={dict}
+            category={category}
+            breadcrumbDivision={content.catalog[division].breadcrumbDivision}
+          />
+        </>
       );
     }
 
@@ -315,21 +360,37 @@ export default async function LocalizedPage({ params }: PageProps<"/[lang]/[[...
 
     case "applications":
       return (
-        <ApplicationsOverview
-          selectedMaterial="carbon"
-          locale={locale}
-          dict={dict}
-          copy={content.applications}
-        />
+        <>
+          <JsonLd
+            data={breadcrumbJsonLd([
+              { name: dict.nav.home, href: localizedHref("home", locale) },
+              { name: dict.nav.applications, href: localizedHref("applications", locale) },
+            ])}
+          />
+          <ApplicationsOverview
+            selectedMaterial="carbon"
+            locale={locale}
+            dict={dict}
+            copy={content.applications}
+          />
+        </>
       );
     case "applications-glass":
       return (
-        <ApplicationsOverview
-          selectedMaterial="glass"
-          locale={locale}
-          dict={dict}
-          copy={content.applications}
-        />
+        <>
+          <JsonLd
+            data={breadcrumbJsonLd([
+              { name: dict.nav.home, href: localizedHref("home", locale) },
+              { name: dict.nav.applications, href: localizedHref("applications-glass", locale) },
+            ])}
+          />
+          <ApplicationsOverview
+            selectedMaterial="glass"
+            locale={locale}
+            dict={dict}
+            copy={content.applications}
+          />
+        </>
       );
 
     case "carbon-application":
@@ -338,14 +399,23 @@ export default async function LocalizedPage({ params }: PageProps<"/[lang]/[[...
       const detail = getApplicationDetail(locale, division, routeParams.slug);
       if (!detail) notFound();
       return (
-        <ApplicationDetailPage
-          division={division}
-          locale={locale}
-          dict={dict}
-          detail={detail}
-          slug={routeParams.slug}
-          imageNote={content.applications.imageNote}
-        />
+        <>
+          <JsonLd
+            data={breadcrumbJsonLd([
+              { name: dict.nav.home, href: localizedHref("home", locale) },
+              { name: dict.nav.applications, href: localizedHref(division === "carbon" ? "applications" : "applications-glass", locale) },
+              { name: detail.title, href: localizedHref(pageKey, locale, { slug: routeParams.slug }) },
+            ])}
+          />
+          <ApplicationDetailPage
+            division={division}
+            locale={locale}
+            dict={dict}
+            detail={detail}
+            slug={routeParams.slug}
+            imageNote={content.applications.imageNote}
+          />
+        </>
       );
     }
 

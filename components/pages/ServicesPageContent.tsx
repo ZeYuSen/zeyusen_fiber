@@ -9,7 +9,7 @@ import { PageMediaHero } from "@/components/ui/PageMediaHero";
 import { pageHeroImages } from "@/lib/site-images";
 import { ServiceFlowAccordion } from "@/components/sections/ServiceFlowAccordion";
 
-export default function ServicesPageContent() {
+export default function ServicesPageContent({ nav }: { nav?: { home: string; current: string } }) {
   const locale = useLocale();
   const c = getPagesContent(locale).services;
 
@@ -22,6 +22,15 @@ export default function ServicesPageContent() {
         image={pageHeroImages.services}
         imageAlt={c.servicesHeading}
         objectPosition="center 42%"
+        breadcrumbs={
+          nav ? (
+            <nav aria-label="Breadcrumb" className="flex flex-wrap items-center gap-2">
+              <Link href={localizedHref("home", locale)}>{nav.home}</Link>
+              <span>/</span>
+              <span className="text-white/90">{nav.current}</span>
+            </nav>
+          ) : undefined
+        }
       />
 
       <section className="section-padding">

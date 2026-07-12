@@ -2,16 +2,19 @@
 
 import { useState, useRef } from "react";
 import Image from "next/image";
+import Link from "next/link";
 import { Send } from "lucide-react";
 import { contactInfo, whatsappPhone } from "@/lib/contact";
 import { Turnstile, type TurnstileInstance } from "@marsidev/react-turnstile";
 import { useLocale } from "@/lib/i18n/use-locale";
+import { localizedHref } from "@/lib/i18n/routes";
 import { getPagesContent } from "@/lib/i18n/pages-content";
 import { PageMediaHero } from "@/components/ui/PageMediaHero";
 import { pageHeroImages } from "@/lib/site-images";
 
-export default function ContactPageContent() {
-  const c = getPagesContent(useLocale()).contact;
+export default function ContactPageContent({ nav }: { nav?: { home: string; current: string } }) {
+  const locale = useLocale();
+  const c = getPagesContent(locale).contact;
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -73,6 +76,15 @@ export default function ContactPageContent() {
         image={pageHeroImages.contact}
         imageAlt={c.contactInfoHeading}
         objectPosition="center 48%"
+        breadcrumbs={
+          nav ? (
+            <nav aria-label="Breadcrumb" className="flex flex-wrap items-center gap-2">
+              <Link href={localizedHref("home", locale)}>{nav.home}</Link>
+              <span>/</span>
+              <span className="text-white/90">{nav.current}</span>
+            </nav>
+          ) : undefined
+        }
       />
 
       {/* Form + Sidebar */}

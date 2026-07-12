@@ -148,7 +148,7 @@ function FactorySection() {
   );
 }
 
-export default function AboutPageContent() {
+export default function AboutPageContent({ nav }: { nav?: { home: string; current: string } }) {
   const locale = useLocale();
   const c = getPagesContent(locale).about;
   const values = c.values.map((v, i) => ({ ...v, accent: valueAccents[i] }));
@@ -162,6 +162,15 @@ export default function AboutPageContent() {
         image={pageHeroImages.about}
         imageAlt={c.factory.title}
         objectPosition="center 45%"
+        breadcrumbs={
+          nav ? (
+            <nav aria-label="Breadcrumb" className="flex flex-wrap items-center gap-2">
+              <Link href={localizedHref("home", locale)}>{nav.home}</Link>
+              <span>/</span>
+              <span className="text-white/90">{nav.current}</span>
+            </nav>
+          ) : undefined
+        }
       />
 
       {/* Company Story */}

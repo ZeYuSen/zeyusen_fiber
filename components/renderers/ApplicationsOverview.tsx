@@ -66,6 +66,13 @@ export function ApplicationsOverview({
         image={getApplicationImage(selectedGroup.applications[0].slug, selectedMaterial)}
         imageAlt={`${selectedGroup.label} — ${copy.imageNote}`}
         accent={selectedMaterial}
+        breadcrumbs={
+          <nav aria-label="Breadcrumb" className="flex flex-wrap items-center gap-2">
+            <Link href={localizedHref("home", locale)}>{dict.nav.home}</Link>
+            <span>/</span>
+            <span className="text-white/90">{dict.nav.applications}</span>
+          </nav>
+        }
       />
 
       <section className="border-b border-neutral-100 py-14">
