@@ -3,6 +3,7 @@
 import { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
+import { motion, AnimatePresence } from "framer-motion";
 import { Award, Factory, Globe, Users } from "lucide-react";
 import { contactInfo } from "@/lib/contact";
 import { useLocale } from "@/lib/i18n/use-locale";
@@ -45,6 +46,10 @@ const factoryGallery = {
 
 const factoryTabKeys = ["production", "inspection", "testing", "exhibition"] as const;
 
+const FACTORY_TAB_INACTIVE = ["#1E3A8A", "#172554", "#0F172A", "#0F172A"];
+const FACTORY_TAB_ACTIVE = "#1D4ED8";
+const easing = [0.22, 1, 0.36, 1] as const;
+
 function FactorySection() {
   const [activeTab, setActiveTab] = useState<keyof typeof factoryGallery>("production");
   const images = factoryGallery[activeTab];
@@ -52,63 +57,91 @@ function FactorySection() {
   const factoryTabs = factoryTabKeys.map((key) => ({ key, label: f.tabs[key] }));
 
   return (
-    <section className="py-24">
+    <section className="py-24" style={{ backgroundColor: "#0C1128" }}>
       <div className="container-wide">
         <div>
-          <p className="type-caption text-neutral-400">{f.eyebrow}</p>
-          <h2 className="text-2xl sm:text-3xl font-semibold text-neutral-900 mt-3">
+          <span className="inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-widest text-cyan-400 mb-4">
+            <span className="w-6 h-px bg-cyan-400" />
+            {f.eyebrow}
+            <span className="w-6 h-px bg-cyan-400" />
+          </span>
+          <h2 className="text-2xl sm:text-3xl font-semibold text-white mt-3">
             {f.title}
           </h2>
-          <p className="text-neutral-500 mt-4 max-w-2xl leading-relaxed">
+          <p className="text-white/50 mt-4 max-w-2xl leading-relaxed">
             {f.intro}
           </p>
         </div>
 
-        {/* Tabs */}
-        <div className="flex flex-wrap gap-2 mt-10 mb-8">
-          {factoryTabs.map((tab) => (
-            <button
-              key={tab.key}
-              onClick={() => setActiveTab(tab.key)}
-              className={`px-4 py-2 text-sm rounded-full border transition-colors ${
-                activeTab === tab.key
-                  ? "bg-neutral-900 text-white border-neutral-900"
-                  : "bg-white text-neutral-600 border-neutral-200 hover:border-neutral-400"
-              }`}
-            >
-              {tab.label}
-            </button>
-          ))}
+        {/* Numbered tab strip */}
+        <div className="flex rounded-t-2xl overflow-hidden mt-10">
+          {factoryTabs.map((tab, i) => {
+            const isActive = activeTab === tab.key;
+            const bg = isActive ? FACTORY_TAB_ACTIVE : FACTORY_TAB_INACTIVE[i] ?? "#0F172A";
+            return (
+              <motion.button
+                key={tab.key}
+                onClick={() => setActiveTab(tab.key)}
+                className="flex-1 flex items-center gap-3 px-6 py-4 text-left transition-colors"
+                style={{ backgroundColor: bg }}
+                animate={{ backgroundColor: bg }}
+                transition={{ duration: 0.4, ease: easing }}
+              >
+                <span className={`text-xs font-bold tabular-nums shrink-0 ${isActive ? "text-white/60" : "text-white/30"}`}>
+                  {String(i + 1).padStart(2, "0")}
+                </span>
+                <span className={`text-sm font-semibold ${isActive ? "text-white" : "text-white/50"}`}>
+                  {tab.label}
+                </span>
+                {isActive && (
+                  <motion.span
+                    layoutId="factory-tab-dot"
+                    className="ml-auto w-1.5 h-1.5 rounded-full bg-cyan-400 shrink-0"
+                  />
+                )}
+              </motion.button>
+            );
+          })}
         </div>
 
-        {/* Gallery Grid */}
-        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-3">
-          {images.map((img, i) => (
-            <div
-              key={`${activeTab}-${i}`}
-              className="relative aspect-[4/3] overflow-hidden rounded-lg bg-neutral-100 group"
+        {/* Gallery Panel */}
+        <div className="rounded-b-2xl overflow-hidden p-6 sm:p-8" style={{ backgroundColor: "#162042" }}>
+          <AnimatePresence mode="wait">
+            <motion.div
+              key={activeTab}
+              initial={{ opacity: 0, y: 8 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: -8 }}
+              transition={{ duration: 0.5, ease: easing }}
+              className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-3"
             >
-              <Image
-                src={img.src}
-                alt={img.alt}
-                fill
-                sizes="(max-width: 768px) 50vw, (max-width: 1024px) 33vw, 20vw"
-                className="object-cover group-hover:scale-105 transition-transform duration-500"
-              />
-              <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-colors duration-300" />
-            </div>
-          ))}
+              {images.map((img, i) => (
+                <div
+                  key={`${activeTab}-${i}`}
+                  className="relative aspect-[4/3] overflow-hidden rounded-xl bg-[#0C1128] group"
+                >
+                  <Image
+                    src={img.src}
+                    alt={img.alt}
+                    fill
+                    sizes="(max-width: 768px) 50vw, (max-width: 1024px) 33vw, 20vw"
+                    className="object-cover opacity-90 group-hover:opacity-100 group-hover:scale-105 transition-all duration-500"
+                  />
+                </div>
+              ))}
+            </motion.div>
+          </AnimatePresence>
         </div>
 
         {/* Factory Stats */}
         <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mt-12">
           {f.stats.map((stat) => (
-            <div key={stat.label} className="p-5 bg-neutral-50 border border-neutral-100 rounded-lg text-center">
-              <span className="text-2xl font-light text-neutral-900">
+            <div key={stat.label} className="p-5 bg-white/5 border border-white/10 rounded-lg text-center">
+              <span className="text-2xl font-light text-white">
                 {stat.num}
-                {stat.unit && <span className="text-sm text-neutral-400 ml-1">{stat.unit}</span>}
+                {stat.unit && <span className="text-sm text-white/40 ml-1">{stat.unit}</span>}
               </span>
-              <p className="text-xs uppercase tracking-wider text-neutral-400 mt-2">{stat.label}</p>
+              <p className="text-xs uppercase tracking-wider text-white/40 mt-2">{stat.label}</p>
             </div>
           ))}
         </div>
@@ -208,12 +241,20 @@ export default function AboutPageContent() {
           </div>
 
           <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-5 mt-12">
-            {values.map((item) => (
+            {values.map((item, i) => (
               <div
                 key={item.title}
-                className="p-6 bg-neutral-50 border border-neutral-100 rounded-lg hover:border-neutral-200 transition-colors"
+                className="group relative p-7 bg-white border border-neutral-100 rounded-xl overflow-hidden hover:border-neutral-200 transition-colors"
               >
-                <item.icon className={`w-5 h-5 ${item.iconColor}`} />
+                <span
+                  className={`absolute top-0 left-0 right-0 h-0.5 scale-x-0 group-hover:scale-x-100 origin-left transition-transform duration-300 ${item.iconColor.replace("text-", "bg-")}`}
+                />
+                <div className="flex items-center justify-between">
+                  <span className="text-4xl font-bold text-neutral-200 tabular-nums">
+                    {String(i + 1).padStart(2, "0")}
+                  </span>
+                  <item.icon className={`w-5 h-5 ${item.iconColor}`} />
+                </div>
                 <h3 className="text-neutral-900 font-medium mt-4 text-sm">
                   {item.title}
                 </h3>

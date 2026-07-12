@@ -3,6 +3,7 @@
 import { useEffect, useRef, useState, useCallback } from "react";
 import Image from "next/image";
 import Link from "next/link";
+import { ArrowRight } from "lucide-react";
 import { gsap } from "@/lib/gsap";
 import { useLocale } from "@/lib/i18n/use-locale";
 import { localizedHref } from "@/lib/i18n/routes";
@@ -95,13 +96,14 @@ export function HeroImmersive() {
             <div className="flex gap-4 mt-10">
               <Link
                 href={localizedHref("contact", locale)}
-                className="px-8 py-3 bg-white text-black font-medium rounded-sm hover:bg-white/90 transition-colors"
+                className="group inline-flex items-center gap-2 px-8 py-3 bg-white text-black font-medium rounded-full hover:bg-white/90 transition-colors"
               >
                 {home.heroCta.quote}
+                <ArrowRight className="w-4 h-4 group-hover:translate-x-0.5 transition-transform" />
               </Link>
               <Link
                 href={localizedHref("about", locale)}
-                className="px-8 py-3 border border-white/60 text-white font-medium rounded-sm hover:bg-white/10 transition-colors"
+                className="inline-flex items-center px-8 py-3 border border-white/60 text-white font-medium rounded-full hover:bg-white/10 transition-colors"
               >
                 {home.heroCta.about}
               </Link>

@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import { ArrowLeft, ArrowRight } from "lucide-react";
 import type { Locale } from "@/lib/i18n/config";
 import { localizedHref } from "@/lib/i18n/routes";
@@ -6,6 +7,21 @@ import type { Dictionary } from "@/lib/i18n/dictionaries";
 import type { ApplicationDetail } from "@/data/application-details";
 import { PageMediaHero } from "@/components/ui/PageMediaHero";
 import { getApplicationImage } from "@/lib/site-images";
+import { getCategories } from "@/lib/data-i18n";
+
+// Resolve a representative thumbnail for a recommended-product reference.
+function getProductRefImage(
+  ref: ApplicationDetail["products"][number]["key"],
+  locale: Locale,
+): string | undefined {
+  const cats = getCategories(ref.division, locale);
+  const cat = cats.find((c) => c.slug === ref.category);
+  if ("product" in ref) {
+    const p = cat?.products.find((pr) => pr.slug === ref.product);
+    return p?.images?.[0] ?? cat?.products[0]?.images?.[0];
+  }
+  return cat?.products[0]?.images?.[0];
+}
 
 export function ApplicationDetailPage({
   division,
@@ -130,29 +146,46 @@ export function ApplicationDetailPage({
           <h2 className="text-xl font-semibold text-neutral-900 mb-10">
             {dict.sections.recommendedProducts}
           </h2>
-          <div className="space-y-3">
-            {detail.products.map((product) => (
-              <Link
-                key={product.name}
-                href={productHref(product.key)}
-                className="group flex items-center justify-between p-5 border border-neutral-100 rounded-lg hover:border-neutral-200 transition-colors"
-              >
-                <span className="text-neutral-700 group-hover:text-neutral-900 transition-colors text-sm">
-                  {product.name}
-                </span>
-                <ArrowRight className={`w-4 h-4 text-neutral-400 group-hover:text-${accent} transition-colors`} />
-              </Link>
-            ))}
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+            {detail.products.map((product) => {
+              const thumb = getProductRefImage(product.key, locale);
+              return (
+                <Link
+                  key={product.name}
+                  href={productHref(product.key)}
+                  className="group rounded-xl border border-neutral-100 overflow-hidden hover:border-neutral-300 hover:shadow-md transition-all"
+                >
+                  <div className="relative aspect-[16/10] bg-neutral-100">
+                    {thumb ? (
+                      <Image
+                        src={thumb}
+                        alt={product.name}
+                        fill
+                        quality={70}
+                        className="object-cover"
+                        sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                      />
+                    ) : null}
+                  </div>
+                  <div className="p-4 flex items-center justify-between gap-3">
+                    <span className="text-sm font-medium text-neutral-800 group-hover:text-neutral-900 transition-colors">
+                      {product.name}
+                    </span>
+                    <ArrowRight className={`w-4 h-4 text-neutral-400 group-hover:text-${accent} transition-colors shrink-0`} />
+                  </div>
+                </Link>
+              );
+            })}
           </div>
         </div>
       </section>
 
-      <section className="py-16 bg-neutral-50">
+      <section className="py-20" style={{ backgroundColor: "#0C1128" }}>
         <div className="container-wide text-center">
-          <h2 className="text-xl font-semibold text-neutral-900 mb-4">
+          <h2 className="text-2xl sm:text-3xl font-bold text-white mb-4">
             {dict.cta.customTitle}
           </h2>
-          <p className="text-neutral-500 mb-8 max-w-[500px] mx-auto leading-relaxed">
+          <p className="text-white/50 mb-8 max-w-[520px] mx-auto leading-relaxed">
             {division === "carbon" ? dict.cta.customBodyCarbon : dict.cta.customBodyGlass}
           </p>
           <Link

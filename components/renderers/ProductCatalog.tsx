@@ -57,10 +57,15 @@ export function ProductCatalog({
 
       <section className="py-20 sm:py-24">
         <div className="container-wide space-y-16">
-          {categories.map((category) => (
+          {categories.map((category, i) => (
             <div key={category.slug}>
               <div className="flex items-center justify-between mb-6">
-                <h2 className="text-sm font-medium text-neutral-900">{category.name}</h2>
+                <h2 className="flex items-center gap-3 text-lg sm:text-xl font-semibold text-neutral-900">
+                  <span className="text-lg font-bold tabular-nums text-neutral-300">
+                    {String(i + 1).padStart(2, "0")}
+                  </span>
+                  {category.name}
+                </h2>
                 <Link
                   href={localizedHref(categoryKey, locale, { category: category.slug })}
                   className={`text-xs font-medium text-${accent} hover:text-neutral-900 transition-colors`}
@@ -76,9 +81,9 @@ export function ProductCatalog({
                       category: category.slug,
                       product: product.slug,
                     })}
-                    className="group block bg-white border border-neutral-100 rounded-lg hover:border-neutral-200 overflow-hidden transition-colors cursor-pointer"
+                    className="group block bg-white border border-neutral-100 rounded-xl hover:border-neutral-200 shadow-sm hover:shadow-md overflow-hidden transition-all cursor-pointer"
                   >
-                    <div className="relative h-36 bg-neutral-100 overflow-hidden">
+                    <div className="relative h-48 bg-neutral-100 overflow-hidden">
                       <Image
                         src={product.images[0]}
                         alt={product.name}

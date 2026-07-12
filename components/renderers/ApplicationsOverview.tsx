@@ -103,17 +103,28 @@ export function ApplicationsOverview({
                 <Link
                   key={group.material}
                   href={materialHref(group.material)}
-                  className={`border p-5 transition-colors ${
+                  className={`group rounded-xl border p-5 transition-colors ${
                     isActive
-                      ? `${group.borderClass} ${group.bgClass}`
+                      ? `${group.borderClass} ${group.bgClass} ${
+                          group.material === "carbon" ? "ring-1 ring-carbon-accent" : "ring-1 ring-glass-accent"
+                        }`
                       : "border-neutral-200 bg-white hover:border-neutral-400"
                   }`}
                   aria-current={isActive ? "page" : undefined}
                 >
-                  <span className={`text-xs font-semibold uppercase ${group.accentClass}`}>
-                    {group.label}
-                  </span>
-                  <span className="mt-2 block text-sm text-neutral-500 leading-relaxed">
+                  <div className="flex items-center justify-between gap-3">
+                    <span className={`text-xs font-semibold uppercase ${group.accentClass}`}>
+                      {group.label}
+                    </span>
+                    {isActive && (
+                      <ArrowRight className={`w-4 h-4 ${group.accentClass}`} />
+                    )}
+                  </div>
+                  <span
+                    className={`mt-2 block text-sm leading-relaxed ${
+                      isActive ? "text-neutral-700 font-medium" : "text-neutral-500"
+                    }`}
+                  >
                     {group.applications.length} {copy.fieldsSuffix}
                   </span>
                 </Link>
@@ -162,7 +173,7 @@ export function ApplicationsOverview({
                 <Link
                   key={application.slug}
                   href={href}
-                  className="group block overflow-hidden border border-neutral-100 bg-white hover:border-neutral-300 transition-colors"
+                  className="group block overflow-hidden rounded-xl border border-neutral-100 bg-white transition-colors hover:border-neutral-300 hover:shadow-md"
                 >
                   <div className="relative aspect-[16/8] overflow-hidden bg-neutral-100">
                     <Image
