@@ -4,6 +4,8 @@ import type { Locale } from "@/lib/i18n/config";
 import { localizedHref } from "@/lib/i18n/routes";
 import type { Dictionary } from "@/lib/i18n/dictionaries";
 import type { BlogPost } from "@/data/blog";
+import { PageMediaHero } from "@/components/ui/PageMediaHero";
+import { pageHeroImages } from "@/lib/site-images";
 
 export function BlogIndex({
   locale,
@@ -16,25 +18,21 @@ export function BlogIndex({
 }) {
   return (
     <>
-      <section className="pt-36 pb-16">
-        <div className="container-wide">
-          <nav className="flex items-center gap-2 text-sm text-neutral-400 mb-4">
-            <Link href={localizedHref("home", locale)} className="hover:text-neutral-700 transition-colors">
-              {dict.nav.home}
-            </Link>
+      <PageMediaHero
+        title={dict.blog.eyebrow}
+        description={dict.blog.intro}
+        image={pageHeroImages.blog}
+        imageAlt={dict.blog.eyebrow}
+        breadcrumbs={
+          <nav aria-label="Breadcrumb" className="flex flex-wrap items-center gap-2">
+            <Link href={localizedHref("home", locale)}>{dict.nav.home}</Link>
             <span>/</span>
-            <span className="text-neutral-600">{dict.nav.blog}</span>
+            <span className="text-white/90">{dict.nav.blog}</span>
           </nav>
-          <h1 className="text-3xl sm:text-4xl font-semibold text-neutral-900 mt-3">
-            {dict.blog.eyebrow}
-          </h1>
-          <p className="text-neutral-500 mt-4 max-w-xl leading-relaxed">
-            {dict.blog.intro}
-          </p>
-        </div>
-      </section>
+        }
+      />
 
-      <section className="pb-24">
+      <section className="pt-16 pb-24 sm:pt-20">
         <div className="container-wide">
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
             {posts.map((post) => (

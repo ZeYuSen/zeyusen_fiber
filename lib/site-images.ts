@@ -7,6 +7,7 @@ export const pageHeroImages = {
   about: "/images/hero/banner4.jpg",
   services: "/images/showcase/equipment-slitting.webp",
   contact: "/images/showcase/shipment-ready.webp",
+  blog: "/images/hero/banner2.jpg",
 } as const;
 
 // Real, licensed industry scene photos (see

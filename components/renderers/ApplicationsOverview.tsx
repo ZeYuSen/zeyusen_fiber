@@ -77,7 +77,7 @@ export function ApplicationsOverview({
 
       <section className="border-b border-neutral-100 py-14">
         <div className="container-wide">
-          <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:ml-auto lg:max-w-3xl">
+          <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:mx-auto lg:max-w-3xl">
             {groups.map((group) => {
               const isActive = group.material === selectedMaterial;
               return (
