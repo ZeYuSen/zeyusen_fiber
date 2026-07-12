@@ -4,7 +4,7 @@ import { useRef, useState, useEffect, useCallback } from "react";
 import { createPortal } from "react-dom";
 import Image from "next/image";
 import { motion, AnimatePresence } from "framer-motion";
-import { Award, ChevronLeft, ChevronRight } from "lucide-react";
+import { ChevronLeft, ChevronRight } from "lucide-react";
 import { useLocale } from "@/lib/i18n/use-locale";
 import { getHomeContent } from "@/lib/i18n/home-content";
 
@@ -284,8 +284,7 @@ export function TrustEvidence() {
           <div className="lg:col-span-8 flex lg:border-l lg:border-white/10 lg:pl-16">
             <div className="flex flex-col w-full">
               <div className="flex items-center justify-between mb-6">
-                <h3 className="text-base font-medium text-white flex items-center gap-2">
-                  <Award className="w-4 h-4 text-blue-400" />
+                <h3 className="text-base font-medium text-white">
                   {trust.certHeading}
                 </h3>
                 <span className="text-xs text-white/40">
