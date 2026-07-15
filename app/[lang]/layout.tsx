@@ -16,6 +16,10 @@ import { locales, isLocale, localeMeta, type Locale } from "@/lib/i18n/config";
 import { getDictionary } from "@/lib/i18n/dictionaries";
 import { allLocaleHrefs } from "@/lib/i18n/routes";
 import { getCategories } from "@/lib/data-i18n";
+import { localizedHref } from "@/lib/i18n/routes";
+import { contactInfo } from "@/lib/contact";
+import { buildAgentIndex } from "@/lib/agent-tools";
+import { WebMCPProvider } from "@/components/providers/WebMCPProvider";
 
 const inter = Inter({
   variable: "--font-inter",
@@ -78,6 +82,7 @@ export default async function LangLayout({
   const homeAlternates = allLocaleHrefs("home");
   const carbonCategories = getCategories("carbon", locale).map(({ slug, name }) => ({ slug, name }));
   const glassCategories = getCategories("glass", locale).map(({ slug, name }) => ({ slug, name }));
+  const agentIndex = buildAgentIndex(locale);
 
   return (
     <html lang={localeMeta[locale].htmlLang} className={`${inter.variable} ${jetbrainsMono.variable} ${bebasNeue.variable}`}>
@@ -117,6 +122,16 @@ export default async function LangLayout({
           <Footer locale={locale} dict={dict} />
           <AIChatWidget locale={locale} dict={dict} />
         </SmoothScrollProvider>
+        <WebMCPProvider
+          index={agentIndex}
+          contact={{
+            company: contactInfo.company,
+            email: contactInfo.emails[0],
+            phone: contactInfo.phones[0],
+            address: contactInfo.address,
+          }}
+          contactHref={localizedHref("contact", locale)}
+        />
         <Analytics />
         <SpeedInsights />
       </body>

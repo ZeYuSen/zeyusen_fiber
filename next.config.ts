@@ -44,6 +44,15 @@ const nextConfig: NextConfig = {
       },
     ],
   },
+  // Map dotted .well-known paths to app routes (app router ignores folders
+  // that begin with a dot, so the handlers live under /well-known/*).
+  async rewrites() {
+    return [
+      { source: "/.well-known/api-catalog", destination: "/well-known/api-catalog" },
+      { source: "/.well-known/api-docs", destination: "/well-known/api-docs" },
+      { source: "/.well-known/health", destination: "/well-known/health" },
+    ];
+  },
   async redirects() {
     return [
       {

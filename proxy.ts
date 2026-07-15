@@ -66,6 +66,25 @@ function rewriteToMarkdown(request: NextRequest, mdPathname: string) {
   return response;
 }
 
+// Static discovery links present on every page (RFC 8288). Point agents at the
+// LLM overview, sitemap, and API catalog. Per-page links (e.g. the markdown
+// alternate) are appended in attachLinkHeader.
+const STATIC_LINKS = [
+  '</llms.txt>; rel="describedby"; type="text/plain"',
+  '</sitemap.xml>; rel="sitemap"; type="application/xml"',
+  '</.well-known/api-catalog>; rel="api-catalog"; type="application/linkset+json"',
+];
+
+// Advertise the markdown representation of the current page as an alternate.
+function attachLinkHeader(response: NextResponse, pathname: string) {
+  const links = [
+    ...STATIC_LINKS,
+    `<${pathname}>; rel="alternate"; type="text/markdown"`,
+  ];
+  response.headers.set("Link", links.join(", "));
+  return response;
+}
+
 function redirectStrippingSegment(
   request: NextRequest,
   locale: string,
@@ -122,7 +141,7 @@ export function proxy(request: NextRequest) {
       }
     }
 
-    return NextResponse.next();
+    return attachLinkHeader(NextResponse.next(), pathname);
   }
 
   // Root → locale resolution.
@@ -144,7 +163,9 @@ export function proxy(request: NextRequest) {
     // permanent redirect. Use a temporary 307 and signal cache variance.
     const response = NextResponse.redirect(url, 307);
     response.headers.set("Vary", "Accept-Language, User-Agent");
-    return response;
+    // Carry discovery links on the redirect too, so agents that inspect "/"
+    // without following the 307 still see them.
+    return attachLinkHeader(response, url.pathname);
   }
 
   // Legacy un-prefixed URL → /en/* (301 permanent, preserves SEO equity).
@@ -157,6 +178,6 @@ export const config = {
   // Exclude API, Next internals, metadata files, images, and any file with an
   // extension so they are never prefixed/redirected (avoids 404 + loops).
   matcher: [
-    "/((?!api|_next/static|_next/image|favicon.ico|sitemap.xml|robots.txt|llms.txt|md/|images|.*\\.[a-zA-Z0-9]+$).*)",
+    "/((?!api|_next/static|_next/image|favicon.ico|sitemap.xml|robots.txt|llms.txt|md/|\\.well-known|well-known|images|.*\\.[a-zA-Z0-9]+$).*)",
   ],
 };
