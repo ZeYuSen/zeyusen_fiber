@@ -47,6 +47,25 @@ function matchLocale(acceptLanguage: string | null): Locale | null {
   return null;
 }
 
+// True when the client explicitly asks for markdown. Browsers never send this
+// token in Accept, so a substring test avoids false positives.
+function wantsMarkdown(request: NextRequest): boolean {
+  const method = request.method;
+  if (method !== "GET" && method !== "HEAD") return false;
+  const accept = request.headers.get("accept") || "";
+  return accept.includes("text/markdown");
+}
+
+// Rewrite (not redirect) to the internal /md handler so agents that do not
+// follow redirects still receive markdown on the requested URL.
+function rewriteToMarkdown(request: NextRequest, mdPathname: string) {
+  const url = request.nextUrl.clone();
+  url.pathname = mdPathname;
+  const response = NextResponse.rewrite(url);
+  response.headers.set("Vary", "Accept, Accept-Language, User-Agent");
+  return response;
+}
+
 function redirectStrippingSegment(
   request: NextRequest,
   locale: string,
@@ -69,6 +88,19 @@ export function proxy(request: NextRequest) {
   const firstSegment = segments[0];
   const hasLocale =
     firstSegment && locales.includes(firstSegment as Locale);
+
+  // Markdown content negotiation. Intercept before locale/redirect logic so a
+  // markdown request on any canonical URL is served directly.
+  if (wantsMarkdown(request)) {
+    if (pathname === "/") {
+      const locale = matchLocale(request.headers.get("accept-language")) ?? defaultLocale;
+      return rewriteToMarkdown(request, `/md/${locale}`);
+    }
+    if (hasLocale) {
+      return rewriteToMarkdown(request, `/md${pathname}`);
+    }
+    // Un-prefixed paths fall through to the normal 301 → /en/* redirect below.
+  }
 
   if (hasLocale) {
     const locale = firstSegment as Locale;
@@ -125,6 +157,6 @@ export const config = {
   // Exclude API, Next internals, metadata files, images, and any file with an
   // extension so they are never prefixed/redirected (avoids 404 + loops).
   matcher: [
-    "/((?!api|_next/static|_next/image|favicon.ico|sitemap.xml|robots.txt|llms.txt|images|.*\\.[a-zA-Z0-9]+$).*)",
+    "/((?!api|_next/static|_next/image|favicon.ico|sitemap.xml|robots.txt|llms.txt|md/|images|.*\\.[a-zA-Z0-9]+$).*)",
   ],
 };
