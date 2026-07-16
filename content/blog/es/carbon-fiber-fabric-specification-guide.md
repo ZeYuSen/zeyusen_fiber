@@ -54,7 +54,7 @@ No suponga que un ligamento se adaptará a toda superficie de doble curvatura. H
 
 La masa por unidad de superficie expresa la cantidad de fibra por área. El espesor curado depende también de la densidad, el ligamento, el contenido de resina, la compactación, los vacíos y el número de capas. Una solicitud de “200 GSM y 1 mm” está incompleta si no aclara si 1 mm se refiere a una capa seca, un laminado curado o una pieza terminada.
 
-En compras, indique GSM nominal y tolerancia. En ingeniería, defina por separado capas, espesor curado, control de fracción de fibra o resina si se usa, y método de ensayo.
+En compras, indique GSM nominal y tolerancia. En ingeniería, defina por separado capas, espesor curado, control de fracción de fibra o resina si se usa, y método de ensayo. Si también trabaja en oz/yd², la [guía de peso de tejido de fibra de vidrio](/blog/fiberglass-fabric-weight-gsm-oz-conversion-guide) explica la conversión entre GSM y oz/yd² y qué no especifica el peso superficial.
 
 ## 5. Especifique el ancho útil y la construcción del rollo
 

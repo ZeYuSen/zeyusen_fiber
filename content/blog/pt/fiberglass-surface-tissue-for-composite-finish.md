@@ -91,4 +91,4 @@ Frequentemente pode proporcionar uma superfície mais lisa sob ou próximo às c
 
 ## Próximo Passo
 
-Compare os [produtos de fibra de vidro](/glass-fiber) ou [entre em contato com a ZeYuSen Fiber](/contact) informando o acabamento superficial desejado e o sistema de resina.
+Veja como a camada de superfície se encaixa na pilha completa no [guia de camadas do laminado composto](/blog/composite-laminate-layers-surface-structural-core). Compare os [produtos de fibra de vidro](/glass-fiber) ou [entre em contato com a ZeYuSen Fiber](/contact) informando o acabamento superficial desejado e o sistema de resina.

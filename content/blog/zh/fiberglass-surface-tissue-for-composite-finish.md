@@ -91,4 +91,6 @@ image: "/images/blog/fiberglass-surface-tissue-cover.jpg"
 
 ## 下一步
 
+在[复合材料层压结构指南](/blog/composite-laminate-layers-surface-structural-core) 中了解表层如何融入完整层压。
+
 对比[玻璃纤维产品](/glass-fiber)或联系泽宇森纤维，提供您的目标表面效果和树脂体系。

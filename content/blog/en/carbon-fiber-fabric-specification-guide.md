@@ -54,7 +54,7 @@ Use a process trial rather than assuming a weave will drape around every compoun
 
 Areal weight reports fiber mass per unit area. Cured laminate thickness also depends on fiber density, weave, resin content, compaction, voids, and the number of plies. A request for “200 GSM, 1 mm thick” is incomplete unless it explains whether 1 mm refers to one dry ply, a cured laminate, or a finished part.
 
-For purchasing, state the nominal GSM and its allowed tolerance. For laminate engineering, separately define ply count, cured thickness target, fiber volume or resin-content control if used, and the test method.
+For purchasing, state the nominal GSM and its allowed tolerance. For laminate engineering, separately define ply count, cured thickness target, fiber volume or resin-content control if used, and the test method. If you also work in ounces per square yard, the [fiberglass fabric weight guide](/blog/fiberglass-fabric-weight-gsm-oz-conversion-guide) covers GSM↔oz/yd² conversion and what areal weight does not specify.
 
 ## 5. Specify Usable Width and Roll Construction
 

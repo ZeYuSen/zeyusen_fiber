@@ -98,4 +98,4 @@ A manta de fibras cortadas é frequentemente mais fácil de moldar em curvas e c
 
 ## Próximo Passo
 
-Revise as [categorias de produtos de fibra de vidro](/glass-fiber) ou [entre em contato com a ZeYuSen Fiber](/contact) informando a gramagem-alvo, o processo e a aplicação.
+Antes de encomendar a manta, confirme se o aglutinante corresponde à sua resina; o [guia de sizing de reforço e compatibilidade com a resina](/blog/reinforcement-sizing-resin-compatibility-guide) explica por que aglutinantes de CSM solúveis em estireno servem para poliéster/éster vinílica, mas não para epóxi. Revise as [categorias de produtos de fibra de vidro](/glass-fiber) ou [entre em contato com a ZeYuSen Fiber](/contact) informando a gramagem-alvo, o processo e a aplicação.

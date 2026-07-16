@@ -91,4 +91,4 @@ Often it can support a smoother surface under or near finishing layers, but the 
 
 ## Next Step
 
-Compare [glass fiber products](/glass-fiber) or [contact ZeYuSen Fiber](/contact) with your target surface finish and resin system.
+See how the surface layer fits the full stack in the [composite laminate layers guide](/blog/composite-laminate-layers-surface-structural-core). Compare [glass fiber products](/glass-fiber) or [contact ZeYuSen Fiber](/contact) with your target surface finish and resin system.

@@ -98,4 +98,4 @@ El mat de hebra cortada suele ser más fácil de adaptar a curvas y esquinas. El
 
 ## Siguiente Paso
 
-Revise las [categorías de productos de fibra de vidrio](/glass-fiber) o [contacte a ZeYuSen Fiber](/contact) con su GSM objetivo, proceso y aplicación.
+Antes de pedir mat, confirme que el aglutinante coincide con su resina; la [guía de ensimaje del refuerzo y compatibilidad con la resina](/blog/reinforcement-sizing-resin-compatibility-guide) explica por qué los aglutinantes de CSM solubles en estireno son adecuados para poliéster/viniléster pero no para epoxi. Revise las [categorías de productos de fibra de vidrio](/glass-fiber) o [contacte a ZeYuSen Fiber](/contact) con su GSM objetivo, proceso y aplicación.

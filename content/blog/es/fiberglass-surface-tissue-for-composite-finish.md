@@ -91,4 +91,4 @@ A menudo puede apoyar una superficie más lisa bajo o cerca de las capas de acab
 
 ## Siguiente Paso
 
-Compara los [productos de fibra de vidrio](/glass-fiber) o [contacta con ZeYuSen Fiber](/contact) con tu acabado superficial objetivo y sistema de resina.
+Descubre cómo encaja la capa superficial en el conjunto completo del laminado en la [guía de capas del laminado de composite](/blog/composite-laminate-layers-surface-structural-core). Compara los [productos de fibra de vidrio](/glass-fiber) o [contacta con ZeYuSen Fiber](/contact) con tu acabado superficial objetivo y sistema de resina.

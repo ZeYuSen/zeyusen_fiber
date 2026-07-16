@@ -98,4 +98,4 @@ image: "/images/blog/chopped-strand-mat-cover.jpg"
 
 ## 다음 단계
 
-[유리섬유 제품 카테고리](/glass-fiber)를 검토하거나 목표 GSM, 공정, 용도를 포함하여 [ZeYuSen Fiber에 문의](/contact)하세요.
+매트를 주문하기 전에 바인더가 사용할 수지와 맞는지 확인하십시오. [보강재 사이징과 수지 호환성 가이드](/blog/reinforcement-sizing-resin-compatibility-guide)는 스티렌 가용성 CSM 바인더가 왜 폴리에스터/비닐에스터에는 적합하지만 에폭시에는 적합하지 않은지 설명합니다. [유리섬유 제품 카테고리](/glass-fiber)를 검토하거나 목표 GSM, 공정, 용도를 포함하여 [ZeYuSen Fiber에 문의](/contact)하세요.

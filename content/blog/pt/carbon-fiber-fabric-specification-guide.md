@@ -54,7 +54,7 @@ Não suponha que um ligamento se ajustará a toda superfície de dupla curvatura
 
 A gramatura informa a massa de fibra por área. A espessura curada também depende da densidade, do ligamento, do teor de resina, da compactação, dos vazios e do número de camadas. Um pedido de “200 GSM e 1 mm” é incompleto se não disser se 1 mm se refere a uma camada seca, um laminado curado ou a peça final.
 
-Na compra, indique GSM nominal e tolerância. Na engenharia, defina separadamente número de camadas, espessura curada, controle de fração de fibra ou resina quando aplicável e método de ensaio.
+Na compra, indique GSM nominal e tolerância. Na engenharia, defina separadamente número de camadas, espessura curada, controle de fração de fibra ou resina quando aplicável e método de ensaio. Se você também trabalha em oz/yd², o [guia de peso do tecido de fibra de vidro](/blog/fiberglass-fabric-weight-gsm-oz-conversion-guide) explica a conversão entre GSM e oz/yd² e o que o peso areal não especifica.
 
 ## 5. Especifique largura útil e construção do rolo
 

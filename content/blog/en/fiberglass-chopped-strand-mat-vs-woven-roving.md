@@ -98,4 +98,4 @@ Chopped strand mat is often easier to form around curves and corners. Heavy wove
 
 ## Next Step
 
-Review [fiberglass product categories](/glass-fiber) or [contact ZeYuSen Fiber](/contact) with your target GSM, process, and application.
+Before ordering mat, confirm the binder matches your resin: the [reinforcement sizing and resin compatibility guide](/blog/reinforcement-sizing-resin-compatibility-guide) explains why styrene-soluble CSM binders suit polyester and vinyl ester but not epoxy. Then review [fiberglass product categories](/glass-fiber) or [contact ZeYuSen Fiber](/contact) with your target GSM, process, and application.

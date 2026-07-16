@@ -56,6 +56,8 @@ image: "/images/blog/carbon-fabric-specification-cover.webp"
 
 采购规格应写标称GSM和允许公差。层合设计则应另行定义铺层数量、固化厚度目标，以及需要控制时的纤维体积分数或树脂含量和试验方法。
 
+若你也用 oz/yd² 计量，[玻璃纤维织物克重指南](/blog/fiberglass-fabric-weight-gsm-oz-conversion-guide) 说明了 GSM 与 oz/yd² 的换算以及面密度不能确定的内容。
+
 ## 5. 说明最小可用幅宽和卷装
 
 应写明最小可用幅宽，而不只写织机或标称宽度。还可包括边缘处理、允许的边缘变形、纸管尺寸、卷长或卷重、设备允许的最大外径，以及是否允许接头。若计划自动裁切，应提供排版宽度和方向限制。

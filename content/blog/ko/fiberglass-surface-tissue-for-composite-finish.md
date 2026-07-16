@@ -91,4 +91,4 @@ image: "/images/blog/fiberglass-surface-tissue-cover.jpg"
 
 ## 다음 단계
 
-[유리섬유 제품](/glass-fiber)을 비교하거나 목표 표면 마감과 수지 시스템을 포함하여 [ZeYuSen Fiber에 문의](/contact)하세요.
+표면층이 전체 스택에서 어떻게 자리 잡는지는 [복합재 적층 레이어 가이드](/blog/composite-laminate-layers-surface-structural-core)를 참조하세요. [유리섬유 제품](/glass-fiber)을 비교하거나 목표 표면 마감과 수지 시스템을 포함하여 [ZeYuSen Fiber에 문의](/contact)하세요.

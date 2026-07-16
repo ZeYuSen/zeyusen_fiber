@@ -98,4 +98,6 @@ image: "/images/blog/chopped-strand-mat-cover.jpg"
 
 ## 下一步
 
+订购短切毡前，先确认粘结剂与树脂匹配：[增强材料上浆与树脂兼容性指南](/blog/reinforcement-sizing-resin-compatibility-guide) 说明为何苯乙烯可溶的短切毡粘结剂适用于聚酯和乙烯基酯而不适用于环氧。
+
 查看[玻璃纤维产品类别](/glass-fiber)或联系泽宇森纤维，提供您的目标克重、工艺和应用。
