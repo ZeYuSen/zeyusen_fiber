@@ -21,15 +21,15 @@ export const ko: PagesContent = {
     },
     quickStats: [
       { num: "10+", label: "년 경력" },
-      { num: "50+", label: "수출 국가" },
+      { num: "80%+", label: "재구매율" },
       { num: "7", label: "제품 라인" },
       { num: "100%", label: "맞춤 지원" },
     ],
     values: [
       { title: "R&D & 맞춤 제작", description: "기술 인력 10%를 갖춘 두 개의 R&D 센터. 7년 이상의 복합재 소재 개발 경험과 13건의 실용신안 특허." },
-      { title: "품질 인증", description: "ISO 9001, ISO 14001, ISO 45001 인증. 지적재산권 관리 시스템 인증. SGS 시험 보고서 제공 가능." },
+      { title: "품질 인증", description: "ISO 9001, ISO 14001, ISO 45001 인증. SGS 시험 보고서 제공 가능." },
       { title: "신뢰성 & 다양성", description: "이중 생산 거점에서 여러 생산 공정(습식, 건식, 직조)을 통해 안정적이고 확장 가능한 생산." },
-      { title: "신속 배송 & 지원", description: "상하이항까지 240km. 공정 컨설팅을 위한 전담 기술 엔지니어. FOB, CIF, DDP 무역 조건 지원." },
+      { title: "신속 배송 & 지원", description: "상하이항까지 240km. 공정 컨설팅을 위한 전담 기술 엔지니어. FOB, CIF, CFR, EXW 무역 조건 지원." },
     ],
     whyEyebrow: "선택해야 하는 이유",
     whyTitle: "신뢰와 정밀함을 기반으로",
@@ -43,13 +43,13 @@ export const ko: PagesContent = {
       { year: "2020", event: "타이저우에 두 번째 생산 거점 설립" },
       { year: "2022", event: "13건의 실용신안 특허 등록" },
       { year: "2023", event: "연간 생산량: 탄소섬유 1,000만㎡, 유리섬유 8,000만㎡" },
-      { year: "2024", event: "전 세계 50개국 이상 수출 달성" },
+      { year: "2024", event: "북미, 동남아시아, 중동 및 일본/한국 시장 수출" },
     ],
     factory: {
       eyebrow: "공장 투어",
       title: "당사의 제조 시설",
       intro:
-        "난퉁과 타이저우 두 생산 거점에 걸친 80,000 m² 규모의 표준화 공장으로, 자동화 생산 라인, 첨단 시험 장비 및 전용 R&D 센터를 갖추고 있습니다.",
+        "난퉁과 타이저우 두 생산 거점의 표준화 공장으로, 자동화 생산 라인, 첨단 시험 장비 및 전용 R&D 센터를 갖추고 있습니다.",
       tabs: {
         production: "생산 라인",
         inspection: "검사 장비",
@@ -57,7 +57,7 @@ export const ko: PagesContent = {
         exhibition: "전시회",
       },
       stats: [
-        { num: "80,000", unit: "m²", label: "공장 면적" },
+        { num: "8,000", unit: "m²", label: "공장 면적" },
         { num: "13+", unit: "", label: "실용신안 특허" },
         { num: "240", unit: "km", label: "상하이항까지" },
         { num: "2", unit: "", label: "생산 거점" },
@@ -84,7 +84,7 @@ export const ko: PagesContent = {
       { title: "R&D & 기술 지원", description: "소재 선택부터 공정 최적화까지 전문 기술 지도.", features: ["제품 상담 & 소재 선택", "기술 솔루션 추천", "공정 최적화 컨설팅", "현장 기술 교육 가능"] },
       { title: "품질 보증", description: "모든 단계에서 엄격한 품질 관리, 국제 표준 인증.", features: ["ISO 9001 품질 경영", "ISO 14001 환경 경영", "ISO 45001 산업안전보건", "다수의 특허 제품"] },
       { title: "전담 주문 관리", description: "전담 전문가팀이 주문부터 배송까지 관리합니다.", features: ["전담 프로젝트 매니저", "실시간 생산 업데이트", "투명한 커뮤니케이션", "유연한 주문 조정"] },
-      { title: "물류 & 신속 배송", description: "효율적인 수출을 위해 상하이항에서 240km 거리의 이중 제조 거점.", features: ["이중 생산 거점(난퉁 + 타이저우)", "상하이항에서 240km", "신속 배송 약속", "유연한 운송 조건(FOB/CIF/DDP)"] },
+      { title: "물류 & 신속 배송", description: "효율적인 수출을 위해 상하이항에서 240km 거리의 이중 제조 거점.", features: ["이중 생산 거점(난퉁 + 타이저우)", "상하이항에서 240km", "신속 배송 약속", "유연한 운송 조건(FOB/CIF/CFR/EXW)"] },
       { title: "애프터서비스", description: "배송 이후에도 지속적인 기술 지원 및 품질 보증.", features: ["포괄적인 품질 보증", "지속적인 기술 지원", "신속한 문제 대응", "장기 파트너십 접근"] },
     ],
     processEyebrow: "프로세스",

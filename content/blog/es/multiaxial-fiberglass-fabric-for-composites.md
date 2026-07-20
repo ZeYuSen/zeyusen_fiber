@@ -11,7 +11,7 @@ image: "/images/blog/multiaxial-fiberglass-cover.jpg"
 
 El tejido multiaxial de fibra de vidrio —también llamado tejido sin rizado (NCF), tejido cosido o refuerzo multicapa— está diseñado para piezas de composite que necesitan resistencia en más de una dirección. En lugar de depender únicamente de una estructura tejida tradicional 0°/90°, los refuerzos multiaxiales colocan las fibras en ángulos calculados como ±45°, 0°/90° u orientaciones combinadas para adaptarse a la trayectoria de carga de la pieza.
 
-Esto convierte al tejido multiaxial de fibra de vidrio en el refuerzo preferido para palas de aerogeneradores, cubiertas de góndola, estructuras marinas, paneles de transporte y otras aplicaciones de composite de alto rendimiento donde la colocación calculada de fibras reduce el peso y mejora la eficiencia mecánica. Basándonos en nuestra experiencia de producción suministrando a fabricantes de energía eólica en más de 50 países, ofrecemos esteras multiaxiales y biaxiales cosidas de 300g/m² a 1200g/m².
+Esto convierte al tejido multiaxial de fibra de vidrio en el refuerzo preferido para palas de aerogeneradores, cubiertas de góndola, estructuras marinas, paneles de transporte y otras aplicaciones de composite de alto rendimiento donde la colocación calculada de fibras reduce el peso y mejora la eficiencia mecánica. Basándonos en nuestra experiencia de producción suministrando a fabricantes de energía eólica en América del Norte, Sudeste Asiático, Oriente Medio y Asia Oriental, ofrecemos esteras multiaxiales y biaxiales cosidas de 300g/m² a 1200g/m².
 
 ## Qué Hace Diferente al Tejido Multiaxial
 

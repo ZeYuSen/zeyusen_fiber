@@ -21,15 +21,15 @@ export const zh: PagesContent = {
     },
     quickStats: [
       { num: "10+", label: "年经验" },
-      { num: "50+", label: "出口国家" },
+      { num: "80%+", label: "客户复购率" },
       { num: "7", label: "产品线" },
       { num: "100%", label: "定制支持" },
     ],
     values: [
       { title: "研发与定制", description: "两个研发中心，10%技术人员。7年以上复合材料开发经验，13项实用新型专利。" },
-      { title: "质量认证", description: "ISO 9001、ISO 14001、ISO 45001认证。知识产权管理体系认证。可提供SGS检测报告。" },
+      { title: "质量认证", description: "ISO 9001、ISO 14001、ISO 45001认证。可提供SGS检测报告。" },
       { title: "可靠与多元", description: "双生产基地多种生产工艺（湿法、干法、编织），确保稳定、可扩展的产出。" },
-      { title: "快速交付与支持", description: "距上海港240公里。专属技术工程师提供工艺咨询。支持FOB、CIF、DDP贸易条款。" },
+      { title: "快速交付与支持", description: "距上海港240公里。专属技术工程师提供工艺咨询。支持FOB、CIF、CFR、EXW贸易条款。" },
     ],
     whyEyebrow: "为什么选择我们",
     whyTitle: "以信任与精准为基石",
@@ -43,13 +43,13 @@ export const zh: PagesContent = {
       { year: "2020", event: "泰州第二生产基地建立" },
       { year: "2022", event: "获得13项实用新型专利" },
       { year: "2023", event: "年产量：碳纤维1000万㎡，玻纤8000万㎡" },
-      { year: "2024", event: "出口覆盖全球50+国家" },
+      { year: "2024", event: "出口覆盖北美、东南亚、中东及日韩市场" },
     ],
     factory: {
       eyebrow: "工厂参观",
       title: "我们的生产设施",
       intro:
-        "南通和泰州双基地共80,000平方米标准化厂房，配备自动化生产线、先进检测设备和专用研发中心。",
+        "南通和泰州双生产基地标准化厂房，配备自动化生产线、先进检测设备和专用研发中心。",
       tabs: {
         production: "生产线",
         inspection: "检测设备",
@@ -57,7 +57,7 @@ export const zh: PagesContent = {
         exhibition: "展会",
       },
       stats: [
-        { num: "80,000", unit: "m²", label: "厂房面积" },
+        { num: "8,000", unit: "m²", label: "厂房面积" },
         { num: "13+", unit: "", label: "实用新型专利" },
         { num: "240", unit: "km", label: "距上海港" },
         { num: "2", unit: "", label: "生产基地" },
@@ -84,7 +84,7 @@ export const zh: PagesContent = {
       { title: "研发与技术支持", description: "从材料选择到工艺优化的专业技术指导。", features: ["产品咨询与选材", "技术方案推荐", "工艺优化咨询", "可提供现场技术培训"] },
       { title: "质量保证", description: "每个环节严格质量管控，通过国际标准认证。", features: ["ISO 9001质量管理", "ISO 14001环境管理", "ISO 45001职业健康安全", "多项专利产品"] },
       { title: "专属订单管理", description: "专属团队从下单到交付全程跟踪管理。", features: ["专属项目经理", "实时生产进度更新", "透明沟通", "灵活调整订单"] },
-      { title: "物流与快速交付", description: "双生产基地，距上海港240公里，高效出口。", features: ["双生产基地（南通+泰州）", "距上海港240公里", "快速交付承诺", "灵活贸易条款（FOB/CIF/DDP）"] },
+      { title: "物流与快速交付", description: "双生产基地，距上海港240公里，高效出口。", features: ["双生产基地（南通+泰州）", "距上海港240公里", "快速交付承诺", "灵活贸易条款（FOB/CIF/CFR/EXW）"] },
       { title: "售后服务", description: "交付后持续的技术支持和质量保障。", features: ["全面质量保证", "持续技术支持", "快速问题响应", "长期合作伙伴关系"] },
     ],
     processEyebrow: "流程",

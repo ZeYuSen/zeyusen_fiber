@@ -27,7 +27,7 @@ export function GET() {
 
   const body = `# ZeYuSen Fiber
 
-> ${siteConfig.description} Operated by ${contactInfo.company}, a manufacturer integrating R&D, production, and global export of carbon fiber and fiberglass composite materials since ${contactInfo.foundingDate}.
+> ${siteConfig.description} Operated by ${contactInfo.company}, a manufacturer integrating R&D, production, and global export of carbon fiber and fiberglass composite materials since ${contactInfo.foundingYear}.
 
 ZeYuSen Fiber supplies carbon fiber surface mats, woven cloth, raw materials, fiberglass tissue mats, composite mats, and reinforcement fabrics to B2B buyers worldwide. Quotes are request-based. Certifications: ISO 9001, ISO 14001, ISO 45001.
 

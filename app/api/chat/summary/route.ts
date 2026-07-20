@@ -42,7 +42,7 @@ function escapeHtml(str: string): string {
 const SUMMARY_PROMPT = `Analyze the following customer chat conversation and return a JSON response with two fields:
 
 1. "intent": either "high" or "low"
-2. "summary": a brief summary for the sales team (2-4 sentences)
+2. "summary": a brief summary for the sales team (2-4 sentences), written in Simplified Chinese (简体中文). Keep product names, model numbers, and technical units in their original form.
 
 HIGH intent criteria (any one is enough):
 - Asked for a price quote or pricing
@@ -51,7 +51,7 @@ HIGH intent criteria (any one is enough):
 - Asked about delivery time / lead time
 - Provided company name or contact details
 - Discussed specific customization requirements (weight, width, size, etc.)
-- Asked about trade terms (FOB, CIF, DDP)
+- Asked about trade terms (FOB, CIF, CFR, EXW)
 - Mentioned a specific quantity or order size
 - Asked about payment terms
 
@@ -61,8 +61,8 @@ LOW intent (all of the below):
 - Only asked 1-2 simple questions without follow-up
 - No buying signals whatsoever
 
-IMPORTANT: Return ONLY valid JSON, no markdown, no code blocks. Example:
-{"intent": "high", "summary": "Customer from Germany inquired about carbon fiber surface mat 20g/m², asked for MOQ and sample. Interested in wind energy application."}`;
+IMPORTANT: Return ONLY valid JSON, no markdown, no code blocks. The "summary" value MUST be in Simplified Chinese. Example:
+{"intent": "high", "summary": "德国客户咨询碳纤维表面毡 20g/m²，询问了 MOQ 和样品，关注风电应用。"}`;
 
 export async function POST(request: NextRequest) {
   try {
@@ -97,7 +97,7 @@ export async function POST(request: NextRequest) {
     }
 
     const transcript = messages
-      .map((m: { role: string; content: string }) => `${m.role === "user" ? "Customer" : "AI"}: ${m.content}`)
+      .map((m: { role: string; content: string }) => `${m.role === "user" ? "客户" : "AI"}：${m.content}`)
       .join("\n");
 
     let summary = transcript;
@@ -160,17 +160,17 @@ export async function POST(request: NextRequest) {
       await transporter.sendMail({
         from: `ZeYuSen AI Chat <${emailUser}>`,
         to: notifyEmail,
-        subject: `[High Intent] Sales Lead - ${timestamp}`,
+        subject: `【高意向】销售线索 - ${timestamp}`,
         html: `
-          <h2>High-Intent Customer Conversation</h2>
-          <p><strong>Session:</strong> ${safeSessionId}</p>
-          <p><strong>Time:</strong> ${timestamp}</p>
-          <p><strong>Messages:</strong> ${messages.length} (${userMessages.length} from customer)</p>
+          <h2>高意向客户对话</h2>
+          <p><strong>会话 ID：</strong> ${safeSessionId}</p>
+          <p><strong>时间：</strong> ${timestamp}</p>
+          <p><strong>消息数：</strong> ${messages.length} 条（客户 ${userMessages.length} 条）</p>
           <hr />
-          <h3>AI Summary</h3>
+          <h3>AI 摘要</h3>
           <div style="background:#f5f5f5;padding:16px;border-radius:8px;white-space:pre-wrap;font-size:14px;">${safeSummary}</div>
           <hr />
-          <h3>Full Transcript</h3>
+          <h3>完整对话记录</h3>
           <div style="background:#fafafa;padding:16px;border-radius:8px;font-size:13px;white-space:pre-wrap;">${safeTranscript}</div>
         `,
       });

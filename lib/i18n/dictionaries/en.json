@@ -74,7 +74,8 @@
     "privacy": "Privacy Policy",
     "terms": "Terms of Service",
     "rights": "All rights reserved.",
-    "certifications": "ISO 9001 · ISO 14001 · ISO 45001 Certified"
+    "certifications": "ISO 9001 · ISO 14001 · ISO 45001 Certified",
+    "sgsAudited": "SGS Audited Supplier"
   },
   "chat": {
     "title": "ZeYuSen Assistant",
@@ -86,7 +87,8 @@
     "closeChat": "Close chat",
     "thinking": "Thinking...",
     "error": "Something went wrong. Please try again or contact us directly.",
-    "disclaimer": "AI responses may be inaccurate. Confirm details with our team."
+    "disclaimer": "AI responses may be inaccurate. Confirm details with our team.",
+    "limitReached": "Chat limit reached — please contact us on WhatsApp or by email."
   },
   "blog": {
     "eyebrow": "Insights & Guides",

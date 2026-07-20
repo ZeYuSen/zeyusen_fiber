@@ -69,12 +69,12 @@ const en: HomeContent = {
     {
       title: "State-of-the-Art Manufacturing",
       subtitle:
-        "80,000 m² production facility with automated production lines and strict quality control",
+        "Standardized production facilities with automated production lines and strict quality control",
     },
     {
-      title: "Shipped to 50+ Countries",
+      title: "Trusted by Global Buyers",
       subtitle:
-        "Dual production bases 240 km from Shanghai Port — FOB, CIF or DDP, coordinated to your terms",
+        "Dual production bases 240 km from Shanghai Port — FOB, CIF, CFR or EXW, coordinated to your terms",
     },
   ],
   heroCta: { quote: "Get a Quote", about: "About Our Manufacturing" },
@@ -121,7 +121,7 @@ const en: HomeContent = {
   exploreProducts: "Explore Products",
   stats: [
     { value: 10, suffix: "+", label: "Years Experience" },
-    { value: 50, suffix: "+", label: "Countries Exported" },
+    { value: 80, suffix: "%+", label: "Repeat Buyers" },
     { value: 80, suffix: "M", label: "Sqm Annual Output" },
     { value: 13, suffix: "+", label: "Patents Granted" },
   ],
@@ -143,7 +143,7 @@ const en: HomeContent = {
       "With a decade of manufacturing expertise and partnerships with leading research institutions, we deliver composite materials that meet the most demanding specifications — on time, every time.",
     capabilities: [
       { number: "01", title: "Custom Engineering", description: "Tailored fiber solutions from 10g/m² to 1200g/m², any specification." },
-      { number: "02", title: "Global Logistics", description: "Dual production bases, 240km from Shanghai Port. Exporting to 50+ countries." },
+      { number: "02", title: "Global Logistics", description: "Dual production bases, 240km from Shanghai Port. Exporting to North America, Southeast Asia, the Middle East, and Japan/South Korea." },
       { number: "03", title: "Quality Certified", description: "ISO 9001, 14001, 45001 certified. 13+ patents in composite materials." },
     ],
   },
@@ -154,7 +154,7 @@ const en: HomeContent = {
     metrics: [
       { number: "01", metric: "10", suffix: "+", unit: "Years", title: "Composite Experience", text: "Focused exclusively on fiberglass and carbon fiber since 2015, serving demanding industrial applications worldwide." },
       { number: "02", metric: "2", suffix: "", unit: "R&D Centers", title: "Engineering Backbone", text: "Dedicated R&D staff guide you from material selection through production — engineers who understand your process." },
-      { number: "03", metric: "50", suffix: "+", unit: "Countries", title: "Export Footprint", text: "Stable global delivery from dual production bases, 240 km to Shanghai Port. FOB, CIF, DDP — coordinated to your terms." },
+      { number: "03", metric: "80", suffix: "%+", unit: "Repeat Buyers", title: "Export Footprint", text: "Stable global delivery to North America, Southeast Asia, the Middle East, and Japan/South Korea. FOB, CIF, CFR, EXW — coordinated to your terms." },
     ],
     certHeading: "Certified Quality & Patents",
     certCount: "Certificates",
@@ -164,7 +164,7 @@ const en: HomeContent = {
     logistics: [
       { label: "Dual Production Base", text: "Manufacturing in Nantong and Taizhou — stable, scalable output." },
       { label: "240 km to Shanghai Port", text: "Export-ready logistics hub with efficient sea freight worldwide." },
-      { label: "Flexible Trade Terms", text: "FOB, CIF, DDP — sample shipments to bulk orders." },
+      { label: "Flexible Trade Terms", text: "FOB, CIF, CFR, EXW — sample shipments to bulk orders." },
     ],
     followUp: "End-to-end follow-up",
     steps: ["Inquiry", "Production", "Inspection", "Shipment"],
@@ -197,8 +197,8 @@ const en: HomeContent = {
 const ko: HomeContent = {
   hero: [
     { title: "첨단 복합재 소재", subtitle: "탄소섬유부터 유리섬유까지 — 세계에서 가장 까다로운 산업을 위해 설계됨" },
-    { title: "최첨단 제조 시설", subtitle: "자동화 생산 라인과 엄격한 품질 관리를 갖춘 80,000 m² 생산 시설" },
-    { title: "50개국 이상에 공급", subtitle: "상하이항에서 240km 거리의 이중 생산 거점 — FOB, CIF, DDP, 귀하의 조건에 맞춰 조율" },
+    { title: "최첨단 제조 시설", subtitle: "자동화 생산 라인과 엄격한 품질 관리를 갖춘 표준화 생산 시설" },
+    { title: "글로벌 바이어의 신뢰", subtitle: "상하이항에서 240km 거리의 이중 생산 거점 — FOB, CIF, CFR, EXW, 귀하의 조건에 맞춰 조율" },
   ],
   heroCta: { quote: "견적 요청", about: "제조 시설 소개" },
   divisions: {
@@ -222,7 +222,7 @@ const ko: HomeContent = {
   exploreProducts: "제품 둘러보기",
   stats: [
     { value: 10, suffix: "+", label: "년 경력" },
-    { value: 50, suffix: "+", label: "수출 국가" },
+    { value: 80, suffix: "%+", label: "재구매율" },
     { value: 80, suffix: "M", label: "연간 생산량(㎡)" },
     { value: 13, suffix: "+", label: "특허 등록" },
   ],
@@ -243,7 +243,7 @@ const ko: HomeContent = {
     intro: "10년 이상의 제조 전문성과 선도적인 연구 기관과의 협력을 통해, 가장 까다로운 사양을 충족하는 복합재 소재를 항상 정시에 제공합니다.",
     capabilities: [
       { number: "01", title: "맞춤 엔지니어링", description: "10g/m²에서 1200g/m²까지, 모든 사양에 맞춘 섬유 솔루션." },
-      { number: "02", title: "글로벌 물류", description: "상하이항에서 240km 거리의 이중 생산 거점. 50개국 이상 수출." },
+      { number: "02", title: "글로벌 물류", description: "상하이항에서 240km 거리의 이중 생산 거점. 북미, 동남아시아, 중동 및 일본/한국 수출." },
       { number: "03", title: "품질 인증", description: "ISO 9001, 14001, 45001 인증. 복합재 분야 13건 이상 특허." },
     ],
   },
@@ -253,7 +253,7 @@ const ko: HomeContent = {
     metrics: [
       { number: "01", metric: "10", suffix: "+", unit: "년", title: "복합재 경력", text: "2015년부터 유리섬유와 탄소섬유에만 전념하며 전 세계의 까다로운 산업 응용에 서비스를 제공합니다." },
       { number: "02", metric: "2", suffix: "", unit: "R&D 센터", title: "엔지니어링 기반", text: "전담 R&D 인력이 소재 선택부터 생산까지 안내합니다 — 귀하의 공정을 이해하는 엔지니어." },
-      { number: "03", metric: "50", suffix: "+", unit: "개국", title: "수출 거점", text: "이중 생산 거점에서 안정적인 글로벌 배송, 상하이항까지 240km. FOB, CIF, DDP — 귀하의 조건에 맞춰 조율." },
+      { number: "03", metric: "80", suffix: "%+", unit: "재구매율", title: "수출 거점", text: "북미, 동남아시아, 중동 및 일본/한국으로 안정적인 글로벌 배송, 상하이항까지 240km. FOB, CIF, CFR, EXW — 귀하의 조건에 맞춰 조율." },
     ],
     certHeading: "인증 품질 & 특허",
     certCount: "건의 인증",
@@ -263,7 +263,7 @@ const ko: HomeContent = {
     logistics: [
       { label: "이중 생산 거점", text: "난퉁과 타이저우에서 제조 — 안정적이고 확장 가능한 생산." },
       { label: "상하이항까지 240km", text: "전 세계로 효율적인 해상 운송이 가능한 수출 준비 물류 허브." },
-      { label: "유연한 무역 조건", text: "FOB, CIF, DDP — 샘플 배송부터 대량 주문까지." },
+      { label: "유연한 무역 조건", text: "FOB, CIF, CFR, EXW — 샘플 배송부터 대량 주문까지." },
     ],
     followUp: "엔드투엔드 후속 관리",
     steps: ["문의", "생산", "검사", "출하"],
@@ -293,8 +293,8 @@ const ko: HomeContent = {
 const es: HomeContent = {
   hero: [
     { title: "Materiales Compuestos Avanzados", subtitle: "De la fibra de carbono a la fibra de vidrio — diseñados para las industrias más exigentes del mundo" },
-    { title: "Fabricación de Vanguardia", subtitle: "Planta de producción de 80.000 m² con líneas automatizadas y estricto control de calidad" },
-    { title: "Exportamos a más de 50 países", subtitle: "Bases de producción duales a 240 km del Puerto de Shanghái — FOB, CIF o DDP, coordinado a sus términos" },
+    { title: "Fabricación de Vanguardia", subtitle: "Instalaciones de producción estandarizadas con líneas automatizadas y estricto control de calidad" },
+    { title: "La Confianza de Compradores Globales", subtitle: "Bases de producción duales a 240 km del Puerto de Shanghái — FOB, CIF, CFR o EXW, coordinado a sus términos" },
   ],
   heroCta: { quote: "Solicitar Cotización", about: "Sobre Nuestra Fabricación" },
   divisions: {
@@ -318,7 +318,7 @@ const es: HomeContent = {
   exploreProducts: "Explorar Productos",
   stats: [
     { value: 10, suffix: "+", label: "Años de Experiencia" },
-    { value: 50, suffix: "+", label: "Países de Exportación" },
+    { value: 80, suffix: "%+", label: "Recompra de Clientes" },
     { value: 80, suffix: "M", label: "m² Producción Anual" },
     { value: 13, suffix: "+", label: "Patentes Concedidas" },
   ],
@@ -339,7 +339,7 @@ const es: HomeContent = {
     intro: "Con más de 10 años de experiencia en fabricación y alianzas con instituciones de investigación líderes, entregamos materiales compuestos que cumplen las especificaciones más exigentes — a tiempo, siempre.",
     capabilities: [
       { number: "01", title: "Ingeniería Personalizada", description: "Soluciones de fibra a medida de 10g/m² a 1200g/m², cualquier especificación." },
-      { number: "02", title: "Logística Global", description: "Bases de producción duales, a 240 km del Puerto de Shanghái. Exportando a más de 50 países." },
+      { number: "02", title: "Logística Global", description: "Bases de producción duales, a 240 km del Puerto de Shanghái. Exportando a América del Norte, Sudeste Asiático, Oriente Medio y Japón/Corea del Sur." },
       { number: "03", title: "Calidad Certificada", description: "Certificado ISO 9001, 14001, 45001. Más de 13 patentes en materiales compuestos." },
     ],
   },
@@ -349,7 +349,7 @@ const es: HomeContent = {
     metrics: [
       { number: "01", metric: "10", suffix: "+", unit: "Años", title: "Experiencia en Compuestos", text: "Enfocados exclusivamente en fibra de vidrio y fibra de carbono desde 2015, atendiendo aplicaciones industriales exigentes en todo el mundo." },
       { number: "02", metric: "2", suffix: "", unit: "Centros de I+D", title: "Base de Ingeniería", text: "Personal de I+D dedicado lo guía desde la selección de materiales hasta la producción — ingenieros que entienden su proceso." },
-      { number: "03", metric: "50", suffix: "+", unit: "Países", title: "Presencia Exportadora", text: "Entrega global estable desde bases de producción duales, a 240 km del Puerto de Shanghái. FOB, CIF, DDP — coordinado a sus términos." },
+      { number: "03", metric: "80", suffix: "%+", unit: "Recompra", title: "Presencia Exportadora", text: "Entrega global estable a América del Norte, Sudeste Asiático, Oriente Medio y Japón/Corea del Sur. FOB, CIF, CFR, EXW — coordinado a sus términos." },
     ],
     certHeading: "Calidad Certificada y Patentes",
     certCount: "Certificados",
@@ -359,7 +359,7 @@ const es: HomeContent = {
     logistics: [
       { label: "Base de Producción Dual", text: "Fabricación en Nantong y Taizhou — producción estable y escalable." },
       { label: "240 km al Puerto de Shanghái", text: "Centro logístico listo para exportación con flete marítimo eficiente en todo el mundo." },
-      { label: "Términos Comerciales Flexibles", text: "FOB, CIF, DDP — desde envíos de muestra hasta pedidos a granel." },
+      { label: "Términos Comerciales Flexibles", text: "FOB, CIF, CFR, EXW — desde envíos de muestra hasta pedidos a granel." },
     ],
     followUp: "Seguimiento de principio a fin",
     steps: ["Consulta", "Producción", "Inspección", "Envío"],
@@ -391,8 +391,8 @@ const es: HomeContent = {
 const pt: HomeContent = {
   hero: [
     { title: "Materiais Compósitos Avançados", subtitle: "Da fibra de carbono à fibra de vidro — projetados para os setores mais exigentes do mundo" },
-    { title: "Fabricação de Última Geração", subtitle: "Planta de produção de 80.000 m² com linhas automatizadas e rigoroso controle de qualidade" },
-    { title: "Exportamos para mais de 50 países", subtitle: "Bases de produção duplas a 240 km do Porto de Xangai — FOB, CIF ou DDP, coordenado aos seus termos" },
+    { title: "Fabricação de Última Geração", subtitle: "Instalações de produção padronizadas com linhas automatizadas e rigoroso controle de qualidade" },
+    { title: "A Confiança de Compradores Globais", subtitle: "Bases de produção duplas a 240 km do Porto de Xangai — FOB, CIF, CFR ou EXW, coordenado aos seus termos" },
   ],
   heroCta: { quote: "Solicitar Orçamento", about: "Sobre Nossa Fabricação" },
   divisions: {
@@ -416,7 +416,7 @@ const pt: HomeContent = {
   exploreProducts: "Explorar Produtos",
   stats: [
     { value: 10, suffix: "+", label: "Anos de Experiência" },
-    { value: 50, suffix: "+", label: "Países de Exportação" },
+    { value: 80, suffix: "%+", label: "Recompra de Clientes" },
     { value: 80, suffix: "M", label: "m² Produção Anual" },
     { value: 13, suffix: "+", label: "Patentes Concedidas" },
   ],
@@ -437,7 +437,7 @@ const pt: HomeContent = {
     intro: "Com mais de 10 anos de experiência em fabricação e parcerias com instituições de pesquisa líderes, entregamos materiais compósitos que atendem às especificações mais exigentes — no prazo, sempre.",
     capabilities: [
       { number: "01", title: "Engenharia Personalizada", description: "Soluções de fibra sob medida de 10g/m² a 1200g/m², qualquer especificação." },
-      { number: "02", title: "Logística Global", description: "Bases de produção duplas, a 240 km do Porto de Xangai. Exportando para mais de 50 países." },
+      { number: "02", title: "Logística Global", description: "Bases de produção duplas, a 240 km do Porto de Xangai. Exportando para América do Norte, Sudeste Asiático, Oriente Médio e Japão/Coreia do Sul." },
       { number: "03", title: "Qualidade Certificada", description: "Certificado ISO 9001, 14001, 45001. Mais de 13 patentes em materiais compósitos." },
     ],
   },
@@ -447,7 +447,7 @@ const pt: HomeContent = {
     metrics: [
       { number: "01", metric: "10", suffix: "+", unit: "Anos", title: "Experiência em Compósitos", text: "Focados exclusivamente em fibra de vidro e fibra de carbono desde 2015, atendendo aplicações industriais exigentes em todo o mundo." },
       { number: "02", metric: "2", suffix: "", unit: "Centros de P&D", title: "Base de Engenharia", text: "Equipe de P&D dedicada o orienta da seleção de materiais à produção — engenheiros que entendem o seu processo." },
-      { number: "03", metric: "50", suffix: "+", unit: "Países", title: "Presença de Exportação", text: "Entrega global estável a partir de bases de produção duplas, a 240 km do Porto de Xangai. FOB, CIF, DDP — coordenado aos seus termos." },
+      { number: "03", metric: "80", suffix: "%+", unit: "Recompra", title: "Presença de Exportação", text: "Entrega global estável para América do Norte, Sudeste Asiático, Oriente Médio e Japão/Coreia do Sul. FOB, CIF, CFR, EXW — coordenado aos seus termos." },
     ],
     certHeading: "Qualidade Certificada e Patentes",
     certCount: "Certificados",
@@ -457,7 +457,7 @@ const pt: HomeContent = {
     logistics: [
       { label: "Base de Produção Dupla", text: "Fabricação em Nantong e Taizhou — produção estável e escalável." },
       { label: "240 km do Porto de Xangai", text: "Hub logístico pronto para exportação com frete marítimo eficiente em todo o mundo." },
-      { label: "Termos Comerciais Flexíveis", text: "FOB, CIF, DDP — de remessas de amostra a pedidos em grande volume." },
+      { label: "Termos Comerciais Flexíveis", text: "FOB, CIF, CFR, EXW — de remessas de amostra a pedidos em grande volume." },
     ],
     followUp: "Acompanhamento de ponta a ponta",
     steps: ["Consulta", "Produção", "Inspeção", "Embarque"],
@@ -489,8 +489,8 @@ const pt: HomeContent = {
 const zh: HomeContent = {
   hero: [
     { title: "先进复合材料", subtitle: "从碳纤维到玻璃纤维——为全球最严苛行业而设计" },
-    { title: "先进制造设施", subtitle: "80,000平方米生产基地，配备自动化生产线和严格质量管控" },
-    { title: "出口50多个国家", subtitle: "距上海港240公里的双生产基地——FOB、CIF 或 DDP，按您的条款灵活协调" },
+    { title: "先进制造设施", subtitle: "标准化生产基地，配备自动化生产线和严格质量管控" },
+    { title: "深受全球买家信赖", subtitle: "距上海港240公里的双生产基地——FOB、CIF、CFR 或 EXW，按您的条款灵活协调" },
   ],
   heroCta: { quote: "获取报价", about: "了解我们的制造" },
   divisions: {
@@ -514,7 +514,7 @@ const zh: HomeContent = {
   exploreProducts: "浏览产品",
   stats: [
     { value: 10, suffix: "+", label: "年经验" },
-    { value: 50, suffix: "+", label: "出口国家" },
+    { value: 80, suffix: "%+", label: "客户复购率" },
     { value: 80, suffix: "M", label: "平方米年产量" },
     { value: 13, suffix: "+", label: "授权专利" },
   ],
@@ -535,7 +535,7 @@ const zh: HomeContent = {
     intro: "凭借10年以上制造经验和与顶尖科研机构的合作，我们交付满足最严苛规格要求的复合材料——准时，每一次。",
     capabilities: [
       { number: "01", title: "定制工程", description: "从10g/m²到1200g/m²，任何规格的定制纤维解决方案。" },
-      { number: "02", title: "全球物流", description: "双生产基地，距上海港240公里。出口50+国家。" },
+      { number: "02", title: "全球物流", description: "双生产基地，距上海港240公里。出口北美、东南亚、中东及日韩市场。" },
       { number: "03", title: "质量认证", description: "ISO 9001、14001、45001认证。复合材料领域13+项专利。" },
     ],
   },
@@ -545,7 +545,7 @@ const zh: HomeContent = {
     metrics: [
       { number: "01", metric: "10", suffix: "+", unit: "年", title: "复合材料经验", text: "自2015年起专注玻璃纤维和碳纤维，服务全球严苛工业应用。" },
       { number: "02", metric: "2", suffix: "", unit: "研发中心", title: "工程技术基石", text: "专属研发团队从选材到生产全程指导——了解您工艺的工程师。" },
-      { number: "03", metric: "50", suffix: "+", unit: "国家", title: "出口足迹", text: "双基地稳定全球交付，距上海港240公里。FOB、CIF、DDP——按您的条款协调。" },
+      { number: "03", metric: "80", suffix: "%+", unit: "复购率", title: "出口足迹", text: "稳定交付北美、东南亚、中东及日韩市场，距上海港240公里。FOB、CIF、CFR、EXW——按您的条款协调。" },
     ],
     certHeading: "认证品质与专利",
     certCount: "项认证",
@@ -555,7 +555,7 @@ const zh: HomeContent = {
     logistics: [
       { label: "双生产基地", text: "南通和泰州制造——稳定、可扩展的产出。" },
       { label: "距上海港240公里", text: "出口就绪的物流枢纽，高效海运覆盖全球。" },
-      { label: "灵活贸易条款", text: "FOB、CIF、DDP——从样品寄送到批量订单。" },
+      { label: "灵活贸易条款", text: "FOB、CIF、CFR、EXW——从样品寄送到批量订单。" },
     ],
     followUp: "端到端全程跟踪",
     steps: ["询价", "生产", "检验", "发货"],

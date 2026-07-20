@@ -74,7 +74,8 @@
     "privacy": "隐私政策",
     "terms": "服务条款",
     "rights": "版权所有。",
-    "certifications": "ISO 9001 · ISO 14001 · ISO 45001 认证"
+    "certifications": "ISO 9001 · ISO 14001 · ISO 45001 认证",
+    "sgsAudited": "SGS 审计认证供应商"
   },
   "chat": {
     "title": "泽宇森助手",
@@ -86,7 +87,8 @@
     "closeChat": "关闭聊天",
     "thinking": "思考中...",
     "error": "出了点问题，请重试或直接联系我们。",
-    "disclaimer": "AI 回答可能不准确，请与我们的团队确认详情。"
+    "disclaimer": "AI 回答可能不准确，请与我们的团队确认详情。",
+    "limitReached": "已达对话上限 — 请通过 WhatsApp 或邮箱联系我们。"
   },
   "blog": {
     "eyebrow": "行业资讯与指南",

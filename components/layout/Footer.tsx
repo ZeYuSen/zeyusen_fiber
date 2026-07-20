@@ -146,8 +146,28 @@ export function Footer({ locale, dict }: { locale: Locale; dict: Dictionary }) {
           </div>
         </div>
 
+        {/* SGS Audited badge */}
+        <div className="border-t border-white/10 mt-12 pt-8">
+          <a
+            href={contactInfo.sgsAudit.verifyUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-2.5 rounded-md border border-white/15 bg-white/5 px-3.5 py-2 text-neutral-300 hover:border-white/30 hover:text-white transition-colors"
+          >
+            <svg className="w-4 h-4 shrink-0 text-emerald-400" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M12 1 3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4zm-1.4 15.6L6.4 12.4l1.4-1.4 2.8 2.8 5.6-5.6 1.4 1.4-7 7z" />
+            </svg>
+            <span className="text-xs font-medium leading-tight">
+              {dict.footer.sgsAudited}
+              <span className="block text-[0.65rem] text-neutral-500 font-normal tracking-wide">
+                SGS Report No. {contactInfo.sgsAudit.reportNo}
+              </span>
+            </span>
+          </a>
+        </div>
+
         {/* Bottom */}
-        <div className="border-t border-white/10 mt-12 pt-8 flex flex-col sm:flex-row items-center justify-between gap-4">
+        <div className="mt-8 flex flex-col sm:flex-row items-center justify-between gap-4">
           <p className="text-xs text-neutral-500">
             &copy; {new Date().getFullYear()} Jiangsu Zeyusen Carbon Fiber Technology Co., Ltd. {dict.footer.rights}
           </p>

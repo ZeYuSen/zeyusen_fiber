@@ -1,14 +1,38 @@
 "use client";
 
 import { useState, useRef, useEffect, useCallback } from "react";
+import Image from "next/image";
+import { useRouter } from "next/navigation";
 import { AnimatePresence, motion } from "framer-motion";
-import { MessageCircle, X, Send, Bot, User, ArrowDown } from "lucide-react";
+import { MessageCircle, X, Send, User, ArrowDown } from "lucide-react";
 import ReactMarkdown from "react-markdown";
+import type { Components } from "react-markdown";
 import remarkGfm from "remark-gfm";
 import { whatsappPhone } from "@/lib/contact";
 import type { ChatMessage } from "@/types/chat";
 import type { Locale } from "@/lib/i18n/config";
 import type { Dictionary } from "@/lib/i18n/dictionaries";
+
+const logoSrc = "/logo.png?v=logo-20260626";
+
+// Keep in sync with MAX_USER_TURNS in app/api/chat/route.ts
+const MAX_USER_TURNS = 20;
+
+function AssistantAvatar({ className = "" }: { className?: string }) {
+  return (
+    <div
+      className={`rounded-full bg-white ring-1 ring-neutral-200 flex items-center justify-center flex-shrink-0 overflow-hidden ${className}`}
+    >
+      <Image
+        src={logoSrc}
+        alt="ZeYuSen Fiber"
+        width={32}
+        height={32}
+        className="h-full w-full object-cover scale-[1.12]"
+      />
+    </div>
+  );
+}
 
 export function AIChatWidget({
   locale = "en",
@@ -26,6 +50,7 @@ export function AIChatWidget({
     content: welcomeContent,
     timestamp: 0,
   };
+  const router = useRouter();
   const [isOpen, setIsOpen] = useState(false);
   const [messages, setMessages] = useState<ChatMessage[]>([WELCOME_MESSAGE]);
   const [input, setInput] = useState("");
@@ -35,7 +60,7 @@ export function AIChatWidget({
   const hasSentRef = useRef(false);
   const messagesEndRef = useRef<HTMLDivElement>(null);
   const messagesContainerRef = useRef<HTMLDivElement>(null);
-  const inputRef = useRef<HTMLInputElement>(null);
+  const inputRef = useRef<HTMLTextAreaElement>(null);
 
   const scrollToBottom = useCallback(() => {
     messagesContainerRef.current?.scrollTo({
@@ -53,6 +78,16 @@ export function AIChatWidget({
   useEffect(() => {
     if (isOpen) inputRef.current?.focus();
   }, [isOpen]);
+
+  // Auto-grow the textarea with content, capped at ~5 lines (then it scrolls).
+  useEffect(() => {
+    const el = inputRef.current;
+    if (!el) return;
+    el.style.height = "auto";
+    const maxHeight = 120; // ~5 lines
+    el.style.height = `${Math.min(el.scrollHeight, maxHeight)}px`;
+    el.style.overflowY = el.scrollHeight > maxHeight ? "auto" : "hidden";
+  }, [input]);
 
   // Lock body scroll when chat is open (including Lenis smooth scroll)
   useEffect(() => {
@@ -115,7 +150,7 @@ export function AIChatWidget({
 
   const sendMessage = async () => {
     const text = input.trim();
-    if (!text || isLoading) return;
+    if (!text || isLoading || reachedTurnLimit) return;
 
     const userMsg: ChatMessage = {
       id: crypto.randomUUID(),
@@ -166,11 +201,46 @@ export function AIChatWidget({
     }
   };
 
-  const handleKeyDown = (e: React.KeyboardEvent) => {
+  const userTurnCount = messages.filter(
+    (m) => m.id !== "welcome" && m.role === "user",
+  ).length;
+  const reachedTurnLimit = userTurnCount >= MAX_USER_TURNS;
+
+  const handleKeyDown = (e: React.KeyboardEvent<HTMLTextAreaElement>) => {
     if (e.key === "Enter" && !e.shiftKey) {
       e.preventDefault();
       sendMessage();
     }
+  };
+
+  // Render markdown links: in-site paths use client-side navigation so the
+  // chat panel (mounted in the persistent layout) keeps its message history
+  // instead of doing a full page reload that would wipe the conversation.
+  const markdownComponents: Components = {
+    a: ({ href, children, ...props }) => {
+      const url = typeof href === "string" ? href : "";
+      const isInternal = url.startsWith("/");
+      if (isInternal) {
+        return (
+          <a
+            href={url}
+            onClick={(e) => {
+              e.preventDefault();
+              setIsOpen(false);
+              router.push(url);
+            }}
+            {...props}
+          >
+            {children}
+          </a>
+        );
+      }
+      return (
+        <a href={url} target="_blank" rel="noopener noreferrer" {...props}>
+          {children}
+        </a>
+      );
+    },
   };
 
   return (
@@ -205,9 +275,7 @@ export function AIChatWidget({
               {/* Header */}
               <div className="flex items-center justify-between px-5 py-4 border-b border-neutral-100">
                 <div className="flex items-center gap-3">
-                  <div className="w-8 h-8 rounded-full bg-neutral-900 flex items-center justify-center">
-                    <Bot className="w-4 h-4 text-white" />
-                  </div>
+                  <AssistantAvatar className="w-8 h-8" />
                   <div>
                     <p className="text-sm font-medium text-neutral-900">AI Assistant</p>
                     <p className="text-xs text-neutral-400">ZeYuSen Fiber</p>
@@ -234,9 +302,7 @@ export function AIChatWidget({
                     className={`flex gap-2 ${msg.role === "user" ? "justify-end" : "justify-start"}`}
                   >
                     {msg.role === "assistant" && (
-                      <div className="w-6 h-6 rounded-full bg-neutral-100 flex items-center justify-center flex-shrink-0 mt-1">
-                        <Bot className="w-3 h-3 text-neutral-500" />
-                      </div>
+                      <AssistantAvatar className="w-6 h-6 mt-1" />
                     )}
                     <div
                       className={`max-w-[80%] px-4 py-2.5 rounded-2xl text-sm leading-relaxed ${
@@ -246,8 +312,8 @@ export function AIChatWidget({
                       }`}
                     >
                       {msg.role === "assistant" ? (
-                        <div className="prose prose-sm prose-neutral max-w-none [&_p]:m-0 [&_p+p]:mt-2 [&_ul]:my-1 [&_ol]:my-1 [&_li]:my-0 [&_table]:text-xs [&_table]:w-full [&_th]:px-2 [&_th]:py-1 [&_th]:bg-neutral-200 [&_th]:text-left [&_td]:px-2 [&_td]:py-1 [&_td]:border-t [&_td]:border-neutral-200 [&_strong]:text-neutral-900 [&_code]:bg-neutral-200 [&_code]:px-1 [&_code]:rounded [&_table]:border [&_table]:border-neutral-200 [&_table]:rounded [&_table]:overflow-hidden">
-                          <ReactMarkdown remarkPlugins={[remarkGfm]}>{msg.content}</ReactMarkdown>
+                        <div className="prose prose-sm prose-neutral max-w-none [&_p]:m-0 [&_p+p]:mt-2 [&_ul]:my-1 [&_ol]:my-1 [&_li]:my-0 [&_a]:text-blue-600 [&_a]:font-medium [&_a]:no-underline [&_a:hover]:underline [&_a]:underline-offset-2 [&_table]:text-xs [&_table]:w-full [&_th]:px-2 [&_th]:py-1 [&_th]:bg-neutral-200 [&_th]:text-left [&_td]:px-2 [&_td]:py-1 [&_td]:border-t [&_td]:border-neutral-200 [&_strong]:text-neutral-900 [&_code]:bg-neutral-200 [&_code]:px-1 [&_code]:rounded [&_table]:border [&_table]:border-neutral-200 [&_table]:rounded [&_table]:overflow-hidden">
+                          <ReactMarkdown remarkPlugins={[remarkGfm]} components={markdownComponents}>{msg.content}</ReactMarkdown>
                         </div>
                       ) : (
                         msg.content
@@ -262,9 +328,7 @@ export function AIChatWidget({
                 ))}
                 {isLoading && (
                   <div className="flex gap-2 justify-start">
-                    <div className="w-6 h-6 rounded-full bg-neutral-100 flex items-center justify-center flex-shrink-0 mt-1">
-                      <Bot className="w-3 h-3 text-neutral-500" />
-                    </div>
+                    <AssistantAvatar className="w-6 h-6 mt-1" />
                     <div className="bg-neutral-100 px-4 py-3 rounded-2xl rounded-bl-md">
                       <div className="flex gap-1">
                         <span className="w-2 h-2 bg-neutral-400 rounded-full animate-bounce [animation-delay:0ms]" />
@@ -290,21 +354,26 @@ export function AIChatWidget({
 
               {/* Input */}
               <div className="px-5 py-4 border-t border-neutral-100">
-                <div className="flex gap-2">
-                  <input
+                <div className="flex items-end gap-2">
+                  <textarea
                     ref={inputRef}
-                    type="text"
+                    rows={1}
                     value={input}
                     onChange={(e) => setInput(e.target.value)}
                     onKeyDown={handleKeyDown}
-                    placeholder="Type your message..."
-                    className="flex-1 px-4 py-2.5 bg-neutral-50 border border-neutral-200 rounded-full text-sm focus:outline-none focus:border-neutral-400 transition-colors"
+                    disabled={reachedTurnLimit}
+                    placeholder={
+                      reachedTurnLimit
+                        ? dict?.chat.limitReached ?? "Chat limit reached — please contact us on WhatsApp or by email."
+                        : dict?.chat.placeholder ?? "Type your message..."
+                    }
+                    className="flex-1 resize-none px-4 py-2.5 bg-neutral-50 border border-neutral-200 rounded-2xl text-sm leading-relaxed focus:outline-none focus:border-neutral-400 transition-colors disabled:opacity-60 disabled:cursor-not-allowed"
                   />
                   <button
                     onClick={sendMessage}
-                    disabled={!input.trim() || isLoading}
+                    disabled={!input.trim() || isLoading || reachedTurnLimit}
                     aria-label="Send message"
-                    className="w-10 h-10 rounded-full bg-neutral-900 text-white flex items-center justify-center disabled:opacity-40 disabled:cursor-not-allowed hover:bg-neutral-800 transition-colors"
+                    className="w-10 h-10 shrink-0 rounded-full bg-neutral-900 text-white flex items-center justify-center disabled:opacity-40 disabled:cursor-not-allowed hover:bg-neutral-800 transition-colors"
                   >
                     <Send className="w-4 h-4" />
                   </button>

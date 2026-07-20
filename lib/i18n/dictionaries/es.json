@@ -74,7 +74,8 @@
     "privacy": "Política de Privacidad",
     "terms": "Términos de Servicio",
     "rights": "Todos los derechos reservados.",
-    "certifications": "Certificado ISO 9001 · ISO 14001 · ISO 45001"
+    "certifications": "Certificado ISO 9001 · ISO 14001 · ISO 45001",
+    "sgsAudited": "Proveedor Auditado por SGS"
   },
   "chat": {
     "title": "Asistente ZeYuSen",
@@ -86,7 +87,8 @@
     "closeChat": "Cerrar chat",
     "thinking": "Pensando...",
     "error": "Algo salió mal. Inténtelo de nuevo o contáctenos directamente.",
-    "disclaimer": "Las respuestas de IA pueden ser inexactas. Confirme los detalles con nuestro equipo."
+    "disclaimer": "Las respuestas de IA pueden ser inexactas. Confirme los detalles con nuestro equipo.",
+    "limitReached": "Límite de chat alcanzado — contáctenos por WhatsApp o correo."
   },
   "blog": {
     "eyebrow": "Perspectivas y Guías",

@@ -21,15 +21,15 @@ export const pt: PagesContent = {
     },
     quickStats: [
       { num: "10+", label: "Anos de Experiência" },
-      { num: "50+", label: "Países de Exportação" },
+      { num: "80%+", label: "Recompra de Clientes" },
       { num: "7", label: "Linhas de Produto" },
       { num: "100%", label: "Suporte Personalizado" },
     ],
     values: [
       { title: "P&D e Personalização", description: "Dois centros de P&D com 10% de equipe técnica. Mais de 7 anos de experiência em desenvolvimento de materiais compósitos com 13 patentes de modelo de utilidade." },
-      { title: "Qualidade Certificada", description: "Certificado ISO 9001, ISO 14001, ISO 45001. Sistema de Gestão de Propriedade Intelectual certificado. Relatórios de ensaio SGS disponíveis." },
+      { title: "Qualidade Certificada", description: "Certificado ISO 9001, ISO 14001, ISO 45001. Relatórios de ensaio SGS disponíveis." },
       { title: "Confiável e Diversificado", description: "Múltiplos processos de produção (via úmida, via seca, tecelagem) em bases de produção duplas para uma produção estável e escalável." },
-      { title: "Entrega Rápida e Suporte", description: "240 km do Porto de Xangai. Engenheiros técnicos dedicados para consultoria de processos. Termos comerciais FOB, CIF, DDP suportados." },
+      { title: "Entrega Rápida e Suporte", description: "240 km do Porto de Xangai. Engenheiros técnicos dedicados para consultoria de processos. Termos comerciais FOB, CIF, CFR, EXW suportados." },
     ],
     whyEyebrow: "Por Que Nos Escolher",
     whyTitle: "Construído sobre Confiança e Precisão",
@@ -43,13 +43,13 @@ export const pt: PagesContent = {
       { year: "2020", event: "Segunda base de produção estabelecida em Taizhou" },
       { year: "2022", event: "13 patentes de modelo de utilidade concedidas" },
       { year: "2023", event: "Produção anual: fibra de carbono 10M m², fibra de vidro 80M m²" },
-      { year: "2024", event: "Alcançados mais de 50 destinos de exportação em todo o mundo" },
+      { year: "2024", event: "Exportando para América do Norte, Sudeste Asiático, Oriente Médio e Japão/Coreia do Sul" },
     ],
     factory: {
       eyebrow: "Tour pela Fábrica",
       title: "Nossa Instalação de Fabricação",
       intro:
-        "Fábrica padronizada de 80.000 m² distribuída em duas bases de produção em Nantong e Taizhou, equipada com linhas de produção automatizadas, equipamentos de ensaio avançados e centros de P&D dedicados.",
+        "Instalações de fabricação padronizadas distribuídas em duas bases de produção em Nantong e Taizhou, equipadas com linhas de produção automatizadas, equipamentos de ensaio avançados e centros de P&D dedicados.",
       tabs: {
         production: "Linhas de Produção",
         inspection: "Equipamentos de Inspeção",
@@ -57,7 +57,7 @@ export const pt: PagesContent = {
         exhibition: "Exposições",
       },
       stats: [
-        { num: "80.000", unit: "m²", label: "Área da Fábrica" },
+        { num: "8.000", unit: "m²", label: "Área da Fábrica" },
         { num: "13+", unit: "", label: "Patentes de modelo de utilidade" },
         { num: "240", unit: "km", label: "Até o Porto de Xangai" },
         { num: "2", unit: "", label: "Bases de Produção" },
@@ -84,7 +84,7 @@ export const pt: PagesContent = {
       { title: "P&D e Suporte Técnico", description: "Orientação técnica especializada da seleção de materiais à otimização de processos.", features: ["Consultoria de produto e seleção de materiais", "Recomendações de soluções técnicas", "Consultoria de otimização de processos", "Treinamento técnico no local disponível"] },
       { title: "Garantia de Qualidade", description: "Rigoroso controle de qualidade em cada etapa, certificado por normas internacionais.", features: ["Gestão de Qualidade ISO 9001", "Gestão Ambiental ISO 14001", "Saúde e Segurança Ocupacional ISO 45001", "Múltiplos produtos patenteados"] },
       { title: "Gestão Dedicada de Pedidos", description: "Uma equipe especializada dedicada acompanha seu pedido da colocação à entrega.", features: ["Gerente de projeto dedicado", "Atualizações de produção em tempo real", "Comunicação transparente", "Ajustes de pedido flexíveis"] },
-      { title: "Logística e Entrega Rápida", description: "Bases de fabricação duplas, a 240 km do Porto de Xangai para exportação eficiente.", features: ["Base de produção dupla (Nantong + Taizhou)", "A 240 km do Porto de Xangai", "Compromisso de entrega rápida", "Termos de envio flexíveis (FOB/CIF/DDP)"] },
+      { title: "Logística e Entrega Rápida", description: "Bases de fabricação duplas, a 240 km do Porto de Xangai para exportação eficiente.", features: ["Base de produção dupla (Nantong + Taizhou)", "A 240 km do Porto de Xangai", "Compromisso de entrega rápida", "Termos de envio flexíveis (FOB/CIF/CFR/EXW)"] },
       { title: "Serviço Pós-venda", description: "Suporte técnico contínuo e garantias de qualidade além da entrega.", features: ["Garantia de qualidade abrangente", "Suporte técnico contínuo", "Resposta rápida a preocupações", "Abordagem de parceria de longo prazo"] },
     ],
     processEyebrow: "Processo",

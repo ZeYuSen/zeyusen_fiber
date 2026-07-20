@@ -11,7 +11,7 @@ image: "/images/blog/multiaxial-fiberglass-cover.jpg"
 
 Multiaxial fiberglass fabric — also called non-crimp fabric (NCF), stitched fabric, or multi-ply reinforcement — is designed for composite parts that need strength in more than one direction. Instead of relying only on a traditional woven 0°/90° structure, multiaxial reinforcements place fibers at engineered angles such as ±45°, 0°/90°, or combined orientations to match the load path of the part.
 
-This makes multiaxial fiberglass fabric the preferred reinforcement for wind turbine blades, nacelle covers, marine structures, transportation panels, and other high-performance composite applications where engineered fiber placement reduces weight and improves mechanical efficiency. Based on our production experience supplying wind energy manufacturers across 50+ countries, we offer multiaxial and biaxial stitched mats from 300g/m² to 1200g/m².
+This makes multiaxial fiberglass fabric the preferred reinforcement for wind turbine blades, nacelle covers, marine structures, transportation panels, and other high-performance composite applications where engineered fiber placement reduces weight and improves mechanical efficiency. Based on our production experience supplying wind energy manufacturers across North America, Southeast Asia, the Middle East, and East Asia, we offer multiaxial and biaxial stitched mats from 300g/m² to 1200g/m².
 
 ## What Makes Multiaxial Fabric Different
 

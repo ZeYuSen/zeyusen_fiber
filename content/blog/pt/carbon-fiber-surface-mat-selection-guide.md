@@ -11,7 +11,7 @@ image: "/images/blog/carbon-fiber-surface-mat-cover.jpg"
 
 O véu de superfície de fibra de carbono — também conhecido como véu de carbono, tecido fino de carbono ou não-tecido de fibra de carbono — é uma família de reforços de fibra de carbono de gramatura fina a média usados em aplicações de compósitos militares, de nova energia, energia eólica e industriais. De véus de superfície ultrafinos de 10g/m² a mantas agulhadas de 350g/m², o produto certo depende da sua aplicação, processo e metas de desempenho.
 
-Para os fabricantes, a questão-chave não é simplesmente "qual manta de carbono é mais resistente?", mas "qual gramatura, estrutura e processo de manta se adequam à peça que preciso fabricar?". Com base em nossos mais de 10 anos de experiência de produção fornecendo manta de fibra de carbono para mais de 50 países, este guia cobre toda a gama de opções disponíveis.
+Para os fabricantes, a questão-chave não é simplesmente "qual manta de carbono é mais resistente?", mas "qual gramatura, estrutura e processo de manta se adequam à peça que preciso fabricar?". Com base em nossos mais de 10 anos de experiência de produção fornecendo manta de fibra de carbono para a América do Norte, Sudeste Asiático, Oriente Médio e Ásia Oriental, este guia cobre toda a gama de opções disponíveis.
 
 ## O Que o Véu de Superfície de Fibra de Carbono Faz
 

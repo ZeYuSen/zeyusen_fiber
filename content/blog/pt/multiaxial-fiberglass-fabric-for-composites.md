@@ -11,7 +11,7 @@ image: "/images/blog/multiaxial-fiberglass-cover.jpg"
 
 O tecido multiaxial de fibra de vidro — também chamado de tecido não-ondulado (NCF), tecido costurado ou reforço multi-camadas — é projetado para peças compostas que precisam de resistência em mais de uma direção. Em vez de depender apenas de uma estrutura woven tradicional 0°/90°, os reforços multiaxiais posicionam as fibras em ângulos projetados como ±45°, 0°/90°, ou orientações combinadas para corresponder ao caminho de carga da peça.
 
-Isso torna o tecido multiaxial de fibra de vidro o reforço preferido para pás de turbinas eólicas, coberturas de nacele, estruturas náuticas, painéis de transporte e outras aplicações de compósitos de alto desempenho onde o posicionamento projetado das fibras reduz o peso e melhora a eficiência mecânica. Com base em nossa experiência de produção fornecendo fabricantes de energia eólica em mais de 50 países, oferecemos mantas multiaxiais e biaxiais costuradas de 300g/m² a 1200g/m².
+Isso torna o tecido multiaxial de fibra de vidro o reforço preferido para pás de turbinas eólicas, coberturas de nacele, estruturas náuticas, painéis de transporte e outras aplicações de compósitos de alto desempenho onde o posicionamento projetado das fibras reduz o peso e melhora a eficiência mecânica. Com base em nossa experiência de produção fornecendo fabricantes de energia eólica na América do Norte, Sudeste Asiático, Oriente Médio e Ásia Oriental, oferecemos mantas multiaxiais e biaxiais costuradas de 300g/m² a 1200g/m².
 
 ## O Que Torna o Tecido Multiaxial Diferente
 

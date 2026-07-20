@@ -15,7 +15,12 @@ export const contactInfo = {
     latitude: 32.5312,
     longitude: 120.4672,
   },
-  foundingDate: "2015",
+  foundingDate: "2015-09-17",
+  foundingYear: "2015",
+  sgsAudit: {
+    reportNo: "QIP-ASI264784",
+    verifyUrl: "https://auditedsupplier.sgsgroup.com.cn/",
+  },
   sameAs: [
     "https://js-zys.en.made-in-china.com/",
   ],

@@ -112,15 +112,15 @@ const en: PagesContent = {
     },
     quickStats: [
       { num: "10+", label: "Years Experience" },
-      { num: "50+", label: "Export Countries" },
+      { num: "80%+", label: "Repeat Buyers" },
       { num: "7", label: "Product Lines" },
       { num: "100%", label: "Custom Support" },
     ],
     values: [
       { title: "R&D & Customization", description: "Two R&D centers with 10% technical staff. 7+ years of composite material development experience with 13 utility model patents." },
-      { title: "Quality Certified", description: "ISO 9001, ISO 14001, ISO 45001 certified. Intellectual Property Management System certified. SGS testing reports available." },
+      { title: "Quality Certified", description: "ISO 9001, ISO 14001, ISO 45001 certified. SGS testing reports available." },
       { title: "Reliable & Diversified", description: "Multiple production processes (wet-laid, dry-laid, weaving) across dual production bases for stable, scalable output." },
-      { title: "Fast Delivery & Support", description: "240 km to Shanghai Port. Dedicated technical engineers for process consulting. FOB, CIF, DDP trade terms supported." },
+      { title: "Fast Delivery & Support", description: "240 km to Shanghai Port. Dedicated technical engineers for process consulting. FOB, CIF, CFR, EXW trade terms supported." },
     ],
     whyEyebrow: "Why Choose Us",
     whyTitle: "Built on Trust & Precision",
@@ -134,13 +134,13 @@ const en: PagesContent = {
       { year: "2020", event: "Second production base established in Taizhou" },
       { year: "2022", event: "13 utility model patents granted" },
       { year: "2023", event: "Annual output: carbon fiber 10M sqm, fiberglass 80M sqm" },
-      { year: "2024", event: "Reached 50+ export destinations worldwide" },
+      { year: "2024", event: "Exporting to North America, Southeast Asia, the Middle East, and Japan/South Korea" },
     ],
     factory: {
       eyebrow: "Factory Tour",
       title: "Our Manufacturing Facility",
       intro:
-        "80,000 m² standardized factory across two production bases in Nantong and Taizhou, equipped with automated production lines, advanced testing equipment, and dedicated R&D centers.",
+        "Standardized manufacturing facilities across two production bases in Nantong and Taizhou, equipped with automated production lines, advanced testing equipment, and dedicated R&D centers.",
       tabs: {
         production: "Production Lines",
         inspection: "Inspection Equipment",
@@ -148,7 +148,7 @@ const en: PagesContent = {
         exhibition: "Exhibitions",
       },
       stats: [
-        { num: "80,000", unit: "m²", label: "Factory Area" },
+        { num: "8,000", unit: "m²", label: "Factory Area" },
         { num: "13+", unit: "", label: "Utility Patents" },
         { num: "240", unit: "km", label: "To Shanghai Port" },
         { num: "2", unit: "", label: "Production Bases" },
@@ -175,7 +175,7 @@ const en: PagesContent = {
       { title: "R&D & Technical Support", description: "Expert technical guidance from material selection to process optimization.", features: ["Product consultation & material selection", "Technical solution recommendations", "Process optimization consulting", "On-site technical training available"] },
       { title: "Quality Assurance", description: "Rigorous quality control at every stage, certified to international standards.", features: ["ISO 9001 Quality Management", "ISO 14001 Environmental Management", "ISO 45001 Occupational Health & Safety", "Multiple patented products"] },
       { title: "Dedicated Order Management", description: "A dedicated expert team follows your order from placement to delivery.", features: ["Dedicated project manager", "Real-time production updates", "Transparent communication", "Flexible order adjustments"] },
-      { title: "Logistics & Fast Delivery", description: "Dual manufacturing bases, 240km from Shanghai Port for efficient export.", features: ["Dual production base (Nantong + Taizhou)", "240km from Shanghai Port", "Fast delivery commitment", "Flexible shipping terms (FOB/CIF/DDP)"] },
+      { title: "Logistics & Fast Delivery", description: "Dual manufacturing bases, 240km from Shanghai Port for efficient export.", features: ["Dual production base (Nantong + Taizhou)", "240km from Shanghai Port", "Fast delivery commitment", "Flexible shipping terms (FOB/CIF/CFR/EXW)"] },
       { title: "After-sales Service", description: "Ongoing technical support and quality guarantees beyond delivery.", features: ["Comprehensive quality guarantee", "Ongoing technical support", "Fast response to concerns", "Long-term partnership approach"] },
     ],
     processEyebrow: "Process",

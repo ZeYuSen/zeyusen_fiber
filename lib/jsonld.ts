@@ -65,6 +65,36 @@ export function organizationJsonLd() {
       contactType: "sales",
       availableLanguage: ["English", "Korean", "Spanish", "Portuguese", "Chinese"],
     },
+    hasCredential: [
+      ...["ISO 9001:2015", "ISO 14001", "ISO 45001:2018"].map((name) => ({
+        "@type": "EducationalOccupationalCredential",
+        credentialCategory: "certification",
+        name,
+      })),
+      {
+        "@type": "EducationalOccupationalCredential",
+        credentialCategory: "audit",
+        name: `SGS Audited Supplier (Report No. ${contactInfo.sgsAudit.reportNo})`,
+        recognizedBy: {
+          "@type": "Organization",
+          name: "SGS",
+          url: contactInfo.sgsAudit.verifyUrl,
+        },
+      },
+    ],
+    makesOffer: {
+      "@type": "Offer",
+      eligibleCustomerType: "http://purl.org/goodrelations/v1#Business",
+      areaServed: [
+        "North America",
+        "Southeast Asia",
+        "Middle East",
+        "Japan",
+        "South Korea",
+      ],
+      availableDeliveryMethod: "http://purl.org/goodrelations/v1#DeliveryModeFreight",
+      acceptedPaymentMethod: ["FOB", "CIF", "CFR", "EXW"],
+    },
     sameAs: contactInfo.sameAs,
   };
 }
