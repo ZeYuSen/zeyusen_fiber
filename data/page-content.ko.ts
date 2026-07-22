@@ -5,9 +5,9 @@ import type { PageContent } from "./page-content";
 export const ko: PageContent = {
   seo: {
     home: {
-      title: "ZeYuSen Fiber | 탄소섬유 및 유리섬유 제조업체",
+      title: "탄소섬유 및 유리섬유 티슈 매트 제조업체",
       description:
-        "Jiangsu Zeyusen Carbon Fiber Technology Co., Ltd.는 항공우주, 풍력에너지, 건설 및 제조 분야를 위한 탄소섬유 매트, 유리섬유 직물, 복합재 보강재 및 맞춤형 소재 솔루션을 생산합니다.",
+        "FRP, 풍력에너지, 배터리 및 산업 분야를 위한 유리섬유 티슈 매트, 유리섬유 베일, 탄소섬유 매트 및 특수 유리섬유 페이퍼를 생산하는 OEM 제조업체입니다.",
     },
     about: {
       title: "복합재 제조에 대하여",

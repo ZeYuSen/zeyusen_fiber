@@ -4,9 +4,9 @@ import type { PageContent } from "./page-content";
 export const es: PageContent = {
   seo: {
     home: {
-      title: "ZeYuSen Fiber | Fabricante de Fibra de Carbono y Fibra de Vidrio",
+      title: "Fabricante de Fibra de Carbono y Fibra de Vidrio",
       description:
-        "Jiangsu Zeyusen Carbon Fiber Technology Co., Ltd. fabrica esteras de fibra de carbono, tejidos de fibra de vidrio, refuerzos compuestos y soluciones de materiales a medida para sectores aeroespacial, energía eólica, construcción y fabricación.",
+        "Fabricante OEM de velos de fibra de vidrio, esteras de fibra de carbono y papeles especiales de fibra de vidrio para FRP, energía eólica, baterías y aplicaciones industriales.",
     },
     about: {
       title: "Acerca de Nuestra Fabricación de Compuestos",

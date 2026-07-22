@@ -3,10 +3,12 @@ import type { DivisionTranslations } from "./types";
 export const glassFiberPt: DivisionTranslations = {
   "tissue-mat": {
     "name": "Manta de Fibra de Vidro (Véu de Superfície)",
+        "seoTitle": "Fabricante de Mantas de Fibra de Vidro",
     "description": "Mantas de fibra de vidro fabricadas por processo úmido, com propriedades de retardância ao fogo, anticorrosão, resistência a trincas, impermeabilidade e permeabilidade ao ar.",
     "products": {
       "surface-tissue": {
         "name": "Manta de Superfície de Fibra de Vidro",
+        "seoTitle": "Fabricante de Manta de Superfície para FRP",
         "description": "Véu de superfície com distribuição uniforme de fibras, superfície lisa e rápida penetração de resina. Disponível nas séries de enrolamento e laminação manual para produtos FRP.",
         "features": [
           "Distribuição uniforme de fibras",
@@ -34,6 +36,7 @@ export const glassFiberPt: DivisionTranslations = {
       },
       "black-tissue": {
         "name": "Véu de Fibra de Vidro Preto",
+        "seoTitle": "Fabricante de Véu de Fibra de Vidro Preto",
         "description": "Véu de fibra de vidro preto com retardância à chama, propriedades antibacterianas e absorção acústica. Usado em barreiras acústicas, isolamento HVAC e painéis de teto.",
         "features": [
           "Retardante de chama",
@@ -61,6 +64,7 @@ export const glassFiberPt: DivisionTranslations = {
       },
       "colored-tissue": {
         "name": "Manta de Fibra de Vidro Colorida",
+        "seoTitle": "Fabricante de Manta de Fibra de Vidro Colorida",
         "description": "Manta de fibra de vidro colorida personalizável, disponível em diversas cores. Ideal para aplicações decorativas e usos industriais especializados.",
         "features": [
           "Opções de cores personalizadas",
@@ -115,6 +119,7 @@ export const glassFiberPt: DivisionTranslations = {
       },
       "roofing-tissue": {
         "name": "Manta de Fibra de Vidro para Telhado",
+        "seoTitle": "Fabricante de Manta de Fibra de Vidro para Telhado",
         "description": "Manta de fibra de vidro para telhado utilizada como material de reforço em membranas impermeabilizantes e sistemas de cobertura. Compatível com aplicações de betume e asfalto.",
         "features": [
           "Boa resistência à tração",
@@ -142,6 +147,7 @@ export const glassFiberPt: DivisionTranslations = {
       },
       "wall-covering": {
         "name": "Manta de Fibra de Vidro para Revestimento de Parede",
+        "seoTitle": "Fabricante de Manta para Revestimento de Parede",
         "description": "Manta de fibra de vidro projetada para aplicações de revestimento de parede, proporcionando acabamento de superfície liso e estabilidade dimensional para decoração de paredes internas.",
         "features": [
           "Superfície lisa",
@@ -169,6 +175,7 @@ export const glassFiberPt: DivisionTranslations = {
       },
       "pipe-wrapping": {
         "name": "Manta de Fibra de Vidro para Envoltura de Tubos",
+        "seoTitle": "Fabricante de Manta para Envoltura de Tubos FRP",
         "description": "Manta de fibra de vidro especialmente projetada para aplicações de envoltura de tubos, fornecendo isolamento e proteção para dutos em ambientes industriais.",
         "features": [
           "Boa conformabilidade para envoltura",
@@ -196,6 +203,7 @@ export const glassFiberPt: DivisionTranslations = {
       },
       "battery-separator": {
         "name": "Separador de Bateria de Fibra de Vidro",
+        "seoTitle": "Fabricante de Separador de Bateria de Fibra de Vidro",
         "description": "Separador de fibra de vidro utilizado em baterias AGM/chumbo-ácido como material separador entre as placas positiva e negativa, proporcionando absorção de eletrólito e condutividade iônica.",
         "features": [
           "Alta porosidade para absorção de eletrólito",

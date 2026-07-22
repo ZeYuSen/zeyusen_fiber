@@ -3,10 +3,12 @@ import type { DivisionTranslations } from "./types";
 export const carbonFiberEs: DivisionTranslations = {
   "carbon-fiber-mat": {
     "name": "Estera de Fibra de Carbono",
+        "seoTitle": "Fabricante de Esteras de Fibra de Carbono",
     "description": "Esteras de fibra de carbono de alto rendimiento para conductividad, resistencia térmica y aplicaciones de compuestos en entornos corrosivos: celdas de combustible, defensa e industria.",
     "products": {
       "surface-mat-10g": {
         "name": "Velo de Superficie de Fibra de Carbono 10g",
+        "seoTitle": "Fabricante de Velo de Fibra de Carbono 10g",
         "description": "Velo de superficie de fibra de carbono ultradelgado de 10g/m² con conductividad superior y alto rendimiento térmico. Ideal para aplicaciones militares y componentes de celdas de combustible.",
         "features": [
           "Ultraligero a 10g/m²",
@@ -33,6 +35,7 @@ export const carbonFiberEs: DivisionTranslations = {
       },
       "surface-mat-20g": {
         "name": "Velo de Superficie de Fibra de Carbono 20g",
+        "seoTitle": "Fabricante de Velo de Fibra de Carbono 20g",
         "description": "Velo de superficie de fibra de carbono de 20g/m² diseñado para aplicaciones de calefacción eléctrica, moldes de turbinas eólicas y recubrimiento exterior de celdas de combustible.",
         "features": [
           "Optimizado para calefacción eléctrica",
@@ -59,6 +62,7 @@ export const carbonFiberEs: DivisionTranslations = {
       },
       "nickel-plated-mat": {
         "name": "Estera de Fibra de Carbono Niquelada",
+        "seoTitle": "Fabricante de Estera de Fibra de Carbono Niquelada",
         "description": "Estera de fibra de carbono niquelada de 30g/m² que proporciona blindaje electromagnético superior. Diseñada para aplicaciones militares y de defensa que requieren protección EMI.",
         "features": [
           "Blindaje electromagnético",
@@ -85,6 +89,7 @@ export const carbonFiberEs: DivisionTranslations = {
       },
       "carbon-glass-hybrid": {
         "name": "Estera Híbrida Carbono-Vidrio",
+        "seoTitle": "Fabricante de Estera Híbrida Carbono-Vidrio",
         "description": "Estera híbrida carbono-vidrio de 30g/m² que equilibra conductividad, costo y flexibilidad de proceso para aplicaciones de calefacción eléctrica y energía eólica.",
         "features": [
           "Estructura híbrida carbono-vidrio",
@@ -111,6 +116,7 @@ export const carbonFiberEs: DivisionTranslations = {
       },
       "composite-mat": {
         "name": "Estera Compuesta de Fibra de Carbono",
+        "seoTitle": "Fabricante de Estera Compuesta de Fibra de Carbono",
         "description": "Estera compuesta de fibra de carbono de 300-320g/m² con excelente conductividad y resistencia a la corrosión. Diseñada específicamente para procesos de pultrusión.",
         "features": [
           "Optimizada para proceso de pultrusión",
@@ -138,6 +144,7 @@ export const carbonFiberEs: DivisionTranslations = {
       },
       "needled-mat": {
         "name": "Estera Agujada de Fibra de Carbono",
+        "seoTitle": "Fabricante de Estera Agujada de Fibra de Carbono",
         "description": "Estera agujada de fibra de carbono de alta resistencia de 350g/m² con propiedades mecánicas superiores y conductividad eléctrica. Fabricada mediante proceso de punzonado para mayor entrelazado de fibras.",
         "features": [
           "Alta resistencia mecánica",
@@ -163,6 +170,7 @@ export const carbonFiberEs: DivisionTranslations = {
       },
       "surface-mat-30g": {
         "name": "Velo de Superficie de Fibra de Carbono 30g",
+        "seoTitle": "Fabricante de Velo de Fibra de Carbono 30g",
         "description": "Fieltro de superficie de fibra de carbono de 30g con excelente conductividad eléctrica. Utiliza fibra de carbono fina como materia prima, ligero y resistente a la vez, flexible y adaptable a diferentes formas de superficie.",
         "features": [
           "Excelente conductividad eléctrica",
@@ -313,6 +321,7 @@ export const carbonFiberEs: DivisionTranslations = {
     "products": {
       "short-cut-fiber": {
         "name": "Fibra de Carbono Cortada Corta",
+        "seoTitle": "Fabricante de Fibra de Carbono Cortada",
         "description": "Filamentos de fibra de carbono cortados mecánicamente para plásticos modificados reforzados, construcción, calefacción eléctrica, materiales de blindaje y aplicaciones de nueva energía.",
         "features": [
           "Dispersión uniforme",
@@ -340,6 +349,7 @@ export const carbonFiberEs: DivisionTranslations = {
       },
       "carbon-powder": {
         "name": "Polvo de Fibra de Carbono",
+        "seoTitle": "Fabricante de Polvo de Fibra de Carbono Conductivo",
         "description": "Polvo de fibra de carbono molido (fibra de carbono micronizada) para uso como relleno de alto rendimiento en compuestos. Conserva las excelentes propiedades de la fibra de carbono en forma de polvo.",
         "features": [
           "Gran superficie específica",

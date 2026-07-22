@@ -4,9 +4,9 @@ import type { PageContent } from "./page-content";
 export const pt: PageContent = {
   seo: {
     home: {
-      title: "ZeYuSen Fiber | Fabricante de Fibra de Carbono e Fibra de Vidro",
+      title: "Fabricante de Fibra de Carbono e Fibra de Vidro",
       description:
-        "A Jiangsu Zeyusen Carbon Fiber Technology Co., Ltd. fabrica mantas de fibra de carbono, tecidos de fibra de vidro, reforços compostos e soluções de materiais sob medida para os setores aeroespacial, energia eólica, construção e manufatura.",
+        "Fabricante OEM de véus de fibra de vidro, mantas de fibra de carbono e papéis especiais de fibra de vidro para FRP, energia eólica, baterias e aplicações industriais.",
     },
     about: {
       title: "Sobre Nossa Fabricação de Compósitos",

@@ -4,6 +4,7 @@ export const glassFiberCategories: ProductCategory[] = [
   {
     slug: "tissue-mat",
     name: "Fiberglass Tissue Mat (Veil)",
+    seoTitle: "Fiberglass Tissue Mat & Veil Manufacturer",
     description:
       "Wet-process fiberglass tissue mats with fire-retardant, anti-corrosion, crack-resistant, water-resistant, and air-permeable properties.",
     image: "/images/glass-fiber/01-fiberglass-tissue-mat/01-surface-tissue/50g-blue-surface-tissue-01.jpg",
@@ -11,6 +12,8 @@ export const glassFiberCategories: ProductCategory[] = [
       {
         slug: "surface-tissue",
         name: "Fiberglass Surface Tissue Mat",
+        relatedPosts: ["fiberglass-surface-tissue-for-composite-finish", "composite-laminate-layers-surface-structural-core", "fiberglass-fabric-weight-gsm-oz-conversion-guide"],
+        seoTitle: "FRP Surface Tissue Mat Manufacturer",
         description:
           "Surface tissue mat with uniform fiber distribution, smooth surface, and fast resin penetration. Available in winding and hand-laid series for FRP products.",
         features: [
@@ -38,6 +41,8 @@ export const glassFiberCategories: ProductCategory[] = [
       {
         slug: "black-tissue",
         name: "Black Fiberglass Tissue Facing",
+        relatedPosts: ["fiberglass-surface-tissue-for-composite-finish", "composite-laminate-layers-surface-structural-core"],
+        seoTitle: "Black Fiberglass Tissue Mat Manufacturer",
         description:
           "Black fiberglass tissue with flame retardancy, antibacterial properties, and sound absorption. Used for sound barriers, HVAC insulation, and ceiling panels.",
         features: [
@@ -65,6 +70,8 @@ export const glassFiberCategories: ProductCategory[] = [
       {
         slug: "colored-tissue",
         name: "Colored Fiberglass Tissue Mat",
+        relatedPosts: ["fiberglass-surface-tissue-for-composite-finish", "fiberglass-fabric-weight-gsm-oz-conversion-guide"],
+        seoTitle: "Colored Fiberglass Tissue Mat Manufacturer",
         description:
           "Customizable colored fiberglass tissue mat available in various colors. Ideal for decorative applications and specialized industrial uses.",
         features: [
@@ -92,6 +99,8 @@ export const glassFiberCategories: ProductCategory[] = [
       {
         slug: "rotor-paper",
         name: "Glass Fiber Paper for Zeolite Rotor",
+        relatedPosts: ["fiberglass-surface-tissue-for-composite-finish", "composite-reinforcement-rfq-checklist"],
+        seoTitle: "Molecular Sieve Rotor Fiberglass Paper",
         description:
           "Specialized glass fiber paper designed as the substrate for molecular sieve zeolite rotors used in dehumidification and VOC treatment systems.",
         features: [
@@ -119,6 +128,8 @@ export const glassFiberCategories: ProductCategory[] = [
       {
         slug: "roofing-tissue",
         name: "Fiberglass Roofing Tissue Mat",
+        relatedPosts: ["fiberglass-surface-tissue-for-composite-finish", "fiberglass-fabric-weight-gsm-oz-conversion-guide"],
+        seoTitle: "Fiberglass Roofing Tissue Manufacturer",
         description:
           "Fiberglass roofing tissue mat used as reinforcement material in waterproofing membranes and roofing systems. Compatible with bitumen and asphalt applications.",
         features: [
@@ -142,6 +153,8 @@ export const glassFiberCategories: ProductCategory[] = [
       {
         slug: "wall-covering",
         name: "Fiberglass Wall Covering Mat",
+        relatedPosts: ["fiberglass-surface-tissue-for-composite-finish", "composite-laminate-layers-surface-structural-core"],
+        seoTitle: "Fiberglass Wall Covering Tissue Manufacturer",
         description:
           "Fiberglass tissue mat designed for wall covering applications, providing smooth surface finish and dimensional stability for interior wall decoration.",
         features: [
@@ -165,6 +178,8 @@ export const glassFiberCategories: ProductCategory[] = [
       {
         slug: "pipe-wrapping",
         name: "Glass Fiber Mat for Pipe Wrapping",
+        relatedPosts: ["composite-laminate-layers-surface-structural-core", "fiberglass-surface-tissue-for-composite-finish"],
+        seoTitle: "FRP Pipe Wrapping Tissue Manufacturer",
         description:
           "Glass fiber mat specifically designed for pipe wrapping applications, providing insulation and protection for pipelines in industrial environments.",
         features: [
@@ -188,6 +203,8 @@ export const glassFiberCategories: ProductCategory[] = [
       {
         slug: "battery-separator",
         name: "Glass Fiber Battery Separator",
+        relatedPosts: ["fiberglass-surface-tissue-for-composite-finish", "composite-reinforcement-rfq-checklist"],
+        seoTitle: "Battery Separator Fiberglass Paper Manufacturer",
         description:
           "Glass fiber separator used in AGM/lead-acid batteries as separator material between positive and negative plates, providing electrolyte absorption and ion conductivity.",
         features: [

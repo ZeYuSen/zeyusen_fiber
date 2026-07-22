@@ -4,6 +4,7 @@ export const carbonFiberCategories: ProductCategory[] = [
   {
     slug: "carbon-fiber-mat",
     name: "Carbon Fiber Mat",
+    seoTitle: "Carbon Fiber Mat & Veil Manufacturer",
     description:
       "High-performance carbon fiber mats for conductivity, thermal resistance, and corrosion-sensitive composite applications in fuel cells, defense, and industry.",
     image: "/images/carbon-fiber/05-carbon-fiber-mat/01-carbon-surface-mat-10g/10g-carbon-surface-mat-01.jpg",
@@ -11,6 +12,8 @@ export const carbonFiberCategories: ProductCategory[] = [
       {
         slug: "surface-mat-10g",
         name: "Carbon Fiber Surface Mat 10g",
+        relatedPosts: ["carbon-fiber-surface-mat-selection-guide", "composite-laminate-layers-surface-structural-core"],
+        seoTitle: "Carbon Fiber Surface Mat 10g Manufacturer",
         description:
           "Ultra-thin 10g/m² carbon fiber surface mat with superior conductivity and thermal performance. Ideal for military applications and fuel cell components.",
         features: [
@@ -38,6 +41,8 @@ export const carbonFiberCategories: ProductCategory[] = [
       {
         slug: "surface-mat-20g",
         name: "Carbon Fiber Surface Mat 20g",
+        relatedPosts: ["carbon-fiber-surface-mat-selection-guide", "composite-laminate-layers-surface-structural-core"],
+        seoTitle: "Carbon Fiber Surface Mat 20g Manufacturer",
         description:
           "20g/m² carbon fiber surface mat designed for electric heating applications, wind turbine molds, and fuel cell outer wrapping.",
         features: [
@@ -65,6 +70,8 @@ export const carbonFiberCategories: ProductCategory[] = [
       {
         slug: "nickel-plated-mat",
         name: "Nickel-Plated Carbon Fiber Mat",
+        relatedPosts: ["carbon-fiber-surface-mat-selection-guide"],
+        seoTitle: "Nickel-Plated Carbon Fiber Mat Manufacturer",
         description:
           "30g/m² nickel-plated carbon fiber mat providing superior electromagnetic shielding. Designed for military and defense applications requiring EMI protection.",
         features: [
@@ -90,6 +97,8 @@ export const carbonFiberCategories: ProductCategory[] = [
       {
         slug: "carbon-glass-hybrid",
         name: "Carbon-Glass Hybrid Mat",
+        relatedPosts: ["carbon-glass-hybrid-fabric-benefits", "carbon-fiber-surface-mat-selection-guide"],
+        seoTitle: "Carbon-Glass Hybrid Mat Manufacturer",
         description:
           "30g/m² carbon-glass hybrid mat balancing conductivity, cost, and process flexibility for electric heating and wind energy applications.",
         features: [
@@ -117,6 +126,8 @@ export const carbonFiberCategories: ProductCategory[] = [
       {
         slug: "composite-mat",
         name: "Carbon Fiber Composite Mat",
+        relatedPosts: ["carbon-fiber-surface-mat-selection-guide", "composite-laminate-layers-surface-structural-core"],
+        seoTitle: "Carbon Fiber Composite Mat Manufacturer",
         description:
           "300-320g/m² carbon fiber composite mat with excellent conductivity and corrosion resistance. Specifically designed for pultrusion processes.",
         features: [
@@ -144,6 +155,8 @@ export const carbonFiberCategories: ProductCategory[] = [
       {
         slug: "needled-mat",
         name: "Carbon Fiber Needled Mat",
+        relatedPosts: ["carbon-fiber-surface-mat-selection-guide"],
+        seoTitle: "Carbon Fiber Needled Mat Manufacturer",
         description:
           "350g/m² high-strength carbon fiber needled mat with superior mechanical properties and electrical conductivity. Manufactured through needle-punching process for enhanced fiber entanglement.",
         features: [
@@ -173,6 +186,8 @@ export const carbonFiberCategories: ProductCategory[] = [
       {
         slug: "surface-mat-30g",
         name: "Carbon Fiber Surface Mat 30g",
+        relatedPosts: ["carbon-fiber-surface-mat-selection-guide", "composite-laminate-layers-surface-structural-core"],
+        seoTitle: "Carbon Fiber Surface Mat 30g Manufacturer",
         description:
           "30g carbon fiber surface felt with excellent electrical conductivity. Uses fine carbon fiber as raw material, lightweight while maintaining strength, flexible and adaptable to different surface shapes.",
         features: [
@@ -202,6 +217,8 @@ export const carbonFiberCategories: ProductCategory[] = [
       {
         slug: "fuel-cell-gdl",
         name: "Carbon Fiber Mat for Hydrogen Fuel Cell GDL",
+        relatedPosts: ["carbon-fiber-surface-mat-selection-guide"],
+        seoTitle: "Fuel Cell GDL Carbon Fiber Mat Manufacturer",
         description:
           "High-performance carbon fiber felt designed specifically for hydrogen fuel cell Gas Diffusion Layer (GDL) applications. Features uniform pore structure, high surface area for fuel diffusion, low resistance and high electrical conductivity.",
         features: [
@@ -240,6 +257,7 @@ export const carbonFiberCategories: ProductCategory[] = [
       {
         slug: "hybrid-woven-cloth",
         name: "Carbon-Glass Hybrid Woven Cloth",
+        relatedPosts: ["carbon-glass-hybrid-fabric-benefits", "carbon-fiber-cloth-twill-plain-weave-guide", "carbon-fiber-vs-fiberglass-selection-guide"],
         description:
           "200-240g/m² carbon-glass hybrid woven cloth combining high modulus with cost efficiency. Suitable for carbon fiber products and decorative applications.",
         features: [
@@ -267,6 +285,7 @@ export const carbonFiberCategories: ProductCategory[] = [
       {
         slug: "twill-cloth",
         name: "Carbon Fiber Twill Cloth",
+        relatedPosts: ["carbon-fiber-cloth-twill-plain-weave-guide", "carbon-fiber-fabric-specification-guide"],
         description:
           "200g/m² carbon fiber twill weave cloth with T300 grade strength. Classic 2x2 twill pattern provides excellent drapeability and aesthetic finish.",
         features: [
@@ -290,6 +309,7 @@ export const carbonFiberCategories: ProductCategory[] = [
       {
         slug: "plain-cloth",
         name: "Carbon Fiber Plain Cloth",
+        relatedPosts: ["carbon-fiber-cloth-twill-plain-weave-guide", "carbon-fiber-fabric-specification-guide"],
         description:
           "200g/m² carbon fiber plain weave cloth with T300 grade. Balanced structure provides equal strength in both directions, ideal for flat panel applications.",
         features: [
@@ -322,6 +342,8 @@ export const carbonFiberCategories: ProductCategory[] = [
       {
         slug: "short-cut-fiber",
         name: "Short Cut Carbon Fiber",
+        relatedPosts: ["carbon-fiber-raw-materials-yarn-powder-chopped", "reinforcement-sizing-resin-compatibility-guide"],
+        seoTitle: "Chopped Carbon Fiber for Thermoplastics",
         description:
           "Mechanically cut carbon fiber filaments for reinforced modified plastics, construction, electric heating, shielding materials, and new energy applications.",
         features: [
@@ -345,6 +367,8 @@ export const carbonFiberCategories: ProductCategory[] = [
       {
         slug: "carbon-powder",
         name: "Carbon Fiber Powder",
+        relatedPosts: ["carbon-fiber-raw-materials-yarn-powder-chopped", "composite-reinforcement-rfq-checklist"],
+        seoTitle: "Conductive Carbon Fiber Powder Manufacturer",
         description:
           "Ground carbon fiber powder (milled carbon fiber) for use as high-performance composite filler. Retains excellent properties of carbon fiber in powder form.",
         features: [

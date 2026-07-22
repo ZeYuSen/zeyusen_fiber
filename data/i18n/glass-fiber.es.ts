@@ -3,10 +3,12 @@ import type { DivisionTranslations } from "./types";
 export const glassFiberEs: DivisionTranslations = {
   "tissue-mat": {
     "name": "Velo de Fibra de Vidrio (Tissue)",
+        "seoTitle": "Fabricante de Velos de Fibra de Vidrio",
     "description": "Velos de fibra de vidrio de proceso húmedo con propiedades ignífugas, anticorrosivas, resistentes a grietas, resistentes al agua y permeables al aire.",
     "products": {
       "surface-tissue": {
         "name": "Velo de Superficie de Fibra de Vidrio",
+        "seoTitle": "Fabricante de Velo de Superficie para FRP",
         "description": "Velo de superficie con distribución uniforme de fibra, superficie lisa y rápida penetración de resina. Disponible en series para bobinado y laminado manual para productos de FRP.",
         "features": [
           "Distribución uniforme de fibra",
@@ -34,6 +36,7 @@ export const glassFiberEs: DivisionTranslations = {
       },
       "black-tissue": {
         "name": "Velo Negro de Fibra de Vidrio",
+        "seoTitle": "Fabricante de Velo Negro de Fibra de Vidrio",
         "description": "Velo de fibra de vidrio negro con ignifugación, propiedades antibacterianas y absorción acústica. Utilizado para barreras acústicas, aislamiento HVAC y paneles de techo.",
         "features": [
           "Ignífugo",
@@ -61,6 +64,7 @@ export const glassFiberEs: DivisionTranslations = {
       },
       "colored-tissue": {
         "name": "Velo de Fibra de Vidrio de Color",
+        "seoTitle": "Fabricante de Velo de Fibra de Vidrio de Color",
         "description": "Velo de fibra de vidrio de color personalizable disponible en varios colores. Ideal para aplicaciones decorativas y usos industriales especializados.",
         "features": [
           "Opciones de color personalizadas",
@@ -115,6 +119,7 @@ export const glassFiberEs: DivisionTranslations = {
       },
       "roofing-tissue": {
         "name": "Velo de Fibra de Vidrio para Cubiertas",
+        "seoTitle": "Fabricante de Velo de Fibra de Vidrio para Cubiertas",
         "description": "Velo de fibra de vidrio para cubiertas utilizado como material de refuerzo en membranas impermeabilizantes y sistemas de techado. Compatible con aplicaciones de betún y asfalto.",
         "features": [
           "Buena resistencia a la tracción",
@@ -142,6 +147,7 @@ export const glassFiberEs: DivisionTranslations = {
       },
       "wall-covering": {
         "name": "Velo de Fibra de Vidrio para Revestimiento de Paredes",
+        "seoTitle": "Fabricante de Velo para Revestimiento de Paredes",
         "description": "Velo de fibra de vidrio diseñado para aplicaciones de revestimiento de paredes, que proporciona un acabado de superficie liso y estabilidad dimensional para la decoración de paredes interiores.",
         "features": [
           "Superficie lisa",
@@ -169,6 +175,7 @@ export const glassFiberEs: DivisionTranslations = {
       },
       "pipe-wrapping": {
         "name": "Velo de Fibra de Vidrio para Envoltura de Tuberías",
+        "seoTitle": "Fabricante de Velo para Envoltura de Tuberías FRP",
         "description": "Velo de fibra de vidrio diseñado específicamente para aplicaciones de envoltura de tuberías, que proporciona aislamiento y protección para tuberías en entornos industriales.",
         "features": [
           "Buena conformabilidad de envoltura",
@@ -196,6 +203,7 @@ export const glassFiberEs: DivisionTranslations = {
       },
       "battery-separator": {
         "name": "Separador de Batería de Fibra de Vidrio",
+        "seoTitle": "Fabricante de Separador de Batería de Fibra de Vidrio",
         "description": "Separador de fibra de vidrio utilizado en baterías AGM/plomo-ácido como material separador entre placas positivas y negativas, que proporciona absorción de electrolito y conductividad iónica.",
         "features": [
           "Alta porosidad para la absorción de electrolito",

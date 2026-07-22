@@ -3,10 +3,12 @@ import type { DivisionTranslations } from "./types";
 export const glassFiberKo: DivisionTranslations = {
   "tissue-mat": {
     "name": "유리섬유 티슈 매트 (베일)",
+        "seoTitle": "유리섬유 티슈 매트 제조업체",
     "description": "난연성, 내부식성, 균열 저항성, 방수성, 통기성을 갖춘 습식 공정 유리섬유 티슈 매트.",
     "products": {
       "surface-tissue": {
         "name": "유리섬유 표면 티슈 매트",
+        "seoTitle": "유리섬유 표면 티슈 매트 제조업체",
         "description": "균일한 섬유 분포, 매끄러운 표면, 빠른 수지 침투를 갖춘 표면 티슈 매트. FRP 제품용 와인딩 및 핸드 레이업 시리즈로 제공.",
         "features": [
           "균일한 섬유 분포",
@@ -34,6 +36,7 @@ export const glassFiberKo: DivisionTranslations = {
       },
       "black-tissue": {
         "name": "블랙 유리섬유 티슈 패이싱",
+        "seoTitle": "블랙 유리섬유 티슈 제조업체",
         "description": "난연성, 항균성, 흡음성을 갖춘 블랙 유리섬유 티슈. 방음벽, HVAC 단열, 천장 패널에 사용.",
         "features": [
           "난연",
@@ -61,6 +64,7 @@ export const glassFiberKo: DivisionTranslations = {
       },
       "colored-tissue": {
         "name": "컬러 유리섬유 티슈 매트",
+        "seoTitle": "컬러 유리섬유 티슈 매트 제조업체",
         "description": "다양한 색상으로 커스터마이징 가능한 컬러 유리섬유 티슈 매트. 장식적 용도 및 특수 산업 용도에 이상적.",
         "features": [
           "맞춤 색상 옵션",
@@ -88,6 +92,7 @@ export const glassFiberKo: DivisionTranslations = {
       },
       "rotor-paper": {
         "name": "제올라이트 로터용 유리섬유 페이퍼",
+        "seoTitle": "제올라이트 로터용 유리섬유 페이퍼 제조업체",
         "description": "제습 및 VOC 처리 시스템에 사용되는 분자체 제올라이트 로터의 기재로 설계된 특수 유리섬유 페이퍼.",
         "features": [
           "제올라이트 로터 기재",
@@ -115,6 +120,7 @@ export const glassFiberKo: DivisionTranslations = {
       },
       "roofing-tissue": {
         "name": "유리섬유 루핑 티슈 매트",
+        "seoTitle": "유리섬유 루핑 티슈 매트 제조업체",
         "description": "방수 멤브레인 및 루핑 시스템의 보강재로 사용되는 유리섬유 루핑 티슈 매트. 비투멘 및 아스팔트 시공에 호환.",
         "features": [
           "우수한 인장 강도",
@@ -142,6 +148,7 @@ export const glassFiberKo: DivisionTranslations = {
       },
       "wall-covering": {
         "name": "유리섬유 벽면 커버링 매트",
+        "seoTitle": "유리섬유 벽면 커버링 매트 제조업체",
         "description": "실내 벽 장식을 위한 매끄러운 표면 마감과 치수 안정성을 제공하는 벽면 커버링용 유리섬유 티슈 매트.",
         "features": [
           "매끄러운 표면",
@@ -169,6 +176,7 @@ export const glassFiberKo: DivisionTranslations = {
       },
       "pipe-wrapping": {
         "name": "파이프 래핑용 유리섬유 매트",
+        "seoTitle": "파이프 래핑용 유리섬유 매트 제조업체",
         "description": "산업 환경의 파이프라인에 단열 및 보호 기능을 제공하는 파이프 래핑 전용 유리섬유 매트.",
         "features": [
           "우수한 래핑 순응성",
@@ -196,6 +204,7 @@ export const glassFiberKo: DivisionTranslations = {
       },
       "battery-separator": {
         "name": "유리섬유 배터리 세퍼레이터",
+        "seoTitle": "유리섬유 배터리 세퍼레이터 제조업체",
         "description": "AGM/납산 배터리에서 양극과 음극판 사이의 분리재로 사용되는 유리섬유 세퍼레이터. 전해질 흡수 및 이온 전도성 제공.",
         "features": [
           "전해질 흡수를 위한 높은 기공률",

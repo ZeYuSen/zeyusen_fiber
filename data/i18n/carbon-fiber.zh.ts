@@ -3,10 +3,12 @@ import type { DivisionTranslations } from "./types";
 export const carbonFiberZh: DivisionTranslations = {
   "carbon-fiber-mat": {
     "name": "碳纤维毡",
+    "seoTitle": "碳纤维毡制造商",
     "description": "用于燃料电池、国防和工业领域的导电、耐热和耐腐蚀复合材料应用的高性能碳纤维毡。",
     "products": {
       "surface-mat-10g": {
         "name": "碳纤维表面毡 10g",
+        "seoTitle": "碳纤维表面毡10g制造商",
         "description": "具有优异导电性和热性能的超薄10g/m²碳纤维表面毡。适用于军工应用和燃料电池部件。",
         "features": [
           "10g/m²超轻量",
@@ -33,6 +35,7 @@ export const carbonFiberZh: DivisionTranslations = {
       },
       "surface-mat-20g": {
         "name": "碳纤维表面毡 20g",
+        "seoTitle": "碳纤维表面毡20g制造商",
         "description": "专为电加热应用、风电模具和燃料电池外包覆设计的20g/m²碳纤维表面毡。",
         "features": [
           "电加热优化",
@@ -59,6 +62,7 @@ export const carbonFiberZh: DivisionTranslations = {
       },
       "nickel-plated-mat": {
         "name": "镀镍碳纤维毡",
+        "seoTitle": "镀镍碳纤维毡制造商",
         "description": "提供优异电磁屏蔽性能的30g/m²镀镍碳纤维毡。专为需要EMI防护的军事和国防应用设计。",
         "features": [
           "电磁屏蔽",
@@ -85,6 +89,7 @@ export const carbonFiberZh: DivisionTranslations = {
       },
       "carbon-glass-hybrid": {
         "name": "碳-玻混合毡",
+        "seoTitle": "碳-玻混合毡制造商",
         "description": "用于电加热和风电应用的30g/m²碳-玻混合毡，平衡导电性、成本和工艺灵活性。",
         "features": [
           "碳-玻混合结构",
@@ -111,6 +116,7 @@ export const carbonFiberZh: DivisionTranslations = {
       },
       "composite-mat": {
         "name": "碳纤维复合毡",
+        "seoTitle": "碳纤维复合毡制造商",
         "description": "具有优异导电性和耐腐蚀性的300-320g/m²碳纤维复合毡。专为拉挤成型工艺设计。",
         "features": [
           "拉挤工艺优化",
@@ -138,6 +144,7 @@ export const carbonFiberZh: DivisionTranslations = {
       },
       "needled-mat": {
         "name": "碳纤维针刺毡",
+        "seoTitle": "碳纤维针刺毡制造商",
         "description": "具有优异机械性能和电导率的350g/m²高强度碳纤维针刺毡。通过针刺工艺制造，纤维缠结增强。",
         "features": [
           "高机械强度",
@@ -163,6 +170,7 @@ export const carbonFiberZh: DivisionTranslations = {
       },
       "surface-mat-30g": {
         "name": "碳纤维表面毡 30g",
+        "seoTitle": "碳纤维表面毡30g制造商",
         "description": "具有优异电导率的30g碳纤维表面毡。以微细碳纤维为原料，轻量高强，柔韧性好，可适应各种表面形状。",
         "features": [
           "优异的电导率",
@@ -191,6 +199,7 @@ export const carbonFiberZh: DivisionTranslations = {
       },
       "fuel-cell-gdl": {
         "name": "氢燃料电池GDL用碳纤维毡",
+        "seoTitle": "氢燃料电池GDL用碳纤维毡制造商",
         "description": "专为氢燃料电池气体扩散层（GDL）应用设计的高性能碳纤维毡。具有均匀孔隙结构、大比表面积促进燃料扩散、低电阻和高电导率特点。",
         "features": [
           "均匀孔隙形态和大比表面积",
@@ -311,6 +320,7 @@ export const carbonFiberZh: DivisionTranslations = {
     "products": {
       "short-cut-fiber": {
         "name": "碳纤维短切丝",
+        "seoTitle": "碳纤维短切丝制造商",
         "description": "机械切割的碳纤维丝束，用于增强改性塑料、建筑、电加热、屏蔽材料和新能源应用。",
         "features": [
           "均匀分散",
@@ -338,6 +348,7 @@ export const carbonFiberZh: DivisionTranslations = {
       },
       "carbon-powder": {
         "name": "碳纤维粉",
+        "seoTitle": "碳纤维粉制造商",
         "description": "研磨碳纤维粉（磨碎碳纤维），用作高性能复合材料填料。粉末形态保持碳纤维的优异特性。",
         "features": [
           "大比表面积",

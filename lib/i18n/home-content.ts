@@ -62,9 +62,9 @@ type DivisionCard = {
 const en: HomeContent = {
   hero: [
     {
-      title: "Advanced Composite Materials",
+      title: "Carbon Fiber & Fiberglass Tissue Mat Manufacturer",
       subtitle:
-        "From carbon fiber to fiberglass — engineered for the world's most demanding industries",
+        "OEM composite reinforcement materials for FRP, wind energy, construction, battery and industrial applications",
     },
     {
       title: "State-of-the-Art Manufacturing",
@@ -196,7 +196,7 @@ const en: HomeContent = {
 
 const ko: HomeContent = {
   hero: [
-    { title: "첨단 복합재 소재", subtitle: "탄소섬유부터 유리섬유까지 — 세계에서 가장 까다로운 산업을 위해 설계됨" },
+    { title: "탄소섬유 및 유리섬유 티슈 매트 제조업체", subtitle: "FRP, 풍력에너지, 건설, 배터리 및 산업 분야를 위한 OEM 복합재 보강 소재" },
     { title: "최첨단 제조 시설", subtitle: "자동화 생산 라인과 엄격한 품질 관리를 갖춘 표준화 생산 시설" },
     { title: "글로벌 바이어의 신뢰", subtitle: "상하이항에서 240km 거리의 이중 생산 거점 — FOB, CIF, CFR, EXW, 귀하의 조건에 맞춰 조율" },
   ],
@@ -292,7 +292,7 @@ const ko: HomeContent = {
 
 const es: HomeContent = {
   hero: [
-    { title: "Materiales Compuestos Avanzados", subtitle: "De la fibra de carbono a la fibra de vidrio — diseñados para las industrias más exigentes del mundo" },
+    { title: "Fabricante de Fibra de Carbono y Velos de Fibra de Vidrio", subtitle: "Materiales de refuerzo de composites OEM para FRP, energía eólica, construcción, baterías y aplicaciones industriales" },
     { title: "Fabricación de Vanguardia", subtitle: "Instalaciones de producción estandarizadas con líneas automatizadas y estricto control de calidad" },
     { title: "La Confianza de Compradores Globales", subtitle: "Bases de producción duales a 240 km del Puerto de Shanghái — FOB, CIF, CFR o EXW, coordinado a sus términos" },
   ],
@@ -390,7 +390,7 @@ const es: HomeContent = {
 
 const pt: HomeContent = {
   hero: [
-    { title: "Materiais Compósitos Avançados", subtitle: "Da fibra de carbono à fibra de vidro — projetados para os setores mais exigentes do mundo" },
+    { title: "Fabricante de Fibra de Carbono e Véus de Fibra de Vidro", subtitle: "Materiais de reforço compósito OEM para FRP, energia eólica, construção, baterias e aplicações industriais" },
     { title: "Fabricação de Última Geração", subtitle: "Instalações de produção padronizadas com linhas automatizadas e rigoroso controle de qualidade" },
     { title: "A Confiança de Compradores Globais", subtitle: "Bases de produção duplas a 240 km do Porto de Xangai — FOB, CIF, CFR ou EXW, coordenado aos seus termos" },
   ],
@@ -488,7 +488,7 @@ const pt: HomeContent = {
 
 const zh: HomeContent = {
   hero: [
-    { title: "先进复合材料", subtitle: "从碳纤维到玻璃纤维——为全球最严苛行业而设计" },
+    { title: "碳纤维与玻璃纤维薄毡制造商", subtitle: "为FRP、风电、建筑、电池及工业应用提供OEM复合增强材料" },
     { title: "先进制造设施", subtitle: "标准化生产基地，配备自动化生产线和严格质量管控" },
     { title: "深受全球买家信赖", subtitle: "距上海港240公里的双生产基地——FOB、CIF、CFR 或 EXW，按您的条款灵活协调" },
   ],

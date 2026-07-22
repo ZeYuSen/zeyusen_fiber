@@ -161,7 +161,10 @@ export async function generateMetadata({ params }: PageProps<"/[lang]/[[...slug]
     const division = pageKey === "carbon-category" ? "carbon" : "glass";
     const category = getCategories(division, locale).find((c) => c.slug === routeParams.category);
     if (!category) return {};
-    seo = { title: category.name, description: category.description };
+    seo = {
+      title: category.seoTitle ?? category.name,
+      description: category.seoDescription ?? category.description,
+    };
     image = category.image;
   } else if (pageKey === "carbon-product" || pageKey === "glass-product") {
     const division = pageKey === "carbon-product" ? "carbon" : "glass";

@@ -3,10 +3,12 @@ import type { DivisionTranslations } from "./types";
 export const carbonFiberKo: DivisionTranslations = {
   "carbon-fiber-mat": {
     "name": "탄소섬유 매트",
+        "seoTitle": "탄소섬유 매트 제조업체",
     "description": "연료전지, 방위 및 산업 분야의 전도성, 내열성 및 부식에 민감한 복합재 응용을 위한 고성능 탄소섬유 매트.",
     "products": {
       "surface-mat-10g": {
         "name": "탄소섬유 표면 매트 10g",
+        "seoTitle": "탄소섬유 표면 매트 10g 제조업체",
         "description": "우수한 전도성과 열 성능을 갖춘 초박형 10g/m² 탄소섬유 표면 매트. 군용 응용 및 연료전지 부품에 이상적입니다.",
         "features": [
           "10g/m²의 초경량",
@@ -33,6 +35,7 @@ export const carbonFiberKo: DivisionTranslations = {
       },
       "surface-mat-20g": {
         "name": "탄소섬유 표면 매트 20g",
+        "seoTitle": "탄소섬유 표면 매트 20g 제조업체",
         "description": "전기 가열 응용, 풍력 터빈 몰드 및 연료전지 외부 래핑을 위해 설계된 20g/m² 탄소섬유 표면 매트.",
         "features": [
           "전기 가열에 최적화",
@@ -59,6 +62,7 @@ export const carbonFiberKo: DivisionTranslations = {
       },
       "nickel-plated-mat": {
         "name": "니켈 도금 탄소섬유 매트",
+        "seoTitle": "니켈 도금 탄소섬유 매트 제조업체",
         "description": "우수한 전자파 차폐를 제공하는 30g/m² 니켈 도금 탄소섬유 매트. EMI 보호가 필요한 군용 및 방위 응용을 위해 설계되었습니다.",
         "features": [
           "전자파 차폐",
@@ -85,6 +89,7 @@ export const carbonFiberKo: DivisionTranslations = {
       },
       "carbon-glass-hybrid": {
         "name": "탄소-유리 하이브리드 매트",
+        "seoTitle": "탄소-유리 하이브리드 매트 제조업체",
         "description": "전기 가열 및 풍력에너지 응용을 위해 전도성, 비용 및 공정 유연성의 균형을 맞춘 30g/m² 탄소-유리 하이브리드 매트.",
         "features": [
           "탄소-유리 하이브리드 구조",
@@ -111,6 +116,7 @@ export const carbonFiberKo: DivisionTranslations = {
       },
       "composite-mat": {
         "name": "탄소섬유 복합 매트",
+        "seoTitle": "탄소섬유 복합 매트 제조업체",
         "description": "우수한 전도성과 내식성을 갖춘 300-320g/m² 탄소섬유 복합 매트. 인발성형(pultrusion) 공정을 위해 특별히 설계되었습니다.",
         "features": [
           "인발성형 공정 최적화",
@@ -138,6 +144,7 @@ export const carbonFiberKo: DivisionTranslations = {
       },
       "needled-mat": {
         "name": "탄소섬유 니들 매트",
+        "seoTitle": "탄소섬유 니들 매트 제조업체",
         "description": "우수한 기계적 특성과 전기 전도성을 갖춘 350g/m² 고강도 탄소섬유 니들 매트. 니들 펀칭 공정을 통해 제조되어 섬유 얽힘이 강화되었습니다.",
         "features": [
           "높은 기계적 강도",
@@ -163,6 +170,7 @@ export const carbonFiberKo: DivisionTranslations = {
       },
       "surface-mat-30g": {
         "name": "탄소섬유 표면 매트 30g",
+        "seoTitle": "탄소섬유 표면 매트 30g 제조업체",
         "description": "우수한 전기 전도성을 갖춘 30g 탄소섬유 표면 펠트. 미세 탄소섬유를 원료로 사용하여 경량이면서도 강도를 유지하며, 유연하여 다양한 표면 형상에 적응할 수 있습니다.",
         "features": [
           "우수한 전기 전도성",
@@ -191,6 +199,7 @@ export const carbonFiberKo: DivisionTranslations = {
       },
       "fuel-cell-gdl": {
         "name": "수소 연료전지 GDL용 탄소섬유 매트",
+        "seoTitle": "수소 연료전지 GDL용 탄소섬유 매트 제조업체",
         "description": "수소 연료전지 기체확산층(GDL) 응용을 위해 특별히 설계된 고성능 탄소섬유 펠트. 균일한 기공 구조, 연료 확산을 위한 넓은 표면적, 낮은 저항 및 높은 전기 전도성을 특징으로 합니다.",
         "features": [
           "균일한 기공 형상과 넓은 표면적",
@@ -311,6 +320,7 @@ export const carbonFiberKo: DivisionTranslations = {
     "products": {
       "short-cut-fiber": {
         "name": "탄소섬유 단섬유",
+        "seoTitle": "탄소섬유 단섬유 제조업체",
         "description": "보강 개질 플라스틱, 건설, 전기 가열, 차폐 소재 및 신에너지 응용을 위한 기계적으로 절단된 탄소섬유 필라멘트.",
         "features": [
           "균일한 분산",
@@ -338,6 +348,7 @@ export const carbonFiberKo: DivisionTranslations = {
       },
       "carbon-powder": {
         "name": "탄소섬유 분말",
+        "seoTitle": "탄소섬유 분말 제조업체",
         "description": "고성능 복합재 충전제로 사용되는 분쇄 탄소섬유 분말(밀링 탄소섬유). 분말 형태로 탄소섬유의 우수한 특성을 유지합니다.",
         "features": [
           "넓은 비표면적",

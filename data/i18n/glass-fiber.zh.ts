@@ -3,10 +3,12 @@ import type { DivisionTranslations } from "./types";
 export const glassFiberZh: DivisionTranslations = {
   "tissue-mat": {
     "name": "玻璃纤维薄毡（面纱）",
+    "seoTitle": "玻璃纤维薄毡制造商",
     "description": "湿法工艺玻璃纤维薄毡，具有阻燃、耐腐蚀、抗裂、防水、透气等特性。",
     "products": {
       "surface-tissue": {
         "name": "玻璃纤维表面毡",
+        "seoTitle": "玻璃纤维表面毡制造商",
         "description": "纤维分布均匀、表面光滑、树脂浸透快的表面薄毡。提供缠绕系列和手糊系列，用于FRP制品。",
         "features": [
           "纤维分布均匀",
@@ -34,6 +36,7 @@ export const glassFiberZh: DivisionTranslations = {
       },
       "black-tissue": {
         "name": "黑色玻璃纤维薄毡",
+        "seoTitle": "黑色玻璃纤维薄毡制造商",
         "description": "具有阻燃、抗菌、吸音性能的黑色玻璃纤维薄毡。用于隔音屏障、暖通保温和天花板面板。",
         "features": [
           "阻燃",
@@ -61,6 +64,7 @@ export const glassFiberZh: DivisionTranslations = {
       },
       "colored-tissue": {
         "name": "彩色玻璃纤维薄毡",
+        "seoTitle": "彩色玻璃纤维薄毡制造商",
         "description": "可定制多种颜色的彩色玻璃纤维薄毡。适用于装饰用途和特殊工业应用。",
         "features": [
           "定制颜色选项",
@@ -88,6 +92,7 @@ export const glassFiberZh: DivisionTranslations = {
       },
       "rotor-paper": {
         "name": "分子筛转轮用玻纤纸",
+        "seoTitle": "分子筛转轮用玻纤纸制造商",
         "description": "专为除湿和VOC处理系统中分子筛沸石转轮基材设计的特种玻璃纤维纸。",
         "features": [
           "沸石转轮基材",
@@ -115,6 +120,7 @@ export const glassFiberZh: DivisionTranslations = {
       },
       "roofing-tissue": {
         "name": "玻纤屋面毡",
+        "seoTitle": "玻纤屋面毡制造商",
         "description": "用于防水卷材和屋面系统增强的玻璃纤维屋面毡。与沥青施工兼容。",
         "features": [
           "优异拉伸强度",
@@ -142,6 +148,7 @@ export const glassFiberZh: DivisionTranslations = {
       },
       "wall-covering": {
         "name": "玻纤墙面覆盖毡",
+        "seoTitle": "玻纤墙面覆盖毡制造商",
         "description": "为室内墙面装饰提供光滑表面和尺寸稳定性的玻璃纤维薄毡。",
         "features": [
           "表面光滑",
@@ -169,6 +176,7 @@ export const glassFiberZh: DivisionTranslations = {
       },
       "pipe-wrapping": {
         "name": "管道包覆用玻纤毡",
+        "seoTitle": "管道包覆用玻纤毡制造商",
         "description": "为工业环境中管道提供保温和保护功能的管道包覆专用玻璃纤维毡。",
         "features": [
           "优异包覆贴合性",
@@ -196,6 +204,7 @@ export const glassFiberZh: DivisionTranslations = {
       },
       "battery-separator": {
         "name": "玻纤电池隔板",
+        "seoTitle": "玻纤电池隔板制造商",
         "description": "用于AGM/铅酸电池正负极板之间分隔的玻璃纤维隔板。提供电解液吸收和离子传导功能。",
         "features": [
           "高孔隙率吸收电解液",

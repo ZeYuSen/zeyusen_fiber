@@ -3,9 +3,9 @@ import type { PageContent } from "./page-content";
 export const zh: PageContent = {
   seo: {
     home: {
-      title: "泽宇森纤维 | 碳纤维和玻璃纤维制造商",
+      title: "碳纤维与玻璃纤维薄毡制造商",
       description:
-        "江苏泽宇森碳纤维科技有限公司生产碳纤维毡、玻璃纤维布、复合材料增强材料和定制材料解决方案，服务于航空航天、风电、建筑和制造行业。",
+        "泽宇森专业生产玻璃纤维薄毡、玻璃纤维表面毡、碳纤维毡及特种玻纤纸，为FRP、风电、电池及工业应用提供OEM复合增强材料。",
     },
     about: {
       title: "关于我们的复合材料制造",

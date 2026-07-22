@@ -4,6 +4,7 @@ import { localizedHref } from "@/lib/i18n/routes";
 import type { Dictionary } from "@/lib/i18n/dictionaries";
 import type { ProductCategory, Product } from "@/types/product";
 import type { ProductContent } from "@/data/product-content";
+import { getBlogPost, type BlogPost } from "@/data/blog";
 import { ProductGallery } from "@/components/products/ProductGallery";
 import { SpecTable } from "@/components/products/SpecTable";
 import { RelatedProducts } from "@/components/products/RelatedProducts";
@@ -31,6 +32,10 @@ export function ProductDetail({
   const divisionKey = division === "carbon" ? "carbon-fiber" : "glass-fiber";
   const categoryKey = division === "carbon" ? "carbon-category" : "glass-category";
   const productKey = division === "carbon" ? "carbon-product" : "glass-product";
+  const relatedGuides = (product.relatedPosts ?? [])
+    .map((slug) => getBlogPost(locale, slug))
+    .filter((post): post is BlogPost => Boolean(post))
+    .slice(0, 4);
 
   return (
     <>
@@ -177,6 +182,35 @@ export function ProductDetail({
                       {faq.answer}
                     </p>
                   </div>
+                ))}
+              </div>
+            </div>
+          </section>
+        </>
+      ) : null}
+
+      {relatedGuides.length ? (
+        <>
+          <div className="container-wide"><div className="h-px bg-neutral-100" /></div>
+          <section className="py-12">
+            <div className="container-wide">
+              <h2 className="text-xs font-medium text-neutral-400 uppercase tracking-wider mb-6">
+                {dict.sections.relatedGuides}
+              </h2>
+              <div className="grid sm:grid-cols-2 gap-4 max-w-3xl">
+                {relatedGuides.map((post) => (
+                  <Link
+                    key={post.slug}
+                    href={localizedHref("blog-post", locale, { slug: post.slug })}
+                    className="group block bg-white border border-neutral-100 rounded-lg p-4 hover:border-neutral-200 transition-colors"
+                  >
+                    <h3 className="text-sm font-medium text-neutral-900 group-hover:text-accent-500 transition-colors line-clamp-2">
+                      {post.title}
+                    </h3>
+                    <p className="mt-1.5 text-xs text-neutral-500 leading-relaxed line-clamp-2">
+                      {post.excerpt}
+                    </p>
+                  </Link>
                 ))}
               </div>
             </div>

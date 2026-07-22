@@ -3,10 +3,12 @@ import type { DivisionTranslations } from "./types";
 export const carbonFiberPt: DivisionTranslations = {
   "carbon-fiber-mat": {
     "name": "Manta de Fibra de Carbono",
+        "seoTitle": "Fabricante de Mantas de Fibra de Carbono",
     "description": "Mantas de fibra de carbono de alto desempenho para condutividade, resistência térmica e aplicações em compósitos sensíveis à corrosão em células de combustível, defesa e indústria.",
     "products": {
       "surface-mat-10g": {
         "name": "Véu de Superfície de Fibra de Carbono 10g",
+        "seoTitle": "Fabricante de Véu de Fibra de Carbono 10g",
         "description": "Véu de superfície ultra-fino de fibra de carbono 10g/m² com condutividade elétrica e desempenho térmico superiores. Ideal para aplicações militares e componentes de células de combustível.",
         "features": [
           "Peso ultra-reduzido de 10g/m²",
@@ -33,6 +35,7 @@ export const carbonFiberPt: DivisionTranslations = {
       },
       "surface-mat-20g": {
         "name": "Véu de Superfície de Fibra de Carbono 20g",
+        "seoTitle": "Fabricante de Véu de Fibra de Carbono 20g",
         "description": "Véu de superfície de fibra de carbono 20g/m² projetado para aplicações de aquecimento elétrico, moldes de turbinas eólicas e revestimento externo de células de combustível.",
         "features": [
           "Otimizado para aquecimento elétrico",
@@ -59,6 +62,7 @@ export const carbonFiberPt: DivisionTranslations = {
       },
       "nickel-plated-mat": {
         "name": "Manta de Fibra de Carbono Niquelada",
+        "seoTitle": "Fabricante de Manta de Fibra de Carbono Niquelada",
         "description": "Manta de fibra de carbono niquelada de 30g/m² com blindagem eletromagnética superior. Projetada para aplicações militares e de defesa que exigem proteção EMI.",
         "features": [
           "Blindagem eletromagnética",
@@ -85,6 +89,7 @@ export const carbonFiberPt: DivisionTranslations = {
       },
       "carbon-glass-hybrid": {
         "name": "Manta Híbrida Carbono-Vidro",
+        "seoTitle": "Fabricante de Manta Híbrida Carbono-Vidro",
         "description": "Manta híbrida carbono-vidro de 30g/m² equilibrando condutividade, custo e flexibilidade de processo para aplicações de aquecimento elétrico e energia eólica.",
         "features": [
           "Estrutura híbrida carbono-vidro",
@@ -111,6 +116,7 @@ export const carbonFiberPt: DivisionTranslations = {
       },
       "composite-mat": {
         "name": "Manta Composta de Fibra de Carbono",
+        "seoTitle": "Fabricante de Manta Composta de Fibra de Carbono",
         "description": "Manta composta de fibra de carbono de 300-320g/m² com excelente condutividade e resistência à corrosão. Especificamente projetada para processos de pultrusão.",
         "features": [
           "Otimizada para processo de pultrusão",
@@ -138,6 +144,7 @@ export const carbonFiberPt: DivisionTranslations = {
       },
       "needled-mat": {
         "name": "Manta Agulhada de Fibra de Carbono",
+        "seoTitle": "Fabricante de Manta Agulhada de Fibra de Carbono",
         "description": "Manta agulhada de fibra de carbono de 350g/m² com propriedades mecânicas superiores e condutividade elétrica. Fabricada pelo processo de agulhamento para maior entrelaçamento das fibras.",
         "features": [
           "Alta resistência mecânica",
@@ -163,6 +170,7 @@ export const carbonFiberPt: DivisionTranslations = {
       },
       "surface-mat-30g": {
         "name": "Véu de Superfície de Fibra de Carbono 30g",
+        "seoTitle": "Fabricante de Véu de Fibra de Carbono 30g",
         "description": "Feltro de superfície de fibra de carbono 30g com excelente condutividade elétrica. Utiliza fibra de carbono fina como matéria-prima, leve e resistente, flexível e adaptável a diferentes formas de superfície.",
         "features": [
           "Excelente condutividade elétrica",
@@ -311,6 +319,7 @@ export const carbonFiberPt: DivisionTranslations = {
     "products": {
       "short-cut-fiber": {
         "name": "Fibra de Carbono Cortada",
+        "seoTitle": "Fabricante de Fibra de Carbono Cortada",
         "description": "Filamentos de fibra de carbono cortados mecanicamente para plásticos modificados reforçados, construção civil, aquecimento elétrico, materiais de blindagem e aplicações em novas energias.",
         "features": [
           "Dispersão uniforme",
@@ -338,6 +347,7 @@ export const carbonFiberPt: DivisionTranslations = {
       },
       "carbon-powder": {
         "name": "Pó de Fibra de Carbono",
+        "seoTitle": "Fabricante de Pó de Fibra de Carbono Condutivo",
         "description": "Pó de fibra de carbono moído (fibra de carbono micronizada) para uso como carga de alto desempenho em compósitos. Mantém as excelentes propriedades da fibra de carbono na forma de pó.",
         "features": [
           "Grande área superficial específica",

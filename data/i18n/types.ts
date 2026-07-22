@@ -23,6 +23,9 @@ export type ProductTranslation = {
 export type CategoryTranslation = {
   name?: string;
   description?: string;
+  // Optional SEO overrides for this locale's category page title/meta.
+  seoTitle?: string;
+  seoDescription?: string;
   products?: Record<string, ProductTranslation>;
 };
 
@@ -56,6 +59,8 @@ export function mergeCategory(
     ...base,
     name: t.name ?? base.name,
     description: t.description ?? base.description,
+    seoTitle: t.seoTitle ?? base.seoTitle,
+    seoDescription: t.seoDescription ?? base.seoDescription,
     products: base.products.map((p) => mergeProduct(p, t.products?.[p.slug])),
   };
 }

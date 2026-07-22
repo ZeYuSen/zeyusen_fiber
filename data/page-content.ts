@@ -70,9 +70,9 @@ type LegalCopy = {
 const en: PageContent = {
   seo: {
     home: {
-      title: "ZeYuSen Fiber | Carbon Fiber & Glass Fiber Manufacturer",
+      title: "Carbon Fiber & Fiberglass Tissue Mat Manufacturer",
       description:
-        "Jiangsu Zeyusen Carbon Fiber Technology Co., Ltd. manufactures carbon fiber mats, fiberglass fabrics, composite reinforcements, and custom material solutions for aerospace, wind energy, construction, and manufacturing.",
+        "OEM manufacturer of fiberglass tissue mats, fiberglass veils, carbon fiber mats and specialty fiberglass papers for FRP, wind energy, battery and industrial applications.",
     },
     about: {
       title: "About Our Composite Manufacturing",
