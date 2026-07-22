@@ -226,7 +226,9 @@ export const carbonFiberEs: DivisionTranslations = {
     "products": {
       "hybrid-woven-cloth": {
         "name": "Tela Tejida Híbrida Carbono-Vidrio",
-        "description": "Tela tejida híbrida carbono-vidrio de 200-240g/m² que combina alto módulo con eficiencia de costos. Adecuada para productos de fibra de carbono y aplicaciones decorativas.",
+        "description": "Tela híbrida tejida de fibra de carbono y vidrio (200-240g/m²): combina el alto módulo del carbono T300 con un coste más eficiente. Ideal para productos de fibra de carbono, automoción y aplicaciones decorativas.",
+        "seoTitle": "Tela Híbrida Carbono-Vidrio 200-240g/m²",
+        "seoDescription": "Tela híbrida de fibra de carbono y vidrio 200-240g/m², carbono T300: rigidez y acabado de carbono a menor coste. Para decoración y automoción. Pida cotización.",
         "features": [
           "Tejido híbrido carbono-vidrio",
           "Alto módulo (T300)",

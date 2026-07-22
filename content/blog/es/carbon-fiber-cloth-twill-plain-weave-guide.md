@@ -139,7 +139,7 @@ Los sistemas de resina epoxi proporcionan la mejor adhesión fibra-matriz y se r
 |---|---|---|
 | Tejido de fibra de carbono (este producto) | 200 g/m² | Estructural + visual, laminado manual, versátil |
 | [Velo de superficie de fibra de carbono](/blog/carbon-fiber-surface-mat-selection-guide) | 10–30 g/m² | Acabado superficial, conductividad, capas funcionales |
-| [Tejido híbrido carbono-vidrio](/blog/carbon-glass-hybrid-fabric-benefits) | 200–240 g/m² | Reducción de costo frente al carbono completo, apariencia distintiva |
+| [Tela híbrida carbono-vidrio](/carbon-fiber/carbon-fiber-cloth/hybrid-woven-cloth) ([guía](/blog/carbon-glass-hybrid-fabric-benefits)) | 200–240 g/m² | Reducción de costo frente al carbono completo, apariencia distintiva |
 | Cinta UD de fibra de carbono | 150–300 g/m² | Máxima resistencia unidireccional, laminado automatizado |
 | [Fibra de vidrio multiaxial](/blog/multiaxial-fiberglass-fabric-for-composites) | 300–1200 g/m² | Estructural de alto volumen, energía eólica, rentable |
 

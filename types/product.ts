@@ -12,6 +12,10 @@ export interface Product {
   applications: string[];
   images: string[];
   category: string;
+  // Optional per-locale SEO overrides (set via product translations).
+  // Fall back to name/description when absent.
+  seoTitle?: string;
+  seoDescription?: string;
 }
 
 export interface ProductCategory {

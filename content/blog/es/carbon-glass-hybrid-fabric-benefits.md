@@ -43,7 +43,7 @@ Fabricamos dos formatos híbridos carbono-vidrio diferenciados, cada uno dirigid
 | Anchos estándar | 1000mm, 1270mm |
 | Uso principal | Refuerzo estructural + superficies visibles decorativas |
 
-Este tejido híbrido tejido usa hilos de fibra de carbono T300 entrelazados con hilos de E-glass, creando un patrón visual distintivo al tiempo que ofrece un rendimiento mecánico entre el carbono puro y la fibra de vidrio pura. El carbono T300 proporciona alto módulo de tracción (230 GPa) mientras el E-glass aporta tolerancia al impacto y reducción de costes.
+Este tejido híbrido tejido usa hilos de fibra de carbono T300 entrelazados con hilos de E-glass, creando un patrón visual distintivo al tiempo que ofrece un rendimiento mecánico entre el carbono puro y la fibra de vidrio pura. El carbono T300 proporciona alto módulo de tracción (230 GPa) mientras el E-glass aporta tolerancia al impacto y reducción de costes. Ver la [tela tejida híbrida carbono-vidrio (200–240g/m²)](/carbon-fiber/carbon-fiber-cloth/hybrid-woven-cloth) de nuestro catálogo.
 
 ### Estera Híbrida Carbono-Vidrio (30g/m²)
 
@@ -55,7 +55,7 @@ Este tejido híbrido tejido usa hilos de fibra de carbono T300 entrelazados con 
 | Aplicaciones clave | Componentes de energía eólica, capas de conductividad industrial |
 | Ventaja | Reducción de coste del 40–60% frente a estera de carbono puro con conductividad similar |
 
-Esta estera híbrida ligera mezcla fibras de carbono y vidrio en un formato no tejido, proporcionando conductividad eléctrica a un coste significativamente menor que la estera de fibra de carbono pura. Es especialmente popular en aplicaciones de energía eólica donde se necesita conductividad pero la estera de carbono puro no está justificada económicamente.
+Esta estera híbrida ligera mezcla fibras de carbono y vidrio en un formato no tejido, proporcionando conductividad eléctrica a un coste significativamente menor que la estera de fibra de carbono pura. Es especialmente popular en aplicaciones de energía eólica donde se necesita conductividad pero la estera de carbono puro no está justificada económicamente. Ver la [estera híbrida carbono-vidrio de 30g/m²](/carbon-fiber/carbon-fiber-mat/carbon-glass-hybrid) para capas conductoras.
 
 ![Primer plano del tejido híbrido carbono-vidrio](/images/carbon-fiber/06-carbon-fiber-cloth/01-carbon-glass-hybrid-cloth/carbon-glass-hybrid-cloth-02.jpg)
 
@@ -163,4 +163,4 @@ En muchos casos, sí. Donde el requisito principal es la conductividad (rutas de
 
 Si la familia de refuerzo todavía no está definida, empiece por la [guía de selección entre fibra de carbono y fibra de vidrio](/blog/carbon-fiber-vs-fiberglass-selection-guide) y compare el laminado y el proceso completos, no una clasificación genérica de materiales.
 
-Tanto si necesitas tejido híbrido tejido T300 para paneles de automóviles visibles como estera híbrida de 30g para capas de conductividad en energía eólica — fabricamos ambos formatos. Revisa los [productos de fibra de carbono](/carbon-fiber), compara con las [opciones de fibra de vidrio](/glass-fiber), explora las [aplicaciones de energía eólica](/applications/glass), o envía los requisitos de tu pieza objetivo a través del [contacto](/contact). Nuestro equipo puede recomendar ratios carbono/vidrio basándose en tus objetivos de rendimiento y restricciones presupuestarias. Los rollos de muestra se envían en 3–5 días hábiles.
+Tanto si necesitas [tela híbrida de carbono y vidrio](/carbon-fiber/carbon-fiber-cloth/hybrid-woven-cloth) tejida T300 para paneles de automóviles visibles como [estera híbrida de 30g](/carbon-fiber/carbon-fiber-mat/carbon-glass-hybrid) para capas de conductividad en energía eólica — fabricamos ambos formatos. Revisa los [productos de fibra de carbono](/carbon-fiber), compara con las [opciones de fibra de vidrio](/glass-fiber), explora las [aplicaciones de energía eólica](/applications/glass), o envía los requisitos de tu pieza objetivo a través del [contacto](/contact). Nuestro equipo puede recomendar ratios carbono/vidrio basándose en tus objetivos de rendimiento y restricciones presupuestarias. Los rollos de muestra se envían en 3–5 días hábiles.

@@ -15,6 +15,9 @@ export type ProductTranslation = {
   // are intentionally omitted so they render unchanged.
   specValues?: Record<string, string>;
   applications?: string[];
+  // Optional SEO overrides for this locale's product page title/meta.
+  seoTitle?: string;
+  seoDescription?: string;
 };
 
 export type CategoryTranslation = {
@@ -34,6 +37,8 @@ function mergeProduct(base: Product, t?: ProductTranslation): Product {
     description: t.description ?? base.description,
     features: t.features ?? base.features,
     applications: t.applications ?? base.applications,
+    seoTitle: t.seoTitle ?? base.seoTitle,
+    seoDescription: t.seoDescription ?? base.seoDescription,
     specs: base.specs.map((spec) => ({
       label: t.specLabels?.[spec.label] ?? spec.label,
       // Translate descriptive spec values; numeric values pass through.

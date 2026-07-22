@@ -168,7 +168,10 @@ export async function generateMetadata({ params }: PageProps<"/[lang]/[[...slug]
     const category = getCategories(division, locale).find((c) => c.slug === routeParams.category);
     const product = category?.products.find((p) => p.slug === routeParams.product);
     if (!category || !product) return {};
-    seo = { title: product.name, description: product.description };
+    seo = {
+      title: product.seoTitle ?? product.name,
+      description: product.seoDescription ?? product.description,
+    };
     image = product.images[0];
   } else if (pageKey === "carbon-application" || pageKey === "glass-application") {
     const division = pageKey === "carbon-application" ? "carbon" : "glass";

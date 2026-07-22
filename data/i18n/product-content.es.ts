@@ -171,22 +171,34 @@ export const productContentEs: ProductContentTranslations = {
   },
   "carbon/carbon-fiber-cloth/hybrid-woven-cloth": {
     "overview": [
-      "Tela Tejida Híbrida Carbono-Vidrio es tela tejida híbrida carbono-vidrio de 200-240g/m² que combina alto módulo con eficiencia de costos. Adecuada para productos de fibra de carbono y aplicaciones decorativas. Está pensado para integrarse en procesos de laminado FRP y compuestos de alto rendimiento donde importan tanto la función del material como la estabilidad de producción.",
-      "Sus ventajas principales son Tejido híbrido carbono-vidrio, Alto módulo (T300), Opciones de 200-240g/m² y Acabado decorativo disponible. La distribución uniforme de las fibras y el comportamiento predecible durante el manejo ayudan a reducir variaciones durante la impregnación, el laminado y el moldeo, manteniendo una calidad consistente en series repetidas.",
-      "Las aplicaciones habituales incluyen Productos de Fibra de Carbono, Automotriz y Decoración. El material puede seleccionarse según los requisitos de peso, conductividad, resistencia química, acabado superficial o refuerzo estructural, y es compatible con sistemas de resina termoestable usados en fabricación de compuestos."
+      "La tela híbrida carbono-vidrio entrelaza hilos de fibra de carbono y de fibra de vidrio en un mismo refuerzo tejido, logrando el alto módulo del carbono con un coste más accesible, disponible en 200g/m² y 240g/m². Los hilos de carbono aportan rigidez y la estética oscura característica, mientras que los hilos de vidrio reducen el coste del material y añaden tenacidad, lo que convierte a esta tela de fibra de carbono y vidrio en una opción atractiva tanto para piezas estructurales como decorativas.",
+      "Construida en torno a fibra de carbono grado T300, esta tela tejida híbrida ofrece un rendimiento mecánico fiable para piezas que necesitan la rigidez del carbono sin el precio de un laminado 100% carbono. La estructura tejida se adapta bien a los moldes y a curvaturas moderadas, y la construcción híbrida es muy habitual en molduras de automoción y componentes de composite vistos, donde el dibujo del tejido de carbono forma parte del diseño.",
+      "El tejido híbrido carbono-vidrio se impregna con las resinas de laminado habituales y es apto para laminado manual, bolsa al vacío e infusión. Su equilibrio entre módulo, coste y acabado lo convierte en una opción versátil para fabricantes que producen paneles decorativos y piezas semiestructurales de carbono en serie."
     ],
     "faqs": [
       {
-        "question": "¿Para qué aplicaciones se recomienda Tela Tejida Híbrida Carbono-Vidrio?",
-        "answer": "Tela Tejida Híbrida Carbono-Vidrio se recomienda para Productos de Fibra de Carbono, Automotriz y Decoración. Según el diseño de la pieza, puede funcionar como capa superficial, refuerzo o capa funcional dentro del laminado compuesto."
+        "question": "¿Qué es la tela híbrida carbono-vidrio?",
+        "answer": "Es una tela tejida que combina hilos de fibra de carbono y de fibra de vidrio en un único refuerzo. El carbono aporta rigidez y el aspecto característico del tejido de carbono, mientras que el vidrio reduce el coste y mejora la tenacidad, logrando un equilibrio entre rendimiento y presupuesto que no ofrecen ni el carbono puro ni la fibra de vidrio por separado."
       },
       {
-        "question": "¿Cuáles son sus principales ventajas técnicas?",
-        "answer": "Las ventajas principales son Tejido híbrido carbono-vidrio, Alto módulo (T300), Opciones de 200-240g/m² y Acabado decorativo disponible. Estas propiedades ayudan a combinar procesabilidad, rendimiento y durabilidad en piezas compuestas sometidas a requisitos técnicos exigentes."
+        "question": "¿Cuánto se ahorra frente a una tela de carbono puro?",
+        "answer": "Como referencia general, una tela híbrida carbono-vidrio suele costar entre un 20% y un 40% menos que una tela de carbono puro de gramaje equivalente, manteniendo gran parte de la rigidez y la estética del carbono. El coste final depende del patrón de tejido, el gramaje, el ancho de rollo y el volumen del pedido."
       },
       {
-        "question": "¿Con qué procesos y resinas se puede usar?",
-        "answer": "Puede emplearse en laminado manual, infusión al vacío, moldeo cerrado u otros procesos relacionados. La selección final debe considerar la geometría de la pieza, el peso objetivo, la viscosidad de la resina y el rendimiento requerido."
+        "question": "¿Qué gramajes están disponibles?",
+        "answer": "La tela tejida híbrida se ofrece en 200g/m² y 240g/m², lo que permite elegir el equilibrio adecuado entre rigidez, espesor y coste según los requisitos de la pieza."
+      },
+      {
+        "question": "¿Es adecuada para piezas decorativas vistas?",
+        "answer": "Sí. Los hilos de carbono tejidos crean un dibujo característico que suele dejarse visto en molduras de automoción, paneles decorativos y componentes de composite donde la apariencia forma parte del diseño del producto."
+      },
+      {
+        "question": "¿Con qué resinas y procesos es compatible?",
+        "answer": "La tela híbrida se impregna bien con resinas epoxi, éster vinílico y poliéster, y es apta para laminado manual, bolsa al vacío e infusión. Como en todo laminado nuevo, recomendamos validar la impregnación y el curado con el sistema de resina y el proceso concretos antes de la producción en serie."
+      },
+      {
+        "question": "¿En qué se diferencia de la estera híbrida carbono-vidrio?",
+        "answer": "Son productos distintos: esta tela híbrida tejida (200-240g/m²) es un refuerzo estructural y decorativo con resistencia direccional y aspecto visible; la estera híbrida (30g/m²) es un velo no tejido que se usa como capa funcional conductora, por ejemplo en componentes de energía eólica. Si necesita conductividad en lugar de refuerzo visible, consulte nuestra estera híbrida carbono-vidrio."
       }
     ]
   },
