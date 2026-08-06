@@ -3,7 +3,7 @@ title: "Manta de Fibra de Basalto: Guía de Selección y Validación"
 description: "Evalúe la manta de fibra de basalto por formato, gramaje, ligante o ensimaje, resina, proceso, evidencia del proveedor y ensayo controlado."
 slug: "basalt-fiber-mat-industrial-composites"
 date: "2026-05-10"
-dateModified: "2026-08-05"
+dateModified: "2026-08-06"
 tags: ["manta de fibra de basalto", "velo de basalto", "compuestos industriales", "refuerzo compuesto", "validación de materiales"]
 image: "/images/blog/basalt-fiber-mat-industrial-cover.webp"
 ---

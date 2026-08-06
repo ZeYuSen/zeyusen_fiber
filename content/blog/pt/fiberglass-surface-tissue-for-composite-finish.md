@@ -3,7 +3,7 @@ title: "Véu de Superfície em Fibra de Vidro: Guia de Seleção"
 description: "Selecione o véu de fibra de vidro por função no laminado, tipo de vidro, gramatura, ligante, resina, formato do rolo e plano de validação."
 slug: "fiberglass-surface-tissue-for-composite-finish"
 date: "2026-05-10"
-dateModified: "2026-08-05"
+dateModified: "2026-08-06"
 tags: ["véu de fibra de vidro", "véu de superfície", "manta de superfície", "barreira anticorrosão", "acabamento FRP"]
 image: "/images/blog/fiberglass-surface-tissue-guide-cover.webp"
 ---
