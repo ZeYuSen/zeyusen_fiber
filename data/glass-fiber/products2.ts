@@ -272,6 +272,11 @@ export const glassFiberCategories2: ProductCategory[] = [
       {
         slug: "basalt-mat",
         name: "Basalt Fiber Mat",
+        relatedPosts: [
+          "basalt-fiber-mat-industrial-composites",
+          "basalt-fiber-vs-fiberglass-selection-guide",
+          "reinforcement-sizing-resin-compatibility-guide",
+        ],
         description:
           "30g/m² basalt fiber mat with excellent high-temperature resistance and chemical stability. Natural volcanic rock-based fiber for demanding environments.",
         features: [
