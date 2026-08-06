@@ -2,7 +2,7 @@
 title: "工业复合材料用玄武岩纤维毡：选型与验证指南"
 description: "按形态、克重、粘结剂或浸润剂、树脂、工艺、供应商证据和受控层压试验评估玄武岩纤维毡。"
 slug: "basalt-fiber-mat-industrial-composites"
-date: "2026-05-10"
+date: "2026-08-06"
 dateModified: "2026-08-06"
 tags: ["玄武岩纤维毡", "玄武岩面纱", "工业复合材料", "复合材料增强", "材料验证"]
 image: "/images/blog/basalt-fiber-mat-industrial-cover.webp"

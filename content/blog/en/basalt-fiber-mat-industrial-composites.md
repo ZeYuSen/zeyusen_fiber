@@ -2,7 +2,7 @@
 title: "Basalt Fiber Mat for Composites: Selection & Validation Guide"
 description: "Evaluate basalt fiber mat by format, areal weight, binder or sizing, resin, process, supplier evidence, and a controlled laminate trial."
 slug: "basalt-fiber-mat-industrial-composites"
-date: "2026-05-10"
+date: "2026-08-06"
 dateModified: "2026-08-06"
 tags: ["basalt fiber mat", "basalt veil", "industrial composites", "composite reinforcement", "material validation"]
 image: "/images/blog/basalt-fiber-mat-industrial-cover.webp"

@@ -2,7 +2,7 @@
 title: "玻璃纤维表面薄毡：选型与防腐层指南"
 description: "按层压作用、玻璃类型、克重、粘结剂、树脂、卷材规格和验证方案选择玻璃纤维表面薄毡。"
 slug: "fiberglass-surface-tissue-for-composite-finish"
-date: "2026-05-10"
+date: "2026-08-06"
 dateModified: "2026-08-06"
 tags: ["玻璃纤维表面薄毡", "玻纤面纱", "表面毡", "防腐层", "FRP表面"]
 image: "/images/blog/fiberglass-surface-tissue-guide-cover.webp"

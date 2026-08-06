@@ -2,7 +2,7 @@
 title: "산업용 복합재용 현무암 섬유 매트: 선정 및 검증 가이드"
 description: "형식, 면중량, 바인더 또는 사이징, 수지, 공정, 공급업체 근거 및 통제된 적층 시험으로 현무암 섬유 매트를 평가합니다."
 slug: "basalt-fiber-mat-industrial-composites"
-date: "2026-05-10"
+date: "2026-08-06"
 dateModified: "2026-08-06"
 tags: ["현무암 섬유 매트", "현무암 베일", "산업용 복합재", "복합재 보강", "소재 검증"]
 image: "/images/blog/basalt-fiber-mat-industrial-cover.webp"

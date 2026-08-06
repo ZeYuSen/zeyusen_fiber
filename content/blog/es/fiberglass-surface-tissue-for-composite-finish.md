@@ -2,7 +2,7 @@
 title: "Velo de Superficie de Fibra de Vidrio: Guía de Selección"
 description: "Seleccione el velo de fibra de vidrio por función en el laminado, tipo de vidrio, gramaje, ligante, resina, formato de rollo y plan de validación."
 slug: "fiberglass-surface-tissue-for-composite-finish"
-date: "2026-05-10"
+date: "2026-08-06"
 dateModified: "2026-08-06"
 tags: ["velo de fibra de vidrio", "velo superficial", "mat de superficie", "barrera anticorrosión", "acabado FRP"]
 image: "/images/blog/fiberglass-surface-tissue-guide-cover.webp"

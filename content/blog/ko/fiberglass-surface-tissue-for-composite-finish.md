@@ -2,7 +2,7 @@
 title: "유리섬유 표면 티슈: 선정 및 부식 방지층 가이드"
 description: "적층 역할, 유리 종류, 면중량, 바인더, 수지, 롤 규격 및 검증 계획을 기준으로 유리섬유 표면 티슈를 선택하는 방법입니다."
 slug: "fiberglass-surface-tissue-for-composite-finish"
-date: "2026-05-10"
+date: "2026-08-06"
 dateModified: "2026-08-06"
 tags: ["유리섬유 표면 티슈", "유리섬유 베일", "표면 매트", "부식 방지층", "FRP 표면"]
 image: "/images/blog/fiberglass-surface-tissue-guide-cover.webp"

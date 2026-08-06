@@ -2,7 +2,7 @@
 title: "Fiberglass Surface Tissue: Selection & Corrosion Barrier Guide"
 description: "Choose fiberglass surface tissue by laminate role, glass type, areal weight, binder, resin, roll format, and a practical validation plan."
 slug: "fiberglass-surface-tissue-for-composite-finish"
-date: "2026-05-10"
+date: "2026-08-06"
 dateModified: "2026-08-06"
 tags: ["fiberglass surface tissue", "fiberglass veil", "surfacing mat", "corrosion barrier", "FRP finish"]
 image: "/images/blog/fiberglass-surface-tissue-guide-cover.webp"
