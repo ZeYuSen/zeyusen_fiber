@@ -9,6 +9,7 @@ const madeInChinaUrl =
   "https://js-zys.en.made-in-china.com/company-JIANGSU-ZEYUSEN-CARBON-FIBER-TECHNOLOGY-CO-LTD-.html?pv_id=1jqr933jbfc3&faw_id=1jqr93dmccb5&bv_id=1jqr93dmea79&pbv_id=1jqr932uc858";
 const linkedinUrl = "https://www.linkedin.com/in/andrea-ling-8b2873408/";
 const youtubeUrl = "https://www.youtube.com/channel/UCwP3-wR-SPNxixyzCqxFqLQ";
+const instagramUrl = "https://www.instagram.com/zeyusen/";
 const logoSrc = "/logo.png?v=logo-20260626";
 
 export function Footer({ locale, dict }: { locale: Locale; dict: Dictionary }) {
@@ -71,6 +72,9 @@ export function Footer({ locale, dict }: { locale: Locale; dict: Dictionary }) {
               </SocialLink>
               <SocialLink href={youtubeUrl} label="YouTube">
                 <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/>
+              </SocialLink>
+              <SocialLink href={instagramUrl} label="Instagram">
+                <path d="M7 2C4.24 2 2 4.24 2 7v10c0 2.76 2.24 5 5 5h10c2.76 0 5-2.24 5-5V7c0-2.76-2.24-5-5-5H7zm0 2h10c1.65 0 3 1.35 3 3v10c0 1.65-1.35 3-3 3H7c-1.65 0-3-1.35-3-3V7c0-1.65 1.35-3 3-3zm11 1.5a1.25 1.25 0 1 0 0 2.5 1.25 1.25 0 0 0 0-2.5zM12 7a5 5 0 1 0 0 10 5 5 0 0 0 0-10zm0 2a3 3 0 1 1 0 6 3 3 0 0 1 0-6z"/>
               </SocialLink>
               <SocialLink href="mailto:zys@jsfiberglass.com" label="Email">
                 <path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/>
