@@ -1,6 +1,6 @@
 import type { Locale } from "./config";
 import { resolveRoute, localizedHref } from "./routes";
-import { defaultLocale } from "./config";
+import { defaultLocale, isLocale } from "./config";
 
 // Convert an English (default-locale) internal path like "/carbon-fiber/products"
 // or "/blog/foo" into the equivalent localized path for `locale`. Used to
@@ -9,9 +9,17 @@ export function localizePath(enPath: string, locale: Locale): string {
   if (!enPath.startsWith("/")) return enPath;
   // Strip query/hash to resolve, re-append afterward.
   const [pathPart, rest] = splitSuffix(enPath);
-  const slug = pathPart.split("/").filter(Boolean);
-  const resolved = resolveRoute(defaultLocale, slug);
+  const segments = pathPart.split("/").filter(Boolean);
+  const explicitLocale = segments[0] && isLocale(segments[0])
+    ? segments[0]
+    : undefined;
+  const sourceLocale = explicitLocale ?? defaultLocale;
+  const slug = explicitLocale ? segments.slice(1) : segments;
+  const resolved = resolveRoute(sourceLocale, slug);
   if (!resolved) {
+    // A path that already carries a locale must not receive a second prefix,
+    // even when it points to a legacy or otherwise unknown route.
+    if (explicitLocale) return `${pathPart}${rest}`;
     // Unknown path: at least add the locale prefix so it stays in-locale.
     return `/${locale}${pathPart}${rest}`;
   }

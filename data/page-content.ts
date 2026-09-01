@@ -70,9 +70,9 @@ type LegalCopy = {
 const en: PageContent = {
   seo: {
     home: {
-      title: "Carbon Fiber & Fiberglass Tissue Mat Manufacturer",
+      title: "Carbon Fiber Mat, Fiberglass Mat & Rotor Paper Manufacturer",
       description:
-        "OEM manufacturer of fiberglass tissue mats, fiberglass veils, carbon fiber mats and specialty fiberglass papers for FRP, wind energy, battery and industrial applications.",
+        "OEM manufacturer of carbon fiber mats, fiberglass tissue mats and veils, and desiccant rotor forming paper for composite, battery and dehumidification applications.",
     },
     about: {
       title: "About Our Composite Manufacturing",
@@ -90,39 +90,39 @@ const en: PageContent = {
         "Contact ZeYuSen Fiber for product inquiries, samples, quotations, technical support, and custom carbon fiber or fiberglass solutions.",
     },
     "blog-index": {
-      title: "Fiber Materials Blog",
+      title: "Carbon Mat, Fiberglass Mat & Rotor Paper Guides",
       description:
-        "Read practical guides on carbon fiber, fiberglass, composite material selection, wind energy, construction, and advanced manufacturing applications.",
+        "Read practical guides on carbon fiber mats, fiberglass tissue mats, desiccant rotor forming paper, material selection, receiving and industrial applications.",
     },
     "carbon-fiber": {
-      title: "Carbon Fiber Materials Supplier",
+      title: "Carbon Fiber Mat Manufacturer",
       description:
-        "Source carbon fiber mats, woven cloth, hybrid reinforcements, and raw fiber materials for aerospace, energy, defense, and industrial composite applications.",
+        "Source carbon fiber surface mats, nickel-plated mats, composite mats, needled mats and fuel-cell GDL mats for functional and industrial composite applications.",
     },
     "carbon-products": {
-      title: "Carbon Fiber Catalog",
+      title: "Carbon Fiber Mat Catalog",
       description:
-        "Browse carbon fiber mats, cloth, hybrid reinforcements, yarns, and raw material formats with technical data for composite manufacturing.",
+        "Compare carbon fiber surface, conductive, composite, needled and fuel-cell GDL mats with technical data for industrial sourcing.",
     },
     "glass-fiber": {
-      title: "Fiberglass Materials Supplier",
+      title: "Fiberglass Mat and Rotor Paper Manufacturer",
       description:
-        "Source fiberglass tissue mats, woven fabrics, stitched reinforcements, and specialty glass fiber materials for wind energy, construction, and industrial use.",
+        "Source fiberglass tissue mats and veils, application-specific glass mats, and desiccant rotor forming paper for construction, battery and dehumidification use.",
     },
     "glass-products": {
-      title: "Fiberglass Catalog",
+      title: "Fiberglass Mat and Specialty Paper Catalog",
       description:
-        "Browse fiberglass tissue mats, woven cloth, composite mats, chopped strand mat, and specialty reinforcements with technical data.",
+        "Browse fiberglass surface, colored, roofing, wall-covering, pipe-wrapping and battery mats plus desiccant rotor forming paper.",
     },
     applications: {
-      title: "Carbon Fiber Application Guide",
+      title: "Carbon Fiber Mat Application Guide",
       description:
-        "Explore carbon fiber use cases across aerospace, defense, new energy, motorsport, and advanced manufacturing with recommended material paths.",
+        "Explore carbon fiber mat use cases across surface finishing, EMI shielding, fuel cells, pultrusion and advanced manufacturing.",
     },
     "applications-glass": {
-      title: "Glass Fiber Applications",
+      title: "Fiberglass Mat and Rotor Paper Applications",
       description:
-        "Explore glass fiber applications in wind energy, construction, marine, filtration, transportation, and industrial composite uses.",
+        "Explore fiberglass mat applications in surface finishing, roofing, wall covering, pipe wrapping, battery separators and desiccant rotors.",
     },
     privacy: {
       title: "Privacy Policy",
@@ -138,29 +138,29 @@ const en: PageContent = {
   divisionHome: {
     carbon: {
       eyebrow: "Carbon Fiber Division",
-      title: "High-Performance Carbon Fiber Materials",
+      title: "Carbon Fiber Mats for Functional Composite Layers",
       intro:
-        "Lightweight, ultra-strong carbon fiber solutions for aerospace, motorsport, military defense, and advanced manufacturing industries.",
+        "Carbon fiber surface, conductive, composite, needled and fuel-cell GDL mats for functional layers and industrial composite processes.",
       categoriesLabel: "Product Categories",
       chooseTitle: "How to Choose the Right Carbon Fiber Format",
       chooseParagraphs: [
-        "Buyers usually narrow carbon fiber selection by process first, then by performance target. Surface mats and veils support conductivity, finish quality, or thin functional layers, while woven cloth and heavier mats are more relevant when structural load, drape, and laminate buildup matter.",
+        "Buyers usually narrow carbon mat selection by process first, then by functional target. Surface mats support conductivity, finish quality and thin functional layers, while composite and needled mats suit heavier reinforcement or process-specific builds.",
         "If you are sourcing for fuel cells, EMI shielding, pultrusion, or lightweight structural parts, the fastest path is to match the target process, required GSM, and resin compatibility before comparing sample rolls.",
-        "Teams evaluating multiple formats typically shortlist a functional surface layer, a structural reinforcement option, and a fallback commercial alternative so sampling can answer both technical fit and supply feasibility.",
+        "Share the target areal weight, width, resin system, electrical requirement and validation method so sampling can answer both technical fit and supply feasibility.",
       ],
       ctaTitle: "Need a Custom Carbon Fiber Solution?",
       ctaBody: "Our engineers can recommend the optimal material for your application.",
     },
     glass: {
       eyebrow: "Glass Fiber Division",
-      title: "Reliable Glass Fiber Materials",
+      title: "Fiberglass Mats and Desiccant Rotor Forming Paper",
       intro:
-        "Cost-effective, corrosion-resistant fiberglass solutions for wind energy, construction, transportation, and industrial filtration.",
+        "Wet-laid fiberglass mats and veils for surface, roofing, wall, pipe and battery applications, plus forming paper for desiccant rotors.",
       categoriesLabel: "Product Categories",
       chooseTitle: "How to Choose the Right Fiberglass Material",
       chooseParagraphs: [
-        "Fiberglass selection is usually driven by laminate process, surface requirement, and target load path. Tissue mats are useful for finish and barrier layers, woven cloth supports balanced reinforcement, and stitched composite mats are better suited to structural shells, wind energy parts, and transportation panels.",
-        "When requesting a quote, include the target GSM, resin system, width, and end-use environment. That narrows the material family quickly and reduces back-and-forth during sampling.",
+        "Fiberglass mat selection is driven by the substrate, surface or barrier role, target basis weight, binder system, porosity and downstream forming process.",
+        "For desiccant rotor forming paper, include the rotor process, target thickness and basis weight, impregnation or coating stage, width, roll format and validation requirements.",
       ],
       ctaTitle: "Looking for Custom Glass Fiber Solutions?",
       ctaBody:
@@ -172,21 +172,21 @@ const en: PageContent = {
       breadcrumbDivision: "Carbon Fiber",
       title: "Carbon Fiber Products",
       intro:
-        "High-performance carbon fiber materials for aerospace, motorsport, military, and advanced manufacturing.",
-      body: "Use this catalog to compare carbon fiber mats, woven cloth, and raw material formats by product family before moving into individual product pages for specifications, applications, and inquiry flow.",
-      closingTitle: "Use This Catalog to Shortlist the Right Carbon Fiber Format",
+        "Carbon fiber mats for surface, conductive, composite, needled and fuel-cell applications.",
+      body: "Use this catalog to compare carbon fiber mats by basis weight, construction and functional role before opening individual product pages for specifications and inquiry context.",
+      closingTitle: "Use This Catalog to Shortlist the Right Carbon Fiber Mat",
       closingBody:
-        "Start with the product family that matches your manufacturing process, then open the detailed product page for target GSM, application fit, and inquiry context. Surface mats are usually evaluated for conductivity and finish layers, woven cloth for directional reinforcement, and raw materials for weaving, winding, and compounding workflows.",
+        "Start with the functional layer and manufacturing process, then confirm target GSM, width, resin compatibility, conductivity or diffusion requirements, and the validation method on the detailed product page.",
     },
     glass: {
       breadcrumbDivision: "Glass Fiber",
-      title: "Fiberglass Products",
+      title: "Fiberglass Mats and Desiccant Rotor Paper",
       intro:
-        "Cost-effective, corrosion-resistant fiberglass reinforcements for wind energy, construction, transportation, and industrial applications.",
-      body: "Compare fiberglass tissue mats, woven cloth, stitched composite mats, and chopped strand formats by product family before opening individual product pages for specifications and inquiry flow.",
-      closingTitle: "Use This Catalog to Shortlist the Right Fiberglass Material",
+        "Fiberglass tissue mats, application-specific veils and desiccant rotor forming paper for industrial buyers.",
+      body: "Compare fiberglass surface, colored, roofing, wall-covering, pipe-wrapping and battery mats alongside desiccant rotor forming paper before opening a product page.",
+      closingTitle: "Use This Catalog to Shortlist the Right Fiberglass Mat or Paper",
       closingBody:
-        "Start from the product family that matches your laminate process, then open the detailed product page for target GSM, resin compatibility, and application fit. Tissue mats are evaluated for surface and barrier layers, woven cloth for balanced reinforcement, and stitched mats for structural shells.",
+        "Start with the end-use layer and downstream process, then confirm basis weight, thickness, width, binder, porosity and roll requirements with our team.",
     },
   },
   applications: {
@@ -209,29 +209,29 @@ const en: PageContent = {
       {
         question: "What types of carbon fiber materials does ZeYuSen offer?",
         answer:
-          "ZeYuSen offers carbon fiber surface mats (10g-50g/m²), needled mats, nickel-plated mats for EMI shielding, woven carbon fiber cloth, carbon-glass hybrid cloth, and raw carbon fiber tow.",
+          "ZeYuSen focuses on carbon fiber surface mats (10g-30g/m²), nickel-plated mats, composite mats, needled mats and carbon fiber mats for fuel-cell gas diffusion layers.",
       },
       {
         question: "What industries use ZeYuSen carbon fiber products?",
         answer:
-          "Our carbon fiber materials serve aerospace, military defense, new energy (fuel cells), automotive, marine, and sporting goods industries.",
+          "Our carbon fiber mats are evaluated for fuel-cell gas diffusion layers, EMI/RFI shielding, electric heating, pultrusion, and composite surface layers.",
       },
       {
         question: "Can ZeYuSen provide custom carbon fiber specifications?",
         answer:
-          "Yes, we offer custom weight specifications from 10g/m² to 600g/m², custom widths, and specialized surface treatments tailored to your application requirements.",
+          "Published carbon mat grades span 10g/m² to 350g/m². Width, binder, roll format, and other project-specific requirements are subject to technical review and sample validation.",
       },
     ],
     glass: [
       {
         question: "What types of glass fiber materials does ZeYuSen offer?",
         answer:
-          "ZeYuSen offers fiberglass tissue mats, chopped strand mats, woven roving, multiaxial fabrics, stitched composite mats, and specialty surface veils for various industrial applications.",
+          "ZeYuSen focuses on wet-laid fiberglass tissue mats and veils for surface, roofing, wall covering, pipe wrapping and battery applications, plus desiccant rotor forming paper.",
       },
       {
         question: "What applications are glass fiber materials used for?",
         answer:
-          "Our glass fiber products are used in wind turbine blades, construction waterproofing, pipe insulation, marine hulls, automotive panels, and industrial corrosion-resistant linings.",
+          "Our fiberglass mats are used in composite surface layers, roofing membranes, wall coverings, pipe wrapping and battery separators. Our specialty glass-fiber paper is used to form desiccant and molecular-sieve rotors.",
       },
       {
         question: "What resin systems are compatible with ZeYuSen glass fiber?",

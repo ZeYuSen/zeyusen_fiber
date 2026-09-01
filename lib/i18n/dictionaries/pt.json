@@ -18,13 +18,7 @@
   },
   "products": {
     "carbon-fiber-mat": "Manta de Fibra de Carbono",
-    "carbon-fiber-cloth": "Tecido de Fibra de Carbono",
-    "carbon-fiber-raw": "Matérias-Primas de Fibra de Carbono",
-    "tissue-mat": "Véu de Fibra de Vidro",
-    "fiberglass-cloth": "Tecido de Fibra de Vidro",
-    "composite-mat": "Manta Composta",
-    "chopped-strand-mat": "Manta de Fios Cortados",
-    "other-materials": "Outros Materiais de Fibra"
+    "tissue-mat": "Véu de Fibra de Vidro"
   },
   "actions": {
     "sendInquiry": "Enviar Consulta",
@@ -59,7 +53,7 @@
     "value": "Valor"
   },
   "footer": {
-    "tagline": "Materiais de fibra de carbono e fibra de vidro de engenharia para a fabricação avançada de compósitos em todo o mundo.",
+    "tagline": "Mantas de carbono, mantas e véus de vidro e papel para rotores dessecantes de uso industrial.",
     "products": "Produtos",
     "company": "Empresa",
     "resources": "Recursos",
@@ -81,7 +75,7 @@
     "title": "Assistente ZeYuSen",
     "subtitle": "Pergunte sobre produtos, especificações ou aplicações",
     "placeholder": "Digite sua mensagem...",
-    "welcome": "Olá! Sou o assistente da ZeYuSen Fiber. Pergunte-me sobre nossos produtos de fibra de carbono e fibra de vidro, especificações ou aplicações.",
+    "welcome": "Olá! Sou o assistente da ZeYuSen Fiber. Pergunte sobre mantas de carbono, mantas e véus de vidro ou papel para rotores dessecantes.",
     "send": "Enviar",
     "openChat": "Abrir chat",
     "closeChat": "Fechar chat",
@@ -97,7 +91,7 @@
     "published": "Publicado",
     "updated": "Atualizado",
     "needHelpTitle": "Precisa de ajuda para escolher um material?",
-    "needHelpBody": "Envie sua aplicação-alvo, processo e especificações necessárias. A ZeYuSen Fiber pode ajudar a comparar opções de materiais de fibra de carbono e fibra de vidro para o seu projeto.",
+    "needHelpBody": "Envie a aplicação, o processo e as especificações desejadas. Podemos avaliar mantas de carbono, mantas e véus de vidro ou papel para rotores dessecantes.",
     "needHelpCta": "Entre em Contato com a ZeYuSen Fiber",
     "print": "Imprimir",
     "searchPlaceholder": "Pesquisar artigos...",
@@ -145,7 +139,7 @@
   },
   "cta": {
     "customTitle": "Precisa de uma Solução Personalizada?",
-    "customBodyCarbon": "Nossos engenheiros podem adaptar os materiais de fibra de carbono às suas especificações exatas.",
-    "customBodyGlass": "Nossos engenheiros podem adaptar os materiais de fibra de vidro às suas especificações exatas."
+    "customBodyCarbon": "Nossa equipe pode revisar a especificação da manta de carbono para o seu processo.",
+    "customBodyGlass": "Nossa equipe pode revisar mantas e véus de vidro e papel para rotores para o seu processo."
   }
 }

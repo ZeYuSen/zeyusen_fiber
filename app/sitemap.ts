@@ -5,6 +5,7 @@ import { localizedHref, allLocaleHrefs, type PageKey, type RouteParams } from "@
 import { allCarbonFiberCategories } from "@/data/carbon-fiber";
 import { allGlassFiberCategories } from "@/data/glass-fiber";
 import { getBlogSlugs, getBlogPosts } from "@/data/blog";
+import { ACTIVE_APPLICATION_SLUGS } from "@/lib/application-scope";
 
 type Freq = "daily" | "weekly" | "monthly";
 
@@ -17,7 +18,7 @@ type RouteEntry = {
 };
 
 const SITE_LAUNCH = "2025-05-09";
-const LAST_UPDATE = "2026-05-31";
+const LAST_UPDATE = "2026-08-29";
 
 function staticEntries(): RouteEntry[] {
   return [
@@ -65,14 +66,14 @@ function productEntries(): RouteEntry[] {
 }
 
 function applicationEntries(): RouteEntry[] {
-  const carbon = ["aerospace", "motorsport", "new-energy", "military-defense", "manufacturing"].map((slug) => ({
+  const carbon = ACTIVE_APPLICATION_SLUGS.carbon.map((slug) => ({
     key: "carbon-application" as const,
     params: { slug },
     lastModified: LAST_UPDATE,
     changeFrequency: "monthly" as const,
     priority: 0.7,
   }));
-  const glass = ["wind-energy", "construction", "industrial-filtration", "transportation", "marine"].map((slug) => ({
+  const glass = ACTIVE_APPLICATION_SLUGS.glass.map((slug) => ({
     key: "glass-application" as const,
     params: { slug },
     lastModified: LAST_UPDATE,

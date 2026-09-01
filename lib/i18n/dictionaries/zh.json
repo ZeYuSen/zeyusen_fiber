@@ -18,13 +18,7 @@
   },
   "products": {
     "carbon-fiber-mat": "碳纤维毡",
-    "carbon-fiber-cloth": "碳纤维布",
-    "carbon-fiber-raw": "碳纤维原材料",
-    "tissue-mat": "玻璃纤维薄毡",
-    "fiberglass-cloth": "玻璃纤维布",
-    "composite-mat": "复合毡",
-    "chopped-strand-mat": "短切毡",
-    "other-materials": "其他纤维材料"
+    "tissue-mat": "玻璃纤维薄毡"
   },
   "actions": {
     "sendInquiry": "发送询价",
@@ -59,7 +53,7 @@
     "value": "数值"
   },
   "footer": {
-    "tagline": "为全球先进复合材料制造提供高性能碳纤维和玻璃纤维材料。",
+    "tagline": "面向工业应用提供碳毡、玻纤毡和除湿转轮成型纸。",
     "products": "产品",
     "company": "公司",
     "resources": "资源",
@@ -81,7 +75,7 @@
     "title": "泽宇森助手",
     "subtitle": "咨询产品、规格或应用相关问题",
     "placeholder": "输入您的消息...",
-    "welcome": "您好！我是泽宇森纤维助手。欢迎咨询我们的碳纤维和玻璃纤维产品、规格或应用方面的问题。",
+    "welcome": "您好！我是泽宇森纤维助手。欢迎咨询碳毡、玻纤毡或除湿转轮成型纸的规格与应用。",
     "send": "发送",
     "openChat": "打开聊天",
     "closeChat": "关闭聊天",
@@ -97,7 +91,7 @@
     "published": "发布于",
     "updated": "更新于",
     "needHelpTitle": "需要帮助选择材料？",
-    "needHelpBody": "请告诉我们您的目标应用、工艺和所需规格。泽宇森纤维可以帮助比较碳纤维和玻璃纤维材料选项。",
+    "needHelpBody": "请告诉我们您的应用、工艺和目标规格。泽宇森可以协助评估碳毡、玻纤毡或除湿转轮成型纸。",
     "needHelpCta": "联系泽宇森纤维",
     "print": "打印",
     "searchPlaceholder": "搜索文章...",
@@ -145,7 +139,7 @@
   },
   "cta": {
     "customTitle": "需要定制方案？",
-    "customBodyCarbon": "我们的工程师可以按照您的精确规格定制碳纤维材料。",
-    "customBodyGlass": "我们的工程师可以按照您的精确规格定制玻璃纤维材料。"
+    "customBodyCarbon": "我们的团队可以结合您的工艺评估碳毡规格。",
+    "customBodyGlass": "我们的团队可以结合您的工艺评估玻纤毡及转轮成型纸规格。"
   }
 }

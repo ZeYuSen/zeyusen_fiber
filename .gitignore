@@ -48,3 +48,10 @@ audits
 .playwright-mcp
 
 # tooling state
+/.vibio/
+
+# local GEO and social operations
+/CHATGPT_GEO_DIALOGUE_PLAYBOOK.md
+/CHATGPT_GEO_DIALOGUE_PLAYBOOK_ZH.md
+/CHATGPT_GEO_PLAN.md
+/social_ops/

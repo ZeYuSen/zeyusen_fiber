@@ -360,22 +360,26 @@ export const productContentPt: ProductContentTranslations = {
   },
   "glass/tissue-mat/rotor-paper": {
     "overview": [
-      "Papel de Fibra de Vidro para Rotor de Zeólita é papel de fibra de vidro especializado, projetado como substrato para rotores de peneira molecular de zeólita utilizados em sistemas de desumidificação e tratamento de VOC. Foi desenvolvido para se integrar a processos FRP e de compósitos de alto desempenho nos quais a função do material e a estabilidade de produção precisam caminhar juntas.",
-      "As principais vantagens são Substrato para rotor de zeólita, Alta resistência à temperatura, Controle preciso de espessura e Ligado com PVA. A distribuição uniforme das fibras e o comportamento previsível no manuseio ajudam a reduzir variações durante impregnação, laminação e moldagem, mantendo qualidade consistente em produção repetitiva.",
-      "As aplicações típicas incluem Desumidificação, Tratamento de VOC e Purificação do Ar. O material pode ser selecionado conforme os requisitos de peso, condutividade, resistência química, acabamento superficial ou reforço estrutural, e é compatível com sistemas de resina termofixa usados na fabricação de compósitos."
+      "O papel substrato para rotor dessecante é um papel de fibra de vidro por via úmida usado para formar as camadas planas e corrugadas do núcleo colmeia. É fornecido como material-base para corrugação, colagem, conformação e impregnação ou revestimento com dessecante, não como rotor acabado.",
+      "Cada rotor possui geometria de canal, vazão, condições de regeneração e sistema dessecante próprios. Por isso, gramatura, espessura, largura, ligante e construção do rolo são avaliados conforme o processo de conversão do cliente.",
+      "Para avaliar o material, informe o tipo de rotor, dimensões-alvo, método de corrugação, sistema de impregnação ou revestimento, condições de operação e padrão de validação. As amostras devem ser testadas no processo pretendido antes da aprovação para produção."
     ],
     "faqs": [
       {
-        "question": "Para quais aplicações Papel de Fibra de Vidro para Rotor de Zeólita é recomendado?",
-        "answer": "Papel de Fibra de Vidro para Rotor de Zeólita é recomendado para Desumidificação, Tratamento de VOC e Purificação do Ar. Dependendo do projeto da peça, pode atuar como camada de superfície, reforço ou camada funcional dentro do laminado compósito."
+        "question": "O que é papel substrato para rotor dessecante?",
+        "answer": "É um papel-base de fibra de vidro por via úmida para as camadas planas e corrugadas do núcleo. O fabricante do rotor realiza depois a corrugação, conformação, colagem e impregnação ou revestimento dessecante."
       },
       {
-        "question": "Quais são suas principais vantagens técnicas?",
-        "answer": "As principais vantagens são Substrato para rotor de zeólita, Alta resistência à temperatura, Controle preciso de espessura e Ligado com PVA. Essas propriedades ajudam a combinar processabilidade, desempenho e durabilidade em peças compósitas com requisitos técnicos exigentes."
+        "question": "Este é um rotor dessecante acabado?",
+        "answer": "Não. É o substrato de papel de fibra de vidro usado na fabricação do rotor. O desempenho final depende do desenho do núcleo, do sistema dessecante, da colagem e de todo o processo de fabricação."
       },
       {
-        "question": "Com quais processos e resinas pode ser usado?",
-        "answer": "Pode ser usado em laminação manual, infusão a vácuo, moldagem fechada ou processos relacionados. A seleção final deve considerar geometria da peça, peso-alvo, viscosidade da resina e desempenho exigido."
+        "question": "Quais informações são necessárias para cotação ou amostra?",
+        "answer": "Informe a aplicação, gramatura, espessura, largura, requisitos do ligante ou compatibilidade química, formato do rolo, processo de corrugação e método previsto de impregnação ou revestimento."
+      },
+      {
+        "question": "Uma única classe serve para todos os dessecantes ou peneiras moleculares?",
+        "answer": "Isso não deve ser presumido. O ligante, a conformação, as condições de operação e o sistema dessecante escolhido devem ser validados em conjunto no processo do cliente."
       }
     ]
   },

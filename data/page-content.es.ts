@@ -4,9 +4,9 @@ import type { PageContent } from "./page-content";
 export const es: PageContent = {
   seo: {
     home: {
-      title: "Fabricante de Fibra de Carbono y Fibra de Vidrio",
+      title: "Fabricante de Mantas de Carbono, Mantas de Vidrio y Papel para Rotores",
       description:
-        "Fabricante OEM de velos de fibra de vidrio, esteras de fibra de carbono y papeles especiales de fibra de vidrio para FRP, energía eólica, baterías y aplicaciones industriales.",
+        "Fabricante OEM de mantas de fibra de carbono, mantas y velos de fibra de vidrio y papel conformable para rotores desecantes.",
     },
     about: {
       title: "Acerca de Nuestra Fabricación de Compuestos",
@@ -24,39 +24,39 @@ export const es: PageContent = {
         "Contacte a ZeYuSen Fiber para consultas de productos, muestras, cotizaciones, soporte técnico y soluciones a medida de fibra de carbono o fibra de vidrio.",
     },
     "blog-index": {
-      title: "Blog de Materiales de Fibra",
+      title: "Guías de Mantas de Carbono, Fibra de Vidrio y Papel para Rotores",
       description:
-        "Lea guías prácticas sobre fibra de carbono, fibra de vidrio, selección de materiales compuestos, energía eólica, construcción y aplicaciones de fabricación avanzada.",
+        "Lea guías prácticas sobre mantas de carbono, velos de fibra de vidrio, papel para rotores desecantes, selección y aplicaciones industriales.",
     },
     "carbon-fiber": {
-      title: "Proveedor de Materiales de Fibra de Carbono",
+      title: "Fabricante de Mantas de Fibra de Carbono",
       description:
-        "Adquiera esteras de fibra de carbono, tejidos, refuerzos híbridos y materiales de fibra cruda para aplicaciones aeroespaciales, energéticas, de defensa e industriales.",
+        "Adquiera mantas superficiales, niqueladas, compuestas, punzonadas y para capas de difusión de gas de pilas de combustible.",
     },
     "carbon-products": {
       title: "Catálogo de Fibra de Carbono",
       description:
-        "Explore esteras de fibra de carbono, tejidos, refuerzos híbridos, hilos y formatos de materia prima con datos técnicos para la fabricación de compuestos.",
+        "Compare mantas de carbono superficiales, conductoras, compuestas, punzonadas y para GDL con datos técnicos.",
     },
     "glass-fiber": {
-      title: "Proveedor de Materiales de Fibra de Vidrio",
+      title: "Fabricante de Mantas de Vidrio y Papel para Rotores Desecantes",
       description:
-        "Adquiera velos de fibra de vidrio, tejidos, refuerzos cosidos y materiales especiales de fibra de vidrio para energía eólica, construcción y uso industrial.",
+        "Adquiera mantas y velos de fibra de vidrio para superficie, cubiertas, paredes, tuberías y baterías, además de papel para rotores desecantes.",
     },
     "glass-products": {
       title: "Catálogo de Fibra de Vidrio",
       description:
-        "Explore velos de fibra de vidrio, tejidos, esteras compuestas, mat de hilos cortados y refuerzos especiales con datos técnicos.",
+        "Explore mantas de superficie, color, cubiertas, paredes, tuberías y separadores de batería, además de papel para rotores desecantes.",
     },
     applications: {
       title: "Guía de Aplicaciones de Fibra de Carbono",
       description:
-        "Explore los casos de uso de la fibra de carbono en sectores aeroespacial, defensa, nueva energía, automovilismo y fabricación avanzada con rutas de materiales recomendadas.",
+        "Explore mantas de carbono para GDL de pilas de combustible, evaluación EMI/RFI, calefacción eléctrica, pultrusión y capas superficiales.",
     },
     "applications-glass": {
       title: "Aplicaciones de Fibra de Vidrio",
       description:
-        "Explore las aplicaciones de fibra de vidrio en energía eólica, construcción, marina, filtración, transporte y usos industriales de compuestos.",
+        "Explore velos de vidrio para cubiertas, paredes, revestimiento de tuberías y capas superficiales de composites.",
     },
     privacy: {
       title: "Política de Privacidad",
@@ -72,29 +72,29 @@ export const es: PageContent = {
   divisionHome: {
     carbon: {
       eyebrow: "División de Fibra de Carbono",
-      title: "Materiales de Fibra de Carbono de Alto Rendimiento",
+      title: "Mantas de Carbono para Capas Funcionales",
       intro:
-        "Soluciones de fibra de carbono ligeras y ultrarresistentes para los sectores aeroespacial, automovilismo, defensa militar y fabricación avanzada.",
+        "Mantas de carbono superficiales, conductoras, compuestas, punzonadas y para GDL en procesos industriales de compuestos.",
       categoriesLabel: "Categorías de Productos",
       chooseTitle: "Cómo Elegir el Formato de Fibra de Carbono Adecuado",
       chooseParagraphs: [
-        "Los compradores suelen acotar la selección de fibra de carbono primero por proceso y luego por objetivo de rendimiento. Las esteras de superficie y los velos favorecen la conductividad, la calidad de acabado o las capas funcionales finas, mientras que los tejidos y las esteras más pesadas son más relevantes cuando importan la carga estructural, el drapeado y la acumulación de laminado.",
+        "La selección de mantas de carbono parte del proceso y de la función. Las mantas superficiales aportan conductividad, acabado y capas finas; las compuestas y punzonadas sirven para refuerzos más gruesos o procesos específicos.",
         "Si abastece para celdas de combustible, blindaje EMI, pultrusión o piezas estructurales ligeras, la vía más rápida es ajustar el proceso objetivo, el GSM requerido y la compatibilidad de resina antes de comparar rollos de muestra.",
-        "Los equipos que evalúan múltiples formatos suelen preseleccionar una capa de superficie funcional, una opción de refuerzo estructural y una alternativa comercial de respaldo para que el muestreo responda tanto a la idoneidad técnica como a la viabilidad de suministro.",
+        "Indique gramaje, ancho, sistema de resina, requisito eléctrico y método de validación para evaluar la idoneidad técnica y de suministro.",
       ],
       ctaTitle: "¿Necesita una Solución Personalizada de Fibra de Carbono?",
       ctaBody: "Nuestros ingenieros pueden recomendar el material óptimo para su aplicación.",
     },
     glass: {
       eyebrow: "División de Fibra de Vidrio",
-      title: "Materiales de Fibra de Vidrio Fiables",
+      title: "Mantas de Vidrio y Papel para Rotores Desecantes",
       intro:
-        "Soluciones de fibra de vidrio económicas y resistentes a la corrosión para energía eólica, construcción, transporte y filtración industrial.",
+        "Mantas de vidrio por vía húmeda para superficies, cubiertas, paredes, tuberías y baterías, más papel para rotores desecantes.",
       categoriesLabel: "Categorías de Productos",
       chooseTitle: "Cómo Elegir el Material de Fibra de Vidrio Adecuado",
       chooseParagraphs: [
-        "La selección de fibra de vidrio suele estar determinada por el proceso de laminado, el requisito de superficie y la ruta de carga objetivo. Los velos son útiles para capas de acabado y barrera, los tejidos favorecen un refuerzo equilibrado, y las esteras compuestas cosidas son más adecuadas para carcasas estructurales, piezas de energía eólica y paneles de transporte.",
-        "Al solicitar una cotización, incluya el GSM objetivo, el sistema de resina, el ancho y el entorno de uso final. Esto acota rápidamente la familia de materiales y reduce las idas y venidas durante el muestreo.",
+        "La selección depende del sustrato, la función superficial o de barrera, el gramaje, el aglutinante, la porosidad y el proceso posterior.",
+        "Para papel de rotor desecante, indique proceso, espesor y gramaje, etapa de impregnación o recubrimiento, ancho, formato de rollo y validación.",
       ],
       ctaTitle: "¿Busca Soluciones Personalizadas de Fibra de Vidrio?",
       ctaBody:
@@ -104,23 +104,23 @@ export const es: PageContent = {
   catalog: {
     carbon: {
       breadcrumbDivision: "Fibra de Carbono",
-      title: "Productos de Fibra de Carbono",
+      title: "Mantas de Fibra de Carbono",
       intro:
-        "Materiales de fibra de carbono de alto rendimiento para sectores aeroespacial, automovilismo, militar y fabricación avanzada.",
-      body: "Utilice este catálogo para comparar esteras de fibra de carbono, tejidos y formatos de materia prima por familia de productos antes de pasar a las páginas individuales de productos para especificaciones, aplicaciones y flujo de consulta.",
-      closingTitle: "Use Este Catálogo para Preseleccionar el Formato de Fibra de Carbono Adecuado",
+        "Mantas de carbono para superficie, conductividad, refuerzo, punzonado y pilas de combustible.",
+      body: "Compare mantas de carbono por gramaje, construcción y función antes de abrir cada ficha técnica.",
+      closingTitle: "Seleccione la Manta de Carbono Adecuada",
       closingBody:
-        "Comience con la familia de productos que coincida con su proceso de fabricación y luego abra la página detallada del producto para conocer el GSM objetivo, la idoneidad de aplicación y el contexto de consulta. Las esteras de superficie suelen evaluarse por conductividad y capas de acabado, los tejidos por refuerzo direccional, y las materias primas por flujos de trabajo de tejido, bobinado y compounding.",
+        "Parta de la capa funcional y del proceso, y confirme gramaje, ancho, compatibilidad de resina, conductividad o difusión y método de validación.",
     },
     glass: {
       breadcrumbDivision: "Fibra de Vidrio",
-      title: "Productos de Fibra de Vidrio",
+      title: "Mantas de Vidrio y Papel para Rotores Desecantes",
       intro:
-        "Refuerzos de fibra de vidrio económicos y resistentes a la corrosión para energía eólica, construcción, transporte y aplicaciones industriales.",
-      body: "Compare velos de fibra de vidrio, tejidos, esteras compuestas cosidas y formatos de hilos cortados por familia de productos antes de abrir las páginas individuales de productos para especificaciones y flujo de consulta.",
-      closingTitle: "Use Este Catálogo para Preseleccionar el Material de Fibra de Vidrio Adecuado",
+        "Mantas y velos de fibra de vidrio, más papel conformable para rotores desecantes.",
+      body: "Compare mantas de superficie, color, cubiertas, paredes, tuberías y baterías junto con papel para rotores desecantes.",
+      closingTitle: "Seleccione la Manta o el Papel Adecuado",
       closingBody:
-        "Comience con la familia de productos que coincida con su proceso de laminado y luego abra la página detallada del producto para conocer el GSM objetivo, la compatibilidad de resina y la idoneidad de aplicación. Los velos se evalúan para capas de superficie y barrera, los tejidos para refuerzo equilibrado, y las esteras cosidas para carcasas estructurales.",
+        "Parta del uso final y del proceso posterior, y confirme gramaje, espesor, ancho, aglutinante, porosidad y formato de rollo.",
     },
   },
   applications: {
@@ -143,29 +143,29 @@ export const es: PageContent = {
       {
         question: "¿Qué tipos de materiales de fibra de carbono ofrece ZeYuSen?",
         answer:
-          "ZeYuSen ofrece esteras de superficie de fibra de carbono (10g-50g/m²), esteras agujeteadas, esteras niqueladas para blindaje EMI, tejido de fibra de carbono, tejido híbrido carbono-vidrio y estopa de fibra de carbono cruda.",
+          "ZeYuSen se centra en mantas superficiales de carbono (10g-30g/m²), mantas niqueladas, compuestas, punzonadas y para capas de difusión de gas de pilas de combustible.",
       },
       {
         question: "¿Qué sectores utilizan los productos de fibra de carbono de ZeYuSen?",
         answer:
-          "Nuestros materiales de fibra de carbono sirven a los sectores aeroespacial, defensa militar, nueva energía (celdas de combustible), automotriz, marino y artículos deportivos.",
+          "Nuestras mantas de carbono se evalúan para GDL de pilas de combustible, blindaje EMI/RFI, calefacción eléctrica, pultrusión y capas superficiales de composites.",
       },
       {
         question: "¿Puede ZeYuSen proporcionar especificaciones personalizadas de fibra de carbono?",
         answer:
-          "Sí, ofrecemos especificaciones de peso personalizadas de 10g/m² a 600g/m², anchos personalizados y tratamientos de superficie especializados adaptados a los requisitos de su aplicación.",
+          "Los grados publicados abarcan de 10g/m² a 350g/m². El ancho, ligante, formato de rollo y otros requisitos se someten a revisión técnica y validación de muestras.",
       },
     ],
     glass: [
       {
         question: "¿Qué tipos de materiales de fibra de vidrio ofrece ZeYuSen?",
         answer:
-          "ZeYuSen ofrece velos de fibra de vidrio, mat de hilos cortados, woven roving, tejidos multiaxiales, esteras compuestas cosidas y velos de superficie especiales para diversas aplicaciones industriales.",
+          "ZeYuSen se centra en mantas y velos de fibra de vidrio por vía húmeda para superficie, cubiertas, paredes, tuberías y baterías, además de papel conformable para rotores desecantes.",
       },
       {
         question: "¿Para qué aplicaciones se utilizan los materiales de fibra de vidrio?",
         answer:
-          "Nuestros productos de fibra de vidrio se utilizan en palas de turbinas eólicas, impermeabilización en construcción, aislamiento de tuberías, cascos marinos, paneles automotrices y revestimientos industriales resistentes a la corrosión.",
+          "Nuestras mantas de vidrio se utilizan en capas superficiales, membranas de cubierta, paredes, envoltura de tuberías y separadores de batería; el papel especial se utiliza para formar rotores desecantes y de tamiz molecular.",
       },
       {
         question: "¿Qué sistemas de resina son compatibles con la fibra de vidrio de ZeYuSen?",

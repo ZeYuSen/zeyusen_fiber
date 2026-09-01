@@ -91,31 +91,31 @@ export const glassFiberZh: DivisionTranslations = {
         ]
       },
       "rotor-paper": {
-        "name": "分子筛转轮用玻纤纸",
-        "seoTitle": "分子筛转轮用玻纤纸制造商",
-        "description": "专为除湿和VOC处理系统中分子筛沸石转轮基材设计的特种玻璃纤维纸。",
+        "name": "除湿转轮成型纸",
+        "seoTitle": "除湿转轮成型纸厂家｜玻璃纤维转轮基材",
+        "description": "用于除湿转轮蜂窝芯体平面层和瓦楞层的湿法玻璃纤维成型纸。克重、厚度、幅宽、粘结体系及后加工要求按转轮项目确认。",
         "features": [
-          "沸石转轮基材",
-          "耐高温",
-          "精密厚度控制",
-          "PVA粘结"
+          "面向除湿转轮芯体的玻纤基材",
+          "适合瓦楞与成型试验的卷材形态",
+          "按项目确认克重、厚度与幅宽",
+          "量产前评估粘结及浸渍体系相容性"
         ],
         "specLabels": {
-          "Weight": "克重",
-          "Binder": "粘结剂",
-          "Function": "功能",
-          "Application": "应用"
+          "Material": "材质",
+          "Supply Form": "供货形态",
+          "Project Variables": "项目参数",
+          "Validation": "工艺验证"
         },
         "specValues": {
-          "Custom": "定制",
-          "PVA": "PVA",
-          "Rotor Substrate": "转轮基材",
-          "Dehumidification, VOC Treatment": "除湿、VOC处理"
+          "Wet-laid glass fiber paper": "湿法玻璃纤维成型纸",
+          "Roll material": "卷材",
+          "Basis weight, thickness, width, binder": "克重、厚度、幅宽、粘结体系",
+          "Corrugating, forming, impregnation / coating": "瓦楞、成型、浸渍／涂覆"
         },
         "applications": [
-          "除湿",
-          "VOC处理",
-          "空气净化"
+          "除湿转轮芯体",
+          "工业除湿系统",
+          "转轮材料开发"
         ]
       },
       "roofing-tissue": {

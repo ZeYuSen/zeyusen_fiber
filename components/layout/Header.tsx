@@ -9,6 +9,7 @@ import { isLocale, defaultLocale } from "@/lib/i18n/config";
 import { localizedHref } from "@/lib/i18n/routes";
 import type { Dictionary } from "@/lib/i18n/dictionaries";
 import { LanguageSwitcher } from "./LanguageSwitcher";
+import { TradeShowAnnouncement } from "@/components/sections/TradeShowNotice";
 
 const logoSrc = "/logo.png?v=logo-20260626";
 
@@ -56,13 +57,22 @@ export function Header({
     <header
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 border-b ${
         mobileOpen
-          ? "bg-white border-black/[0.06] py-3 shadow-sm"
+          ? "bg-white border-black/[0.06] shadow-sm"
           : showSolidBg
-            ? "bg-white/80 backdrop-blur-xl border-black/[0.06] py-3 shadow-sm"
-            : "bg-transparent border-transparent py-5"
+            ? "bg-white/80 backdrop-blur-xl border-black/[0.06] shadow-sm"
+            : "bg-transparent border-transparent"
       }`}
     >
-      <div className="container-wide">
+      {isHome && (
+        <div
+          className={`overflow-hidden transition-[max-height,opacity] duration-300 ${
+            scrolled || mobileOpen ? "max-h-0 opacity-0" : "max-h-12 opacity-100"
+          }`}
+        >
+          <TradeShowAnnouncement locale={locale} />
+        </div>
+      )}
+      <div className={`container-wide transition-[padding] duration-500 ${showSolidBg ? "py-3" : "py-5"}`}>
         <div className="flex items-center justify-between">
           {/* Logo */}
           <Link href={localizedHref("home", locale)} className="flex items-center gap-3.5">

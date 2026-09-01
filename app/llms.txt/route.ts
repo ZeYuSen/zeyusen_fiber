@@ -11,12 +11,20 @@ export const dynamic = "force-static";
 
 function categoryLines(
   categoryKey: "carbon-category" | "glass-category",
+  productKey: "carbon-product" | "glass-product",
   categories: typeof allCarbonFiberCategories,
 ) {
   return categories
     .map(
-      (c) =>
-        `- [${c.name}](${absoluteUrl(localizedHref(categoryKey, defaultLocale, { category: c.slug }))}): ${c.description}`,
+      (c) => {
+        const products = c.products
+          .map(
+            (product) =>
+              `  - [${product.name}](${absoluteUrl(localizedHref(productKey, defaultLocale, { category: c.slug, product: product.slug }))}): ${product.description}`,
+          )
+          .join("\n");
+        return `- [${c.name}](${absoluteUrl(localizedHref(categoryKey, defaultLocale, { category: c.slug }))}): ${c.description}\n${products}`;
+      },
     )
     .join("\n");
 }
@@ -29,22 +37,22 @@ export function GET() {
 
 > ${siteConfig.description} Operated by ${contactInfo.company}, a manufacturer integrating R&D, production, and global export of carbon fiber and fiberglass composite materials since ${contactInfo.foundingYear}.
 
-ZeYuSen Fiber supplies carbon fiber surface mats, woven cloth, raw materials, fiberglass tissue mats, composite mats, and reinforcement fabrics to B2B buyers worldwide. Quotes are request-based. Certifications: ISO 9001, ISO 14001, ISO 45001.
+ZeYuSen Fiber supplies carbon fiber mats, fiberglass mats and veils, and desiccant rotor forming paper to B2B buyers worldwide. Quotes are request-based. Certifications: ISO 9001, ISO 14001, ISO 45001.
 
-Available languages: ${languageList}. Localized versions live under /ko, /es, and /pt; English under /en.
+Available languages: ${languageList}. Localized versions live under /en, /zh, /ko, /es, and /pt.
 
 ## Carbon Fiber
-${categoryLines("carbon-category", allCarbonFiberCategories)}
+${categoryLines("carbon-category", "carbon-product", allCarbonFiberCategories)}
 - [Carbon Fiber Division Overview](${absoluteUrl(localizedHref("carbon-fiber", defaultLocale))})
 
 ## Glass Fiber
-${categoryLines("glass-category", allGlassFiberCategories)}
+${categoryLines("glass-category", "glass-product", allGlassFiberCategories)}
 - [Glass Fiber Division Overview](${absoluteUrl(localizedHref("glass-fiber", defaultLocale))})
 
 ## Company
 - [About ZeYuSen Fiber](${absoluteUrl(localizedHref("about", defaultLocale))}): Company background, manufacturing facilities, and certifications.
 - [Services](${absoluteUrl(localizedHref("services", defaultLocale))}): OEM/ODM customization, R&D support, quality assurance, and logistics.
-- [Applications](${absoluteUrl(localizedHref("applications", defaultLocale))}): Industry use cases across aerospace, wind energy, construction, and new energy.
+- [Applications](${absoluteUrl(localizedHref("applications", defaultLocale))}): Focused use cases for fuel cells, EMI/RFI shielding evaluation, and construction materials.
 - [Contact](${absoluteUrl(localizedHref("contact", defaultLocale))}): Request a quote or technical consultation.
 
 ## Articles

@@ -60,12 +60,12 @@ export const metadata: Metadata = {
     apple: "/apple-touch-icon.png",
   },
   keywords: [
-    "carbon fiber",
-    "glass fiber",
-    "fiberglass",
-    "composite materials",
-    "carbon fiber manufacturer",
-    "fiberglass supplier",
+    "carbon fiber mat",
+    "fiberglass mat",
+    "fiberglass tissue mat",
+    "fiberglass veil",
+    "desiccant rotor forming paper",
+    "molecular sieve rotor paper",
   ],
 };
 

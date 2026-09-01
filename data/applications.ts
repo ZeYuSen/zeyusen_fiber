@@ -49,7 +49,7 @@ export const applicationGroups: ApplicationGroup[] = [
         title: "Aerospace & Aviation",
         description:
           "Ultra-lightweight carbon fiber composites for structural components, interior panels, and advanced aerospace applications.",
-        products: ["Carbon Fiber Surface Mat 10g", "Carbon Fiber Needled Mat", "Carbon Fiber Yarn"],
+        products: ["Carbon Fiber Surface Mat 10g", "Carbon Fiber Needled Mat", "Carbon Fiber Composite Mat"],
         detailHref: "/carbon-fiber/applications/aerospace",
       },
       {
@@ -67,7 +67,7 @@ export const applicationGroups: ApplicationGroup[] = [
         title: "New Energy & Fuel Cells",
         description:
           "Advanced carbon fiber materials for hydrogen fuel cell GDL, battery separators, and energy storage systems.",
-        products: ["Carbon Fiber Surface Mat 10g", "Carbon Fiber Surface Mat 20g", "Carbon-Glass Hybrid Mat"],
+        products: ["Carbon Fiber Surface Mat 10g", "Carbon Fiber Surface Mat 20g", "Fuel-Cell GDL Carbon Mat"],
         detailHref: "/carbon-fiber/applications/new-energy",
       },
       {
@@ -85,7 +85,7 @@ export const applicationGroups: ApplicationGroup[] = [
         title: "High-end Manufacturing",
         description:
           "Premium carbon fiber materials for pultrusion processes, mold making, and advanced composite manufacturing.",
-        products: ["Carbon Fiber Composite Mat", "Carbon Fiber Needled Mat", "Short Cut Carbon Fiber"],
+        products: ["Carbon Fiber Composite Mat", "Carbon Fiber Needled Mat", "Carbon Fiber Surface Mat 30g"],
         detailHref: "/carbon-fiber/applications/manufacturing",
       },
     ],
@@ -142,7 +142,7 @@ export const applicationGroups: ApplicationGroup[] = [
         title: "Marine & Corrosion Protection",
         description:
           "Corrosion-resistant fiberglass solutions for shipbuilding, chemical storage tanks, and marine infrastructure.",
-        products: ["Woven Roving", "Chopped Strand Mat", "Surface Tissue Mat"],
+        products: ["Surface Tissue Mat", "Pipe-Wrapping Fiberglass Mat", "Roofing Tissue Mat"],
         detailHref: "/glass-fiber/applications/marine",
       },
     ],

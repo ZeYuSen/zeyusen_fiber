@@ -18,13 +18,7 @@
   },
   "products": {
     "carbon-fiber-mat": "Estera de Fibra de Carbono",
-    "carbon-fiber-cloth": "Tejido de Fibra de Carbono",
-    "carbon-fiber-raw": "Materias Primas de Fibra de Carbono",
-    "tissue-mat": "Velo de Fibra de Vidrio",
-    "fiberglass-cloth": "Tejido de Fibra de Vidrio",
-    "composite-mat": "Estera Compuesta",
-    "chopped-strand-mat": "Mat de Hilos Cortados",
-    "other-materials": "Otros Materiales de Fibra"
+    "tissue-mat": "Velo de Fibra de Vidrio"
   },
   "actions": {
     "sendInquiry": "Enviar Consulta",
@@ -59,7 +53,7 @@
     "value": "Valor"
   },
   "footer": {
-    "tagline": "Materiales de fibra de carbono y fibra de vidrio de ingeniería para la fabricación avanzada de compuestos en todo el mundo.",
+    "tagline": "Mantas de carbono, mantas y velos de vidrio, y papel para rotores desecantes de uso industrial.",
     "products": "Productos",
     "company": "Empresa",
     "resources": "Recursos",
@@ -81,7 +75,7 @@
     "title": "Asistente ZeYuSen",
     "subtitle": "Consulte sobre productos, especificaciones o aplicaciones",
     "placeholder": "Escriba su mensaje...",
-    "welcome": "¡Hola! Soy el asistente de ZeYuSen Fiber. Pregúnteme sobre nuestros productos de fibra de carbono y fibra de vidrio, especificaciones o aplicaciones.",
+    "welcome": "¡Hola! Soy el asistente de ZeYuSen Fiber. Consulte sobre mantas de carbono, mantas y velos de vidrio o papel para rotores desecantes.",
     "send": "Enviar",
     "openChat": "Abrir chat",
     "closeChat": "Cerrar chat",
@@ -97,7 +91,7 @@
     "published": "Publicado",
     "updated": "Actualizado",
     "needHelpTitle": "¿Necesita ayuda para elegir un material?",
-    "needHelpBody": "Envíenos su aplicación objetivo, proceso y especificaciones requeridas. ZeYuSen Fiber puede ayudarle a comparar opciones de materiales de fibra de carbono y fibra de vidrio para su proyecto.",
+    "needHelpBody": "Envíe la aplicación, el proceso y las especificaciones previstas. Podemos evaluar mantas de carbono, mantas y velos de vidrio o papel para rotores desecantes.",
     "needHelpCta": "Contactar a ZeYuSen Fiber",
     "print": "Imprimir",
     "searchPlaceholder": "Buscar artículos...",
@@ -145,7 +139,7 @@
   },
   "cta": {
     "customTitle": "¿Necesita una Solución Personalizada?",
-    "customBodyCarbon": "Nuestros ingenieros pueden adaptar los materiales de fibra de carbono a sus especificaciones exactas.",
-    "customBodyGlass": "Nuestros ingenieros pueden adaptar los materiales de fibra de vidrio a sus especificaciones exactas."
+    "customBodyCarbon": "Nuestro equipo puede revisar la especificación de la manta de carbono para su proceso.",
+    "customBodyGlass": "Nuestro equipo puede revisar mantas y velos de vidrio y papel para rotores para su proceso."
   }
 }

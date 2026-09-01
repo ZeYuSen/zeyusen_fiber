@@ -467,25 +467,30 @@ productContent["glass/tissue-mat/colored-tissue"] = {
 
 productContent["glass/tissue-mat/rotor-paper"] = {
   overview: [
-    "Glass fiber paper for zeolite rotors is a specialized wet-laid substrate engineered to carry molecular sieve (zeolite) material in desiccant rotors used for dehumidification and VOC treatment. The paper provides a stable, high-temperature-resistant skeleton onto which the zeolite is loaded, forming the corrugated honeycomb structure at the heart of a rotor concentrator.",
-    "Bonded with PVA and produced with precise thickness control, the paper must withstand the repeated heating and regeneration cycles a rotor experiences while maintaining dimensional stability and an even pore structure for airflow. These properties directly influence the efficiency of moisture adsorption and solvent capture in the finished rotor.",
-    "Custom weights are available to suit different rotor designs, and the material is used in dehumidification systems, VOC abatement equipment, and air purification rotors. Its combination of thermal resistance and consistent structure makes it a reliable substrate for demanding adsorption applications.",
+    "Desiccant rotor substrate paper is a wet-laid glass fiber forming paper used to build the flat and corrugated layers of a honeycomb rotor core. It is supplied as a base material for downstream corrugating, bonding, forming, and desiccant impregnation or coating rather than as a finished rotor.",
+    "Rotor designs differ in channel geometry, airflow, regeneration conditions, and adsorbent system. For that reason, basis weight, thickness, roll width, binder, and roll construction are reviewed against the customer's converting process instead of being presented as one universal grade.",
+    "For an effective material evaluation, share the intended rotor type, target paper dimensions, corrugating or forming method, impregnation or coating system, operating conditions, and validation standard. Samples should be tested through the intended process before production approval.",
   ],
   faqs: [
     {
-      question: "What is glass fiber rotor paper used for?",
+      question: "What is desiccant rotor substrate paper?",
       answer:
-        "It serves as the high-temperature substrate for molecular sieve zeolite rotors used in dehumidification and VOC treatment systems, forming the honeycomb structure that carries the adsorbent material.",
+        "It is a wet-laid glass fiber base paper used for the flat and corrugated layers of a desiccant rotor core. The material is converted and combined with the selected desiccant system by the rotor manufacturer.",
     },
     {
-      question: "Why is high-temperature resistance important here?",
+      question: "Is this a finished desiccant rotor?",
       answer:
-        "Desiccant rotors are regenerated with heat in repeated cycles. The paper must withstand these temperatures while maintaining dimensional stability and an even pore structure for consistent airflow and adsorption.",
+        "No. It is the glass fiber paper substrate supplied for downstream corrugating, forming, bonding, and impregnation or coating. Finished-rotor performance depends on the complete rotor design and processing system.",
     },
     {
-      question: "Can the paper weight be customized?",
+      question: "Which information is needed for a quotation or sample?",
       answer:
-        "Yes. Custom weights are available to match different rotor designs and the specific adsorption and airflow requirements of the system.",
+        "Please provide the rotor application, target basis weight, thickness, roll width, binder or chemical compatibility requirements, roll format, corrugating process, and planned impregnation or coating method.",
+    },
+    {
+      question: "Can one grade be used with every desiccant or molecular sieve system?",
+      answer:
+        "Not automatically. Binder compatibility, forming behavior, operating conditions, and the selected desiccant or molecular sieve system should be evaluated together in the customer's process before production approval.",
     },
   ],
 };
