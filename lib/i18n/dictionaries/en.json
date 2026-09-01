@@ -18,13 +18,7 @@
   },
   "products": {
     "carbon-fiber-mat": "Carbon Fiber Mat",
-    "carbon-fiber-cloth": "Carbon Fiber Cloth",
-    "carbon-fiber-raw": "Carbon Fiber Raw Materials",
-    "tissue-mat": "Fiberglass Tissue Mat",
-    "fiberglass-cloth": "Fiberglass Cloth",
-    "composite-mat": "Composite Mat",
-    "chopped-strand-mat": "Chopped Strand Mat",
-    "other-materials": "Other Fiber Materials"
+    "tissue-mat": "Fiberglass Tissue Mat"
   },
   "actions": {
     "sendInquiry": "Send Inquiry",
@@ -59,7 +53,7 @@
     "value": "Value"
   },
   "footer": {
-    "tagline": "Engineered carbon fiber and glass fiber materials for advanced composite manufacturing worldwide.",
+    "tagline": "Carbon fiber mats, fiberglass mats and veils, and desiccant rotor forming paper for industrial applications.",
     "products": "Products",
     "company": "Company",
     "resources": "Resources",
@@ -81,7 +75,7 @@
     "title": "ZeYuSen Assistant",
     "subtitle": "Ask about products, specs, or applications",
     "placeholder": "Type your message...",
-    "welcome": "Hi! I'm the ZeYuSen Fiber assistant. Ask me about our carbon fiber and glass fiber products, specifications, or applications.",
+    "welcome": "Hi! I'm the ZeYuSen Fiber assistant. Ask me about carbon fiber mats, fiberglass mats and veils, or desiccant rotor forming paper.",
     "send": "Send",
     "openChat": "Open chat",
     "closeChat": "Close chat",
@@ -97,7 +91,7 @@
     "published": "Published",
     "updated": "Updated",
     "needHelpTitle": "Need help choosing a material?",
-    "needHelpBody": "Send your target application, process, and required specifications. ZeYuSen Fiber can help compare carbon fiber and glass fiber material options for your project.",
+    "needHelpBody": "Send your application, process, and target specifications. ZeYuSen Fiber can help evaluate carbon fiber mats, fiberglass mats and veils, or desiccant rotor forming paper.",
     "needHelpCta": "Contact ZeYuSen Fiber",
     "print": "Print",
     "searchPlaceholder": "Search articles...",
@@ -145,7 +139,7 @@
   },
   "cta": {
     "customTitle": "Need a Custom Solution?",
-    "customBodyCarbon": "Our engineers can tailor carbon fiber materials to your exact specifications.",
-    "customBodyGlass": "Our engineers can tailor fiberglass materials to your exact specifications."
+    "customBodyCarbon": "Our team can review carbon fiber mat specifications for your process.",
+    "customBodyGlass": "Our team can review fiberglass mat, veil, and rotor paper specifications for your process."
   }
 }

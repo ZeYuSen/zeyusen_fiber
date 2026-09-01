@@ -18,13 +18,7 @@
   },
   "products": {
     "carbon-fiber-mat": "탄소섬유 매트",
-    "carbon-fiber-cloth": "탄소섬유 직물",
-    "carbon-fiber-raw": "탄소섬유 원자재",
-    "tissue-mat": "유리섬유 티슈 매트",
-    "fiberglass-cloth": "유리섬유 직물",
-    "composite-mat": "복합 매트",
-    "chopped-strand-mat": "촙드 스트랜드 매트",
-    "other-materials": "기타 섬유 소재"
+    "tissue-mat": "유리섬유 티슈 매트"
   },
   "actions": {
     "sendInquiry": "문의하기",
@@ -59,7 +53,7 @@
     "value": "값"
   },
   "footer": {
-    "tagline": "전 세계 첨단 복합재 제조를 위한 고품질 탄소섬유 및 유리섬유 소재.",
+    "tagline": "산업용 탄소섬유 매트, 유리섬유 매트와 베일, 제습 로터 성형지.",
     "products": "제품",
     "company": "회사",
     "resources": "자료",
@@ -81,7 +75,7 @@
     "title": "ZeYuSen 어시스턴트",
     "subtitle": "제품, 사양 또는 응용분야에 대해 문의하세요",
     "placeholder": "메시지를 입력하세요...",
-    "welcome": "안녕하세요! ZeYuSen Fiber 어시스턴트입니다. 탄소섬유 및 유리섬유 제품, 사양, 응용분야에 대해 무엇이든 물어보세요.",
+    "welcome": "안녕하세요! ZeYuSen Fiber 어시스턴트입니다. 탄소섬유 매트, 유리섬유 매트와 베일, 제습 로터 성형지에 대해 문의해 주세요.",
     "send": "보내기",
     "openChat": "채팅 열기",
     "closeChat": "채팅 닫기",
@@ -97,7 +91,7 @@
     "published": "게시일",
     "updated": "수정일",
     "needHelpTitle": "소재 선택에 도움이 필요하신가요?",
-    "needHelpBody": "목표 응용분야, 공정, 필요 사양을 알려주세요. ZeYuSen Fiber가 귀하의 프로젝트에 맞는 탄소섬유 및 유리섬유 소재 옵션을 비교해 드립니다.",
+    "needHelpBody": "용도, 공정과 목표 사양을 알려주세요. 탄소섬유 매트, 유리섬유 매트와 베일 또는 제습 로터 성형지를 검토해 드립니다.",
     "needHelpCta": "ZeYuSen Fiber 문의하기",
     "print": "인쇄",
     "searchPlaceholder": "기사 검색...",
@@ -145,7 +139,7 @@
   },
   "cta": {
     "customTitle": "맞춤 솔루션이 필요하신가요?",
-    "customBodyCarbon": "당사 엔지니어가 귀하의 정확한 사양에 맞춰 탄소섬유 소재를 맞춤 제작해 드립니다.",
-    "customBodyGlass": "당사 엔지니어가 귀하의 정확한 사양에 맞춰 유리섬유 소재를 맞춤 제작해 드립니다."
+    "customBodyCarbon": "당사 팀이 귀하의 공정에 맞는 탄소섬유 매트 사양을 검토합니다.",
+    "customBodyGlass": "당사 팀이 유리섬유 매트, 베일 및 로터 성형지 사양을 검토합니다."
   }
 }

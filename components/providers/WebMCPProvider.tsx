@@ -37,7 +37,7 @@ export function WebMCPProvider({ index, contact, contactHref }: Props) {
           inputSchema: {
             type: "object",
             properties: {
-              query: { type: "string", description: "Keyword, e.g. 'surface mat' or 'woven cloth'." },
+              query: { type: "string", description: "Keyword, e.g. 'surface mat' or 'rotor paper'." },
             },
             required: ["query"],
           },

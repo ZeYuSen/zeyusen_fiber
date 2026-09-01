@@ -20,7 +20,7 @@ const showcaseItems = [
     description: "Engineered multi-material systems",
   },
   {
-    image: "/images/glass-fiber/01-fiberglass-tissue-mat/03-colored-tissue/80g-yellow-tissue-01.jpg",
+    image: "/images/glass-fiber/01-fiberglass-tissue-mat/03-colored-tissue/colored-fiberglass-tissue-blue-rolls.jpg",
     label: "Specialty Materials",
     description: "Custom-engineered fiber solutions",
   },

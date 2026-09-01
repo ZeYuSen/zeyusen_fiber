@@ -91,31 +91,31 @@ export const glassFiberKo: DivisionTranslations = {
         ]
       },
       "rotor-paper": {
-        "name": "제올라이트 로터용 유리섬유 페이퍼",
-        "seoTitle": "제올라이트 로터용 유리섬유 페이퍼 제조업체",
-        "description": "제습 및 VOC 처리 시스템에 사용되는 분자체 제올라이트 로터의 기재로 설계된 특수 유리섬유 페이퍼.",
+        "name": "제습 로터 기재용 유리섬유 페이퍼",
+        "seoTitle": "제습 로터 기재용 유리섬유 페이퍼 제조업체",
+        "description": "제습 로터 코어의 평면층과 골층을 위한 습식 유리섬유 성형지입니다. 평량, 두께, 폭, 바인더 및 후가공 조건은 각 로터 프로젝트별로 확인합니다.",
         "features": [
-          "제올라이트 로터 기재",
-          "고온 내열성",
-          "정밀 두께 제어",
-          "PVA 결합"
+          "제습 로터 코어용 유리섬유 기재",
+          "골 성형 및 가공 시험용 롤 소재",
+          "프로젝트별 평량, 두께 및 폭 검토",
+          "승인 전 바인더와 함침 시스템의 적합성 평가"
         ],
         "specLabels": {
-          "Weight": "중량",
-          "Binder": "바인더",
-          "Function": "기능",
-          "Application": "용도"
+          "Material": "소재",
+          "Supply Form": "공급 형태",
+          "Project Variables": "프로젝트 변수",
+          "Validation": "공정 검증"
         },
         "specValues": {
-          "Custom": "맞춤 제작",
-          "PVA": "PVA",
-          "Rotor Substrate": "로터 기재",
-          "Dehumidification, VOC Treatment": "제습, VOC 처리"
+          "Wet-laid glass fiber paper": "습식 유리섬유 페이퍼",
+          "Roll material": "롤 소재",
+          "Basis weight, thickness, width, binder": "평량, 두께, 폭, 바인더",
+          "Corrugating, forming, impregnation / coating": "골 성형, 가공, 함침 / 코팅"
         },
         "applications": [
-          "제습",
-          "VOC 처리",
-          "공기 정화"
+          "제습 로터 코어",
+          "산업용 제습 시스템",
+          "로터 소재 개발"
         ]
       },
       "roofing-tissue": {

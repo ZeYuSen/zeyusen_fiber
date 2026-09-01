@@ -10,7 +10,7 @@ export const siteConfig = {
   url: siteUrl,
   title: "ZeYuSen Fiber | Engineered Fiber Solutions",
   description:
-    "Carbon fiber and glass fiber composite materials for aerospace, wind energy, construction, transportation, and advanced manufacturing applications.",
+    "Manufacturer of carbon fiber mats, fiberglass mats and veils, and desiccant rotor forming paper for industrial composite and dehumidification applications.",
   ogImage: "/images/hero/banner4.jpg",
   ogImageWidth: 1740,
   ogImageHeight: 650,

@@ -91,30 +91,31 @@ export const glassFiberPt: DivisionTranslations = {
         ]
       },
       "rotor-paper": {
-        "name": "Papel de Fibra de Vidro para Rotor de Zeólita",
-        "description": "Papel de fibra de vidro especializado, projetado como substrato para rotores de peneira molecular de zeólita utilizados em sistemas de desumidificação e tratamento de VOC.",
+        "name": "Papel Substrato para Rotor Dessecante",
+        "seoTitle": "Fabricante de Papel Substrato para Rotor Dessecante",
+        "description": "Papel de fibra de vidro por via úmida para as camadas planas e corrugadas de núcleos de rotores dessecantes. Gramatura, espessura, largura, ligante e conversão são confirmados para cada projeto.",
         "features": [
-          "Substrato para rotor de zeólita",
-          "Alta resistência à temperatura",
-          "Controle preciso de espessura",
-          "Ligado com PVA"
+          "Substrato de fibra de vidro para núcleos dessecantes",
+          "Material em rolo para testes de corrugação e conformação",
+          "Gramatura, espessura e largura revisadas por projeto",
+          "Compatibilidade do ligante e da impregnação avaliada antes da aprovação"
         ],
         "specLabels": {
-          "Weight": "Gramatura",
-          "Binder": "Ligante",
-          "Function": "Função",
-          "Application": "Aplicação"
+          "Material": "Material",
+          "Supply Form": "Forma de fornecimento",
+          "Project Variables": "Variáveis do projeto",
+          "Validation": "Validação"
         },
         "specValues": {
-          "Custom": "Personalizado",
-          "PVA": "PVA",
-          "Rotor Substrate": "Substrato para Rotor",
-          "Dehumidification, VOC Treatment": "Desumidificação, Tratamento de VOC"
+          "Wet-laid glass fiber paper": "Papel de fibra de vidro por via úmida",
+          "Roll material": "Material em rolo",
+          "Basis weight, thickness, width, binder": "Gramatura, espessura, largura, ligante",
+          "Corrugating, forming, impregnation / coating": "Corrugação, conformação, impregnação / revestimento"
         },
         "applications": [
-          "Desumidificação",
-          "Tratamento de VOC",
-          "Purificação do Ar"
+          "Núcleos de rotores dessecantes",
+          "Sistemas industriais de desumidificação",
+          "Desenvolvimento de materiais para rotores"
         ]
       },
       "roofing-tissue": {

@@ -385,9 +385,9 @@ export function BlogPostPage({
               </section>
             )}
 
-            <FAQAccordion items={post.faq} />
+            <FAQAccordion items={post.faq} title={dict.sections.faq} />
 
-            <AuthorSignature />
+            <AuthorSignature locale={locale} />
 
             <div className="mt-12 rounded-2xl border border-neutral-100 bg-neutral-50 p-6">
               <h2 className="text-lg font-semibold text-neutral-900">{dict.blog.needHelpTitle}</h2>

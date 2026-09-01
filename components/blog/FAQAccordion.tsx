@@ -34,14 +34,14 @@ function FAQItemRow({ item, open, onToggle }: { item: FAQItem; open: boolean; on
   );
 }
 
-export function FAQAccordion({ items }: { items: FAQItem[] }) {
+export function FAQAccordion({ items, title }: { items: FAQItem[]; title: string }) {
   const [openIndex, setOpenIndex] = useState<number | null>(0);
 
   if (!items.length) return null;
 
   return (
     <section className="mt-12">
-      <h2 className="text-xl font-semibold text-neutral-900 mb-4">Frequently Asked Questions</h2>
+      <h2 className="text-xl font-semibold text-neutral-900 mb-4">{title}</h2>
       <div className="rounded-xl border border-neutral-100 bg-white px-5">
         {items.map((item, i) => (
           <FAQItemRow

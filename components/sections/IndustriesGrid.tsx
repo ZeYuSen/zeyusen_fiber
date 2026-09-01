@@ -6,16 +6,31 @@ import Link from "next/link";
 import { ArrowUpRight } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 import { useLocale } from "@/lib/i18n/use-locale";
-import { localizedHref, type PageKey } from "@/lib/i18n/routes";
+import { localizedHref, type PageKey, type RouteParams } from "@/lib/i18n/routes";
 import { getHomeContent } from "@/lib/i18n/home-content";
 import { getApplicationImage } from "@/lib/site-images";
 
-const industryMeta: Array<{ pageKey: PageKey; slug: string; division: "carbon" | "glass" }> = [
-  { pageKey: "carbon-application", slug: "aerospace", division: "carbon" },
-  { pageKey: "glass-application", slug: "wind-energy", division: "glass" },
-  { pageKey: "glass-application", slug: "construction", division: "glass" },
-  { pageKey: "carbon-application", slug: "military-defense", division: "carbon" },
-  { pageKey: "carbon-application", slug: "new-energy", division: "carbon" },
+const industryMeta: Array<{
+  pageKey: PageKey;
+  params: RouteParams;
+  division: "carbon" | "glass";
+  image: string;
+}> = [
+  {
+    pageKey: "carbon-product",
+    params: { category: "carbon-fiber-mat", product: "surface-mat-10g" },
+    division: "carbon",
+    image: "/images/carbon-fiber/05-carbon-fiber-mat/01-carbon-surface-mat-10g/carbon-fiber-surface-mat-10gsm-sheet.jpg",
+  },
+  {
+    pageKey: "glass-product",
+    params: { category: "tissue-mat", product: "rotor-paper" },
+    division: "glass",
+    image: "/images/glass-fiber/01-fiberglass-tissue-mat/04-rotor-paper/desiccant-rotor-substrate-paper-white-roll.jpg",
+  },
+  { pageKey: "glass-application", params: { slug: "construction" }, division: "glass", image: getApplicationImage("construction", "glass") },
+  { pageKey: "carbon-application", params: { slug: "military-defense" }, division: "carbon", image: getApplicationImage("military-defense", "carbon") },
+  { pageKey: "carbon-application", params: { slug: "new-energy" }, division: "carbon", image: getApplicationImage("new-energy", "carbon") },
 ];
 
 const STRIP_BG = ["#2563EB", "#1D4ED8", "#1E40AF", "#1E3A8A", "#0F172A"];
@@ -61,7 +76,7 @@ export function IndustriesGrid() {
 
             return (
               <motion.div
-                key={industry.slug}
+                key={`${industry.pageKey}-${index}`}
                 className="relative cursor-pointer overflow-hidden"
                 style={{ backgroundColor: isActive ? "#EFF6FF" : bgColor }}
                 animate={{ flex: isActive ? 6 : 0.5 }}
@@ -108,7 +123,7 @@ export function IndustriesGrid() {
                           {industry.description}
                         </p>
                         <Link
-                          href={localizedHref(industry.pageKey, locale, { slug: industry.slug })}
+                          href={localizedHref(industry.pageKey, locale, industry.params)}
                           className="mt-7 inline-flex items-center gap-2 text-sm font-semibold text-neutral-900 hover:text-blue-600 transition-colors group"
                           onClick={e => e.stopPropagation()}
                         >
@@ -119,7 +134,7 @@ export function IndustriesGrid() {
                       {/* Image side */}
                       <div className="relative hidden lg:block">
                         <Image
-                          src={getApplicationImage(industry.slug, industry.division)}
+                          src={industry.image}
                           alt={`${industry.title} — ${home.industries.imageNote}`}
                           fill sizes="45vw"
                           quality={75}
@@ -141,7 +156,7 @@ export function IndustriesGrid() {
             const isActive = index === (active === -1 ? 0 : active);
             const accentClass = industry.division === "carbon" ? "bg-cyan-500" : "bg-emerald-500";
             return (
-              <div key={industry.slug} className="rounded-xl overflow-hidden border border-neutral-200">
+              <div key={`${industry.pageKey}-${index}`} className="rounded-xl overflow-hidden border border-neutral-200">
                 <button
                   onClick={() => setActive(index)}
                   className={`w-full flex items-center gap-3 px-5 py-4 text-left transition-colors ${
@@ -166,14 +181,14 @@ export function IndustriesGrid() {
                       <div className="p-5 bg-white">
                         <div className="relative aspect-[16/9] rounded-lg overflow-hidden mb-4">
                           <Image
-                            src={getApplicationImage(industry.slug, industry.division)}
+                            src={industry.image}
                             alt={`${industry.title} — ${home.industries.imageNote}`}
                             fill sizes="100vw" quality={75} className="object-cover"
                           />
                         </div>
                         <p className="text-neutral-600 text-sm leading-relaxed">{industry.description}</p>
                         <Link
-                          href={localizedHref(industry.pageKey, locale, { slug: industry.slug })}
+                          href={localizedHref(industry.pageKey, locale, industry.params)}
                           className="mt-4 inline-flex items-center gap-1.5 text-sm font-semibold text-blue-600"
                         >
                           {home.exploreProducts} <ArrowUpRight className="w-3.5 h-3.5" />

@@ -4,6 +4,10 @@ import matter from "gray-matter";
 import type { Locale } from "@/lib/i18n/config";
 import { defaultLocale } from "@/lib/i18n/config";
 import { createSlugger } from "@/lib/blog-slug";
+import {
+  isRetiredBlogSlug,
+  isRetiredInternalHref,
+} from "@/lib/product-scope";
 
 export type FAQItem = { question: string; answer: string };
 export type TocHeading = { id: string; text: string; level: 2 | 3 };
@@ -108,8 +112,13 @@ function readBlogPost(dir: string, fileName: string): BlogPost {
   const source = fs.readFileSync(fullPath, "utf8");
   const { data, content } = matter(source);
 
-  const faq = parseFAQ(content);
-  const cleanContent = stripFAQSection(content);
+  const contentWithoutRetiredLinks = content.replace(
+    /\[([^\]]+)\]\((\/[^)\s]+)(?:\s+"[^"]*")?\)/g,
+    (match, label: string, href: string) =>
+      isRetiredInternalHref(href) ? label : match,
+  );
+  const faq = parseFAQ(contentWithoutRetiredLinks);
+  const cleanContent = stripFAQSection(contentWithoutRetiredLinks);
   const headings = extractHeadings(cleanContent);
 
   return {
@@ -135,7 +144,11 @@ export function getBlogPosts(locale: Locale): BlogPost[] {
 
   return fs
     .readdirSync(enDir)
-    .filter((fileName) => fileName.endsWith(".md"))
+    .filter(
+      (fileName) =>
+        fileName.endsWith(".md") &&
+        !isRetiredBlogSlug(fileName.replace(/\.md$/, "")),
+    )
     .map((fileName) => {
       const dir =
         locale !== defaultLocale && fs.existsSync(path.join(localizedDir, fileName))

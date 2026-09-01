@@ -78,7 +78,7 @@ export function ProductCatalog({
                 </Link>
               </div>
               <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
-                {category.products.slice(0, 3).map((product) => (
+                {category.products.map((product) => (
                   <Link
                     key={product.slug}
                     href={localizedHref(productKey, locale, {

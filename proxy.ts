@@ -1,7 +1,16 @@
 import { NextResponse } from "next/server";
 import type { NextRequest } from "next/server";
 import { locales, defaultLocale, type Locale } from "@/lib/i18n/config";
-import { divisionRoot } from "@/lib/i18n/routes";
+import { divisionRoot, segmentLabels } from "@/lib/i18n/routes";
+import {
+  isActiveProduct,
+  isActiveProductCategory,
+  isKnownProductCategory,
+  isKnownProduct,
+  isRetiredBlogSlug,
+  type ProductDivision,
+} from "@/lib/product-scope";
+import { isRetiredApplication } from "@/lib/application-scope";
 
 // Old products-path segments per locale (removed when routes were flattened).
 const oldProductsSegments: Record<Locale, string> = {
@@ -99,14 +108,138 @@ function redirectStrippingSegment(
   return NextResponse.redirect(url, 301);
 }
 
+function normalizePathSegment(segment: string): string {
+  try {
+    return decodeURIComponent(segment).normalize("NFC");
+  } catch {
+    return segment.normalize("NFC");
+  }
+}
+
+const goneCopy: Record<
+  Locale,
+  { title: string; body: string; action: string }
+> = {
+  en: {
+    title: "This page has been retired",
+    body: "ZeYuSen Fiber now focuses on fiberglass mats and veils, carbon fiber mats, and desiccant rotor forming paper.",
+    action: "View the current product range",
+  },
+  zh: {
+    title: "此页面已停止发布",
+    body: "泽宇森现聚焦玻纤毡、碳毡和除湿转轮成型纸。",
+    action: "查看当前产品系列",
+  },
+  ko: {
+    title: "이 페이지는 게시가 종료되었습니다",
+    body: "ZeYuSen Fiber는 유리섬유 매트와 베일, 탄소섬유 매트, 제습 로터 성형지에 집중합니다.",
+    action: "현재 제품군 보기",
+  },
+  es: {
+    title: "Esta página ha sido retirada",
+    body: "ZeYuSen Fiber se centra ahora en mantas y velos de fibra de vidrio, mantas de fibra de carbono y papel conformable para rotores desecantes.",
+    action: "Ver la gama actual",
+  },
+  pt: {
+    title: "Esta página foi descontinuada",
+    body: "A ZeYuSen Fiber agora se concentra em mantas e véus de fibra de vidro, mantas de fibra de carbono e papel formador para rotores dessecantes.",
+    action: "Ver a linha atual",
+  },
+};
+
+function goneResponse(
+  locale: Locale,
+  division?: ProductDivision,
+) {
+  const copy = goneCopy[locale];
+  const destination = division
+    ? `/${locale}/${divisionRoot[division][locale]}`
+    : `/${locale}/${segmentLabels.blog[locale]}`;
+  const body = `<!doctype html>
+<html lang="${locale}">
+<head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="robots" content="noindex"><title>${copy.title} | ZeYuSen Fiber</title></head>
+<body style="margin:0;background:#f5f5f4;color:#171717;font:16px/1.6 system-ui,sans-serif"><main style="max-width:680px;margin:12vh auto;padding:32px"><p style="font-size:13px;letter-spacing:.12em;text-transform:uppercase;color:#737373">410 · Gone</p><h1 style="font-size:38px;line-height:1.1;margin:12px 0 18px">${copy.title}</h1><p style="color:#525252">${copy.body}</p><a href="${destination}" style="display:inline-block;margin-top:20px;color:#064e3b;font-weight:700">${copy.action} →</a></main></body>
+</html>`;
+  const response = new NextResponse(body, {
+    status: 410,
+    headers: {
+      "Content-Type": "text/html; charset=utf-8",
+      "Content-Language": locale,
+      "X-Robots-Tag": "noindex, follow",
+      "Cache-Control": "public, max-age=0, s-maxage=86400",
+    },
+  });
+  response.headers.set("Link", STATIC_LINKS.join(", "));
+  return response;
+}
+
+function retiredDivisionForPath(
+  locale: Locale,
+  segments: string[],
+): ProductDivision | undefined {
+  const division = divisionRootReverse.get(segments[1]);
+  if (!division) return undefined;
+
+  const afterDivision = segments.slice(2);
+  const productSegments = afterDivision[0] === oldProductsSegments[locale]
+    ? afterDivision.slice(1)
+    : afterDivision;
+  if (productSegments.length < 1 || productSegments.length > 2) return undefined;
+  const category = productSegments[0];
+  if (!category || !isKnownProductCategory(division, category)) return undefined;
+  const product = productSegments[1];
+  if (!isActiveProductCategory(division, category)) {
+    if (!product || isKnownProduct(division, category, product)) return division;
+    return undefined;
+  }
+  if (
+    product &&
+    isKnownProduct(division, category, product) &&
+    !isActiveProduct(division, category, product)
+  ) {
+    return division;
+  }
+  return undefined;
+}
+
 export function proxy(request: NextRequest) {
   const { pathname } = request.nextUrl;
-  const segments = pathname.split("/").filter(Boolean);
+  const segments = pathname
+    .split("/")
+    .filter(Boolean)
+    .map(normalizePathSegment);
 
   // Detect locale from first segment.
   const firstSegment = segments[0];
   const hasLocale =
     firstSegment && locales.includes(firstSegment as Locale);
+
+  // Retired catalog and article URLs must return 410 before markdown content
+  // negotiation or legacy-path redirects. This keeps HTML and GEO crawlers in
+  // agreement and avoids redirect chains to an eventual 404.
+  if (hasLocale) {
+    const locale = firstSegment as Locale;
+    const retiredDivision = retiredDivisionForPath(locale, segments);
+    if (retiredDivision) {
+      return goneResponse(locale, retiredDivision);
+    }
+    const division = divisionRootReverse.get(segments[1]);
+    if (
+      division &&
+      segments.length === 4 &&
+      segments[2] === segmentLabels.applications[locale] &&
+      isRetiredApplication(division, segments[3])
+    ) {
+      return goneResponse(locale, division);
+    }
+    if (
+      segments.length === 3 &&
+      segments[1] === segmentLabels.blog[locale] &&
+      isRetiredBlogSlug(segments[2])
+    ) {
+      return goneResponse(locale);
+    }
+  }
 
   // Markdown content negotiation. Intercept before locale/redirect logic so a
   // markdown request on any canonical URL is served directly.

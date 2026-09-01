@@ -4,6 +4,7 @@ import { contactInfo } from "@/lib/contact";
 import type { Locale } from "@/lib/i18n/config";
 import { localizedHref } from "@/lib/i18n/routes";
 import type { Dictionary } from "@/lib/i18n/dictionaries";
+import { getCategories } from "@/lib/data-i18n";
 
 const madeInChinaUrl =
   "https://js-zys.en.made-in-china.com/company-JIANGSU-ZEYUSEN-CARBON-FIBER-TECHNOLOGY-CO-LTD-.html?pv_id=1jqr933jbfc3&faw_id=1jqr93dmccb5&bv_id=1jqr93dmea79&pbv_id=1jqr932uc858";
@@ -13,17 +14,23 @@ const instagramUrl = "https://www.instagram.com/zeyusen/";
 const logoSrc = "/logo.png?v=logo-20260626";
 
 export function Footer({ locale, dict }: { locale: Locale; dict: Dictionary }) {
+  const rotorPaperName = getCategories("glass", locale)
+    .find((category) => category.slug === "tissue-mat")
+    ?.products.find((product) => product.slug === "rotor-paper")?.name;
   const carbonFiberLinks = [
     { name: dict.products["carbon-fiber-mat"], href: localizedHref("carbon-category", locale, { category: "carbon-fiber-mat" }) },
-    { name: dict.products["carbon-fiber-cloth"], href: localizedHref("carbon-category", locale, { category: "carbon-fiber-cloth" }) },
-    { name: dict.products["carbon-fiber-raw"], href: localizedHref("carbon-category", locale, { category: "carbon-fiber-raw" }) },
     { name: dict.footer.applications, href: localizedHref("applications", locale) },
     { name: dict.nav.allProducts, href: localizedHref("carbon-fiber", locale) },
   ];
   const glassFiberLinks = [
     { name: dict.products["tissue-mat"], href: localizedHref("glass-category", locale, { category: "tissue-mat" }) },
-    { name: dict.products["fiberglass-cloth"], href: localizedHref("glass-category", locale, { category: "fiberglass-cloth" }) },
-    { name: dict.products["composite-mat"], href: localizedHref("glass-category", locale, { category: "composite-mat" }) },
+    {
+      name: rotorPaperName ?? "Desiccant Rotor Forming Paper",
+      href: localizedHref("glass-product", locale, {
+        category: "tissue-mat",
+        product: "rotor-paper",
+      }),
+    },
     { name: dict.footer.applications, href: localizedHref("applications-glass", locale) },
     { name: dict.nav.allProducts, href: localizedHref("glass-fiber", locale) },
   ];

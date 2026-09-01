@@ -17,6 +17,7 @@ import {
   breadcrumbJsonLd,
   faqJsonLd,
   articleJsonLd,
+  chinaCompositesExpo2026JsonLd,
 } from "@/lib/jsonld";
 
 import { getPageContent } from "@/data/page-content";
@@ -26,6 +27,7 @@ import {
   getApplicationDetail,
 } from "@/lib/data-i18n";
 import { getBlogPosts, getBlogPost, getBlogSlugs } from "@/data/blog";
+import { ACTIVE_APPLICATION_SLUGS } from "@/lib/application-scope";
 import {
   divisionHeroImages,
   getApplicationImage,
@@ -34,6 +36,7 @@ import {
 
 import { HeroImmersive } from "@/components/sections/HeroImmersive";
 import { DivisionsSplit } from "@/components/sections/DivisionsSplit";
+import { TradeShowCompanyUpdate } from "@/components/sections/TradeShowNotice";
 import { ProductCatalog } from "@/components/renderers/ProductCatalog";
 import { CategoryPage } from "@/components/renderers/CategoryPage";
 import { ProductDetail } from "@/components/renderers/ProductDetail";
@@ -98,13 +101,13 @@ export async function generateStaticParams() {
       }
     }
     // Application detail pages
-    for (const slug of ["aerospace", "motorsport", "new-energy", "military-defense", "manufacturing"]) {
+    for (const slug of ACTIVE_APPLICATION_SLUGS.carbon) {
       params.push({
         lang,
         slug: localizedHref("carbon-application", lang, { slug }).split("/").slice(2),
       });
     }
-    for (const slug of ["wind-energy", "construction", "industrial-filtration", "transportation", "marine"]) {
+    for (const slug of ACTIVE_APPLICATION_SLUGS.glass) {
       params.push({
         lang,
         slug: localizedHref("glass-application", lang, { slug }).split("/").slice(2),
@@ -150,9 +153,9 @@ export async function generateMetadata({ params }: PageProps<"/[lang]/[[...slug]
     contact: pageHeroImages.contact,
     "carbon-fiber": divisionHeroImages.carbon,
     "glass-fiber": divisionHeroImages.glass,
-    applications: getApplicationImage("aerospace", "carbon"),
-    "applications-glass": getApplicationImage("wind-energy", "glass"),
-    "blog-index": "/images/blog/carbon-fiber-cloth-cover.jpg",
+    applications: getApplicationImage("new-energy", "carbon"),
+    "applications-glass": getApplicationImage("construction", "glass"),
+    "blog-index": "/images/blog/cce-2026-zeyusen-booth-6r30.webp",
   };
   let image: string | undefined = staticPageImages[pageKey];
   let type: "website" | "article" = "website";
@@ -224,6 +227,7 @@ export default async function LocalizedPage({ params }: PageProps<"/[lang]/[[...
         <>
           <HeroImmersive />
           <DivisionsSplit />
+          <TradeShowCompanyUpdate locale={locale} />
           <IndustriesGrid />
           <FactoryShowcase />
           <TrustEvidence />
@@ -467,6 +471,9 @@ export default async function LocalizedPage({ params }: PageProps<"/[lang]/[[...
               inLanguage: localeMeta[locale].hreflang,
             })}
           />
+          {post.slug === "zeyusen-china-composites-expo-2026-booth-6r30" && (
+            <JsonLd data={chinaCompositesExpo2026JsonLd(locale)} />
+          )}
           <JsonLd
             data={breadcrumbJsonLd([
               { name: dict.nav.home, href: localizedHref("home", locale) },

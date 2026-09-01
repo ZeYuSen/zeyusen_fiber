@@ -39,7 +39,7 @@ export function organizationJsonLd() {
     url: absoluteUrl("/"),
     logo: absoluteUrl(logoSrc),
     description:
-      "Carbon fiber and glass fiber composite materials manufacturer for aerospace, wind energy, construction, transportation, and advanced manufacturing.",
+      "Manufacturer of fiberglass mats and veils, carbon fiber mats, and desiccant rotor forming paper for industrial composite and dehumidification applications.",
     foundingDate: contactInfo.foundingDate,
     address: {
       "@type": "PostalAddress",
@@ -96,6 +96,38 @@ export function organizationJsonLd() {
       acceptedPaymentMethod: ["FOB", "CIF", "CFR", "EXW"],
     },
     sameAs: contactInfo.sameAs,
+  };
+}
+
+export function chinaCompositesExpo2026JsonLd(locale: "en" | "zh" | "ko" | "es" | "pt") {
+  const officialUrl = locale === "zh"
+    ? "https://www.chinacompositesexpo.com/cn/netshow-1759-81001720.html"
+    : "https://www.chinacompositesexpo.com/en/netshow-1759-4500860.html";
+
+  return {
+    "@context": "https://schema.org",
+    "@type": "Event",
+    name: "China Composites Expo 2026",
+    startDate: "2026-09-01",
+    endDate: "2026-09-03",
+    eventStatus: "https://schema.org/EventScheduled",
+    eventAttendanceMode: "https://schema.org/OfflineEventAttendanceMode",
+    url: officialUrl,
+    location: {
+      "@type": "Place",
+      name: "National Exhibition and Convention Center (Shanghai)",
+      address: {
+        "@type": "PostalAddress",
+        addressLocality: "Shanghai",
+        addressCountry: "CN",
+      },
+    },
+    performer: {
+      "@type": "Organization",
+      name: siteConfig.legalName,
+      url: absoluteUrl("/"),
+      description: "Exhibitor at Booth 6R30",
+    },
   };
 }
 

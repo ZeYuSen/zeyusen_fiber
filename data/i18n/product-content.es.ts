@@ -372,22 +372,26 @@ export const productContentEs: ProductContentTranslations = {
   },
   "glass/tissue-mat/rotor-paper": {
     "overview": [
-      "Papel de Fibra de Vidrio para Rotor de Zeolita es papel de fibra de vidrio especializado diseñado como sustrato para rotores de zeolita de tamiz molecular utilizados en sistemas de deshumidificación y tratamiento de VOC. Está pensado para integrarse en procesos de laminado FRP y compuestos de alto rendimiento donde importan tanto la función del material como la estabilidad de producción.",
-      "Sus ventajas principales son Sustrato para rotor de zeolita, Resistente a altas temperaturas, Control preciso del espesor y Aglutinado con PVA. La distribución uniforme de las fibras y el comportamiento predecible durante el manejo ayudan a reducir variaciones durante la impregnación, el laminado y el moldeo, manteniendo una calidad consistente en series repetidas.",
-      "Las aplicaciones habituales incluyen Deshumidificación, Tratamiento de VOC y Purificación de aire. El material puede seleccionarse según los requisitos de peso, conductividad, resistencia química, acabado superficial o refuerzo estructural, y es compatible con sistemas de resina termoestable usados en fabricación de compuestos."
+      "El papel sustrato para rotor desecante es un papel de fibra de vidrio por vía húmeda utilizado para formar las capas planas y corrugadas del núcleo alveolar. Se suministra como material base para corrugado, pegado, conformado e impregnación o recubrimiento con desecante, no como rotor terminado.",
+      "Cada rotor tiene una geometría de canal, caudal, condiciones de regeneración y sistema desecante distintos. Por ello, el gramaje, espesor, ancho, ligante y construcción del rollo se revisan frente al proceso de conversión del cliente.",
+      "Para evaluar el material, indique el tipo de rotor, dimensiones objetivo, método de corrugado, sistema de impregnación o recubrimiento, condiciones de servicio y norma de validación. Las muestras deben probarse en el proceso previsto antes de aprobar la producción."
     ],
     "faqs": [
       {
-        "question": "¿Para qué aplicaciones se recomienda Papel de Fibra de Vidrio para Rotor de Zeolita?",
-        "answer": "Papel de Fibra de Vidrio para Rotor de Zeolita se recomienda para Deshumidificación, Tratamiento de VOC y Purificación de aire. Según el diseño de la pieza, puede funcionar como capa superficial, refuerzo o capa funcional dentro del laminado compuesto."
+        "question": "¿Qué es el papel sustrato para rotor desecante?",
+        "answer": "Es un papel base de fibra de vidrio por vía húmeda para las capas planas y corrugadas del núcleo. El fabricante del rotor realiza después el corrugado, conformado, pegado y la impregnación o el recubrimiento desecante."
       },
       {
-        "question": "¿Cuáles son sus principales ventajas técnicas?",
-        "answer": "Las ventajas principales son Sustrato para rotor de zeolita, Resistente a altas temperaturas, Control preciso del espesor y Aglutinado con PVA. Estas propiedades ayudan a combinar procesabilidad, rendimiento y durabilidad en piezas compuestas sometidas a requisitos técnicos exigentes."
+        "question": "¿Es un rotor desecante terminado?",
+        "answer": "No. Es el sustrato de papel de fibra de vidrio para fabricar el rotor. El rendimiento final depende del diseño del núcleo, el sistema desecante, la unión y el proceso completo de fabricación."
       },
       {
-        "question": "¿Con qué procesos y resinas se puede usar?",
-        "answer": "Puede emplearse en laminado manual, infusión al vacío, moldeo cerrado u otros procesos relacionados. La selección final debe considerar la geometría de la pieza, el peso objetivo, la viscosidad de la resina y el rendimiento requerido."
+        "question": "¿Qué datos se necesitan para una oferta o muestra?",
+        "answer": "Indique la aplicación, gramaje, espesor, ancho, requisitos del ligante o compatibilidad química, formato del rollo, proceso de corrugado y método previsto de impregnación o recubrimiento."
+      },
+      {
+        "question": "¿Una sola calidad sirve para todos los desecantes o tamices moleculares?",
+        "answer": "No debe suponerse. El ligante, el conformado, las condiciones de servicio y el sistema desecante seleccionado deben validarse juntos en el proceso del cliente."
       }
     ]
   },
