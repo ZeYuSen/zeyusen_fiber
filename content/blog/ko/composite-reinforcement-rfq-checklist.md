@@ -3,7 +3,7 @@ title: "복합재 보강재 RFQ 체크리스트: 탄소섬유 및 유리섬유 �
 description: "탄소섬유 또는 유리섬유 RFQ에 부품, 소재 형식, 사양, 수지 공정, 수량, 포장, 품질 및 문서 요구사항을 정리하는 방법입니다."
 slug: "composite-reinforcement-rfq-checklist"
 date: "2026-07-12"
-dateModified: "2026-07-13"
+dateModified: "2026-09-10"
 tags: ["복합재 보강재", "탄소섬유", "유리섬유", "RFQ", "소재 사양", "산업 구매"]
 image: "/images/blog/composite-reinforcement-rfq-cover.webp"
 ---
@@ -177,6 +177,10 @@ image: "/images/blog/composite-reinforcement-rfq-cover.webp"
 - 기밀 파일은 적절한 통제 채널로 공유합니다.
 
 체크리스트를 완성한 후 [문의 페이지](/contact)에서 제출할 수 있습니다. 명확한 RFQ는 기술 예외를 조기에 드러내고 구매 팀이 동일한 기준으로 제안을 비교할 수 있게 합니다.
+
+## 제습 로터용 원지의 샘플 요청
+
+유리섬유 원지, 처리된 허니컴 소재, 완성 로터를 구분하여 문의하십시오. [제습 로터용 원지 사양 가이드](/blog/desiccant-rotor-substrate-paper-selection-guide)에서 공급 단계, 종이 치수와 롤 형식을 정리할 수 있습니다. 재료를 승인하기 전에 [파형 성형 및 허니컴 시편 검증 체크리스트](/blog/desiccant-rotor-paper-corrugation-trial-checklist)로 평가 기록을 합의하고, [제습 로터용 유리섬유 원지 제품 정보](/glass-fiber/tissue-mat/rotor-paper)와 대조하십시오.
 
 ## FAQ
 

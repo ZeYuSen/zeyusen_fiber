@@ -3,7 +3,7 @@ title: "Checklist de RFQ para reforços de compósitos"
 description: "Prepare uma RFQ de fibra de carbono ou vidro com peça, formato, especificação, resina, processo, quantidade, embalagem, qualidade e documentos."
 slug: "composite-reinforcement-rfq-checklist"
 date: "2026-07-12"
-dateModified: "2026-07-13"
+dateModified: "2026-09-10"
 tags: ["reforço de compósitos", "fibra de carbono", "fibra de vidro", "RFQ", "especificação de materiais", "compras industriais"]
 image: "/images/blog/composite-reinforcement-rfq-cover.webp"
 ---
@@ -177,6 +177,10 @@ Exceções e alternativas solicitadas:
 - Arquivos confidenciais são compartilhados por canal controlado.
 
 Com o checklist completo, envie-o pela [página de contato](/contact). Uma RFQ clara torna as exceções técnicas visíveis e permite comparar propostas em uma base defensável.
+
+## Solicitação de amostras de papel para rotores dessecantes
+
+Diferencie o papel de fibra de vidro da colmeia tratada e do rotor acabado. O [guia de especificação do papel para rotores dessecantes](/blog/desiccant-rotor-substrate-paper-selection-guide) ajuda a definir a condição de fornecimento, as dimensões e o formato da bobina. Combine a avaliação com a [lista de verificação de corrugação e amostras de colmeia](/blog/desiccant-rotor-paper-corrugation-trial-checklist) e consulte o [papel base para rotores dessecantes](/glass-fiber/tissue-mat/rotor-paper) antes de confirmar o material.
 
 ## FAQ
 

@@ -3,7 +3,7 @@ title: "复合材料增强材料询价清单：碳纤维与玻纤采购RFQ"
 description: "在碳纤维或玻璃纤维询价中写清部件、材料形式、规格、树脂工艺、数量、包装、质量和文件要求。"
 slug: "composite-reinforcement-rfq-checklist"
 date: "2026-07-12"
-dateModified: "2026-07-13"
+dateModified: "2026-09-10"
 tags: ["复合材料增强", "碳纤维", "玻璃纤维", "RFQ", "材料规格", "工业采购"]
 image: "/images/blog/composite-reinforcement-rfq-cover.webp"
 ---
@@ -177,6 +177,10 @@ image: "/images/blog/composite-reinforcement-rfq-cover.webp"
 - 机密文件通过适当的受控渠道共享。
 
 完成清单后，可通过[联系页面](/contact)提交。清楚的RFQ可以更早暴露技术偏离，也能让采购团队在一致基础上比较方案。
+
+## 除湿转轮成型纸的询样补充
+
+询价时需要区分玻纤原纸、处理后的蜂窝芯材和成品转轮。可按[除湿转轮成型纸规格与选型指南](/blog/desiccant-rotor-substrate-paper-selection-guide)写清供货阶段、纸张尺寸和卷材形式，再用[压楞与蜂窝试样验证清单](/blog/desiccant-rotor-paper-corrugation-trial-checklist)约定评价记录，并对应[除湿转轮成型纸产品资料](/glass-fiber/tissue-mat/rotor-paper)确认可供规格。
 
 ## FAQ
 

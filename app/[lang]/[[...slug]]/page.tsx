@@ -36,7 +36,6 @@ import {
 
 import { HeroImmersive } from "@/components/sections/HeroImmersive";
 import { DivisionsSplit } from "@/components/sections/DivisionsSplit";
-import { TradeShowCompanyUpdate } from "@/components/sections/TradeShowNotice";
 import { ProductCatalog } from "@/components/renderers/ProductCatalog";
 import { CategoryPage } from "@/components/renderers/CategoryPage";
 import { ProductDetail } from "@/components/renderers/ProductDetail";
@@ -227,7 +226,6 @@ export default async function LocalizedPage({ params }: PageProps<"/[lang]/[[...
         <>
           <HeroImmersive />
           <DivisionsSplit />
-          <TradeShowCompanyUpdate locale={locale} />
           <IndustriesGrid />
           <FactoryShowcase />
           <TrustEvidence />

@@ -99,7 +99,7 @@ export const glassFiberCategories: ProductCategory[] = [
       {
         slug: "rotor-paper",
         name: "Desiccant Rotor Substrate Paper",
-        relatedPosts: ["fiberglass-surface-tissue-for-composite-finish", "composite-reinforcement-rfq-checklist"],
+        relatedPosts: ["desiccant-rotor-substrate-paper-selection-guide", "desiccant-rotor-paper-corrugation-trial-checklist", "composite-reinforcement-rfq-checklist"],
         seoTitle: "Desiccant Rotor Substrate Paper Manufacturer",
         description:
           "Wet-laid glass fiber forming paper for the flat and corrugated layers of desiccant rotor cores. Basis weight, thickness, width, binder, and converting requirements are confirmed for each rotor project.",

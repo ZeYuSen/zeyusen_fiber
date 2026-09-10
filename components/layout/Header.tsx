@@ -9,7 +9,6 @@ import { isLocale, defaultLocale } from "@/lib/i18n/config";
 import { localizedHref } from "@/lib/i18n/routes";
 import type { Dictionary } from "@/lib/i18n/dictionaries";
 import { LanguageSwitcher } from "./LanguageSwitcher";
-import { TradeShowAnnouncement } from "@/components/sections/TradeShowNotice";
 
 const logoSrc = "/logo.png?v=logo-20260626";
 
@@ -63,15 +62,6 @@ export function Header({
             : "bg-transparent border-transparent"
       }`}
     >
-      {isHome && (
-        <div
-          className={`overflow-hidden transition-[max-height,opacity] duration-300 ${
-            scrolled || mobileOpen ? "max-h-0 opacity-0" : "max-h-12 opacity-100"
-          }`}
-        >
-          <TradeShowAnnouncement locale={locale} />
-        </div>
-      )}
       <div className={`container-wide transition-[padding] duration-500 ${showSolidBg ? "py-3" : "py-5"}`}>
         <div className="flex items-center justify-between">
           {/* Logo */}

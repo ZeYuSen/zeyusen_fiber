@@ -3,7 +3,7 @@ title: "Composite Reinforcement RFQ Checklist for Buyers"
 description: "Prepare a clearer carbon fiber or fiberglass RFQ with the part, material form, specifications, resin process, quantity, packaging, quality, and document requirements."
 slug: "composite-reinforcement-rfq-checklist"
 date: "2026-07-12"
-dateModified: "2026-07-13"
+dateModified: "2026-09-10"
 tags: ["composite reinforcement", "carbon fiber", "fiberglass", "glass fiber", "RFQ", "material specification"]
 image: "/images/blog/composite-reinforcement-rfq-cover.webp"
 ---
@@ -177,6 +177,10 @@ Requested exceptions and alternatives:
 - Confidential files are shared through an appropriate controlled channel.
 
 Once the checklist is complete, submit it through the [contact page](/contact). A clear RFQ makes technical exceptions visible early and gives purchasing a defensible basis for comparing proposals.
+
+## Specifying paper for a desiccant rotor
+
+A rotor-paper enquiry needs to distinguish the glass fiber substrate from treated honeycomb media or a finished wheel. Use the [desiccant rotor paper specification guide](/blog/desiccant-rotor-substrate-paper-selection-guide) to define the supply stage, paper dimensions and roll format. Before approving a grade, agree the evaluation record using the [corrugation and honeycomb trial checklist](/blog/desiccant-rotor-paper-corrugation-trial-checklist), then compare it with the [rotor forming paper product](/glass-fiber/tissue-mat/rotor-paper).
 
 ## FAQ
 
