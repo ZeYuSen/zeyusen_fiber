@@ -3,7 +3,7 @@ title: "除湿转轮成型纸怎么选：基材规格与采购询样指南"
 description: "区分玻纤原纸、吸附介质与成品转轮，梳理除湿转轮成型纸的克重、厚度、卷材和加工要求，用可比较的规格表准备询价与试样。"
 slug: "desiccant-rotor-substrate-paper-selection-guide"
 date: "2026-09-10"
-dateModified: "2026-09-10"
+dateModified: "2026-09-12"
 tags: ["除湿转轮成型纸", "玻璃纤维纸", "材料选型", "采购询样"]
 image: "/images/glass-fiber/01-fiberglass-tissue-mat/04-rotor-paper/desiccant-rotor-substrate-paper-white-roll.jpg"
 language: "zh"
@@ -18,6 +18,8 @@ pageType: "buyer guide"
 向供应商询价“除湿转轮用纸”时，先说清楚要买的是原纸、已经处理的蜂窝芯材，还是成品转轮。这三种采购范围对应不同的报价内容和验收证据，不能放在一起比较。
 
 泽宇森的[除湿转轮成型纸](/glass-fiber/tissue-mat/rotor-paper)属于湿法玻璃纤维原纸，以卷材供下游加工。具体规格需要结合压楞、粘接、浸渍或涂覆工艺评价。仅凭原纸规格，不能认定成品转轮能够达到某个除湿量或露点。
+
+如果询盘涉及的是能量回收，而不是已经明确的除湿项目，可先阅读[除湿转轮原纸与全热交换转轮介质的用途区别](/blog/desiccant-rotor-paper-vs-enthalpy-wheel-media)，确认设备任务与采购范围。
 
 ## 先分清采购的是哪一层材料
 

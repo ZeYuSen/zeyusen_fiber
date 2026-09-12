@@ -3,7 +3,7 @@ title: "Véu de Superfície em Fibra de Vidro: Guia de Seleção"
 description: "Selecione o véu de fibra de vidro por função no laminado, tipo de vidro, gramatura, ligante, resina, formato do rolo e plano de validação."
 slug: "fiberglass-surface-tissue-for-composite-finish"
 date: "2026-08-06"
-dateModified: "2026-08-06"
+dateModified: "2026-09-12"
 tags: ["véu de fibra de vidro", "véu de superfície", "manta de superfície", "barreira anticorrosão", "acabamento FRP"]
 image: "/images/blog/fiberglass-surface-tissue-guide-cover.webp"
 ---
@@ -13,6 +13,8 @@ image: "/images/blog/fiberglass-surface-tissue-guide-cover.webp"
 O véu de superfície em fibra de vidro — também chamado de **tissue de fibra de vidro**, **véu superficial** ou **manta de superfície** — é uma camada fina e não tecida colocada na face ou próxima à face de um laminado FRP. Ele é selecionado para formar uma superfície lisa e rica em resina, reduzir a marcação de reforços mais grosseiros e reforçar um revestimento anticorrosão. Normalmente não é a principal camada estrutural.
 
 A regra prática de compra é simples: especifique o véu por sua **função no laminado, tipo de vidro ou fibra, gramatura, ligante ou sizing, sistema de resina, processo, largura e ensaio de aceitação**. “Tissue de fibra de vidro” sozinho não gera cotações comparáveis.
+
+Um revestimento preto atrás de um painel acústico perfurado tem uma função diferente de uma superfície FRP rica em resina. O guia de [véu preto de fibra de vidro para painéis acústicos](/blog/black-fiberglass-tissue-acoustic-panel-facing) distingue o revestimento, o adesivo e o núcleo absorvente.
 
 ## Resumo Rápido de Seleção
 

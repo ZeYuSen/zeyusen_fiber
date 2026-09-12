@@ -41,7 +41,7 @@ export const glassFiberCategories: ProductCategory[] = [
       {
         slug: "black-tissue",
         name: "Black Fiberglass Tissue Facing",
-        relatedPosts: ["fiberglass-surface-tissue-for-composite-finish", "composite-laminate-layers-surface-structural-core"],
+        relatedPosts: ["black-fiberglass-tissue-acoustic-panel-facing", "fiberglass-surface-tissue-for-composite-finish", "composite-laminate-layers-surface-structural-core"],
         seoTitle: "Black Fiberglass Tissue Mat Manufacturer",
         description:
           "Black fiberglass tissue with flame retardancy, antibacterial properties, and sound absorption. Used for sound barriers, HVAC insulation, and ceiling panels.",
@@ -99,7 +99,7 @@ export const glassFiberCategories: ProductCategory[] = [
       {
         slug: "rotor-paper",
         name: "Desiccant Rotor Substrate Paper",
-        relatedPosts: ["desiccant-rotor-substrate-paper-selection-guide", "desiccant-rotor-paper-corrugation-trial-checklist", "composite-reinforcement-rfq-checklist"],
+        relatedPosts: ["desiccant-rotor-paper-vs-enthalpy-wheel-media", "desiccant-rotor-substrate-paper-selection-guide", "desiccant-rotor-paper-corrugation-trial-checklist", "composite-reinforcement-rfq-checklist"],
         seoTitle: "Desiccant Rotor Substrate Paper Manufacturer",
         description:
           "Wet-laid glass fiber forming paper for the flat and corrugated layers of desiccant rotor cores. Basis weight, thickness, width, binder, and converting requirements are confirmed for each rotor project.",

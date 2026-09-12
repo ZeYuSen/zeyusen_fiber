@@ -3,7 +3,7 @@ title: "Fiberglass Surface Tissue: Selection & Corrosion Barrier Guide"
 description: "Choose fiberglass surface tissue by laminate role, glass type, areal weight, binder, resin, roll format, and a practical validation plan."
 slug: "fiberglass-surface-tissue-for-composite-finish"
 date: "2026-08-06"
-dateModified: "2026-08-06"
+dateModified: "2026-09-12"
 tags: ["fiberglass surface tissue", "fiberglass veil", "surfacing mat", "corrosion barrier", "FRP finish"]
 image: "/images/blog/fiberglass-surface-tissue-guide-cover.webp"
 ---
@@ -13,6 +13,8 @@ image: "/images/blog/fiberglass-surface-tissue-guide-cover.webp"
 Fiberglass surface tissue—also called **fiberglass veil**, **surface veil**, or **surfacing mat**—is a thin nonwoven layer placed at or near the face of an FRP laminate. It is selected to support a smooth resin-rich surface, reduce print-through from coarser reinforcement, and reinforce a corrosion-barrier liner. It is not normally the main load-carrying layer.
 
 The practical buying rule is simple: specify the tissue by its **job in the laminate, glass or fiber type, areal weight, binder or sizing, resin system, process, width, and acceptance test**. “Fiberglass tissue” alone is not enough for a comparable quotation.
+
+For a black facing behind a perforated acoustic panel, the task differs from creating a resin-rich FRP surface. See [black fiberglass tissue for acoustic-panel facings](/blog/black-fiberglass-tissue-acoustic-panel-facing) for the distinction between the facing, adhesive and absorber core.
 
 ## Quick Selection Summary
 

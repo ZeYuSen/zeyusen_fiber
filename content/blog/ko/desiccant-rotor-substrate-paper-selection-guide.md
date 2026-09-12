@@ -3,7 +3,7 @@ title: "제습 로터용 유리섬유 원지 선정: 사양 작성과 샘플 요
 description: "제습 로터용 원지와 처리된 허니컴, 완성 로터의 요구사항을 구분하고 평량·두께·롤 규격·가공 조건을 정리해 비교 가능한 샘플 요청서를 작성하세요."
 slug: "desiccant-rotor-substrate-paper-selection-guide"
 date: "2026-09-10"
-dateModified: "2026-09-10"
+dateModified: "2026-09-12"
 tags: ["제습 로터용 원지", "유리섬유지", "소재 선정", "구매 사양"]
 image: "/images/glass-fiber/01-fiberglass-tissue-mat/04-rotor-paper/desiccant-rotor-substrate-paper-white-roll.jpg"
 language: "ko"
@@ -18,6 +18,8 @@ pageType: "buyer guide"
 공급업체에 ‘제습 로터용 종이’를 문의할 때는 먼저 구매 범위를 밝혀야 합니다. 원지를 구매하는지, 흡착제 처리가 끝난 허니컴을 구매하는지, 완성 로터를 구매하는지에 따라 견적 범위와 합격 판정에 필요한 자료가 달라집니다.
 
 Zeyusen의 [제습 로터용 유리섬유 원지](/glass-fiber/tissue-mat/rotor-paper)는 습식 공정으로 제조한 성형용 원지이며, 후속 가공을 위한 롤 형태로 공급됩니다. 원지 등급은 예정된 파형 성형, 접착, 함침 또는 코팅 공정과 함께 평가해야 합니다. 원지 사양만으로 완성 로터의 제습 성능을 판단할 수는 없습니다.
+
+문의가 명확한 제습 프로젝트가 아니라 에너지 회수 장치에 관한 것이라면, 먼저 [제습 로터용 원지와 enthalpy wheel 매체의 구매 범위 비교](/blog/desiccant-rotor-paper-vs-enthalpy-wheel-media)에서 장치의 기능과 구매 대상을 확인하세요.
 
 ## 원지, 처리된 허니컴, 완성 로터를 구분하세요
 

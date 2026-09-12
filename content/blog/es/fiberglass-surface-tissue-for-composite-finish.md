@@ -3,7 +3,7 @@ title: "Velo de Superficie de Fibra de Vidrio: Guía de Selección"
 description: "Seleccione el velo de fibra de vidrio por función en el laminado, tipo de vidrio, gramaje, ligante, resina, formato de rollo y plan de validación."
 slug: "fiberglass-surface-tissue-for-composite-finish"
 date: "2026-08-06"
-dateModified: "2026-08-06"
+dateModified: "2026-09-12"
 tags: ["velo de fibra de vidrio", "velo superficial", "mat de superficie", "barrera anticorrosión", "acabado FRP"]
 image: "/images/blog/fiberglass-surface-tissue-guide-cover.webp"
 ---
@@ -13,6 +13,8 @@ image: "/images/blog/fiberglass-surface-tissue-guide-cover.webp"
 El velo de superficie de fibra de vidrio —también llamado **velo de fibra de vidrio**, **tissue superficial** o **mat de superficie**— es una capa no tejida y fina que se coloca en la cara o cerca de la cara de un laminado de FRP. Se selecciona para formar una superficie lisa y rica en resina, reducir la impresión del refuerzo grueso y reforzar un revestimiento anticorrosión. Normalmente no es la capa estructural principal.
 
 La regla práctica de compra es sencilla: especifique el velo por su **función en el laminado, tipo de vidrio o fibra, gramaje, ligante o ensimaje, sistema de resina, proceso, ancho y ensayo de aceptación**. “Tissue de fibra de vidrio” no basta para obtener ofertas comparables.
+
+Un revestimiento negro detrás de un panel acústico perforado cumple una función distinta de una superficie FRP rica en resina. La guía de [velo negro de fibra de vidrio para paneles acústicos](/blog/black-fiberglass-tissue-acoustic-panel-facing) distingue el revestimiento, el adhesivo y el núcleo absorbente.
 
 ## Resumen Rápido de Selección
 

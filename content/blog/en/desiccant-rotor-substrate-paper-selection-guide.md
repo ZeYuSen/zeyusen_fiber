@@ -3,7 +3,7 @@ title: "Desiccant Rotor Substrate Paper: A Buyer's Specification Guide"
 description: "Specify glass fiber forming paper for desiccant rotor cores: separate substrate requirements from rotor performance, compare roll specifications, and prepare a useful sample request."
 slug: "desiccant-rotor-substrate-paper-selection-guide"
 date: "2026-09-10"
-dateModified: "2026-09-10"
+dateModified: "2026-09-12"
 tags: ["desiccant rotor paper", "glass fiber paper", "material selection", "procurement"]
 image: "/images/glass-fiber/01-fiberglass-tissue-mat/04-rotor-paper/desiccant-rotor-substrate-paper-white-roll.jpg"
 language: "en"
@@ -18,6 +18,8 @@ pageType: "buyer guide"
 A request for “paper for a desiccant wheel” needs one clarification before a supplier can quote: are you buying the base paper, treated honeycomb media, or a finished rotor? These are different purchasing scopes, with different acceptance evidence.
 
 Zeyusen's [desiccant rotor substrate paper](/glass-fiber/tissue-mat/rotor-paper) is wet-laid glass fiber forming paper supplied as roll material for downstream converting. The grade must be evaluated with the intended corrugating, bonding and impregnation or coating process. A paper specification alone does not establish the finished wheel's moisture-removal performance.
+
+If the enquiry concerns energy recovery rather than a defined dehumidification project, first use the [rotor paper versus enthalpy-wheel media guide](/blog/desiccant-rotor-paper-vs-enthalpy-wheel-media) to clarify the equipment function and purchasing scope.
 
 ## Separate the three purchasing scopes
 

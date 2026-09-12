@@ -3,7 +3,7 @@ title: "玻璃纤维表面薄毡：选型与防腐层指南"
 description: "按层压作用、玻璃类型、克重、粘结剂、树脂、卷材规格和验证方案选择玻璃纤维表面薄毡。"
 slug: "fiberglass-surface-tissue-for-composite-finish"
 date: "2026-08-06"
-dateModified: "2026-08-06"
+dateModified: "2026-09-12"
 tags: ["玻璃纤维表面薄毡", "玻纤面纱", "表面毡", "防腐层", "FRP表面"]
 image: "/images/blog/fiberglass-surface-tissue-guide-cover.webp"
 ---
@@ -13,6 +13,8 @@ image: "/images/blog/fiberglass-surface-tissue-guide-cover.webp"
 玻璃纤维表面薄毡也称**玻纤面纱**、**表面面纱**或**表面毡**，是铺放在 FRP 层压结构表面或近表面位置的薄型非织造层。它用于形成平整的富树脂表面、减弱粗增强材料的纹路透出，并增强防腐层内衬，但通常不承担主要结构载荷。
 
 实用的采购原则很简单：按**薄毡在层压结构中的作用、玻璃或纤维类型、克重、粘结剂或浸润剂、树脂体系、成型工艺、幅宽和验收试验**进行说明。仅写“玻璃纤维薄毡”，不足以获得可比报价。
+
+如果需要的是穿孔吸声板后方的黑色饰面层，其任务不同于形成 FRP 富树脂表面。可阅读[黑色玻纤薄毡用于吸声板饰面的选材说明](/blog/black-fiberglass-tissue-acoustic-panel-facing)，先区分饰面、胶层与吸声芯材。
 
 ## 快速选型摘要
 

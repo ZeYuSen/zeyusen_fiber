@@ -3,7 +3,7 @@ title: "Papel base para rotores desecantes: guía de especificación y compra"
 description: "Defina el papel de fibra de vidrio para rotores desecantes: distinga el sustrato del rotor terminado, compare especificaciones de bobina y prepare su solicitud de muestras."
 slug: "desiccant-rotor-substrate-paper-selection-guide"
 date: "2026-09-10"
-dateModified: "2026-09-10"
+dateModified: "2026-09-12"
 tags: ["papel para rotor desecante", "papel de fibra de vidrio", "selección de materiales", "compras industriales"]
 image: "/images/glass-fiber/01-fiberglass-tissue-mat/04-rotor-paper/desiccant-rotor-substrate-paper-white-roll.jpg"
 language: "es"
@@ -18,6 +18,8 @@ pageType: "buyer guide"
 Antes de cotizar «papel para un rotor desecante», el proveedor necesita saber qué se va a comprar: papel base, un núcleo alveolar ya tratado o el rotor terminado. Cada alcance requiere documentos y criterios de aceptación distintos.
 
 El [papel base para rotores desecantes de Zeyusen](/glass-fiber/tissue-mat/rotor-paper) es un papel de fibra de vidrio fabricado por vía húmeda y suministrado en bobinas para su transformación posterior. El grado debe evaluarse con el proceso previsto de corrugado, unión e impregnación o recubrimiento. La ficha del papel, por sí sola, no demuestra la capacidad de deshumidificación del rotor terminado.
+
+Si la consulta se refiere a recuperación de energía y no a un proyecto de deshumidificación ya definido, consulte primero la [comparación entre papel para rotor desecante y medios para rueda entálpica](/blog/desiccant-rotor-paper-vs-enthalpy-wheel-media) para aclarar la función del equipo y el alcance de compra.
 
 ## Distinga los tres alcances de suministro
 

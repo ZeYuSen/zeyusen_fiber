@@ -3,7 +3,7 @@ title: "유리섬유 표면 티슈: 선정 및 부식 방지층 가이드"
 description: "적층 역할, 유리 종류, 면중량, 바인더, 수지, 롤 규격 및 검증 계획을 기준으로 유리섬유 표면 티슈를 선택하는 방법입니다."
 slug: "fiberglass-surface-tissue-for-composite-finish"
 date: "2026-08-06"
-dateModified: "2026-08-06"
+dateModified: "2026-09-12"
 tags: ["유리섬유 표면 티슈", "유리섬유 베일", "표면 매트", "부식 방지층", "FRP 표면"]
 image: "/images/blog/fiberglass-surface-tissue-guide-cover.webp"
 ---
@@ -13,6 +13,8 @@ image: "/images/blog/fiberglass-surface-tissue-guide-cover.webp"
 유리섬유 표면 티슈는 **유리섬유 베일**, **표면 베일**, **서페이싱 매트**라고도 하며, FRP 적층체의 표면 또는 표면 가까이에 배치하는 얇은 부직포 층입니다. 매끄럽고 수지 함량이 높은 표면을 형성하고, 거친 보강재의 무늬가 비쳐 보이는 현상을 줄이며, 부식 방지 라이너를 보강하는 데 사용됩니다. 일반적으로 주 하중을 담당하는 층은 아닙니다.
 
 실무적인 구매 원칙은 간단합니다. **적층체에서의 역할, 유리 또는 섬유 종류, 면중량, 바인더 또는 사이징, 수지 시스템, 공정, 폭, 승인 시험**을 명시하십시오. “유리섬유 티슈”만으로는 비교 가능한 견적을 받기 어렵습니다.
+
+타공 흡음 패널 뒤의 검정색 면재는 수지가 풍부한 FRP 표면층과 역할이 다릅니다. [흡음 패널용 검정색 유리섬유 티슈 가이드](/blog/black-fiberglass-tissue-acoustic-panel-facing)에서 면재, 접착층, 흡음 코어의 차이를 확인하세요.
 
 ## 빠른 선정 요약
 
