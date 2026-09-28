@@ -38,7 +38,7 @@ export default function ServicesPageContent({ nav }: { nav?: { home: string; cur
           <div className="grid lg:grid-cols-12 gap-12 lg:gap-16">
             <div className="lg:col-span-5">
               <p className="type-caption text-neutral-400">{c.eyebrow}</p>
-              <h2 className="text-4xl sm:text-5xl lg:text-6xl font-semibold text-neutral-900 mt-4 tracking-tight leading-[1.05]">
+              <h2 data-reveal="text" className="text-4xl sm:text-5xl lg:text-6xl font-semibold text-neutral-900 mt-4 tracking-tight leading-[1.05]">
                 {c.servicesHeading}
               </h2>
             </div>
@@ -74,7 +74,7 @@ export default function ServicesPageContent({ nav }: { nav?: { home: string; cur
       {/* CTA */}
       <section className="section-padding" style={{ backgroundColor: "#0C1128" }}>
         <div className="container-wide text-center max-w-2xl mx-auto">
-          <h2 className="text-3xl sm:text-4xl font-semibold text-white tracking-tight leading-[1.05]">
+          <h2 data-reveal="text" className="text-3xl sm:text-4xl font-semibold text-white tracking-tight leading-[1.05]">
             {c.ctaTitle}
           </h2>
           <p className="mt-5 text-white/50 leading-relaxed text-lg">

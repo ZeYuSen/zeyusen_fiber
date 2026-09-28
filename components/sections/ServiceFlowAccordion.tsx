@@ -43,7 +43,7 @@ export function ServiceFlowAccordion({ heading, subtitle, services }: Props) {
     <section className="section-padding">
       <div className="container-wide">
         <div className="max-w-3xl mb-14 lg:mb-20">
-          <h2 className="text-4xl sm:text-5xl lg:text-6xl font-semibold text-neutral-900 tracking-tight leading-[1.05]">
+          <h2 data-reveal="text" className="text-4xl sm:text-5xl lg:text-6xl font-semibold text-neutral-900 tracking-tight leading-[1.05]">
             {heading}
           </h2>
           <p className="mt-6 text-lg text-neutral-500 max-w-2xl leading-relaxed">

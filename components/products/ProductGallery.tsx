@@ -39,7 +39,7 @@ export function ProductGallery({ images, name }: { images: string[]; name: strin
       >
         <div
           ref={containerRef}
-          className={`relative aspect-square overflow-hidden rounded-lg bg-neutral-100 ${
+          className={`relative aspect-square overflow-hidden rounded-sm bg-[#E2DFD8] ${
             zoomEnabled ? "cursor-crosshair" : "cursor-default"
           }`}
           onMouseMove={handleMouseMove}
@@ -67,7 +67,7 @@ export function ProductGallery({ images, name }: { images: string[]; name: strin
 
           {zoomEnabled && (
             <div
-              className="absolute border-2 border-carbon-accent/70 bg-carbon-accent/10 pointer-events-none will-change-transform"
+              className="absolute border border-[#15181C]/70 bg-white/10 pointer-events-none will-change-transform"
               style={{
                 width: `${lensPercent}%`,
                 height: `${lensPercent}%`,
@@ -80,10 +80,10 @@ export function ProductGallery({ images, name }: { images: string[]; name: strin
 
         <button
           onClick={() => setZoomEnabled(!zoomEnabled)}
-          className={`absolute top-3 right-3 z-20 p-2.5 rounded-full shadow-sm transition-colors ${
+          className={`absolute top-3 right-3 z-20 p-2.5 rounded-full transition-colors ${
             zoomEnabled
-              ? "bg-carbon-accent text-white"
-              : "bg-white/90 text-neutral-600 hover:bg-white"
+              ? "bg-[#15181C] text-white"
+              : "bg-[#EEECE6]/85 text-[#15181C] hover:bg-[#EEECE6]"
           }`}
           aria-label={zoomEnabled ? "Disable zoom" : "Enable zoom"}
         >
@@ -91,7 +91,7 @@ export function ProductGallery({ images, name }: { images: string[]; name: strin
         </button>
 
         {zoomEnabled && (
-          <div className="absolute top-0 left-[calc(100%+16px)] w-72 h-72 rounded-lg overflow-hidden border border-neutral-200 shadow-lg bg-neutral-100 hidden lg:block">
+          <div className="absolute top-0 left-[calc(100%+16px)] w-72 h-72 rounded-sm overflow-hidden border border-[#15181C]/15 shadow-[0_18px_40px_-12px_rgba(21,24,28,0.35)] bg-[#E2DFD8] hidden lg:block">
             <div
               className="w-full h-full"
               style={{
@@ -101,7 +101,7 @@ export function ProductGallery({ images, name }: { images: string[]; name: strin
                 backgroundRepeat: "no-repeat",
               }}
             />
-            <div className="absolute bottom-2 left-2 px-2 py-1 bg-black/60 text-white text-xs rounded-md">
+            <div className="absolute bottom-2 left-2 px-2 py-1 bg-[#15181C]/70 text-white text-xs rounded-sm">
               {zoomFactor}x Zoom
             </div>
           </div>
@@ -109,13 +109,13 @@ export function ProductGallery({ images, name }: { images: string[]; name: strin
       </div>
 
       {images.length > 1 && (
-        <div className="flex gap-2 overflow-x-auto pb-2">
+        <div className="-m-1 flex gap-3 overflow-x-auto p-1 pb-2">
           {images.map((img, i) => (
             <button
               key={i}
               onClick={() => setActiveIndex(i)}
-              className={`relative w-16 h-16 rounded-lg overflow-hidden flex-shrink-0 border-2 transition-colors cursor-pointer ${
-                i === activeIndex ? "border-carbon-accent" : "border-neutral-200"
+              className={`relative w-16 h-16 rounded-sm overflow-hidden flex-shrink-0 bg-[#E2DFD8] ring-offset-2 ring-offset-[#EEECE6] transition-shadow cursor-pointer ${
+                i === activeIndex ? "ring-1 ring-[#15181C]" : "ring-0 hover:ring-1 hover:ring-[#15181C]/25"
               }`}
             >
               <Image

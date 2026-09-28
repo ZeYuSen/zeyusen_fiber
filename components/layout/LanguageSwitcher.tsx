@@ -35,11 +35,17 @@ export function LanguageSwitcher({ light = false }: { light?: boolean }) {
         <span>{localeMeta[current].label}</span>
       </button>
       <div
-        className={`absolute top-full right-0 pt-3 w-40 transition-all duration-200 ${
+        className={`absolute top-full right-0 z-10 pt-3 w-40 transition-all duration-200 ${
           open ? "opacity-100 translate-y-0 pointer-events-auto" : "opacity-0 translate-y-2 pointer-events-none"
         }`}
       >
-        <div className="bg-white border border-black/[0.06] p-2 shadow-lg rounded-lg">
+        <div
+          className={
+            light
+              ? "bg-[#0E1116] border border-white/10 p-2 rounded-sm shadow-[0_24px_48px_-24px_rgba(0,0,0,0.8)]"
+              : "bg-white border border-black/[0.06] p-2 shadow-lg rounded-lg"
+          }
+        >
           {locales.map((target) => (
             <Link
               key={target}
@@ -47,8 +53,12 @@ export function LanguageSwitcher({ light = false }: { light?: boolean }) {
               hrefLang={localeMeta[target].hreflang}
               className={`block px-3 py-2 text-sm rounded transition-colors ${
                 target === current
-                  ? "bg-black/[0.04] text-text-primary font-medium"
-                  : "text-text-secondary hover:text-text-primary hover:bg-black/[0.03]"
+                  ? light
+                    ? "bg-white/[0.06] text-white font-medium"
+                    : "bg-black/[0.04] text-text-primary font-medium"
+                  : light
+                    ? "text-white/60 hover:text-white hover:bg-white/[0.05]"
+                    : "text-text-secondary hover:text-text-primary hover:bg-black/[0.03]"
               }`}
             >
               {localeMeta[target].label}

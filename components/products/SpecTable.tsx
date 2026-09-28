@@ -1,5 +1,7 @@
 import { ProductSpec } from "@/types/product";
 
+// A lab data sheet on paper: hairline rules, parameter names in muted ink,
+// values in mono ink. No fills, no zebra.
 export function SpecTable({
   specs,
   parameterLabel = "Parameter",
@@ -10,34 +12,29 @@ export function SpecTable({
   valueLabel?: string;
 }) {
   return (
-    <div className="overflow-hidden rounded-lg border border-neutral-200">
-      <table className="w-full text-sm">
-        <thead>
-          <tr className="bg-neutral-50">
-            <th className="text-left px-4 py-3 text-xs font-medium text-neutral-500 uppercase tracking-wider">
-              {parameterLabel}
-            </th>
-            <th className="text-left px-4 py-3 text-xs font-medium text-neutral-500 uppercase tracking-wider">
-              {valueLabel}
-            </th>
+    <table className="w-full border-collapse text-left">
+      <thead>
+        <tr className="border-b border-[#15181C]/70">
+          <th className="w-[38%] pb-3 pr-6 text-[0.6875rem] font-medium uppercase tracking-[0.18em] text-[#5C6166] [:lang(ko)_&]:text-xs [:lang(ko)_&]:tracking-[0.08em] [:lang(zh)_&]:text-xs [:lang(zh)_&]:tracking-[0.08em]">
+            {parameterLabel}
+          </th>
+          <th className="pb-3 text-[0.6875rem] font-medium uppercase tracking-[0.18em] text-[#5C6166] [:lang(ko)_&]:text-xs [:lang(ko)_&]:tracking-[0.08em] [:lang(zh)_&]:text-xs [:lang(zh)_&]:tracking-[0.08em]">
+            {valueLabel}
+          </th>
+        </tr>
+      </thead>
+      <tbody>
+        {specs.map((spec) => (
+          <tr key={spec.label} className="border-b border-[#15181C]/12">
+            <td className="py-4 pr-6 align-top text-sm leading-relaxed text-[#5C6166] sm:text-[0.9375rem]">
+              {spec.label}
+            </td>
+            <td className="py-4 align-top font-mono text-sm leading-relaxed text-[var(--ink-paper)] sm:text-[0.9375rem]">
+              {spec.value}
+            </td>
           </tr>
-        </thead>
-        <tbody>
-          {specs.map((spec, i) => (
-            <tr
-              key={spec.label}
-              className={i % 2 === 0 ? "bg-white" : "bg-neutral-50/50"}
-            >
-              <td className="px-4 py-3 text-neutral-600">
-                {spec.label}
-              </td>
-              <td className="px-4 py-3 text-neutral-900 font-mono text-sm">
-                {spec.value}
-              </td>
-            </tr>
-          ))}
-        </tbody>
-      </table>
-    </div>
+        ))}
+      </tbody>
+    </table>
   );
 }

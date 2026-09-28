@@ -60,7 +60,7 @@ function FactorySection() {
             <span className="w-8 h-px bg-cyan-400" />
             {f.eyebrow}
           </span>
-          <h2 className="text-4xl sm:text-5xl lg:text-6xl font-semibold text-white tracking-tight leading-[1.05]">
+          <h2 data-reveal="text" className="text-4xl sm:text-5xl lg:text-6xl font-semibold text-white tracking-tight leading-[1.05]">
             {f.title}
           </h2>
           <p className="text-white/50 mt-6 max-w-2xl leading-relaxed text-lg">
@@ -169,7 +169,7 @@ function TimelineSection({
         <div className="grid lg:grid-cols-12 gap-12 lg:gap-16">
           <div className="lg:col-span-4">
             <p className="type-caption text-neutral-400">{eyebrow}</p>
-            <h2 className="text-4xl sm:text-5xl font-semibold text-neutral-900 mt-4 tracking-tight leading-[1.05] lg:sticky lg:top-32">
+            <h2 data-reveal="text" className="text-4xl sm:text-5xl font-semibold text-neutral-900 mt-4 tracking-tight leading-[1.05] lg:sticky lg:top-32">
               {title}
             </h2>
           </div>
@@ -320,12 +320,12 @@ export default function AboutPageContent({ nav }: { nav?: { home: string; curren
         <div className="container-wide">
           <div className="max-w-3xl">
             <p className="type-caption text-neutral-400">{c.whyEyebrow}</p>
-            <h2 className="text-4xl sm:text-5xl lg:text-6xl font-semibold text-neutral-900 mt-4 tracking-tight leading-[1.05]">
+            <h2 data-reveal="text" className="text-4xl sm:text-5xl lg:text-6xl font-semibold text-neutral-900 mt-4 tracking-tight leading-[1.05]">
               {c.whyTitle}
             </h2>
           </div>
 
-          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-px bg-neutral-200 mt-16 border border-neutral-200 rounded-2xl overflow-hidden">
+          <div data-reveal="up" className="grid sm:grid-cols-2 lg:grid-cols-4 gap-px bg-neutral-200 mt-16 border border-neutral-200 rounded-2xl overflow-hidden">
             {values.map((item, i) => (
               <div
                 key={item.title}

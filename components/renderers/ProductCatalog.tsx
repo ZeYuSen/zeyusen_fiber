@@ -5,10 +5,10 @@ import type { Locale } from "@/lib/i18n/config";
 import { localizedHref } from "@/lib/i18n/routes";
 import type { Dictionary } from "@/lib/i18n/dictionaries";
 import { getCategories } from "@/lib/data-i18n";
-import { PageMediaHero } from "@/components/ui/PageMediaHero";
-import { divisionHeroImages } from "@/lib/site-images";
+import { WorldStage } from "@/components/fx/world/WorldStage";
 
-// Carbon/Glass full catalog page.
+// Carbon/Glass full catalog page: a night shot of the division's own material
+// (the world's route shot), then the catalog laid out on the light table.
 export function ProductCatalog({
   division,
   locale,
@@ -28,19 +28,15 @@ export function ProductCatalog({
   };
 }) {
   const categories = getCategories(division, locale);
-  const accent = division === "carbon" ? "carbon-accent" : "glass-accent";
   const categoryKey = division === "carbon" ? "carbon-category" : "glass-category";
   const productKey = division === "carbon" ? "carbon-product" : "glass-product";
 
   return (
     <>
-      <PageMediaHero
-        eyebrow={copy.breadcrumbDivision}
+      <WorldStage
+        world="route"
         title={copy.title}
         description={copy.intro}
-        image={divisionHeroImages[division]}
-        imageAlt={copy.title}
-        accent={division}
         breadcrumbs={
           <nav aria-label="Breadcrumb" className="flex items-center gap-2">
             <Link href={localizedHref("home", locale)}>{dict.nav.home}</Link>
@@ -50,34 +46,41 @@ export function ProductCatalog({
         }
       />
 
-      <section className="py-16 sm:py-20 border-b border-neutral-100">
+      <section data-tone="night" data-world="route" className="relative pb-28 pt-32 sm:pb-40 sm:pt-40">
         <div className="container-wide">
-          <p className="max-w-3xl text-xl sm:text-2xl text-neutral-700 leading-relaxed font-light tracking-tight">{copy.body}</p>
+          <p
+            data-reveal="up"
+            className="max-w-4xl text-2xl font-light leading-[1.45] tracking-tight text-(--ink-night)/85 text-pretty sm:text-3xl lg:text-[2.5rem] lg:leading-[1.3]"
+          >
+            {copy.body}
+          </p>
         </div>
       </section>
 
-      <section className="section-padding">
+      <section data-tone="paper" className="relative pb-28 pt-20 sm:pb-36 sm:pt-28">
+        <div
+          aria-hidden="true"
+          className="pointer-events-none absolute inset-x-0 bottom-full h-10 bg-linear-to-b from-transparent to-(--stage-paper)/10 sm:h-24"
+        />
         <div className="container-wide space-y-24">
-          {categories.map((category, i) => (
+          {categories.map((category) => (
             <div key={category.slug}>
-              <div className="flex items-end justify-between gap-6 mb-10">
-                <h2 className="flex items-center gap-5">
-                  <span className="text-5xl sm:text-6xl font-semibold tabular-nums text-neutral-200 leading-none">
-                    {String(i + 1).padStart(2, "0")}
-                  </span>
-                  <span className="text-2xl sm:text-3xl font-semibold tracking-tight text-neutral-900">
-                    {category.name}
-                  </span>
+              <div className="mb-10 flex items-end justify-between gap-6 sm:mb-14">
+                <h2 data-reveal="up" className="paper-title">
+                  {category.name}
                 </h2>
                 <Link
                   href={localizedHref(categoryKey, locale, { category: category.slug })}
-                  className={`inline-flex items-center gap-1 text-sm font-medium text-${accent} hover:text-neutral-900 transition-colors shrink-0`}
+                  className="inline-flex shrink-0 items-center gap-1.5 pb-1 text-sm font-medium text-(--ink-paper)/70 transition-colors hover:text-(--ink-paper)"
                 >
                   {dict.actions.viewAll}
-                  <ArrowRight className="w-4 h-4" />
+                  <ArrowRight className="h-4 w-4" />
                 </Link>
               </div>
-              <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+              <div
+                data-reveal="stagger"
+                className="grid gap-x-6 gap-y-12 sm:grid-cols-2 lg:grid-cols-3 lg:gap-x-8 lg:gap-y-16"
+              >
                 {category.products.map((product) => (
                   <Link
                     key={product.slug}
@@ -85,47 +88,57 @@ export function ProductCatalog({
                       category: category.slug,
                       product: product.slug,
                     })}
-                    className="group block bg-white border border-neutral-100 rounded-xl hover:border-neutral-200 shadow-sm hover:shadow-md overflow-hidden transition-all cursor-pointer"
+                    className="group block"
                   >
-                    <div className="relative aspect-[4/3] bg-neutral-100 overflow-hidden">
+                    <div className="relative aspect-[4/3] overflow-hidden rounded-sm bg-white">
                       <Image
                         src={product.images[0]}
                         alt={product.name}
                         fill
-                        className="object-cover group-hover:scale-105 transition-transform duration-500"
+                        sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                        className="object-cover transition-transform duration-700 ease-out group-hover:scale-[1.02]"
                       />
                     </div>
-                    <div className="p-5">
-                      <h3 className={`text-base font-medium text-neutral-900 group-hover:text-${accent} transition-colors line-clamp-1`}>
-                        {product.name}
-                      </h3>
-                      <p className="mt-1.5 text-sm text-neutral-500 line-clamp-1">
-                        {product.specs[0]?.value}
-                      </p>
-                    </div>
+                    <h3 className="mt-5 line-clamp-1 text-base font-medium text-(--ink-paper)/75 transition-colors group-hover:text-(--ink-paper)">
+                      {product.name}
+                    </h3>
+                    <p className="mt-1 line-clamp-1 text-sm text-(--ink-paper)/70">
+                      {product.specs[0]?.value}
+                    </p>
                   </Link>
                 ))}
               </div>
             </div>
           ))}
         </div>
+        <div
+          aria-hidden="true"
+          className="pointer-events-none absolute inset-x-0 top-full h-10 bg-linear-to-t from-transparent to-(--stage-paper)/10 sm:h-24"
+        />
       </section>
 
-      <section className="section-padding" style={{ backgroundColor: "#0C1128" }}>
+      <section data-tone="warm" data-world="warm" className="relative py-32 sm:py-44">
         <div className="container-wide text-center">
-          <h2 className="text-3xl sm:text-4xl font-semibold text-white tracking-tight leading-[1.05]">
+          <h2
+            data-reveal="text"
+            className="mx-auto max-w-[22ch] text-3xl font-medium leading-[1.1] tracking-tight text-(--ink-night) text-balance sm:text-5xl"
+          >
             {copy.closingTitle}
           </h2>
-          <p className="mt-5 max-w-2xl mx-auto text-white/50 leading-relaxed text-lg">
+          <p className="mx-auto mt-6 max-w-2xl text-lg leading-relaxed text-(--ink-night)/75 text-pretty">
             {copy.closingBody}
           </p>
           <Link
             href={localizedHref("contact", locale)}
-            className="inline-flex items-center gap-2 mt-9 px-7 py-3 bg-accent-500 hover:bg-accent-600 text-white text-sm font-semibold rounded-full transition-colors"
+            className="mt-10 inline-flex items-center gap-2 rounded-full bg-accent-500 px-7 py-3 text-sm font-semibold text-white transition-colors hover:bg-accent-600"
           >
-            {dict.actions.getQuote} <ArrowRight className="w-4 h-4" />
+            {dict.actions.getQuote} <ArrowRight className="h-4 w-4" />
           </Link>
         </div>
+        <div
+          aria-hidden="true"
+          className="pointer-events-none absolute inset-x-0 bottom-0 h-28 bg-linear-to-b from-transparent to-(--stage-night) sm:h-40"
+        />
       </section>
     </>
   );

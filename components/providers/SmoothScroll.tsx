@@ -5,6 +5,13 @@ import Lenis from "lenis";
 import { usePathname } from "next/navigation";
 import { gsap, ScrollTrigger } from "@/lib/gsap";
 
+let activeLenis: Lenis | null = null;
+
+/** The running Lenis instance, for programmatic smooth scrolling. */
+export function getLenis() {
+  return activeLenis;
+}
+
 export function SmoothScrollProvider({
   children,
 }: {
@@ -19,6 +26,7 @@ export function SmoothScrollProvider({
       easing: (t: number) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
     });
     lenisRef.current = lenis;
+    activeLenis = lenis;
 
     lenis.on("scroll", ScrollTrigger.update);
     const raf = (time: number) => lenis.raf(time * 1000);
@@ -26,6 +34,7 @@ export function SmoothScrollProvider({
     gsap.ticker.lagSmoothing(0);
 
     return () => {
+      if (activeLenis === lenis) activeLenis = null;
       lenis.destroy();
       gsap.ticker.remove(raf);
     };

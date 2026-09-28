@@ -81,7 +81,7 @@ export function ApplicationDetailPage({
         <div className="container-wide grid gap-16 lg:grid-cols-[1.4fr_1fr] lg:gap-20">
           <div>
             <p className="type-caption text-neutral-400">01</p>
-            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-semibold text-neutral-900 mt-4 tracking-tight leading-[1.05]">
+            <h2 data-reveal="text" className="text-3xl sm:text-4xl lg:text-5xl font-semibold text-neutral-900 mt-4 tracking-tight leading-[1.05]">
               {dict.sections.industryChallenge}
             </h2>
             <p className="text-neutral-600 text-base sm:text-lg leading-relaxed max-w-2xl mt-8">
@@ -90,7 +90,7 @@ export function ApplicationDetailPage({
           </div>
           <div className="lg:border-l lg:border-neutral-100 lg:pl-12">
             <p className="type-caption text-neutral-400">02</p>
-            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-semibold text-neutral-900 mt-4 tracking-tight leading-[1.05]">
+            <h2 data-reveal="text" className="text-3xl sm:text-4xl lg:text-5xl font-semibold text-neutral-900 mt-4 tracking-tight leading-[1.05]">
               {dict.sections.typicalComponents}
             </h2>
             <ul className="space-y-4 mt-8">
@@ -109,11 +109,11 @@ export function ApplicationDetailPage({
         <div className="container-wide">
           <div className="max-w-3xl">
             <p className="type-caption text-neutral-400">03</p>
-            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-semibold text-neutral-900 mt-4 tracking-tight leading-[1.05]">
+            <h2 data-reveal="text" className="text-3xl sm:text-4xl lg:text-5xl font-semibold text-neutral-900 mt-4 tracking-tight leading-[1.05]">
               {dict.sections.keyBenefits}
             </h2>
           </div>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-px bg-neutral-200 mt-16 border border-neutral-200 rounded-2xl overflow-hidden">
+          <div data-reveal="up" className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-px bg-neutral-200 mt-16 border border-neutral-200 rounded-2xl overflow-hidden">
             {detail.benefits.map((benefit, i) => (
               <div key={i} className="p-8 lg:p-10 bg-white hover:bg-neutral-50 transition-colors">
                 <span className="block text-5xl font-semibold text-neutral-200 tabular-nums leading-none">
@@ -130,7 +130,7 @@ export function ApplicationDetailPage({
         <div className="container-wide">
           <div className="max-w-3xl">
             <p className="type-caption text-neutral-400">04</p>
-            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-semibold text-neutral-900 mt-4 tracking-tight leading-[1.05]">
+            <h2 data-reveal="text" className="text-3xl sm:text-4xl lg:text-5xl font-semibold text-neutral-900 mt-4 tracking-tight leading-[1.05]">
               {dict.sections.selectionCriteria}
             </h2>
             <p className="text-neutral-500 text-base sm:text-lg mt-6 leading-relaxed">
@@ -157,11 +157,11 @@ export function ApplicationDetailPage({
         <div className="container-wide">
           <div className="max-w-3xl">
             <p className="type-caption text-neutral-400">05</p>
-            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-semibold text-neutral-900 mt-4 tracking-tight leading-[1.05]">
+            <h2 data-reveal="text" className="text-3xl sm:text-4xl lg:text-5xl font-semibold text-neutral-900 mt-4 tracking-tight leading-[1.05]">
               {dict.sections.recommendedProducts}
             </h2>
           </div>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mt-16">
+          <div data-reveal="stagger" className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mt-16">
             {detail.products.map((product) => {
               const thumb = getProductRefImage(product.key, locale);
               return (
@@ -197,7 +197,7 @@ export function ApplicationDetailPage({
 
       <section className="section-padding" style={{ backgroundColor: "#0C1128" }}>
         <div className="container-wide text-center">
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-semibold text-white tracking-tight leading-[1.05] mb-6">
+          <h2 data-reveal="text" className="text-3xl sm:text-4xl lg:text-5xl font-semibold text-white tracking-tight leading-[1.05] mb-6">
             {dict.cta.customTitle}
           </h2>
           <p className="text-white/50 mb-10 max-w-[560px] mx-auto leading-relaxed text-lg">

@@ -1,6 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
-import { ArrowRight } from "lucide-react";
+import { ArrowRight, ArrowUpRight } from "lucide-react";
 import type { Locale } from "@/lib/i18n/config";
 import { localizedHref } from "@/lib/i18n/routes";
 import type { Dictionary } from "@/lib/i18n/dictionaries";
@@ -9,12 +9,17 @@ import {
   getApplicationGroup,
   type ApplicationMaterial,
 } from "@/data/applications";
-import { PageMediaHero } from "@/components/ui/PageMediaHero";
-import { getApplicationImage, getApplicationCardImage } from "@/lib/site-images";
+import { WorldStage } from "@/components/fx/world/WorldStage";
+import { getApplicationCardImage } from "@/lib/site-images";
 
 // Detail slug for an application item, derived from its English detailHref.
 // Every application must resolve to a detail page — a missing or malformed
 // detailHref is a data error, never a silent redirect to Contact.
+const divisionImages: Record<ApplicationMaterial, string> = {
+  carbon: "/images/carbon-fiber/carbon_division.webp",
+  glass: "/images/glass-fiber/glass_division.webp",
+};
+
 function detailSlug(detailHref: string | undefined, slug: string): { division: "carbon" | "glass"; slug: string } {
   if (!detailHref) {
     throw new Error(`Application "${slug}" is missing detailHref — add its detail data instead of falling back to Contact.`);
@@ -26,6 +31,9 @@ function detailSlug(detailHref: string | undefined, slug: string): { division: "
   return { division: m[1] as "carbon" | "glass", slug: m[2] };
 }
 
+// Applications hub. The fiber world behind the stage is pulled apart — carbon
+// to the left, glass to the right — and the two materials are the two sides of
+// the stage; switching between them pans the camera across (lib/fx/world/state.ts).
 export function ApplicationsOverview({
   selectedMaterial,
   locale,
@@ -59,13 +67,7 @@ export function ApplicationsOverview({
 
   return (
     <>
-      <PageMediaHero
-        eyebrow={copy.eyebrow}
-        title={copy.title}
-        description={copy.intro}
-        image={getApplicationImage(selectedGroup.applications[0].slug, selectedMaterial)}
-        imageAlt={`${selectedGroup.label} — ${copy.imageNote}`}
-        accent={selectedMaterial}
+      <WorldStage
         breadcrumbs={
           <nav aria-label="Breadcrumb" className="flex flex-wrap items-center gap-2">
             <Link href={localizedHref("home", locale)}>{dict.nav.home}</Link>
@@ -73,64 +75,71 @@ export function ApplicationsOverview({
             <span className="text-white/90">{dict.nav.applications}</span>
           </nav>
         }
-      />
-
-      <section className="border-b border-neutral-100 py-14">
-        <div className="container-wide">
-          <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:mx-auto lg:max-w-3xl">
-            {groups.map((group) => {
-              const isActive = group.material === selectedMaterial;
-              return (
-                <Link
-                  key={group.material}
-                  href={materialHref(group.material)}
-                  className={`group rounded-2xl border p-8 transition-colors ${
-                    isActive
-                      ? `${group.borderClass} ${group.bgClass} ${
-                          group.material === "carbon" ? "ring-1 ring-carbon-accent" : "ring-1 ring-glass-accent"
-                        }`
-                      : "border-neutral-200 bg-white hover:border-neutral-400"
+        title={copy.title}
+        description={copy.intro}
+      >
+        {/* The two materials as two large panels, one on each side of the
+            parted fabric: the current one lit, the other held in shadow. */}
+        <nav aria-label={dict.nav.applications} className="grid grid-cols-2 gap-3 sm:gap-5 lg:max-w-5xl">
+          {groups.map((group) => {
+            const isActive = group.material === selectedMaterial;
+            return (
+              <Link
+                key={group.material}
+                href={materialHref(group.material)}
+                aria-current={isActive ? "page" : undefined}
+                className={`group relative flex min-h-[9.5rem] flex-col justify-end overflow-hidden rounded-sm p-5 ring-1 transition-[box-shadow] duration-500 sm:min-h-[12rem] sm:p-7 ${
+                  isActive ? "ring-white/70" : "ring-white/10 hover:ring-white/35"
+                }`}
+              >
+                <Image
+                  src={divisionImages[group.material]}
+                  alt=""
+                  fill
+                  quality={60}
+                  sizes="(min-width: 1024px) 480px, 50vw"
+                  className={`fx-grade object-cover transition-[opacity,transform] duration-700 group-hover:scale-[1.03] ${
+                    isActive ? "opacity-70" : "opacity-25 group-hover:opacity-50"
                   }`}
-                  aria-current={isActive ? "page" : undefined}
-                >
-                  <div className="flex items-center justify-between gap-4">
-                    <span className={`text-xl sm:text-2xl font-semibold ${group.accentClass}`}>
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-[#080A0D] via-[#080A0D]/55 to-[#080A0D]/10" />
+                <div className="relative flex items-end justify-between gap-4">
+                  <div>
+                    <span
+                      className={`block text-[clamp(1.5rem,3vw,2.5rem)] font-medium leading-tight tracking-[-0.02em] transition-colors [&:lang(zh)]:tracking-normal ${
+                        isActive ? "text-white" : "text-white/60 group-hover:text-white"
+                      }`}
+                    >
                       {group.label}
                     </span>
-                    {isActive && (
-                      <ArrowRight className={`w-5 h-5 ${group.accentClass}`} />
-                    )}
-                  </div>
-                  <span
-                    className={`mt-5 flex items-baseline gap-2 ${
-                      isActive ? "text-neutral-700" : "text-neutral-500"
-                    }`}
-                  >
-                    <span className="text-4xl font-semibold tabular-nums tracking-tight leading-none text-neutral-900">
-                      {group.applications.length}
+                    <span className={`mt-1.5 block text-sm ${isActive ? "text-white/75" : "text-white/45"}`}>
+                      <span className="tabular-nums">{group.applications.length}</span> {copy.fieldsSuffix}
                     </span>
-                    <span className="text-sm">{copy.fieldsSuffix}</span>
-                  </span>
-                </Link>
-              );
-            })}
-          </div>
-        </div>
-      </section>
+                  </div>
+                  <ArrowRight
+                    className={`mb-1 h-5 w-5 shrink-0 transition-all duration-300 ${
+                      isActive ? "rotate-90 text-white" : "text-white/40 group-hover:translate-x-1 group-hover:text-white"
+                    }`}
+                  />
+                </div>
+              </Link>
+            );
+          })}
+        </nav>
+      </WorldStage>
 
-      <section className="section-padding">
+      <section data-tone="night" data-world="still" className="relative pb-28 pt-20 sm:pb-36 sm:pt-28">
         <div className="container-wide">
-          <div className="mb-16 flex flex-col sm:flex-row sm:items-end sm:justify-between gap-6">
+          <div className="mb-14 flex flex-col gap-6 sm:mb-20 sm:flex-row sm:items-end sm:justify-between">
             <div>
-              <p className={`type-caption ${selectedGroup.accentClass}`}>
-                {selectedGroup.eyebrow}
-              </p>
-              <h2 className="text-4xl sm:text-5xl lg:text-6xl font-semibold text-neutral-900 mt-4 tracking-tight leading-[1.05]">
+              <p className="stage-label">{selectedGroup.eyebrow}</p>
+              <h2
+                data-reveal="text"
+                className="mt-4 text-[clamp(1.75rem,3vw,2.5rem)] font-medium leading-[1.1] tracking-[-0.025em] text-[#E6EAEE] [&:lang(ko)]:tracking-normal [&:lang(zh)]:tracking-normal"
+              >
                 {selectedGroup.label}
               </h2>
-              <p className="text-neutral-500 mt-6 max-w-xl leading-relaxed text-lg">
-                {selectedGroup.summary}
-              </p>
+              <p className="mt-6 max-w-xl text-lg leading-relaxed text-white/60">{selectedGroup.summary}</p>
             </div>
             <Link
               href={
@@ -138,13 +147,13 @@ export function ApplicationsOverview({
                   ? localizedHref("carbon-fiber", locale)
                   : localizedHref("glass-fiber", locale)
               }
-              className={`inline-flex items-center gap-2 text-sm font-medium ${selectedGroup.accentClass} hover:text-neutral-900 transition-colors`}
+              className="inline-flex shrink-0 items-center gap-2 border-b border-white/25 pb-1 text-sm font-medium text-white/85 transition-all duration-300 hover:gap-3 hover:border-white/70 hover:text-white"
             >
-              {dict.actions.browseRelated} <ArrowRight className="w-4 h-4" />
+              {dict.actions.browseRelated} <ArrowRight className="h-4 w-4" />
             </Link>
           </div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
+          <div data-reveal="stagger" className="grid grid-cols-1 gap-x-8 gap-y-16 sm:grid-cols-2 lg:gap-x-12">
             {selectedGroup.applications.map((application) => {
               const detail = detailSlug(application.detailHref, application.slug);
               const href = localizedHref(
@@ -153,48 +162,39 @@ export function ApplicationsOverview({
                 { slug: detail.slug },
               );
               return (
-                <Link
-                  key={application.slug}
-                  href={href}
-                  className="group block overflow-hidden rounded-2xl border border-neutral-100 bg-white transition-all hover:border-neutral-300 hover:shadow-lg"
-                >
-                  <div className="relative aspect-[16/9] overflow-hidden bg-neutral-100">
+                <Link key={application.slug} href={href} className="group block">
+                  {/* Evidence plate: the industry itself, graded into the night. */}
+                  <div className="relative aspect-[4/3] overflow-hidden rounded-sm bg-white/[0.03]">
                     <Image
                       src={getApplicationCardImage(application.slug, selectedMaterial)}
                       alt={`${application.title} — ${copy.imageNote}`}
                       fill
                       quality={72}
-                      sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw"
-                      className="object-cover transition-transform duration-700 group-hover:scale-105"
+                      sizes="(min-width: 640px) 50vw, 100vw"
+                      className="fx-grade object-cover transition-transform duration-[1200ms] ease-out group-hover:scale-[1.03]"
                     />
-                    <div className="absolute inset-0 bg-black/10 transition-colors group-hover:bg-black/0" />
                   </div>
-                  <div className="p-6">
-                    <div className="min-w-0">
-                      <h3 className="text-lg font-semibold text-neutral-900">
-                        {application.title}
-                      </h3>
-                      <p className="mt-3 text-sm text-neutral-500 leading-relaxed">
-                        {application.description}
-                      </p>
-                      <div className="mt-6 flex flex-wrap gap-2">
-                        {application.products.map((product) => (
-                          <span
-                            key={product}
-                            className="rounded-full border border-neutral-100 bg-neutral-50 px-3 py-1 text-xs text-neutral-600"
-                          >
-                            {product}
-                          </span>
-                        ))}
-                      </div>
+                  <div className="mt-7 flex items-start justify-between gap-6">
+                    <h3 className="text-2xl font-medium tracking-[-0.01em] text-[#E6EAEE] sm:text-[1.75rem]">
+                      {application.title}
+                    </h3>
+                    <ArrowUpRight className="mt-1.5 h-5 w-5 shrink-0 text-white/40 transition-all duration-300 group-hover:-translate-y-0.5 group-hover:translate-x-0.5 group-hover:text-white" />
+                  </div>
+                  <p className="mt-3 max-w-lg leading-relaxed text-white/55">{application.description}</p>
+                  <div className="mt-6 flex flex-wrap gap-2">
+                    {application.products.map((product) => (
                       <span
-                        className={`mt-6 inline-flex items-center gap-1 text-xs font-medium ${selectedGroup.accentClass} group-hover:text-neutral-900 transition-colors`}
+                        key={product}
+                        className="rounded-full border border-white/15 px-3 py-1 text-xs text-white/60"
                       >
-                        {copy.viewDetails}
-                        <ArrowRight className="w-3.5 h-3.5" />
+                        {product}
                       </span>
-                    </div>
+                    ))}
                   </div>
+                  <span className="mt-6 inline-flex items-center gap-1 text-sm font-medium text-white/75 transition-colors group-hover:text-white">
+                    {copy.viewDetails}
+                    <ArrowRight className="h-3.5 w-3.5" />
+                  </span>
                 </Link>
               );
             })}
@@ -202,15 +202,15 @@ export function ApplicationsOverview({
         </div>
       </section>
 
-      <section className="section-padding border-t border-neutral-100">
+      <section data-tone="paper" className="relative py-24 sm:py-32">
         <div className="container-wide">
-          <div className="grid lg:grid-cols-12 gap-10 lg:gap-16">
-            <h2 className="lg:col-span-5 text-4xl sm:text-5xl font-semibold text-neutral-900 tracking-tight leading-[1.05]">
+          <div className="grid gap-10 lg:grid-cols-12 lg:gap-16">
+            <h2 data-reveal="text" className="paper-title lg:col-span-5">
               {copy.hubTitle}
             </h2>
             <div className="lg:col-span-7 lg:pt-2">
               {copy.hubParagraphs.map((paragraph, i) => (
-                <p key={i} className="text-lg text-neutral-500 leading-relaxed [&:not(:first-child)]:mt-5">
+                <p key={i} className="text-lg leading-relaxed text-[#15181C]/70 [&:not(:first-child)]:mt-5">
                   {paragraph}
                 </p>
               ))}

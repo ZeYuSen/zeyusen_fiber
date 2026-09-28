@@ -183,6 +183,151 @@ body {
 
 /* ===== Global Grain Overlay (disabled for light theme) ===== */
 
+/* ===== Fiber world & tone stages (components/fx/world) ===== */
+/* Pages with a night stage get a night backdrop from the first paint, so
+   nothing white can show while the WebGL world fades in or remounts.
+   Unlayered on purpose: it has to beat the base body background above. */
+body:has([data-tone="night"]),
+html[data-world-live] body {
+  background-color: #080A0D;
+}
+
+/* Layered so Tailwind utilities on the same elements can still refine them. */
+@layer components {
+  :root {
+    --stage-night: #080A0D;
+    --stage-paper: #EEECE6;
+    --ink-night: #E6EAEE;
+    --ink-paper: #15181C;
+    --ink-muted: #8FA3B5;
+    --warm-light: rgba(245, 158, 59, 0.16);
+  }
+
+  /* The persistent WebGL world sits behind all page content. */
+  .fx-world {
+    position: fixed;
+    inset: 0 0 auto 0;
+    height: 100lvh;
+    z-index: 0;
+    pointer-events: none;
+    background: var(--stage-night);
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.6s ease, visibility 0s linear 0.6s;
+  }
+
+  html[data-world-live] .fx-world {
+    opacity: 1;
+    visibility: visible;
+    transition: opacity 0.6s ease;
+  }
+
+  /* Night: dark stage. Transparent once the live world is behind it. */
+  [data-tone="night"] {
+    background-color: var(--stage-night);
+    color: var(--ink-night);
+  }
+
+  html[data-world-live] [data-tone="night"] {
+    background-color: transparent;
+  }
+
+  /* Warm: the sodium pool of light around the inquiry. */
+  [data-tone="warm"] {
+    background: radial-gradient(ellipse 70% 60% at 50% 55%, var(--warm-light), transparent 70%), var(--stage-night);
+    color: var(--ink-night);
+  }
+
+  html[data-world-live] [data-tone="warm"] {
+    background: radial-gradient(ellipse 70% 60% at 50% 55%, var(--warm-light), transparent 70%);
+  }
+
+  /* Paper: the backlit light table where specs, reading and forms live. */
+  [data-tone="paper"] {
+    background-color: var(--stage-paper);
+    color: var(--ink-paper);
+  }
+
+  /* Stage typography: title cards on night, calm headings on paper. */
+  .stage-title {
+    font-size: clamp(2.5rem, 5.4vw, 5.5rem);
+    font-weight: 500;
+    line-height: 1.02;
+    letter-spacing: -0.03em;
+    color: var(--ink-night);
+    text-wrap: balance;
+  }
+
+  .stage-lede {
+    font-size: clamp(1.05rem, 1.35vw, 1.3rem);
+    line-height: 1.65;
+    color: rgba(230, 234, 238, 0.72);
+    max-width: 40rem;
+    text-wrap: pretty;
+  }
+
+  .stage-label {
+    font-size: 0.75rem;
+    font-weight: 500;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--ink-muted);
+  }
+
+  .paper-title {
+    font-size: clamp(1.75rem, 3vw, 2.75rem);
+    font-weight: 500;
+    line-height: 1.1;
+    letter-spacing: -0.02em;
+    color: var(--ink-paper);
+    text-wrap: balance;
+  }
+
+  :lang(zh) .stage-title,
+  :lang(ko) .stage-title {
+    font-size: clamp(2.2rem, 4.6vw, 4.6rem);
+    font-weight: 600;
+    letter-spacing: 0;
+    line-height: 1.12;
+  }
+
+  :lang(ko) .stage-title,
+  :lang(ko) .paper-title {
+    word-break: keep-all;
+  }
+
+  :lang(es) .stage-title,
+  :lang(pt) .stage-title {
+    hyphens: auto;
+  }
+
+  /* Documentary grade for evidence photos (never for product/catalog images). */
+  .fx-grade {
+    filter: saturate(0.85) contrast(1.05) brightness(0.92);
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .fx-kenburns {
+    animation: fx-kenburns 2.6s cubic-bezier(0.22, 1, 0.36, 1) backwards;
+  }
+
+  .fx-rise {
+    animation: fx-rise 0.9s cubic-bezier(0.22, 1, 0.36, 1) backwards;
+    animation-delay: var(--fx-delay, 0s);
+  }
+}
+
+@keyframes fx-kenburns {
+  from { transform: scale(1.12); }
+  to { transform: scale(1); }
+}
+
+@keyframes fx-rise {
+  from { opacity: 0; transform: translateY(28px); }
+  to { opacity: 1; transform: none; }
+}
+
 /* ===== Horizontal Scroll ===== */
 .horizontal-scroll-container {
   overflow: hidden;

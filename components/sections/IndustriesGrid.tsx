@@ -33,8 +33,10 @@ const industryMeta: Array<{
   { pageKey: "carbon-application", params: { slug: "new-energy" }, division: "carbon", image: getApplicationImage("new-energy", "carbon") },
 ];
 
-const STRIP_BG = ["#2563EB", "#1D4ED8", "#1E40AF", "#1E3A8A", "#0F172A"];
 const easing = [0.22, 1, 0.36, 1] as const;
+
+const titleClass =
+  "text-[clamp(2rem,3.6vw,3.25rem)] font-medium leading-[1.08] tracking-[-0.02em] text-[#E6EAEE] text-balance [&:lang(ko)]:tracking-normal [&:lang(zh)]:tracking-normal";
 
 export function IndustriesGrid() {
   const locale = useLocale();
@@ -44,32 +46,26 @@ export function IndustriesGrid() {
   const [active, setActive] = useState<number>(0);
 
   return (
-    <section className="py-20 lg:py-28 bg-neutral-50">
+    <section data-tone="night" data-world="survey" className="relative py-28 lg:py-40">
       <div className="container-wide">
         {/* Header */}
-        <motion.div
-          className="text-center mb-12 lg:mb-16"
-          initial={{ opacity: 0, y: 24 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, margin: "-100px" }}
-          transition={{ duration: 0.6, ease: easing }}
-        >
-          <h2 className="text-3xl sm:text-4xl font-bold text-neutral-900">
+        <div className="mb-14 text-center lg:mb-20">
+          <h2 data-reveal="text" className={titleClass}>
             {home.industries.heading}
           </h2>
-          <p className="mt-4 text-neutral-500 max-w-2xl mx-auto text-[15px]">
+          <p data-reveal="up" className="stage-lede mx-auto mt-5 max-w-2xl">
             {home.industries.subtitle}
           </p>
-        </motion.div>
+        </div>
 
-        {/* Desktop horizontal accordion */}
-        <div className="hidden md:flex h-[540px] lg:h-[580px] rounded-2xl overflow-hidden shadow-2xl ring-1 ring-black/5">
+        {/* Desktop horizontal accordion — each strip is its industry's own
+            frame, held in the dark until it opens. */}
+        <div
+          data-reveal="up"
+          className="hidden h-[540px] overflow-hidden rounded-sm bg-[#080A0D] ring-1 ring-white/10 md:flex lg:h-[580px]"
+        >
           {industries.map((industry, index) => {
             const isActive = index === active;
-            const bgColor = STRIP_BG[Math.min(index, STRIP_BG.length - 1)];
-            const accentClass = industry.division === "carbon"
-              ? "text-cyan-400 border-cyan-400/40"
-              : "text-emerald-400 border-emerald-400/40";
             const labelText = industry.division === "carbon"
               ? home.divisions.carbon.label
               : home.divisions.glass.label;
@@ -77,26 +73,42 @@ export function IndustriesGrid() {
             return (
               <motion.div
                 key={`${industry.pageKey}-${index}`}
-                className="relative cursor-pointer overflow-hidden"
-                style={{ backgroundColor: isActive ? "#EFF6FF" : bgColor }}
+                className={`relative overflow-hidden ${isActive ? "" : "cursor-pointer"} ${index > 0 ? "border-l border-white/10" : ""}`}
                 animate={{ flex: isActive ? 6 : 0.5 }}
                 transition={{ duration: 1.1, ease: easing }}
                 onClick={() => setActive(index)}
               >
+                {/* The frame: a fixed-width plate the strip opens over, so it
+                    is uncovered like a curtain instead of being rescaled. */}
+                <div
+                  className={`absolute inset-y-0 left-1/2 w-[78vw] max-w-[1000px] -translate-x-1/2 transition-[filter] duration-1000 ${
+                    isActive ? "grayscale-0" : "grayscale"
+                  }`}
+                >
+                  <Image
+                    src={industry.image}
+                    alt={`${industry.title} — ${home.industries.imageNote}`}
+                    fill
+                    sizes="(max-width: 1024px) 78vw, 1000px"
+                    quality={75}
+                    className="fx-grade object-cover"
+                  />
+                </div>
+                <div
+                  className={`absolute inset-0 bg-[#080A0D] transition-opacity duration-1000 ${
+                    isActive ? "opacity-0" : "opacity-[0.86]"
+                  }`}
+                />
+
                 {/* Collapsed strip */}
                 {!isActive && (
-                  <div className="absolute inset-0 flex flex-col items-center pt-8 pb-8 border-l border-white/10">
-                    <span className="text-white/50 text-xs font-bold tracking-widest">
-                      {String(index + 1).padStart(2, "0")}
+                  <div className="absolute inset-0 flex items-center justify-center py-10">
+                    <span
+                      className="whitespace-nowrap text-[13px] font-medium tracking-wide text-[#8FA3B5]"
+                      style={{ writingMode: "vertical-rl", textOrientation: "mixed" }}
+                    >
+                      {industry.title}
                     </span>
-                    <div className="mt-6 flex-1 flex items-center">
-                      <span
-                        className="text-white/90 font-semibold text-[13px] whitespace-nowrap"
-                        style={{ writingMode: "vertical-rl", textOrientation: "mixed" }}
-                      >
-                        {industry.title}
-                      </span>
-                    </div>
                   </div>
                 )}
 
@@ -109,38 +121,28 @@ export function IndustriesGrid() {
                       animate={{ opacity: 1 }}
                       exit={{ opacity: 0 }}
                       transition={{ duration: 0.6, delay: 0.3 }}
-                      className="absolute inset-0 grid grid-cols-1 lg:grid-cols-2"
+                      className="absolute inset-0"
                     >
-                      {/* Text side */}
-                      <div className="flex flex-col justify-center px-8 lg:px-12 py-10">
-                        <span className={`inline-flex items-center gap-2 text-xs font-bold uppercase tracking-widest border px-2.5 py-1 rounded-full self-start ${accentClass}`}>
+                      <div className="absolute inset-y-0 left-0 w-full bg-gradient-to-r from-[#080A0D] via-[#080A0D]/75 to-transparent lg:w-3/4" />
+                      <div className="absolute inset-x-0 bottom-0 h-1/3 bg-gradient-to-t from-[#080A0D]/70 to-transparent" />
+                      <div className="relative flex h-full max-w-md flex-col justify-end px-8 pb-12 lg:max-w-lg lg:px-12 lg:pb-14">
+                        <span className="self-start rounded-full border border-white/15 px-2.5 py-1 text-xs font-medium uppercase tracking-[0.2em] text-[#8FA3B5]">
                           {labelText}
                         </span>
-                        <h3 className="text-2xl lg:text-[2rem] font-bold text-neutral-900 mt-4 leading-tight">
+                        <h3 className="mt-5 text-2xl font-medium leading-tight tracking-[-0.01em] text-[#E6EAEE] lg:text-[2rem]">
                           {industry.title}
                         </h3>
-                        <p className="text-neutral-600 mt-4 leading-relaxed text-[15px] max-w-sm">
+                        <p className="mt-4 text-[15px] leading-relaxed text-white/70">
                           {industry.description}
                         </p>
                         <Link
                           href={localizedHref(industry.pageKey, locale, industry.params)}
-                          className="mt-7 inline-flex items-center gap-2 text-sm font-semibold text-neutral-900 hover:text-blue-600 transition-colors group"
+                          className="group mt-8 inline-flex items-center gap-2 self-start border-b border-white/25 pb-1 text-sm font-medium text-white/85 transition-colors hover:border-white/70 hover:text-white"
                           onClick={e => e.stopPropagation()}
                         >
                           {home.exploreProducts}
-                          <ArrowUpRight className="w-4 h-4 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
+                          <ArrowUpRight className="h-4 w-4 transition-transform group-hover:-translate-y-0.5 group-hover:translate-x-0.5" />
                         </Link>
-                      </div>
-                      {/* Image side */}
-                      <div className="relative hidden lg:block">
-                        <Image
-                          src={industry.image}
-                          alt={`${industry.title} — ${home.industries.imageNote}`}
-                          fill sizes="45vw"
-                          quality={75}
-                          className="object-cover"
-                        />
-                        <div className="absolute inset-0 bg-gradient-to-r from-[#EFF6FF] via-[#EFF6FF]/30 to-transparent w-2/5" />
                       </div>
                     </motion.div>
                   )}
@@ -151,23 +153,20 @@ export function IndustriesGrid() {
         </div>
 
         {/* Mobile vertical accordion */}
-        <div className="md:hidden flex flex-col gap-3">
+        <div className="flex flex-col border-b border-white/10 md:hidden">
           {industries.map((industry, index) => {
             const isActive = index === (active === -1 ? 0 : active);
-            const accentClass = industry.division === "carbon" ? "bg-cyan-500" : "bg-emerald-500";
             return (
-              <div key={`${industry.pageKey}-${index}`} className="rounded-xl overflow-hidden border border-neutral-200">
+              <div key={`${industry.pageKey}-${index}`} className="border-t border-white/10">
                 <button
+                  type="button"
                   onClick={() => setActive(index)}
-                  className={`w-full flex items-center gap-3 px-5 py-4 text-left transition-colors ${
-                    isActive ? "bg-blue-600 text-white" : "bg-white text-neutral-800 hover:bg-neutral-50"
+                  aria-expanded={isActive}
+                  className={`w-full py-5 text-left text-base font-medium transition-colors ${
+                    isActive ? "text-[#E6EAEE]" : "text-white/55 hover:text-white/80"
                   }`}
                 >
-                  <span className={`text-xs font-bold ${isActive ? "text-white/60" : "text-neutral-400"}`}>
-                    {String(index + 1).padStart(2, "0")}
-                  </span>
-                  <span className={`w-1.5 h-1.5 rounded-full flex-shrink-0 ${accentClass}`} />
-                  <span className="font-medium text-sm">{industry.title}</span>
+                  {industry.title}
                 </button>
                 <AnimatePresence initial={false}>
                   {isActive && (
@@ -178,20 +177,20 @@ export function IndustriesGrid() {
                       transition={{ duration: 0.7, ease: easing }}
                       className="overflow-hidden"
                     >
-                      <div className="p-5 bg-white">
-                        <div className="relative aspect-[16/9] rounded-lg overflow-hidden mb-4">
+                      <div className="pb-7">
+                        <div className="relative mb-5 aspect-[16/9] overflow-hidden rounded-sm bg-white/[0.03]">
                           <Image
                             src={industry.image}
                             alt={`${industry.title} — ${home.industries.imageNote}`}
-                            fill sizes="100vw" quality={75} className="object-cover"
+                            fill sizes="100vw" quality={75} className="fx-grade object-cover"
                           />
                         </div>
-                        <p className="text-neutral-600 text-sm leading-relaxed">{industry.description}</p>
+                        <p className="text-sm leading-relaxed text-white/70">{industry.description}</p>
                         <Link
                           href={localizedHref(industry.pageKey, locale, industry.params)}
-                          className="mt-4 inline-flex items-center gap-1.5 text-sm font-semibold text-blue-600"
+                          className="mt-5 inline-flex items-center gap-1.5 border-b border-white/25 pb-1 text-sm font-medium text-white/85"
                         >
-                          {home.exploreProducts} <ArrowUpRight className="w-3.5 h-3.5" />
+                          {home.exploreProducts} <ArrowUpRight className="h-3.5 w-3.5" />
                         </Link>
                       </div>
                     </motion.div>

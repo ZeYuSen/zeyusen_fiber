@@ -20,6 +20,9 @@ import { localizedHref } from "@/lib/i18n/routes";
 import { contactInfo } from "@/lib/contact";
 import { buildAgentIndex } from "@/lib/agent-tools";
 import { WebMCPProvider } from "@/components/providers/WebMCPProvider";
+import { MotionLayer } from "@/components/fx/MotionLayer";
+import { FiberWorld } from "@/components/fx/world/FiberWorld";
+import { WorldTransit } from "@/components/fx/world/WorldTransit";
 
 const inter = Inter({
   variable: "--font-inter",
@@ -116,11 +119,14 @@ export default async function LangLayout({
           }}
         />
         <SmoothScrollProvider>
+          <FiberWorld />
           <Header dict={dict} carbonCategories={carbonCategories} glassCategories={glassCategories} />
           <NewTabLinkBehavior />
-          <main className="flex-1">{children}</main>
+          <main data-page-root className="relative z-10 flex-1">{children}</main>
           <Footer locale={locale} dict={dict} />
           <AIChatWidget locale={locale} dict={dict} />
+          <MotionLayer />
+          <WorldTransit />
         </SmoothScrollProvider>
         <WebMCPProvider
           index={agentIndex}

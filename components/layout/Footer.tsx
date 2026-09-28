@@ -43,7 +43,7 @@ export function Footer({ locale, dict }: { locale: Locale; dict: Dictionary }) {
   ];
 
   return (
-    <footer className="bg-neutral-900 border-t border-white/10">
+    <footer data-page-root className="relative z-10 bg-[#080A0D]">
       <div className="container-wide py-16">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10">
           {/* Brand */}
@@ -94,7 +94,7 @@ export function Footer({ locale, dict }: { locale: Locale; dict: Dictionary }) {
 
           {/* Carbon Fiber */}
           <div>
-            <h3 className="type-caption text-carbon-accent mb-4">
+            <h3 className="type-caption text-white/50 mb-4">
               <Link href={localizedHref("carbon-fiber", locale)} className="hover:opacity-80 transition-opacity">
                 {dict.footer.carbonFiber}
               </Link>
@@ -112,7 +112,7 @@ export function Footer({ locale, dict }: { locale: Locale; dict: Dictionary }) {
 
           {/* Glass Fiber */}
           <div>
-            <h3 className="type-caption text-glass-accent mb-4">
+            <h3 className="type-caption text-white/50 mb-4">
               <Link href={localizedHref("glass-fiber", locale)} className="hover:opacity-80 transition-opacity">
                 {dict.footer.glassFiber}
               </Link>
@@ -165,7 +165,7 @@ export function Footer({ locale, dict }: { locale: Locale; dict: Dictionary }) {
             rel="noopener noreferrer"
             className="inline-flex items-center gap-2.5 rounded-md border border-white/15 bg-white/5 px-3.5 py-2 text-neutral-300 hover:border-white/30 hover:text-white transition-colors"
           >
-            <svg className="w-4 h-4 shrink-0 text-emerald-400" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+            <svg className="w-4 h-4 shrink-0 text-white/60" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
               <path d="M12 1 3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4zm-1.4 15.6L6.4 12.4l1.4-1.4 2.8 2.8 5.6-5.6 1.4 1.4-7 7z" />
             </svg>
             <span className="text-xs font-medium leading-tight">

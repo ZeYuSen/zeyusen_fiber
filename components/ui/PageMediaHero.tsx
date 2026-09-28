@@ -38,7 +38,7 @@ export function PageMediaHero({
         preload
         sizes="100vw"
         quality={78}
-        className="object-cover"
+        className="object-cover fx-kenburns"
         style={{ objectPosition }}
       />
       <div className="absolute inset-0 bg-black/45" />
@@ -55,15 +55,15 @@ export function PageMediaHero({
 
       {/* Title + description centered in the full hero */}
       <div className="container-wide relative z-10 flex w-full flex-1 flex-col items-center justify-center px-4 pb-10 pt-32 text-center sm:pt-36">
-        <h1 className="max-w-[24ch] text-balance text-3xl font-semibold leading-[1.12] tracking-tight text-white sm:text-4xl lg:text-5xl">
+        <h1 className="fx-rise max-w-[24ch] text-balance text-3xl font-semibold leading-[1.12] tracking-tight text-white sm:text-4xl lg:text-5xl">
           {title}
         </h1>
         {description ? (
-          <div className="mt-4 max-w-2xl text-pretty text-sm leading-relaxed text-white/80 sm:text-base">
+          <div className="fx-rise mt-4 max-w-2xl text-pretty [--fx-delay:120ms] text-sm leading-relaxed text-white/80 sm:text-base">
             {description}
           </div>
         ) : null}
-        {children ? <div className="mt-6">{children}</div> : null}
+        {children ? <div className="fx-rise mt-6 [--fx-delay:240ms]">{children}</div> : null}
       </div>
     </section>
   );
