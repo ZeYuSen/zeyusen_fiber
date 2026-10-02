@@ -1,14 +1,14 @@
 ---
-title: "Fiberglass Fabric Weight Guide: GSM, oz/yd², and Conversion"
-description: "How to read fiberglass fabric weight in GSM and oz/yd², convert between the two units, and understand what areal weight does and does not specify in an RFQ."
+title: "GSM to oz/yd² Conversion: Fiberglass Fabric Weight Guide"
+description: "1 oz/yd² = 33.906 g/m². Convert fiberglass fabric weight between GSM and oz (200 gsm = 5.9 oz, 6 oz ≈ 203 gsm, 400 gsm = 11.8 oz) and see what areal weight means in an RFQ."
 slug: "fiberglass-fabric-weight-gsm-oz-conversion-guide"
 date: "2026-07-16"
-dateModified: "2026-07-16"
-tags: ["fiberglass fabric weight", "GSM", "oz/yd2", "areal weight", "fabric specification", "fiberglass cloth"]
+dateModified: "2026-10-02"
+tags: ["fiberglass fabric weight", "GSM to oz", "oz/yd2", "areal weight", "fabric specification", "fiberglass cloth"]
 image: "/images/blog/fiberglass-fabric-weight-gsm-cover.webp"
 ---
 
-# Fiberglass Fabric Weight Guide: GSM, oz/yd², and Conversion
+# GSM to oz/yd² Conversion: Fiberglass Fabric Weight Guide
 
 Fabric weight is the mass of reinforcement per unit of area. It is written as grams per square meter (GSM, or g/m²) in metric specifications and as ounces per square yard (oz/yd²) in US specifications. The two describe the same property in different units.
 
@@ -27,6 +27,44 @@ The exact relationship is **1 oz/yd² = 33.906 g/m²** (and 1 g/m² = 0.0295 oz/
 | 10 | 339.1 | 600 | 17.70 |
 
 To convert manually: multiply oz/yd² by 33.906 to get GSM, or multiply GSM by 0.0295 to get oz/yd². Rounded catalog figures (for example "6 oz" cloth listed at 200 g/m²) are approximations, so confirm the nominal value and tolerance on the supplier data sheet rather than relying on a rounded label.
+
+### GSM to oz/yd² for common fabric weights
+
+| GSM (g/m²) | oz/yd² |
+|---:|---:|
+| 100 | 2.95 |
+| 150 | 4.42 |
+| 185 | 5.46 |
+| 200 | 5.90 |
+| 250 | 7.37 |
+| 300 | 8.85 |
+| 380 | 11.21 |
+| 400 | 11.80 |
+| 450 | 13.27 |
+| 600 | 17.70 |
+| 800 | 23.59 |
+
+### oz/yd² to GSM for common fabric weights
+
+| oz/yd² | GSM (g/m²) |
+|---:|---:|
+| 1 | 33.9 |
+| 1.5 | 50.9 |
+| 3 | 101.7 |
+| 5 | 169.5 |
+| 6 | 203.4 |
+| 7.5 | 254.3 |
+| 8 | 271.2 |
+| 9 | 305.2 |
+| 10 | 339.1 |
+| 12 | 406.9 |
+| 18 | 610.3 |
+
+When a fabric is described as "8.85 oz", that almost always means 8.85 oz/yd², which is 300 g/m². It is not a total weight of 8.85 ounces (about 251 grams).
+
+## What Does Areal Weight Mean?
+
+Areal weight, also called fabric weight, basis weight, or mass per unit area, is how much one square unit of the dry fabric weighs: grams per square meter (GSM) or ounces per square yard (oz/yd²). A 200 g/m² fiberglass cloth means one square meter of that cloth weighs 200 grams (about 0.44 lb). It describes how much glass is in the fabric, not how thick, strong, or tightly woven it is.
 
 ## Why the Two Units Coexist
 
@@ -100,6 +138,14 @@ Multiply the oz/yd² value by 33.906. For example, 6 oz/yd² × 33.906 = 203.4 g
 ### Does a heavier fabric mean a stronger laminate?
 
 Not by itself. A higher areal weight builds thickness faster per ply, but laminate strength and stiffness depend on fiber type, weave or stitch construction, fiber orientation relative to the load, fiber volume fraction, and the resin system. Two fabrics of equal weight can perform very differently, so weight should be specified alongside those fields rather than treated as a performance rating.
+
+### How much does fiberglass cloth weigh?
+
+It depends on the grade, which is why fiberglass fabric is sold by areal weight. Light surfacing tissues and veils weigh well under 100 g/m², general-purpose woven cloth is commonly in the 200–600 g/m² range, and heavy woven rovings and multiaxial fabrics go higher. Multiply the areal weight by the area you need: 10 m² of a 300 g/m² cloth weighs about 3 kg of dry glass, before resin.
+
+### Can I convert fabric thickness (mm) to GSM?
+
+Not reliably. Thickness depends on fiber type, weave or stitch construction, compaction, and how it is measured, so two fabrics of the same thickness can have different areal weights. Use the supplier's stated GSM and tolerance rather than estimating it from a thickness figure.
 
 ### Is oz/yd² the same as ounces per linear yard?
 

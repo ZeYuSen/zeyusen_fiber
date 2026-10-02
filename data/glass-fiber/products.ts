@@ -133,7 +133,9 @@ export const glassFiberCategories: ProductCategory[] = [
         slug: "roofing-tissue",
         name: "Fiberglass Roofing Tissue Mat",
         relatedPosts: ["fiberglass-surface-tissue-for-composite-finish", "fiberglass-fabric-weight-gsm-oz-conversion-guide"],
-        seoTitle: "Fiberglass Roofing Tissue Manufacturer",
+        seoTitle: "Fiberglass Roofing Tissue for Bitumen Membranes",
+        seoDescription:
+          "Wet-laid fiberglass roofing tissue, 30–100 g/m², used as the glass mat inside bitumen and modified-bitumen (SBS/APP) waterproofing membranes and asphalt shingles. OEM supply, samples on request.",
         description:
           "Fiberglass roofing tissue mat used as reinforcement material in waterproofing membranes and roofing systems. Compatible with bitumen and asphalt applications.",
         features: [
@@ -217,7 +219,9 @@ export const glassFiberCategories: ProductCategory[] = [
         slug: "battery-separator",
         name: "Glass Fiber Battery Separator",
         relatedPosts: ["fiberglass-surface-tissue-for-composite-finish", "composite-reinforcement-rfq-checklist"],
-        seoTitle: "Battery Separator Fiberglass Paper Manufacturer",
+        seoTitle: "Glass Fiber Battery Separator for AGM & Lead-Acid",
+        seoDescription:
+          "Wet-laid E-glass fiber separator for AGM and lead-acid batteries: high porosity for electrolyte absorption, acid resistance and uniform fiber distribution. OEM supply, samples on request.",
         description:
           "Glass fiber separator used in AGM/lead-acid batteries as separator material between positive and negative plates, providing electrolyte absorption and ion conductivity.",
         features: [

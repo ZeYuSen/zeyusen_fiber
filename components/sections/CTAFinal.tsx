@@ -5,6 +5,7 @@ import { ArrowRight } from "lucide-react";
 import { Turnstile, type TurnstileInstance } from "@marsidev/react-turnstile";
 import { useLocale } from "@/lib/i18n/use-locale";
 import { getHomeContent } from "@/lib/i18n/home-content";
+import { trackLead } from "@/lib/analytics";
 
 export function CTAFinal() {
   const cta = getHomeContent(useLocale()).cta;
@@ -32,6 +33,7 @@ export function CTAFinal() {
         }),
       });
       if (res.ok) {
+        trackLead("quick_inquiry");
         setStatus("sent");
         setEmail("");
         setMessage("");

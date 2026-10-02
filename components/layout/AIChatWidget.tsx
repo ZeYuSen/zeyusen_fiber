@@ -10,6 +10,7 @@ import type { Components } from "react-markdown";
 import remarkGfm from "remark-gfm";
 import { whatsappPhone } from "@/lib/contact";
 import type { ChatMessage } from "@/types/chat";
+import { trackEvent } from "@/lib/analytics";
 import type { Locale } from "@/lib/i18n/config";
 import type { Dictionary } from "@/lib/i18n/dictionaries";
 
@@ -159,6 +160,7 @@ export function AIChatWidget({
       timestamp: Date.now(),
     };
 
+    if (!messages.some((m) => m.role === "user")) trackEvent("chat_start");
     setMessages((prev) => [...prev, userMsg]);
     setInput("");
     setIsLoading(true);
@@ -247,7 +249,10 @@ export function AIChatWidget({
     <>
       {/* Floating bubble */}
       <button
-        onClick={() => setIsOpen(true)}
+        onClick={() => {
+          setIsOpen(true);
+          trackEvent("chat_open");
+        }}
         aria-label="Open AI chat assistant"
         className={`fixed bottom-6 right-6 z-50 w-14 h-14 rounded-full bg-neutral-900 text-white shadow-lg flex items-center justify-center hover:scale-105 transition-transform ${isOpen ? "hidden" : ""}`}
       >
@@ -270,6 +275,7 @@ export function AIChatWidget({
               animate={{ x: 0 }}
               exit={{ x: "100%" }}
               transition={{ type: "spring", damping: 25, stiffness: 300 }}
+              data-chat-widget
               className="fixed right-0 top-0 h-full w-full sm:w-[400px] bg-white shadow-2xl z-50 flex flex-col"
             >
               {/* Header */}

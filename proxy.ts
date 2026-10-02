@@ -1,7 +1,7 @@
 import { NextResponse } from "next/server";
 import type { NextRequest } from "next/server";
 import { locales, defaultLocale, type Locale } from "@/lib/i18n/config";
-import { divisionRoot, segmentLabels } from "@/lib/i18n/routes";
+import { divisionRoot, resolveRoute, segmentLabels } from "@/lib/i18n/routes";
 import {
   isActiveProduct,
   isActiveProductCategory,
@@ -10,7 +10,7 @@ import {
   isRetiredBlogSlug,
   type ProductDivision,
 } from "@/lib/product-scope";
-import { isRetiredApplication } from "@/lib/application-scope";
+import { isActiveApplication, isRetiredApplication } from "@/lib/application-scope";
 
 // Old products-path segments per locale (removed when routes were flattened).
 const oldProductsSegments: Record<Locale, string> = {
@@ -106,6 +106,36 @@ function redirectStrippingSegment(
   const url = request.nextUrl.clone();
   url.pathname = newPath;
   return NextResponse.redirect(url, 301);
+}
+
+const allOldProductsSegments = new Set(Object.values(oldProductsSegments));
+
+// Vercel's router answers an unknown URL that contains non-ASCII segments (the
+// localized zh/ko paths) with a 500 instead of handing it to the catch-all
+// page, so such paths are checked here and unknown ones are rewritten to an
+// ASCII path that renders the regular 404.
+function isServableLocalizedPath(locale: Locale, rest: string[]): boolean {
+  const resolved = resolveRoute(locale, rest);
+  if (!resolved) return false;
+  const { pageKey, params } = resolved;
+  switch (pageKey) {
+    case "carbon-category":
+      return isActiveProductCategory("carbon", params.category);
+    case "glass-category":
+      return isActiveProductCategory("glass", params.category);
+    case "carbon-product":
+      return isActiveProduct("carbon", params.category, params.product);
+    case "glass-product":
+      return isActiveProduct("glass", params.category, params.product);
+    case "carbon-application":
+      return isActiveApplication("carbon", params.slug);
+    case "glass-application":
+      return isActiveApplication("glass", params.slug);
+    default:
+      // Blog slugs live on disk and cannot be checked here; everything else is
+      // a fixed page.
+      return true;
+  }
 }
 
 function normalizePathSegment(segment: string): string {
@@ -261,9 +291,10 @@ export function proxy(request: NextRequest) {
     if (segments.length >= 3) {
       const maybeDivision = segments[1];
       const maybeProducts = segments[2];
+      // Any locale's old "products" segment (e.g. /zh/玻璃纤维/products/...).
       if (
         divisionRootReverse.has(maybeDivision) &&
-        maybeProducts === oldProductsSegments[locale]
+        allOldProductsSegments.has(maybeProducts)
       ) {
         return redirectStrippingSegment(
           request,
@@ -272,6 +303,12 @@ export function proxy(request: NextRequest) {
           segments.slice(3),
         );
       }
+    }
+
+    if (/[^\x00-\x7F]/.test(segments.join("")) && !isServableLocalizedPath(locale, segments.slice(1))) {
+      const url = request.nextUrl.clone();
+      url.pathname = `/${locale}/__not-found`;
+      return NextResponse.rewrite(url);
     }
 
     return attachLinkHeader(NextResponse.next(), pathname);

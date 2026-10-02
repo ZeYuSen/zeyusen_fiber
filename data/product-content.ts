@@ -500,8 +500,14 @@ productContent["glass/tissue-mat/roofing-tissue"] = {
     "Fiberglass roofing tissue mat is a wet-laid reinforcement used inside waterproofing membranes and roofing systems. Engineered for compatibility with bitumen and asphalt, the mat is saturated with these binders to form durable, tear-resistant membranes that protect roofs against water ingress and weathering.",
     "Available in weights from 30g to 100g/m², the tissue provides good tensile strength and a uniform fiber distribution, so the saturated membrane resists cracking and stretches consistently across its surface. As a lightweight reinforcement, it adds strength to shingles and membranes without significantly increasing weight or thickness.",
     "Bonded with PVA or polyester binders, the roofing tissue integrates into bitumen-based waterproofing and shingle production lines. It is a core reinforcement for manufacturers of modified-bitumen membranes and asphalt roofing products.",
+    "In membrane production the tissue is often called a fiberglass mat or glass mat for bitumen membranes: it is the reinforcement layer that the bitumen or modified bitumen (such as SBS or APP) saturates and coats. Weight, binder, and roll width are confirmed against each membrane line before supply.",
   ],
   faqs: [
+    {
+      question: "Is fiberglass roofing tissue the same as a fiberglass mat for bitumen membranes?",
+      answer:
+        "Yes. Roofing tissue is the wet-laid fiberglass mat used as the reinforcement layer inside bitumen and modified-bitumen waterproofing membranes and asphalt shingles. The required weight, binder, and width depend on the membrane line and are confirmed per project.",
+    },
     {
       question: "Why is roofing tissue compatible with bitumen and asphalt?",
       answer:

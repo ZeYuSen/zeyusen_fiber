@@ -23,6 +23,7 @@ import { WebMCPProvider } from "@/components/providers/WebMCPProvider";
 import { MotionLayer } from "@/components/fx/MotionLayer";
 import { FiberWorld } from "@/components/fx/world/FiberWorld";
 import { WorldTransit } from "@/components/fx/world/WorldTransit";
+import { AnalyticsEvents } from "@/components/layout/AnalyticsEvents";
 
 const inter = Inter({
   variable: "--font-inter",
@@ -127,6 +128,7 @@ export default async function LangLayout({
           <AIChatWidget locale={locale} dict={dict} />
           <MotionLayer />
           <WorldTransit />
+          <AnalyticsEvents />
         </SmoothScrollProvider>
         <WebMCPProvider
           index={agentIndex}

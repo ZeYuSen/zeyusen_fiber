@@ -11,6 +11,7 @@ import { localizedHref } from "@/lib/i18n/routes";
 import { getPagesContent } from "@/lib/i18n/pages-content";
 import { PageMediaHero } from "@/components/ui/PageMediaHero";
 import { pageHeroImages } from "@/lib/site-images";
+import { trackLead } from "@/lib/analytics";
 
 export default function ContactPageContent({ nav }: { nav?: { home: string; current: string } }) {
   const locale = useLocale();
@@ -43,6 +44,7 @@ export default function ContactPageContent({ nav }: { nav?: { home: string; curr
         }),
       });
       if (res.ok) {
+        trackLead("contact_form", { division: formData.division, product_interest: formData.product_interest || undefined });
         setStatus("success");
         setFormData({
           name: "",
