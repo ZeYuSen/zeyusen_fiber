@@ -10,6 +10,7 @@ import { ProductGallery } from "@/components/products/ProductGallery";
 import { SpecTable } from "@/components/products/SpecTable";
 import { RelatedProducts } from "@/components/products/RelatedProducts";
 import { whatsappPhone } from "@/lib/contact";
+import { getOnRequestCopy } from "@/lib/i18n/on-request";
 
 // Section labels on paper: the stage-label rhythm in a muted paper ink that
 // holds contrast on the light table.
@@ -43,6 +44,7 @@ export function ProductDetail({
   const divisionKey = division === "carbon" ? "carbon-fiber" : "glass-fiber";
   const categoryKey = division === "carbon" ? "carbon-category" : "glass-category";
   const productKey = division === "carbon" ? "carbon-product" : "glass-product";
+  const onRequest = product.onRequest ? getOnRequestCopy(locale) : null;
   const relatedGuides = (product.relatedPosts ?? [])
     .map((slug) => getBlogPost(locale, slug))
     .filter((post): post is BlogPost => Boolean(post))
@@ -69,6 +71,12 @@ export function ProductDetail({
         title={product.name}
         description={<p>{product.description}</p>}
       >
+        {onRequest ? (
+          <div className="mb-8 max-w-2xl border-l border-white/30 pl-5">
+            <p className="text-xs font-semibold uppercase tracking-[0.18em] text-white/80">{onRequest.label}</p>
+            <p className="mt-2 text-sm leading-relaxed text-white/65">{onRequest.body}</p>
+          </div>
+        ) : null}
         <div className="flex flex-col gap-3 sm:flex-row">
           <Link
             href={localizedHref("contact", locale)}

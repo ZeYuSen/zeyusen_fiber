@@ -6,6 +6,7 @@ import { localizedHref } from "@/lib/i18n/routes";
 import type { Dictionary } from "@/lib/i18n/dictionaries";
 import { getCategories } from "@/lib/data-i18n";
 import { WorldStage } from "@/components/fx/world/WorldStage";
+import { getOnRequestCopy } from "@/lib/i18n/on-request";
 
 // Carbon/Glass full catalog page: a night shot of the division's own material
 // (the world's route shot), then the catalog laid out on the light table.
@@ -28,6 +29,11 @@ export function ProductCatalog({
   };
 }) {
   const categories = getCategories(division, locale);
+  const onRequestCopy = getOnRequestCopy(locale);
+  // Products supplied on request: listed (and linked) below the stocked catalog.
+  const onRequestGroups = getCategories(division, locale, { includeOnRequest: true })
+    .map((category) => ({ category, products: category.products.filter((product) => product.onRequest) }))
+    .filter((group) => group.products.length > 0);
   const categoryKey = division === "carbon" ? "carbon-category" : "glass-category";
   const productKey = division === "carbon" ? "carbon-product" : "glass-product";
 
@@ -110,6 +116,46 @@ export function ProductCatalog({
               </div>
             </div>
           ))}
+
+          {onRequestGroups.length ? (
+            <div data-reveal="up" className="border-t border-(--ink-paper)/15 pt-14">
+              <div className="grid gap-6 lg:grid-cols-12 lg:gap-16">
+                <div className="lg:col-span-4">
+                  <h2 className="text-xl font-medium text-(--ink-paper)">{onRequestCopy.listTitle}</h2>
+                  <p className="mt-3 text-sm leading-relaxed text-(--ink-paper)/70">{onRequestCopy.listIntro}</p>
+                </div>
+                <div className="grid gap-10 sm:grid-cols-2 lg:col-span-8">
+                  {onRequestGroups.map(({ category, products }) => (
+                    <div key={category.slug}>
+                      {category.onRequest ? (
+                        <Link
+                          href={localizedHref(categoryKey, locale, { category: category.slug })}
+                          className="text-sm font-medium text-(--ink-paper)/85 transition-colors hover:text-(--ink-paper)"
+                        >
+                          {category.name}
+                        </Link>
+                      ) : (
+                        <p className="text-sm font-medium text-(--ink-paper)/85">{category.name}</p>
+                      )}
+                      <ul className="mt-3 divide-y divide-(--ink-paper)/10 border-t border-(--ink-paper)/10">
+                        {products.map((product) => (
+                          <li key={product.slug}>
+                            <Link
+                              href={localizedHref(productKey, locale, { category: category.slug, product: product.slug })}
+                              className="group flex items-center justify-between gap-4 py-2.5 text-sm text-(--ink-paper)/70 transition-colors hover:text-(--ink-paper)"
+                            >
+                              <span>{product.name}</span>
+                              <ArrowRight className="h-3.5 w-3.5 shrink-0 opacity-40 transition-opacity group-hover:opacity-100" />
+                            </Link>
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </div>
+          ) : null}
         </div>
         <div
           aria-hidden="true"

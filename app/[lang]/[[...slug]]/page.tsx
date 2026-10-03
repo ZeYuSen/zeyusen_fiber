@@ -83,7 +83,7 @@ export async function generateStaticParams() {
     for (const division of ["carbon", "glass"] as const) {
       const categoryKey = division === "carbon" ? "carbon-category" : "glass-category";
       const productKey = division === "carbon" ? "carbon-product" : "glass-product";
-      for (const category of getCategories(division, lang)) {
+      for (const category of getCategories(division, lang, { includeOnRequest: true })) {
         params.push({
           lang,
           slug: localizedHref(categoryKey, lang, { category: category.slug }).split("/").slice(2),
@@ -161,7 +161,7 @@ export async function generateMetadata({ params }: PageProps<"/[lang]/[[...slug]
 
   if (pageKey === "carbon-category" || pageKey === "glass-category") {
     const division = pageKey === "carbon-category" ? "carbon" : "glass";
-    const category = getCategories(division, locale).find((c) => c.slug === routeParams.category);
+    const category = getCategories(division, locale, { includeOnRequest: true }).find((c) => c.slug === routeParams.category);
     if (!category) return {};
     seo = {
       title: category.seoTitle ?? category.name,
@@ -170,7 +170,7 @@ export async function generateMetadata({ params }: PageProps<"/[lang]/[[...slug]
     image = category.image;
   } else if (pageKey === "carbon-product" || pageKey === "glass-product") {
     const division = pageKey === "carbon-product" ? "carbon" : "glass";
-    const category = getCategories(division, locale).find((c) => c.slug === routeParams.category);
+    const category = getCategories(division, locale, { includeOnRequest: true }).find((c) => c.slug === routeParams.category);
     const product = category?.products.find((p) => p.slug === routeParams.product);
     if (!category || !product) return {};
     seo = {
@@ -300,7 +300,7 @@ export default async function LocalizedPage({ params }: PageProps<"/[lang]/[[...
     case "carbon-category":
     case "glass-category": {
       const division = pageKey === "carbon-category" ? "carbon" : "glass";
-      const category = getCategories(division, locale).find((c) => c.slug === routeParams.category);
+      const category = getCategories(division, locale, { includeOnRequest: true }).find((c) => c.slug === routeParams.category);
       if (!category) notFound();
       return (
         <>
@@ -325,7 +325,7 @@ export default async function LocalizedPage({ params }: PageProps<"/[lang]/[[...
     case "carbon-product":
     case "glass-product": {
       const division = pageKey === "carbon-product" ? "carbon" : "glass";
-      const category = getCategories(division, locale).find((c) => c.slug === routeParams.category);
+      const category = getCategories(division, locale, { includeOnRequest: true }).find((c) => c.slug === routeParams.category);
       if (!category) notFound();
       const product = category.products.find((p) => p.slug === routeParams.product);
       if (!product) notFound();

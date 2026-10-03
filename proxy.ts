@@ -3,8 +3,6 @@ import type { NextRequest } from "next/server";
 import { locales, defaultLocale, type Locale } from "@/lib/i18n/config";
 import { divisionRoot, resolveRoute, segmentLabels } from "@/lib/i18n/routes";
 import {
-  isActiveProduct,
-  isActiveProductCategory,
   isKnownProductCategory,
   isKnownProduct,
   isRetiredBlogSlug,
@@ -120,13 +118,13 @@ function isServableLocalizedPath(locale: Locale, rest: string[]): boolean {
   const { pageKey, params } = resolved;
   switch (pageKey) {
     case "carbon-category":
-      return isActiveProductCategory("carbon", params.category);
+      return isKnownProductCategory("carbon", params.category);
     case "glass-category":
-      return isActiveProductCategory("glass", params.category);
+      return isKnownProductCategory("glass", params.category);
     case "carbon-product":
-      return isActiveProduct("carbon", params.category, params.product);
+      return isKnownProduct("carbon", params.category, params.product);
     case "glass-product":
-      return isActiveProduct("glass", params.category, params.product);
+      return isKnownProduct("glass", params.category, params.product);
     case "carbon-application":
       return isActiveApplication("carbon", params.slug);
     case "glass-application":
@@ -203,35 +201,6 @@ function goneResponse(
   return response;
 }
 
-function retiredDivisionForPath(
-  locale: Locale,
-  segments: string[],
-): ProductDivision | undefined {
-  const division = divisionRootReverse.get(segments[1]);
-  if (!division) return undefined;
-
-  const afterDivision = segments.slice(2);
-  const productSegments = afterDivision[0] === oldProductsSegments[locale]
-    ? afterDivision.slice(1)
-    : afterDivision;
-  if (productSegments.length < 1 || productSegments.length > 2) return undefined;
-  const category = productSegments[0];
-  if (!category || !isKnownProductCategory(division, category)) return undefined;
-  const product = productSegments[1];
-  if (!isActiveProductCategory(division, category)) {
-    if (!product || isKnownProduct(division, category, product)) return division;
-    return undefined;
-  }
-  if (
-    product &&
-    isKnownProduct(division, category, product) &&
-    !isActiveProduct(division, category, product)
-  ) {
-    return division;
-  }
-  return undefined;
-}
-
 export function proxy(request: NextRequest) {
   const { pathname } = request.nextUrl;
   const segments = pathname
@@ -244,15 +213,11 @@ export function proxy(request: NextRequest) {
   const hasLocale =
     firstSegment && locales.includes(firstSegment as Locale);
 
-  // Retired catalog and article URLs must return 410 before markdown content
+  // Retired application and article URLs must return 410 before markdown content
   // negotiation or legacy-path redirects. This keeps HTML and GEO crawlers in
   // agreement and avoids redirect chains to an eventual 404.
   if (hasLocale) {
     const locale = firstSegment as Locale;
-    const retiredDivision = retiredDivisionForPath(locale, segments);
-    if (retiredDivision) {
-      return goneResponse(locale, retiredDivision);
-    }
     const division = divisionRootReverse.get(segments[1]);
     if (
       division &&

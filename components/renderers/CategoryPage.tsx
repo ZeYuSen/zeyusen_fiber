@@ -6,6 +6,7 @@ import { localizedHref } from "@/lib/i18n/routes";
 import type { Dictionary } from "@/lib/i18n/dictionaries";
 import type { ProductCategory } from "@/types/product";
 import { WorldStage } from "@/components/fx/world/WorldStage";
+import { getOnRequestCopy } from "@/lib/i18n/on-request";
 
 // Carbon/Glass product category page: the category's night shot, then the
 // category plate and its products on the light table.
@@ -24,6 +25,8 @@ export function CategoryPage({
 }) {
   const divisionKey = division === "carbon" ? "carbon-fiber" : "glass-fiber";
   const productKey = division === "carbon" ? "carbon-product" : "glass-product";
+  const onRequestCopy = getOnRequestCopy(locale);
+  const onRequest = category.onRequest ? onRequestCopy : null;
 
   return (
     <>
@@ -40,7 +43,14 @@ export function CategoryPage({
             <span className="text-white/90">{category.name}</span>
           </nav>
         }
-      />
+      >
+        {onRequest ? (
+          <div className="max-w-2xl border-l border-white/30 pl-5">
+            <p className="text-xs font-semibold uppercase tracking-[0.18em] text-white/80">{onRequest.label}</p>
+            <p className="mt-2 text-sm leading-relaxed text-white/65">{onRequest.body}</p>
+          </div>
+        ) : null}
+      </WorldStage>
 
       {/* Hold the night shot a beat longer before the light table comes on. */}
       <div aria-hidden="true" data-tone="night" className="h-[22svh]" />
@@ -91,6 +101,11 @@ export function CategoryPage({
                 className="group block h-full"
               >
                 <div className="relative aspect-[4/3] overflow-hidden rounded-sm bg-white">
+                  {product.onRequest && !category.onRequest ? (
+                    <span className="absolute left-3 top-3 z-10 rounded-full bg-(--stage-paper)/90 px-2.5 py-1 text-[11px] font-medium text-(--ink-paper)/80">
+                      {onRequestCopy.label}
+                    </span>
+                  ) : null}
                   <Image
                     src={product.images[0]}
                     alt={product.name}

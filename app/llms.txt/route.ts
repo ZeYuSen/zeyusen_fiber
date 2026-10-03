@@ -2,12 +2,31 @@ import { absoluteUrl, siteConfig } from "@/lib/seo";
 import { contactInfo } from "@/lib/contact";
 import { defaultLocale, locales, localeMeta } from "@/lib/i18n/config";
 import { localizedHref } from "@/lib/i18n/routes";
-import { allCarbonFiberCategories } from "@/data/carbon-fiber";
-import { allGlassFiberCategories } from "@/data/glass-fiber";
+import { allCarbonFiberCategories, catalogCarbonFiberCategories } from "@/data/carbon-fiber";
+import { allGlassFiberCategories, catalogGlassFiberCategories } from "@/data/glass-fiber";
 import { getBlogPosts } from "@/data/blog";
 
 // llms.txt — guidance for AI crawlers / answer engines (https://llmstxt.org)
 export const dynamic = "force-static";
+
+function onRequestLines() {
+  const groups = [
+    { cats: catalogCarbonFiberCategories, categoryKey: "carbon-category" as const, productKey: "carbon-product" as const },
+    { cats: catalogGlassFiberCategories, categoryKey: "glass-category" as const, productKey: "glass-product" as const },
+  ];
+  return groups
+    .flatMap(({ cats, productKey }) =>
+      cats.flatMap((c) =>
+        c.products
+          .filter((product) => product.onRequest)
+          .map(
+            (product) =>
+              `- [${product.name}](${absoluteUrl(localizedHref(productKey, defaultLocale, { category: c.slug, product: product.slug }))}): ${product.description}`,
+          ),
+      ),
+    )
+    .join("\n");
+}
 
 function categoryLines(
   categoryKey: "carbon-category" | "glass-category",
@@ -48,6 +67,10 @@ ${categoryLines("carbon-category", "carbon-product", allCarbonFiberCategories)}
 ## Glass Fiber
 ${categoryLines("glass-category", "glass-product", allGlassFiberCategories)}
 - [Glass Fiber Division Overview](${absoluteUrl(localizedHref("glass-fiber", defaultLocale))})
+
+## Supplied on Request
+Not stocked catalog items; availability, MOQ, and lead time are confirmed per inquiry.
+${onRequestLines()}
 
 ## Company
 - [About ZeYuSen Fiber](${absoluteUrl(localizedHref("about", defaultLocale))}): Company background, manufacturing facilities, and certifications.

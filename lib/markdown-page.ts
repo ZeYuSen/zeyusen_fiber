@@ -151,7 +151,7 @@ ${footer(locale, key, params)}`;
 }
 
 function buildCategory(locale: Locale, division: "carbon" | "glass", params: RouteParams): string | null {
-  const category = getCategories(division, locale).find((c) => c.slug === params.category);
+  const category = getCategories(division, locale, { includeOnRequest: true }).find((c) => c.slug === params.category);
   if (!category) return null;
   const products = category.products
     .map((p) => `- [${p.name}](${abs(division === "carbon" ? "carbon-product" : "glass-product", locale, { category: category.slug, product: p.slug })}): ${p.description}`)
@@ -167,14 +167,14 @@ ${footer(locale, key, params)}`;
 }
 
 function buildProduct(locale: Locale, division: "carbon" | "glass", params: RouteParams): string | null {
-  const category = getCategories(division, locale).find((c) => c.slug === params.category);
+  const category = getCategories(division, locale, { includeOnRequest: true }).find((c) => c.slug === params.category);
   const product = category?.products.find((p) => p.slug === params.product);
   if (!category || !product) return null;
   const key = division === "carbon" ? "carbon-product" : "glass-product";
   return `# ${product.name}
 
 > ${product.description}
-
+${product.onRequest ? "\nAvailability: supplied on request (not a stocked catalog item). Send a specification to confirm availability, MOQ, and lead time.\n" : ""}
 Category: [${category.name}](${abs(division === "carbon" ? "carbon-category" : "glass-category", locale, { category: category.slug })})
 ${footer(locale, key, params)}`;
 }

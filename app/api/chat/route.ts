@@ -1,8 +1,8 @@
 import { NextRequest, NextResponse } from "next/server";
 import type { ChatRequest } from "@/types/chat";
 import { getSupabaseClient } from "@/lib/supabase";
-import { allCarbonFiberCategories } from "@/data/carbon-fiber";
-import { allGlassFiberCategories } from "@/data/glass-fiber";
+import { catalogCarbonFiberCategories } from "@/data/carbon-fiber";
+import { catalogGlassFiberCategories } from "@/data/glass-fiber";
 import { localizedHref } from "@/lib/i18n/routes";
 import { isLocale, type Locale } from "@/lib/i18n/config";
 import type { ProductCategory } from "@/types/product";
@@ -126,8 +126,8 @@ function dailyLimitMessage(locale?: string): string {
 // Sourced from the product data files, so it stays in sync automatically.
 function buildProductCatalog(locale: Locale): string {
   const sections: { division: "carbon" | "glass"; label: string; categories: ProductCategory[] }[] = [
-    { division: "carbon", label: "Carbon Fiber", categories: allCarbonFiberCategories },
-    { division: "glass", label: "Glass Fiber", categories: allGlassFiberCategories },
+    { division: "carbon", label: "Carbon Fiber", categories: catalogCarbonFiberCategories },
+    { division: "glass", label: "Glass Fiber", categories: catalogGlassFiberCategories },
   ];
 
   const lines: string[] = [];
@@ -136,14 +136,14 @@ function buildProductCatalog(locale: Locale): string {
     for (const category of section.categories) {
       const categoryKey = section.division === "carbon" ? "carbon-category" : "glass-category";
       const categoryHref = localizedHref(categoryKey, locale, { category: category.slug });
-      lines.push(`- ${category.name} (category): ${categoryHref}`);
+      lines.push(`- ${category.name} (category${category.onRequest ? ", supplied on request" : ""}): ${categoryHref}`);
       for (const product of category.products) {
         const productKey = section.division === "carbon" ? "carbon-product" : "glass-product";
         const productHref = localizedHref(productKey, locale, {
           category: category.slug,
           product: product.slug,
         });
-        lines.push(`  - ${product.name}: ${productHref}`);
+        lines.push(`  - ${product.name}${product.onRequest ? " [supplied on request, not stocked: confirm availability, MOQ and lead time]" : ""}: ${productHref}`);
       }
     }
   }

@@ -132,8 +132,10 @@ export function isRetiredBlogSlug(slug: string): boolean {
 }
 
 // Blog content is authored in five locales and contains both prefixed and
-// unprefixed internal links. Strip links to retired inventory at read time so
+// unprefixed internal links. Strip links to retired articles at read time so
 // the rendered HTML and text/markdown alternates cannot emit dead links.
+// Products outside the stocked catalog stay linkable: they are served as
+// "supplied on request" pages.
 export function isRetiredInternalHref(href: string): boolean {
   if (!href.startsWith("/")) return false;
 
@@ -152,25 +154,5 @@ export function isRetiredInternalHref(href: string): boolean {
   if (body.length >= 2 && ["blog", "博客", "블로그"].includes(body[0])) {
     return isRetiredBlogSlug(body[1]);
   }
-
-  const carbonRoots = new Set(["carbon-fiber", "碳纤维", "탄소섬유", "fibra-de-carbono"]);
-  const glassRoots = new Set(["glass-fiber", "玻璃纤维", "유리섬유", "fibra-de-vidrio", "fibra-de-vidro"]);
-  const division: ProductDivision | null = carbonRoots.has(body[0])
-    ? "carbon"
-    : glassRoots.has(body[0])
-      ? "glass"
-      : null;
-  if (!division) return false;
-
-  const rest = body[1] === "products" || ["产品", "제품", "productos", "produtos"].includes(body[1])
-    ? body.slice(2)
-    : body.slice(1);
-  const category = rest[0];
-  if (!category || !isKnownProductCategory(division, category)) return false;
-  if (!isActiveProductCategory(division, category)) return true;
-  return Boolean(
-    rest[1] &&
-    isKnownProduct(division, category, rest[1]) &&
-    !isActiveProduct(division, category, rest[1]),
-  );
+  return false;
 }

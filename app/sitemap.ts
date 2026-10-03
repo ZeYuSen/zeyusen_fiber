@@ -2,8 +2,8 @@ import type { MetadataRoute } from "next";
 import { absoluteUrl } from "@/lib/seo";
 import { locales, defaultLocale } from "@/lib/i18n/config";
 import { localizedHref, allLocaleHrefs, type PageKey, type RouteParams } from "@/lib/i18n/routes";
-import { allCarbonFiberCategories } from "@/data/carbon-fiber";
-import { allGlassFiberCategories } from "@/data/glass-fiber";
+import { catalogCarbonFiberCategories } from "@/data/carbon-fiber";
+import { catalogGlassFiberCategories } from "@/data/glass-fiber";
 import { getBlogSlugs, getBlogPosts } from "@/data/blog";
 import { ACTIVE_APPLICATION_SLUGS } from "@/lib/application-scope";
 
@@ -39,8 +39,8 @@ function staticEntries(): RouteEntry[] {
 function productEntries(): RouteEntry[] {
   const out: RouteEntry[] = [];
   const divisions = [
-    { cats: allCarbonFiberCategories, categoryKey: "carbon-category" as const, productKey: "carbon-product" as const },
-    { cats: allGlassFiberCategories, categoryKey: "glass-category" as const, productKey: "glass-product" as const },
+    { cats: catalogCarbonFiberCategories, categoryKey: "carbon-category" as const, productKey: "carbon-product" as const },
+    { cats: catalogGlassFiberCategories, categoryKey: "glass-category" as const, productKey: "glass-product" as const },
   ];
   for (const { cats, categoryKey, productKey } of divisions) {
     for (const category of cats) {

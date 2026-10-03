@@ -1,7 +1,7 @@
 import type { Locale } from "@/lib/i18n/config";
 import type { ProductCategory } from "@/types/product";
-import { allCarbonFiberCategories } from "@/data/carbon-fiber";
-import { allGlassFiberCategories } from "@/data/glass-fiber";
+import { allCarbonFiberCategories, catalogCarbonFiberCategories } from "@/data/carbon-fiber";
+import { allGlassFiberCategories, catalogGlassFiberCategories } from "@/data/glass-fiber";
 import { applicationGroups, type ApplicationGroup } from "@/data/applications";
 import {
   getProductContent as getProductContentBase,
@@ -224,21 +224,29 @@ const applicationDetailScopeCopy: Record<
   },
 };
 
-export function getCarbonCategories(locale: Locale): ProductCategory[] {
-  return mergeCategories(allCarbonFiberCategories, carbonTranslations[locale], locale);
+type CategoryOptions = {
+  /** Also include products supplied on request (flagged `onRequest`). */
+  includeOnRequest?: boolean;
+};
+
+export function getCarbonCategories(locale: Locale, options: CategoryOptions = {}): ProductCategory[] {
+  const base = options.includeOnRequest ? catalogCarbonFiberCategories : allCarbonFiberCategories;
+  return mergeCategories(base, carbonTranslations[locale], locale);
 }
 
-export function getGlassCategories(locale: Locale): ProductCategory[] {
-  return mergeCategories(allGlassFiberCategories, glassTranslations[locale], locale);
+export function getGlassCategories(locale: Locale, options: CategoryOptions = {}): ProductCategory[] {
+  const base = options.includeOnRequest ? catalogGlassFiberCategories : allGlassFiberCategories;
+  return mergeCategories(base, glassTranslations[locale], locale);
 }
 
 export function getCategories(
   division: "carbon" | "glass",
   locale: Locale,
+  options: CategoryOptions = {},
 ): ProductCategory[] {
   return division === "carbon"
-    ? getCarbonCategories(locale)
-    : getGlassCategories(locale);
+    ? getCarbonCategories(locale, options)
+    : getGlassCategories(locale, options);
 }
 
 function getApplicationProductNames(locale: Locale, slug: string): string[] {

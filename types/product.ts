@@ -18,6 +18,8 @@ export interface Product {
   // Fall back to name/description when absent.
   seoTitle?: string;
   seoDescription?: string;
+  // Not part of the stocked catalog: supplied on request (see lib/product-scope.ts).
+  onRequest?: boolean;
 }
 
 export interface ProductCategory {
@@ -29,6 +31,8 @@ export interface ProductCategory {
   // Optional SEO overrides for the category page title/meta.
   seoTitle?: string;
   seoDescription?: string;
+  // Every product in this category is supplied on request.
+  onRequest?: boolean;
 }
 
 export type Division = "carbon" | "glass";
