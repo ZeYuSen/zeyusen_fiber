@@ -1,14 +1,14 @@
 ---
-title: "Composite Laminate Layers: Surface, Structural, and Core"
-description: "How a composite laminate combines surface, structural, and core reinforcements into a working stack, and what to specify per layer when requesting a quote."
+title: "Composite Laminates: Surface, Structural, and Core Layers"
+description: "How laminated composite materials stack surface veils, structural reinforcements, and core into one laminate, and what to specify for each layer in an RFQ."
 slug: "composite-laminate-layers-surface-structural-core"
 date: "2026-07-16"
-dateModified: "2026-07-16"
+dateModified: "2026-10-02"
 tags: ["composite laminate", "laminate schedule", "surface tissue", "structural reinforcement", "core material", "ply layup"]
 image: "/images/blog/composite-laminate-layers-cover.webp"
 ---
 
-# Composite Laminate Layers: Surface, Structural, and Core
+# Composite Laminates: Surface, Structural, and Core Layers
 
 A finished composite is rarely one fabric. It is a stack of reinforcement layers, each doing a different job: a fine surface layer for finish, structural layers for load, and sometimes a core for stiffness and thickness. Understanding how these roles combine helps a buyer specify each layer correctly instead of ordering a single "fabric" and hoping the part performs.
 

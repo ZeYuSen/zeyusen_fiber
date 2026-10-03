@@ -3,7 +3,7 @@ import type { DivisionTranslations } from "./types";
 export const glassFiberKo: DivisionTranslations = {
   "tissue-mat": {
     "name": "유리섬유 티슈 매트 (베일)",
-        "seoTitle": "유리섬유 티슈 매트 제조업체",
+        "seoTitle": "유리섬유 매트 · 티슈 매트 (베일) 제조업체",
     "description": "난연성, 내부식성, 균열 저항성, 방수성, 통기성을 갖춘 습식 공정 유리섬유 티슈 매트.",
     "products": {
       "surface-tissue": {

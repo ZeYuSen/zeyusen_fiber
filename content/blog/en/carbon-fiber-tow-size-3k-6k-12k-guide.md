@@ -1,14 +1,14 @@
 ---
-title: "Carbon Fiber Tow Size Guide: 3K, 6K, and 12K"
-description: "Understand what 3K, 6K, and 12K carbon fiber tow designations mean, what they do not specify, and which fields buyers should include in a fabric RFQ."
+title: "3K, 6K, 12K Carbon Fiber Tow Size Guide"
+description: "What 3K, 6K, and 12K mean for carbon fiber tow and yarn (about 3,000, 6,000, and 12,000 filaments), what they do not specify, and which fields to include in a fabric RFQ."
 slug: "carbon-fiber-tow-size-3k-6k-12k-guide"
 date: "2026-07-13"
-dateModified: "2026-07-13"
+dateModified: "2026-10-02"
 tags: ["carbon fiber tow", "3K carbon fiber", "6K carbon fiber", "12K carbon fiber", "carbon fiber fabric", "material specification"]
 image: "/images/blog/carbon-tow-size-guide-cover.webp"
 ---
 
-# Carbon Fiber Tow Size Guide: 3K, 6K, and 12K
+# 3K, 6K, 12K Carbon Fiber Tow Size Guide
 
 The labels 3K, 6K, and 12K describe the approximate number of filaments grouped into one carbon fiber tow. They do not, by themselves, identify the fiber grade, fabric weight, weave, width, sizing, laminate thickness, or finished-part performance.
 

@@ -1,5 +1,5 @@
 ---
-title: "Guía de Hilo, Fibra Cortada y Polvo de Fibra de Carbono"
+title: "Hilo de fibra de carbono para composites: fibra cortada y polvo"
 description: "Compare hilo de fibra de carbono, fibra cortada y polvo para tejido, compuestos de moldeo, materiales resistentes al desgaste y aplicaciones de compuestos industriales."
 slug: "carbon-fiber-raw-materials-yarn-powder-chopped"
 date: "2026-05-28"

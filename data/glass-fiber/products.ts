@@ -42,7 +42,7 @@ export const glassFiberCategories: ProductCategory[] = [
         slug: "black-tissue",
         name: "Black Fiberglass Tissue Facing",
         relatedPosts: ["black-fiberglass-tissue-acoustic-panel-facing", "fiberglass-surface-tissue-for-composite-finish", "composite-laminate-layers-surface-structural-core"],
-        seoTitle: "Black Fiberglass Tissue Mat Manufacturer",
+        seoTitle: "Black Fiberglass Tissue & Black Glass Fiber Mat",
         description:
           "Black fiberglass tissue with flame retardancy, antibacterial properties, and sound absorption. Used for sound barriers, HVAC insulation, and ceiling panels.",
         features: [

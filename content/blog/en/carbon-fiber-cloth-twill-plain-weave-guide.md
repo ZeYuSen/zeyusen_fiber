@@ -1,5 +1,5 @@
 ---
-title: "200g Carbon Fiber Cloth: Twill vs Plain Weave Guide"
+title: "Twill vs Plain Weave Carbon Fiber Cloth: 200g Selection Guide"
 description: "Compare 200g carbon fiber twill and plain weave cloth for automotive, aerospace, and industrial composites, including drape, T300 3K specs, and resin fit."
 slug: "carbon-fiber-cloth-twill-plain-weave-guide"
 date: "2026-05-28"

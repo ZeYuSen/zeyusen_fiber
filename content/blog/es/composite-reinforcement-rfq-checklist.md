@@ -1,14 +1,14 @@
 ---
-title: "Lista de verificación RFQ para refuerzos de composites"
+title: "Refuerzos para composites: lista de verificación RFQ"
 description: "Prepare una RFQ de fibra de carbono o vidrio con pieza, formato, especificación, resina, proceso, cantidad, embalaje, calidad y documentos."
 slug: "composite-reinforcement-rfq-checklist"
 date: "2026-07-12"
-dateModified: "2026-09-10"
+dateModified: "2026-10-02"
 tags: ["refuerzo de composite", "fibra de carbono", "fibra de vidrio", "RFQ", "especificación de materiales", "compras industriales"]
 image: "/images/blog/composite-reinforcement-rfq-cover.webp"
 ---
 
-# Lista de verificación RFQ para refuerzos de composites
+# Refuerzos para composites: lista de verificación RFQ
 
 Una solicitud de oferta útil no se limita a nombrar un material. Debe dar al proveedor información suficiente para identificar el refuerzo correcto, mostrar sus supuestos, cotizar sobre una base común y señalar vacíos técnicos antes de una muestra o un pedido de producción.
 

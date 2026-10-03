@@ -1,5 +1,5 @@
 ---
-title: "Multiaxial Fiberglass Fabric Guide (300-1200gsm)"
+title: "Multiaxial Fiberglass Fabrics: Biaxial Stitched Mat Guide (300–1200 gsm)"
 description: "Select multiaxial fiberglass fabric and biaxial stitched mats for wind turbine blades, nacelle covers, and structural composites with orientation guidance."
 slug: "multiaxial-fiberglass-fabric-for-composites"
 date: "2026-05-28"
