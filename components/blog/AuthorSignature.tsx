@@ -11,7 +11,7 @@ const copy: Record<Locale, { label: string; name: string; description: string }>
   },
   zh: {
     label: "作者",
-    name: "泽宇森纤维技术团队",
+    name: "泽宇森碳纤维技术团队",
     description: "专注于玻纤毡、碳毡和除湿转轮成型纸的工业选材与工艺评估。",
   },
   ko: {

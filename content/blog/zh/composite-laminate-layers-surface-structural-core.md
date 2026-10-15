@@ -96,11 +96,11 @@ image: "/images/blog/composite-laminate-layers-cover.webp"
 
 ## 下一步
 
-用[复合材料增强材料询价清单](/blog/composite-reinforcement-rfq-checklist)把你的铺层方案转化为可比较的询价内容，并结合[织物克重指南](/blog/fiberglass-fabric-weight-gsm-oz-conversion-guide)和[上浆与树脂兼容性指南](/blog/reinforcement-sizing-resin-compatibility-guide)核对每一层的克重和兼容性。泽宇森纤维提供[表面薄毡](/glass-fiber/tissue-mat/surface-tissue)、[方格布](/glass-fiber/fiberglass-cloth/woven-roving)和[多轴向织物](/glass-fiber/fiberglass-cloth/multiaxial)等产品来满足这些角色；具体叠层方案仍需在你的工艺中验证。[提交你的层压铺层方案](/contact)以获取逐层报价。
+用[复合材料增强材料询价清单](/blog/composite-reinforcement-rfq-checklist)把你的铺层方案转化为可比较的询价内容，并结合[织物克重指南](/blog/fiberglass-fabric-weight-gsm-oz-conversion-guide)和[上浆与树脂兼容性指南](/blog/reinforcement-sizing-resin-compatibility-guide)核对每一层的克重和兼容性。泽宇森碳纤维提供[表面薄毡](/glass-fiber/tissue-mat/surface-tissue)、[方格布](/glass-fiber/fiberglass-cloth/woven-roving)和[多轴向织物](/glass-fiber/fiberglass-cloth/multiaxial)等产品来满足这些角色；具体叠层方案仍需在你的工艺中验证。[提交你的层压铺层方案](/contact)以获取逐层报价。
 
 ## 来源与证据边界
 
 - 各层功能角色与夹芯结构原理是通用的复合材料工程概念，仅作买方方向性参考，不构成针对特定部件的性能声明。
 - 粘结剂/树脂兼容性内容参照[上浆与树脂兼容性指南](/blog/reinforcement-sizing-resin-compatibility-guide)及其引用来源。
-- 产品可供范围仅依据当前泽宇森纤维目录描述。
+- 产品可供范围仅依据当前泽宇森碳纤维目录描述。
 - 本文不声称任何层压方案具有特定的强度、刚度或减重效果；这些取决于设计、材料和经过验证的工艺。

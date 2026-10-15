@@ -107,11 +107,11 @@ E 玻纤、ECR 玻纤、S 玻纤和玄武岩纤维可以在相同面密度下生
 
 ## 下一步
 
-克重、结构、纤维、幅宽和公差确定后，把该条目放入[复合材料增强材料询价清单](/blog/composite-reinforcement-rfq-checklist)，并查阅[碳纤维布规格指南](/blog/carbon-fiber-fabric-specification-guide)中的完整字段列表。泽宇森纤维的[方格布](/glass-fiber/fiberglass-cloth/woven-roving)和[平纹布](/glass-fiber/fiberglass-cloth/plain-weave)页面列出了上述克重通常对应的结构类型。[提交需求](/contact)时请同时注明两种单位，以获得可比较的报价。
+克重、结构、纤维、幅宽和公差确定后，把该条目放入[复合材料增强材料询价清单](/blog/composite-reinforcement-rfq-checklist)，并查阅[碳纤维布规格指南](/blog/carbon-fiber-fabric-specification-guide)中的完整字段列表。泽宇森碳纤维的[方格布](/glass-fiber/fiberglass-cloth/woven-roving)和[平纹布](/glass-fiber/fiberglass-cloth/plain-weave)页面列出了上述克重通常对应的结构类型。[提交需求](/contact)时请同时注明两种单位，以获得可比较的报价。
 
 ## 来源与证据边界
 
 - 单位换算为精确算术关系：1 oz/yd² = 33.906 g/m²（1 oz = 28.3495 g；1 yd² = 0.83613 m²）。
 - 测试方法参考：ASTM D3776《织物单位面积质量（重量）标准测试方法》，核验日期 2026-07-16。
-- 产品可供范围仅依据当前泽宇森纤维目录描述。
+- 产品可供范围仅依据当前泽宇森碳纤维目录描述。
 - 本文不声称某一克重可保证强度、厚度、加工表现或搜索结果。

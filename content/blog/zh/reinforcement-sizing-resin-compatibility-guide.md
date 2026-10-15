@@ -92,11 +92,11 @@ image: "/images/blog/reinforcement-resin-compatibility-cover.webp"
 
 ## 下一步
 
-把树脂体系、上浆剂和粘结剂字段加入你的[复合材料增强材料询价清单](/blog/composite-reinforcement-rfq-checklist)，并结合[玻璃纤维织物克重指南](/blog/fiberglass-fabric-weight-gsm-oz-conversion-guide)核对克重与结构。泽宇森纤维的[短切毡](/glass-fiber/chopped-strand-mat/chopped-strand-mat)和[表面薄毡](/glass-fiber/tissue-mat/surface-tissue)页面描述了当前产品；具体树脂对应的上浆或粘结剂依据应予确认，而不是想当然认定。[提交你的预期树脂和工艺](/contact)以获取兼容性建议。
+把树脂体系、上浆剂和粘结剂字段加入你的[复合材料增强材料询价清单](/blog/composite-reinforcement-rfq-checklist)，并结合[玻璃纤维织物克重指南](/blog/fiberglass-fabric-weight-gsm-oz-conversion-guide)核对克重与结构。泽宇森碳纤维的[短切毡](/glass-fiber/chopped-strand-mat/chopped-strand-mat)和[表面薄毡](/glass-fiber/tissue-mat/surface-tissue)页面描述了当前产品；具体树脂对应的上浆或粘结剂依据应予确认，而不是想当然认定。[提交你的预期树脂和工艺](/contact)以获取兼容性建议。
 
 ## 来源与证据边界
 
 - 粘结剂/树脂化学参考来源：Fiberglass Warehouse,《Cracking the Resin Code: Why Chopped Strand Mat and Epoxy Resin Don't Mix》，核验日期 2026-07-16。
 - 树脂体系说明仅为一般采购方向参考，不构成性能声明；任何决策都应依据供应商数据和自身测试。
-- 产品可供范围仅依据当前泽宇森纤维目录描述。
+- 产品可供范围仅依据当前泽宇森碳纤维目录描述。
 - 本文不声称任何树脂或增强材料组合具有特定的力学、化学或防火性能。
