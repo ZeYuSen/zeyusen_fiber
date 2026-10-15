@@ -200,6 +200,7 @@ export async function generateMetadata({ params }: PageProps<"/[lang]/[[...slug]
     alternates,
     image,
     type,
+    absoluteTitle: seo.absoluteTitle,
   });
 }
 

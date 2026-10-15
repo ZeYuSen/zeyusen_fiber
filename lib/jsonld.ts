@@ -3,12 +3,24 @@ import { contactInfo } from "./contact";
 
 const logoSrc = "/logo.png?v=logo-20260626";
 
+// Every name the company is searched by, English and Chinese.
+const brandAlternateNames = [
+  siteConfig.name,
+  siteConfig.zhName,
+  siteConfig.zhShortName,
+  siteConfig.zhLegalName,
+  "ZEYUSEN",
+];
+
 export function websiteJsonLd(url: string = absoluteUrl("/"), inLanguage?: string) {
+  const isZh = inLanguage === "zh";
   return {
     "@context": "https://schema.org",
     "@type": "WebSite",
-    name: siteConfig.legalName,
-    alternateName: siteConfig.name,
+    name: isZh ? siteConfig.zhName : siteConfig.legalName,
+    alternateName: isZh
+      ? [siteConfig.zhShortName, siteConfig.zhLegalName, siteConfig.name]
+      : brandAlternateNames,
     url,
     ...(inLanguage ? { inLanguage } : {}),
   };
@@ -34,7 +46,7 @@ export function organizationJsonLd() {
     "@context": "https://schema.org",
     "@type": ["Organization", "Manufacturer"],
     name: siteConfig.legalName,
-    alternateName: siteConfig.name,
+    alternateName: brandAlternateNames,
     legalName: contactInfo.company,
     url: absoluteUrl("/"),
     logo: absoluteUrl(logoSrc),

@@ -5,6 +5,7 @@ import type { Locale } from "@/lib/i18n/config";
 import { localizedHref } from "@/lib/i18n/routes";
 import type { Dictionary } from "@/lib/i18n/dictionaries";
 import { getCategories } from "@/lib/data-i18n";
+import { siteConfig } from "@/lib/seo";
 
 const madeInChinaUrl =
   "https://js-zys.en.made-in-china.com/company-JIANGSU-ZEYUSEN-CARBON-FIBER-TECHNOLOGY-CO-LTD-.html?pv_id=1jqr933jbfc3&faw_id=1jqr93dmccb5&bv_id=1jqr93dmea79&pbv_id=1jqr932uc858";
@@ -56,14 +57,21 @@ export function Footer({ locale, dict }: { locale: Locale; dict: Dictionary }) {
                 height={48}
                 className="block h-12 w-12 shrink-0 object-cover scale-[1.08] brightness-0 invert"
               />
-              <span
-                className={`leading-none text-white ${
-                  locale === "zh"
-                    ? "text-[1.6rem] font-black tracking-[0.04em]"
-                    : "text-[1.45rem] font-[family-name:var(--font-jetbrains-mono)] font-[900] tracking-[0.07em]"
-                }`}
-              >
-                {locale === "zh" ? "泽宇森" : "ZEYUSEN"}
+              <span className="flex flex-col gap-1.5">
+                <span
+                  className={`leading-none text-white ${
+                    locale === "zh"
+                      ? "text-[1.6rem] font-black tracking-[0.04em]"
+                      : "text-[1.45rem] font-[family-name:var(--font-jetbrains-mono)] font-[900] tracking-[0.07em]"
+                  }`}
+                >
+                  {locale === "zh" ? "泽宇森" : "ZEYUSEN"}
+                </span>
+                {locale !== "zh" && (
+                  <span lang="zh" className="text-xs font-bold tracking-[0.3em] text-white/60 leading-none">
+                    {siteConfig.zhShortName}
+                  </span>
+                )}
               </span>
             </div>
             <p className="text-sm text-neutral-400 leading-relaxed">{dict.footer.tagline}</p>
@@ -180,7 +188,15 @@ export function Footer({ locale, dict }: { locale: Locale; dict: Dictionary }) {
         {/* Bottom */}
         <div className="mt-8 flex flex-col sm:flex-row items-center justify-between gap-4">
           <p className="text-xs text-neutral-500">
-            &copy; {new Date().getFullYear()} Jiangsu Zeyusen Carbon Fiber Technology Co., Ltd. {dict.footer.rights}
+            &copy; {new Date().getFullYear()}{" "}
+            {locale === "zh" ? (
+              siteConfig.zhLegalName
+            ) : (
+              <>
+                {siteConfig.legalName} (<span lang="zh">{siteConfig.zhLegalName}</span>)
+              </>
+            )}{" "}
+            {dict.footer.rights}
           </p>
           <div className="flex items-center gap-6">
             <Link href={localizedHref("privacy", locale)} className="text-xs text-neutral-500 hover:text-neutral-300 transition-colors">

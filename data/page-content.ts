@@ -5,7 +5,9 @@ import { defaultLocale } from "@/lib/i18n/config";
 // and NOT data-driven (products/blog). One English base; ko/es/pt overrides are
 // merged on top (missing keys fall back to English).
 
-export type SeoMeta = { title: string; description: string };
+// absoluteTitle: the title already carries the brand, so skip the layout's
+// "%s | brand" template.
+export type SeoMeta = { title: string; description: string; absoluteTitle?: boolean };
 
 export type PageContent = {
   seo: Record<string, SeoMeta>;

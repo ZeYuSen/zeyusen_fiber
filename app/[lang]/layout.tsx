@@ -10,7 +10,7 @@ import { Footer } from "@/components/layout/Footer";
 import { AIChatWidget } from "@/components/layout/AIChatWidget";
 import { NewTabLinkBehavior } from "@/components/layout/NewTabLinkBehavior";
 import { SmoothScrollProvider } from "@/components/providers/SmoothScroll";
-import { absoluteUrl, siteConfig } from "@/lib/seo";
+import { absoluteUrl, siteConfig, siteNameFor } from "@/lib/seo";
 import { organizationJsonLd, websiteJsonLd } from "@/lib/jsonld";
 import { locales, isLocale, localeMeta, type Locale } from "@/lib/i18n/config";
 import { getDictionary } from "@/lib/i18n/dictionaries";
@@ -48,12 +48,20 @@ export function generateStaticParams() {
   return locales.map((lang) => ({ lang }));
 }
 
-export const metadata: Metadata = {
+export async function generateMetadata({ params }: LayoutProps<"/[lang]">): Promise<Metadata> {
+  const { lang } = await params;
+  const locale: Locale = isLocale(lang) ? lang : "en";
+  return {
+    ...baseMetadata,
+    title: {
+      default: locale === "zh" ? `${siteConfig.zhName} | 碳毡、玻纤毡与除湿转轮成型纸制造商` : siteConfig.title,
+      template: `%s | ${siteNameFor(locale)}`,
+    },
+  };
+}
+
+const baseMetadata: Metadata = {
   metadataBase: new URL(siteConfig.url),
-  title: {
-    default: siteConfig.title,
-    template: "%s | ZeYuSen Fiber",
-  },
   description: siteConfig.description,
   icons: {
     icon: [
