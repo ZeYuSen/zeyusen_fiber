@@ -5,7 +5,7 @@ import type { Locale } from "@/lib/i18n/config";
 import { localizedHref } from "@/lib/i18n/routes";
 import type { Dictionary } from "@/lib/i18n/dictionaries";
 import { getCategories } from "@/lib/data-i18n";
-import { siteConfig } from "@/lib/seo";
+import { siteConfig, siteNameFor } from "@/lib/seo";
 
 const madeInChinaUrl =
   "https://js-zys.en.made-in-china.com/company-JIANGSU-ZEYUSEN-CARBON-FIBER-TECHNOLOGY-CO-LTD-.html?pv_id=1jqr933jbfc3&faw_id=1jqr93dmccb5&bv_id=1jqr93dmea79&pbv_id=1jqr932uc858";
@@ -52,7 +52,7 @@ export function Footer({ locale, dict }: { locale: Locale; dict: Dictionary }) {
             <div className="flex items-center gap-2.5 mb-5">
               <Image
                 src={logoSrc}
-                alt="ZeYuSen Fiber"
+                alt={siteNameFor(locale)}
                 width={48}
                 height={48}
                 className="block h-12 w-12 shrink-0 object-cover scale-[1.08] brightness-0 invert"

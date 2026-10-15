@@ -4,7 +4,7 @@ import { useState, useRef } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { Send } from "lucide-react";
-import { contactInfo, whatsappPhone } from "@/lib/contact";
+import { contactInfo, whatsappPhone, companyNameFor, addressFor } from "@/lib/contact";
 import { Turnstile, type TurnstileInstance } from "@marsidev/react-turnstile";
 import { useLocale } from "@/lib/i18n/use-locale";
 import { localizedHref } from "@/lib/i18n/routes";
@@ -284,7 +284,7 @@ export default function ContactPageContent({ nav }: { nav?: { home: string; curr
                   <div>
                     <p className="text-xs uppercase tracking-[0.15em] text-neutral-400">{c.companyLabel}</p>
                     <p className="text-base text-neutral-700 mt-2">
-                      {contactInfo.company}
+                      {companyNameFor(locale)}
                     </p>
                   </div>
                   <div className="border-t border-neutral-100 pt-8">
@@ -324,7 +324,7 @@ export default function ContactPageContent({ nav }: { nav?: { home: string; curr
                       rel="noopener noreferrer"
                       className="block text-base text-neutral-700 hover:text-neutral-900 transition-colors mt-2"
                     >
-                      {contactInfo.address}
+                      {addressFor(locale)}
                     </a>
                   </div>
                 </div>

@@ -17,7 +17,7 @@ import { getDictionary } from "@/lib/i18n/dictionaries";
 import { allLocaleHrefs } from "@/lib/i18n/routes";
 import { getCategories } from "@/lib/data-i18n";
 import { localizedHref } from "@/lib/i18n/routes";
-import { contactInfo } from "@/lib/contact";
+import { contactInfo, companyNameFor, addressFor } from "@/lib/contact";
 import { buildAgentIndex } from "@/lib/agent-tools";
 import { WebMCPProvider } from "@/components/providers/WebMCPProvider";
 import { MotionLayer } from "@/components/fx/MotionLayer";
@@ -119,7 +119,7 @@ export default async function LangLayout({
       <body className="min-h-screen flex flex-col antialiased">
         <script
           type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationJsonLd()) }}
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationJsonLd(locale)) }}
         />
         <script
           type="application/ld+json"
@@ -141,10 +141,10 @@ export default async function LangLayout({
         <WebMCPProvider
           index={agentIndex}
           contact={{
-            company: contactInfo.company,
+            company: companyNameFor(locale),
             email: contactInfo.emails[0],
             phone: contactInfo.phones[0],
-            address: contactInfo.address,
+            address: addressFor(locale),
           }}
           contactHref={localizedHref("contact", locale)}
         />

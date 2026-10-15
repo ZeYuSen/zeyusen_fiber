@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import type { Locale } from "./i18n/config";
 import { localeMeta } from "./i18n/config";
+import { contactInfo } from "./contact";
 
 const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "http://localhost:3000";
 
@@ -11,7 +12,7 @@ export const siteConfig = {
   // so search engines tie "泽宇森" queries to this site.
   zhName: "泽宇森碳纤维",
   zhShortName: "泽宇森",
-  zhLegalName: "江苏泽宇森碳纤维科技股份有限公司",
+  zhLegalName: contactInfo.zhCompany,
   url: siteUrl,
   title: "ZeYuSen Fiber | Engineered Fiber Solutions",
   description:

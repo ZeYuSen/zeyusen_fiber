@@ -487,7 +487,7 @@ const pt: HomeContent = {
 
 const zh: HomeContent = {
   hero: [
-    { title: "碳毡、玻纤毡与除湿转轮成型纸制造商", subtitle: "面向复合材料表面、电池、工业防护和除湿转轮的OEM材料" },
+    { title: "泽宇森碳纤维：碳毡、玻纤毡与除湿转轮成型纸制造商", subtitle: "面向复合材料表面、电池、工业防护和除湿转轮的OEM材料" },
     { title: "先进制造设施", subtitle: "标准化生产基地，配备自动化生产线和严格质量管控" },
     { title: "深受全球买家信赖", subtitle: "距上海港240公里的双生产基地——FOB、CIF、CFR 或 EXW，按您的条款灵活协调" },
   ],

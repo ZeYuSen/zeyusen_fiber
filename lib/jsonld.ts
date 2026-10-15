@@ -1,28 +1,40 @@
-import { absoluteUrl, siteConfig } from "./seo";
-import { contactInfo } from "./contact";
+import { absoluteUrl, siteConfig, siteNameFor } from "./seo";
+import { contactInfo, companyNameFor } from "./contact";
+import type { Locale } from "./i18n/config";
 
 const logoSrc = "/logo.png?v=logo-20260626";
 
+// One company entity shared by every page and locale, so search engines merge
+// the English and Chinese names into the same knowledge-graph entry.
+const organizationId = absoluteUrl("/#organization");
+
 // Every name the company is searched by, English and Chinese.
-const brandAlternateNames = [
+const brandNames = [
+  siteConfig.legalName,
+  contactInfo.company,
   siteConfig.name,
-  siteConfig.zhName,
-  "泽宇森纤维",
-  siteConfig.zhShortName,
-  siteConfig.zhLegalName,
   "ZEYUSEN",
+  siteConfig.zhLegalName,
+  siteConfig.zhName,
+  siteConfig.zhShortName,
+  "泽宇森纤维",
+  contactInfo.zhFormerCompany,
 ];
 
+function alternateNamesExcept(...primary: string[]) {
+  return brandNames.filter((name) => !primary.includes(name));
+}
+
 export function websiteJsonLd(url: string = absoluteUrl("/"), inLanguage?: string) {
-  const isZh = inLanguage === "zh";
+  const name = inLanguage === "zh" ? siteConfig.zhName : siteConfig.legalName;
   return {
     "@context": "https://schema.org",
     "@type": "WebSite",
-    name: isZh ? siteConfig.zhName : siteConfig.legalName,
-    alternateName: isZh
-      ? [siteConfig.zhShortName, "泽宇森纤维", siteConfig.zhLegalName, siteConfig.name]
-      : brandAlternateNames,
+    "@id": `${url}#website`,
+    name,
+    alternateName: alternateNamesExcept(name),
     url,
+    publisher: { "@id": organizationId },
     ...(inLanguage ? { inLanguage } : {}),
   };
 }
@@ -42,18 +54,35 @@ export function faqJsonLd(items: { question: string; answer: string }[]) {
   };
 }
 
-export function organizationJsonLd() {
+export function organizationJsonLd(locale: Locale = "en") {
+  const isZh = locale === "zh";
+  const name = isZh ? siteConfig.zhLegalName : siteConfig.legalName;
   return {
     "@context": "https://schema.org",
     "@type": ["Organization", "Manufacturer"],
-    name: siteConfig.legalName,
-    alternateName: brandAlternateNames,
-    legalName: contactInfo.company,
+    "@id": organizationId,
+    name,
+    alternateName: alternateNamesExcept(name, companyNameFor(locale)),
+    legalName: companyNameFor(locale),
     url: absoluteUrl("/"),
     logo: absoluteUrl(logoSrc),
-    description:
-      "Manufacturer of fiberglass mats and veils, carbon fiber mats, and desiccant rotor forming paper for industrial composite and dehumidification applications.",
+    description: isZh
+      ? `${siteConfig.zhLegalName}（简称泽宇森，新三板证券代码${contactInfo.neeq.code}）成立于2015年，专业生产玻纤毡与面纱、碳纤维毡和除湿转轮成型纸，服务复合材料与工业除湿应用。`
+      : "Manufacturer of fiberglass mats and veils, carbon fiber mats, and desiccant rotor forming paper for industrial composite and dehumidification applications.",
     foundingDate: contactInfo.foundingDate,
+    taxID: contactInfo.creditCode,
+    identifier: [
+      {
+        "@type": "PropertyValue",
+        propertyID: "Unified Social Credit Code (统一社会信用代码)",
+        value: contactInfo.creditCode,
+      },
+      {
+        "@type": "PropertyValue",
+        propertyID: "NEEQ stock code (新三板证券代码)",
+        value: contactInfo.neeq.code,
+      },
+    ],
     address: {
       "@type": "PostalAddress",
       streetAddress: contactInfo.structuredAddress.streetAddress,
@@ -137,6 +166,7 @@ export function chinaCompositesExpo2026JsonLd(locale: "en" | "zh" | "ko" | "es" 
     },
     performer: {
       "@type": "Organization",
+      "@id": organizationId,
       name: siteConfig.legalName,
       url: absoluteUrl("/"),
       description: "Exhibitor at Booth 6R30",
@@ -165,12 +195,14 @@ export function productJsonLd({
   image,
   category,
   path,
+  locale = "en",
 }: {
   name: string;
   description: string;
   image: string;
   category: string;
   path: string;
+  locale?: Locale;
 }) {
   return {
     "@context": "https://schema.org",
@@ -182,11 +214,12 @@ export function productJsonLd({
     url: absoluteUrl(path),
     brand: {
       "@type": "Brand",
-      name: "ZeYuSen Fiber",
+      name: siteNameFor(locale),
     },
     manufacturer: {
       "@type": "Organization",
-      name: "ZeYuSen Fiber",
+      "@id": organizationId,
+      name: siteNameFor(locale),
       url: absoluteUrl("/"),
     },
     audience: {
@@ -221,6 +254,7 @@ export function articleJsonLd({
   inLanguage?: string;
 }) {
   const url = absoluteUrl(path);
+  const orgName = siteNameFor(inLanguage === "zh" ? "zh" : "en");
   return {
     "@context": "https://schema.org",
     "@type": "BlogPosting",
@@ -232,12 +266,14 @@ export function articleJsonLd({
     ...(inLanguage ? { inLanguage } : {}),
     author: {
       "@type": "Organization",
-      name: "ZeYuSen Fiber",
+      "@id": organizationId,
+      name: orgName,
       url: absoluteUrl("/"),
     },
     publisher: {
       "@type": "Organization",
-      name: "ZeYuSen Fiber",
+      "@id": organizationId,
+      name: orgName,
       logo: {
         "@type": "ImageObject",
         url: absoluteUrl(logoSrc),

@@ -4,7 +4,7 @@ import { useState, useRef } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { motion, AnimatePresence, useScroll, useSpring } from "framer-motion";
-import { contactInfo } from "@/lib/contact";
+import { companyNameFor } from "@/lib/contact";
 import { useLocale } from "@/lib/i18n/use-locale";
 import { localizedHref } from "@/lib/i18n/routes";
 import { getPagesContent } from "@/lib/i18n/pages-content";
@@ -242,7 +242,7 @@ export default function AboutPageContent({ nav }: { nav?: { home: string; curren
       <PageMediaHero
         eyebrow={c.eyebrow}
         title={c.title}
-        description={<>{contactInfo.company} {c.lead}</>}
+        description={<>{companyNameFor(locale)}{locale === "zh" ? "" : " "}{c.lead}</>}
         image={pageHeroImages.about}
         imageAlt={c.factory.title}
         objectPosition="center 45%"

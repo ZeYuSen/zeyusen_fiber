@@ -341,6 +341,7 @@ export default async function LocalizedPage({ params }: PageProps<"/[lang]/[[...
               image: product.images[0],
               category: category.name,
               path,
+              locale,
             })}
           />
           {productContent?.faqs?.length ? (

@@ -8,6 +8,7 @@ import { Menu, X, ChevronDown, ChevronRight } from "lucide-react";
 import { isLocale, defaultLocale } from "@/lib/i18n/config";
 import { localizedHref, resolveRoute, type PageKey } from "@/lib/i18n/routes";
 import type { Dictionary } from "@/lib/i18n/dictionaries";
+import { siteNameFor } from "@/lib/seo";
 import { LanguageSwitcher } from "./LanguageSwitcher";
 
 const logoSrc = "/logo.png?v=logo-20260626";
@@ -118,7 +119,7 @@ export function Header({
           <Link href={localizedHref("home", locale)} className="flex items-center gap-3.5">
             <Image
               src={logoSrc}
-              alt="ZEYUSEN Fiber"
+              alt={siteNameFor(locale)}
               width={62}
               height={62}
               loading="eager"
