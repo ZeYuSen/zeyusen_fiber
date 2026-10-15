@@ -7,6 +7,7 @@ const logoSrc = "/logo.png?v=logo-20260626";
 const brandAlternateNames = [
   siteConfig.name,
   siteConfig.zhName,
+  "泽宇森纤维",
   siteConfig.zhShortName,
   siteConfig.zhLegalName,
   "ZEYUSEN",
@@ -19,7 +20,7 @@ export function websiteJsonLd(url: string = absoluteUrl("/"), inLanguage?: strin
     "@type": "WebSite",
     name: isZh ? siteConfig.zhName : siteConfig.legalName,
     alternateName: isZh
-      ? [siteConfig.zhShortName, siteConfig.zhLegalName, siteConfig.name]
+      ? [siteConfig.zhShortName, "泽宇森纤维", siteConfig.zhLegalName, siteConfig.name]
       : brandAlternateNames,
     url,
     ...(inLanguage ? { inLanguage } : {}),

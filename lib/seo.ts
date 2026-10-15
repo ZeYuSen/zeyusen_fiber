@@ -9,7 +9,7 @@ export const siteConfig = {
   legalName: "Jiangsu Zeyusen Carbon Fiber Technology Co., Ltd.",
   // Chinese brand names. Kept on every locale (JSON-LD alternateName, footer)
   // so search engines tie "泽宇森" queries to this site.
-  zhName: "泽宇森纤维",
+  zhName: "泽宇森碳纤维",
   zhShortName: "泽宇森",
   zhLegalName: "江苏泽宇森碳纤维科技股份有限公司",
   url: siteUrl,
