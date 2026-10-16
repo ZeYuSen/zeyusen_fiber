@@ -101,6 +101,15 @@ export const applicationGroups: ApplicationGroup[] = [
     bgClass: "bg-emerald-50",
     applications: [
       {
+        slug: "desiccant-rotors",
+        icon: "factory",
+        title: "Desiccant & Zeolite Rotors",
+        description:
+          "Glass fiber forming paper for silica gel desiccant rotors and zeolite / molecular sieve rotors.",
+        products: ["Desiccant Rotor Substrate Paper"],
+        detailHref: "/glass-fiber/applications/desiccant-rotors",
+      },
+      {
         slug: "wind-energy",
         icon: "wind",
         title: "Wind Energy",

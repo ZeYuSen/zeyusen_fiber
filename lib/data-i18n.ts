@@ -88,6 +88,9 @@ const applicationProductKeys: Record<
     { division: "carbon", category: "carbon-fiber-mat", product: "composite-mat" },
     { division: "carbon", category: "carbon-fiber-mat", product: "surface-mat-10g" },
   ],
+  "desiccant-rotors": [
+    { division: "glass", category: "tissue-mat", product: "rotor-paper" },
+  ],
   construction: [
     { division: "glass", category: "tissue-mat", product: "roofing-tissue" },
     { division: "glass", category: "tissue-mat", product: "wall-covering" },
@@ -97,26 +100,31 @@ const applicationProductKeys: Record<
 
 const applicationGroupDescriptions: Record<Locale, Record<string, string>> = {
   en: {
+    "desiccant-rotors": "Glass fiber forming paper for silica gel desiccant rotors and zeolite / molecular sieve rotors.",
     "new-energy": "Carbon fiber mats for fuel-cell GDL evaluation and conductive functional layers.",
     "military-defense": "Carbon fiber mats for EMI/RFI shielding evaluation and conductive layers in defense electronics.",
     construction: "Fiberglass tissues for roofing membranes, wall coverings, pipe facings, and surface layers.",
   },
   zh: {
+    "desiccant-rotors": "用于硅胶除湿转轮和沸石（分子筛）转轮的玻纤成型纸。",
     "new-energy": "用于燃料电池气体扩散层评估和导电功能层的碳毡。",
     "military-defense": "用于军工电子设备 EMI/RFI 屏蔽评估和导电功能层的碳毡。",
     construction: "用于屋面卷材、墙面覆盖、管道面层和复合材料表面的玻纤薄毡。",
   },
   ko: {
+    "desiccant-rotors": "실리카겔 제습 로터와 제올라이트(분자체) 로터용 유리섬유 성형지.",
     "new-energy": "연료전지 GDL 평가와 전도성 기능층을 위한 탄소섬유 매트.",
     "military-defense": "방산 전자장비의 EMI/RFI 차폐 평가와 전도층을 위한 탄소섬유 매트.",
     construction: "루핑 멤브레인, 벽 마감, 파이프 표면재와 복합재 표면층용 유리섬유 티슈.",
   },
   es: {
+    "desiccant-rotors": "Papel de fibra de vidrio para rotores desecantes de gel de sílice y rotores de zeolita / tamiz molecular.",
     "new-energy": "Mantas de carbono para evaluar GDL de pilas de combustible y capas funcionales conductoras.",
     "military-defense": "Mantas de carbono para evaluar blindaje EMI/RFI y capas conductoras en electrónica de defensa.",
     construction: "Velos de vidrio para membranas de cubierta, paredes, revestimiento de tuberías y capas superficiales.",
   },
   pt: {
+    "desiccant-rotors": "Papel de fibra de vidro para rotores dessecantes de sílica gel e rotores de zeólita / peneira molecular.",
     "new-energy": "Mantas de carbono para avaliação de GDL de células a combustível e camadas condutivas.",
     "military-defense": "Mantas de carbono para avaliação de blindagem EMI/RFI e camadas condutivas em eletrônica de defesa.",
     construction: "Véus de vidro para membranas de cobertura, paredes, faces de tubos e camadas superficiais.",

@@ -7,6 +7,18 @@ import { defaultLocale } from "./config";
 export type HomeContent = {
   hero: { title: string; subtitle: string }[];
   heroCta: { quote: string; about: string };
+  // Homepage spotlight for the lead product line (desiccant rotor paper).
+  rotor: {
+    eyebrow: string;
+    title: string;
+    lede: string;
+    points: string[];
+    ctaProduct: string;
+    ctaApplication: string;
+    ctaSample: string;
+    guidesHeading: string;
+    imageAlt: string;
+  };
   divisions: { carbon: DivisionCard; glass: DivisionCard };
   exploreProducts: string;
   stats: { value: number; suffix: string; label: string }[];
@@ -62,9 +74,9 @@ type DivisionCard = {
 const en: HomeContent = {
   hero: [
     {
-      title: "Carbon Fiber Mat, Fiberglass Mat & Rotor Paper Manufacturer",
+      title: "Desiccant Rotor Paper, Fiberglass Mat & Carbon Fiber Mat Manufacturer",
       subtitle:
-        "ZeYuSen Fiber (Zeyusen) makes focused OEM materials for composite surfaces, batteries, industrial protection and desiccant rotors",
+        "ZeYuSen Fiber (Zeyusen) makes glass fiber forming paper for desiccant and zeolite rotors, plus focused mats for composite surfaces and batteries",
     },
     {
       title: "State-of-the-Art Manufacturing",
@@ -77,6 +89,22 @@ const en: HomeContent = {
         "Dual production bases 240 km from Shanghai Port — FOB, CIF, CFR or EXW, coordinated to your terms",
     },
   ],
+  rotor: {
+    eyebrow: "Core product",
+    title: "Desiccant Rotor Forming Paper",
+    lede: "Wet-laid glass fiber paper for the flat and corrugated layers of honeycomb rotor cores, made for rotor manufacturers who corrugate, wind and impregnate their own wheels.",
+    points: [
+      "Substrate for silica gel desiccant rotors and zeolite / molecular sieve rotors",
+      "Supplied as roll material for corrugating, forming and impregnation trials",
+      "Basis weight, thickness, width and binder confirmed against your process",
+      "Samples evaluated through your line before production approval",
+    ],
+    ctaProduct: "View rotor paper",
+    ctaApplication: "Desiccant rotor applications",
+    ctaSample: "Request a sample",
+    guidesHeading: "Rotor paper guides",
+    imageAlt: "Rolls of glass fiber desiccant rotor forming paper",
+  },
   heroCta: { quote: "Get a Quote", about: "About Our Manufacturing" },
   divisions: {
     carbon: {
@@ -195,10 +223,26 @@ const en: HomeContent = {
 
 const ko: HomeContent = {
   hero: [
-    { title: "탄소섬유 매트, 유리섬유 매트 및 로터 성형지 제조업체", subtitle: "ZeYuSen Fiber(Zeyusen)의 복합재 표면, 배터리, 산업 보호 및 제습 로터용 OEM 소재" },
+    { title: "제습 로터 성형지, 유리섬유 매트 및 탄소섬유 매트 제조업체", subtitle: "ZeYuSen Fiber(Zeyusen)는 제습·제올라이트 로터용 유리섬유 성형지와 복합재 표면, 배터리용 매트를 생산합니다" },
     { title: "최첨단 제조 시설", subtitle: "자동화 생산 라인과 엄격한 품질 관리를 갖춘 표준화 생산 시설" },
     { title: "글로벌 바이어의 신뢰", subtitle: "상하이항에서 240km 거리의 이중 생산 거점 — FOB, CIF, CFR, EXW, 귀하의 조건에 맞춰 조율" },
   ],
+  rotor: {
+    eyebrow: "핵심 제품",
+    title: "제습 로터 성형지",
+    lede: "허니컴 로터 코어의 평판층과 골판층에 쓰이는 습식 유리섬유 페이퍼로, 직접 골판 가공·권취·함침을 하는 로터 제조사를 위한 소재입니다.",
+    points: [
+      "실리카겔 제습 로터와 제올라이트(분자체) 로터용 기재",
+      "골판 가공, 성형, 함침 시험을 위한 롤 형태 공급",
+      "평량, 두께, 폭, 바인더를 귀사 공정에 맞춰 확인",
+      "양산 승인 전 귀사 라인에서 샘플 검증",
+    ],
+    ctaProduct: "로터 성형지 보기",
+    ctaApplication: "제습 로터 응용",
+    ctaSample: "샘플 요청",
+    guidesHeading: "로터 페이퍼 가이드",
+    imageAlt: "유리섬유 제습 로터 성형지 롤",
+  },
   heroCta: { quote: "견적 요청", about: "제조 시설 소개" },
   divisions: {
     carbon: { label: "탄소섬유", headline: "기능성 복합층용 탄소 매트", description: "기능층과 산업용 복합 공정을 위한 표면, 전도성, 복합, 니들 및 연료전지 GDL용 매트.",
@@ -291,10 +335,26 @@ const ko: HomeContent = {
 
 const es: HomeContent = {
   hero: [
-    { title: "Fabricante de Mantas de Carbono, Mantas de Vidrio y Papel para Rotores", subtitle: "ZeYuSen Fiber (Zeyusen): materiales OEM para superficies compuestas, baterías, protección industrial y rotores desecantes" },
+    { title: "Fabricante de Papel para Rotores Desecantes, Mantas de Vidrio y de Carbono", subtitle: "ZeYuSen Fiber (Zeyusen): papel de fibra de vidrio para rotores desecantes y de zeolita, y mantas para superficies compuestas y baterías" },
     { title: "Fabricación de Vanguardia", subtitle: "Instalaciones de producción estandarizadas con líneas automatizadas y estricto control de calidad" },
     { title: "La Confianza de Compradores Globales", subtitle: "Bases de producción duales a 240 km del Puerto de Shanghái — FOB, CIF, CFR o EXW, coordinado a sus términos" },
   ],
+  rotor: {
+    eyebrow: "Producto principal",
+    title: "Papel para rotores desecantes",
+    lede: "Papel de fibra de vidrio por vía húmeda para las capas planas y corrugadas de los núcleos de rotor en panal, pensado para fabricantes que corrugan, bobinan e impregnan sus propias ruedas.",
+    points: [
+      "Sustrato para rotores desecantes de gel de sílice y rotores de zeolita / tamiz molecular",
+      "Suministro en bobinas para pruebas de corrugado, conformado e impregnación",
+      "Gramaje, espesor, ancho y aglutinante confirmados según su proceso",
+      "Muestras validadas en su línea antes de aprobar la producción",
+    ],
+    ctaProduct: "Ver papel para rotores",
+    ctaApplication: "Aplicaciones en rotores desecantes",
+    ctaSample: "Solicitar muestra",
+    guidesHeading: "Guías sobre papel para rotores",
+    imageAlt: "Bobinas de papel de fibra de vidrio para rotores desecantes",
+  },
   heroCta: { quote: "Solicitar Cotización", about: "Sobre Nuestra Fabricación" },
   divisions: {
     carbon: { label: "Fibra de Carbono", headline: "Mantas para Capas Funcionales", description: "Mantas superficiales, conductoras, compuestas, punzonadas y para GDL en procesos industriales.",
@@ -389,10 +449,26 @@ const es: HomeContent = {
 
 const pt: HomeContent = {
   hero: [
-    { title: "Fabricante de Mantas de Carbono, Mantas de Vidro e Papel para Rotores", subtitle: "ZeYuSen Fiber (Zeyusen): materiais OEM para superfícies compósitas, baterias, proteção industrial e rotores dessecantes" },
+    { title: "Fabricante de Papel para Rotores Dessecantes, Mantas de Vidro e de Carbono", subtitle: "ZeYuSen Fiber (Zeyusen): papel de fibra de vidro para rotores dessecantes e de zeólita, e mantas para superfícies compósitas e baterias" },
     { title: "Fabricação de Última Geração", subtitle: "Instalações de produção padronizadas com linhas automatizadas e rigoroso controle de qualidade" },
     { title: "A Confiança de Compradores Globais", subtitle: "Bases de produção duplas a 240 km do Porto de Xangai — FOB, CIF, CFR ou EXW, coordenado aos seus termos" },
   ],
+  rotor: {
+    eyebrow: "Produto principal",
+    title: "Papel para rotores dessecantes",
+    lede: "Papel de fibra de vidro por via úmida para as camadas planas e corrugadas de núcleos de rotor em colmeia, feito para fabricantes que corrugam, enrolam e impregnam suas próprias rodas.",
+    points: [
+      "Substrato para rotores dessecantes de sílica gel e rotores de zeólita / peneira molecular",
+      "Fornecido em bobinas para testes de corrugação, conformação e impregnação",
+      "Gramatura, espessura, largura e ligante confirmados conforme seu processo",
+      "Amostras validadas na sua linha antes da aprovação de produção",
+    ],
+    ctaProduct: "Ver papel para rotores",
+    ctaApplication: "Aplicações em rotores dessecantes",
+    ctaSample: "Solicitar amostra",
+    guidesHeading: "Guias sobre papel para rotores",
+    imageAlt: "Bobinas de papel de fibra de vidro para rotores dessecantes",
+  },
   heroCta: { quote: "Solicitar Orçamento", about: "Sobre Nossa Fabricação" },
   divisions: {
     carbon: { label: "Fibra de Carbono", headline: "Mantas para Camadas Funcionais", description: "Mantas de superfície, condutivas, compostas, agulhadas e para GDL em processos industriais.",
@@ -487,10 +563,26 @@ const pt: HomeContent = {
 
 const zh: HomeContent = {
   hero: [
-    { title: "泽宇森碳纤维：碳毡、玻纤毡与除湿转轮成型纸制造商", subtitle: "面向复合材料表面、电池、工业防护和除湿转轮的OEM材料" },
+    { title: "泽宇森碳纤维：除湿转轮成型纸、玻纤毡与碳毡制造商", subtitle: "专业生产除湿转轮与沸石转轮用玻纤成型纸，并提供复合材料表面和电池用纤维毡" },
     { title: "先进制造设施", subtitle: "标准化生产基地，配备自动化生产线和严格质量管控" },
     { title: "深受全球买家信赖", subtitle: "距上海港240公里的双生产基地——FOB、CIF、CFR 或 EXW，按您的条款灵活协调" },
   ],
+  rotor: {
+    eyebrow: "核心产品",
+    title: "除湿转轮成型纸",
+    lede: "湿法玻纤成型纸，用于蜂窝转轮芯体的平层和瓦楞层，面向自行瓦楞、卷绕和浸渍的转轮制造商。",
+    points: [
+      "适用于硅胶除湿转轮和沸石（分子筛）转轮的基材",
+      "以卷材供货，用于瓦楞、成型和浸渍试样",
+      "克重、厚度、幅宽和粘结剂按您的工艺确认",
+      "样品经您的产线验证后再批量供货",
+    ],
+    ctaProduct: "查看转轮成型纸",
+    ctaApplication: "除湿转轮应用",
+    ctaSample: "申请样品",
+    guidesHeading: "转轮纸技术指南",
+    imageAlt: "玻纤除湿转轮成型纸卷材",
+  },
   heroCta: { quote: "获取报价", about: "了解我们的制造" },
   divisions: {
     carbon: { label: "碳纤维", headline: "面向功能复合层的碳毡", description: "用于功能层和工业复合工艺的表面毡、导电毡、复合毡、针刺毡及燃料电池GDL用毡。",

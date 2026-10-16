@@ -3,10 +3,10 @@ import type { PageContent } from "./page-content";
 export const zh: PageContent = {
   seo: {
     home: {
-      title: "泽宇森碳纤维 - 碳毡、玻纤毡与除湿转轮成型纸制造商",
+      title: "泽宇森碳纤维 - 除湿转轮成型纸、玻纤毡与碳毡制造商",
       absoluteTitle: true,
       description:
-        "泽宇森专业生产碳纤维毡、玻璃纤维薄毡与面纱及除湿转轮成型纸，为复合材料、电池和工业除湿应用提供OEM材料。",
+        "泽宇森专业生产除湿转轮与沸石转轮用玻纤成型纸，以及玻璃纤维薄毡、面纱和碳纤维毡，服务工业除湿、复合材料和电池应用。",
     },
     about: {
       title: "关于我们的复合材料制造",

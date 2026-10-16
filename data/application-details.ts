@@ -215,6 +215,39 @@ export const carbonApplicationDetails: Record<string, ApplicationDetail> = {
 };
 
 export const glassApplicationDetails: Record<string, ApplicationDetail> = {
+  "desiccant-rotors": {
+    title: "Desiccant & Zeolite Rotors",
+    metaTitle: "Glass Fiber Paper for Desiccant & Zeolite Rotors | ZeYuSen Fiber",
+    metaDescription: "Wet-laid glass fiber forming paper for silica gel desiccant rotors and zeolite / molecular sieve rotors used in industrial dehumidification, dry rooms and VOC concentration.",
+    headline: "The Substrate Inside Every Honeycomb Rotor",
+    description: "Desiccant and zeolite rotors are built from flat and corrugated paper layers wound into a honeycomb, then loaded with silica gel, molecular sieve or zeolite. Our wet-laid glass fiber forming paper is the substrate rotor manufacturers corrugate, wind and impregnate into their own wheels.",
+    challenge: "The rotor substrate has to survive corrugating and winding without cracking, accept the impregnation or coating chemistry, and stay stable through repeated adsorption and hot regeneration cycles. Because every rotor maker uses its own channel geometry, adsorbent and process, the paper has to be matched to that process rather than chosen from a generic data sheet.",
+    components: [
+      "Silica gel desiccant rotors for industrial dehumidification",
+      "Dehumidification rotors for battery dry rooms and pharmaceutical production",
+      "Zeolite rotor concentrators for VOC abatement",
+      "Molecular sieve rotors for low-dew-point drying",
+    ],
+    benefits: [
+      "Inorganic glass fiber base suited to hot regeneration air; limits depend on binder and the finished rotor",
+      "Wet-laid formation for an even fiber distribution across the roll",
+      "Roll material sized for corrugating and winding lines",
+      "Basis weight, thickness and width reviewed against your rotor design",
+      "Binder selected for compatibility with your impregnation or coating system",
+      "Sample trials through your own process before production approval",
+    ],
+    selectionCriteria: [
+      "Rotor type and adsorbent: silica gel, molecular sieve or zeolite",
+      "Channel geometry and the corrugating or forming method",
+      "Impregnation, coating or in-situ synthesis route and its chemistry",
+      "Regeneration temperature and operating environment",
+      "Validation method and acceptance criteria for approval",
+    ],
+    products: [
+      { name: "Desiccant Rotor Substrate Paper", key: { division: "glass", category: "tissue-mat", product: "rotor-paper" } },
+    ],
+    relatedIndustries: ["construction"],
+  },
   "wind-energy": {
     title: "Wind Energy",
     metaTitle: "Fiberglass for Wind Energy & Turbine Blades | ZeYuSen Fiber",

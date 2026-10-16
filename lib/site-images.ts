@@ -29,8 +29,18 @@ const APPLICATION_SLUGS = [
 
 const applicationSlugSet = new Set<string>(APPLICATION_SLUGS);
 
+// Applications illustrated with our own product photos instead of a stock scene.
+const rotorPhotos = "/images/glass-fiber/01-fiberglass-tissue-mat/04-rotor-paper";
+const ownApplicationImages: Record<string, { hero: string; card: string }> = {
+  "desiccant-rotors": {
+    hero: `${rotorPhotos}/desiccant-rotor-substrate-paper-white-roll.jpg`,
+    card: `${rotorPhotos}/pva-zeolite-rotor-paper-01.jpg`,
+  },
+};
+
 // Wide hero image for application overview / detail heroes and OG previews.
 export function getApplicationImage(slug: string, division: "carbon" | "glass") {
+  if (ownApplicationImages[slug]) return ownApplicationImages[slug].hero;
   return applicationSlugSet.has(slug)
     ? `/images/applications/${slug}-hero.webp`
     : divisionHeroImages[division];
@@ -38,6 +48,7 @@ export function getApplicationImage(slug: string, division: "carbon" | "glass") 
 
 // 4:3 card image for application overview grid cards.
 export function getApplicationCardImage(slug: string, division: "carbon" | "glass") {
+  if (ownApplicationImages[slug]) return ownApplicationImages[slug].card;
   return applicationSlugSet.has(slug)
     ? `/images/applications/${slug}-card.webp`
     : divisionHeroImages[division];

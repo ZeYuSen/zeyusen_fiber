@@ -2,7 +2,7 @@ import type { ProductDivision } from "@/lib/product-scope";
 
 export const ACTIVE_APPLICATION_SLUGS: Record<ProductDivision, readonly string[]> = {
   carbon: ["new-energy", "military-defense"],
-  glass: ["construction"],
+  glass: ["desiccant-rotors", "construction"],
 };
 
 export const RETIRED_APPLICATION_SLUGS: Record<ProductDivision, readonly string[]> = {

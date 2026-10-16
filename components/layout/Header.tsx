@@ -41,6 +41,15 @@ export function Header({
   const segments = pathname.split("/").filter(Boolean);
   const locale = segments[0] && isLocale(segments[0]) ? segments[0] : defaultLocale;
   const isHome = pathname === `/${locale}` || pathname === "/";
+  // Lead product line gets its own top-level nav entry.
+  const rotorPaperHref = localizedHref("glass-product", locale, { category: "tissue-mat", product: "rotor-paper" });
+  // Latin-script labels (en/es/pt) don't fit a 1024px bar with the rotor-paper
+  // entry; those locales switch to the full nav at xl. Full class strings so
+  // Tailwind sees them.
+  const longLabels = locale === "en" || locale === "es" || locale === "pt";
+  const bp = longLabels
+    ? { nav: "xl:flex", show: "xl:block", hide: "xl:hidden" }
+    : { nav: "lg:flex", show: "lg:block", hide: "lg:hidden" };
   const pageKey = segments.length <= 1 ? "home" : resolveRoute(locale, segments.slice(1))?.pageKey;
   const [tone, setTone] = useState<Tone>(pageKey && NIGHT_FIRST.includes(pageKey) ? "night" : null);
   const headerRef = useRef<HTMLElement>(null);
@@ -131,9 +140,11 @@ export function Header({
           </Link>
 
           {/* Desktop Navigation */}
-          <nav className="hidden lg:flex items-center gap-8">
-            <NavLink href={localizedHref("home", locale)} textColor={textColor} textHover={textHover}>
-              {dict.nav.home}
+          <nav className={`hidden ${bp.nav} items-center gap-5 xl:gap-6 2xl:gap-8`}>
+            {/* No "Home" item here: the logo links home, which leaves room for
+                the lead product entry in longer languages. */}
+            <NavLink href={rotorPaperHref} textColor={textColor} textHover={textHover}>
+              {dict.nav.rotorPaper}
             </NavLink>
 
             {/* Products Dropdown */}
@@ -238,7 +249,7 @@ export function Header({
 
           {/* CTA + Language + Mobile Toggle */}
           <div className="flex items-center gap-4">
-            <div className="hidden lg:block">
+            <div className={`hidden ${bp.show}`}>
               <LanguageSwitcher light={useWhiteText} />
             </div>
             <Link
@@ -249,7 +260,7 @@ export function Header({
             </Link>
             <button
               onClick={() => setMobileOpen(!mobileOpen)}
-              className={`lg:hidden p-2 ${useWhiteText ? "text-white" : "text-text-primary"} transition-colors duration-500`}
+              className={`${bp.hide} p-2 ${useWhiteText ? "text-white" : "text-text-primary"} transition-colors duration-500`}
               aria-label={dict.nav.menu}
             >
               {mobileOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
@@ -260,7 +271,7 @@ export function Header({
 
       {/* Mobile Menu */}
       <div
-        className={`lg:hidden bg-white overflow-y-auto transition-all duration-300 ${
+        className={`${bp.hide} bg-white overflow-y-auto transition-all duration-300 ${
           mobileOpen ? "max-h-[80vh] opacity-100" : "max-h-0 opacity-0"
         }`}
       >
@@ -268,6 +279,9 @@ export function Header({
           <div className="mt-4 border-t border-black/[0.06] py-6 space-y-4">
             <Link href={localizedHref("home", locale)} onClick={closeMobile} className="block text-sm font-medium text-text-primary hover:text-accent-500">
               {dict.nav.home}
+            </Link>
+            <Link href={rotorPaperHref} onClick={closeMobile} className="block text-sm font-semibold text-text-primary hover:text-accent-500">
+              {dict.nav.rotorPaper}
             </Link>
             <div>
               <p className="type-caption text-neutral-400 mb-3">{dict.nav.products}</p>
@@ -384,7 +398,7 @@ function NavLink({
   return (
     <Link
       href={href}
-      className={`relative flex items-center gap-1 text-base font-semibold ${textColor} ${textHover} transition-colors duration-500 after:absolute after:inset-x-0 after:-bottom-1.5 after:h-px after:origin-right after:scale-x-0 after:bg-current after:transition-transform after:duration-300 after:ease-out hover:after:origin-left hover:after:scale-x-100`}
+      className={`relative flex items-center gap-1 whitespace-nowrap text-[15px] xl:text-base font-semibold ${textColor} ${textHover} transition-colors duration-500 after:absolute after:inset-x-0 after:-bottom-1.5 after:h-px after:origin-right after:scale-x-0 after:bg-current after:transition-transform after:duration-300 after:ease-out hover:after:origin-left hover:after:scale-x-100`}
     >
       {children}
     </Link>
@@ -403,7 +417,7 @@ function NavTrigger({
   return (
     <button
       type="button"
-      className={`flex items-center gap-1 text-base font-semibold ${textColor} ${textHover} transition-colors duration-500`}
+      className={`flex items-center gap-1 whitespace-nowrap text-[15px] xl:text-base font-semibold ${textColor} ${textHover} transition-colors duration-500`}
       aria-haspopup="menu"
       aria-expanded="false"
     >

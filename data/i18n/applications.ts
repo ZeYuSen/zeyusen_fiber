@@ -23,6 +23,37 @@ export type ApplicationGroupTranslation = {
 export type ApplicationGroupTranslations = Record<string, ApplicationGroupTranslation>;
 
 export const applicationDetailsKo: ApplicationDetailTranslations = {
+  "desiccant-rotors": {
+    "title": "제습 로터 및 제올라이트 로터",
+    "metaDescription": "산업용 제습, 드라이룸, VOC 농축에 쓰이는 실리카겔 제습 로터와 제올라이트(분자체) 로터용 습식 유리섬유 성형지.",
+    "headline": "모든 허니컴 로터 안의 기재",
+    "description": "제습 로터와 제올라이트 로터는 평판지와 골판지를 허니컴 구조로 감은 뒤 실리카겔, 분자체 또는 제올라이트를 담지해 만듭니다. 당사의 습식 유리섬유 성형지는 로터 제조사가 직접 골판 가공·권취·함침하는 기재입니다.",
+    "challenge": "로터 기재는 골판 가공과 권취 중에 갈라지지 않아야 하고, 함침 또는 코팅 화학을 받아들여야 하며, 반복되는 흡착과 고온 재생 사이클에서도 안정적이어야 합니다. 로터 제조사마다 채널 형상, 흡착제, 공정이 다르므로 기재는 범용 데이터시트가 아니라 해당 공정에 맞춰 선택해야 합니다.",
+    "components": [
+      "산업용 제습을 위한 실리카겔 제습 로터",
+      "배터리 드라이룸과 제약 생산용 제습 로터",
+      "VOC 저감을 위한 제올라이트 로터 농축기",
+      "저노점 건조용 분자체 로터"
+    ],
+    "benefits": [
+      "고온 재생 공기에 적합한 무기 유리섬유 기재; 한계 온도는 바인더와 완성 로터에 따라 결정",
+      "습식 성형으로 롤 전체에 균일한 섬유 분포",
+      "골판 가공 및 권취 라인에 맞춘 롤 형태",
+      "평량, 두께, 폭을 귀사 로터 설계에 맞춰 검토",
+      "귀사 함침 또는 코팅 시스템과 호환되는 바인더 선택",
+      "양산 승인 전 귀사 공정에서 샘플 시험"
+    ],
+    "selectionCriteria": [
+      "로터 종류와 흡착제: 실리카겔, 분자체 또는 제올라이트",
+      "채널 형상과 골판 가공 또는 성형 방식",
+      "함침, 코팅 또는 현장 합성 경로와 그 화학",
+      "재생 온도와 운전 환경",
+      "승인을 위한 검증 방법과 합격 기준"
+    ],
+    "products": [
+      "Desiccant Rotor Substrate Paper"
+    ]
+  },
   "aerospace": {
     "title": "항공우주 및 항공",
     "metaDescription": "항공기 구조 부품, 내부 패널, 경량 항공 솔루션을 위한 고성능 탄소섬유 복합재.",
@@ -403,6 +434,7 @@ export const applicationGroupsKo: ApplicationGroupTranslations = {
     "eyebrow": "유리섬유 응용 분야",
     "summary": "에너지, 건설, 운송, 산업용 비용 효율적이고 내부식성 있는 보강재.",
     "applications": {
+      "desiccant-rotors": {"title": "제습 로터 및 제올라이트 로터", "description": "실리카겔 제습 로터와 제올라이트(분자체) 로터용 유리섬유 성형지."},
       "wind-energy": {
         "title": "풍력 에너지",
         "description": "터빈 블레이드, 나셀 커버, 구조 부품을 위한 고성능 유리섬유 보강재.",
@@ -453,6 +485,37 @@ export const applicationGroupsKo: ApplicationGroupTranslations = {
 };
 
 export const applicationDetailsEs: ApplicationDetailTranslations = {
+  "desiccant-rotors": {
+    "title": "Rotores desecantes y de zeolita",
+    "metaDescription": "Papel de fibra de vidrio por vía húmeda para rotores desecantes de gel de sílice y rotores de zeolita / tamiz molecular en deshumidificación industrial, salas secas y concentración de COV.",
+    "headline": "El sustrato dentro de cada rotor en panal",
+    "description": "Los rotores desecantes y de zeolita se fabrican con capas de papel plano y corrugado enrolladas en panal y cargadas con gel de sílice, tamiz molecular o zeolita. Nuestro papel de fibra de vidrio por vía húmeda es el sustrato que los fabricantes corrugan, bobinan e impregnan en sus propias ruedas.",
+    "challenge": "El sustrato debe resistir el corrugado y el bobinado sin agrietarse, aceptar la química de impregnación o recubrimiento y mantenerse estable en ciclos repetidos de adsorción y regeneración en caliente. Como cada fabricante usa su propia geometría de canal, adsorbente y proceso, el papel debe ajustarse a ese proceso y no elegirse a partir de una ficha técnica genérica.",
+    "components": [
+      "Rotores desecantes de gel de sílice para deshumidificación industrial",
+      "Rotores de deshumidificación para salas secas de baterías y producción farmacéutica",
+      "Concentradores de rotor de zeolita para el tratamiento de COV",
+      "Rotores de tamiz molecular para secado a bajo punto de rocío"
+    ],
+    "benefits": [
+      "Base inorgánica de fibra de vidrio apta para aire de regeneración caliente; los límites dependen del aglutinante y del rotor terminado",
+      "Formación por vía húmeda para una distribución uniforme de fibras en toda la bobina",
+      "Bobinas dimensionadas para líneas de corrugado y bobinado",
+      "Gramaje, espesor y ancho revisados según el diseño de su rotor",
+      "Aglutinante elegido para ser compatible con su sistema de impregnación o recubrimiento",
+      "Pruebas de muestras en su propio proceso antes de aprobar la producción"
+    ],
+    "selectionCriteria": [
+      "Tipo de rotor y adsorbente: gel de sílice, tamiz molecular o zeolita",
+      "Geometría de canal y método de corrugado o conformado",
+      "Ruta de impregnación, recubrimiento o síntesis in situ y su química",
+      "Temperatura de regeneración y entorno de operación",
+      "Método de validación y criterios de aceptación"
+    ],
+    "products": [
+      "Desiccant Rotor Substrate Paper"
+    ]
+  },
   "aerospace": {
     "title": "Aeroespacial y Aviación",
     "metaDescription": "Composites de fibra de carbono de alto rendimiento para componentes estructurales aeroespaciales, paneles de cabina y soluciones de aviación ligeras.",
@@ -833,6 +896,7 @@ export const applicationGroupsEs: ApplicationGroupTranslations = {
     "eyebrow": "Aplicaciones de Fibra de Vidrio",
     "summary": "Refuerzos rentables y resistentes a la corrosión para energía, construcción, transporte e industria.",
     "applications": {
+      "desiccant-rotors": {"title": "Rotores desecantes y de zeolita", "description": "Papel de fibra de vidrio para rotores desecantes de gel de sílice y rotores de zeolita / tamiz molecular."},
       "wind-energy": {
         "title": "Energía Eólica",
         "description": "Refuerzos de fibra de vidrio de alto rendimiento para palas de aerogeneradores, cubiertas de góndola y componentes estructurales.",
@@ -883,6 +947,37 @@ export const applicationGroupsEs: ApplicationGroupTranslations = {
 };
 
 export const applicationDetailsPt: ApplicationDetailTranslations = {
+  "desiccant-rotors": {
+    "title": "Rotores dessecantes e de zeólita",
+    "metaDescription": "Papel de fibra de vidro por via úmida para rotores dessecantes de sílica gel e rotores de zeólita / peneira molecular em desumidificação industrial, salas secas e concentração de COV.",
+    "headline": "O substrato dentro de cada rotor em colmeia",
+    "description": "Rotores dessecantes e de zeólita são feitos de camadas de papel plano e corrugado enroladas em colmeia e carregadas com sílica gel, peneira molecular ou zeólita. Nosso papel de fibra de vidro por via úmida é o substrato que os fabricantes corrugam, enrolam e impregnam em suas próprias rodas.",
+    "challenge": "O substrato precisa resistir à corrugação e ao enrolamento sem trincar, aceitar a química de impregnação ou revestimento e permanecer estável em ciclos repetidos de adsorção e regeneração a quente. Como cada fabricante usa sua própria geometria de canal, adsorvente e processo, o papel deve ser ajustado a esse processo e não escolhido a partir de uma ficha técnica genérica.",
+    "components": [
+      "Rotores dessecantes de sílica gel para desumidificação industrial",
+      "Rotores de desumidificação para salas secas de baterias e produção farmacêutica",
+      "Concentradores de rotor de zeólita para tratamento de COV",
+      "Rotores de peneira molecular para secagem a baixo ponto de orvalho"
+    ],
+    "benefits": [
+      "Base inorgânica de fibra de vidro adequada a ar de regeneração quente; os limites dependem do ligante e do rotor acabado",
+      "Formação por via úmida para distribuição uniforme de fibras em toda a bobina",
+      "Bobinas dimensionadas para linhas de corrugação e enrolamento",
+      "Gramatura, espessura e largura revisadas conforme o projeto do seu rotor",
+      "Ligante escolhido para compatibilidade com seu sistema de impregnação ou revestimento",
+      "Testes de amostras no seu próprio processo antes da aprovação de produção"
+    ],
+    "selectionCriteria": [
+      "Tipo de rotor e adsorvente: sílica gel, peneira molecular ou zeólita",
+      "Geometria de canal e método de corrugação ou conformação",
+      "Rota de impregnação, revestimento ou síntese in situ e sua química",
+      "Temperatura de regeneração e ambiente de operação",
+      "Método de validação e critérios de aceitação"
+    ],
+    "products": [
+      "Desiccant Rotor Substrate Paper"
+    ]
+  },
   "aerospace": {
     "title": "Aeroespacial e Aviação",
     "metaDescription": "Compósitos de fibra de carbono de alto desempenho para componentes estruturais aeroespaciais, painéis interiores e soluções de aviação leve.",
@@ -1200,6 +1295,37 @@ export const applicationDetailsPt: ApplicationDetailTranslations = {
 };
 
 export const applicationDetailsZh: ApplicationDetailTranslations = {
+  "desiccant-rotors": {
+    "title": "除湿转轮与沸石转轮",
+    "metaDescription": "用于硅胶除湿转轮和沸石（分子筛）转轮的湿法玻纤成型纸，服务工业除湿、干燥房和 VOC 浓缩等应用。",
+    "headline": "每一个蜂窝转轮里的基材",
+    "description": "除湿转轮和沸石转轮由平层纸与瓦楞纸卷绕成蜂窝结构，再负载硅胶、分子筛或沸石。我们的湿法玻纤成型纸，就是转轮制造商自行瓦楞、卷绕和浸渍的基材。",
+    "challenge": "转轮基材要经得起瓦楞和卷绕而不开裂，要能接受浸渍或涂覆的化学体系，还要在反复吸附和高温再生的循环中保持稳定。每家转轮厂的通道结构、吸附剂和工艺都不同，所以基材纸需要按工艺匹配，而不是只看一份通用规格书。",
+    "components": [
+      "工业除湿用硅胶除湿转轮",
+      "锂电池干燥房和制药车间用除湿转轮",
+      "VOC 治理用沸石浓缩转轮",
+      "低露点干燥用分子筛转轮"
+    ],
+    "benefits": [
+      "无机玻纤基材，适合高温再生气流；耐温上限取决于粘结剂和成品转轮",
+      "湿法成型，整卷纤维分布均匀",
+      "卷材规格适配瓦楞和卷绕产线",
+      "克重、厚度和幅宽按您的转轮设计确认",
+      "粘结剂按您的浸渍或涂覆体系选择",
+      "批量供货前，样品先在您的工艺中试制验证"
+    ],
+    "selectionCriteria": [
+      "转轮类型和吸附剂：硅胶、分子筛还是沸石",
+      "通道结构以及瓦楞或成型方式",
+      "浸渍、涂覆或原位合成路线及其化学体系",
+      "再生温度和运行环境",
+      "验收所用的验证方法和判定标准"
+    ],
+    "products": [
+      "Desiccant Rotor Substrate Paper"
+    ]
+  },
   "aerospace": {
     "title": "航空航天",
     "metaDescription": "用于航空航天结构件、内饰面板和轻量化航空解决方案的高性能碳纤维复合材料。",
@@ -1580,6 +1706,7 @@ export const applicationGroupsZh: ApplicationGroupTranslations = {
     "eyebrow": "玻璃纤维应用领域",
     "summary": "经济高效、耐腐蚀的增强材料，服务于能源、建筑、交通和工业。",
     "applications": {
+      "desiccant-rotors": {"title": "除湿转轮与沸石转轮", "description": "用于硅胶除湿转轮和沸石（分子筛）转轮的玻纤成型纸。"},
       "wind-energy": {
         "title": "风力发电",
         "description": "用于涡轮叶片、机舱罩和结构件的高性能玻璃纤维增强材料。",
@@ -1687,6 +1814,7 @@ export const applicationGroupsPt: ApplicationGroupTranslations = {
     "eyebrow": "Aplicações de Fibra de Vidro",
     "summary": "Reforços resistentes à corrosão e de custo competitivo para energia, construção, transporte e uso industrial.",
     "applications": {
+      "desiccant-rotors": {"title": "Rotores dessecantes e de zeólita", "description": "Papel de fibra de vidro para rotores dessecantes de sílica gel e rotores de zeólita / peneira molecular."},
       "wind-energy": {
         "title": "Energia Eólica",
         "description": "Reforços de fibra de vidro de alto desempenho para pás de turbinas, coberturas de nacele e componentes estruturais.",

@@ -4,10 +4,10 @@ import type { PageContent } from "./page-content";
 export const pt: PageContent = {
   seo: {
     home: {
-      title: "ZeYuSen Fiber - Fabricante de Mantas de Carbono, Mantas de Vidro e Papel para Rotores",
+      title: "ZeYuSen Fiber - Fabricante de Papel para Rotores Dessecantes, Mantas de Vidro e de Carbono",
       absoluteTitle: true,
       description:
-        "Fabricante OEM de mantas de fibra de carbono, mantas e véus de fibra de vidro e papel formador para rotores dessecantes.",
+        "Fabricante de papel de fibra de vidro para rotores dessecantes e de zeólita, além de véus e mantas de fibra de vidro e mantas de carbono para compósitos e baterias.",
     },
     about: {
       title: "Sobre Nossa Fabricação de Compósitos",

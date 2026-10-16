@@ -72,10 +72,10 @@ type LegalCopy = {
 const en: PageContent = {
   seo: {
     home: {
-      title: "ZeYuSen Fiber - Carbon Fiber Mat, Fiberglass Mat & Rotor Paper Manufacturer",
+      title: "ZeYuSen Fiber - Desiccant Rotor Paper, Fiberglass Mat & Carbon Fiber Mat Manufacturer",
       absoluteTitle: true,
       description:
-        "OEM manufacturer of carbon fiber mats, fiberglass tissue mats and veils, and desiccant rotor forming paper for composite, battery and dehumidification applications.",
+        "Manufacturer of glass fiber forming paper for desiccant and zeolite rotors, plus fiberglass tissue mats, veils and carbon fiber mats for composite and battery applications.",
     },
     about: {
       title: "About Our Composite Manufacturing",
