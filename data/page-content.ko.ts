@@ -5,7 +5,8 @@ import type { PageContent } from "./page-content";
 export const ko: PageContent = {
   seo: {
     home: {
-      title: "탄소섬유 매트, 유리섬유 매트 및 제습 로터 성형지 제조업체",
+      title: "ZeYuSen Fiber - 탄소섬유 매트, 유리섬유 매트 및 제습 로터 성형지 제조업체",
+      absoluteTitle: true,
       description:
         "복합재, 배터리 및 산업용 제습 분야를 위한 탄소섬유 매트, 유리섬유 티슈 매트와 베일, 제습 로터 성형지를 생산하는 OEM 제조업체입니다.",
     },

@@ -64,7 +64,7 @@ const en: HomeContent = {
     {
       title: "Carbon Fiber Mat, Fiberglass Mat & Rotor Paper Manufacturer",
       subtitle:
-        "Focused OEM materials for composite surfaces, batteries, industrial protection and desiccant rotors",
+        "ZeYuSen Fiber (Zeyusen) makes focused OEM materials for composite surfaces, batteries, industrial protection and desiccant rotors",
     },
     {
       title: "State-of-the-Art Manufacturing",
@@ -195,7 +195,7 @@ const en: HomeContent = {
 
 const ko: HomeContent = {
   hero: [
-    { title: "탄소섬유 매트, 유리섬유 매트 및 로터 성형지 제조업체", subtitle: "복합재 표면, 배터리, 산업 보호 및 제습 로터용 OEM 소재" },
+    { title: "탄소섬유 매트, 유리섬유 매트 및 로터 성형지 제조업체", subtitle: "ZeYuSen Fiber(Zeyusen)의 복합재 표면, 배터리, 산업 보호 및 제습 로터용 OEM 소재" },
     { title: "최첨단 제조 시설", subtitle: "자동화 생산 라인과 엄격한 품질 관리를 갖춘 표준화 생산 시설" },
     { title: "글로벌 바이어의 신뢰", subtitle: "상하이항에서 240km 거리의 이중 생산 거점 — FOB, CIF, CFR, EXW, 귀하의 조건에 맞춰 조율" },
   ],
@@ -291,7 +291,7 @@ const ko: HomeContent = {
 
 const es: HomeContent = {
   hero: [
-    { title: "Fabricante de Mantas de Carbono, Mantas de Vidrio y Papel para Rotores", subtitle: "Materiales OEM para superficies compuestas, baterías, protección industrial y rotores desecantes" },
+    { title: "Fabricante de Mantas de Carbono, Mantas de Vidrio y Papel para Rotores", subtitle: "ZeYuSen Fiber (Zeyusen): materiales OEM para superficies compuestas, baterías, protección industrial y rotores desecantes" },
     { title: "Fabricación de Vanguardia", subtitle: "Instalaciones de producción estandarizadas con líneas automatizadas y estricto control de calidad" },
     { title: "La Confianza de Compradores Globales", subtitle: "Bases de producción duales a 240 km del Puerto de Shanghái — FOB, CIF, CFR o EXW, coordinado a sus términos" },
   ],
@@ -389,7 +389,7 @@ const es: HomeContent = {
 
 const pt: HomeContent = {
   hero: [
-    { title: "Fabricante de Mantas de Carbono, Mantas de Vidro e Papel para Rotores", subtitle: "Materiais OEM para superfícies compósitas, baterias, proteção industrial e rotores dessecantes" },
+    { title: "Fabricante de Mantas de Carbono, Mantas de Vidro e Papel para Rotores", subtitle: "ZeYuSen Fiber (Zeyusen): materiais OEM para superfícies compósitas, baterias, proteção industrial e rotores dessecantes" },
     { title: "Fabricação de Última Geração", subtitle: "Instalações de produção padronizadas com linhas automatizadas e rigoroso controle de qualidade" },
     { title: "A Confiança de Compradores Globais", subtitle: "Bases de produção duplas a 240 km do Porto de Xangai — FOB, CIF, CFR ou EXW, coordenado aos seus termos" },
   ],

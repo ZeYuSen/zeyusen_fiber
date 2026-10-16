@@ -4,7 +4,8 @@ import type { PageContent } from "./page-content";
 export const es: PageContent = {
   seo: {
     home: {
-      title: "Fabricante de Mantas de Carbono, Mantas de Vidrio y Papel para Rotores",
+      title: "ZeYuSen Fiber - Fabricante de Mantas de Carbono, Mantas de Vidrio y Papel para Rotores",
+      absoluteTitle: true,
       description:
         "Fabricante OEM de mantas de fibra de carbono, mantas y velos de fibra de vidrio y papel conformable para rotores desecantes.",
     },

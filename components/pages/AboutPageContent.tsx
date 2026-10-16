@@ -4,7 +4,11 @@ import { useState, useRef } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { motion, AnimatePresence, useScroll, useSpring } from "framer-motion";
-import { companyNameFor } from "@/lib/contact";
+import { contactInfo, companyNameFor, addressFor, primaryEmail } from "@/lib/contact";
+import { siteConfig } from "@/lib/seo";
+import { FAQAccordion } from "@/components/blog/FAQAccordion";
+import type { AboutContent } from "@/lib/i18n/pages-content";
+import type { Locale } from "@/lib/i18n/config";
 import { useLocale } from "@/lib/i18n/use-locale";
 import { localizedHref } from "@/lib/i18n/routes";
 import { getPagesContent } from "@/lib/i18n/pages-content";
@@ -232,6 +236,74 @@ function TimelineSection({
   );
 }
 
+function ProfileSection({ profile, locale }: { profile: AboutContent["profile"]; locale: Locale }) {
+  const { labels } = profile;
+  const facts: { label: string; value: React.ReactNode }[] = [
+    { label: labels.englishName, value: siteConfig.legalName },
+    { label: labels.chineseName, value: <span lang="zh">{contactInfo.zhCompany}</span> },
+    {
+      label: labels.brand,
+      value: (
+        <>
+          {siteConfig.name} · <span lang="zh">{siteConfig.zhName}</span> · <span lang="zh">{siteConfig.zhShortName}</span>
+        </>
+      ),
+    },
+    { label: labels.founded, value: contactInfo.foundingDate },
+    {
+      label: labels.neeq,
+      value: (
+        <>
+          {contactInfo.neeq.code} (<span lang="zh">{siteConfig.zhShortName}</span>) · {contactInfo.neeq.listingDate}
+        </>
+      ),
+    },
+    { label: labels.creditCode, value: contactInfo.creditCode },
+    { label: labels.address, value: addressFor(locale) },
+    {
+      label: labels.website,
+      value: (
+        <Link href={localizedHref("home", locale)} className="text-carbon-accent hover:text-neutral-900 underline underline-offset-2">
+          www.zysfiber.com
+        </Link>
+      ),
+    },
+    {
+      label: labels.email,
+      value: (
+        <a href={`mailto:${primaryEmail}`} className="hover:text-neutral-900 underline underline-offset-2">
+          {primaryEmail}
+        </a>
+      ),
+    },
+  ];
+
+  return (
+    <section className="section-padding bg-neutral-50">
+      <div className="container-wide grid lg:grid-cols-12 gap-12 lg:gap-16">
+        <div className="lg:col-span-5">
+          <p className="type-caption text-neutral-400">{profile.eyebrow}</p>
+          <h2 className="text-4xl sm:text-5xl font-semibold text-neutral-900 mt-4 tracking-tight leading-[1.05]">
+            {profile.title}
+          </h2>
+          <p className="text-neutral-500 leading-relaxed mt-6">{profile.intro}</p>
+          <dl className="mt-10 divide-y divide-neutral-200 border-y border-neutral-200">
+            {facts.map((fact) => (
+              <div key={fact.label} className="grid grid-cols-[minmax(0,2fr)_minmax(0,3fr)] gap-4 py-3 text-sm">
+                <dt className="text-neutral-400">{fact.label}</dt>
+                <dd className="text-neutral-800 break-words">{fact.value}</dd>
+              </div>
+            ))}
+          </dl>
+        </div>
+        <div className="lg:col-span-7 [&>section]:mt-0">
+          <FAQAccordion items={profile.faq} title={profile.faqTitle} />
+        </div>
+      </div>
+    </section>
+  );
+}
+
 export default function AboutPageContent({ nav }: { nav?: { home: string; current: string } }) {
   const locale = useLocale();
   const c = getPagesContent(locale).about;
@@ -355,6 +427,9 @@ export default function AboutPageContent({ nav }: { nav?: { home: string; curren
         title={c.journeyTitle}
         milestones={milestones}
       />
+
+      {/* Company profile + brand FAQ */}
+      <ProfileSection profile={c.profile} locale={locale} />
     </>
   );
 }

@@ -45,6 +45,49 @@ export const es: PagesContent = {
       { year: "2023", event: "Producción anual: fibra de carbono 10M m², fibra de vidrio 80M m²" },
       { year: "2024", event: "Exportando a América del Norte, Sudeste Asiático, Oriente Medio y Japón/Corea del Sur" },
     ],
+    profile: {
+      eyebrow: "Perfil de la empresa",
+      title: "Zeyusen en breve",
+      intro: "ZeYuSen Fiber es la marca de Jiangsu Zeyusen Carbon Fiber Technology Co., Ltd. (en chino: 泽宇森碳纤维). Los datos siguientes coinciden con la información pública de la empresa.",
+      labels: {
+        englishName: "Razón social (inglés)",
+        chineseName: "Razón social (chino)",
+        brand: "Marca",
+        founded: "Fundación",
+        neeq: "Cotización en NEEQ",
+        creditCode: "Código de crédito social unificado",
+        address: "Domicilio registrado",
+        website: "Sitio web oficial",
+        email: "Correo electrónico",
+      },
+      faqTitle: "Preguntas sobre Zeyusen",
+      faq: [
+        {
+          question: "¿Qué es Zeyusen?",
+          answer: "Zeyusen (ZeYuSen Fiber, en chino: 泽宇森) es la marca de Jiangsu Zeyusen Carbon Fiber Technology Co., Ltd., fabricante de materiales fundado en 2015 en Haian, Nantong, provincia de Jiangsu, China. Produce mantas y velos de fibra de vidrio, mantas de fibra de carbono y papel para rotores desecantes para aplicaciones de compuestos, baterías y deshumidificación.",
+        },
+        {
+          question: "¿ZeYuSen Fiber y Jiangsu Zeyusen Carbon Fiber Technology Co., Ltd. son la misma empresa?",
+          answer: "Sí. ZeYuSen Fiber es el nombre de marca en inglés. La razón social registrada en chino es 江苏泽宇森碳纤维科技股份有限公司. La empresa se transformó de 江苏泽宇森碳纤维科技有限公司 en sociedad anónima el 28 de junio de 2020.",
+        },
+        {
+          question: "¿Cuál es el sitio web oficial de Zeyusen?",
+          answer: "www.zysfiber.com es el sitio web oficial de Jiangsu Zeyusen Carbon Fiber Technology Co., Ltd. Las páginas de producto publicadas en otros dominios, incluido jsfiberglass.com, ya no se actualizan; utilice este sitio para consultar especificaciones vigentes. Nuestro correo de ventas zys@jsfiberglass.com sigue activo.",
+        },
+        {
+          question: "¿Dónde se encuentra Zeyusen?",
+          answer: "El domicilio registrado es Group 10, Cuimu Village, Industrial Concentration Zone, Qutang Town, Haian, Nantong, provincia de Jiangsu, China. Las bases de producción de Nantong y Taizhou están a unos 240 km del puerto de Shanghái.",
+        },
+        {
+          question: "¿Zeyusen cotiza en bolsa?",
+          answer: "Sí. Desde el 18 de mayo de 2022 la empresa cotiza en el sistema NEEQ de China (National Equities Exchange and Quotations) con el nombre abreviado 泽宇森 y el código 873668.",
+        },
+        {
+          question: "¿Cómo puedo contactar con Zeyusen?",
+          answer: "Escriba a zys@jsfiberglass.com, llame o envíe un WhatsApp al +86-18012885770, o envíe una consulta desde la página de contacto de este sitio. Indique el producto, la especificación objetivo y la cantidad.",
+        },
+      ],
+    },
     factory: {
       eyebrow: "Recorrido por la Fábrica",
       title: "Nuestra Planta de Fabricación",

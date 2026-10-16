@@ -72,7 +72,8 @@ type LegalCopy = {
 const en: PageContent = {
   seo: {
     home: {
-      title: "Carbon Fiber Mat, Fiberglass Mat & Rotor Paper Manufacturer",
+      title: "ZeYuSen Fiber - Carbon Fiber Mat, Fiberglass Mat & Rotor Paper Manufacturer",
+      absoluteTitle: true,
       description:
         "OEM manufacturer of carbon fiber mats, fiberglass tissue mats and veils, and desiccant rotor forming paper for composite, battery and dehumidification applications.",
     },

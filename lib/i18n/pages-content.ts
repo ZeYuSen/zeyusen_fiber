@@ -18,6 +18,26 @@ export type AboutContent = {
   journeyEyebrow: string;
   journeyTitle: string;
   milestones: { year: string; event: string }[];
+  // Company facts + brand FAQ (also emitted as FAQPage schema) so brand
+  // queries like "zeyusen" / "泽宇森" land on this site.
+  profile: {
+    eyebrow: string;
+    title: string;
+    intro: string;
+    labels: {
+      englishName: string;
+      chineseName: string;
+      brand: string;
+      founded: string;
+      neeq: string;
+      creditCode: string;
+      address: string;
+      website: string;
+      email: string;
+    };
+    faqTitle: string;
+    faq: { question: string; answer: string }[];
+  };
   factory: {
     eyebrow: string;
     title: string;
@@ -136,6 +156,49 @@ const en: PagesContent = {
       { year: "2023", event: "Annual output: carbon fiber 10M sqm, fiberglass 80M sqm" },
       { year: "2024", event: "Exporting to North America, Southeast Asia, the Middle East, and Japan/South Korea" },
     ],
+    profile: {
+      eyebrow: "Company Profile",
+      title: "Zeyusen at a glance",
+      intro: "ZeYuSen Fiber is the brand of Jiangsu Zeyusen Carbon Fiber Technology Co., Ltd. (Chinese: 泽宇森碳纤维). The details below match the company's public filings.",
+      labels: {
+        englishName: "Company name (English)",
+        chineseName: "Company name (Chinese)",
+        brand: "Brand",
+        founded: "Founded",
+        neeq: "NEEQ listing",
+        creditCode: "Unified Social Credit Code",
+        address: "Registered address",
+        website: "Official website",
+        email: "Email",
+      },
+      faqTitle: "Questions about Zeyusen",
+      faq: [
+        {
+          question: "What is Zeyusen?",
+          answer: "Zeyusen (ZeYuSen Fiber, Chinese: 泽宇森) is the brand of Jiangsu Zeyusen Carbon Fiber Technology Co., Ltd., a materials manufacturer founded in 2015 in Haian, Nantong, Jiangsu Province, China. It makes fiberglass mats and veils, carbon fiber mats and desiccant rotor forming paper for composite, battery and dehumidification applications.",
+        },
+        {
+          question: "Is ZeYuSen Fiber the same company as Jiangsu Zeyusen Carbon Fiber Technology Co., Ltd.?",
+          answer: "Yes. ZeYuSen Fiber is the English brand name. The registered Chinese name is 江苏泽宇森碳纤维科技股份有限公司. The company was converted from 江苏泽宇森碳纤维科技有限公司 into a joint-stock company on June 28, 2020.",
+        },
+        {
+          question: "What is Zeyusen's official website?",
+          answer: "www.zysfiber.com is the official website of Jiangsu Zeyusen Carbon Fiber Technology Co., Ltd. Product pages published on other domains, including jsfiberglass.com, are no longer updated, so please use this site for current specifications. Our sales email zys@jsfiberglass.com remains active.",
+        },
+        {
+          question: "Where is Zeyusen located?",
+          answer: "The registered address is Group 10, Cuimu Village, Industrial Concentration Zone, Qutang Town, Haian, Nantong, Jiangsu Province, China. Production bases in Nantong and Taizhou are about 240 km from the Port of Shanghai.",
+        },
+        {
+          question: "Is Zeyusen a listed company?",
+          answer: "Yes. The company has been quoted on China's National Equities Exchange and Quotations (NEEQ) since May 18, 2022, under the short name 泽宇森 and stock code 873668.",
+        },
+        {
+          question: "How can I contact Zeyusen?",
+          answer: "Email zys@jsfiberglass.com, call or WhatsApp +86-18012885770, or send an inquiry through the contact page on this website. Please include the product, target specification and quantity.",
+        },
+      ],
+    },
     factory: {
       eyebrow: "Factory Tour",
       title: "Our Manufacturing Facility",

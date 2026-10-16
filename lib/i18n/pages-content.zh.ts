@@ -45,6 +45,49 @@ export const zh: PagesContent = {
       { year: "2023", event: "年产量：碳纤维1000万㎡，玻纤8000万㎡" },
       { year: "2024", event: "出口覆盖北美、东南亚、中东及日韩市场" },
     ],
+    profile: {
+      eyebrow: "公司档案",
+      title: "泽宇森一览",
+      intro: "泽宇森碳纤维是江苏泽宇森碳纤维科技股份有限公司的品牌名称，英文品牌为 ZeYuSen Fiber。以下信息与公司公开披露资料一致。",
+      labels: {
+        englishName: "英文名称",
+        chineseName: "中文名称",
+        brand: "品牌",
+        founded: "成立时间",
+        neeq: "新三板挂牌",
+        creditCode: "统一社会信用代码",
+        address: "注册地址",
+        website: "官方网站",
+        email: "电子邮箱",
+      },
+      faqTitle: "关于泽宇森的常见问题",
+      faq: [
+        {
+          question: "泽宇森是一家什么公司？",
+          answer: "泽宇森（泽宇森碳纤维，英文 ZeYuSen Fiber）是江苏泽宇森碳纤维科技股份有限公司的品牌，2015年成立于江苏省南通市海安市，专业生产玻纤毡与面纱、碳纤维毡和除湿转轮成型纸，服务复合材料、电池和工业除湿等应用。",
+        },
+        {
+          question: "泽宇森碳纤维和江苏泽宇森碳纤维科技股份有限公司是同一家公司吗？",
+          answer: "是的。泽宇森碳纤维是公司的品牌名称，工商登记全称为江苏泽宇森碳纤维科技股份有限公司，英文名称为 Jiangsu Zeyusen Carbon Fiber Technology Co., Ltd.。公司于2020年6月28日由江苏泽宇森碳纤维科技有限公司整体变更为股份有限公司。",
+        },
+        {
+          question: "泽宇森的官方网站是哪个？",
+          answer: "www.zysfiber.com 是江苏泽宇森碳纤维科技股份有限公司的官方网站。其他域名（包括 jsfiberglass.com）上发布的产品页面已不再更新，请以本网站的规格信息为准。销售邮箱 zys@jsfiberglass.com 仍正常使用。",
+        },
+        {
+          question: "泽宇森在哪里？",
+          answer: "注册地址为江苏省海安市曲塘镇工业集中区（崔母村十组）。公司在南通和泰州设有生产基地，距上海港约240公里。",
+        },
+        {
+          question: "泽宇森是挂牌公司吗？",
+          answer: "是的。公司自2022年5月18日起在全国中小企业股份转让系统（新三板）挂牌，证券简称“泽宇森”，证券代码873668。",
+        },
+        {
+          question: "如何联系泽宇森？",
+          answer: "可发送邮件至 zys@jsfiberglass.com，拨打电话或通过 WhatsApp 联系 +86-18012885770，也可以在本网站的联系页面提交询价。请注明产品、目标规格和数量。",
+        },
+      ],
+    },
     factory: {
       eyebrow: "工厂参观",
       title: "我们的生产设施",

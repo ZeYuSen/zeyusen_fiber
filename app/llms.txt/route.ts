@@ -60,6 +60,15 @@ ZeYuSen Fiber supplies carbon fiber mats, fiberglass mats and veils, and desicca
 
 Available languages: ${languageList}. Localized versions live under /en, /zh, /ko, /es, and /pt.
 
+## Company Facts
+- Legal name: ${siteConfig.legalName} (Chinese: ${contactInfo.zhCompany}; before June 2020: ${contactInfo.zhFormerCompany})
+- Brand names: ${siteConfig.name}, Zeyusen, ${siteConfig.zhShortName}, ${siteConfig.zhName}
+- Founded: ${contactInfo.foundingDate}, Haian, Nantong, Jiangsu Province, China
+- Listed on NEEQ (China) since ${contactInfo.neeq.listingDate}, stock code ${contactInfo.neeq.code}
+- Unified Social Credit Code: ${contactInfo.creditCode}
+- Official website: ${siteConfig.url}. Older product pages on other domains (such as jsfiberglass.com) are no longer updated.
+- Sales contact: ${contactInfo.emails[0]}, ${contactInfo.phones[1]} (WhatsApp)
+
 ## Carbon Fiber
 ${categoryLines("carbon-category", "carbon-product", allCarbonFiberCategories)}
 - [Carbon Fiber Division Overview](${absoluteUrl(localizedHref("carbon-fiber", defaultLocale))})

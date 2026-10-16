@@ -21,6 +21,7 @@ import {
 } from "@/lib/jsonld";
 
 import { getPageContent } from "@/data/page-content";
+import { getPagesContent } from "@/lib/i18n/pages-content";
 import {
   getCategories,
   getProductContent,
@@ -243,6 +244,7 @@ export default async function LocalizedPage({ params }: PageProps<"/[lang]/[[...
               { name: dict.nav.about, href: localizedHref("about", locale) },
             ])}
           />
+          <JsonLd data={faqJsonLd(getPagesContent(locale).about.profile.faq)} />
           <AboutPageContent nav={{ home: dict.nav.home, current: dict.nav.about }} />
         </>
       );

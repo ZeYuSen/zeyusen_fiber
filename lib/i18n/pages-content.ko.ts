@@ -45,6 +45,49 @@ export const ko: PagesContent = {
       { year: "2023", event: "연간 생산량: 탄소섬유 1,000만㎡, 유리섬유 8,000만㎡" },
       { year: "2024", event: "북미, 동남아시아, 중동 및 일본/한국 시장 수출" },
     ],
+    profile: {
+      eyebrow: "회사 개요",
+      title: "Zeyusen 한눈에 보기",
+      intro: "ZeYuSen Fiber는 Jiangsu Zeyusen Carbon Fiber Technology Co., Ltd.(중문: 泽宇森碳纤维)의 브랜드입니다. 아래 정보는 회사의 공시 자료와 일치합니다.",
+      labels: {
+        englishName: "회사명(영문)",
+        chineseName: "회사명(중문)",
+        brand: "브랜드",
+        founded: "설립일",
+        neeq: "NEEQ 상장",
+        creditCode: "통일사회신용코드",
+        address: "등록 주소",
+        website: "공식 웹사이트",
+        email: "이메일",
+      },
+      faqTitle: "Zeyusen에 관한 질문",
+      faq: [
+        {
+          question: "Zeyusen은 어떤 회사인가요?",
+          answer: "Zeyusen(ZeYuSen Fiber, 중문: 泽宇森)은 2015년 중국 장쑤성 난퉁시 하이안에서 설립된 소재 제조기업 Jiangsu Zeyusen Carbon Fiber Technology Co., Ltd.의 브랜드입니다. 복합재, 배터리, 제습 분야용 유리섬유 매트와 베일, 탄소섬유 매트, 제습 로터 성형지를 생산합니다.",
+        },
+        {
+          question: "ZeYuSen Fiber와 Jiangsu Zeyusen Carbon Fiber Technology Co., Ltd.는 같은 회사인가요?",
+          answer: "네. ZeYuSen Fiber는 영문 브랜드명이며, 중국 등록 명칭은 江苏泽宇森碳纤维科技股份有限公司입니다. 회사는 2020년 6월 28일 江苏泽宇森碳纤维科技有限公司에서 주식회사로 전환되었습니다.",
+        },
+        {
+          question: "Zeyusen의 공식 웹사이트는 무엇인가요?",
+          answer: "www.zysfiber.com이 Jiangsu Zeyusen Carbon Fiber Technology Co., Ltd.의 공식 웹사이트입니다. jsfiberglass.com 등 다른 도메인에 게시된 제품 페이지는 더 이상 업데이트되지 않으므로 최신 사양은 이 사이트를 이용해 주십시오. 영업 이메일 zys@jsfiberglass.com은 계속 사용됩니다.",
+        },
+        {
+          question: "Zeyusen은 어디에 있나요?",
+          answer: "등록 주소는 중국 장쑤성 난퉁시 하이안 취탕진 공업집중구 추이무촌 10조입니다. 난퉁과 타이저우의 생산 거점은 상하이항에서 약 240km 거리에 있습니다.",
+        },
+        {
+          question: "Zeyusen은 상장 회사인가요?",
+          answer: "네. 2022년 5월 18일부터 중국 전국중소기업주식양도시스템(NEEQ, 신삼판)에 종목명 泽宇森, 종목코드 873668로 등록되어 있습니다.",
+        },
+        {
+          question: "Zeyusen에 어떻게 연락하나요?",
+          answer: "이메일 zys@jsfiberglass.com, 전화 또는 WhatsApp +86-18012885770, 또는 이 웹사이트의 문의 페이지를 이용해 주십시오. 제품, 목표 사양, 수량을 함께 알려 주시기 바랍니다.",
+        },
+      ],
+    },
     factory: {
       eyebrow: "공장 투어",
       title: "당사의 제조 시설",
