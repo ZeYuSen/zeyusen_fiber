@@ -1,20 +1,22 @@
 ---
-title: "GSM to oz/yd² Conversion: Fiberglass Fabric Weight Guide"
-description: "1 oz/yd² = 33.906 g/m². Convert fiberglass fabric weight between GSM and oz (200 gsm = 5.9 oz, 6 oz ≈ 203 gsm, 400 gsm = 11.8 oz) and see what areal weight means in an RFQ."
+title: "GSM to oz Converter and Fiberglass Fabric Weight Chart"
+description: "Free GSM to oz/yd² converter. 1 oz/yd² = 33.906 g/m², so 200 gsm = 5.9 oz, 6 oz ≈ 203 gsm and 400 gsm = 11.8 oz. Plus what fabric weight does and does not specify in an RFQ."
 slug: "fiberglass-fabric-weight-gsm-oz-conversion-guide"
 date: "2026-07-16"
-dateModified: "2026-10-02"
+dateModified: "2026-10-17"
 tags: ["fiberglass fabric weight", "GSM to oz", "oz/yd2", "areal weight", "fabric specification", "fiberglass cloth"]
 image: "/images/blog/fiberglass-fabric-weight-gsm-cover.webp"
 ---
 
-# GSM to oz/yd² Conversion: Fiberglass Fabric Weight Guide
+# GSM to oz Converter and Fiberglass Fabric Weight Chart
 
 Fabric weight is the mass of reinforcement per unit of area. It is written as grams per square meter (GSM, or g/m²) in metric specifications and as ounces per square yard (oz/yd²) in US specifications. The two describe the same property in different units.
 
 Weight is one of the most quoted numbers in a fiberglass purchase, and also one of the most over-interpreted. It fixes areal mass. It does not, by itself, define weave, fiber type, thickness, strength, or finish. This guide shows how to convert between units and how to keep weight in its correct place inside a complete specification.
 
 ## Quick Conversion Reference
+
+::gsm-converter
 
 The exact relationship is **1 oz/yd² = 33.906 g/m²** (and 1 g/m² = 0.0295 oz/yd²).
 
@@ -150,6 +152,10 @@ Not reliably. Thickness depends on fiber type, weave or stitch construction, com
 ### Is oz/yd² the same as ounces per linear yard?
 
 No. Ounces per square yard is an areal weight (mass per unit area) and is directly convertible to GSM. Ounces per linear yard depends on the roll width, so it is not interchangeable with GSM. Always confirm whether a weight figure is per unit area before converting or comparing it.
+
+## Tissue Mats and Rotor Paper Use the Same Units
+
+Thin wet-laid materials are also bought by areal weight, usually far below woven fabrics. Our [fiberglass tissue mats and veils](/glass-fiber/tissue-mat) are normally quoted in g/m², and [desiccant rotor forming paper](/glass-fiber/tissue-mat/rotor-paper) is specified by basis weight together with thickness and roll width. The converter above works the same way for these grades; basis weight and tolerance are confirmed for each project.
 
 ## Next Step
 

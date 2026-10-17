@@ -1,20 +1,22 @@
 ---
-title: "Guía de peso de tejido de fibra de vidrio: GSM, oz/yd² y conversión"
-description: "Cómo leer el peso del tejido de fibra de vidrio en GSM y oz/yd², convertir entre ambas unidades, y entender qué especifica y qué no especifica el peso superficial en una RFQ."
+title: "Conversor de GSM a oz y tabla de peso de tejido de fibra de vidrio"
+description: "Convierta GSM (g/m²) y oz/yd² al instante: 1 oz/yd² = 33,906 g/m², 200 gsm = 5,9 oz y 400 gsm = 11,8 oz. Además, qué especifica y qué no el peso superficial en una RFQ."
 slug: "fiberglass-fabric-weight-gsm-oz-conversion-guide"
 date: "2026-07-16"
-dateModified: "2026-07-16"
+dateModified: "2026-10-17"
 tags: ["peso de tejido de fibra de vidrio", "GSM", "oz/yd2", "peso superficial", "especificación de tejido", "tela de fibra de vidrio"]
 image: "/images/blog/fiberglass-fabric-weight-gsm-cover.webp"
 ---
 
-# Guía de peso de tejido de fibra de vidrio: GSM, oz/yd² y conversión
+# Conversor de GSM a oz y tabla de peso de tejido de fibra de vidrio
 
 El peso del tejido es la masa de refuerzo por unidad de superficie. Se expresa en gramos por metro cuadrado (GSM, o g/m²) en especificaciones métricas y en onzas por yarda cuadrada (oz/yd²) en especificaciones estadounidenses. Ambas describen la misma propiedad en unidades distintas.
 
 El peso es una de las cifras más citadas en una compra de fibra de vidrio, y también una de las más sobreinterpretadas. Fija la masa superficial. Por sí solo no define el ligamento, el tipo de fibra, el espesor, la resistencia ni el acabado. Esta guía muestra cómo convertir entre unidades y cómo mantener el peso en su lugar correcto dentro de una especificación completa.
 
 ## Referencia rápida de conversión
+
+::gsm-converter
 
 La relación exacta es **1 oz/yd² = 33.906 g/m²** (y 1 g/m² = 0.0295 oz/yd²).
 
@@ -104,6 +106,10 @@ No por sí solo. Un peso superficial mayor genera espesor más rápido por capa,
 ### ¿Es lo mismo oz/yd² que onzas por yarda lineal?
 
 No. Las onzas por yarda cuadrada son un peso superficial (masa por unidad de área) y se convierten directamente a GSM. Las onzas por yarda lineal dependen del ancho del rollo, por lo que no son intercambiables con GSM. Confirme siempre si una cifra de peso es por unidad de área antes de convertirla o compararla.
+
+## Los velos y el papel para rotores usan las mismas unidades
+
+Los materiales finos por vía húmeda también se compran por peso superficial, normalmente muy por debajo de los tejidos. Nuestros [velos y mantas de fibra de vidrio](/glass-fiber/tissue-mat) suelen cotizarse en g/m², y el [papel para rotores desecantes](/glass-fiber/tissue-mat/rotor-paper) se especifica por gramaje junto con espesor y ancho de bobina. El conversor anterior funciona igual para estos grados; el gramaje y la tolerancia se confirman en cada proyecto.
 
 ## Siguiente Paso
 

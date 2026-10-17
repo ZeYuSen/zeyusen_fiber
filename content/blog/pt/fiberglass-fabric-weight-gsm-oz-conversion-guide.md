@@ -1,20 +1,22 @@
 ---
-title: "Guia de peso do tecido de fibra de vidro: GSM, oz/yd² e conversão"
-description: "Como ler o peso do tecido de fibra de vidro em GSM e oz/yd², converter entre as duas unidades e entender o que o peso areal especifica e não especifica em uma RFQ."
+title: "Conversor de GSM para oz e tabela de peso de tecido de fibra de vidro"
+description: "Converta GSM (g/m²) e oz/yd² na hora: 1 oz/yd² = 33,906 g/m², 200 gsm = 5,9 oz e 400 gsm = 11,8 oz. Além disso, o que o peso areal especifica e não especifica em uma RFQ."
 slug: "fiberglass-fabric-weight-gsm-oz-conversion-guide"
 date: "2026-07-16"
-dateModified: "2026-07-16"
+dateModified: "2026-10-17"
 tags: ["peso do tecido de fibra de vidro", "GSM", "oz/yd2", "peso areal", "especificação de tecido", "tecido de fibra de vidro"]
 image: "/images/blog/fiberglass-fabric-weight-gsm-cover.webp"
 ---
 
-# Guia de peso do tecido de fibra de vidro: GSM, oz/yd² e conversão
+# Conversor de GSM para oz e tabela de peso de tecido de fibra de vidro
 
 Peso do tecido é a massa de reforço por unidade de área. É expresso em gramas por metro quadrado (GSM, ou g/m²) em especificações métricas e em onças por jarda quadrada (oz/yd²) em especificações americanas. As duas unidades descrevem a mesma propriedade em unidades diferentes.
 
 Peso é um dos números mais citados em uma compra de fibra de vidro, e também um dos mais interpretados além do que realmente informa. Ele fixa a massa areal. Não define, por si só, o ligamento, o tipo de fibra, a espessura, a resistência ou o acabamento. Este guia mostra como converter entre as unidades e como manter o peso em seu lugar correto dentro de uma especificação completa.
 
 ## Referência rápida de conversão
+
+::gsm-converter
 
 A relação exata é **1 oz/yd² = 33.906 g/m²** (e 1 g/m² = 0.0295 oz/yd²).
 
@@ -104,6 +106,10 @@ Não por si só. Um peso areal maior constrói espessura mais rápido por camada
 ### oz/yd² é o mesmo que onças por jarda linear?
 
 Não. Onças por jarda quadrada é um peso areal (massa por unidade de área) e é diretamente convertível para GSM. Onças por jarda linear depende da largura do rolo, portanto não é intercambiável com GSM. Confirme sempre se um valor de peso é por unidade de área antes de convertê-lo ou compará-lo.
+
+## Véus e papel para rotores usam as mesmas unidades
+
+Materiais finos por via úmida também são comprados por peso areal, normalmente bem abaixo dos tecidos. Nossos [véus e mantas de fibra de vidro](/glass-fiber/tissue-mat) costumam ser cotados em g/m², e o [papel para rotores dessecantes](/glass-fiber/tissue-mat/rotor-paper) é especificado por gramatura junto com espessura e largura da bobina. O conversor acima funciona da mesma forma para esses graus; gramatura e tolerância são confirmadas em cada projeto.
 
 ## Próximo Passo
 

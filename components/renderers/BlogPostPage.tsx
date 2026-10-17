@@ -11,6 +11,7 @@ import { FAQAccordion } from "@/components/blog/FAQAccordion";
 import { AuthorSignature } from "@/components/blog/AuthorSignature";
 import { PrintButton } from "@/components/blog/PrintButton";
 import { VideoEmbed } from "@/components/blog/VideoEmbed";
+import { GsmConverter } from "@/components/blog/GsmConverter";
 
 function renderInline(text: string, locale: Locale) {
   const parts = text.split(/(\[[^\]]+\]\([^)]+\)|`[^`]+`|\*\*[^*]+\*\*)/g);
@@ -195,6 +196,13 @@ function renderMarkdown(content: string, locale: Locale) {
     }
 
     flushBlockquote();
+
+    if (trimmed === "::gsm-converter") {
+      flushParagraph();
+      flushList();
+      elements.push(<GsmConverter key={`gsm-${elements.length}`} locale={locale} />);
+      return;
+    }
 
     const videoMatch = trimmed.match(/^::video\[([^\]]+)\]$/);
     if (videoMatch) {
